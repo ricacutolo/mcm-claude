@@ -119,6 +119,18 @@ Before any rewrite of a hard file (not an append), copy it to `_revisao/YYYY-MM-
 
 When a skill creates `pesquisa/` or `entregas/<tipo>/` for the first time, it creates its `index.md` with a `# <Pasta>` header. To find something, read the index first, then open only the file needed.
 
+## Plan files
+
+> "Any plan with 3 or more steps or open items becomes a small plan file, not just a chat message. She should never have to scroll up to find it."
+
+- **Where:** inside the department or project the plan belongs to, at `entregas/planos/YYYY-MM-DD-<nome-curto>-plano.md`; with none open, root `entregas/planos/`. If it is unclear which one, ask once. Index rule applies.
+- **Format:** a one-line title, then each step or item as a `- [ ]` checkbox. A short status note on any item that changed or is waiting on something.
+- **Her list stays hers:** if she gives the list, keep her wording exactly. Status and notes go in a separate section below it.
+- **Keep it current:** tick items and update status as work finishes, in the same file. Never a new file per update.
+- **In the chat:** when the file is created or changes meaningfully, say in one line where it is ("O plano está em Conteúdo → entregas → planos"). Don't re-paste the list.
+
+A plan file is not the brief: the brief keeps only the next step; the plan holds the steps.
+
 ## Upkeep — every 7 days, on use
 
 At the first natural pause in a conversation (not before answering her first message), check `ultima_manutencao` in `_sistema/estado.md`. If it is more than 7 days ago, or missing, first write `_sistema/saude.md` (it is local and numbers only, so no permission is needed), then offer once:

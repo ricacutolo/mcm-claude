@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- sistema: plan files — any plan with 3+ steps becomes a checkbox file in `entregas/planos/`, kept current in place.
+
 ## 0.1.0 — 2026-10-23
 First version, for the first install.
 

@@ -44,6 +44,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     <slug>/brief.md             ongoing, never closes
     <slug>/pesquisa/            created on first use, with index.md
     <slug>/entregas/<tipo>/     created on first use, one folder per type, each with index.md
+    <slug>/entregas/planos/     plan files (3+ steps), kept current in place — rule in sistema
   projetos/
     index.md                    one line per project
     <slug>/brief.md             has a done state
