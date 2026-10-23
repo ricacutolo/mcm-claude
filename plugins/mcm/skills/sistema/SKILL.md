@@ -156,7 +156,7 @@ versao_plugin: <from estado.md>
 
 Never put her content, names of clients, or text from her files in it.
 
-**Mirror to Drive.** The first time, ask: "Posso guardar uma cópia desse relatório de saúde (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Ricardo, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - Saúde do sistema` in the folder named in `estado.md` → `pasta_drive`. If the connector or folder is missing, skip silently and note it under "Erros vistos".
+**Mirror to Drive.** The first time, ask: "Posso guardar uma cópia desse relatório de saúde (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Ricardo, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - Saúde do sistema` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
 
 ## Safety rules for every conversation
 

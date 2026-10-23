@@ -88,7 +88,7 @@ Three connections, one at a time:
 
 If a connector's permission screen looks different from what you describe, ask her what she sees and guide from that. Never guess a menu that isn't there.
 
-4. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Ricardo). Record `espelho_drive`. If **sim**: use the folder named in `_semente/drive.md` when present and confirm it with her; otherwise ask which shared folder. Record `pasta_drive`.
+4. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Ricardo). Record `espelho_drive`. If **sim**: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which shared folder. Record `pasta_drive`.
 
 ## Step 6 — Departamentos (10-15 min)
 
