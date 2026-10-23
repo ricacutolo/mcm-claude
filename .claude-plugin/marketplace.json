@@ -1,0 +1,18 @@
+{
+  "name": "mcm-claude",
+  "owner": {
+    "name": "Ricardo Cutolo",
+    "email": "ricacutolo@myclientmachine.com"
+  },
+  "plugins": [
+    {
+      "name": "mcm",
+      "source": "./plugins/mcm",
+      "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e conteúdo para Instagram e LinkedIn.",
+      "version": "0.1.0"
+    }
+  ],
+  "metadata": {
+    "description": "Plugins da MyClientMachine para o Claude."
+  }
+}
