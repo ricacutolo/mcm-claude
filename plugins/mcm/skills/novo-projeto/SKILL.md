@@ -1,6 +1,6 @@
 ---
 name: novo-projeto
-description: "Cria um projeto — algo com começo, meio e fim (lançar o podcast, montar a turma piloto) — com poucas perguntas e uma ficha do projeto. Quando ela diz \"/novo-projeto\", \"novo projeto\", \"isso vira um projeto\", \"quero começar um projeto de\", \"cria um projeto pra\"."
+description: "Cria um projeto — algo com começo, meio e fim (lançar o podcast, montar a turma piloto) — com poucas perguntas e um brief do projeto. Quando ela diz \"/novo-projeto\", \"novo projeto\", \"isso vira um projeto\", \"quero começar um projeto de\", \"cria um projeto pra\"."
 ---
 
 # novo-projeto — give a piece of work with a finish line its home
@@ -9,7 +9,7 @@ A **projeto** has a done state: launch the podcast, run the pilot class, move th
 
 She will run this often, so it is fast: a few questions, one brief, done. **Under five minutes.** If it starts to feel like project management, it has failed.
 
-Speak Brazilian Portuguese, warm and plain. Say "a ficha do projeto", never "brief.md".
+Speak Brazilian Portuguese, warm and plain. Say "o brief do projeto", never "brief.md".
 
 ## Read these first
 
@@ -95,7 +95,7 @@ _Só se acrescenta. A mais nova por último._
 - YYYY-MM-DD — Projeto criado.
 ```
 
-Then: "Essa é a ficha do projeto **<Nome>**. Posso criar? (**sim** / ou me diz o que mudar)"
+Then: "Esse é o brief do projeto **<Nome>**. Posso criar? (**sim** / ou me diz o que mudar)"
 
 ### Step 5 — Write, on sim only
 
@@ -114,7 +114,7 @@ Then: "Essa é a ficha do projeto **<Nome>**. Posso criar? (**sim** / ou me diz 
 
 ```
 **Projeto criado — <Nome>**
-Próximo passo: <da ficha>
+Próximo passo: <do brief>
 ```
 
 ## What this skill never does
@@ -128,7 +128,7 @@ Próximo passo: <da ficha>
 ## When to refuse
 
 - Already exists — "Esse projeto já existe. Quer abrir?"
-- Asked for a task list in the brief — "A ficha guarda o próximo passo, não uma lista. A gente vai passo a passo."
+- Asked for a task list in the brief — "O brief guarda o próximo passo, não uma lista. A gente vai passo a passo."
 - Asked to store a password or card number — "Isso eu não guardo."
 
 ## Failure modes
@@ -139,7 +139,7 @@ Próximo passo: <da ficha>
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt, make no further writes, say what was written, and wait.
+On `PARAR` or `STOP`: halt, make no further writes, say what was written, and wait.
 
 ## Headless behavior
 

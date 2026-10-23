@@ -1,6 +1,6 @@
 ---
 name: abrir-projeto
-description: "Abre um projeto para trabalhar nele: carrega a ficha do projeto e o histórico, e diz onde está e o próximo passo. Também quando ela diz que um projeto terminou. Quando ela diz \"/abrir-projeto\", \"abre o projeto\", \"vamos trabalhar no projeto\", \"onde está o lançamento do podcast\", \"esse projeto terminou\"."
+description: "Abre um projeto para trabalhar nele: carrega o brief do projeto e o histórico, e diz onde está e o próximo passo. Também quando ela diz que um projeto terminou. Quando ela diz \"/abrir-projeto\", \"abre o projeto\", \"vamos trabalhar no projeto\", \"onde está o lançamento do podcast\", \"esse projeto terminou\"."
 ---
 
 # abrir-projeto — sit down inside a project
@@ -52,7 +52,7 @@ Invoke /contexto with the slug derived from the `contexto:` path (`contexto/<slu
 
 ```
 **<Projeto>** — <onde está>
-**Próximo passo:** <da ficha>
+**Próximo passo:** <do brief>
 ```
 
 If Estado atual is more than 14 days old: "O estado deste projeto é de <data>; pode estar desatualizado." Flag only.
@@ -98,7 +98,7 @@ Nothing is moved or deleted. Closed projects stay where they are.
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt, make no further writes, say what was written, and wait.
+On `PARAR` or `STOP`: halt, make no further writes, say what was written, and wait.
 
 ## Headless behavior
 

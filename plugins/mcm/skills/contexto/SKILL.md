@@ -126,7 +126,7 @@ Shared memory: in this plugin the log itself is the shared memory, so there is n
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt immediately, make no further writes, say what was already written (which files, how many lines), and wait. Never assume undo, retry or continue.
+On `PARAR` or `STOP`: halt immediately, make no further writes, say what was already written (which files, how many lines), and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 

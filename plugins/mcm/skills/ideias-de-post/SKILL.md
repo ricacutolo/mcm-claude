@@ -16,7 +16,7 @@ Loaded only when this skill fires:
 2. `sobre-mim/escrita.md` — her themes, references and the stories she tells (personal disclosures, corporate years).
 3. `departamentos/conteudo/entregas/instagram/index.md` and `.../linkedin/index.md` — if they exist, the last 30 days, so no topic or hook repeats.
 4. `departamentos/conteudo/pesquisa/index.md` — if it exists, ideas she saved before; one of the five may come from there.
-5. `${CLAUDE_SKILL_DIR}/ganchos.md` — the hook patterns.
+5. `${CLAUDE_SKILL_DIR}/hooks.md` — the hook patterns.
 6. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md`.
 
 If `negocio.md` is missing, say once: "Pra ideias boas eu preciso do arquivo do seu negócio. Quer rodar a instalação primeiro?" and stop unless she gives a topic.
@@ -54,7 +54,7 @@ replace it with a second pattern or concept idea. Never leave fewer than five.
 - Próximo passo: post-instagram / post-linkedin
 ```
 
-Run the first-words test from `ganchos.md` and the kill-list scan on every hook before showing.
+Run the first-words test from `hooks.md` and the kill-list scan on every hook before showing.
 
 ### Step 3 — Present and ask
 

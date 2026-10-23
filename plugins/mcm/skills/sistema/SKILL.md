@@ -7,7 +7,7 @@ description: "As regras do sistema MCM para esta conversa — carregada uma vez 
 
 Her Settings ("Instructions for Claude") tell Claude to load this skill **once per conversation, before the first reply, when a folder containing `_sistema/` is connected.** This file is the operating manual for that conversation. It is short on purpose: it holds rules and maps, never her identity or business. Those load only when a skill needs them.
 
-Speak to her in Brazilian Portuguese, warm and plain. Never say "skill", "frontmatter", "YAML", "MCP", "index file", and never show her a slash command name. Say "o sistema", "a ficha do departamento", "a lista", "o histórico".
+Speak to her in Brazilian Portuguese, warm and plain. Never say "skill", "frontmatter", "YAML", "MCP", "index file", and never show her a slash command name. Say "o sistema", "o brief do departamento", "a lista", "o histórico".
 
 ## Read these first
 
@@ -63,7 +63,7 @@ She talks to one Claude. That Claude routes:
 - She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**, or **/post-instagram**, **/post-linkedin**, **/ideias-de-post** when it is content.
-- "Como está meu dia" → **/resumo-do-dia**.
+- "Como está meu dia" → **/morning-brief**.
 
 Never make her name a skill. Plain words are enough.
 
@@ -150,13 +150,13 @@ versao_plugin: <from estado.md>
 - Pendências abertas: <n> (mais antiga: YYYY-MM-DD)
 - Correções de lista: <n>
 - Contextos longos: <n>
-- Fichas desatualizadas: <n>
+- Briefs desatualizados: <n>
 - Erros vistos: <short list, or "nenhum">
 ```
 
 Never put her content, names of clients, or text from her files in it.
 
-**Mirror to Drive.** The first time, ask: "Posso guardar uma cópia desse relatório de saúde (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Ricardo, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - Saúde do sistema` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
+**Mirror to Drive.** The first time, ask: "Posso guardar uma cópia desse system health report (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Ricardo, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
 
 ## Safety rules for every conversation
 
@@ -198,7 +198,7 @@ Ordinary loads write nothing.
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt immediately, make no further writes, say what was already written (files, lines), and wait. Never assume undo, retry or continue.
+On `PARAR` or `STOP`: halt immediately, make no further writes, say what was already written (files, lines), and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 

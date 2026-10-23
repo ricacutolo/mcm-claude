@@ -1,6 +1,6 @@
 ---
 name: novo-departamento
-description: "Cria um departamento — uma área contínua do trabalho, sem fim (conteúdo, mentorias, podcast), diferente de um projeto, que termina — com uma conversa curta e uma ficha do departamento. Quando ela diz \"/novo-departamento\", \"novo departamento\", \"cria um departamento\", \"isso é contínuo, não é projeto\", \"quero um departamento de\"."
+description: "Cria um departamento — uma área contínua do trabalho, sem fim (conteúdo, mentorias, podcast), diferente de um projeto, que termina — com uma conversa curta e um brief do departamento. Quando ela diz \"/novo-departamento\", \"novo departamento\", \"cria um departamento\", \"isso é contínuo, não é projeto\", \"quero um departamento de\"."
 ---
 
 # novo-departamento — give ongoing work a home
@@ -9,7 +9,7 @@ A **projeto** has a finish line and closes. A **departamento** is a standard she
 
 It does one thing: **create**. Opening a department to work in it is /abrir-departamento.
 
-Speak Brazilian Portuguese, warm and plain. Never say "slug", "frontmatter", "brief.md", or a command name. Say "a ficha do departamento".
+Speak Brazilian Portuguese, warm and plain. Never say "slug", "frontmatter", "brief.md", or a command name. Say "o brief do departamento".
 
 ## Read these first
 
@@ -109,7 +109,7 @@ _Só se acrescenta. A mais nova por último._
 - YYYY-MM-DD — Departamento criado. <a decisão que o moldou, se houver>
 ```
 
-Then: "Essa é a ficha do departamento **<Nome>**. Posso criar? (**sim** / ou me diz o que mudar)"
+Then: "Esse é o brief do departamento **<Nome>**. Posso criar? (**sim** / ou me diz o que mudar)"
 
 Anything other than a clear yes is a change request.
 
@@ -130,7 +130,7 @@ Anything other than a clear yes is a change request.
 
 ```
 **Departamento criado — <Nome>**
-Próximo passo: <o próximo passo da ficha>
+Próximo passo: <o próximo passo do brief>
 ```
 
 One line more: "Pra trabalhar nele é só dizer **abre o <Nome>**."
@@ -157,7 +157,7 @@ One line more: "Pra trabalhar nele é só dizer **abre o <Nome>**."
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt immediately, make no further writes, say what was already written, and wait.
+On `PARAR` or `STOP`: halt immediately, make no further writes, say what was already written, and wait.
 
 ## Headless behavior
 

@@ -22,7 +22,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── abrir-departamento / abrir-projeto ── load a brief + its log (via contexto)
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments)
-        ├── minha-voz · resumo-do-dia · ideias-de-post · post-instagram · post-linkedin
+        ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
         └── instalar ── first-run wizard; reads _semente/ if present
 ```
 
@@ -74,7 +74,7 @@ tier changes that one word; nothing moves. A closed project's log gets `status: 
 
 ## Write-back — how the system keeps its files current
 
-Owned by **sistema**. Two tiers. The user-facing word for a brief is **ficha** ("a ficha do departamento"); for a log, **histórico**.
+Owned by **sistema**. Two tiers. The user-facing word for a brief is **brief** ("o brief do departamento"); for a log, **histórico**.
 
 | Tier | Files / sections | Rule |
 |---|---|---|
@@ -88,7 +88,7 @@ Routing map (what goes where) lives in the sistema skill, so it updates with the
 No scheduled tasks. Upkeep rides on use: sistema checks `_sistema/estado.md` → `ultima_manutencao`.
 If more than 7 days, it writes `_sistema/saude.md` right away (local, numbers only), then proposes
 upkeep: leftover pending items, index drift, logs past ~150 lines (condense on APPROVE). If she
-approved it once, the health file is mirrored as a Google Doc `MCM - Saúde do sistema` in the shared
+approved it once, the health file is mirrored as a Google Doc `MCM - System Health Report` in the shared
 Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she stopped using the system.
 
 ## Skill table
@@ -103,7 +103,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | novo-projeto | new (markdown, no database) | `projetos/<slug>/brief.md`, `projetos/index.md` | `_sistema/log.md` |
 | abrir-projeto | mirror of abrir-departamento | nothing but the receipt | `_sistema/log.md` |
 | minha-voz | Nuno voice-writer | `entregas/` or the department's `entregas/` | `_sistema/log.md` |
-| resumo-do-dia | Nuno morning-brief, on demand | nothing (reply only) | `_sistema/log.md` |
+| morning-brief | Nuno morning-brief, on demand | nothing (reply only) | `_sistema/log.md` |
 | ideias-de-post | Nuno content-coach | `departamentos/conteudo/pesquisa/` | `_sistema/log.md` |
 | post-instagram | Nuno draft-instagram, no Blotato | `departamentos/conteudo/entregas/instagram/` | `_sistema/log.md` |
 | post-linkedin | Nuno draft-linkedin, no Blotato | `departamentos/conteudo/entregas/linkedin/` | `_sistema/log.md` |

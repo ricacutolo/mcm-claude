@@ -14,7 +14,7 @@ Loaded only when this skill fires:
 
 1. `sobre-mim/escrita.md` — her voice, and its **Por plataforma** section (Instagram).
 2. `sobre-mim/negocio.md` — audience, pains, method, offers, real proof.
-3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/ganchos.md` — hook patterns and the first-words test.
+3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/hooks.md` — hook patterns and the first-words test.
 4. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md`.
 5. `departamentos/conteudo/entregas/instagram/index.md` — if it exists, to avoid repeating a recent hook or topic.
 
@@ -50,7 +50,7 @@ and any real story or fact to use. If the topic is missing, ask one question: "S
 
 ### Step 2 — Three hooks, she picks
 
-Pick the three best patterns from `ganchos.md`, write one hook per pattern, run the first-words test
+Pick the three best patterns from `hooks.md`, write one hook per pattern, run the first-words test
 and the kill-list scan on each, then show:
 
 > "Três aberturas:

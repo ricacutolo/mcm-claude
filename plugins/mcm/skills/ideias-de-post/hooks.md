@@ -1,4 +1,4 @@
-# ganchos.md — hook patterns
+# hooks.md — hook patterns
 
 Shared by `ideias-de-post`, `post-instagram` and `post-linkedin`. The hook is most of a post's value:
 pick the patterns that fit the topic and her real material. Examples are in her register; never reuse

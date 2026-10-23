@@ -102,7 +102,7 @@ Three short live demos, nothing more. For each: say what she can say, what it do
 
 1. "abre o Conteúdo" → /abrir-departamento.
 2. "me dá ideias de post" → /ideias-de-post (keep it to the ideas; no draft yet).
-3. "como está meu dia" → /resumo-do-dia.
+3. "como está meu dia" → /morning-brief.
 
 Then list the rest in one short block, as things she can say: "escreve na minha voz…", "faz um post pro Instagram sobre…", "post pro LinkedIn sobre…", "novo projeto", "guarda no histórico".
 
@@ -149,7 +149,7 @@ Shared memory: the first line of each department log ("Departamento criado na in
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt, write nothing more, say which step and files were completed, and wait.
+On `PARAR` or `STOP`: halt, write nothing more, say which step and files were completed, and wait.
 
 ## Headless behavior
 

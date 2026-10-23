@@ -14,7 +14,7 @@ Loaded only when this skill fires:
 
 1. `sobre-mim/escrita.md` — her voice, and its **Por plataforma** section (LinkedIn).
 2. `sobre-mim/negocio.md` — audience, pains, method, offers, real proof, her corporate background.
-3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/ganchos.md` — hook patterns and the first-words test.
+3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/hooks.md` — hook patterns and the first-words test.
 4. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md`.
 5. `departamentos/conteudo/entregas/linkedin/index.md` — if it exists, to avoid repeating a recent hook or topic.
 6. An existing Instagram draft, only when she asks for "a versão LinkedIn desse post".
@@ -50,7 +50,7 @@ missing, ask one question: "Sobre o que você quer falar?"
 
 ### Step 2 — Three hooks, she picks
 
-Pick the three best patterns from `ganchos.md` (bastidores, conceito com credencial and reframe fit
+Pick the three best patterns from `hooks.md` (bastidores, conceito com credencial and reframe fit
 LinkedIn best), one hook each, first-words test and kill-list scan on each, then:
 
 > "Três aberturas:

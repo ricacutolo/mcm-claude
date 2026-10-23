@@ -1,6 +1,6 @@
 ---
 name: abrir-departamento
-description: "Abre um departamento para trabalhar nele: carrega a ficha do departamento e o histórico, e diz onde está e o próximo passo. Quando ela diz \"/abrir-departamento\", \"abre o departamento de\", \"abre o conteúdo\", \"vamos trabalhar no\", \"vamos mexer em mentorias\", \"senta comigo no podcast\"."
+description: "Abre um departamento para trabalhar nele: carrega o brief do departamento e o histórico, e diz onde está e o próximo passo. Quando ela diz \"/abrir-departamento\", \"abre o departamento de\", \"abre o conteúdo\", \"vamos trabalhar no\", \"vamos mexer em mentorias\", \"senta comigo no podcast\"."
 ---
 
 # abrir-departamento — sit down inside a department
@@ -51,7 +51,7 @@ Invoke /contexto with the slug derived from the `contexto:` path (`contexto/<slu
 
 ```
 **<Departamento>** — <onde está, pelo Estado atual e pelas últimas entradas do histórico>
-**Próximo passo:** <da ficha>
+**Próximo passo:** <do brief>
 ```
 
 If Estado atual is more than 14 days old, one more line: "O estado deste departamento é de <data>; pode estar desatualizado." Flag only.
@@ -80,7 +80,7 @@ Nothing else unless she asks. No recital of the standards.
 ## When to refuse
 
 - Doesn't exist — "Não tenho esse departamento. Quer criar?"
-- Asked to change the brief while opening — "Abrir não muda a ficha. Me diz a mudança que eu guardo como pendência pra você confirmar."
+- Asked to change the brief while opening — "Abrir não muda o brief. Me diz a mudança que eu guardo como pendência pra você confirmar."
 - Asked to write the log directly — "O histórico tem o jeito dele de ser guardado; eu passo por lá."
 
 ## Failure modes
@@ -91,7 +91,7 @@ Nothing else unless she asks. No recital of the standards.
 
 ## STOP handling
 
-On `PARA` or `STOP`: halt, make no further writes, say what was written, and wait.
+On `PARAR` or `STOP`: halt, make no further writes, say what was written, and wait.
 
 ## Headless behavior
 

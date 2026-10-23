@@ -74,7 +74,7 @@ fix the 1-3 sentences that are not landing, not a full rewrite.
 ### Step 5 — Save (only after approval)
 
 - Short texts (under ~200 words): stay in the chat. No file unless she asks.
-- Longer pieces, or when she asks to save: if a department or project is open and its ficha's
+- Longer pieces, or when she asks to save: if a department or project is open and its brief's
   "O que eu uso aqui" table names a folder for this skill, save there. Otherwise the open
   department's or project's `entregas/<tipo>/` when the text plainly belongs to one; otherwise
   root `entregas/`. Filename `YYYY-MM-DD-<slug>.md`.
