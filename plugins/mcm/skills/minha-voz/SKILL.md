@@ -28,6 +28,8 @@ If `sobre-mim/escrita.md` does not exist, say once: "Ainda não tenho o arquivo 
 
 > "Never invent a story, a testimonial, a quote, a number or a client name. Missing proof becomes a marked placeholder."
 
+> "Every idea, quote or finding credited to a person or a study names its source: the author and the book or article. If you cannot confirm who said it, do not credit anyone: tell her and leave it out. Never use an unknown video, blog or social post as the authority."
+
 > "A file is saved only after she approves the text."
 
 ## Workflow

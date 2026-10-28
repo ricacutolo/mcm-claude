@@ -47,7 +47,7 @@ After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, a
 ## Step 0 — Começo e pastas (2 min)
 
 1. Confirm a folder is connected. If not: "Para começar, adicione uma pasta a esta conversa: no app do Claude no Mac, em uma conversa nova, clique em adicionar pasta e escolha a pasta que você criou para o sistema. Depois diga **começar a instalação** de novo." Stop.
-2. Show the folder path and ask if it is the right one.
+2. Show the folder path and ask if it is the right one. If the path is inside `Documents`/`Documentos` or `Desktop`/`Mesa`, say once: "Essa pasta pode estar no iCloud, e o iCloud às vezes tira arquivos do computador ou cria cópias duplicadas. O mais seguro é criar a pasta na sua pasta pessoal (no Finder: Shift + Command + H). Quer mudar antes de seguir?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
 3. Say what will be created, in one short list: `sobre-mim/`, `departamentos/`, `projetos/`, `contexto/`, `entregas/`, `referencia/`, `_sistema/`, `_revisao/`. One line each, plain words.
 4. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
 5. If `_semente/` exists: "O Rica já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 

@@ -30,13 +30,15 @@ Loaded only when this skill fires:
 | Emoji | none or one |
 | Hashtags | 0-3 at the end |
 | CTA | a real question that invites a comment; link to the offer only if she asks |
-| Image | optional; add a **Visual** line only if one would help |
+| Image | optional; add a **Visual** line only if one would help. If it has slides or text on the image, the CTA goes on the last slide in **bold** and larger type |
 
 ## The rules
 
 > "Drafts only. This skill never posts, schedules or publishes."
 
 > "Never invent a story, a testimonial, a quote or a number. Missing proof is a marked placeholder: [DEPOIMENTO REAL AQUI]."
+
+> "Every idea, quote or finding credited to a person or a study names its source: the author and the book or article. If you cannot confirm who said it, do not credit anyone: tell her and leave it out. Never use an unknown video, blog or social post as the authority."
 
 > "Nothing is saved until she approves the draft."
 

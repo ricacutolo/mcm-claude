@@ -27,6 +27,8 @@ If `negocio.md` is missing, say once: "Pra ideias boas eu preciso do arquivo do 
 
 > "Never invent a client story, a testimonial or a number. Story ideas use only material already in her files, or ask her for the real story."
 
+> "Every idea, quote or finding credited to a person or a study names its source: the author and the book or article. If you cannot confirm who said it, do not credit anyone: tell her and leave it out. Never use an unknown video, blog or social post as the authority."
+
 > "Ideas are saved only when she asks, and only after she approves."
 
 ## Workflow

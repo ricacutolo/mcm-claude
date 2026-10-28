@@ -30,6 +30,7 @@ Loaded only when this skill fires:
 | Hashtags | 4-8 in Portuguese at the end, mixing lowercase and CamelCase |
 | CTA | her own ("Me conta nos comentários!", "Salva e compartilha com quem precisa", "Me chama no direct", "O link está na bio") — soft, after the value |
 | Formats | caption (default); carrossel = numbered slide texts; reels = spoken script with short sentences and a turn |
+| CTA on the visual | whenever the post has slides or text on the image, the CTA goes on the last slide in **bold** and larger type, and the Visual line says so. The caption itself stays plain text (Instagram captions have no bold) |
 
 An image is **not** required. Every draft ends with a **Visual** line: the photo, slide or scene idea in one or two sentences.
 
@@ -38,6 +39,8 @@ An image is **not** required. Every draft ends with a **Visual** line: the photo
 > "Drafts only. This skill never posts, schedules or publishes."
 
 > "Never invent a story, a testimonial, a quote or a number. Missing proof is a marked placeholder: [DEPOIMENTO REAL AQUI]."
+
+> "Every idea, quote or finding credited to a person or a study names its source: the author and the book or article. If you cannot confirm who said it, do not credit anyone: tell her and leave it out. Never use an unknown video, blog or social post as the authority."
 
 > "Nothing is saved until she approves the draft."
 
@@ -104,7 +107,7 @@ Append one line to `_sistema/log.md`:
 
 Shared memory: this skill does not write `contexto/`; if the Conteúdo log is open, `contexto` records the milestone.
 
-Close with one line: "Quando quiser, é só copiar e postar. Quer uma versão pro LinkedIn também?"
+Close with one line: "Quando quiser, é só copiar e postar. Quer uma versão pro LinkedIn também?" On **sim**, hand this draft to `post-linkedin` as "a versão LinkedIn desse post".
 
 ## What this skill never does
 

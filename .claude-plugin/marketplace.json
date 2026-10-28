@@ -9,7 +9,7 @@
       "name": "mcm",
       "source": "./plugins/mcm",
       "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e conteúdo para Instagram e LinkedIn.",
-      "version": "0.1.1"
+      "version": "0.1.2"
     }
   ],
   "metadata": {

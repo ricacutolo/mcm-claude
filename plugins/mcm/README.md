@@ -5,8 +5,8 @@ O sistema de trabalho da MyClientMachine dentro do Claude: o Claude passa a sabe
 ## Como instalar (uma vez só)
 
 1. Use o app do Claude no computador, em um plano pago.
-2. Crie uma pasta no seu computador para o sistema (por exemplo, `Documentos/Claude`).
-3. No Claude, abra **Personalizar → Plugins → Adicionar → Adicionar marketplace** e cole: `ricacutolo/mcm-claude`
+2. Crie uma pasta para o sistema na sua pasta pessoal (no Finder: **Shift + Command + H**, depois **Shift + Command + N**), por exemplo `Claude`. Evite Documentos e Mesa se eles estiverem no iCloud.
+3. No Claude, abra **Configurações → Plugins → Adicionar marketplace → Adicionar de um repositório** e cole: `ricacutolo/mcm-claude`
 4. Ative o plugin **MCM** e ligue **Sincronizar automaticamente**, para receber as atualizações sozinha.
 5. Se o Rica te mandou uma pasta chamada `_semente`, coloque ela dentro da pasta do sistema.
 6. Abra uma conversa nova, adicione a pasta que você criou e diga: **começar a instalação**.

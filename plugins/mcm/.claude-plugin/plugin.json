@@ -1,7 +1,7 @@
 {
   "name": "mcm",
   "displayName": "MCM",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e conteúdo para Instagram e LinkedIn.",
   "author": { "name": "Ricardo Cutolo", "email": "ricacutolo@myclientmachine.com", "url": "https://myclientmachine.com" },
   "license": "MIT",
