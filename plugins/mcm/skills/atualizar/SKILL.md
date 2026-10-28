@@ -43,7 +43,7 @@ Rica adds one dated section per update and never edits old ones:
 1. <sugestão de algo que ela faz, como criar um departamento ou projeto>
 ```
 
-Text above the first `## ` header is a note for Rica; ignore it. A section whose header is not a valid date is skipped and named in the reply.
+The Drive reader may show `#` as `\#` and `1.` as `1\.`; treat them the same. Text above the first `## ` header is a note for Rica; ignore it. A section whose header is not a valid date is skipped and named in the reply.
 
 ## Workflow
 
