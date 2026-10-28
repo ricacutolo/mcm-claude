@@ -13,7 +13,7 @@ You are walking her through installing her system, in short steps she can stop a
 - Default everything. Ask only when a default won't work.
 - Approval gates, not menus: "Digite **sim** para seguir."
 
-**Seed mode.** Ricardo may have prepared her files in advance in `_semente/`. When a seed file exists, the step becomes **confirm, not interview**: show it in short pieces, ask "Está certo? Quer mudar algo?", apply changes, write. Only ask what the seed marks as missing (`[PERGUNTAR]`).
+**Seed mode.** Rica may have prepared her files in advance in `_semente/`. When a seed file exists, the step becomes **confirm, not interview**: show it in short pieces, ask "Está certo? Quer mudar algo?", apply changes, write. Only ask what the seed marks as missing (`[PERGUNTAR]`).
 
 Templates for the no-seed path are in this skill's `modelos/` folder (`${CLAUDE_SKILL_DIR}/modelos/`).
 
@@ -22,7 +22,7 @@ Templates for the no-seed path are in this skill's `modelos/` folder (`${CLAUDE_
 Every time this skill fires:
 
 1. `_sistema/estado.md` in her folder — which step is next. Missing means first run.
-2. The list of files in `_semente/`, if that folder exists. Read each seed file only in the step that uses it. Ignore `LEIA-ME.md` and anything else not named in a step below. If any seed file still contains `[RICA:`, don't use that file: say "Esse arquivo ainda está sendo preparado pelo Ricardo" and run that step in no-seed mode.
+2. The list of files in `_semente/`, if that folder exists. Read each seed file only in the step that uses it. Ignore `LEIA-ME.md` and anything else not named in a step below. If any seed file still contains `[RICA:`, don't use that file: say "Esse arquivo ainda está sendo preparado pelo Rica" and run that step in no-seed mode.
 3. The matching step below.
 
 ## The rules
@@ -50,7 +50,7 @@ After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, a
 2. Show the folder path and ask if it is the right one.
 3. Say what will be created, in one short list: `sobre-mim/`, `departamentos/`, `projetos/`, `contexto/`, `entregas/`, `referencia/`, `_sistema/`, `_revisao/`. One line each, plain words.
 4. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
-5. If `_semente/` exists: "O Ricardo já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 
+5. If `_semente/` exists: "O Rica já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 
 
 ## Step 1 — Instruções para o Claude (10 min)
 
@@ -88,7 +88,7 @@ Three connections, one at a time:
 
 If a connector's permission screen looks different from what you describe, ask her what she sees and guide from that. Never guess a menu that isn't there.
 
-4. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Ricardo). Record `espelho_drive`. If **sim**: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which shared folder. Record `pasta_drive`.
+4. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Rica). Record `espelho_drive`. If **sim**: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which shared folder. Record `pasta_drive`.
 
 ## Step 6 — Departamentos (10-15 min)
 
