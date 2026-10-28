@@ -49,8 +49,8 @@ _revisao/                     anything that would otherwise be deleted
 | `contexto/*.md` | /contexto only (this skill hands it approved items) |
 | a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
-| `sobre-mim/*` | instalar during install; afterwards only this skill's write-back |
-| `_sistema/estado.md` | instalar during install; this skill afterwards |
+| `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
+| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
 
@@ -64,6 +64,7 @@ She talks to one Claude. That Claude routes:
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**, or **/post-instagram**, **/post-linkedin**, **/ideias-de-post** when it is content.
 - "Como está meu dia" → **/morning-brief**.
+- "Atualizar", "tem novidade do Rica" → **/atualizar**.
 
 Never make her name a skill. Plain words are enough.
 

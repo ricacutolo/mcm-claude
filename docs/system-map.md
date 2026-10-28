@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-10-23
-version: 0.1.2
+version: 0.1.3
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -23,6 +23,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments)
         ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
+        ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         └── instalar ── first-run wizard; reads _semente/ if present
 ```
 
@@ -108,6 +109,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | ideias-de-post | Nuno content-coach | `departamentos/conteudo/pesquisa/` | `_sistema/log.md` |
 | post-instagram | Nuno draft-instagram, no Blotato | `departamentos/conteudo/entregas/instagram/` | `_sistema/log.md` |
 | post-linkedin | Nuno draft-linkedin, no Blotato | `departamentos/conteudo/entregas/linkedin/` | `_sistema/log.md` |
+| atualizar | new | `sobre-mim/*`, brief sections, `pendentes.md`, `estado.md` → `notas_rica_lidas`; histórico via contexto; reads the Drive doc "MCM - Notas do Rica" (read-only) | `_sistema/log.md` |
 
 ## Conventions (from Rica's skill-conventions.md, adapted)
 

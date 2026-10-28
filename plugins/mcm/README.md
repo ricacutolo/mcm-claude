@@ -23,6 +23,7 @@ Converse com a pasta conectada. Alguns jeitos de começar:
 - **como está meu dia** — agenda e e-mails importantes
 - **novo projeto** · **novo departamento**
 - **guarda isso** — guarda algo no histórico do assunto
+- **atualizar** — busca as novidades que o Rica deixou no documento compartilhado e te mostra para aprovar
 
 Sem a pasta conectada, o Claude funciona normal, sem o sistema.
 
