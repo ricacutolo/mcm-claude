@@ -32,7 +32,7 @@ sentence (not the whole text) and scan again until clean.
 ## Tiques de estrutura
 
 - Em dash (—) anywhere in a post or message. Zero. She pauses with reticências (…), commas or a new line.
-- Lists of exactly three adjectives or three items when the content is not actually a list ("clareza, leveza e propósito" every time)
+- Lists of exactly three adjectives or three items when the content is not actually a list (the same three abstract nouns every time)
 - "Primeiro… Segundo… Terceiro…" when the items are not real steps (her own step sequences are fine)
 - Every paragraph the same length; every sentence ending in a punchline
 - Rhetorical question followed immediately by its own answer, repeated more than once
