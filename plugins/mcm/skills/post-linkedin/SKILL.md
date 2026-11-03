@@ -1,11 +1,11 @@
 ---
 name: post-linkedin
-description: Rascunha um post de LinkedIn na voz dela, com o ângulo corporativo e de liderança — gancho forte, texto, pergunta no final. Use quando ela disser "post pro LinkedIn", "faz um post pro LinkedIn sobre", "escreve pro LinkedIn", "transforma isso em post pro LinkedIn", "versão LinkedIn desse post". Só rascunho; nunca publica.
+description: Rascunha um post de LinkedIn na voz dela, com o ângulo profissional — gancho forte, texto, pergunta no final. Use quando ela disser "post pro LinkedIn", "faz um post pro LinkedIn sobre", "escreve pro LinkedIn", "transforma isso em post pro LinkedIn", "versão LinkedIn desse post". Só rascunho; nunca publica.
 ---
 
 # post-linkedin — a LinkedIn post in her voice
 
-Draft one LinkedIn post: longer than Instagram, with the corporate and leadership angle, built to
+Draft one LinkedIn post: longer than Instagram, with the professional angle her `escrita.md` gives for LinkedIn, built to
 start a conversation in the comments. Drafts only; she posts. Speak to her in Brazilian Portuguese.
 
 ## Read these first
@@ -13,7 +13,7 @@ start a conversation in the comments. Drafts only; she posts. Speak to her in Br
 Loaded only when this skill fires:
 
 1. `sobre-mim/escrita.md` — her voice, and its **Por plataforma** section (LinkedIn).
-2. `sobre-mim/negocio.md` — audience, pains, method, offers, real proof, her corporate background.
+2. `sobre-mim/negocio.md` — audience, pains, method, offers, real proof, her professional background.
 3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/hooks.md` — hook patterns and the first-words test.
 4. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md`.
 5. `departamentos/conteudo/entregas/linkedin/index.md` — if it exists, to avoid repeating a recent hook or topic.
@@ -24,8 +24,8 @@ Loaded only when this skill fires:
 | Field | Default |
 |---|---|
 | Length | ~1,200-1,900 characters; hook within the first ~140 characters, before "ver mais" |
-| Angle | the corporate and leadership side: teams, decisions, microgerenciamento, the exhausted executive ("No ambiente corporativo, a gente raramente fala sobre isso") |
-| Shape | hook → the situation → the pattern named → one reference → her experience as an executive → what to do differently → question back |
+| Angle | the professional side of her topic, as her `escrita.md` describes LinkedIn: what her field looks like from the inside, decisions, lessons |
+| Shape | hook → the situation → the pattern named → one reference → her own professional experience → what to do differently → question back |
 | Line breaks | short paragraphs, generous white space |
 | Emoji | none or one |
 | Hashtags | 0-3 at the end |
@@ -47,7 +47,7 @@ Loaded only when this skill fires:
 ### Step 1 — Understand the topic
 
 From her message, a handed-off idea, or an Instagram draft to adapt. If adapting, keep the idea and
-rewrite for LinkedIn (longer, corporate angle, fewer hashtags) rather than copying. If the topic is
+rewrite for LinkedIn (longer, professional angle, fewer hashtags) rather than copying. If the topic is
 missing, ask one question: "Sobre o que você quer falar?"
 
 ### Step 2 — Three hooks, she picks

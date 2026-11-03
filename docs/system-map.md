@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-10-23
-version: 0.1.5
+version: 0.1.6
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -125,6 +125,9 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 
 Skill bodies are English (precise for Claude, maintainable for Rica). Descriptions, triggers and
 everything said to the user are Brazilian Portuguese.
+
+Skills never carry a client's themes, names, stories or examples. They read them from the client's own
+files (`sobre-mim/`), so the same plugin serves every client.
 
 ## Not in v0.1.0
 

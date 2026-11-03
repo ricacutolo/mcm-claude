@@ -13,7 +13,7 @@ run next. In Brazilian Portuguese. Ideas only; drafting happens in `post-instagr
 Loaded only when this skill fires:
 
 1. `sobre-mim/negocio.md` — who she serves, their pains in their words, her method and offers, her real proof.
-2. `sobre-mim/escrita.md` — her themes, references and the stories she tells (personal disclosures, corporate years).
+2. `sobre-mim/escrita.md` — her themes, references and the stories she tells, and its **Por plataforma** section.
 3. `departamentos/conteudo/entregas/instagram/index.md` and `.../linkedin/index.md` — if they exist, the last 30 days, so no topic or hook repeats.
 4. `departamentos/conteudo/pesquisa/index.md` — if it exists, ideas she saved before; one of the five may come from there.
 5. `${CLAUDE_SKILL_DIR}/hooks.md` — the hook patterns.
@@ -37,11 +37,11 @@ If `negocio.md` is missing, say once: "Pra ideias boas eu preciso do arquivo do 
 
 At least one of each where her files support it:
 
-1. **Reframe of her core message** — produtividade com propósito vs. "fazer mais".
-2. **A pattern named** — a sabotador, autossabotagem, piloto automático; the reader recognizes herself.
-3. **Concept explained** — one reference (neurociência, Inteligência Positiva, an author) in plain language.
-4. **Her own experience** — a real moment from her files (burnout, marathon, perfectionism, corporate life), reframed as the reader's lesson.
-5. **Corporate / leadership angle** — for LinkedIn: teams, decisions, the executive who is exhausted.
+1. **Reframe of her core message** — the central idea in `negocio.md`, set against the common belief it corrects.
+2. **A pattern named** — a situation her audience lives, named the way her files name it; the reader recognizes herself.
+3. **Concept explained** — one reference she actually uses (from `escrita.md`), in plain language.
+4. **Her own experience** — a real moment from her files, reframed as the reader's lesson.
+5. **Second-network angle** — the angle her `escrita.md` gives for her other network (for LinkedIn, usually the professional side). If she uses only one network, another idea from 1-4.
 
 If her files hold a mentee result she has already made public, one idea can be a proof story; otherwise
 replace it with a second pattern or concept idea. Never leave fewer than five.
