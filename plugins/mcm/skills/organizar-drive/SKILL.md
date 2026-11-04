@@ -25,7 +25,7 @@ Loaded when this skill fires, nothing more:
 
 > "Show the plan before creating or moving anything, and wait for her explicit sim. Move only the lines she approved."
 
-> "Only touch the top level of her Drive and the folders this skill created. Never go inside a folder she already organized, never touch a file she does not own, a file shared with her, or a shared drive."
+> "Only touch the top level of her Drive and the folders this skill created. Coloring the folders one level inside them is the one exception, and it only sets colors. Never go inside a folder she already organized, never touch a file she does not own, a file shared with her, or a shared drive."
 
 > "Never touch the folders Rica shares with her: anything named `MCM - ...`, and `From-Client` or `Deliverables` from older installs."
 
@@ -47,9 +47,9 @@ Every client starts from the same seven folders, numbered, at the top of her Dri
 | 06 | Financeiro e Impostos | Finances and Taxes | `#f4d376` yellow | invoices, receipts, statements, taxes |
 | 07 | Referências | References | `#9e7cdc` purple | templates, guides, material kept to consult |
 
-Then **08 onward**: one folder per department of hers that the seven do not already cover (e.g. "08. Podcast"), left in the Drive's default color, so the seven base colors stay the ones that stand out.
+Then **08 onward**: one folder per department of hers that the seven do not already cover (e.g. "08. Podcast"), each with its own color, in this order: 08 `#ac725e` brown · 09 `#9fe1e7` light blue · 10 `#b3dc6c` lime · 11 `#cabdbf` grey-rose · then repeat from 08.
 
-**Colors.** Every folder this skill creates gets its color right after it is created: top-level base folders from the table, a subfolder (a client's folder, Logos, Imagens) the color of its parent. The colors are written in `sobre-mim/drive.md` next to each folder, and that file is the source: if she asks for another color ("muda a cor do Clientes para verde"), show the change in `drive.md`, write it on her **sim**, then apply it. The Drive cannot report a folder's current color, so a color she changes by hand in the Drive is put back on the next run; tell her that once, the first time she asks about colors. A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
+**Colors.** Every folder this skill creates gets its color right after it is created: top-level folders from the table, a subfolder (a client's folder, Logos, Imagens) the color of its parent. Every run also colors the folders one level inside each top-level folder with that folder's color, including ones she created herself; deeper levels are left alone. The colors are written in `sobre-mim/drive.md` next to each folder, and that file is the source: if she asks for another color ("muda a cor do Clientes para verde"), show the change in `drive.md`, write it on her **sim**, then apply it. The Drive cannot report a folder's current color, so a color she changes by hand in the Drive is put back on the next run; tell her that once, the first time she asks about colors. A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
 
 Nothing else is added. No inbox folder, no archive folder, no "Diversos".
 
@@ -109,7 +109,7 @@ Wait. Nothing moves without her answer.
 
 ### Step 6 — Sorting: move what she approved
 
-Before moving, put the colors back: apply each folder's color from `sobre-mim/drive.md` to the structure folders (no plan needed, no sim; it changes nothing but the color). A client folder created in this run is colored with its parent's color as soon as it exists.
+Before moving, put the colors back: apply each folder's color from `sobre-mim/drive.md` to the top-level folders, then list the folders one level inside each and give them their parent's color. No plan or sim needed: it changes nothing but colors, and it never opens, moves or renames anything inside. A client folder created in this run is colored with its parent's color as soon as it exists.
 
 For each approved line: move the file (never copy-and-delete), then check it is in the new folder. If a move fails, leave the file where it was, note why, and continue with the next. Never retry the same file twice in a run.
 
@@ -120,7 +120,7 @@ When she redirected a file ("3 vai para Fornecedores"), ask once at the end, all
 > "Quer que eu guarde isso como regra para as próximas vezes?
 > 1. Arquivos de hotel → 02. Clientes, na pasta do cliente — **sim / não**"
 
-On **sim**, show the line and append it under **Regras** in `sobre-mim/drive.md`. A rule is one line: what the file looks like → where it goes. If she asked for a new folder, add it to **Estrutura** with the next free number, in the default color.
+On **sim**, show the line and append it under **Regras** in `sobre-mim/drive.md`. A rule is one line: what the file looks like → where it goes. If she asked for a new folder, add it to **Estrutura** with the next free number and the next department color.
 
 ### Step 8 — Close and receipt
 
