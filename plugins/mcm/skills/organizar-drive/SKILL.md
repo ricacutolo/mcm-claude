@@ -51,7 +51,7 @@ Then **08 onward**: one folder per department of hers that the seven do not alre
 
 **Colors.** Every folder this skill creates gets its color right after it is created: top-level folders from the table, a subfolder (a client's folder, Logos, Imagens) the color of its parent. Every run also colors the folders one level inside each top-level folder with that folder's color, including ones she created herself; deeper levels are left alone. The colors are written in `sobre-mim/drive.md` next to each folder, and that file is the source: if she asks for another color ("muda a cor do Clientes para verde"), show the change in `drive.md`, write it on her **sim**, then apply it. The Drive cannot report a folder's current color, so a color she changes by hand in the Drive is put back on the next run; tell her that once, the first time she asks about colors. A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
 
-**Archive, per folder.** Each top-level folder gets its own `_Arquivo` (`_Archive` in English) for what is finished or no longer used: a past client inside `02. Clientes/_Arquivo`, an old SOP inside `05. Processos (SOPs)/_Arquivo`. It is created only the first time something is archived there, never empty in advance, and takes its parent's color. Things go there only when she asks ("arquiva o cliente X", "isso é antigo"), shown as a plan and moved on her **sim**, like any other move.
+**Archive, per folder.** Each top-level folder gets its own `_Arquivo` (`_Archive` in English) for what is finished or no longer used: a past client inside `02. Clientes/_Arquivo`, an old SOP inside `05. Processos (SOPs)/_Arquivo`. It is created with the structure, inside every top-level folder (departments included), so it is right there when she moves things by hand, and it takes its parent's color. Every run puts back any `_Arquivo` that went missing. This skill moves things there only when she asks ("arquiva o cliente X", "isso é antigo"), shown as a plan and moved on her **sim**, like any other move.
 
 Nothing else is added. No inbox folder, no "Diversos".
 
@@ -61,7 +61,7 @@ Nothing else is added. No inbox folder, no "Diversos".
 
 - No Google Drive connection: "Para organizar o Drive, preciso da conexão com o Google Drive. Ela fica em **Personalizar → Conectores**." Stop.
 - `sobre-mim/drive.md` missing → **Setup** (Step 2).
-- She asked to archive something → plan the move into that folder's `_Arquivo` (create it on first use), show it, move on **sim**, receipt. Then stop unless she asked for sorting too.
+- She asked to archive something → plan the move into that folder's `_Arquivo`, show it, move on **sim**, receipt. Then stop unless she asked for sorting too.
 - Present → **Sorting** (Step 4).
 
 ### Step 2 — Setup: propose the structure
@@ -74,7 +74,7 @@ Nothing else is added. No inbox folder, no "Diversos".
 
 On **sim**:
 
-1. Create each folder at the top of her Drive; rename the existing ones she approved. Color each one as soon as it exists (renamed folders too). Check each one exists before the next.
+1. Create each folder at the top of her Drive; rename the existing ones she approved. Inside each, create `_Arquivo` (and `Logos`, `Imagens` inside Brand). Color each folder as soon as it exists (renamed folders too). Check each one exists before the next.
 2. Show `sobre-mim/drive.md` and write it on **sim**:
 
 ```
@@ -112,7 +112,7 @@ Wait. Nothing moves without her answer.
 
 ### Step 6 — Sorting: move what she approved
 
-Before moving, put the colors back: apply each folder's color from `sobre-mim/drive.md` to the top-level folders, then list the folders one level inside each and give them their parent's color. No plan or sim needed: it changes nothing but colors, and it never opens, moves or renames anything inside. A client folder created in this run is colored with its parent's color as soon as it exists.
+Before moving, put the colors back: apply each folder's color from `sobre-mim/drive.md` to the top-level folders, then list the folders one level inside each and give them their parent's color, creating `_Arquivo` where it is missing. No plan or sim needed: it changes nothing but colors, and it never opens, moves or renames anything inside. A client folder created in this run is colored with its parent's color as soon as it exists.
 
 For each approved line: move the file (never copy-and-delete), then check it is in the new folder. If a move fails, leave the file where it was, note why, and continue with the next. Never retry the same file twice in a run.
 
