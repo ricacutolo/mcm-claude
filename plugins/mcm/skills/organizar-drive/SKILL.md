@@ -37,17 +37,19 @@ Loaded when this skill fires, nothing more:
 
 Every client starts from the same seven folders, numbered, at the top of her Drive. Names follow her language, except **04. Brand**, which is always English.
 
-| # | Portuguese | English | What goes in it |
-|---|---|---|---|
-| 01 | Documentos da Empresa | Business Documents | legal, contracts, registrations, company bank documents |
-| 02 | Clientes | Clients | one folder per client |
-| 03 | Vendas e Marketing | Sales and Marketing | proposals, price lists, campaigns, posts, ads |
-| 04 | Brand | Brand | `Logos/` and `Imagens/` (`Images/`) inside; colors and fonts loose |
-| 05 | Processos (SOPs) | Processes (SOPs) | how things are done, step by step |
-| 06 | Financeiro e Impostos | Finances and Taxes | invoices, receipts, statements, taxes |
-| 07 | Referências | References | templates, guides, material kept to consult |
+| # | Portuguese | English | Color | What goes in it |
+|---|---|---|---|---|
+| 01 | Documentos da Empresa | Business Documents | `#a47ae2` purple | legal, contracts, registrations, company bank documents |
+| 02 | Clientes | Clients | `#4986e7` blue | one folder per client |
+| 03 | Vendas e Marketing | Sales and Marketing | `#ff7537` orange | proposals, price lists, campaigns, posts, ads |
+| 04 | Brand | Brand | `#f691b2` pink | `Logos/` and `Imagens/` (`Images/`) inside; colors and fonts loose |
+| 05 | Processos (SOPs) | Processes (SOPs) | `#16a765` green | how things are done, step by step |
+| 06 | Financeiro e Impostos | Finances and Taxes | `#ffad46` yellow | invoices, receipts, statements, taxes |
+| 07 | Referências | References | `#ac725e` brown | templates, guides, material kept to consult |
 
-Then **08 onward**: one folder per department of hers that the seven do not already cover (e.g. "08. Podcast"). A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
+Then **08 onward**: one folder per department of hers that the seven do not already cover (e.g. "08. Podcast"), all in `#9fe1e7` light blue.
+
+**Colors.** Every folder this skill creates gets its color right after it is created: top-level folders from the table, a subfolder (a client's folder, Logos, Imagens) the color of its parent. The colors are written in `sobre-mim/drive.md` next to each folder, and that file is the source: if she asks for another color ("muda a cor do Clientes para verde"), show the change in `drive.md`, write it on her **sim**, then apply it. The Drive cannot report a folder's current color, so a color she changes by hand in the Drive is put back on the next run; tell her that once, the first time she asks about colors. A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
 
 Nothing else is added. No inbox folder, no archive folder, no "Diversos".
 
@@ -69,15 +71,15 @@ Nothing else is added. No inbox folder, no archive folder, no "Diversos".
 
 On **sim**:
 
-1. Create each folder at the top of her Drive; rename the existing ones she approved. Check each one exists before the next.
+1. Create each folder at the top of her Drive; rename the existing ones she approved. Color each one as soon as it exists (renamed folders too). Check each one exists before the next.
 2. Show `sobre-mim/drive.md` and write it on **sim**:
 
 ```
 # Meu Drive
 
 ## Estrutura
-- 01. Documentos da Empresa — <o que vai aqui>
-- 02. Clientes — uma pasta por cliente
+- 01. Documentos da Empresa — <o que vai aqui> — cor #a47ae2
+- 02. Clientes — uma pasta por cliente — cor #4986e7
 ...
 
 ## Regras
@@ -107,6 +109,8 @@ Wait. Nothing moves without her answer.
 
 ### Step 6 — Sorting: move what she approved
 
+Before moving, put the colors back: apply each folder's color from `sobre-mim/drive.md` to the structure folders (no plan needed, no sim; it changes nothing but the color). A client folder created in this run is colored with its parent's color as soon as it exists.
+
 For each approved line: move the file (never copy-and-delete), then check it is in the new folder. If a move fails, leave the file where it was, note why, and continue with the next. Never retry the same file twice in a run.
 
 ### Step 7 — Corrections become rules
@@ -116,7 +120,7 @@ When she redirected a file ("3 vai para Fornecedores"), ask once at the end, all
 > "Quer que eu guarde isso como regra para as próximas vezes?
 > 1. Arquivos de hotel → 02. Clientes, na pasta do cliente — **sim / não**"
 
-On **sim**, show the line and append it under **Regras** in `sobre-mim/drive.md`. A rule is one line: what the file looks like → where it goes. If she asked for a new folder, add it to **Estrutura** with the next free number.
+On **sim**, show the line and append it under **Regras** in `sobre-mim/drive.md`. A rule is one line: what the file looks like → where it goes. If she asked for a new folder, add it to **Estrutura** with the next free number and the 08+ color.
 
 ### Step 8 — Close and receipt
 
