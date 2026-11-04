@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.9 — 2026-11-04
+- brand-kit-designer (new, "MCM Brand Kit Designer"): short brief from her files, 4 original logo directions as SVG on a preview page, feedback rounds in chat, then the final kit (5 logo versions, 4 colors, 2 Google fonts, brand page) and the PNG pack rendered from the SVGs. Saved on her sim to `entregas/marca/`, `04. Brand` in her Drive and `sobre-mim/marca.md`. Originals only; never overwrites or deletes; no Illustrator or design canvas needed.
+- sistema: routes "faz minha marca" to brand-kit-designer; `sobre-mim/marca.md` in the folder map and writer table.
+
 ## 0.1.8 — 2026-11-04
 - sistema: new rule "You make the moves" — Claude does the work itself, diagnoses and tries every legitimate route when blocked, and asks her for a manual step only when it truly can't be done, saying so with one clear action. Safety rules stay stops.
 - instalar: with no `_semente/` after Step 1, offers to do the connections now and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`); resumes on `continuar a instalação` once the seed is in her folder, skipping completed steps.
