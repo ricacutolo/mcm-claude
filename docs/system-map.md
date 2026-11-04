@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-04
-version: 0.1.9
+version: 0.1.10
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -26,7 +26,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
         ├── organizar-drive ── numbered folders in her Google Drive, then sorts loose files; her sim per plan
-        └── instalar ── first-run wizard; reads _semente/ if present
+        └── instalar ── first-run wizard; reads _semente/ if present, or brings it from her Drive (MCM - Deliverables/Semente) on her sim
 ```
 
 No folder connected → none of this applies. Plain Claude.
@@ -65,7 +65,8 @@ All names are Portuguese; skills refer to them exactly as written here.
     log.md                      one line per skill run (the receipt for every skill)
     drive/                      organizar-drive's saved plans, created on first use
   _revisao/                     anything that would otherwise be deleted
-  _semente/                     optional, delivered by Rica before install; read by instalar
+  _semente/                     optional; Rica delivers it in her Drive (MCM - Deliverables/Semente, plain .md files,
+                                departamento-<slug>.md per department) and instalar copies it here on her sim; a zip still works
 ```
 
 ## Three tiers, one log engine

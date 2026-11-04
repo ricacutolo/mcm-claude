@@ -38,12 +38,25 @@ Every time this skill fires:
 ## Resuming
 
 - `estado.md` missing → first run, Step 0.
-- Steps marked `aguardando semente` and no `_semente/` yet → "Sua instalação está esperando os arquivos que o Rica vai preparar. Assim que eles chegarem na sua pasta, é só dizer **continuar a instalação**." Stop. When `_semente/` exists, resume at the first step that is not `completa`, skipping completed ones (Step 5 included).
+- Steps marked `aguardando semente` and no `_semente/` in her folder → look for the seed in her Drive (**Bringing the seed from the Drive**, below). Not there yet → "Sua instalação está esperando os arquivos que o Rica vai preparar. Assim que ele colocar no seu Drive, é só dizer **continuar a instalação**." Stop. Once `_semente/` exists, resume at the first step that is not `completa`, skipping completed ones (Step 5 included).
 - `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop.
 - Otherwise: "Da última vez paramos na etapa **X — <nome>**. Seguimos na etapa **Y**? (**sim** / **mostrar progresso**)"
 - "refazer etapa X" → confirm it overwrites that step's files, copy each of them to `_revisao/YYYY-MM-DD-<arquivo>` first, then run it.
 
 After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, append the receipt line, and ask "Etapa X pronta. Seguimos para a próxima ou paramos aqui? (**continuar** / **pausar**)".
+
+## Bringing the seed from the Drive
+
+Rica delivers the seed through her Drive, in a folder named `Semente` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `sobre-mim.md`, `negocio.md`, `escrita.md`, `drive.md`, and one `departamento-<slug>.md` per department.
+
+> "Read-only on the Drive. Never edit, move, share or delete anything there."
+
+1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. None, or no Drive connection → the "esperando os arquivos" message above, and stop.
+2. List its files and say: "O Rica mandou seus arquivos pelo Drive (N arquivos). Posso trazer para a sua pasta? (**sim**)"
+3. On **sim**: read each file and write it into `_semente/` in her folder, same name, except `departamento-<slug>.md`, which goes to `_semente/departamentos/<slug>/brief.md`. The Drive reader escapes the text: it puts a backslash before punctuation (`\---`, `\#`, `1\.`, `\[PERGUNTAR\]`) and adds two spaces at the end of every line. Write the file clean: remove every backslash that sits right before a punctuation character, and strip the trailing spaces, so it matches what Rica wrote (`---`, `#`, `1.`, `[PERGUNTAR]`). Check each file landed and starts with `---` when the original had frontmatter.
+4. Say "Pronto, seus arquivos chegaram. Agora eu só vou te mostrar e você confirma." and resume as above.
+
+A local `_semente/` (from a zip) still works exactly as before and wins over the Drive.
 
 ## Step 0 — Começo e pastas (2 min)
 
