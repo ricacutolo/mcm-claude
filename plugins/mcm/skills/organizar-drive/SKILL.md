@@ -1,6 +1,6 @@
 ---
 name: organizar-drive
-description: "Organiza o Google Drive dela: na primeira vez cria a estrutura de pastas numeradas do negócio, depois coloca os arquivos soltos no lugar certo — sempre mostra o plano antes e só move com o sim dela, nunca apaga nada. Quando ela diz \"/organizar-drive\", \"organiza meu Drive\", \"arruma meu Drive\", \"organizar o Drive\", \"onde guardo isso no Drive\"."
+description: "Organiza o Google Drive dela: na primeira vez cria a estrutura de pastas numeradas do negócio, depois coloca os arquivos soltos no lugar certo — sempre mostra o plano antes e só move com o sim dela, nunca apaga nada. Quando ela diz \"/organizar-drive\", \"organiza meu Drive\", \"arruma meu Drive\", \"organizar o Drive\", \"onde guardo isso no Drive\", \"arquiva isso\", \"arquiva o cliente\"."
 ---
 
 # organizar-drive — her Drive, sorted with her approval
@@ -51,7 +51,9 @@ Then **08 onward**: one folder per department of hers that the seven do not alre
 
 **Colors.** Every folder this skill creates gets its color right after it is created: top-level folders from the table, a subfolder (a client's folder, Logos, Imagens) the color of its parent. Every run also colors the folders one level inside each top-level folder with that folder's color, including ones she created herself; deeper levels are left alone. The colors are written in `sobre-mim/drive.md` next to each folder, and that file is the source: if she asks for another color ("muda a cor do Clientes para verde"), show the change in `drive.md`, write it on her **sim**, then apply it. The Drive cannot report a folder's current color, so a color she changes by hand in the Drive is put back on the next run; tell her that once, the first time she asks about colors. A department covered by a base folder (Conteúdo → 03, Financeiro → 06) gets no folder of its own. A project lives inside the folder it belongs to; it never gets a top-level folder.
 
-Nothing else is added. No inbox folder, no archive folder, no "Diversos".
+**Archive, per folder.** Each top-level folder gets its own `_Arquivo` (`_Archive` in English) for what is finished or no longer used: a past client inside `02. Clientes/_Arquivo`, an old SOP inside `05. Processos (SOPs)/_Arquivo`. It is created only the first time something is archived there, never empty in advance, and takes its parent's color. Things go there only when she asks ("arquiva o cliente X", "isso é antigo"), shown as a plan and moved on her **sim**, like any other move.
+
+Nothing else is added. No inbox folder, no "Diversos".
 
 ## Workflow
 
@@ -59,6 +61,7 @@ Nothing else is added. No inbox folder, no archive folder, no "Diversos".
 
 - No Google Drive connection: "Para organizar o Drive, preciso da conexão com o Google Drive. Ela fica em **Personalizar → Conectores**." Stop.
 - `sobre-mim/drive.md` missing → **Setup** (Step 2).
+- She asked to archive something → plan the move into that folder's `_Arquivo` (create it on first use), show it, move on **sim**, receipt. Then stop unless she asked for sorting too.
 - Present → **Sorting** (Step 4).
 
 ### Step 2 — Setup: propose the structure
