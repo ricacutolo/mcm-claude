@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.12 — 2026-11-04
+- instalar: Google Drive comes first. Step 0 checks the Drive connection before anything else and, if it is missing, guides her through connecting it (step by step on request); after two failed checks it goes on without it and tells her to let Rica know. With the Drive connected, Step 0 brings the seed from `MCM - Deliverables/Semente` right after creating the folders, so Step 1 already uses it. Step 5 skips reconnecting the Drive. If `MCM - Deliverables` is missing, it asks once whether she used the account Rica shares with.
+
 ## 0.1.11 — 2026-11-04
 - instalar: a seed's `escrita.md` without real writing of hers no longer skips the samples. Step 4 asks for three to five of her texts first and fills the voice from them, as it does with no seed.
 

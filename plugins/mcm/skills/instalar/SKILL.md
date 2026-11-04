@@ -51,7 +51,7 @@ Rica delivers the seed through her Drive, in a folder named `Semente` inside the
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
-1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. None, or no Drive connection → the "esperando os arquivos" message above, and stop.
+1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. From Step 0: none found → go on, say nothing. When resuming: none, or no Drive connection → the "esperando os arquivos" message above, and stop. If the Drive is connected but `MCM - Deliverables` is not there at all, ask once whether she connected the Drive with the account Rica shares with (her work email).
 2. List its files and say: "O Rica mandou seus arquivos pelo Drive (N arquivos). Posso trazer para a sua pasta? (**sim**)"
 3. On **sim**: read each file and write it into `_semente/` in her folder, same name, except `departamento-<slug>.md`, which goes to `_semente/departamentos/<slug>/brief.md`. The Drive reader escapes the text: it puts a backslash before punctuation (`\---`, `\#`, `1\.`, `\[PERGUNTAR\]`) and adds two spaces at the end of every line. Write the file clean: remove every backslash that sits right before a punctuation character, and strip the trailing spaces, so it matches what Rica wrote (`---`, `#`, `1.`, `[PERGUNTAR]`). Check each file landed and starts with `---` when the original had frontmatter.
 4. Say "Pronto, seus arquivos chegaram. Agora eu só vou te mostrar e você confirma." and resume as above.
@@ -60,11 +60,18 @@ A local `_semente/` (from a zip) still works exactly as before and wins over the
 
 ## Step 0 — Começo e pastas (2 min)
 
-1. Confirm a folder is connected. If not: "Para começar, adicione uma pasta a esta conversa: no app do Claude no Mac, em uma conversa nova, clique em adicionar pasta e escolha a pasta que você criou para o sistema. Depois diga **começar a instalação** de novo." Stop.
-2. Show the folder path and ask if it is the right one. If the path is inside `Documents`/`Documentos` or `Desktop`/`Mesa`, say once: "Essa pasta pode estar no iCloud, e o iCloud às vezes tira arquivos do computador ou cria cópias duplicadas. O mais seguro é criar a pasta na sua pasta pessoal (no Finder: Shift + Command + H). Quer mudar antes de seguir?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
-3. Say what will be created, in one short list: `sobre-mim/`, `departamentos/`, `projetos/`, `contexto/`, `entregas/`, `referencia/`, `_sistema/`, `_revisao/`. One line each, plain words.
-4. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
-5. If `_semente/` exists: "O Rica já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 
+1. **Google Drive first.** It is how Rica sends her files, so it comes before anything else. Check the Google Drive connection by listing a few of her Drive files (titles only).
+   - Connected → "Seu Google Drive está conectado." Go on.
+   - Not connected → "Primeiro vamos conectar o seu Google Drive: é por ele que o Rica te manda seus arquivos. Fica em **Personalizar → Conectores → Google Drive**; entre com a conta do seu trabalho. Quer que eu te guie passo a passo? (**sim** / **já conectei**)"
+   - **sim** → guide one action at a time, waiting after each: abrir **Personalizar**, abrir **Conectores**, achar **Google Drive**, clicar em **Conectar**, escolher a conta do trabalho, permitir. If her screen shows something different, ask what she sees and guide from that. Then check again.
+   - **já conectei** → check again.
+   - Still not connected after two checks → "Tudo bem, seguimos sem o Drive por enquanto. Avise o Rica que o Drive não conectou." Write `drive: pendente` in `estado.md` once it exists, and go on. The rest of the install works without it.
+2. Confirm a folder is connected. If not: "Para começar, adicione uma pasta a esta conversa: no app do Claude no Mac, em uma conversa nova, clique em adicionar pasta e escolha a pasta que você criou para o sistema. Depois diga **começar a instalação** de novo." Stop.
+3. Show the folder path and ask if it is the right one. If the path is inside `Documents`/`Documentos` or `Desktop`/`Mesa`, say once: "Essa pasta pode estar no iCloud, e o iCloud às vezes tira arquivos do computador ou cria cópias duplicadas. O mais seguro é criar a pasta na sua pasta pessoal (no Finder: Shift + Command + H). Quer mudar antes de seguir?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
+4. Say what will be created, in one short list: `sobre-mim/`, `departamentos/`, `projetos/`, `contexto/`, `entregas/`, `referencia/`, `_sistema/`, `_revisao/`. One line each, plain words.
+5. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
+6. **The seed, before Step 1.** If the Drive is connected and there is no `_semente/` in her folder, look for it now (**Bringing the seed from the Drive**, below). Found → bring it in, so every step from Step 1 on uses it. Not found → go on without a word; the install asks about it after Step 1.
+7. If `_semente/` exists: "O Rica já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 
 
 ## Step 1 — Instruções para o Claude (10 min)
 
@@ -107,7 +114,7 @@ Three connections, one at a time:
 
 1. **Gmail** — first ask which inbox she uses for work (the seed may list more than one, e.g. a personal Gmail and a business address). Then: "Em **Personalizar → Conectores**, adicione o Gmail e entre com essa conta." Then the safe setting: reading can be automatic; writing a draft asks first; **sending stays blocked**. Test: list the 5 most recent emails (read-only).
 2. **Google Agenda** — same path. Reading automatic; creating or changing events asks first. Test: list today's and tomorrow's events.
-3. **Google Drive** — same path. Reading automatic; creating files asks first. Test: list 5 recent files.
+3. **Google Drive** — already connected in Step 0: just confirm the safe setting and run the test. Otherwise same path. Reading automatic; creating files asks first. Test: list 5 recent files.
 
 If a connector's permission screen looks different from what you describe, ask her what she sees and guide from that. Never guess a menu that isn't there.
 
