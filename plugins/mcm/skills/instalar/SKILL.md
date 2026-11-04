@@ -53,7 +53,7 @@ Rica delivers the seed through her Drive, in a folder named `Semente` inside the
 
 1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. None, or no Drive connection → the "esperando os arquivos" message above, and stop.
 2. List its files and say: "O Rica mandou seus arquivos pelo Drive (N arquivos). Posso trazer para a sua pasta? (**sim**)"
-3. On **sim**: read each file and write it into `_semente/` in her folder, same name, except `departamento-<slug>.md`, which goes to `_semente/departamentos/<slug>/brief.md`. The Drive reader may show `\#` for `#` and `1\.` for `1.`; write them back as `#` and `1.`. Check each file landed.
+3. On **sim**: read each file and write it into `_semente/` in her folder, same name, except `departamento-<slug>.md`, which goes to `_semente/departamentos/<slug>/brief.md`. The Drive reader escapes the text: it puts a backslash before punctuation (`\---`, `\#`, `1\.`, `\[PERGUNTAR\]`) and adds two spaces at the end of every line. Write the file clean: remove every backslash that sits right before a punctuation character, and strip the trailing spaces, so it matches what Rica wrote (`---`, `#`, `1.`, `[PERGUNTAR]`). Check each file landed and starts with `---` when the original had frontmatter.
 4. Say "Pronto, seus arquivos chegaram. Agora eu só vou te mostrar e você confirma." and resume as above.
 
 A local `_semente/` (from a zip) still works exactly as before and wins over the Drive.
