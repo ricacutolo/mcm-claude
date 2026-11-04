@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.11 — 2026-11-04
+- instalar: a seed's `escrita.md` without real writing of hers no longer skips the samples. Step 4 asks for three to five of her texts first and fills the voice from them, as it does with no seed.
+
 ## 0.1.10 — 2026-11-04
 - instalar: brings the seed from her Drive. Rica puts plain .md files in `Semente` inside `MCM - Deliverables` (or `Deliverables`); when the install is waiting for the seed and none is in her folder, it finds that folder, asks, and copies the files into `_semente/` on her sim (read-only on the Drive). A local `_semente/` still works and wins.
 
