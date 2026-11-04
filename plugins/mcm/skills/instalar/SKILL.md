@@ -90,7 +90,7 @@ If `_semente/` does not exist when Step 1 ends, ask once:
 
 > "O Rica vai preparar o resto (quem você é, seu negócio, sua escrita) a partir da conversa de vocês? Se sim, eu já faço as conexões agora e paramos por aqui. (**sim** / **não, vamos responder agora**)"
 
-- **sim** → run Step 5 now. Then mark Steps 2, 3 and 4 `aguardando semente` in `estado.md`, set `etapa_atual: 2`, and close: "Pronto por hoje. Quando o Rica mandar seus arquivos, coloque na sua pasta e diga **continuar a instalação**."
+- **sim** → run Step 5 now. Then mark Steps 2, 3 and 4 `aguardando semente` in `estado.md`, set `etapa_atual: 2`, and close: "Pronto por hoje. Quando o Rica colocar seus arquivos no seu Drive, é só dizer **continuar a instalação**."
 - **não** → continue to Step 2 in no-seed mode.
 
 ## Step 2 — Quem você é (5-10 min)
