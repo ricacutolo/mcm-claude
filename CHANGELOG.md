@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.10 — 2026-11-04
+- instalar: brings the seed from her Drive. Rica puts plain .md files in `Semente` inside `MCM - Deliverables` (or `Deliverables`); when the install is waiting for the seed and none is in her folder, it finds that folder, asks, and copies the files into `_semente/` on her sim (read-only on the Drive). A local `_semente/` still works and wins.
+
 ## 0.1.9 — 2026-11-04
 - brand-kit-designer (new, "MCM Brand Kit Designer"): short brief from her files, 4 original logo directions as SVG on a preview page, feedback rounds in chat, then the final kit (5 logo versions, 4 colors, 2 Google fonts, brand page) and the PNG pack rendered from the SVGs. Saved on her sim to `entregas/marca/`, `04. Brand` in her Drive and `sobre-mim/marca.md`. Originals only; never overwrites or deletes; no Illustrator or design canvas needed.
 - sistema: routes "faz minha marca" to brand-kit-designer; `sobre-mim/marca.md` in the folder map and writer table.
