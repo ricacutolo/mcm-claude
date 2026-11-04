@@ -1,6 +1,6 @@
 ---
-last-verified: 2026-10-23
-version: 0.1.6
+last-verified: 2026-11-04
+version: 0.1.7
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -24,6 +24,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments)
         ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
+        ├── organizar-drive ── numbered folders in her Google Drive, then sorts loose files; her sim per plan
         └── instalar ── first-run wizard; reads _semente/ if present
 ```
 
@@ -40,6 +41,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     sobre-mim.md                who she is            (Nuno: about-me.md)
     negocio.md                  the business          (Nuno: business-brain.md)
     escrita.md                  voice and writing     (Nuno: writing-rules.md)
+    drive.md                    her Drive structure and sorting rules (written by organizar-drive)
   departamentos/
     index.md                    one line per department
     <slug>/brief.md             ongoing, never closes
@@ -59,6 +61,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     pendentes.md                hard-tier decisions waiting for her yes
     saude.md                    health summary (numbers only, never content)
     log.md                      one line per skill run (the receipt for every skill)
+    drive/                      organizar-drive's saved plans, created on first use
   _revisao/                     anything that would otherwise be deleted
   _semente/                     optional, delivered by Rica before install; read by instalar
 ```
@@ -110,6 +113,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | post-instagram | Nuno draft-instagram, no Blotato | `departamentos/conteudo/entregas/instagram/` | `_sistema/log.md` |
 | post-linkedin | Nuno draft-linkedin, no Blotato | `departamentos/conteudo/entregas/linkedin/` | `_sistema/log.md` |
 | atualizar | new | `sobre-mim/*`, brief sections, `pendentes.md`, `estado.md` → `notas_rica_lidas`; histórico via contexto; reads the Drive doc "MCM - Notas do Rica" (read-only) | `_sistema/log.md` |
+| organizar-drive | new (pattern: Nuno tidy-downloads) | folders and moves in her Google Drive (top level only, her sim per plan, never deletes); `sobre-mim/drive.md`; `_sistema/drive/` plans. Base: 01 Documentos da Empresa · 02 Clientes · 03 Vendas e Marketing · 04 Brand · 05 Processos (SOPs) · 06 Financeiro e Impostos · 07 Referências · 08+ uncovered departments | `_sistema/log.md` |
 
 ## Conventions (from Rica's skill-conventions.md, adapted)
 
