@@ -98,7 +98,7 @@ If `_semente/` does not exist when Step 1 ends, ask once:
 
 ## Step 4 — Sua escrita (5-15 min)
 
-- Seed `_semente/escrita.md`: show the voice summary and one example, confirm, write `sobre-mim/escrita.md`.
+- Seed `_semente/escrita.md`: if its examples have no real text of hers (empty, or only `[PERGUNTAR]`), first ask for three to five things she wrote that sound like her (posts, a message, a text she likes), analyse them, and fill the examples and the `[PERGUNTAR]` voice lines from them. Then show the voice summary and one example, confirm, write `sobre-mim/escrita.md`.
 - No seed: ask for three to five things she wrote that sound like her (posts, a message, a text she likes), then up to five questions (tom, palavras que usa, palavras que nunca usa, emoji e hashtags, diferença entre Instagram e LinkedIn). Analyse the samples, fill `modelos/escrita.md`, show, confirm, write.
 
 ## Step 5 — Conexões (10-15 min)
