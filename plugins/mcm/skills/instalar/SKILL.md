@@ -38,6 +38,7 @@ Every time this skill fires:
 ## Resuming
 
 - `estado.md` missing → first run, Step 0.
+- Steps marked `aguardando semente` and no `_semente/` yet → "Sua instalação está esperando os arquivos que o Rica vai preparar. Assim que eles chegarem na sua pasta, é só dizer **continuar a instalação**." Stop. When `_semente/` exists, resume at the first step that is not `completa`, skipping completed ones (Step 5 included).
 - `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop.
 - Otherwise: "Da última vez paramos na etapa **X — <nome>**. Seguimos na etapa **Y**? (**sim** / **mostrar progresso**)"
 - "refazer etapa X" → confirm it overwrites that step's files, copy each of them to `_revisao/YYYY-MM-DD-<arquivo>` first, then run it.
@@ -62,6 +63,15 @@ The text that goes in her Settings. It carries her working preferences **and** t
 4. First: "Você já tem algum texto em **Configurações → Geral → Instruções para o Claude**? Se tiver, copie e cole aqui pra eu guardar antes." If she pastes one, save it to `_revisao/YYYY-MM-DD-instrucoes-antigas.md` and offer to fold anything still useful into the new text. Then: "Agora cole o texto novo nesse mesmo lugar, no lugar do antigo, e salve. Me avise quando terminar." If the menu has a different name on her screen, ask what she sees and guide from that.
 5. Write the same text to `claude.md` in her folder as a backup.
 6. Test: "Abra uma conversa nova, adicione a mesma pasta e pergunte: **como eu gosto de trabalhar?** Ele deve responder com o que está nas suas instruções. Depois volte para esta conversa e diga **continuar**." If the answer is generic, have her check the text saved. (The test conversation may mention the unfinished install; that is expected.)
+
+## Between Step 1 and Step 2 — no seed yet
+
+If `_semente/` does not exist when Step 1 ends, ask once:
+
+> "O Rica vai preparar o resto (quem você é, seu negócio, sua escrita) a partir da conversa de vocês? Se sim, eu já faço as conexões agora e paramos por aqui. (**sim** / **não, vamos responder agora**)"
+
+- **sim** → run Step 5 now. Then mark Steps 2, 3 and 4 `aguardando semente` in `estado.md`, set `etapa_atual: 2`, and close: "Pronto por hoje. Quando o Rica mandar seus arquivos, coloque na sua pasta e diga **continuar a instalação**."
+- **não** → continue to Step 2 in no-seed mode.
 
 ## Step 2 — Quem você é (5-10 min)
 

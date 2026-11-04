@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-04
-version: 0.1.7
+version: 0.1.8
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -100,8 +100,8 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 
 | Skill | Source | Writes | Receipt |
 |---|---|---|---|
-| sistema | new | `_sistema/estado.md` (after install), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
-| instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments | `_sistema/log.md` per phase |
+| sistema | new (includes "You make the moves": do it yourself, diagnose before asking, manual steps named as manual with one action) | `_sistema/estado.md` (after install), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
+| instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`) | `_sistema/log.md` per phase |
 | contexto | Rica's context-hot | `contexto/*.md` | `_sistema/log.md` on load/create/condense |
 | novo-departamento | Rica's new-department | `departamentos/<slug>/brief.md`, `departamentos/index.md` | `_sistema/log.md` |
 | abrir-departamento | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
