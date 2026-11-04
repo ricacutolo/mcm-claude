@@ -32,7 +32,7 @@ If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is
 
 ```
 claude.md                     backup of her Instructions for Claude
-sobre-mim/                    sobre-mim.md · negocio.md · escrita.md · drive.md (once her Drive is organized)
+sobre-mim/                    sobre-mim.md · negocio.md · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments)
@@ -51,6 +51,7 @@ _revisao/                     anything that would otherwise be deleted
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
+| `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
@@ -67,6 +68,7 @@ She talks to one Claude. That Claude routes:
 - "Como está meu dia" → **/morning-brief**.
 - "Atualizar", "tem novidade do Rica" → **/atualizar**.
 - "Organiza meu Drive", "onde guardo isso no Drive" → **/organizar-drive**.
+- "Faz minha marca", "cria meu logo" → **/brand-kit-designer**.
 
 Never make her name a skill. Plain words are enough.
 
