@@ -1,6 +1,6 @@
 ---
 name: contexto
-description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos e assuntos soltos. Quando ela diz \"/contexto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"guarda isso\", \"anota isso\"."
+description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos, clientes e assuntos soltos. Também guarda uma conversa inteira no assunto certo. Quando ela diz \"/contexto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"guarda isso\", \"anota isso\", \"essa conversa é sobre\", \"guarda essa conversa no\", \"tudo isso aqui é do cliente\"."
 ---
 
 # contexto — the running log of every topic
@@ -9,7 +9,7 @@ One small file per thread of work in `contexto/`. Any conversation — new, old,
 
 This is **soft context**: what was talked about, why, what is parked, who is waiting on whom. It is not the record of decisions (those live in the brief of the department or project, through the write-back in /sistema) and not reference material.
 
-**This skill is the only writer of `contexto/`.** /abrir-departamento and /abrir-projeto call it with the slug their brief points to; they never write here themselves.
+**This skill is the only writer of `contexto/`.** /abrir-departamento, /abrir-projeto and /abrir-cliente call it with the slug their brief points to; they never write here themselves.
 
 Speak Brazilian Portuguese to her. Say "o histórico do assunto", never "context file".
 
@@ -17,7 +17,7 @@ Speak Brazilian Portuguese to her. Say "o histórico do assunto", never "context
 
 Loaded only when this skill fires:
 
-1. **Called with a slug** (by abrir-departamento, abrir-projeto, novo-departamento, novo-projeto or instalar): only `contexto/<slug>.md`. Nothing else.
+1. **Called with a slug** (by abrir-departamento, abrir-projeto, abrir-cliente, novo-departamento, novo-projeto, novo-cliente, guardar-no-cliente or instalar): only `contexto/<slug>.md`. Nothing else.
 2. **Called with words or nothing:** the first 8 lines (the header) of each file in `contexto/`, to match. Skip files starting with `_`. Then the matched file, in full.
 
 ## The rules
@@ -42,8 +42,8 @@ Loaded only when this skill fires:
 ---
 assunto: Conteúdo
 descricao: <uma linha>
-tier: tema | projeto | departamento
-brief: departamentos/conteudo/brief.md   # or "nenhum" for a loose topic
+tier: tema | projeto | departamento | cliente
+brief: departamentos/conteudo/brief.md   # a client points to its ficha.md; "nenhum" for a loose topic
 apelidos: [conteúdo, posts, instagram]
 status: ativo | encerrado
 atualizado: YYYY-MM-DD
@@ -77,7 +77,7 @@ Read the file. Reply with **one line**: where it stands, who waits on what, what
 
 Write the frontmatter (`tier` and `brief` set from what is known) and a short "Até aqui" seeded from this conversation. Show the seed in a few lines.
 
-**Exception:** when novo-departamento, novo-projeto or instalar hands over a creation right after her **sim** to the new brief, or with a first line to write, that **sim** covers this file too — create it without asking again.
+**Exception:** when novo-departamento, novo-projeto, novo-cliente or instalar hands over a creation right after her **sim** to the new brief, or with a first line to write, that **sim** covers this file too — create it without asking again.
 
 ### Step 4 — Keep it during the conversation
 
@@ -91,6 +91,17 @@ Once loaded, this skill stays active for the rest of the conversation.
   - about her or the business in general → a pending item for `sobre-mim/` via /sistema, and say it will be confirmed with the others
   - unclear → this file, and say so
 - **After compaction**, re-read the file before continuing.
+
+### Step 4b — Capture a whole conversation
+
+When a conversation started without any topic loaded and she says it belongs somewhere ("essa conversa é sobre a família X", "guarda essa conversa no projeto Y", "tudo isso aqui é do cliente Z"), or a /novo- skill is created mid-conversation and hands over its seed:
+
+1. Match the topic (Step 1). No file yet → create on her **sim** (Step 3), or under the /novo- skill's sim.
+2. Read the whole conversation so far and write what's worth keeping as dated lines under today's header: facts she stated, what was decided, what was done (a ticket booked, a quote sent, a file saved), what is open and who waits on whom. Not a transcript; a summary a later conversation can work from.
+3. Route the rest by the write-back rules: facts about a client → a line for their sheet; a decision in a department or project → a pending item for its brief; facts about her or the business → a pending item for `sobre-mim/`.
+4. Show what goes where in a short list before writing; write on her **sim**.
+
+Say plainly what can't be captured: only what is still in this conversation (a long chat that was compacted keeps a summary, not every detail), never other conversations, never files she didn't attach.
 
 ### Step 5 — Housekeeping (only on sim)
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 — 2026-11-05
+- **MCM Client Book**: new skills /novo-cliente, /abrir-cliente, /guardar-no-cliente. Each of her clients gets a sheet (`departamentos/clientes/<slug>/ficha.md`), a histórico (`tier: cliente`) and a folder in her Drive (`02. Clientes/<Nome>`), under a Clientes department that holds how she serves any client. Split: GoHighLevel = contact data, payments, campaigns · Drive = files · Claude = knowledge. Document numbers are never copied.
+- contexto: capture mode ("essa conversa é sobre X") summarizes a whole conversation into the right log and routes facts; /novo-projeto, /novo-departamento and /novo-cliente created mid-conversation seed from it.
+- sistema: folder map, writers, routing and write-back rows for clients.
+
 ## 0.1.12 — 2026-11-04
 - instalar: Google Drive comes first. Step 0 checks the Drive connection before anything else and, if it is missing, guides her through connecting it (step by step on request); after two failed checks it goes on without it and tells her to let Rica know. With the Drive connected, Step 0 brings the seed from `MCM - Deliverables/Semente` right after creating the folders, so Step 1 already uses it. Step 5 skips reconnecting the Drive. If `MCM - Deliverables` is missing, it asks once whether she used the account Rica shares with.
 - instalar: the pause message after Step 1 says the seed comes through her Drive, not into her folder.

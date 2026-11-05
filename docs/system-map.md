@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-04
-version: 0.1.12
+version: 0.2.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -20,8 +20,9 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         │      write-back, index rule, 7-day upkeep, health file
         │
         ├── abrir-departamento / abrir-projeto ── load a brief + its log (via contexto)
+        ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente ── one sheet, histórico and Drive folder per client of hers
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
-        ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments)
+        ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
@@ -50,6 +51,9 @@ All names are Portuguese; skills refer to them exactly as written here.
     <slug>/pesquisa/            created on first use, with index.md
     <slug>/entregas/<tipo>/     created on first use, one folder per type, each with index.md
     <slug>/entregas/planos/     plan files (3+ steps), kept current in place — rule in sistema
+    clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
+      index.md                  one line per client
+      <slug>/ficha.md           one sheet per client: who, preferences, what's open, files (knowledge only)
   projetos/
     index.md                    one line per project
     <slug>/brief.md             has a done state
@@ -76,8 +80,9 @@ All names are Portuguese; skills refer to them exactly as written here.
 | Loose topic | — | `contexto/<slug>.md` | contexto (APPROVE) | contexto |
 | Project | `projetos/<slug>/brief.md` | `contexto/<slug>.md` | novo-projeto | abrir-projeto |
 | Department | `departamentos/<slug>/brief.md` | `contexto/<slug>.md` | novo-departamento | abrir-departamento |
+| Client (hers) | `departamentos/clientes/<slug>/ficha.md` | `contexto/<slug>.md` | novo-cliente | abrir-cliente |
 
-Each log's frontmatter carries `tier: tema | projeto | departamento`. A topic that changes
+Each log's frontmatter carries `tier: tema | projeto | departamento | cliente`. A topic that changes
 tier changes that one word; nothing moves. A closed project's log gets `status: encerrado`.
 
 ## Write-back — how the system keeps its files current
@@ -105,7 +110,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 |---|---|---|---|
 | sistema | new (includes "You make the moves": do it yourself, diagnose before asking, manual steps named as manual with one action) | `_sistema/estado.md` (after install), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
 | instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`) | `_sistema/log.md` per phase |
-| contexto | Rica's context-hot | `contexto/*.md` | `_sistema/log.md` on load/create/condense |
+| contexto | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
 | novo-departamento | Rica's new-department | `departamentos/<slug>/brief.md`, `departamentos/index.md` | `_sistema/log.md` |
 | abrir-departamento | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
 | novo-projeto | new (markdown, no database) | `projetos/<slug>/brief.md`, `projetos/index.md` | `_sistema/log.md` |
@@ -118,6 +123,11 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | atualizar | new | `sobre-mim/*`, brief sections, `pendentes.md`, `estado.md` → `notas_rica_lidas`; histórico via contexto; reads the Drive doc "MCM - Notas do Rica" (read-only) | `_sistema/log.md` |
 | organizar-drive | new (pattern: Nuno tidy-downloads) | folders and moves in her Google Drive (top level only, her sim per plan, never deletes); `sobre-mim/drive.md`; `_sistema/drive/` plans. Base: 01 Documentos da Empresa · 02 Clientes · 03 Vendas e Marketing · 04 Brand · 05 Processos (SOPs) · 06 Financeiro e Impostos · 07 Referências · 08+ uncovered departments | `_sistema/log.md` |
 | brand-kit-designer | new ("MCM Brand Kit Designer") | `entregas/marca/` (round pages, logos, brand page, PNG pack), `04. Brand` in her Drive (Logos/ + brand page, versioned names), `sobre-mim/marca.md`; all on her sim. Logos drawn as original SVG by Claude, PNGs rendered by her Claude; no Illustrator, no Design canvas | `_sistema/log.md` |
+| novo-cliente | new (MCM Client Book; reference: Rica's /new-client + client-brain) | `departamentos/clientes/<slug>/ficha.md`, `departamentos/clientes/index.md`, the client's Drive folder in `02. Clientes/`; first client ever: offers the Clientes department via the novo-departamento flow; seeds from the conversation when created mid-chat | `_sistema/log.md` |
+| abrir-cliente | new (MCM Client Book; mirror of abrir-projeto) | nothing but the receipt | `_sistema/log.md` |
+| guardar-no-cliente | new (MCM Client Book) | the file into the client's Drive folder (local Drive folder copy → Drive connection → her one manual save), a line in the sheet's Arquivos or the right section; never a document number | `_sistema/log.md` (records which path worked and the size) |
+
+**The split for every client of hers (MCM Client Book):** GoHighLevel = contact data, payments, campaigns · Google Drive = the files · Claude = the knowledge.
 
 ## Conventions (from Rica's skill-conventions.md, adapted)
 
