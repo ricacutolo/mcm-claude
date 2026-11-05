@@ -4,6 +4,8 @@
 - instalar: Step 5 always records the folder she shares with Rica (`pasta_drive`), whatever she answers on the health copy, and checks Rica's notes doc **MCM - Notas do Rica** is in it (tells her to let Rica know if not). The health copy is now its own item.
 - atualizar: with no `pasta_drive`, finds the folder through the notes doc in her Drive and confirms it with her, instead of stopping.
 - novo-cliente: before creating the Clientes department, looks for one she already made under another name and offers to use it (renames the folder to `clientes`, keeps the histórico); clients already written in it become one sheet each, one at a time on her sim.
+- novo-cliente and abrir-cliente: a client saved outside the sheets (e.g. `departamentos/clientes/familias/<nome>.md`) is found and turned into a sheet on her sim, using that file as the source; the old file goes to `_revisao/` on her sim.
+- sistema: keeps `versao_plugin` in `estado.md` in step with the installed plugin (it stayed at 0.1.0 after updates).
 
 ## 0.2.0 — 2026-11-05
 - **MCM Client Book**: new skills /novo-cliente, /abrir-cliente, /guardar-no-cliente. Each of her clients gets a sheet (`departamentos/clientes/<slug>/ficha.md`), a histórico (`tier: cliente`) and a folder in her Drive (`02. Clientes/<Nome>`), under a Clientes department that holds how she serves any client. Split: GoHighLevel = contact data, payments, campaigns · Drive = files · Claude = knowledge. Document numbers are never copied.

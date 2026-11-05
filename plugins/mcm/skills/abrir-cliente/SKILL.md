@@ -35,7 +35,7 @@ Loaded only when this skill fires:
 
 - No name: list the active lines of the index. She picks.
 - Name given: match loosely on the client's name, the people in it, the slug.
-  - One match → Step 2. Several → short numbered list. None → "Não tenho ficha de X. Quer cadastrar?" (offer /novo-cliente) and stop.
+  - One match → Step 2. Several → short numbered list. None → look in `departamentos/clientes/` for a file about X outside the sheets (e.g. a subfolder like `familias/`). Found → "Achei a **X** guardada em <arquivo>, fora do lugar das fichas. Quer que eu transforme em ficha?" (offer /novo-cliente, which uses that file as its source) and stop. Nothing → "Não tenho ficha de X. Quer cadastrar?" (offer /novo-cliente) and stop.
 - A client with `status: arquivado`: open it read-only and say so.
 
 ### Step 2 — Load
