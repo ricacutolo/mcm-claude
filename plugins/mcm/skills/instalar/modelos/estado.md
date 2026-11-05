@@ -6,6 +6,7 @@ iniciada: ~~data
 ultima_manutencao: ~~data
 espelho_drive: ~~sim_ou_nao
 pasta_drive: ~~nome_da_pasta_no_drive
+reunioes: ~~meet_zoom_ou_outro
 ---
 
 # Estado do sistema

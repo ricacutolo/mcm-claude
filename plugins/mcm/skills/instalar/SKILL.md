@@ -120,6 +120,7 @@ If a connector's permission screen looks different from what you describe, ask h
 
 4. **A pasta que você divide com o Rica.** Always, whatever she answers next: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which Drive folder she shares with Rica. Record `pasta_drive`. With the Drive connected, look in it for the Google Doc **MCM - Notas do Rica** (read-only): found → say nothing; missing → "O Rica ainda vai criar o documento de notas dele nessa pasta. Avise ele." and go on. Drive not connected → record the folder from the seed and skip the check.
 5. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Rica). Record `espelho_drive`. The copy goes to `pasta_drive`.
+6. **Reuniões.** "Onde você faz reuniões com clientes? (**Google Meet** / **Zoom** / **outro**)" Record `reunioes: meet | zoom | outro`. Meet with the Drive connected: look for a transcript in her **Google Meet** (or **Meet Recordings**) folder. Found → "Achei suas transcrições do Meet. Depois de uma reunião, é só dizer **guarda a reunião com…**". None → "Para eu ler suas reuniões, ligue **Transcrever a reunião** ao criar a reunião no Google Agenda." Zoom or outro → "Por enquanto eu leio o que você colar aqui; o Zoom vem depois."
 
 ## Step 6 — Departamentos (10-15 min)
 
@@ -135,7 +136,7 @@ Three short live demos, nothing more. For each: say what she can say, what it do
 2. "me dá ideias de post" → /ideias-de-post (keep it to the ideas; no draft yet).
 3. "como está meu dia" → /morning-brief.
 
-Then list the rest in one short block, as things she can say: "escreve na minha voz…", "faz um post pro Instagram sobre…", "post pro LinkedIn sobre…", "novo projeto", "guarda no histórico".
+Then list the rest in one short block, as things she can say: "escreve na minha voz…", "faz um post pro Instagram sobre…", "post pro LinkedIn sobre…", "novo projeto", "guarda no histórico", "guarda a reunião com…".
 
 ## Step 8 — Primeiro teste de verdade (10 min)
 

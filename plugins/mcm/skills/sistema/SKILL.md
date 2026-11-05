@@ -54,7 +54,7 @@ _revisao/                     anything that would otherwise be deleted
 | a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
-| a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente and this skill's write-back |
+| a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente, /resumo-da-reuniao and this skill's write-back |
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
 | `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
@@ -67,7 +67,7 @@ She talks to one Claude. That Claude routes:
 
 - She names a department ("vamos trabalhar no conteúdo", "abre mentorias") → **/abrir-departamento**.
 - She names a project → **/abrir-projeto**.
-- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. "Essa conversa é sobre…" → **/contexto** (capture).
+- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/contexto** (capture).
 - She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**, or **/post-instagram**, **/post-linkedin**, **/ideias-de-post** when it is content.
