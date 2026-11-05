@@ -118,7 +118,8 @@ Three connections, one at a time:
 
 If a connector's permission screen looks different from what you describe, ask her what she sees and guide from that. Never guess a menu that isn't there.
 
-4. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Rica). Record `espelho_drive`. If **sim**: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which shared folder. Record `pasta_drive`.
+4. **A pasta que você divide com o Rica.** Always, whatever she answers next: use the folder in `_semente/drive.md` when present (record its ID) and confirm it with her by name; otherwise ask which Drive folder she shares with Rica. Record `pasta_drive`. With the Drive connected, look in it for the Google Doc **MCM - Notas do Rica** (read-only): found → say nothing; missing → "O Rica ainda vai criar o documento de notas dele nessa pasta. Avise ele." and go on. Drive not connected → record the folder from the seed and skip the check.
+5. **Health copy.** Ask the Drive question exactly as the sistema skill words it (numbers only, a copy for Rica). Record `espelho_drive`. The copy goes to `pasta_drive`.
 
 ## Step 6 — Departamentos (10-15 min)
 

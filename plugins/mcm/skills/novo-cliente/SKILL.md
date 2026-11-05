@@ -37,7 +37,11 @@ Loaded only when this skill fires:
 
 ### Step 0 — The Clientes department (first client only)
 
-No `departamentos/clientes/brief.md`: "Antes do primeiro cliente, vou criar o departamento **Clientes** — é onde fica o seu jeito de atender qualquer cliente (o que você pergunta sempre, seus passos). Pode ser?" On **sim**, run the /novo-departamento flow for `clientes`, then come back here.
+No `departamentos/clientes/brief.md`:
+
+1. **One she already made.** Read `departamentos/index.md`. A department whose name or purpose is about her clients (cliente, clientes, contatos, CRM, carteira) → "Você já tem o departamento **<Nome>**. Posso usar ele como o seu departamento de Clientes? Eu mudo o nome da pasta para `clientes`, para o sistema sempre achar. (**sim** / **não, é outra coisa**)" On **sim**: move `departamentos/<slug>/` to `departamentos/clientes/` (move, never delete), fix its line in `departamentos/index.md`, and ask /contexto to update its histórico's `brief:` to `departamentos/clientes/brief.md` (the histórico keeps its name). Several candidates → short numbered list; she picks or says none.
+2. **Clients already written inside it.** If that brief or its histórico lists clients with details (names plus who they are, trips, preferences): "Vi N clientes guardados no departamento: <nomes>. Quer que eu crie uma ficha para cada um? Um de cada vez, você confirma cada ficha." On **sim**, for each one run Steps 1-4 with what is written about them as the source (like mid-conversation). Never remove the original text on your own; when all are done, offer: "Posso mover a lista antiga para `_revisao/`? As fichas já têm tudo." Move on **sim**.
+3. **None.** "Antes do primeiro cliente, vou criar o departamento **Clientes** — é onde fica o seu jeito de atender qualquer cliente (o que você pergunta sempre, seus passos). Pode ser?" On **sim**, run the /novo-departamento flow for `clientes`, then come back here.
 
 ### Step 1 — Match the name
 

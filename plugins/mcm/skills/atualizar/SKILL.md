@@ -49,7 +49,8 @@ The Drive reader may show `#` as `\#` and `1.` as `1\.`; treat them the same. Te
 
 ### Step 1 — Find what is new
 
-- No `pasta_drive` in `estado.md`, or the Drive connector is not connected: "Não consigo abrir a pasta do Drive que você divide com o Rica. A conexão do Google Drive está ligada?" Stop.
+- The Drive connector is not connected: "Não consigo abrir a pasta do Drive que você divide com o Rica. A conexão do Google Drive está ligada?" Stop.
+- No `pasta_drive` in `estado.md`: search her Drive for a Google Doc titled **MCM - Notas do Rica**. Exactly one → "Achei as notas do Rica na pasta **<pasta>**. É essa a pasta que vocês dividem? (**sim**)"; on **sim** record its folder as `pasta_drive` and go on. None or several → "Não sei qual é a pasta do Drive que você divide com o Rica. Qual é?" and record her answer.
 - Doc not found in the folder: "Não achei o documento de notas do Rica na pasta compartilhada." Stop.
 - New sections = dated sections later than `notas_rica_lidas` (all of them if it is missing). None: "Nenhuma novidade do Rica desde <data>." Write the receipt and stop.
 
