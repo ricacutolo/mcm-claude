@@ -54,6 +54,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
       index.md                  one line per client
       <slug>/ficha.md           one sheet per client: who, preferences, what's open, files (knowledge only)
+      reacoes.md                what clients say about her service, from meetings (resumo-da-reuniao)
   projetos/
     index.md                    one line per project
     <slug>/brief.md             has a done state
@@ -126,7 +127,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | novo-cliente | new (MCM Client Book; reference: Rica's /new-client + client-brain) | `departamentos/clientes/<slug>/ficha.md`, `departamentos/clientes/index.md`, the client's Drive folder in `02. Clientes/`; first client ever: offers to adopt a clients department she already made (renamed to `clientes`, histórico kept; clients listed in it become one sheet each on her sim), else the Clientes department via the novo-departamento flow; seeds from the conversation when created mid-chat, or from a file about the client found elsewhere in `departamentos/clientes/` (old file to `_revisao/` on her sim) | `_sistema/log.md` |
 | abrir-cliente | new (MCM Client Book; mirror of abrir-projeto) | nothing but the receipt; a client found outside the sheets is offered to /novo-cliente | `_sistema/log.md` |
 | guardar-no-cliente | new (MCM Client Book) | the file into the client's Drive folder (local Drive folder copy → Drive connection → her one manual save), a line in the sheet's Arquivos or the right section; never a document number | `_sistema/log.md` (records which path worked and the size) |
-| resumo-da-reuniao | new (client version of Rica's /meeting-recap) | a client's `ficha.md` (Preferências, O que está aberto, Histórico, Arquivos link) and histórico via contexto, or a department/project histórico; on her sim. Source per `estado.md` → `reunioes:` (`meet`: Google Meet folder in her Drive, Gemini notes as fallback; pasted text always works; Zoom not built). Never copies or moves the transcript, never sends | `_sistema/log.md` |
+| resumo-da-reuniao | new (client version of Rica's /meeting-recap, same rules: transcript only, timestamps, owner and date, próximo passo, receipt always) | a client's `ficha.md` (Preferências, O que está aberto, Histórico, Arquivos link), histórico via contexto, `departamentos/clientes/reacoes.md` (what clients say about her service; lines extend on repeats), a pasted transcript into the client's Drive folder; first conversations: her stated outcome, /novo-cliente offered; on her sim. Source per `estado.md` → `reunioes:` (`meet`: Google Meet folder in her Drive; pasted text always works; Zoom not built). Never uses Gemini notes, never moves a Meet transcript, never sends | `_sistema/log.md` |
 
 **The split for every client of hers (MCM Client Book):** GoHighLevel = contact data, payments, campaigns · Google Drive = the files · Claude = the knowledge.
 

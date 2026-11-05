@@ -37,7 +37,7 @@ If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is
 claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · negocio.md · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
-  clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client)
+  clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
 entregas/                     deliverables that belong to no department or project
@@ -55,6 +55,7 @@ _revisao/                     anything that would otherwise be deleted
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
 | a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente, /resumo-da-reuniao and this skill's write-back |
+| `departamentos/clientes/reacoes.md` | /resumo-da-reuniao only, on her sim; append or extend lines, never rewrite |
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
 | `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
