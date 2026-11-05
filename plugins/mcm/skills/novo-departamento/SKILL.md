@@ -119,7 +119,7 @@ Anything other than a clear yes is a change request.
 2. Write `departamentos/<slug>/brief.md` exactly as approved.
 3. Re-read `departamentos/index.md` (create with `# Departamentos` if missing), then add:
    `- [<Nome>](<slug>/brief.md) · YYYY-MM-DD · <propósito em uma linha>`
-4. Invoke /contexto to start `contexto/<slug>.md` with `tier: departamento` and `brief: departamentos/<slug>/brief.md`. **Her sim to the brief covers starting its log** — /contexto does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`.
+4. Invoke /contexto to start `contexto/<slug>.md` with `tier: departamento` and `brief: departamentos/<slug>/brief.md`. **Her sim to the brief covers starting its log** — /contexto does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /contexto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. Do **not** create `pesquisa/` or `entregas/` now.
 
 ### Step 6 — Receipt
