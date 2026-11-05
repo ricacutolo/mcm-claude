@@ -8,7 +8,7 @@ O sistema de trabalho da MyClientMachine dentro do Claude: o Claude passa a sabe
 2. Crie uma pasta para o sistema na sua pasta pessoal (no Finder: **Shift + Command + H**, depois **Shift + Command + N**), por exemplo `Claude`. Evite Documentos e Mesa se eles estiverem no iCloud.
 3. No Claude, abra **Configurações → Plugins → Adicionar marketplace → Adicionar de um repositório** e cole: `ricacutolo/mcm-claude`
 4. Ative o plugin **MCM** e ligue **Sincronizar automaticamente**, para receber as atualizações sozinha.
-5. Se o Rica te mandou uma pasta chamada `_semente`, coloque ela dentro da pasta do sistema.
+5. Se o Rica preparou seus arquivos, eles chegam no seu Drive (pasta **MCM - Deliverables**) e a instalação traz para a sua pasta com o seu sim. Se ele te mandou uma pasta `_semente` por outro caminho, coloque ela dentro da pasta do sistema.
 6. Abra uma conversa nova, adicione a pasta que você criou e diga: **começar a instalação**.
 
 A instalação vai em etapas curtas. Dá para parar a qualquer momento e voltar dizendo **continuar a instalação**.
@@ -22,7 +22,12 @@ Converse com a pasta conectada. Alguns jeitos de começar:
 - **escreve na minha voz…** — e-mails, mensagens, textos
 - **como está meu dia** — agenda e e-mails importantes
 - **novo projeto** · **novo departamento**
+- **novo cliente** · **abre a família…** · **o que eu sei sobre…** — uma ficha para cada cliente seu, com o histórico e uma pasta no Drive
+- **guarda no cliente…** — manda um arquivo no chat e ele vai para a pasta do cliente no Drive, e a ficha anota o que importa
+- **essa conversa é sobre…** — guarda a conversa inteira no assunto, projeto ou cliente certo
 - **guarda isso** — guarda algo no histórico do assunto
+- **faz minha marca** — cria seu logo do zero com você e entrega o kit completo: versões do logo, cores, fontes e arquivos prontos
+- **organiza meu Drive** — cria as pastas do negócio no seu Google Drive e coloca os arquivos soltos no lugar, sempre com o seu sim
 - **atualizar** — busca as novidades que o Rica deixou no documento compartilhado e te mostra para aprovar
 
 Sem a pasta conectada, o Claude funciona normal, sem o sistema.
