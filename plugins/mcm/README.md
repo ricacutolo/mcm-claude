@@ -24,6 +24,7 @@ Converse com a pasta conectada. Alguns jeitos de começar:
 - **novo projeto** · **novo departamento**
 - **novo cliente** · **abre a família…** · **o que eu sei sobre…** — uma ficha para cada cliente seu, com o histórico e uma pasta no Drive
 - **guarda no cliente…** — manda um arquivo no chat e ele vai para a pasta do cliente no Drive, e a ficha anota o que importa
+- **guarda a reunião com…** — lê a transcrição da reunião no Google Meet e guarda decisões, combinados e preferências na ficha do cliente, e o que os clientes acham do seu serviço numa página só, com o seu sim
 - **essa conversa é sobre…** — guarda a conversa inteira no assunto, projeto ou cliente certo
 - **guarda isso** — guarda algo no histórico do assunto
 - **faz minha marca** — cria seu logo do zero com você e entrega o kit completo: versões do logo, cores, fontes e arquivos prontos

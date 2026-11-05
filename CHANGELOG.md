@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 — 2026-11-05
+- resumo-da-reuniao (new, MCM Client Book): the client version of Rica's meeting recap, same rules. Built from the transcript only (Google Meet folder in her Drive, or text she pastes; never Gemini notes or memory). Pulls a resumo, decisions, promises with who and when (sem dono / sem data when unsaid), preferences, open questions, up to three quotes and dates, each with its transcript time, and files them in the client's sheet and histórico in one batch, on her sim. What clients say about her service builds up in `departamentos/clientes/reacoes.md` (a repeated reaction extends its line). A first conversation with someone new records the outcome she states (fechou / vai pensar / não) and offers the sheet. A Meet transcript stays where Meet put it; a pasted one is saved word for word in the client's Drive folder. Ends with one próximo passo; offers a follow-up draft through minha-voz with only what was said to the client; never sends. Waits when the meeting just ended; receipt on every run. Zoom not built yet.
+- instalar: Step 5 asks where she holds meetings and records `reunioes:` in `estado.md`; for Meet it checks a transcript can be found or tells her how to turn transcription on. The tour mentions "guarda a reunião com…".
+- sistema: routes meetings to resumo-da-reuniao; it joins the sheet's writers.
+
 ## 0.2.1 — 2026-11-05
 - instalar: Step 5 always records the folder she shares with Rica (`pasta_drive`), whatever she answers on the health copy, and checks Rica's notes doc **MCM - Notas do Rica** is in it (tells her to let Rica know if not). The health copy is now its own item.
 - atualizar: with no `pasta_drive`, finds the folder through the notes doc in her Drive and confirms it with her, instead of stopping.

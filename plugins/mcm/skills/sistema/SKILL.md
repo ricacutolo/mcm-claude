@@ -37,7 +37,7 @@ If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is
 claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · negocio.md · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
-  clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client)
+  clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
 entregas/                     deliverables that belong to no department or project
@@ -54,7 +54,8 @@ _revisao/                     anything that would otherwise be deleted
 | a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
-| a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente and this skill's write-back |
+| a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente, /resumo-da-reuniao and this skill's write-back |
+| `departamentos/clientes/reacoes.md` | /resumo-da-reuniao only, on her sim; append or extend lines, never rewrite |
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
 | `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
@@ -67,7 +68,7 @@ She talks to one Claude. That Claude routes:
 
 - She names a department ("vamos trabalhar no conteúdo", "abre mentorias") → **/abrir-departamento**.
 - She names a project → **/abrir-projeto**.
-- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. "Essa conversa é sobre…" → **/contexto** (capture).
+- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/contexto** (capture).
 - She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**, or **/post-instagram**, **/post-linkedin**, **/ideias-de-post** when it is content.

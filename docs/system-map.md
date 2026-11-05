@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-04
-version: 0.2.1
+version: 0.3.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -20,7 +20,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         │      write-back, index rule, 7-day upkeep, health file
         │
         ├── abrir-departamento / abrir-projeto ── load a brief + its log (via contexto)
-        ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente ── one sheet, histórico and Drive folder per client of hers
+        ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente · resumo-da-reuniao ── one sheet, histórico and Drive folder per client of hers; meetings filed into them
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
@@ -54,6 +54,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
       index.md                  one line per client
       <slug>/ficha.md           one sheet per client: who, preferences, what's open, files (knowledge only)
+      reacoes.md                what clients say about her service, from meetings (resumo-da-reuniao)
   projetos/
     index.md                    one line per project
     <slug>/brief.md             has a done state
@@ -109,7 +110,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | Skill | Source | Writes | Receipt |
 |---|---|---|---|
 | sistema | new (includes "You make the moves": do it yourself, diagnose before asking, manual steps named as manual with one action) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
-| instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there | `_sistema/log.md` per phase |
+| instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool) | `_sistema/log.md` per phase |
 | contexto | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
 | novo-departamento | Rica's new-department | `departamentos/<slug>/brief.md`, `departamentos/index.md` | `_sistema/log.md` |
 | abrir-departamento | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
@@ -126,6 +127,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | novo-cliente | new (MCM Client Book; reference: Rica's /new-client + client-brain) | `departamentos/clientes/<slug>/ficha.md`, `departamentos/clientes/index.md`, the client's Drive folder in `02. Clientes/`; first client ever: offers to adopt a clients department she already made (renamed to `clientes`, histórico kept; clients listed in it become one sheet each on her sim), else the Clientes department via the novo-departamento flow; seeds from the conversation when created mid-chat, or from a file about the client found elsewhere in `departamentos/clientes/` (old file to `_revisao/` on her sim) | `_sistema/log.md` |
 | abrir-cliente | new (MCM Client Book; mirror of abrir-projeto) | nothing but the receipt; a client found outside the sheets is offered to /novo-cliente | `_sistema/log.md` |
 | guardar-no-cliente | new (MCM Client Book) | the file into the client's Drive folder (local Drive folder copy → Drive connection → her one manual save), a line in the sheet's Arquivos or the right section; never a document number | `_sistema/log.md` (records which path worked and the size) |
+| resumo-da-reuniao | new (client version of Rica's /meeting-recap, same rules: transcript only, timestamps, owner and date, próximo passo, receipt always) | a client's `ficha.md` (Preferências, O que está aberto, Histórico, Arquivos link), histórico via contexto, `departamentos/clientes/reacoes.md` (what clients say about her service; lines extend on repeats), a pasted transcript into the client's Drive folder; first conversations: her stated outcome, /novo-cliente offered; on her sim. Source per `estado.md` → `reunioes:` (`meet`: Google Meet folder in her Drive; pasted text always works; Zoom not built). Never uses Gemini notes, never moves a Meet transcript, never sends | `_sistema/log.md` |
 
 **The split for every client of hers (MCM Client Book):** GoHighLevel = contact data, payments, campaigns · Google Drive = the files · Claude = the knowledge.
 
