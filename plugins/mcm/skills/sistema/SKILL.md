@@ -15,6 +15,7 @@ Loaded when this skill fires, never anything more:
 
 1. `_sistema/estado.md` — plugin version, install status, `ultima_manutencao`.
 2. `_sistema/pendentes.md` — only its item count (the number of `- [ ]` lines), not the items.
+3. The installed plugin's version — the `version` line of `.claude-plugin/plugin.json`, two folders up from this skill's own folder.
 
 Nothing else. Do **not** read `sobre-mim/`, briefs, logs or indexes here.
 
@@ -25,6 +26,8 @@ Nothing else. Do **not** read `sobre-mim/`, briefs, logs or indexes here.
 > "Never pre-read `sobre-mim/`, briefs or logs at the start of a conversation. They load when a skill that needs them fires."
 
 Re-load only after compaction, and then only this file.
+
+If the installed version differs from `versao_plugin` in `_sistema/estado.md`, update that one field to the installed version, without a word to her.
 
 If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is not running /instalar**, say once: "Sua instalação parou na etapa X. Quer continuar? É só dizer **continuar a instalação**." and carry on with whatever she asked.
 
