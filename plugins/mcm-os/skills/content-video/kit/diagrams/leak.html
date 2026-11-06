@@ -1,0 +1,56 @@
+<!-- Leak diagram skeleton for talking-head reels.
+     Three cutaway windows: path, leak, fix. Events (film seconds): box1, box2, box3, leak, fix, booked.
+     Labels are tokens filled from reel.json "labels". Sections are split by the build on the markers below. -->
+<!--CSS-->
+      #dia-rule { position: absolute; top: 360px; left: 80px; width: 220px; height: 8px; background: var(--accent); }
+      .box { position: absolute; left: 80px; width: 600px; height: 140px; border-radius: 28px; display: flex; align-items: center; padding-left: 40px; font-weight: 700; font-size: 48px; }
+      .step { background: var(--light); color: var(--dark); }
+      #box1 { top: 440px; } #box2 { top: 640px; } #box3 { top: 840px; }
+      #fixbox { top: 840px; background: var(--accent); color: var(--light); font-size: 44px; gap: 22px; }
+      .side svg, .box svg { flex-shrink: 0; }
+      .side { position: absolute; left: 740px; width: 260px; border-radius: 28px; display: flex; align-items: center; padding: 0 26px; font-weight: 700; line-height: 1.12; }
+      #leakbox { top: 615px; height: 190px; background: var(--accent); color: var(--light); font-size: 40px; }
+      #outbox { top: 840px; height: 140px; background: var(--light); color: var(--dark); font-size: 46px; gap: 10px; padding: 0 20px; }
+      .varrow { position: absolute; left: 368px; width: 24px; height: 56px; }
+      #arrow1 { top: 582px; } #arrow2 { top: 782px; }
+      #xmark { position: absolute; left: 350px; top: 780px; width: 60px; height: 60px; }
+      .harrow { position: absolute; left: 686px; width: 50px; height: 24px; }
+      #sidearrow1 { top: 698px; } #sidearrow2 { top: 898px; }
+<!--HTML-->
+        <div id="dia-rule"></div>
+        <div id="box1" class="box step">[STEP 1]</div>
+        <svg id="arrow1" class="varrow" viewBox="0 0 24 56"><path d="M8 0 H16 V38 H24 L12 56 L0 38 H8 Z" fill="var(--accent)"/></svg>
+        <div id="box2" class="box step">[STEP 2]</div>
+        <svg id="arrow2" class="varrow" viewBox="0 0 24 56"><path d="M8 0 H16 V38 H24 L12 56 L0 38 H8 Z" fill="var(--accent)"/></svg>
+        <div id="box3" class="box step">[STEP 3]</div>
+        <svg id="xmark" viewBox="0 0 60 60"><path d="M0 10 L10 0 L30 20 L50 0 L60 10 L40 30 L60 50 L50 60 L30 40 L10 60 L0 50 L20 30 Z" fill="var(--accent)"/></svg>
+        <svg id="sidearrow1" class="harrow" viewBox="0 0 50 24"><path d="M0 8 H32 V0 L50 12 L32 24 V16 H0 Z" fill="var(--accent)"/></svg>
+        <div id="leakbox" class="side">[LEAK]</div>
+        <div id="fixbox" class="box"><svg width="54" height="48" viewBox="0 0 60 52"><path d="M0 28 L10 18 L22 30 L50 2 L60 12 L22 50 Z" fill="var(--light)"/></svg>[FIX]</div>
+        <svg id="sidearrow2" class="harrow" viewBox="0 0 50 24"><path d="M0 8 H32 V0 L50 12 L32 24 V16 H0 Z" fill="var(--accent)"/></svg>
+        <div id="outbox" class="side"><svg width="44" height="40" viewBox="0 0 60 52"><path d="M0 28 L10 18 L22 30 L50 2 L60 12 L22 50 Z" fill="var(--accent)"/></svg>[OUTCOME]</div>
+<!--JS-->
+      const pop = { duration: 0.3, ease: "back.out(1.6)" };
+      gsap.set(["#box1","#box2","#box3","#arrow1","#arrow2","#xmark","#sidearrow1","#leakbox","#fixbox","#sidearrow2","#outbox"], { opacity: 0 });
+      tl.fromTo("#dia-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.35, ease: "power3.out" }, W.path[0] + 0.05);
+      // 1. Path: build as the words land
+      tl.fromTo("#box1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, ...pop }, EV.box1);
+      tl.fromTo("#arrow1", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.2 }, EV.box1 + 0.35);
+      tl.fromTo("#box2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, ...pop }, EV.box2 - 0.15);
+      tl.fromTo("#arrow2", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.2 }, EV.box2 + 0.2);
+      tl.fromTo("#box3", { opacity: 0, y: 30 }, { opacity: 1, y: 0, ...pop }, EV.box3);
+      // 2. Leak: the break, then where the lead goes
+      tl.to("#arrow2", { opacity: 0, duration: 0.12 }, W.leak[0] + 0.15);
+      tl.fromTo("#xmark", { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.35, ease: "back.out(2.2)" }, W.leak[0] + 0.2);
+      tl.to("#box3", { opacity: 0.3, duration: 0.35 }, W.leak[0] + 0.4);
+      tl.fromTo("#sidearrow1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, EV.leak - 0.15);
+      tl.fromTo("#leakbox", { opacity: 0, x: 60 }, { opacity: 1, x: 0, ...pop }, EV.leak);
+      // 3. Fix, then the outcome
+      tl.to(["#leakbox", "#sidearrow1"], { opacity: 0.25, duration: 0.25 }, EV.fix - 0.1);
+      tl.to("#xmark", { opacity: 0, scale: 0.4, duration: 0.2 }, EV.fix - 0.1);
+      tl.to("#arrow2", { opacity: 1, duration: 0.2 }, EV.fix);
+      tl.to("#box3", { opacity: 0, duration: 0.2 }, EV.fix);
+      tl.fromTo("#fixbox", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, ...pop }, EV.fix);
+      tl.to(["#leakbox", "#sidearrow1"], { opacity: 0, duration: 0.2 }, EV.booked - 0.2);
+      tl.fromTo("#sidearrow2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.2 }, EV.booked - 0.1);
+      tl.fromTo("#outbox", { opacity: 0, x: 60 }, { opacity: 1, x: 0, ...pop }, EV.booked + 0.05);

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="gsap.min.js"></script>
+    <style>
+      :root {
+        --dark: %DARK%;
+        --light: %LIGHT%;
+        --accent: %ACCENT%;
+        --font-display: "%FONT_DISPLAY%", sans-serif;
+        --font-body: "%FONT_BODY%", sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 1080px; height: 1920px; background: #000; font-family: var(--font-body); }
+      .or { color: var(--accent); }
+      #aroll { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      /* Hook over the face, on screen from frame 0 */
+      #hook { position: absolute; top: 190px; left: 60px; width: 960px; }
+      #hook .chip { display: inline-block; background: color-mix(in srgb, var(--dark) 90%, transparent); border-radius: 26px; padding: 30px 40px 34px; font-family: var(--font-display); font-size: 92px; line-height: 1.04; color: var(--light); letter-spacing: -0.01em; }
+
+      /* Diagram cutaway panel */
+      #dia { position: absolute; inset: 0; background: var(--dark); }
+%DIAGRAM_CSS%
+
+      /* Captions: chip bottom at 1450 px, below the mouth, above the platform's bottom UI */
+      .cap { position: absolute; left: 60px; width: 960px; bottom: 470px; text-align: center; }
+      .cap .chip { display: inline-block; background: color-mix(in srgb, var(--dark) 88%, transparent); border-radius: 20px; padding: 14px 30px 18px; font-weight: 900; font-size: 58px; line-height: 1.18; color: var(--light); }
+
+      /* End card: CTA, rule, logo */
+      #card { position: absolute; inset: 0; background: var(--dark); }
+      #card-inner { position: absolute; top: 520px; left: 80px; width: 920px; }
+      #card-1 { font-family: var(--font-display); font-size: 140px; line-height: 1.02; color: var(--accent); }
+      #card-2 { margin-top: 40px; font-weight: 700; font-size: 72px; color: var(--light); }
+      #card-rule { margin-top: 70px; width: 300px; height: 8px; background: var(--accent); }
+      #logo { display: block; margin-top: 60px; width: 460px; height: auto; }
+      #wordmark { margin-top: 50px; font-weight: 700; font-size: 52px; color: var(--light); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="%TOTAL%" data-width="1080" data-height="1920">
+      <video id="aroll" class="clip" src="assets/aroll.mp4" data-start="0" data-duration="%AEND%" data-track-index="0" data-has-audio="true" playsinline></video>
+
+      <div id="hook" class="clip" data-start="0" data-duration="%HOOKEND%" data-track-index="2"><span class="chip">%HOOK%</span></div>
+
+      <div id="dia">
+%DIAGRAM_HTML%
+      </div>
+
+%CAPS%
+
+      <div id="card" class="clip" data-start="%CARDIN%" data-duration="%CARDDUR%" data-track-index="4">
+        <div id="card-inner">
+          <div id="card-1">%CTA1%</div>
+          <div id="card-2">%CTA2%</div>
+          <div id="card-rule"></div>
+          %LOGO%
+        </div>
+      </div>
+    </div>
+    <script>
+      const EV = %EV%;
+      const W = %WINDOWS%;
+      const tl = gsap.timeline({ paused: true });
+
+      // Diagram panel: hard cuts in and out of each window
+      gsap.set("#dia", { opacity: 0 });
+      Object.values(W).forEach(([a, b]) => { tl.set("#dia", { opacity: 1 }, a); tl.set("#dia", { opacity: 0 }, b); });
+
+%DIAGRAM_JS%
+
+      // Hook pop on (visible at frame 0)
+      tl.from("#hook .chip", { scale: 0.96, duration: 0.3, ease: "power2.out" }, 0);
+
+      // Captions (animate the child, never the clip)
+      %CAPJS%
+
+      // End card
+      tl.fromTo("#card-inner", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, %CARDIN%);
+      tl.fromTo("#card-rule", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: 0.35, ease: "power3.out" }, %CARDIN% + 0.3);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

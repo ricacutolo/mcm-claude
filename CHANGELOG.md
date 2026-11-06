@@ -1,5 +1,17 @@
 # Changelog
 
+Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
+
+## MCM OS 0.1.0 — 2026-11-06 [mcm-os]
+First English edition, for the first English install.
+- **The base system in English:** system, install, context, new/open department, new/open project, new/open client, save-to-client, save-meeting, my-voice, morning-brief, update, organize-drive, brand-kit-designer. Same rules and structure as MCM 0.3.0, English folder names (`about-me/`, `departments/`, `projects/`, `context/`, `_system/`), US English throughout.
+- **The content machine (v1):** content-post (the front door: next slot, missed-slot rule, hands off by format, idea capture, stay one post ahead, publish check), content-static (carousels, illustrated carousels, text posts in Canva, scheduled in GoHighLevel), content-video (talking-head reels, **beta**), content-plan (rolling 4 weeks), content-strategy (ships the strategy library and copy playbook, read-only), content-template, content-review (monthly; her library notes and swipe file stay in her department), content-install (20-step content setup: Canva, brand, base templates shared by Rica and rebranded in her account, GoHighLevel connection and Social Planner, upload key, strategy).
+- Install's tour and first test point to the content machine instead of the old post skills; Step 8 offers the content setup.
+- Not in this edition: the old ideas / Instagram / LinkedIn post skills (replaced by the content machine; LinkedIn returns with it later), photo posts, newsletter, repurposing.
+
+## Repo — 2026-11-06 [both]
+- One marketplace, two plugins: **MCM** (Portuguese) and **MCM OS** (English). `docs/glossary.md` maps every name between them; `scripts/check-sync.py` lists drift before a release.
+
 ## 0.3.1 — 2026-11-06
 - Áreas: departments and projects are grouped by the part of her life they belong to — Pessoal, and one área per business. A label (`area:` in each brief), never a folder: everything stays flat on disk. /sistema has the rule (new **Áreas** section): indexes group under `## <Área>` headers, Pessoal last; each extra business has its own `sobre-mim/negocio-<area>.md`, and every skill that reads the business file uses the one of the área in play.
 - novo-departamento and novo-projeto always ask the área, even for the first one (a project inside a department takes the department's). A project may have no área (`area: nenhuma`, listed under `## Sem área`); a department always has one.
