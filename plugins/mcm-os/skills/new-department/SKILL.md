@@ -55,7 +55,7 @@ One question at a time. Skip anything the conversation or `business.md` already 
 2. **"What does it look like when it's going well?"** What must always be true — frequency, quality bar, limits. Becomes Standards.
 3. **"What repeats here, and how often?"** Becomes Routines.
 4. **"Where does the material for this live today?"** Folders, Drive, apps. Linked, never moved.
-5. **Skills:** propose the ones that fit from this plugin (e.g. for Content: /content-post (next post), /content-plan, /content-strategy, /content-install (setup), /my-voice) with where each saves. She confirms or drops.
+5. **Skills:** propose the ones that fit from this plugin, by the plain names she says, never command names (e.g. for Content: "next post", "plan content", "content strategy", "set up my content", "write in my voice") with where each saves. She confirms or drops.
 
 If the purpose is vague ("take care of stuff"), say so once and help her sharpen it.
 
@@ -96,7 +96,7 @@ _As of YYYY-MM-DD._
 ## What I use here
 | Tool | What it does here | Saves to |
 |---|---|---|
-| /<skill> | <one line> | <folder> |
+| <plain name she says, e.g. "next post"> | <one line> | <folder> |
 
 ## Where things live
 - History: `context/<slug>.md`

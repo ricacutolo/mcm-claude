@@ -1,6 +1,6 @@
 ---
 name: content-static
-description: "Makes one image post — a carousel, illustrated carousel, text post or photo post — from idea to scheduled: the idea, the copy, the design in Canva and the schedule in GoHighLevel, with her yes at each step. Usually started from the next post in the plan; also when she says \"/content-static\", \"make this carousel\", \"make the carousel for post 5\", \"design the next carousel\", \"let's make a text post\"."
+description: "Makes one image post — a carousel, illustrated carousel or text post — from idea to scheduled: the idea, the copy, the design in Canva and the schedule in GoHighLevel, with her yes at each step. Usually started from the next post in the plan; also when she says \"/content-static\", \"make this carousel\", \"make the carousel for post 5\", \"design the next carousel\", \"let's make a text post\"."
 ---
 
 # content-static — one image post, idea to scheduled

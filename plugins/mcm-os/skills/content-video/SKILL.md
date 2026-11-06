@@ -62,7 +62,7 @@ Never read or print `departments/content/.env`. The scripts load `ELEVENLABS_API
 Skip this step when `_system/log.md` already has a `content-video | video-check | pass` line.
 - Say once: "Video is new in the system, so first I'll check I can make it on your setup. Give me a minute."
 - In Claude's cloud workspace: install HyperFrames and the browser as `kit/README.md` says (`npm install --prefix <dir> hyperframes@0.9.6`, Playwright's Chromium as `HYPERFRAMES_BROWSER_PATH`), then run `hyperframes check --json` on a one-second test comp built from `kit/template.html`.
-- On her computer: `ffmpeg`, `ffprobe` and `python3` answer; `departments/content/.env` has `ELEVENLABS_API_KEY` and `GHL_PIT` set (the check prints only "set" or "not set", never the value).
+- On her computer: `ffmpeg`, `ffprobe` and `python3` answer; `departments/content/.env` has `ELEVENLABS_API_KEY` and `GHL_PIT` set (the check prints only "set" or "not set", never the value); `api.elevenlabs.io` is reachable (any answer from the site counts, even an error code; a refusal from the computer's network filter, `X-Proxy-Error: blocked-by-allowlist`, does not).
 - **Pass:** receipt line `video-check | pass`, then carry on.
 - **Anything fails:** say it plainly and stop. "I can't make videos on your setup yet: <what's missing, in plain words>. Your reel can wait, or we can make this slot a carousel instead." Swapping the format is content-plan's refresh, run on yes. A missing key: "Add your ElevenLabs key to the settings file in your content folder, by hand, and tell me when it's done." Receipt line `video-check | fail · <what>`. Never work around a failed check.
 
@@ -77,7 +77,7 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "Does the script work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
-- Then tell her where to put the clips: "Record when you're ready, then upload the clips from your phone to Google Drive, in the folder **Content videos/post-NN-<slug>**." Create that folder in her Drive if Claude can reach it; otherwise give her the name.
+- Then tell her where to put the clips: "Record when you're ready, then upload the clips from your phone to Google Drive, in the folder **Content videos/post-NN-<slug>**." Ask once: "Want me to make the folder in your Drive?" Make it only on her yes, if Claude can reach her Drive; otherwise the name above is enough.
 
 **`script.md` shape:**
 
@@ -157,7 +157,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 
 ### Step 8 — Close
 - `post.md`: Script, Recording, Takes, Cut and Schedule rows; takes used; versions; GoHighLevel media URL and post ID; slot.
-- `calendar.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Scheduled <time>`); add it if missing. For a missed slot, the actual date and time, plus "(moved from <slot>, missed)".
+- `calendar.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Scheduled <time>`); add it if missing (create the file with `# Content calendar` and the columns `# · date · post · format · idea · status` if needed, as content-static does). For a missed slot, the actual date and time, plus "(moved from <slot>, missed)".
 - `plan.md`: this slot's Status cell to `scheduled` (or `scheduled (moved to <day time>)`). That cell only.
 - Department brief: Next step to the next `planned` slot ("Post N+1, <day date>, <time>: <topic> × <post type>. Say \"next post\"."), or "Plan the next 4 weeks. Say \"plan content\"." when fewer than 2 weeks of planned slots remain. Current state with today's date and one line, and `updated:`. No approval needed; mention it in one short line.
 - Receipt and milestone (below).

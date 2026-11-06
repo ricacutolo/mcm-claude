@@ -39,7 +39,7 @@ Every time this skill fires:
 
 - `state.md` missing → first run, Step 0.
 - Steps marked `waiting for seed` and no `_seed/` in her folder → look for the seed in her Drive (**Bringing the seed from the Drive**, below). Not there yet → "Your install is waiting on the files Rica is preparing. As soon as he puts them in your Drive, just say **continue the install**." Stop. Once `_seed/` exists, resume at the first step that is not `complete`, skipping completed ones (Step 5 included).
-- `install: complete` → "Your install is already complete." Point her to "open Content" and stop.
+- `install: complete` → "Your install is already complete." Point her to "open Content" and stop — unless she (or another part of the system, with her yes) asked to **redo step X**: then go to that bullet below.
 - Otherwise: "Last time we stopped at step **X — <name>**. Shall we go on with step **Y**? (**yes** / **show progress**)"
 - "redo step X" → confirm it overwrites that step's files, copy each of them to `_review/YYYY-MM-DD-<file>` first, then run it.
 
@@ -65,7 +65,7 @@ A local `_seed/` (from a zip) still works exactly as before and wins over the Dr
    - Not connected → "First let's connect your Google Drive: that's how Rica sends you your files. It's under **Customize → Connectors → Google Drive**; sign in with your work account. Want me to walk you through it step by step? (**yes** / **already connected**)"
    - **yes** → guide one action at a time, waiting after each: open **Customize**, open **Connectors**, find **Google Drive**, click **Connect**, choose the work account, allow. If her screen shows something different, ask what she sees and guide from that. Then check again.
    - **already connected** → check again.
-   - Still not connected after two checks → "That's okay, we'll keep going without the Drive for now. Let Rica know the Drive didn't connect." Write `drive: pending` in `state.md` once it exists, and go on. The rest of the install works without it.
+   - Still not connected after two checks → "That's okay, we'll keep going without the Drive for now. Let Rica know the Drive didn't connect." Go on. The rest of the install works without it.
 2. Confirm a folder is connected. If not: "To get started, add a folder to this conversation: in the Claude app on your Mac, in a new conversation, click add folder and choose the folder you created for the system. Then say **start the install** again." Stop.
 3. Show the folder path and ask if it is the right one. If the path is inside `Documents` or `Desktop`, say once: "This folder may be in iCloud, and iCloud sometimes removes files from your computer or makes duplicate copies. The safest place is your home folder (in Finder: Shift + Command + H). Want to move it before we go on?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
 4. Say what will be created, in one short list: `about-me/`, `departments/`, `projects/`, `context/`, `deliverables/`, `reference/`, `_system/`, `_review/`. One line each, plain words.
@@ -79,7 +79,7 @@ The text that goes in her Settings. It carries her working preferences **and** t
 
 1. Seed `_seed/claude.md` if present (ask its `[ASK]` items, one at a time); else ask five questions, one at a time: your name and what you do · how you want me to talk to you · three things I should never do · three things I should never do without asking you · the three things that matter most to you in your work. Fill `templates/claude-md.md`.
 2. **The last section, "The system", is fixed.** Never let it be edited away; if she wants to change it, explain it is what makes the system work.
-3. Show the full text in a code block. Iterate until **yes**.
+3. Show the full text in a code block, with one line: "The last paragraph is a note for Claude, not for you, so its wording looks a bit technical; that's expected, leave it as it is." Iterate until **yes**.
 4. First: "Do you already have any text in **Settings → General → Instructions for Claude**? If you do, copy it and paste it here so I can save it first." If she pastes one, save it to `_review/YYYY-MM-DD-old-instructions.md` and offer to fold anything still useful into the new text. Then: "Now paste the new text in that same spot, replacing the old one, and save. Let me know when you're done." If the menu has a different name on her screen, ask what she sees and guide from that.
 5. Write the same text to `claude.md` in her folder as a backup.
 6. Test: "Open a new conversation, add the same folder and ask: **how do I like to work?** It should answer with what's in your instructions. Then come back to this conversation and say **continue**." If the answer is generic, have her check the text saved. (The test conversation may mention the unfinished install; that is expected.)
@@ -144,7 +144,7 @@ Then list the rest in one short block, as things she can say: "what should I pos
 2. Offer the content setup: "Want to set up your content now? It connects Canva and GoHighLevel and takes about an hour; you can also do it later by saying **set up my content**." Run /content-install only on **yes**.
 3. Set `install: complete` in `state.md`.
 4. Write the first `_system/health.md` in the format the system skill defines (numbers only), and the Drive copy if approved. Set `last_upkeep` to today.
-5. Update the Content brief (soft sections): Current state gets today's date and "Set up during the install"; Next step becomes the next real move she names, or "Decide how often to post" if she has none.
+5. Only if she declined the content setup in 8.2, update the Content brief (soft sections): Current state gets today's date and "Set up during the install"; Next step becomes the next real move she names, or "Decide how often to post" if she has none. If she ran the content setup, leave the brief as the content setup left it.
 6. If `_seed/` exists: "Can I move the `_seed/` folder to `_review/`? It's not needed anymore." Move on **yes**; never delete.
 7. Close: "All done. Your system is up and running. From here on, just talk to me with the folder connected — I know where everything goes and I'll keep saving what matters."
 

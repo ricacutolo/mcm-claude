@@ -13,14 +13,14 @@ Speak to her in plain, warm US English, in her voice rules from `about-me/writin
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guide C for connecting GoHighLevel) and `scripts/` (the upload and transcription scripts copied into her content folder).
+Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guides C, D and E for GoHighLevel) and `scripts/` (the upload and transcription scripts copied into her content folder).
 
 1. `departments/content/setup.md` — progress and the resume point. If missing, this is a new setup.
 2. `departments/content/brief.md` — whether the department exists; its Next step and Current state.
 3. `departments/content/brand-style.md`, `templates.md`, `ghl.md` — if they exist, to know what's already filled.
 4. `about-me/brand.md` — her colors, fonts and logo files, if her brand kit exists.
 5. `about-me/business.md` and `about-me/writing.md` — only to check they exist and are filled in. Never edited here.
-6. `guides.md` — when a Canva step needs it.
+6. `guides.md` — when a step points to one of its guides.
 
 Never read or print `departments/content/.env`. Step 19 checks only whether a key is set.
 
@@ -48,23 +48,23 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 |---|---|---|---|---|
 | 1 | Home | Content department exists | `departments/content/brief.md` exists | If missing → offer /new-department (content) |
 | 2 | Home | Setup tracker | `setup.md` exists | Create it (format below) |
-| 3 | Business | Business file filled in | `about-me/business.md` exists with offer, audience and pains | Missing → offer /install. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business.md`; done when they're written |
-| 4 | Business | Voice captured | `about-me/writing.md` exists with real samples | Missing → offer /install. No samples → ask her for 2-3 things she wrote and add them to `_system/pending.md` as an item for `about-me/writing.md` |
+| 3 | Business | Business file filled in | `about-me/business.md` exists with offer, audience and pains | Missing → offer to redo the install's business step (step 3; a completed install still runs "redo step 3"), and run it on her yes. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business.md`; done when they're written |
+| 4 | Business | Voice captured | `about-me/writing.md` exists with real samples | Missing → offer to redo the install's writing step (step 4; a completed install still runs "redo step 4"), and run it on her yes. No samples → ask her for 2-3 things she wrote and add them to `_system/pending.md` as an item for `about-me/writing.md` |
 | 5 | Canva | Canva account | she confirms | Guide 0. Recommend Free to start; skip Pro trials |
-| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's Settings > Connectors; then check |
+| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Customize → Connectors**; then check |
 | 7 | Canva | Brand Kit colors | she confirms 3 colors added | No `about-me/brand.md` → offer /brand-kit-designer first (her logo and colors), run on yes. Then Guide A, with dark, light and accent from `about-me/brand.md` (else from `business.md` or her website) |
 | 8 | Canva | Logo in Uploads | she confirms light and dark versions uploaded | No `about-me/brand.md` and she declined the brand kit in step 7 → offer it once more, or use the logo files she has. Guide B step 3, with the files named in `about-me/brand.md` |
-| 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's base templates. MCM shares each one to her Canva email as "Can edit" (by hand: Canva can't share from here). She opens it under "Shared with you" and uses File > Make a copy. Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
+| 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's three base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light" and "Illustrated carousel - Leak". Rica shares them to her Canva email as "Can edit" before the session, when he prepares her seed (by hand: Canva can't share from here). Check they show under "Shared with you" in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Shared with you" and uses File > Make a copy. Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
 | 10 | Canva | Brand style | `brand-style.md` approved and written | Draft color and font roles and logo files, seeded from `about-me/brand.md` when it exists; show; write on yes |
-| 11 | Canva | Template index | `templates.md` has the base templates | Draft the rows and fill guides; show; write on yes |
-| 12 | GHL | Social accounts | she confirms Instagram (and Facebook) connected in GoHighLevel's Social Planner | She does it in GoHighLevel |
+| 11 | Canva | Template index | `templates.md` has the base templates | Draft the rows and fill guides in content-template's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on yes |
+| 12 | GHL | Social accounts | she confirms Instagram (and Facebook) connected in GoHighLevel's Social Planner | She does it in GoHighLevel (Guide D) |
 | 13 | GHL | Her GoHighLevel connected to Claude | the GoHighLevel connection lists her business (sub-account) and `get-account` lists its social accounts | Guide C: she adds GoHighLevel as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
 | 14 | GHL | GoHighLevel details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on yes |
 | 15 | GHL | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: content-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |
-| 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's settings |
+| 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's **Settings → Capabilities** (where the allowed sites live) |
 | 18 | Upload | Upload script | `departments/content/scripts/canva-to-ghl.sh` exists | Copy `scripts/canva-to-ghl.sh` from this skill's folder, unchanged |
-| 19 | Upload | GoHighLevel key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in GoHighLevel and pastes it into the file; the check prints only "set" or "not set" |
+| 19 | Upload | GoHighLevel key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in GoHighLevel and pastes it into the file (Guide E); Macs hide files whose names start with a dot, so offer to open the file for her, or she presses Shift+Cmd+. in Finder; the check prints only "set" or "not set" |
 | 20 | Strategy | Strategy | `departments/content/strategy.md` exists | Offer /content-strategy (it then offers to plan the first 4 weeks) |
 
 Order: stages in order. Within a stage, a step that waits on her doesn't block the next step that doesn't need it — say which one is waiting.
@@ -80,6 +80,7 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 - Open with the recommendation: "We'd do <X>, because <why>. OK, or would you change it?"
 - Her steps (5, 7, 8, 9 copy, 12, 13 connect, 19 paste): give the guide's steps in plain words, one at a time (`guides.md`), then wait for "done" and run the check where there is one.
 - Hand-off steps (1, 3, 4, 7 brand kit, 20): offer the skill; run it only on yes. When it finishes, re-check and continue.
+- **Her brand roles** (steps 7-10), from `about-me/brand.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `deliverables/brand/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which.
 - **Step 9 rebrand**, on each of her copies (through her Canva connection): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; swap the base logo for hers from step 8; keep the layout and every text region as it is. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules; fonts if the copy lost them), with Guide B's clicks.
 
 > "Do these look right? Say **yes** and I'll save them, or tell me what to change."
@@ -194,7 +195,7 @@ Runs that changed something: hand /context one line for `context/content.md`:
 
 - **A check can't run** (Canva or GoHighLevel not connected, computer offline) — mark the step "waiting", say what she needs to do, move to the next step that doesn't depend on it.
 - **A check disagrees with setup.md** (a step marked done now fails, e.g. a connection expired) — reopen the step, say why.
-- **Business file or voice missing** — offer /install; the Canva and GoHighLevel steps can still run meanwhile.
+- **Business file or voice missing** — offer to redo the install's business step (step 3) or writing step (step 4), and run it on her yes; the Canva and GoHighLevel steps can still run meanwhile.
 - **She declines the brand kit** — use the colors and logo files she already has; note it under "Decided for her".
 - **Shared template doesn't show up for her** — check that MCM shared it to the email on her Canva account; ask MCM to share it again. Never rebuild the template from scratch.
 - **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.

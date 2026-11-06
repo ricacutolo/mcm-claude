@@ -61,7 +61,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `_sistema/drive/` | `_system/drive/` |
 | `_revisao/` | `_review/` |
 | `_semente/` | `_seed/` |
-| `_semente/departamento-<slug>.md` | `_seed/department-<slug>.md` |
+| `_semente/departamentos/<slug>/brief.md` | `_seed/departments/<slug>/brief.md` |
 | `index.md` | `index.md` |
 | `brief.md` | `brief.md` |
 | skill folder `modelos/` | skill folder `templates/` |

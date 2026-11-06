@@ -74,7 +74,7 @@ Apply edits exactly, re-show, wait for yes. Differences she keeps go under "Deli
 
 ### Step 6 — Write
 On yes:
-1. Revise mode: copy the current `strategy.md` to `departments/content/history/strategy-round-<N>.md` (create the folder if missing) before writing.
+1. Revise mode: copy the current `strategy.md` to `departments/content/past-rounds/strategy-round-<N>.md` (create the folder if missing) before writing.
 2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>" and "Status: CONFIRMED round <N> (<her name>, <date>)", with sections: Who we post for · Deliberate differences from the business file · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms) · Templates · Voice.
 3. Each business file update she picked: one line in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business.md § <section> · <the exact proposed line> · (from: content strategy round <N>)`. The time zone, if she gave one and it isn't in `about-me/about-me.md`: the same, for that file.
 4. Department brief: update Current state (date, one line on the round) and `updated:`. If there's no current plan, or the change affects planned slots, set Next step to "Plan the next 4 weeks. Say \"plan content\"." Touch nothing else; mention it in one short line.
@@ -104,7 +104,7 @@ Each approved run: hand /context one line for `context/content.md`:
 - Edits `library.md`, `playbook.md`, `library-notes.md`, `swipe.md`, `plan.md`, `calendar.md`, `ideas.md` or anything in `context/` (milestones go through /context).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Invents post types or formats outside the catalogs, or claims something "works" without the library or her notes marking it working.
-- Deletes an old strategy round — it goes to `history/`.
+- Deletes an old strategy round — it goes to `past-rounds/`.
 - Runs content-plan without a yes.
 
 ## When to refuse
@@ -124,8 +124,8 @@ Each approved run: hand /context one line for `context/content.md`:
 
 ## STOP handling
 
-On `STOP`: halt immediately, make no further writes. Report what was already written (history copy, `strategy.md`, pending items, brief lines, receipt) and wait. Never assume undo, retry or continue.
+On `STOP`: halt immediately, make no further writes. Report what was already written (past-rounds copy, `strategy.md`, pending items, brief lines, receipt) and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 
-With nobody watching (scheduled or non-interactive): read the files and draft the strategy and the business file check, then write only one receipt line marked `draft-not-approved`. Never write `strategy.md`, history, pending items or the department brief without her yes.
+With nobody watching (scheduled or non-interactive): read the files and draft the strategy and the business file check, then write only one receipt line marked `draft-not-approved`. Never write `strategy.md`, `past-rounds/`, pending items or the department brief without her yes.

@@ -42,7 +42,7 @@ Every client starts from the same seven folders, numbered, at the top of her Dri
 | 01 | Documentos da Empresa | Company Documents | `#e54c34` red | legal, contracts, registrations, company bank documents |
 | 02 | Clientes | Clients | `#5785e0` blue | one folder per client |
 | 03 | Vendas e Marketing | Sales and Marketing | `#4ea56b` green | proposals, price lists, campaigns, posts, ads |
-| 04 | Brand | Brand | `#e896b2` pink | `Logos/` and `Images/` (`Imagens/` in Portuguese) inside; colors and fonts loose |
+| 04 | Brand | Brand | `#e896b2` pink | `Logos/` and `Images/` inside; colors and fonts loose |
 | 05 | Processos (SOPs) | Processes (SOPs) | `#ee7d48` orange | how things are done, step by step |
 | 06 | Financeiro e Impostos | Finance and Taxes | `#f4d376` yellow | invoices, receipts, statements, taxes |
 | 07 | Referências | References | `#9e7cdc` purple | templates, guides, material kept to consult |

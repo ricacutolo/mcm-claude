@@ -1,10 +1,13 @@
 # Guides for the content setup
 
-Three short guides, handed to her at the Canva steps of the content setup. Written so someone who has never used Canva can follow along. Claude gives them in plain words, one step at a time, filling in her own colors, fonts and logo files from `about-me/brand.md` or `departments/content/brand-style.md`.
+Six short guides, handed to her at the content setup steps listed below. Written so someone who has never used Canva can follow along. Claude gives them in plain words, one step at a time, filling in her own colors, fonts and logo files from `about-me/brand.md` or `departments/content/brand-style.md`.
 
 - **Guide 0** — first time in Canva (setup step 5)
 - **Guide A** — Brand Kit colors (setup step 7)
 - **Guide B** — logo, fonts and hand fixes on a template (setup step 8, and any hand fix after a template or post design)
+- **Guide C** — connect GoHighLevel to Claude (setup step 13)
+- **Guide D** — connect Instagram and Facebook in GoHighLevel's Social Planner (setup step 12)
+- **Guide E** — make your GoHighLevel key and put it in the settings file (setup step 19)
 
 ---
 
@@ -51,3 +54,27 @@ This lets Claude schedule your posts in GoHighLevel's Social Planner and read ho
 
 If something looks different on your screen, tell Claude what you see; the button names can change.
 
+## Guide D: Connect Instagram and Facebook in GoHighLevel (about 5 minutes)
+
+This lets GoHighLevel's Social Planner put your posts on Instagram and Facebook once you've approved them.
+
+1. Log in to GoHighLevel and open your business.
+2. In the menu on the left, click **Marketing**, then **Social Planner**.
+3. Click to connect your accounts. Choose **Instagram**, and **Facebook** too if you post there, and sign in with the account that runs your business page. Approve what it asks for.
+4. When your accounts show as connected, tell Claude.
+
+If your screen looks different, describe what you see and Claude finds it with you.
+
+## Guide E: Make your GoHighLevel key (about 5 minutes)
+
+This key lets your computer upload your finished designs to GoHighLevel. Treat it like a password: it goes only into the settings file in your content folder, never into the chat.
+
+1. In GoHighLevel, open your business, click **Settings**, then **Private Integrations**.
+2. Create a new one and name it **Claude uploads**.
+3. When it asks for permissions, turn on the media one (it may be called **medias**).
+4. Create it and copy the key it shows you.
+5. Open the settings file in your content folder (its name is `.env`). Macs hide files whose names start with a dot, so Claude can open it for you; or, in Finder, open your content folder and press **Shift + Command + .** (period) to show it.
+6. Paste the key right after `GHL_PIT=`, with no spaces, and save.
+7. Tell Claude it's saved. Claude only checks that a key is there, never what it says.
+
+If your screen looks different, describe what you see and Claude finds it with you.

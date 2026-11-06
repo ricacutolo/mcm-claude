@@ -43,7 +43,7 @@ What a post looks like. Each business switches on the formats that fit it (face,
 | Illustrated carousel | Simple drawings or diagrams that explain how something works | no | template + Canva elements | How it works, Old way vs new way, Before and after, Leak |
 | Animated diagram | An illustrated diagram in motion | no | phase 2 (motion graphics) | How it works, Old way vs new way |
 | Screenshot post | A real text thread, calendar or review, with permission | no | the real thing | Proof |
-| Talking-head reel | To camera, 30-60 s | yes | phase 2 (video) | Who we are, Story, Question you always get |
+| Talking-head reel | To camera, 30-60 s | yes | content-video (beta), face on camera | Who we are, Story, Question you always get |
 | Voiceover reel | Voice over footage or screens | voice | phase 2 | How it works, Behind the scenes |
 | Text-on-video reel | Captions over footage | no | phase 2 | Quick win, Myth vs truth, Leak |
 | Stories | Casual, 24 hours | optional | later | any |
