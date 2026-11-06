@@ -27,7 +27,7 @@ Nothing else. Do **not** read `sobre-mim/`, briefs, logs or indexes here.
 
 Re-load only after compaction, and then only this file.
 
-If the installed version differs from `versao_plugin` in `_sistema/estado.md`, update that one field to the installed version, without a word to her.
+If the installed version differs from `versao_plugin` in `_sistema/estado.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep).
 
 If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is not running /instalar**, say once: "Sua instalação parou na etapa X. Quer continuar? É só dizer **continuar a instalação**." and carry on with whatever she asked.
 
@@ -157,7 +157,9 @@ An **área** groups departments (and projects) by the part of her life they belo
 
 ## Upkeep — every 7 days, on use
 
-At the first natural pause in a conversation (not before answering her first message), check `ultima_manutencao` in `_sistema/estado.md`. If it is more than 7 days ago, or missing, first write `_sistema/saude.md` (it is local and numbers only, so no permission is needed), then offer once:
+**After an update** (the version changed in this conversation): at the first natural pause, don't offer. Say once "Seu sistema acabou de ser atualizado para a versão <x>. Vou fazer uma arrumação rápida agora — uns 2 minutos." and run the steps below. Every change inside them still waits for her **sim**, as always. If she says **depois** or PARAR, stop; the tidy-up is then offered the normal way next time.
+
+Otherwise, at the first natural pause in a conversation (not before answering her first message), check `ultima_manutencao` in `_sistema/estado.md`. If it is more than 7 days ago, or missing, first write `_sistema/saude.md` (it is local and numbers only, so no permission is needed), then offer once:
 
 > "Faz uma semana desde a última arrumação do sistema. Leva uns 2 minutos — posso fazer agora? (**sim** / **depois**)"
 

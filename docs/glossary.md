@@ -38,6 +38,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `sobre-mim/` | `about-me/` |
 | `sobre-mim/sobre-mim.md` | `about-me/about-me.md` |
 | `sobre-mim/negocio.md` | `about-me/business.md` |
+| `sobre-mim/negocio-<area>.md` | `about-me/business-<area>.md` |
 | `sobre-mim/escrita.md` | `about-me/writing.md` |
 | `sobre-mim/drive.md` | `about-me/drive.md` |
 | `sobre-mim/marca.md` | `about-me/brand.md` |
@@ -97,6 +98,11 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | arquivado | archived |
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
+| area: (frontmatter) | area: |
+| Áreas (sistema section) | Areas (system section) |
+| Pessoal | Personal |
+| area: nenhuma · ## Sem área | area: none · ## No area |
+| Meu negócio <Área> (notes section) | My business <Area> |
 | sem dono / sem data | no owner / no date |
 
 ## Her Drive

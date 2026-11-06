@@ -28,7 +28,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 9. `kit/README.md` — where each step runs, the cloud setup, the rules learned so far. The kit's other files (`template.html`, `build.py`, `pack.py`, `plan_segments.py`, `encode.sh`, `diagrams/`) are run, not read.
 10. `about-me/about-me.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
-    - `about-me/business.md` — the offer, who it's for, the wedge.
+    - the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge.
     - `../content-strategy/playbook.md` — rules, hooks, the 4-point check, CTA by layer.
     - `../content-strategy/library.md` — the reel format definitions.
     - `about-me/writing.md` — her voice.

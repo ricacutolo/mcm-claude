@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departments/index.md` — to catch a duplicate. Missing means there are none yet.
 2. The frontmatter of `context/*.md` — to find an existing log for the same topic.
-3. `about-me/business.md` — only the sections the conversation needs (offers, audience), to propose standards that fit.
+3. The business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Personal.
 4. `about-me/writing.md` — the brief is written in her voice.
 
 ## The rules
@@ -47,6 +47,14 @@ Loaded only when this skill fires:
 - Finish line → "Then it's a project." Offer /new-project and stop.
 - No finish line → continue. Say it once; her answer wins.
 
+### Step 2b — Area
+
+Always ask, even for her first department: everything gets an area from day one.
+
+- Her areas so far (the `## ` headers in `departments/index.md`), plus Personal: "Which area is this department part of? **Personal** · **<Area>** · … or a new business?" No areas yet: "Is this **Personal**, or for one of your businesses? If it's a business, what's it called?"
+- Suggest the likely one first, from what she said; her answer wins.
+- A new business area → she names it ("Community"). If it isn't the business in `about-me/business.md`, tell /system it needs its own business file (its **Areas** rule).
+
 ### Step 3 — The conversation
 
 One question at a time. Skip anything the conversation or `business.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
@@ -67,6 +75,7 @@ Show the full brief:
 ---
 type: department
 slug: <slug>
+area: <Area>
 status: active
 context: context/<slug>.md
 created: YYYY-MM-DD
@@ -117,8 +126,9 @@ Anything other than a clear yes is a change request.
 
 1. Create `departments/` and `departments/<slug>/` if missing.
 2. Write `departments/<slug>/brief.md` exactly as approved.
-3. Re-read `departments/index.md` (create with `# Departments` if missing), then add:
+3. Re-read `departments/index.md` (create with `# Departments` if missing), then add under its `## <Area>` header (create the header if missing; Personal stays last):
    `- [<Name>](<slug>/brief.md) · YYYY-MM-DD · <purpose in one line>`
+   An older index with no area headers: add the line at the end; /system's upkeep regroups it.
 4. Invoke /context to start `context/<slug>.md` with `tier: department` and `brief: departments/<slug>/brief.md`. **Her yes to the brief covers starting its log** — /context does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /context the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. Do **not** create `research/` or `deliverables/` now.
 
