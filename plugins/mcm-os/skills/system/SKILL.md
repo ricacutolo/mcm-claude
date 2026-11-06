@@ -27,7 +27,7 @@ Nothing else. Do **not** read `about-me/`, briefs, logs or indexes here.
 
 Re-load only after compaction, and then only this file.
 
-If the installed version differs from `plugin_version` in `_system/state.md`, update that one field to the installed version, without a word to her.
+If the installed version differs from `plugin_version` in `_system/state.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep).
 
 If `_system/state.md` says `install: incomplete` **and this conversation is not running /install**, say once: "Your install stopped at step X. Want to pick it back up? Just say **continue the install**." and carry on with whatever she asked.
 
@@ -160,7 +160,9 @@ An **area** groups departments (and projects) by the part of her life they belon
 
 ## Upkeep — every 7 days, on use
 
-At the first natural pause in a conversation (not before answering her first message), check `last_upkeep` in `_system/state.md`. If it is more than 7 days ago, or missing, first write `_system/health.md` (it is local and numbers only, so no permission is needed), then offer once:
+**After an update** (the version changed in this conversation): at the first natural pause, don't offer. Say once "Your system was just updated to version <x>. I'll do a quick tidy-up now — about 2 minutes." and run the steps below. Every change inside them still waits for her **yes**, as always. If she says **later** or STOP, stop; the tidy-up is then offered the normal way next time.
+
+Otherwise, at the first natural pause in a conversation (not before answering her first message), check `last_upkeep` in `_system/state.md`. If it is more than 7 days ago, or missing, first write `_system/health.md` (it is local and numbers only, so no permission is needed), then offer once:
 
 > "It's been a week since the system's last tidy-up. It takes about 2 minutes — want me to do it now? (**yes** / **later**)"
 

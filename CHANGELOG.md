@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## MCM 0.3.2 and MCM OS 0.1.1 — 2026-11-06 [both]
+- **Update tidy-up:** the first chat after a plugin update runs the tidy-up on its own (no "want me to?" first), so changes like areas reach every install without anyone remembering to ask. One line tells her the version; every change inside still waits for her yes; "later" or STOP stops it.
+
 ## MCM OS 0.1.1 — 2026-11-06 [mcm-os]
 - Areas, ported from MCM 0.3.1: departments and projects grouped by the part of her life they belong to (Personal, and one area per business). A label (`area:` in each brief), never a folder. /system's new **Areas** section holds the rule; indexes group under `## <Area>`, Personal last, then `## No area` for projects with none; each extra business has `about-me/business-<area>.md`, and every reader of the business file (brand kit, my-voice, content-static, content-video, content-strategy, morning-brief) uses the area in play. new-department / new-project always ask; open-department lists by area; install's business step asks about personal life and other businesses; update routes "My business <Area>"; upkeep proposes areas for existing installs. Glossary rows added.
 
