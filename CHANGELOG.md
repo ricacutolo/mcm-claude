@@ -2,7 +2,7 @@
 
 ## 0.3.1 — 2026-11-06
 - Áreas: departments and projects are grouped by the part of her life they belong to — Pessoal, and one área per business. A label (`area:` in each brief), never a folder: everything stays flat on disk. /sistema has the rule (new **Áreas** section): indexes group under `## <Área>` headers, Pessoal last; each extra business has its own `sobre-mim/negocio-<area>.md`, and every skill that reads the business file uses the one of the área in play.
-- novo-departamento and novo-projeto always ask the área, even for the first one (a project inside a department takes the department's).
+- novo-departamento and novo-projeto always ask the área, even for the first one (a project inside a department takes the department's). A project may have no área (`area: nenhuma`, listed under `## Sem área`); a department always has one.
 - abrir-departamento lists by área; morning-brief names the área on its links and reads every business file's priority.
 - instalar: the business step asks whether she also uses Claude for personal life or another business; seeds can carry `negocio-<area>.md` and `area:` per department.
 - atualizar: a "Meu negócio <Área>" section goes to that business file.

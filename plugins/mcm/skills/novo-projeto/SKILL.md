@@ -43,7 +43,7 @@ If it sounds ongoing ("cuidar do Instagram"), say once: "Isso parece contínuo �
 
 ### Step 2b — Área
 
-Always ask: "Esse projeto é de qual área? **Pessoal** · **<Área>** · …" (her áreas are the `## ` headers in `departamentos/index.md`). A project that belongs to a department takes that department's área; say it instead of asking ("Fica na área **<Área>**, como o departamento."). A new business área follows /sistema's **Áreas** rule.
+Always ask: "Esse projeto é de qual área? **Pessoal** · **<Área>** · … ou **nenhuma**?" (her áreas are the `## ` headers in `departamentos/index.md`). **Nenhuma** is a valid answer for a project: write `area: nenhuma` and list it under `## Sem área` in `projetos/index.md`. A project that belongs to a department takes that department's área; say it instead of asking ("Fica na área **<Área>**, como o departamento."). A new business área follows /sistema's **Áreas** rule.
 
 ### Step 3 — The questions
 
@@ -106,7 +106,7 @@ Then: "Esse é o brief do projeto **<Nome>**. Posso criar? (**sim** / ou me diz 
 
 1. Create `projetos/` and `projetos/<slug>/` if missing.
 2. Write `projetos/<slug>/brief.md` exactly as approved.
-3. Re-read `projetos/index.md` (create with `# Projetos` if missing), then add under its `## <Área>` header (create it if missing; Pessoal stays last):
+3. Re-read `projetos/index.md` (create with `# Projetos` if missing), then add under its `## <Área>` header (create it if missing; Pessoal stays last, then `## Sem área`):
    `- [<Nome>](<slug>/brief.md) · YYYY-MM-DD · ativo · <resultado em uma linha>`
 4. Invoke /contexto to start `contexto/<slug>.md` with `tier: projeto` and `brief: projetos/<slug>/brief.md`. **Her sim to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /contexto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. If it belongs to a department, hand /sistema a pending item for that department's Decisões: `YYYY-MM-DD — Projeto <Nome> aberto.` (hard tier — she confirms with the next batch).

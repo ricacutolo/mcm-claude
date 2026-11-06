@@ -152,7 +152,7 @@ An **área** groups departments (and projects) by the part of her life they belo
 - **Where it lives:** `area: <Nome>` in each department's and project's brief frontmatter.
 - **Her áreas:** the `area:` values in the briefs, plus Pessoal. Read them from the `## <Área>` headers of `departamentos/index.md`.
 - **The list:** `departamentos/index.md` and `projetos/index.md` group their lines under `## <Área>` headers, Pessoal last. With only one área, keep the single header.
-- **Every new department or project gets an área, always**, even the first one: /novo-departamento and /novo-projeto ask.
+- **Every new department or project is asked its área, always**, even the first one: /novo-departamento and /novo-projeto ask. A department always has one. A project may answer **nenhuma** (`area: nenhuma`): it is listed under `## Sem área`, after Pessoal, and reads the main business file.
 - **Business file:** the main business is `sobre-mim/negocio.md`. Each other business área has `sobre-mim/negocio-<area-slug>.md`, same headings. Any skill that reads "the business file" uses the file of the área in play (the department or project she is working in); with none in play, or for Pessoal, the main file. When a new business área appears with no file, propose creating it (hard): the headings of `negocio.md`, filled with what she said.
 
 ## Upkeep — every 7 days, on use
