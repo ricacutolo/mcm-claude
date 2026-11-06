@@ -36,7 +36,6 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 Never read or print `departments/content/.env`. The scripts load `ELEVENLABS_API_KEY` and `GHL_PIT` themselves and never print them.
 
-<!-- TODO(Rica): who provides the ElevenLabs key for client reels (her own ElevenLabs account, or MCM's); install step 19 only sets up GHL_PIT -->
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -63,6 +62,11 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 - Say once: "Video is new in the system, so first I'll check I can make it on your setup. Give me a minute."
 - In Claude's cloud workspace: install HyperFrames and the browser as `kit/README.md` says (`npm install --prefix <dir> hyperframes@0.9.6`, Playwright's Chromium as `HYPERFRAMES_BROWSER_PATH`), then run `hyperframes check --json` on a one-second test comp built from `kit/template.html`.
 - On her computer: `ffmpeg`, `ffprobe` and `python3` answer; `departments/content/.env` has `ELEVENLABS_API_KEY` and `GHL_PIT` set (the check prints only "set" or "not set", never the value); `api.elevenlabs.io` is reachable (any answer from the site counts, even an error code; a refusal from the computer's network filter, `X-Proxy-Error: blocked-by-allowlist`, does not).
+- **No ElevenLabs key yet** (the usual case on a first reel): video uses her own ElevenLabs account to turn her clips into words; it's set up here, the first time she makes a reel, never at install. Walk her through it one step at a time and wait for "done":
+  1. "Go to elevenlabs.io and sign up. The free plan is enough to try it; for posts for your business, their Starter plan (about $6 a month) is the one that allows commercial use."
+  2. "In ElevenLabs, open your profile → **API Keys** → **Create**. Give it access to **Speech to Text** only and copy the key. It's shown once."
+  3. Add an `ELEVENLABS_API_KEY=` line to `departments/content/.env` if it's missing, then open the file for her (Macs hide files that start with a dot; in Finder, Shift+Cmd+. shows them): "Paste the key right after the = sign, save, and tell me when it's done." Never ask for the key in chat.
+  Then re-run the check: it prints only "set" or "not set".
 - **Pass:** receipt line `video-check | pass`, then carry on.
 - **Anything fails:** say it plainly and stop. "I can't make videos on your setup yet: <what's missing, in plain words>. Your reel can wait, or we can make this slot a carousel instead." Swapping the format is content-plan's refresh, run on yes. A missing key: "Add your ElevenLabs key to the settings file in your content folder, by hand, and tell me when it's done." Receipt line `video-check | fail · <what>`. Never work around a failed check.
 
