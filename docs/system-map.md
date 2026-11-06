@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-04
-version: 0.3.0
+version: 0.3.1
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -42,6 +42,7 @@ All names are Portuguese; skills refer to them exactly as written here.
   sobre-mim/
     sobre-mim.md                who she is            (Nuno: about-me.md)
     negocio.md                  the business          (Nuno: business-brain.md)
+    negocio-<area>.md           each other business, one per área (v0.3.1)
     escrita.md                  voice and writing     (Nuno: writing-rules.md)
     drive.md                    her Drive structure and sorting rules (written by organizar-drive)
     marca.md                    her brand: logo files, colors, fonts (written by brand-kit-designer)
@@ -86,6 +87,10 @@ All names are Portuguese; skills refer to them exactly as written here.
 Each log's frontmatter carries `tier: tema | projeto | departamento | cliente`. A topic that changes
 tier changes that one word; nothing moves. A closed project's log gets `status: encerrado`.
 
+## Áreas (v0.3.1)
+
+An área groups departments and projects by the part of her life they belong to: Pessoal, and one per business. A label (`area:` in the brief frontmatter), never a folder, so paths, histories and the Client Book are untouched. Indexes group under `## <Área>` headers, Pessoal last. Each extra business has `sobre-mim/negocio-<area>.md`; readers of "the business file" use the área in play (rule in sistema's **Áreas**). The system (sistema) sits above every área: it is the chief of staff.
+
 ## Write-back — how the system keeps its files current
 
 Owned by **sistema**. Two tiers. The user-facing word for a brief is **brief** ("o brief do departamento"); for a log, **histórico**.
@@ -112,9 +117,9 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | sistema | new (includes "You make the moves": do it yourself, diagnose before asking, manual steps named as manual with one action) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
 | instalar | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool) | `_sistema/log.md` per phase |
 | contexto | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
-| novo-departamento | Rica's new-department | `departamentos/<slug>/brief.md`, `departamentos/index.md` | `_sistema/log.md` |
+| novo-departamento | Rica's new-department; always asks the área | `departamentos/<slug>/brief.md` (with `area:`), `departamentos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-departamento | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
-| novo-projeto | new (markdown, no database) | `projetos/<slug>/brief.md`, `projetos/index.md` | `_sistema/log.md` |
+| novo-projeto | new (markdown, no database); always asks the área | `projetos/<slug>/brief.md` (with `area:`), `projetos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-projeto | mirror of abrir-departamento | nothing but the receipt | `_sistema/log.md` |
 | minha-voz | Nuno voice-writer | `entregas/` or the department's `entregas/` | `_sistema/log.md` |
 | morning-brief | Nuno morning-brief, on demand | nothing (reply only) | `_sistema/log.md` |

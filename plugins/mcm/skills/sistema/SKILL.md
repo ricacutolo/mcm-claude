@@ -35,7 +35,7 @@ If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is
 
 ```
 claude.md                     backup of her Instructions for Claude
-sobre-mim/                    sobre-mim.md · negocio.md · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
+sobre-mim/                    sobre-mim.md · negocio.md (main business) · negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
@@ -84,7 +84,7 @@ Never make her name a skill. Plain words are enough.
 | What came up | Where it goes | Tier |
 |---|---|---|
 | Something about her (family, schedule, values, how she likes to work) | `sobre-mim/sobre-mim.md` | hard |
-| The business: offers, prices, audience, channels, goals | `sobre-mim/negocio.md` | hard |
+| The business: offers, prices, audience, channels, goals | the business file for that área (see **Áreas**) | hard |
 | How she writes, words she uses or refuses, platform voice | `sobre-mim/escrita.md` | hard |
 | A department's purpose, standards, routines | that brief's Propósito / Padrões / Rotinas | hard |
 | A decision inside a department or project | that brief's Decisões | hard |
@@ -145,6 +145,16 @@ When a skill creates `pesquisa/` or `entregas/<tipo>/` for the first time, it cr
 
 A plan file is not the brief: the brief keeps only the next step; the plan holds the steps.
 
+## Áreas
+
+An **área** groups departments (and projects) by the part of her life they belong to: **Pessoal**, and one área per business, named after the business ("Comunidade", "Kume Travel"). It is a label, never a folder: departments stay flat in `departamentos/<slug>/`. In her words: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
+
+- **Where it lives:** `area: <Nome>` in each department's and project's brief frontmatter.
+- **Her áreas:** the `area:` values in the briefs, plus Pessoal. Read them from the `## <Área>` headers of `departamentos/index.md`.
+- **The list:** `departamentos/index.md` and `projetos/index.md` group their lines under `## <Área>` headers, Pessoal last. With only one área, keep the single header.
+- **Every new department or project is asked its área, always**, even the first one: /novo-departamento and /novo-projeto ask. A department always has one. A project may answer **nenhuma** (`area: nenhuma`): it is listed under `## Sem área`, after Pessoal, and reads the main business file.
+- **Business file:** the main business is `sobre-mim/negocio.md`. Each other business área has `sobre-mim/negocio-<area-slug>.md`, same headings. Any skill that reads "the business file" uses the file of the área in play (the department or project she is working in); with none in play, or for Pessoal, the main file. When a new business área appears with no file, propose creating it (hard): the headings of `negocio.md`, filled with what she said.
+
 ## Upkeep — every 7 days, on use
 
 At the first natural pause in a conversation (not before answering her first message), check `ultima_manutencao` in `_sistema/estado.md`. If it is more than 7 days ago, or missing, first write `_sistema/saude.md` (it is local and numbers only, so no permission is needed), then offer once:
@@ -155,10 +165,11 @@ On **sim**:
 
 1. **Pending items** — show any left in `pendentes.md` as a batch.
 2. **Indexes** — for each `index.md` under `departamentos/`, `projetos/` and `entregas/`: list files present but missing from the index, and index lines whose file is gone. Fix missing lines (soft). Report dead lines and remove them only on her yes.
-3. **Long logs** — any `contexto/*.md` past ~150 lines: propose condensing (handled by /contexto, on APPROVE).
-4. **Stale briefs** — any brief whose Estado atual is older than 21 days: name it, one line each. Don't fix.
-5. **Health file** — write `_sistema/saude.md` (below).
-6. Set `ultima_manutencao: YYYY-MM-DD` in `estado.md`, add a receipt line.
+3. **Áreas** — briefs with no `area:`, or an index not grouped by área: propose the áreas in one batch ("Acervo → Pessoal · Clientes → Kume Travel"), then write the `area:` lines and regroup the indexes on her yes.
+4. **Long logs** — any `contexto/*.md` past ~150 lines: propose condensing (handled by /contexto, on APPROVE).
+5. **Stale briefs** — any brief whose Estado atual is older than 21 days: name it, one line each. Don't fix.
+6. **Health file** — write `_sistema/saude.md` (below).
+7. Set `ultima_manutencao: YYYY-MM-DD` in `estado.md`, add a receipt line.
 
 On **depois**: don't ask again in this conversation. The health file was already refreshed.
 

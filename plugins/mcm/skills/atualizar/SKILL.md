@@ -64,6 +64,7 @@ Where they go:
 |---|---|
 | Minha escrita | `sobre-mim/escrita.md`, under the heading that fits |
 | Meu negócio | `sobre-mim/negocio.md`, under the heading that fits |
+| Meu negócio <Área> | `sobre-mim/negocio-<area>.md`, under the heading that fits |
 | Sobre mim | `sobre-mim/sobre-mim.md` |
 | Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximo passo (the next move); facts and stories go to its histórico via /contexto |
 | Projeto X | same, for the project's brief |

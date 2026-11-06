@@ -12,6 +12,14 @@ First English edition, for the first English install.
 ## Repo — 2026-11-06 [both]
 - One marketplace, two plugins: **MCM** (Portuguese) and **MCM OS** (English). `docs/glossary.md` maps every name between them; `scripts/check-sync.py` lists drift before a release.
 
+## 0.3.1 — 2026-11-06
+- Áreas: departments and projects are grouped by the part of her life they belong to — Pessoal, and one área per business. A label (`area:` in each brief), never a folder: everything stays flat on disk. /sistema has the rule (new **Áreas** section): indexes group under `## <Área>` headers, Pessoal last; each extra business has its own `sobre-mim/negocio-<area>.md`, and every skill that reads the business file uses the one of the área in play.
+- novo-departamento and novo-projeto always ask the área, even for the first one (a project inside a department takes the department's). A project may have no área (`area: nenhuma`, listed under `## Sem área`); a department always has one.
+- abrir-departamento lists by área; morning-brief names the área on its links and reads every business file's priority.
+- instalar: the business step asks whether she also uses Claude for personal life or another business; seeds can carry `negocio-<area>.md` and `area:` per department.
+- atualizar: a "Meu negócio <Área>" section goes to that business file.
+- sistema upkeep: briefs with no `area:` (every install before this) get their áreas proposed in one batch, then indexes regroup on her yes.
+
 ## 0.3.0 — 2026-11-05
 - resumo-da-reuniao (new, MCM Client Book): the client version of Rica's meeting recap, same rules. Built from the transcript only (Google Meet folder in her Drive, or text she pastes; never Gemini notes or memory). Pulls a resumo, decisions, promises with who and when (sem dono / sem data when unsaid), preferences, open questions, up to three quotes and dates, each with its transcript time, and files them in the client's sheet and histórico in one batch, on her sim. What clients say about her service builds up in `departamentos/clientes/reacoes.md` (a repeated reaction extends its line). A first conversation with someone new records the outcome she states (fechou / vai pensar / não) and offers the sheet. A Meet transcript stays where Meet put it; a pasted one is saved word for word in the client's Drive folder. Ends with one próximo passo; offers a follow-up draft through minha-voz with only what was said to the client; never sends. Waits when the meeting just ended; receipt on every run. Zoom not built yet.
 - instalar: Step 5 asks where she holds meetings and records `reunioes:` in `estado.md`; for Meet it checks a transcript can be found or tells her how to turn transcription on. The tour mentions "guarda a reunião com…".
