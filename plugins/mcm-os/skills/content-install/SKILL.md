@@ -13,7 +13,7 @@ Speak to her in plain, warm US English, in her voice rules from `about-me/writin
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps) and `scripts/` (the upload and transcription scripts copied into her content folder).
+Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guide C for connecting GoHighLevel) and `scripts/` (the upload and transcription scripts copied into her content folder).
 
 1. `departments/content/setup.md` — progress and the resume point. If missing, this is a new setup.
 2. `departments/content/brief.md` — whether the department exists; its Next step and Current state.
@@ -58,7 +58,7 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 | 10 | Canva | Brand style | `brand-style.md` approved and written | Draft color and font roles and logo files, seeded from `about-me/brand.md` when it exists; show; write on yes |
 | 11 | Canva | Template index | `templates.md` has the base templates | Draft the rows and fill guides; show; write on yes |
 | 12 | GHL | Social accounts | she confirms Instagram (and Facebook) connected in GoHighLevel's Social Planner | She does it in GoHighLevel |
-| 13 | GHL | Her GoHighLevel connected to Claude | `get-account` lists the social accounts for her location | She connects it; then check. <!-- TODO(Rica): which GHL connector clients install; GHL's official MCP has no Social Planner tools --> |
+| 13 | GHL | Her GoHighLevel connected to Claude | the GoHighLevel connection lists her business (sub-account) and `get-account` lists its social accounts | Guide C: she adds GoHighLevel as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
 | 14 | GHL | GoHighLevel details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on yes |
 | 15 | GHL | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: content-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |

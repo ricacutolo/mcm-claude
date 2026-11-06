@@ -1,4 +1,4 @@
-# Canva guides for the content setup
+# Guides for the content setup
 
 Three short guides, handed to her at the Canva steps of the content setup. Written so someone who has never used Canva can follow along. Claude gives them in plain words, one step at a time, filling in her own colors, fonts and logo files from `about-me/brand.md` or `departments/content/brand-style.md`.
 
@@ -37,3 +37,17 @@ If a color or font doesn't show up the way you expect, stop and tell Claude. Don
 6. Done. Canva saves on its own. Tell Claude it's ready.
 
 Sources (Canva help): [Brand Kit limits on Free](https://www.canva.com/help/color-palettes/), [personal Brand Kit](https://www.canva.com/help/personal-brand-kit/), [brand fonts](https://www.canva.com/help/brand-fonts/), [brand logos are paid-only](https://www.canva.com/help/brand-logos/), [apply text styles from the Edit panel](https://www.canva.com/help/apply-brand-kit-text-styles/) (says Free, but setting the styles needs a paid plan). Canva moves buttons now and then; if a click isn't where the guide says, describe what you see and Claude finds it with you.
+
+## Guide C: Connect GoHighLevel to Claude (about 5 minutes)
+
+This lets Claude schedule your posts in GoHighLevel's Social Planner and read how they did. You approve everything on GoHighLevel's own sign-in screen.
+
+1. In Claude, open **Customize → Connectors** (or go to claude.ai/customize/connectors) and choose **Add custom connector**.
+2. Name it **GoHighLevel** and paste this address: `https://services.leadconnectorhq.com/mcp/anthropic/v2`. Save it.
+3. Click **Connect** next to it and sign in to GoHighLevel with your usual login.
+4. When it asks which account to give access to, pick your business.
+5. Approve the permissions it asks for. Make sure **social posts** are included, both reading and writing: that's what lets Claude schedule your posts.
+6. Start a new conversation in Claude (the connection loads with a new conversation) and say **continue content setup**.
+
+If something looks different on your screen, tell Claude what you see; the button names can change.
+
