@@ -12,7 +12,7 @@ run next. In Brazilian Portuguese. Ideas only; drafting happens in `post-instagr
 
 Loaded only when this skill fires:
 
-1. `sobre-mim/negocio.md` — who she serves, their pains in their words, her method and offers, her real proof.
+1. the business file of the área in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — who she serves, their pains in their words, her method and offers, her real proof.
 2. `sobre-mim/escrita.md` — her themes, references and the stories she tells, and its **Por plataforma** section.
 3. `departamentos/conteudo/entregas/instagram/index.md` and `.../linkedin/index.md` — if they exist, the last 30 days, so no topic or hook repeats.
 4. `departamentos/conteudo/pesquisa/index.md` — if it exists, ideas she saved before; one of the five may come from there.

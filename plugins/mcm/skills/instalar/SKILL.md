@@ -47,7 +47,7 @@ After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, a
 
 ## Bringing the seed from the Drive
 
-Rica delivers the seed through her Drive, in a folder named `Semente` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `sobre-mim.md`, `negocio.md`, `escrita.md`, `drive.md`, and one `departamento-<slug>.md` per department.
+Rica delivers the seed through her Drive, in a folder named `Semente` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `sobre-mim.md`, `negocio.md`, `escrita.md`, `drive.md`, one `negocio-<area>.md` per other business, and one `departamento-<slug>.md` per department (with `area:` in its frontmatter).
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
@@ -102,6 +102,7 @@ If `_semente/` does not exist when Step 1 ends, ask once:
 
 - Seed `_semente/negocio.md`: show it section by section, confirm. Ask only the `[PERGUNTAR]` items, then remove the markers. Write `sobre-mim/negocio.md`.
 - No seed: fill `modelos/negocio.md`, one question at a time. Ten questions at most; "não sei" is a fine answer — write "a definir".
+- **Áreas.** Then ask once: "Você usa o Claude só para esse negócio, ou também para a vida pessoal, ou para outro negócio?" Name the main business área after the business. Each other business: its own `sobre-mim/negocio-<area>.md` (seed file `negocio-<area>.md` when present, same flow; otherwise a few questions, "a definir" is fine). Pessoal needs no file. One line to her: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
 
 ## Step 4 — Sua escrita (5-15 min)
 
@@ -124,7 +125,7 @@ If a connector's permission screen looks different from what you describe, ask h
 
 ## Step 6 — Departamentos (10-15 min)
 
-- Seed: for each `_semente/departamentos/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[PERGUNTAR]` items, confirm, fix, replace every `~~data` with today's date, then write it to `departamentos/<slug>/brief.md`, add its index line, and hand /contexto the creation of `contexto/<slug>.md` (`tier: departamento`) with the first line "Departamento criado na instalação." Her **sim** covers both.
+- Seed: for each `_semente/departamentos/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[PERGUNTAR]` items, confirm, fix, replace every `~~data` with today's date, check its `area:` (ask if missing), then write it to `departamentos/<slug>/brief.md`, add its index line under its área header, and hand /contexto the creation of `contexto/<slug>.md` (`tier: departamento`) with the first line "Departamento criado na instalação." Her **sim** covers both.
 - No seed: run /novo-departamento for **Conteúdo** only. Say more can be created any time by saying "novo departamento".
 - End with one line on the difference: "Departamento é o que você mantém sempre. Projeto é o que tem fim — para isso é só dizer **novo projeto**."
 

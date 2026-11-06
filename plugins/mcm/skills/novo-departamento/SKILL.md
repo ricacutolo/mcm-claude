@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departamentos/index.md` — to catch a duplicate. Missing means there are none yet.
 2. The frontmatter of `contexto/*.md` — to find an existing log for the same topic.
-3. `sobre-mim/negocio.md` — only the sections the conversation needs (offers, audience), to propose standards that fit.
+3. The business file of its área (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Pessoal.
 4. `sobre-mim/escrita.md` — the brief is written in her voice.
 
 ## The rules
@@ -47,6 +47,14 @@ Loaded only when this skill fires:
 - Finish line → "Então é um projeto." Offer /novo-projeto and stop.
 - No finish line → continue. Say it once; her answer wins.
 
+### Step 2b — Área
+
+Always ask, even for her first department: everything gets an área from day one.
+
+- Her áreas so far (the `## ` headers in `departamentos/index.md`), plus Pessoal: "Esse departamento é de qual área? **Pessoal** · **<Área>** · … ou de um negócio novo?" No áreas yet: "Isso é **Pessoal** ou de um negócio seu? Se for de um negócio, qual o nome dele?"
+- Suggest the likely one first, from what she said; her answer wins.
+- A business área that is new → she names it ("Comunidade"). If it isn't the business in `sobre-mim/negocio.md`, tell /sistema it needs its own business file (its **Áreas** rule).
+
 ### Step 3 — The conversation
 
 One question at a time. Skip anything the conversation or `negocio.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
@@ -67,6 +75,7 @@ Show the full brief:
 ---
 tipo: departamento
 slug: <slug>
+area: <Área>
 status: ativo
 contexto: contexto/<slug>.md
 criado: YYYY-MM-DD
@@ -117,8 +126,9 @@ Anything other than a clear yes is a change request.
 
 1. Create `departamentos/` and `departamentos/<slug>/` if missing.
 2. Write `departamentos/<slug>/brief.md` exactly as approved.
-3. Re-read `departamentos/index.md` (create with `# Departamentos` if missing), then add:
+3. Re-read `departamentos/index.md` (create with `# Departamentos` if missing), then add under its `## <Área>` header (create the header if missing; Pessoal stays last):
    `- [<Nome>](<slug>/brief.md) · YYYY-MM-DD · <propósito em uma linha>`
+   An older index with no área headers: add the line at the end; /sistema's upkeep regroups it.
 4. Invoke /contexto to start `contexto/<slug>.md` with `tier: departamento` and `brief: departamentos/<slug>/brief.md`. **Her sim to the brief covers starting its log** — /contexto does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /contexto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. Do **not** create `pesquisa/` or `entregas/` now.
 
