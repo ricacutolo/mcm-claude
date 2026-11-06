@@ -1,5 +1,17 @@
 # Changelog
 
+Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
+
+## MCM OS 0.1.0 — 2026-11-06 [mcm-os]
+First English edition, for the first English install.
+- **The base system in English:** system, install, context, new/open department, new/open project, new/open client, save-to-client, save-meeting, my-voice, morning-brief, update, organize-drive, brand-kit-designer. Same rules and structure as MCM 0.3.0, English folder names (`about-me/`, `departments/`, `projects/`, `context/`, `_system/`), US English throughout.
+- **The content machine (v1):** content-post (the front door: next slot, missed-slot rule, hands off by format, idea capture, stay one post ahead, publish check), content-static (carousels, illustrated carousels, text posts in Canva, scheduled in GoHighLevel), content-video (talking-head reels, **beta**), content-plan (rolling 4 weeks), content-strategy (ships the strategy library and copy playbook, read-only), content-template, content-review (monthly; her library notes and swipe file stay in her department), content-install (20-step content setup: Canva, brand, base templates shared by Rica and rebranded in her account, GoHighLevel connection and Social Planner, upload key, strategy).
+- Install's tour and first test point to the content machine instead of the old post skills; Step 8 offers the content setup.
+- Not in this edition: the old ideas / Instagram / LinkedIn post skills (replaced by the content machine; LinkedIn returns with it later), photo posts, newsletter, repurposing.
+
+## Repo — 2026-11-06 [both]
+- One marketplace, two plugins: **MCM** (Portuguese) and **MCM OS** (English). `docs/glossary.md` maps every name between them; `scripts/check-sync.py` lists drift before a release.
+
 ## 0.3.0 — 2026-11-05
 - resumo-da-reuniao (new, MCM Client Book): the client version of Rica's meeting recap, same rules. Built from the transcript only (Google Meet folder in her Drive, or text she pastes; never Gemini notes or memory). Pulls a resumo, decisions, promises with who and when (sem dono / sem data when unsaid), preferences, open questions, up to three quotes and dates, each with its transcript time, and files them in the client's sheet and histórico in one batch, on her sim. What clients say about her service builds up in `departamentos/clientes/reacoes.md` (a repeated reaction extends its line). A first conversation with someone new records the outcome she states (fechou / vai pensar / não) and offers the sheet. A Meet transcript stays where Meet put it; a pasted one is saved word for word in the client's Drive folder. Ends with one próximo passo; offers a follow-up draft through minha-voz with only what was said to the client; never sends. Waits when the meeting just ended; receipt on every run. Zoom not built yet.
 - instalar: Step 5 asks where she holds meetings and records `reunioes:` in `estado.md`; for Meet it checks a transcript can be found or tells her how to turn transcription on. The tour mentions "guarda a reunião com…".

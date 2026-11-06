@@ -1,5 +1,7 @@
 # MCM para o Claude
 
+> **English:** this repository holds two plugins. **MCM OS** is the English edition: in the Claude desktop app, open **Settings → Plugins → Add marketplace → Add from a repository**, paste `ricacutolo/mcm-claude`, then turn on **MCM OS** and **Sync automatically**. Instructions in English: [plugins/mcm-os/README.md](plugins/mcm-os/README.md). The Portuguese edition, **MCM**, is described below.
+
 O sistema de trabalho da MyClientMachine dentro do Claude: o Claude passa a saber quem você é, como é o seu negócio e como você escreve, organiza o trabalho em departamentos (o que é contínuo) e projetos (o que tem fim), e guarda o histórico de cada assunto para qualquer conversa continuar de onde a outra parou.
 
 ## Como instalar (uma vez só)
