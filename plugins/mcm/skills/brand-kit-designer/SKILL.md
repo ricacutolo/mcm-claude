@@ -13,7 +13,7 @@ Speak Brazilian Portuguese, warm and plain. Never say "skill", "SVG", "hex", "re
 
 Loaded when this skill fires, nothing more:
 
-1. `sobre-mim/negocio.md` — what she sells and to whom.
+1. the business file of the área in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — what she sells and to whom.
 2. `sobre-mim/escrita.md` — only its voice summary, for the brand's tone.
 3. `sobre-mim/marca.md` — if it exists, she already has a kit: offer to adjust it instead of starting over.
 4. `sobre-mim/drive.md` — where `04. Brand` is in her Drive. Missing means her Drive is not organized yet; files then go to her folder only.

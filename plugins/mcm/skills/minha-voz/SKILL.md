@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start:
 
 1. `sobre-mim/escrita.md` — her voice: tone, register, words she uses and never uses, samples.
 2. `${CLAUDE_SKILL_DIR}/kill-list.md` — the anti-AI floor, applied even if `escrita.md` is thin.
-3. `sobre-mim/negocio.md` — only when the text touches her offers, clients or prices.
+3. the business file of the área in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — only when the text touches her offers, clients or prices.
 4. `sobre-mim/sobre-mim.md` — only when the text needs personal context.
 
 If `sobre-mim/escrita.md` does not exist, say once: "Ainda não tenho o arquivo da sua voz. Posso escrever agora com um tom neutro, ou a gente roda a instalação primeiro." and continue if she wants.

@@ -13,7 +13,7 @@ only; she posts. Speak to her in Brazilian Portuguese.
 Loaded only when this skill fires:
 
 1. `sobre-mim/escrita.md` — her voice, and its **Por plataforma** section (Instagram).
-2. `sobre-mim/negocio.md` — audience, pains, method, offers, real proof.
+2. the business file of the área in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — audience, pains, method, offers, real proof.
 3. `${CLAUDE_PLUGIN_ROOT}/skills/ideias-de-post/hooks.md` — hook patterns and the first-words test.
 4. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md`.
 5. `departamentos/conteudo/entregas/instagram/index.md` — if it exists, to avoid repeating a recent hook or topic.
