@@ -105,13 +105,13 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | MCM - Deliverables / Semente | MCM - Deliverables / Seed |
 | MCM - Notas do Rica | MCM - Rica's Notes |
 | MCM - System Health Report | MCM - System Health Report |
-| 01 Documentos da Empresa | 01 Company Documents |
-| 02 Clientes | 02 Clients |
-| 03 Vendas e Marketing | 03 Sales and Marketing |
-| 04 Brand | 04 Brand |
-| 05 Processos (SOPs) | 05 Processes (SOPs) |
-| 06 Financeiro e Impostos | 06 Finance and Taxes |
-| 07 Referências | 07 References |
+| 01. Documentos da Empresa | 01. Company Documents |
+| 02. Clientes | 02. Clients |
+| 03. Vendas e Marketing | 03. Sales and Marketing |
+| 04. Brand | 04. Brand |
+| 05. Processos (SOPs) | 05. Processes (SOPs) |
+| 06. Financeiro e Impostos | 06. Finance and Taxes |
+| 07. Referências | 07. References |
 | z - arquivo | z - archive |
 
 ## Words said to her
