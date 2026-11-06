@@ -13,7 +13,7 @@ Speak to her in plain, warm US English. Never say "skill", "SVG", "hex", "render
 
 Loaded when this skill fires, nothing more:
 
-1. `about-me/business.md` — what she sells and to whom.
+1. the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — what she sells and to whom.
 2. `about-me/writing.md` — only its voice summary, for the brand's tone.
 3. `about-me/brand.md` — if it exists, she already has a kit: offer to adjust it instead of starting over.
 4. `about-me/drive.md` — where `04. Brand` is in her Drive. Missing means her Drive is not organized yet; files then go to her folder only.

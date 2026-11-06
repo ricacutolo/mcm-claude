@@ -41,6 +41,10 @@ Loaded only when this skill fires:
 
 If it sounds ongoing ("keep up the Instagram"), say once: "This sounds ongoing — there's no finish line. Wouldn't it be a department?" Her answer wins.
 
+### Step 2b — Area
+
+Always ask: "Which area is this project part of? **Personal** · **<Area>** · … or **none**?" (her areas are the `## ` headers in `departments/index.md`). A project that belongs to a department takes that department's area; say it instead of asking ("It goes in **<Area>**, like the department."). **None** is a valid answer for a project: write `area: none` and list it under `## No area` in `projects/index.md`. A new business area follows /system's **Areas** rule.
+
 ### Step 3 — The questions
 
 One at a time, skipping what the conversation already answers. Three is usually enough; four is the ceiling.
@@ -58,6 +62,7 @@ If the result is vague ("make the podcast better"), say so once: "That makes it 
 ---
 type: project
 slug: <slug>
+area: <Area>
 status: active
 department: <department slug, or none>
 context: context/<slug>.md
@@ -101,7 +106,7 @@ Then: "This is the project brief for **<Name>**. Can I create it? (**yes** / or 
 
 1. Create `projects/` and `projects/<slug>/` if missing.
 2. Write `projects/<slug>/brief.md` exactly as approved.
-3. Re-read `projects/index.md` (create with `# Projects` if missing), then add:
+3. Re-read `projects/index.md` (create with `# Projects` if missing), then add under its `## <Area>` header (create it if missing; Personal stays last, then `## No area`):
    `- [<Name>](<slug>/brief.md) · YYYY-MM-DD · active · <result in one line>`
 4. Invoke /context to start `context/<slug>.md` with `tier: project` and `brief: projects/<slug>/brief.md`. **Her yes to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /context the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. If it belongs to a department, hand /system a pending item for that department's Decisions: `YYYY-MM-DD — Project <Name> opened.` (hard tier — she confirms with the next batch).

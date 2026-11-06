@@ -64,6 +64,7 @@ Where they go:
 |---|---|
 | My writing | `about-me/writing.md`, under the heading that fits |
 | My business | `about-me/business.md`, under the heading that fits |
+| My business <Area> | `about-me/business-<area>.md`, under the heading that fits |
 | About me | `about-me/about-me.md` |
 | Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context |
 | Project X | same, for the project's brief |

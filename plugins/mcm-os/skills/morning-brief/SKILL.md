@@ -13,8 +13,8 @@ in the chat, in plain, warm US English. Read-only on Gmail and Calendar.
 Loaded only when this skill fires:
 
 1. `about-me/about-me.md` — timezone (default `America/New_York`) and anything she said about her schedule.
-2. `about-me/business.md` — only the current priority / main offer, to rank what matters.
-3. `departments/index.md` and `projects/index.md` — if they exist, to link an email or event to a department or project by name.
+2. `about-me/business.md` (and any `business-<area>.md`) — only the current priority / main offer of each, to rank what matters.
+3. `departments/index.md` and `projects/index.md` — if they exist, to link an email or event to a department or project by name. When she has more than one area, say the area with the link ("Community · partners' meeting").
 4. `${CLAUDE_PLUGIN_ROOT}/skills/my-voice/kill-list.md` — the brief must pass it.
 
 Then pull live data:

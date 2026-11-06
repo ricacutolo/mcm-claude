@@ -35,7 +35,7 @@ If `_system/state.md` says `install: incomplete` **and this conversation is not 
 
 ```
 claude.md                     backup of her Instructions for Claude
-about-me/                     about-me.md · business.md · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
+about-me/                     about-me.md · business.md (main business) · business-<area>.md (each other business) · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
   content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · performance-log.md · library-notes.md · swipe.md · posts/ · scripts/ · .env · past-rounds/
@@ -85,7 +85,7 @@ Never make her name a skill. Plain words are enough.
 | What came up | Where it goes | Tier |
 |---|---|---|
 | Something about her (family, schedule, values, how she likes to work) | `about-me/about-me.md` | hard |
-| The business: offers, prices, audience, channels, goals | `about-me/business.md` | hard |
+| The business: offers, prices, audience, channels, goals | the business file for that area (see **Areas**) | hard |
 | How she writes, words she uses or refuses, platform voice | `about-me/writing.md` | hard |
 | A department's purpose, standards, routines | that brief's Purpose / Standards / Routines | hard |
 | A decision inside a department or project | that brief's Decisions | hard |
@@ -148,6 +148,16 @@ A plan file is not the brief: the brief keeps only the next step; the plan holds
 
 `departments/content/plan.md` is not a plan file: it is the content plan, owned by /content-plan, and this rule doesn't apply to it.
 
+## Areas
+
+An **area** groups departments (and projects) by the part of her life they belong to: **Personal**, and one area per business, named after the business ("Community", "Miller Travel"). It is a label, never a folder: departments stay flat in `departments/<slug>/`. In her words: "An area is how you separate your life: personal on one side, each business on the other."
+
+- **Where it lives:** `area: <Name>` in each department's and project's brief frontmatter.
+- **Her areas:** the `area:` values in the briefs, plus Personal. Read them from the `## <Area>` headers of `departments/index.md`.
+- **The list:** `departments/index.md` and `projects/index.md` group their lines under `## <Area>` headers, Personal last. With only one area, keep the single header.
+- **Every new department or project is asked its area, always**, even the first one: /new-department and /new-project ask. A department always has one. A project may answer **none** (`area: none`): it is listed under `## No area`, after Personal, and reads the main business file.
+- **Business file:** the main business is `about-me/business.md`. Each other business area has `about-me/business-<area-slug>.md`, same headings. Any skill that reads "the business file" uses the file of the area in play (the department or project she is working in); with none in play, or for Personal, the main file. When a new business area appears with no file, propose creating it (hard): the headings of `business.md`, filled with what she said.
+
 ## Upkeep — every 7 days, on use
 
 At the first natural pause in a conversation (not before answering her first message), check `last_upkeep` in `_system/state.md`. If it is more than 7 days ago, or missing, first write `_system/health.md` (it is local and numbers only, so no permission is needed), then offer once:
@@ -158,10 +168,11 @@ On **yes**:
 
 1. **Pending items** — show any left in `pending.md` as a batch.
 2. **Indexes** — for each `index.md` under `departments/`, `projects/` and `deliverables/`: list files present but missing from the index, and index lines whose file is gone. Fix missing lines (soft). Report dead lines and remove them only on her yes.
-3. **Long logs** — any `context/*.md` past ~150 lines: propose condensing (handled by /context, on APPROVE).
-4. **Stale briefs** — any brief whose Current state is older than 21 days: name it, one line each. Don't fix.
-5. **Health file** — write `_system/health.md` (below).
-6. Set `last_upkeep: YYYY-MM-DD` in `state.md`, add a receipt line.
+3. **Areas** — briefs with no `area:`, or an index not grouped by area: propose the areas in one batch ("Journal → Personal · Clients → Miller Travel"), then write the `area:` lines and regroup the indexes on her yes.
+4. **Long logs** — any `context/*.md` past ~150 lines: propose condensing (handled by /context, on APPROVE).
+5. **Stale briefs** — any brief whose Current state is older than 21 days: name it, one line each. Don't fix.
+6. **Health file** — write `_system/health.md` (below).
+7. Set `last_upkeep: YYYY-MM-DD` in `state.md`, add a receipt line.
 
 On **later**: don't ask again in this conversation. The health file was already refreshed.
 

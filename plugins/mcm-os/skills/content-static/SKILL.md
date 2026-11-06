@@ -26,7 +26,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 9. The post's own `departments/content/posts/<folder>/post.md`, if it exists — to resume.
 10. `about-me/about-me.md` — only her time zone.
 11. Only when recommending ideas or drafting copy (Steps 2-3):
-    - `about-me/business.md` — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
+    - the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
     - `../content-strategy/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 4-point check.
     - `departments/content/swipe.md` — lines that worked for her, if it exists.
     - `about-me/writing.md` — her voice.

@@ -47,7 +47,7 @@ After each step: set that row to `complete` in `state.md`, set `current_step`, a
 
 ## Bringing the seed from the Drive
 
-Rica delivers the seed through her Drive, in a folder named `Seed` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `about-me.md`, `business.md`, `writing.md`, `drive.md`, and one `department-<slug>.md` per department.
+Rica delivers the seed through her Drive, in a folder named `Seed` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `about-me.md`, `business.md`, `writing.md`, `drive.md`, one `business-<area>.md` per other business, and one `department-<slug>.md` per department (with `area:` in its frontmatter).
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
@@ -102,6 +102,7 @@ If `_seed/` does not exist when Step 1 ends, ask once:
 
 - Seed `_seed/business.md`: show it section by section, confirm. Ask only the `[ASK]` items, then remove the markers. Write `about-me/business.md`.
 - No seed: fill `templates/business.md`, one question at a time. Ten questions at most; "I don't know" is a fine answer — write "to be decided".
+- **Areas.** Then ask once: "Do you use Claude just for this business, or also for your personal life, or for another business?" Name the main business area after the business. Each other business: its own `about-me/business-<area>.md` (seed file `business-<area>.md` when present, same flow; otherwise a few questions, "to be decided" is fine). Personal needs no file. One line to her: "An area is how you separate your life: personal on one side, each business on the other."
 
 ## Step 4 — Your writing (5-15 min)
 
@@ -124,7 +125,7 @@ If a connector's permission screen looks different from what you describe, ask h
 
 ## Step 6 — Departments (10-15 min)
 
-- Seed: for each `_seed/departments/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[ASK]` items, confirm, fix, replace every `~~date` with today's date, then write it to `departments/<slug>/brief.md`, add its index line, and hand /context the creation of `context/<slug>.md` (`tier: department`) with the first line "Department created during the install." Her **yes** covers both.
+- Seed: for each `_seed/departments/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[ASK]` items, confirm, fix, replace every `~~date` with today's date, check its `area:` (ask if missing), then write it to `departments/<slug>/brief.md`, add its index line under its area header, and hand /context the creation of `context/<slug>.md` (`tier: department`) with the first line "Department created during the install." Her **yes** covers both.
 - No seed: run /new-department for **Content** only. Say more can be created any time by saying "new department".
 - End with one line on the difference: "A department is something you keep up all the time. A project is something that has an end — for that, just say **new project**."
 

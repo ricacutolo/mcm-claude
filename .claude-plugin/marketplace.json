@@ -15,7 +15,7 @@
       "name": "mcm-os",
       "source": "./plugins/mcm-os",
       "description": "MyClientMachine's operating system for Claude: guided install, departments, projects, clients, context by topic, your voice and the content machine.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ],
   "metadata": {

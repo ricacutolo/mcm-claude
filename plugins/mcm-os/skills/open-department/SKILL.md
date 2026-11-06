@@ -34,7 +34,7 @@ Loaded only when this skill fires:
 
 ### Step 1 — Match
 
-- No name: list `departments/index.md` (name and one-line purpose). She picks.
+- No name: list `departments/index.md` grouped by area (name and one-line purpose under each area). She picks.
 - Name given: match loosely on names, slugs, the brief's title.
   - One match → Step 2. Several → short numbered list. None → "I don't have a department called X. Want to create it?" (offer /new-department) and stop.
 - No `departments/index.md`: "There are no departments yet. Want to create the first one?"

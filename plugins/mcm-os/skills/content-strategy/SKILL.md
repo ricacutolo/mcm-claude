@@ -15,7 +15,7 @@ Speak to her in plain, warm US English. Say "your content strategy", "your busin
 
 Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only.
 
-1. `about-me/business.md` — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
+1. the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departments/content/library-notes.md`, if it exists — her own entries and catalog additions; they win for her business.
 3. `playbook.md` — CTA by layer, awareness levels.
 4. `departments/content/strategy.md` — if it exists (revise mode), including its "Deliberate differences from the business file".
