@@ -39,7 +39,7 @@ Every time this skill fires:
 
 - `estado.md` missing → first run, Step 0.
 - Steps marked `aguardando semente` and no `_semente/` in her folder → look for the seed in her Drive (**Bringing the seed from the Drive**, below). Not there yet → "Sua instalação está esperando os arquivos que o Rica vai preparar. Assim que ele colocar no seu Drive, é só dizer **continuar a instalação**." Stop. Once `_semente/` exists, resume at the first step that is not `completa`, skipping completed ones (Step 5 included).
-- `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop.
+- `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop — unless she (or another part of the system, with her sim) asked to **refazer etapa X**: then go to that bullet below.
 - Otherwise: "Da última vez paramos na etapa **X — <nome>**. Seguimos na etapa **Y**? (**sim** / **mostrar progresso**)"
 - "refazer etapa X" → confirm it overwrites that step's files, copy each of them to `_revisao/YYYY-MM-DD-<arquivo>` first, then run it.
 
@@ -134,21 +134,20 @@ If a connector's permission screen looks different from what you describe, ask h
 Three short live demos, nothing more. For each: say what she can say, what it does in one sentence, and run it. Never show her command names.
 
 1. "abre o Conteúdo" → /abrir-departamento.
-2. "me dá ideias de post" → /ideias-de-post (keep it to the ideas; no draft yet).
+2. "escreve isso na minha voz…" → /minha-voz (a short sample).
 3. "como está meu dia" → /morning-brief.
 
-Then list the rest in one short block, as things she can say: "escreve na minha voz…", "faz um post pro Instagram sobre…", "post pro LinkedIn sobre…", "novo projeto", "guarda no histórico", "guarda a reunião com…".
+Then list the rest in one short block, as things she can say: "o que eu posto agora", "configura o meu conteúdo", "novo projeto", "guarda no histórico", "guarda a reunião com…".
 
 ## Step 8 — Primeiro teste de verdade (10 min)
 
-1. "Escolha uma das ideias do tour, ou um tema que você quer postar essa semana."
-2. Run /post-instagram on it. It saves to `departamentos/conteudo/entregas/instagram/` and updates the index.
-3. Ask her: "Isso soa como você? De 0 a 10?" If under 7, ask what is off and offer to adjust `sobre-mim/escrita.md` (hard item: show the change, write on **sim**).
-4. Set `instalacao: completa` in `estado.md`.
-5. Write the first `_sistema/saude.md` in the format the sistema skill defines (numbers only), and the Drive copy if approved. Set `ultima_manutencao` to today.
-6. Update the Conteúdo brief (soft sections): Estado atual gets today's date and "Primeiro post feito na instalação"; Próximo passo becomes the next real move she names, or "Definir a frequência de posts" if she has none.
-7. If `_semente/` exists: "Posso mover a pasta `_semente/` para `_revisao/`? Ela não é mais necessária." Move on **sim**; never delete.
-8. Close: "Pronto. Seu sistema está funcionando. Daqui pra frente é só conversar com a pasta conectada — eu sei onde cada coisa fica e vou guardando o que importa."
+1. Ask her about the minha-voz sample from the tour: "Isso soa como você? De 0 a 10?" If under 7, ask what is off and offer to adjust `sobre-mim/escrita.md` (hard item: show the change, write on **sim**).
+2. Offer the content setup: "Quer configurar o seu conteúdo agora? Ele conecta o Canva e o GoHighLevel e leva mais ou menos uma hora; você também pode fazer depois, é só dizer **configura o meu conteúdo**." Run /conteudo-instalar only on **sim**.
+3. Set `instalacao: completa` in `estado.md`.
+4. Write the first `_sistema/saude.md` in the format the sistema skill defines (numbers only), and the Drive copy if approved. Set `ultima_manutencao` to today.
+5. Only if she declined the content setup in 8.2, update the Conteúdo brief (soft sections): Estado atual gets today's date and "Configurado na instalação"; Próximo passo becomes the next real move she names, or "Definir a frequência de posts" if she has none. If she ran the content setup, leave the brief as the content setup left it.
+6. If `_semente/` exists: "Posso mover a pasta `_semente/` para `_revisao/`? Ela não é mais necessária." Move on **sim**; never delete.
+7. Close: "Pronto. Seu sistema está funcionando. Daqui pra frente é só conversar com a pasta conectada — eu sei onde cada coisa fica e vou guardando o que importa."
 
 ## Receipt
 

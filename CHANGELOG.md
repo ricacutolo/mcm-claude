@@ -2,6 +2,14 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## MCM 0.4.0 — 2026-11-06 [mcm]
+The content machine in Portuguese, translated from MCM OS (same skills, same rules, same steps).
+- **Eight content skills:** conteudo-post (the front door: next slot, missed-slot rule, hands off by format, idea capture, stay one post ahead, publish check), conteudo-estatico (carousels, illustrated carousels, text posts in Canva, scheduled in GoHighLevel), conteudo-video (talking-head reels, **beta**; Portuguese transcription by default), conteudo-plano, conteudo-estrategia (ships the strategy library and copy playbook, in English, read-only; her posts are written in Portuguese), conteudo-modelo, conteudo-revisao, conteudo-instalar (20-step setup; its six guides are in Portuguese, with each button's English name in parentheses).
+- Her files in `departamentos/conteudo/` have Portuguese names (`estrategia.md`, `plano.md`, `calendario.md`, `desempenho.md`, …) and Portuguese headings and statuses; the glossary maps each one.
+- **Retired:** ideias-de-post, post-instagram, post-linkedin (moved to `_review/2026-11-06-retired-skills/` in this repo, not shipped). LinkedIn returns with the content machine later. Posts they saved in `departamentos/conteudo/entregas/` stay where they are.
+- sistema routes content to the new skills and lists the Conteúdo department's files; instalar's tour and first test now match MCM OS (a minha-voz sample, then the offer to set up content), and a completed install can still **refazer etapa X**; novo-departamento proposes the content skills by plain names; minha-voz sends social posts to conteudo-post.
+- Drift check: both editions in sync (24 skill pairs).
+
 ## MCM 0.3.2 and MCM OS 0.1.1 — 2026-11-06 [both]
 - **Update tidy-up:** the first chat after a plugin update runs the tidy-up on its own (no "want me to?" first), so changes like areas reach every install without anyone remembering to ask. One line tells her the version; every change inside still waits for her yes; "later" or STOP stops it.
 

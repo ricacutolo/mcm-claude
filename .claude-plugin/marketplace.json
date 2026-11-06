@@ -8,8 +8,8 @@
     {
       "name": "mcm",
       "source": "./plugins/mcm",
-      "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e conteúdo para Instagram e LinkedIn.",
-      "version": "0.3.2"
+      "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e a máquina de conteúdo.",
+      "version": "0.4.0"
     },
     {
       "name": "mcm-os",
