@@ -29,7 +29,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-modelo | content-template |
 | conteudo-revisao | content-review |
 | conteudo-instalar | content-install |
-| ideias-de-post, post-instagram, post-linkedin | retired in content machine v1, no English edition |
+| ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
 | mcm (PT) | mcm-os (EN) |
@@ -47,6 +47,13 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `<client>/ficha.md` | `<client>/sheet.md` |
 | `departamentos/clientes/reacoes.md` | `departments/clients/reactions.md` |
 | `departamentos/conteudo/` | `departments/content/` |
+| `departamentos/conteudo/configuracao.md` | `departments/content/setup.md` |
+| `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |
+| `…/conteudo/modelos.md` · `estilo-da-marca.md` · `ghl.md` | `…/content/templates.md` · `brand-style.md` · `ghl.md` |
+| `…/conteudo/desempenho.md` · `notas-da-biblioteca.md` · `swipe.md` | `…/content/performance-log.md` · `library-notes.md` · `swipe.md` |
+| `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
+| `contexto/conteudo.md` | `context/content.md` |
+| Drive: `Vídeos de conteúdo/post-NN-<slug>` | Drive: `Content videos/post-NN-<slug>` |
 | `projetos/` | `projects/` |
 | `contexto/` | `context/` |
 | `pesquisa/` | `research/` |
@@ -98,6 +105,10 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | arquivado | archived |
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
+| plan and calendar status: `planejado` · `agendado` · `Agendado <time>` · `Publicado <date time>` | `planned` · `scheduled` · `Scheduled <time>` · `Published <date time>` |
+| idea status: `não usada` · `usada: post N` · `descartada` | `unused` · `used: post N` · `dropped` |
+| file sections: Modelos a criar · Planos anteriores · O que aprendemos · Totais da conta · Diferenças deliberadas do arquivo do negócio · Decidido por ela | Templates to build · Past plans · What we learned · Account totals · Deliberate differences from the business file · Decided for her |
+| post.md steps: Ideia · Texto · Design · Agendamento · Resultados (reel: Roteiro · Gravação · Takes · Corte) | Idea · Copy · Design · Schedule · Results (reel: Script · Recording · Takes · Cut) |
 | area: (frontmatter) | area: |
 | Áreas (sistema section) | Areas (system section) |
 | Pessoal | Personal |

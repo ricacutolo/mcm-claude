@@ -38,6 +38,7 @@ claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · negocio.md (main business) · negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
+  conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
 entregas/                     deliverables that belong to no department or project
@@ -51,7 +52,7 @@ _revisao/                     anything that would otherwise be deleted
 | File | Writer |
 |---|---|
 | `contexto/*.md` | /contexto only (this skill hands it approved items) |
-| a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back |
+| a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back, and a department's own skills (the content skills) also write that department brief's Próximo passo, Estado atual and `atualizado:` |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
 | a client's `ficha.md` | /novo-cliente creates it; afterwards /guardar-no-cliente, /resumo-da-reuniao and this skill's write-back |
@@ -71,7 +72,7 @@ She talks to one Claude. That Claude routes:
 - She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/contexto** (capture).
 - She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
-- A writing task → **/minha-voz**, or **/post-instagram**, **/post-linkedin**, **/ideias-de-post** when it is content.
+- A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
 - "Como está meu dia" → **/morning-brief**.
 - "Atualizar", "tem novidade do Rica" → **/atualizar**.
 - "Organiza meu Drive", "onde guardo isso no Drive" → **/organizar-drive**.
@@ -144,6 +145,8 @@ When a skill creates `pesquisa/` or `entregas/<tipo>/` for the first time, it cr
 - **In the chat:** when the file is created or changes meaningfully, say in one line where it is ("O plano está em Conteúdo → entregas → planos"). Don't re-paste the list.
 
 A plan file is not the brief: the brief keeps only the next step; the plan holds the steps.
+
+`departamentos/conteudo/plano.md` is not a plan file: it is the content plan, owned by /conteudo-plano, and this rule doesn't apply to it.
 
 ## Áreas
 

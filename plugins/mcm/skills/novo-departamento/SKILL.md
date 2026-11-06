@@ -63,7 +63,7 @@ One question at a time. Skip anything the conversation or `negocio.md` already a
 2. **"Como é quando ele está indo bem?"** What must always be true — frequency, quality bar, limits. Becomes Padrões.
 3. **"O que se repete aqui, e com que frequência?"** Becomes Rotinas.
 4. **"Onde está o material disso hoje?"** Folders, Drive, apps. Linked, never moved.
-5. **Skills:** propose the ones that fit from this plugin (e.g. for Conteúdo: /ideias-de-post, /post-instagram, /post-linkedin, /minha-voz) with where each saves. She confirms or drops.
+5. **Skills:** propose the ones that fit from this plugin, by the plain names she says, never command names (e.g. for Conteúdo: "próximo post", "planeja o conteúdo", "estratégia de conteúdo", "configura o meu conteúdo", "escreve na minha voz") with where each saves. She confirms or drops.
 
 If the purpose is vague ("cuidar das coisas"), say so once and help her sharpen it.
 

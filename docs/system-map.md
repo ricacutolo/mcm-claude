@@ -1,6 +1,6 @@
 ---
-last-verified: 2026-11-04
-version: 0.3.2
+last-verified: 2026-11-06
+version: 0.4.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -23,7 +23,8 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente · resumo-da-reuniao ── one sheet, histórico and Drive folder per client of hers; meetings filed into them
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
-        ├── minha-voz · morning-brief · ideias-de-post · post-instagram · post-linkedin
+        ├── minha-voz · morning-brief
+        ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup)
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
         ├── organizar-drive ── numbered folders in her Google Drive, then sorts loose files; her sim per plan
@@ -123,9 +124,14 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | abrir-projeto | mirror of abrir-departamento | nothing but the receipt | `_sistema/log.md` |
 | minha-voz | Nuno voice-writer | `entregas/` or the department's `entregas/` | `_sistema/log.md` |
 | morning-brief | Nuno morning-brief, on demand | nothing (reply only) | `_sistema/log.md` |
-| ideias-de-post | Nuno content-coach | `departamentos/conteudo/pesquisa/` | `_sistema/log.md` |
-| post-instagram | Nuno draft-instagram, no Blotato | `departamentos/conteudo/entregas/instagram/` | `_sistema/log.md` |
-| post-linkedin | Nuno draft-linkedin, no Blotato | `departamentos/conteudo/entregas/linkedin/` | `_sistema/log.md` |
+| conteudo-post | Rica's /content-post, router part (translated from mcm-os content-post) | `departamentos/conteudo/ideias.md` (idea capture), `calendario.md` and `desempenho.md` (publish check), brief Próximo passo / Estado atual; hands the post to a maker on her sim; never makes or schedules | `_sistema/log.md` |
+| conteudo-estatico | Rica's /content-post, maker part | `posts/post-NN-<slug>/post.md`, a Canva copy of a TEMPLATE, permanent GoHighLevel media, the scheduled GoHighLevel post, `calendario.md`, `plano.md` Status cell, `ideias.md`, brief; three gates (texto, design, agendamento) | `_sistema/log.md` |
+| conteudo-video (beta) | Rica's /content-video | `posts/post-NN-<slug>/` (script.md, raw/, edit/, reel versions), the scheduled GoHighLevel reel, `calendario.md`, `plano.md` Status cell, brief; four gates; ElevenLabs set up on the first reel; ships the reel kit in `kit/` | `_sistema/log.md` |
+| conteudo-plano | Rica's /content-plan | `departamentos/conteudo/plano.md` (4 weeks, Modelos a criar), brief | `_sistema/log.md` |
+| conteudo-estrategia | Rica's /content-strategy | `estrategia.md`, `rodadas-anteriores/`, business-file suggestions to `pendentes.md`, brief; ships `library.md` and `playbook.md` (English, read-only) | `_sistema/log.md` |
+| conteudo-modelo | Rica's /content-template | a Canva TEMPLATE, `modelos.md` (fill guide), `plano.md` Modelo cells, brief | `_sistema/log.md` |
+| conteudo-revisao | Rica's /content-review | `desempenho.md`, `notas-da-biblioteca.md`, `swipe.md`, `pendentes.md` items, brief; recommends, never edits strategy or plan | `_sistema/log.md` |
+| conteudo-instalar | Rica's content-machine-onboarding | `configuracao.md`, `estilo-da-marca.md`, `modelos.md` (base templates), `ghl.md`, `.env` (empty key line only), `scripts/`, brief; rebrands her copies of MCM's base templates on her sim; ships `guides.md` (PT) and `scripts/` | `_sistema/log.md` |
 | atualizar | new | `sobre-mim/*`, brief sections, `pendentes.md`, `estado.md` → `notas_rica_lidas`; histórico via contexto; reads the Drive doc "MCM - Notas do Rica" (read-only); no `pasta_drive` → finds the folder through that doc and records it on her sim | `_sistema/log.md` |
 | organizar-drive | new (pattern: Nuno tidy-downloads) | folders and moves in her Google Drive (top level only, her sim per plan, never deletes); `sobre-mim/drive.md`; `_sistema/drive/` plans. Base: 01 Documentos da Empresa · 02 Clientes · 03 Vendas e Marketing · 04 Brand · 05 Processos (SOPs) · 06 Financeiro e Impostos · 07 Referências · 08+ uncovered departments | `_sistema/log.md` |
 | brand-kit-designer | new ("MCM Brand Kit Designer") | `entregas/marca/` (round pages, logos, brand page, PNG pack), `04. Brand` in her Drive (Logos/ + brand page, versioned names), `sobre-mim/marca.md`; all on her sim. Logos drawn as original SVG by Claude, PNGs rendered by her Claude; no Illustrator, no Design canvas | `_sistema/log.md` |

@@ -1,6 +1,6 @@
 ---
 name: minha-voz
-description: Escreve qualquer texto na voz dela, sem cara de IA — e-mail, mensagem de WhatsApp, resposta, legenda, texto de newsletter, roteiro, convite. Use quando ela disser "escreve na minha voz", "escreve isso pra mim", "me ajuda a responder", "rascunha um e-mail", "deixa com a minha cara", "reescreve isso do meu jeito", "tá muito robótico". Para posts de Instagram ou LinkedIn, prefira post-instagram ou post-linkedin.
+description: Escreve qualquer texto na voz dela, sem cara de IA — e-mail, mensagem de WhatsApp, resposta, legenda, texto de newsletter, roteiro, convite. Use quando ela disser "escreve na minha voz", "escreve isso pra mim", "me ajuda a responder", "rascunha um e-mail", "deixa com a minha cara", "reescreve isso do meu jeito", "tá muito robótico". Para posts das redes sociais, use conteudo-post.
 ---
 
 # minha-voz — drafts that sound like her
@@ -8,7 +8,7 @@ description: Escreve qualquer texto na voz dela, sem cara de IA — e-mail, mens
 You draft text that sounds like she wrote it. Not generic AI Portuguese, not corporate, none of the
 tells in the kill list. Speak to her in Brazilian Portuguese.
 
-Posts for Instagram or LinkedIn go to `post-instagram` / `post-linkedin` instead; this skill covers
+Social posts go to `conteudo-post` instead; this skill covers
 everything else (emails, WhatsApp messages, replies, newsletter sections, scripts, invitations, bios).
 
 ## Read these first
