@@ -1,9 +1,9 @@
 ---
-name: meeting-recap
-description: "Takes a meeting transcript (Google Meet, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/meeting-recap\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
+name: save-meeting
+description: "Takes a meeting transcript (Google Meet, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
 ---
 
-# meeting-recap — the meeting, filed where it belongs
+# save-meeting — the meeting, filed where it belongs
 
 Part of the **MCM Client Book**. She finishes a meeting, says "save the meeting with the Miller family", and never re-explains the call: decisions, promises and preferences land in the client's sheet and history, and what clients say about her service builds up in one page. Same job as a meeting recap, filed into her system instead of a notes folder.
 
@@ -129,7 +129,7 @@ Then, only if she promised something: "Want me to write the follow-up message fo
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | meeting-recap | <slug or department> · <source: meet / pasted / no transcript> · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
+`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / pasted / no transcript> · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
 
 Reply in one line: "Meeting saved to **<Name>**'s sheet and history." plus the next step.
 

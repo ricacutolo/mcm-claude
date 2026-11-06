@@ -15,7 +15,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | novo-cliente | new-client |
 | abrir-cliente | open-client |
 | guardar-no-cliente | save-to-client |
-| resumo-da-reuniao | meeting-recap |
+| resumo-da-reuniao | save-meeting |
 | minha-voz | my-voice |
 | morning-brief | morning-brief |
 | atualizar | update |

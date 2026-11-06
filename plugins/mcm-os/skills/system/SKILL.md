@@ -55,8 +55,8 @@ _review/                      anything that would otherwise be deleted
 | a brief | its creator (new-department / new-project); afterwards only this skill's write-back, and a department's own skills (the content skills) also write that department brief's Next step, Current state and `updated:` |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `about-me/*` | install during install; afterwards this skill's write-back, or /update on her yes |
-| a client's `sheet.md` | /new-client creates it; afterwards /save-to-client, /meeting-recap and this skill's write-back |
-| `departments/clients/reactions.md` | /meeting-recap only, on her yes; append or extend lines, never rewrite |
+| a client's `sheet.md` | /new-client creates it; afterwards /save-to-client, /save-meeting and this skill's write-back |
+| `departments/clients/reactions.md` | /save-meeting only, on her yes; append or extend lines, never rewrite |
 | `about-me/drive.md` | /organize-drive only, on her yes |
 | `about-me/brand.md` | /brand-kit-designer only, on her yes |
 | `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_read`) |
@@ -69,7 +69,7 @@ She talks to one Claude. That Claude routes:
 
 - She names a department ("let's work on content", "open Mentoring") → **/open-department**.
 - She names a project → **/open-project**.
-- She names one of her clients ("the Miller family", "what do I know about John") → **/open-client**. A new client → **/new-client**. A file or a fact for a client → **/save-to-client**. A meeting that happened ("save the meeting with…", "what did we talk about in the meeting") → **/meeting-recap**. "This conversation is about…" → **/context** (capture).
+- She names one of her clients ("the Miller family", "what do I know about John") → **/open-client**. A new client → **/new-client**. A file or a fact for a client → **/save-to-client**. A meeting that happened ("save the meeting with…", "what did we talk about in the meeting") → **/save-meeting**. "This conversation is about…" → **/context** (capture).
 - She names something ongoing that is neither ("that coaching school thing") → **/context**.
 - Something new and ongoing → offer **/new-department**. Something new with a finish line → offer **/new-project**. The test, said once: "Does this have an end? If it does, it's a project. If it doesn't, it's a department."
 - A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
