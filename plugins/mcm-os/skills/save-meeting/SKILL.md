@@ -1,6 +1,6 @@
 ---
 name: save-meeting
-description: "Takes a meeting transcript (Google Meet, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
+description: "Takes a meeting transcript (Google Meet, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
 ---
 
 # save-meeting — the meeting, filed where it belongs
