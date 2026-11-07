@@ -8,6 +8,7 @@ Two plugins, one marketplace: `plugins/mcm-os` (English) and `plugins/mcm` (Port
 - Translate with `docs/glossary.md`. A new name goes into the glossary in the same commit.
 - Before a merge, `python3 scripts/check-sync.py` shows no new drift. Known gaps are listed in the CHANGELOG.
 - Every change gets a CHANGELOG entry tagged [mcm-os], [mcm] or [both], plus a version bump in `plugin.json` and `.claude-plugin/marketplace.json`.
+- One version number for both editions, always: every release bumps both plugins to the same number (from 0.5.0). `check-sync.py` fails if they differ.
 
 ## One chat at a time
 

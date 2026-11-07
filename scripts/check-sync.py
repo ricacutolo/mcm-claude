@@ -10,7 +10,7 @@ What it checks, per skill pair from docs/glossary.md:
   - same number of quoted rules (lines starting with > ")
   - same number of numbered steps and table rows (a rough guard against a dropped step)
   - every supporting file in one edition has a counterpart in the other (same count per skill)
-It also checks that each plugin.json and the marketplace agree on versions.
+It also checks that each plugin.json and the marketplace agree on versions, and that both editions carry the same version.
 It does not judge translation quality; a person reads the diff for that.
 """
 import json, os, re, sys
@@ -84,6 +84,11 @@ for plug in market.get("plugins", []):
     v = json.load(open(pj, encoding="utf-8")).get("version")
     if v != plug.get("version"):
         problems.append(f"{plug['name']}: marketplace version {plug.get('version')} != plugin.json {v}")
+
+# One version for both editions: the two plugins always ship the same number.
+vers = {p["name"]: p.get("version") for p in market.get("plugins", [])}
+if len(set(vers.values())) > 1:
+    problems.append("editions have different versions (they must match): " + ", ".join(f"{k} {v}" for k, v in vers.items()))
 
 if problems:
     print("Drift found:")
