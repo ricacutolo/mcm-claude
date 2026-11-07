@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## MCM 0.4.1 and MCM OS 0.1.2 — 2026-11-06 [both]
+- **Base templates, fixed words:** the content setup's step 9 rebrand now also rewrites the words on her template copies that no post fills in (the swipe cue, the end-slide call to action) to fit her business, in her voice, and in Brazilian Portuguese in the mcm edition. They show in the same previews she approves; before, only colors and the logo changed.
+
 ## MCM 0.4.0 — 2026-11-06 [mcm]
 The content machine in Portuguese, translated from MCM OS (same skills, same rules, same steps).
 - **Eight content skills:** conteudo-post (the front door: next slot, missed-slot rule, hands off by format, idea capture, stay one post ahead, publish check), conteudo-estatico (carousels, illustrated carousels, text posts in Canva, scheduled in GoHighLevel), conteudo-video (talking-head reels, **beta**; Portuguese transcription by default), conteudo-plano, conteudo-estrategia (ships the strategy library and copy playbook, in English, read-only; her posts are written in Portuguese), conteudo-modelo, conteudo-revisao, conteudo-instalar (20-step setup; its six guides are in Portuguese, with each button's English name in parentheses).
