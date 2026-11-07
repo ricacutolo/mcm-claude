@@ -13,11 +13,11 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a sua estratégia de cont
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only. Both are written in English, with English examples; her posts are written in Brazilian Portuguese, so carry the move, never the English words.
+Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only. A third set ships in `platforms/`: one read-only file per platform (`platforms/README.md` explains them). The platforms line in her strategy is the switch: every content skill reads only the files for the platforms on it. Both are written in English, with English examples; her posts are written in Brazilian Portuguese, so carry the move, never the English words.
 
 1. the business file of the area in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departamentos/conteudo/notas-da-biblioteca.md`, if it exists — her own entries and catalog additions; they win for her business.
-3. `playbook.md` — CTA by layer, awareness levels.
+3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
 4. `departamentos/conteudo/estrategia.md` — if it exists (revise mode), including its "Diferenças deliberadas do arquivo do negócio".
 5. Revise mode only: `departamentos/conteudo/desempenho.md` ("O que aprendemos") and the last `conteudo-revisao` line in `_sistema/log.md`.
 6. `sobre-mim/escrita.md` — for the voice of the strategy's own wording.
@@ -58,7 +58,7 @@ At most 6 questions, one message, each with a recommended answer:
 2. Aparecer na câmera: sim, não ou às vezes?
 3. Quais fotos existem (o seu trabalho, a equipe, o espaço), e pode usar fotos de clientes?
 4. Quanto tempo por semana para conteúdo?
-5. Frequência, dias, horário e plataformas.
+5. Frequência, dias, horário e plataformas. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals. If the content setup already noted her platforms, start from those.
 6. Algum formato para usar mais, ou tipos de post para desligar?
 Skip any question the business file, the current strategy or the conversation already answers. If her time zone isn't in `sobre-mim/sobre-mim.md`, ask it with question 5.
 
@@ -75,7 +75,7 @@ Apply edits exactly, re-show, wait for sim. Differences she keeps go under "Dife
 ### Step 6 — Write
 On sim:
 1. Revise mode: copy the current `estrategia.md` to `departamentos/conteudo/rodadas-anteriores/estrategia-rodada-<N>.md` (create the folder if missing) before writing.
-2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)", with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas) · Modelos · Voz.
+2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)", with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; a separate LinkedIn time only if it differs) · Modelos · Voz.
 3. Each business file update she picked: one line in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/negocio.md § <section> · <the exact proposed line> · (de: estratégia de conteúdo rodada <N>)`. The time zone, if she gave one and it isn't in `sobre-mim/sobre-mim.md`: the same, for that file.
 4. Department brief: update Estado atual (date, one line on the round) and `atualizado:`. If there's no current plan, or the change affects planned slots, set Próximo passo to "Planejar as próximas 4 semanas. Diga \"planeja o conteúdo\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).

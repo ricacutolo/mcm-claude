@@ -13,11 +13,11 @@ Speak to her in plain, warm US English. Say "your content strategy", "your busin
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only.
+Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only. A third set ships in `platforms/`: one read-only file per platform (`platforms/README.md` explains them). The platforms line in her strategy is the switch: every content skill reads only the files for the platforms on it.
 
 1. the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departments/content/library-notes.md`, if it exists — her own entries and catalog additions; they win for her business.
-3. `playbook.md` — CTA by layer, awareness levels.
+3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
 4. `departments/content/strategy.md` — if it exists (revise mode), including its "Deliberate differences from the business file".
 5. Revise mode only: `departments/content/performance-log.md` ("What we learned") and the last `content-review` line in `_system/log.md`.
 6. `about-me/writing.md` — for the voice of the strategy's own wording.
@@ -58,7 +58,7 @@ At most 6 questions, one message, each with a recommended answer:
 2. Face on camera: yes, no or sometimes?
 3. Which photos exist (her own work, team, place), and are customer photos OK?
 4. How much time per week for content?
-5. Cadence, days, time and platforms.
+5. Cadence, days, time and platforms. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals. If the content setup already noted her platforms, start from those.
 6. Any format to lean on, or post types to switch off?
 Skip any question the business file, the current strategy or the conversation already answers. If her time zone isn't in `about-me/about-me.md`, ask it with question 5.
 
@@ -75,7 +75,7 @@ Apply edits exactly, re-show, wait for yes. Differences she keeps go under "Deli
 ### Step 6 — Write
 On yes:
 1. Revise mode: copy the current `strategy.md` to `departments/content/past-rounds/strategy-round-<N>.md` (create the folder if missing) before writing.
-2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>" and "Status: CONFIRMED round <N> (<her name>, <date>)", with sections: Who we post for · Deliberate differences from the business file · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms) · Templates · Voice.
+2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>" and "Status: CONFIRMED round <N> (<her name>, <date>)", with sections: Who we post for · Deliberate differences from the business file · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms: the switch the other content skills read; a separate LinkedIn time only if it differs) · Templates · Voice.
 3. Each business file update she picked: one line in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business.md § <section> · <the exact proposed line> · (from: content strategy round <N>)`. The time zone, if she gave one and it isn't in `about-me/about-me.md`: the same, for that file.
 4. Department brief: update Current state (date, one line on the round) and `updated:`. If there's no current plan, or the change affects planned slots, set Next step to "Plan the next 4 weeks. Say \"plan content\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).

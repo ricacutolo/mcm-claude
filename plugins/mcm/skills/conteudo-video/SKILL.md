@@ -19,7 +19,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot conteudo-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format.
 2. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
-3. `departamentos/conteudo/estrategia.md` — which reel formats are on, platforms, CTA for the layer that's on.
+3. `departamentos/conteudo/estrategia.md` — which reel formats are on, platforms, CTA for the layer that's on. Then `../conteudo-estrategia/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
 4. `departamentos/conteudo/plano.md` — the slot's row and the next `planejado` slot.
 5. `departamentos/conteudo/calendario.md` — what's scheduled and published.
 6. `departamentos/conteudo/estilo-da-marca.md` — color and font roles, logo files; `sobre-mim/marca.md` when it exists, for the logo files.
@@ -151,7 +151,7 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 
 ### Step 7 — Schedule (gate 4)
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `sobre-mim/sobre-mim.md`, else ask once). If the time has slipped to under 1 hour away, recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
-- Platforms from `estrategia.md` (Instagram reel; Facebook reel when Facebook is on). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
+- Platforms from `estrategia.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
 - If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do GoHighLevel e me avisa quando terminar."
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:

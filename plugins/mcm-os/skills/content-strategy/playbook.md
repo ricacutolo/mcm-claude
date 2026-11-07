@@ -78,6 +78,8 @@ Other post types get their structure when their template is built.
 4. The CTA for the layer that's on.
 5. 3-5 hashtags.
 
+This is the main caption, used by the platforms that share it (Instagram, Facebook). A platform whose file in `platforms/` gives it its own caption (LinkedIn) follows that file instead.
+
 ## 7. CTA by layer
 
 | Layer | CTA |

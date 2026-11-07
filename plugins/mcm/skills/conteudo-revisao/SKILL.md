@@ -19,7 +19,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 2. `_sistema/log.md` — the last `conteudo-revisao` line (where the window starts).
 3. `departamentos/conteudo/calendario.md` — what was published and when.
 4. `departamentos/conteudo/posts/*/post.md` — per post: topic, post type, format, template, hook pattern, GoHighLevel post ID.
-5. `departamentos/conteudo/estrategia.md` — layers on, topics, post types, formats, cadence.
+5. `departamentos/conteudo/estrategia.md` — layers on, topics, post types, formats, cadence, platforms. Then `../conteudo-estrategia/platforms/<platform>.md` for each platform on: its Results section says what counts most there.
 6. `departamentos/conteudo/plano.md` — what's coming, so recommendations can say which slots they'd change.
 7. `departamentos/conteudo/ghl.md` — location, account and profile IDs.
 8. `../conteudo-estrategia/library.md` — entries and statuses (unproven, working, dropped); then `departamentos/conteudo/notas-da-biblioteca.md` and `departamentos/conteudo/swipe.md`, if they exist.
@@ -52,7 +52,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - In `desempenho.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `inicial`), with the day's reach as the post's reach, and note the pull date. Add one line under "Totais da conta" for the window. If the file is missing, create it in conteudo-post's format (Posts · Totais da conta · O que aprendemos).
 
 ### Step 3 — Read
-- Group by topic, post type, format, hook pattern and dark/light; and the account trend (reach, followers) across the window.
+- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); and the account trend (reach, followers) across the window.
 - Apply the small-numbers rule to every group. Say plainly where the numbers are too small to mean anything.
 - Note anything unusual worth a look (a post that got comments, a day reach jumped).
 
