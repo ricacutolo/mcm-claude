@@ -8,6 +8,7 @@ Her business Facebook Page (not her personal profile), connected in GoHighLevel'
 
 ## Formats
 - **Carousel, illustrated carousel, text post:** the same PNG images as Instagram, in slide order.
+- **Photo post, photo carousel:** the same JPEGs as Instagram, in order.
 - **Reel:** the same MP4 as Instagram.
 
 ## Caption

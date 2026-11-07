@@ -1,6 +1,6 @@
 ---
 name: conteudo-estatico
-description: "Faz um post de imagem — carrossel, carrossel ilustrado ou post de texto — da ideia ao agendamento: a ideia, o texto, o design no Canva e o agendamento no GoHighLevel, com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano; também quando ela diz \"/conteudo-estatico\", \"faz esse carrossel\", \"faz o carrossel do post 5\", \"cria o próximo carrossel\", \"vamos fazer um post de texto\"."
+description: "Faz um post de imagem — carrossel, carrossel ilustrado, post de texto, post de foto ou carrossel de fotos — da ideia ao agendamento: a ideia, o texto, o design no Canva (ou as fotos dela, preparadas) e o agendamento no GoHighLevel, com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano; também quando ela diz \"/conteudo-estatico\", \"faz esse carrossel\", \"faz o carrossel do post 5\", \"cria o próximo carrossel\", \"vamos fazer um post de texto\", \"posta essa foto\", \"faz um post com essas fotos\"."
 ---
 
 # conteudo-estatico — one image post, idea to scheduled
@@ -38,7 +38,7 @@ Never read or print `departamentos/conteudo/.env`. The script reads it; this ski
 
 > "Nothing is scheduled or published without an explicit sim at the schedule gate. A yes to the copy or the design is not a sim to schedule."
 
-> "Three gates, in order: copy, design, schedule. Each waits for an explicit sim (yes, approve, go, approved). Silence, 'looks good so far', or an edit request is not a sim."
+> "Three gates, in order: copy, design (photos, for a photo post), schedule. Each waits for an explicit sim (yes, approve, go, approved). Silence, 'looks good so far', or an edit request is not a sim."
 
 > "Edits are applied exactly as given. Change nothing she did not ask to change; if something else looks wrong, ask first."
 
@@ -56,6 +56,7 @@ Never read or print `departamentos/conteudo/.env`. The script reads it; this ski
 - Use the slot conteudo-post passed. If the slot's format is a reel or video: "O post N é um reel; ele é feito nas etapas de vídeo. Quer que eu comece?" and hand back to conteudo-post on sim.
 - If `posts/<folder>/post.md` exists, read its Etapa/Status table and resume at the first step not done.
 - New post: create `departamentos/conteudo/posts/post-NN-<slug>/post.md` in the shape below, with the slot's topic, post type, format and template — the slug once the idea is picked.
+- Photo post and photo carousel need no template (the plan says "foto"); `## Slides` in `post.md` lists the photos in order instead.
 - If the slot's template is "to build": stop. "O post N precisa do modelo de <post type>, que ainda não foi criado. Quer criar primeiro, ou trocar o tipo de post desse horário?" Building it is conteudo-modelo, run on sim. Never improvise a template.
 
 **`post.md` shape:**
@@ -90,16 +91,19 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 ### Step 2 — Idea
 - The slot gives the topic and post type. If the slot has an idea from `ideias.md`, offer it first. If it has a suggestion, offer it plus 2 other angles on the same topic × post type, and the option to bring her own.
 - Ideas follow the idea rules in `estrategia.md` and the rules in the playbook: what the reader gets, never technical, real things only. Read `negocio.md` for the offer, the audience and the wedge.
+- Photo formats: the idea starts from a photo she has. Ask which photo (photo post) or photos, 2-10 in order (photo carousel), or recommend from ones she's already shared for this business. People in a photo: customers only if the strategy says customer photos are OK, and she confirms they agreed.
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
 - Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the CTA for the layer that's on. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
+- Photo formats: no slide text. The copy is the caption(s), the hook in the first line, and for a photo carousel the order of the photos.
 - For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Arrasta pro lado →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the CTA.
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
 - Show slides and every caption (labeled by platform), accent words in [brackets], and one line naming the hook pattern used.
 - **Gate:** "O texto está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait for sim. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 
 ### Step 4 — Design (gate 2)
+- **Photo formats skip the Canva steps in this section.** Get her photos (attached here, in the post's folder, or a Google Drive folder she shares). Check each: sharp, at least 1080 px wide, not a screenshot; say plainly which one fails and ask for another, never upscale. Crop to 1080x1440 (3:4) keeping the subject, convert to JPEG, remove location data, and save them in `posts/<folder>/photos/` as `01.jpg`, `02.jpg`…; never change her originals. Use whatever image tool her computer has (Python Pillow, `sips` on a Mac, or ffmpeg). Send the previews in order. **Gate:** "As fotos estão boas? Diga **sim**, ou me diz o que mudar." Then go to Step 5.
 - Use the slot's template from `modelos.md`. Where a post type has a dark and a light version, alternate against the last published post.
 - `copy-design` the template; title the copy `Post N - <hook>`. Record the new design ID in `post.md`.
 - Open an editing transaction, read every page, and fill with `find_and_replace_text` on each placeholder region — it keeps each region's color and weight. To move where the accent color starts, empty a region and put the words in the next one; never recolor with `format_text` (it recolors the whole element). Font size changes with `format_text` are fine. `add_text` comes in unstyled — don't use it. Fonts can't be set from here.
@@ -112,11 +116,11 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out. Platforms and accounts from `estrategia.md` + `ghl.md`, and each platform's Scheduling section from its file. Times are in her time zone (from `sobre-mim/sobre-mim.md`, else ask once).
 - If the time has slipped to under 1 hour away while we worked, it's now a missed slot: recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never schedule two posts on the same day.
 - If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do GoHighLevel e me avisa quando terminar."
-- **Gate:** show date and time (her time zone), platforms, captions, slide count. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
+- **Gate:** show date and time (her time zone), platforms, captions, slide or photo count. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:
-  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages.
+  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages. Photo formats: skip this and step 2; instead, from `departamentos/conteudo/`, run `bash scripts/media-to-ghl.sh posts/<folder>/photos/<NN>.jpg post-NN-<slug>-<NN>` for each photo in order (copy `scripts/media-to-ghl.sh` from `../conteudo-instalar/scripts/` first if missing); it prints one permanent GoHighLevel URL per photo.
   2. Run on her computer, from `departamentos/conteudo/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent GoHighLevel URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../conteudo-instalar/scripts/` first.
-  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png`, in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
+  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png` (photos: `image/jpeg`), in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
   4. Verify with `get-posts` (body: `type: all` or `type: scheduled`, `accounts` as a comma-separated string, `skip`/`limit` as strings, dates bracketing the slot). The parent record may show `platform: google` until publish, and the list may show only the first image — ignore both; per-platform child posts are created at publish time.
 
 ### Step 6 — Close

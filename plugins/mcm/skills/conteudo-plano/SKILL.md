@@ -49,7 +49,7 @@ For each slot, pick one topic, one post type and one format:
 - No post type repeated within 2 weeks.
 - Only post types marked on in `estrategia.md`.
 - Format: only formats marked on in `estrategia.md` that fit the post type (formats catalog, "Fits post types"). Where `estrategia.md` names a format to lean on, pick it wherever it fits. No format more than 2 slots in a row unless only one fits.
-- Template: the template for that format × post type in `modelos.md`, or "to build: <format> × <post type>". Reels need no Canva template: write "reel".
+- Template: the template for that format × post type in `modelos.md`, or "to build: <format> × <post type>". Reels need no Canva template: write "reel". Photo posts and photo carousels need none either: write "foto".
 - Spread the topics: every topic appears before any topic appears a third time.
 - First 2 weeks: prefer format × post type pairs that already have a template, so new templates have lead time.
 - Match unused ideas from `ideias.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "sugestão", following the idea rules in `estrategia.md` (what the reader gets, never technical).

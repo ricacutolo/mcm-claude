@@ -2,6 +2,10 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.7.0 — 2026-11-07 [both]
+- **Photo posts and photo carousels.** content-post now routes them to content-static, which makes them with her own photos and no template. She picks the photo (or 2-10, in order) at the idea step; the copy step writes the caption(s) only; the design gate becomes a photos gate: each photo checked (sharp, 1080 px wide or more, not a screenshot), cropped to 1080x1440, saved as JPEG without location data in the post's `photos/` folder, her originals untouched. Uploaded with `media-to-ghl.sh`, scheduled like any image post. Customer photos only when the strategy allows them and she confirms they agreed.
+- content-plan writes "photo" ("foto") in the template cell for these formats; each platform file says how it takes photos (LinkedIn: images, never a document).
+
 ## 0.6.0 — 2026-11-07 [both]
 - **LinkedIn, and platforms as switches.** New shipped folder `content-strategy/platforms/` (`conteudo-estrategia/platforms/`): one read-only file per platform (Instagram, Facebook, LinkedIn), each with the same sections: when to recommend it, account, formats, caption, scheduling, results. The platforms line in her strategy is the switch: every content skill reads only the files for the platforms on it, so a platform she doesn't use never runs. Adding a platform later is a new file.
 - **LinkedIn:** her personal profile; carousels go as a document post (PDF) when GoHighLevel's `create-post` offers it, else as images; its own caption (hook in the first two lines, the lesson for people at work, 120-250 words, a real question, a message CTA, no outside links, 1-3 hashtags), approved at the same copy gate; scheduled as its own GoHighLevel post in the same slot. No reels on LinkedIn for now. **Untested:** no LinkedIn account connected yet; the document option through the connection is unverified.
