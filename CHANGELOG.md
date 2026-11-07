@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.5.1 — 2026-11-06 [both]
+- **Content setup, step 6 (Canva):** if the Canva check fails right after she connects, she starts a new conversation so the connection loads, then picks the setup back up. Same as the GoHighLevel step already said.
+
 ## 0.5.0 — 2026-11-06 [both]
 - **One version for both editions.** MCM and MCM OS now share one number, starting here (MCM 0.4.1 and MCM OS 0.1.2 both become 0.5.0; no skill changes). Every release bumps both together, and `scripts/check-sync.py` fails when they differ. Rule added to `CLAUDE.md`.
 
