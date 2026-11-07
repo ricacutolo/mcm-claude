@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.5.0 — 2026-11-06 [both]
+- **One version for both editions.** MCM and MCM OS now share one number, starting here (MCM 0.4.1 and MCM OS 0.1.2 both become 0.5.0; no skill changes). Every release bumps both together, and `scripts/check-sync.py` fails when they differ. Rule added to `CLAUDE.md`.
+
 ## MCM 0.4.1 and MCM OS 0.1.2 — 2026-11-06 [both]
 - **Base templates, fixed words:** the content setup's step 9 rebrand now also rewrites the words on her template copies that no post fills in (the swipe cue, the end-slide call to action) to fit her business, in her voice, and in Brazilian Portuguese in the mcm edition. They show in the same previews she approves; before, only colors and the logo changed.
 
