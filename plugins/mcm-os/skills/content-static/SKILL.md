@@ -25,6 +25,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 8. `departments/content/ghl.md` — location, user and account IDs (not secret).
 9. The post's own `departments/content/posts/<folder>/post.md`, if it exists — to resume.
 10. `about-me/about-me.md` — only her time zone.
+    Photo formats also: `departments/content/photos.md` (her photo library index, below) and her Google Drive folder **Content photos**.
 11. Only when recommending ideas or drafting copy (Steps 2-3):
     - the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
     - `../content-strategy/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 4-point check.
@@ -91,7 +92,7 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 ### Step 2 — Idea
 - The slot gives the topic and post type. If the slot has an idea from `ideas.md`, offer it first. If it has a suggestion, offer it plus 2 other angles on the same topic × post type, and the option to bring her own.
 - Ideas follow the idea rules in `strategy.md` and the rules in the playbook: what the reader gets, never technical, real things only. Read `business.md` for the offer, the audience and the wedge.
-- Photo formats: the idea starts from a photo she has. Ask which photo (photo post) or photos, 2-10 in order (photo carousel), or recommend from ones she's already shared for this business. People in a photo: customers only if the strategy says customer photos are OK, and she confirms they agreed.
+- Photo formats: the idea starts from a photo she has. Sync the photo library first (below), then recommend the photo (photo post) or 2-10 in order (photo carousel) that fit the slot's topic × post type, unused ones first, with one line each on why; she picks, or brings others. People in a photo: customers only if the strategy says customer photos are OK and the library says they agreed.
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
@@ -103,7 +104,7 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 - **Gate:** "Does the copy work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait for yes. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 
 ### Step 4 — Design (gate 2)
-- **Photo formats skip the Canva steps in this section.** Get her photos (attached here, in the post's folder, or a Google Drive folder she shares). Check each: sharp, at least 1080 px wide, not a screenshot; say plainly which one fails and ask for another, never upscale. Crop to 1080x1440 (3:4) keeping the subject, convert to JPEG, remove location data, and save them in `posts/<folder>/photos/` as `01.jpg`, `02.jpg`…; never change her originals. Use whatever image tool her computer has (Python Pillow, `sips` on a Mac, or ffmpeg). Send the previews in order. **Gate:** "Do the photos work? Say **yes**, or tell me what to change." Then go to Step 5.
+- **Photo formats skip the Canva steps in this section.** Get the picked photos from her library (download from Drive), or from this chat if she just dropped them. Check each: sharp, at least 1080 px wide, not a screenshot; say plainly which one fails and ask for another, never upscale. Crop to 1080x1440 (3:4) keeping the subject, convert to JPEG, remove location data, and save them in `posts/<folder>/photos/` as `01.jpg`, `02.jpg`…; never change her originals. Use whatever image tool her computer has (Python Pillow, `sips` on a Mac, or ffmpeg). Send the previews in order. **Gate:** "Do the photos work? Say **yes**, or tell me what to change." Then go to Step 5.
 - Use the slot's template from `templates.md`. Where a post type has a dark and a light version, alternate against the last published post.
 - `copy-design` the template; title the copy `Post N - <hook>`. Record the new design ID in `post.md`.
 - Open an editing transaction, read every page, and fill with `find_and_replace_text` on each placeholder region — it keeps each region's color and weight. To move where the accent color starts, empty a region and put the words in the next one; never recolor with `format_text` (it recolors the whole element). Font size changes with `format_text` are fine. `add_text` comes in unstyled — don't use it. Fonts can't be set from here.
@@ -125,6 +126,7 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 
 ### Step 6 — Close
 - `post.md`: Design and Schedule rows, design ID, permanent URLs, GoHighLevel post IDs (one per `create-post`), slot.
+- Photo formats: `photos.md`, the photos' `used in`.
 - `calendar.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Scheduled <time>`); add the row if missing (create the file with `# Content calendar` and the columns `# · date · post · format · idea · status` if needed). For a missed slot, the actual date and time, plus "(moved from <slot>, missed)".
 - `plan.md`: set this slot's Status to `scheduled` — the Status cell only; the plan's other cells belong to content-plan. For a missed slot: `scheduled (moved to <day time>)`.
 - `ideas.md`: mark the idea `used: post N` if it came from there; add any new ideas she mentioned during the run as `unused`.
@@ -142,6 +144,17 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 Runs that reached a new stage: hand /context one line for `context/content.md`:
 `Post N <copy approved / design approved / scheduled for <slot>>: <topic> × <post type>, <format>. Still open: <hand fixes, or none>.`
+
+## Photo library
+
+Her photos accumulate in one place, whenever she has them, with no post in mind: a Google Drive folder **Content photos** (the Drive app uploads straight from her phone). Claude keeps an index of it in `departments/content/photos.md`:
+
+`# Photo library: <business>` and the columns `# · file · where · what's in it · people · added · used in`. `where` is the Drive file (or `chat` → saved to Drive); `people` is none / her / team / customer (agreed: yes / not asked).
+
+- **Sync** at a photo slot's idea step, or when she says she added photos: list the Drive folder, add each new file to the index with a short plain description of what's in it (look at it), and ask once, in one message, about any new photo with people she hasn't described ("Is anyone in these a customer? Did they agree to be posted?"). No folder yet: offer to create **Content photos** in her Drive and tell her to drop photos there from her phone.
+- **Dropped in chat:** a photo she sends here for a post is also uploaded to the Drive folder and indexed, so it isn't lost.
+- **Used:** after scheduling, write the post number in `used in`. A used photo can be posted again only when she asks.
+- Never delete or move her photos; the index is the only thing Claude writes.
 
 ## What this skill never does
 

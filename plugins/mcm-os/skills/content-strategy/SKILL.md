@@ -56,7 +56,7 @@ In revise mode, start from the current strategy and change only what the trigger
 At most 6 questions, one message, each with a recommended answer:
 1. What is content for right now — which layers are on: credibility (people checking you out trust what they see), audience (more people find you), leads (posts bring in inquiries)?
 2. Face on camera: yes, no or sometimes?
-3. Which photos exist (her own work, team, place), and are customer photos OK?
+3. Which photos exist (her own work, team, place), and are customer photos OK? (Photos go in a Google Drive folder, Content photos, whenever she has them; posts pick from there.)
 4. How much time per week for content?
 5. Cadence, days, time and platforms. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals. If the content setup already noted her platforms, start from those.
 6. Any format to lean on, or post types to switch off?

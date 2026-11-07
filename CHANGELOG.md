@@ -4,6 +4,7 @@ Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[bo
 
 ## 0.7.0 — 2026-11-07 [both]
 - **Photo posts and photo carousels.** content-post now routes them to content-static, which makes them with her own photos and no template. She picks the photo (or 2-10, in order) at the idea step; the copy step writes the caption(s) only; the design gate becomes a photos gate: each photo checked (sharp, 1080 px wide or more, not a screenshot), cropped to 1080x1440, saved as JPEG without location data in the post's `photos/` folder, her originals untouched. Uploaded with `media-to-ghl.sh`, scheduled like any image post. Customer photos only when the strategy allows them and she confirms they agreed.
+- **Photo library:** her photos accumulate in one Google Drive folder, Content photos (Fotos de conteúdo), whenever she has them. Claude keeps an index (`photos.md` / `fotos.md`: what's in each photo, who's in it and whether a customer agreed, which post used it), syncs it at a photo slot, and recommends unused photos that fit the slot; she picks. A photo dropped in chat is also saved to the folder. Claude never moves or deletes her photos.
 - content-plan writes "photo" ("foto") in the template cell for these formats; each platform file says how it takes photos (LinkedIn: images, never a document).
 
 ## 0.6.0 — 2026-11-07 [both]

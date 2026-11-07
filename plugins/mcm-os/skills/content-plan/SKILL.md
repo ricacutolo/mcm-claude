@@ -49,7 +49,7 @@ For each slot, pick one topic, one post type and one format:
 - No post type repeated within 2 weeks.
 - Only post types marked on in `strategy.md`.
 - Format: only formats marked on in `strategy.md` that fit the post type (formats catalog, "Fits post types"). Where `strategy.md` names a format to lean on, pick it wherever it fits. No format more than 2 slots in a row unless only one fits.
-- Template: the template for that format × post type in `templates.md`, or "to build: <format> × <post type>". Reels need no Canva template: write "reel". Photo posts and photo carousels need none either: write "photo".
+- Template: the template for that format × post type in `templates.md`, or "to build: <format> × <post type>". Reels need no Canva template: write "reel". Photo posts and photo carousels need none either: write "photo". For a photo slot's idea, suggest from unused photos in `departments/content/photos.md` when it exists.
 - Spread the topics: every topic appears before any topic appears a third time.
 - First 2 weeks: prefer format × post type pairs that already have a template, so new templates have lead time.
 - Match unused ideas from `ideas.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "suggestion", following the idea rules in `strategy.md` (what the reader gets, never technical).
