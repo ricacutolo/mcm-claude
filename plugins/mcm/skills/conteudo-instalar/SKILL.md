@@ -57,7 +57,7 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 | 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's three base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light" and "Illustrated carousel - Leak". Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Compartilhados com você" (Shared with you) in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Compartilhados com você" and uses Arquivo > Fazer uma cópia (File > Make a copy). Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
 | 10 | Canva | Brand style | `estilo-da-marca.md` approved and written | Draft color and font roles and logo files, seeded from `sobre-mim/marca.md` when it exists; show; write on sim |
 | 11 | Canva | Template index | `modelos.md` has the base templates | Draft the rows and fill guides in conteudo-modelo's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on sim |
-| 12 | GHL | Social accounts | she confirms Instagram (and Facebook) connected in GoHighLevel's Social Planner | She does it in GoHighLevel (Guia D) |
+| 12 | GHL | Social accounts | she confirms each platform she'll post on is connected in GoHighLevel's Social Planner | Recommend her platforms first, from each `../conteudo-estrategia/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals), and note them in `configuracao.md` (the strategy step starts from them). Then she connects them in GoHighLevel (Guia D) |
 | 13 | GHL | Her GoHighLevel connected to Claude | the GoHighLevel connection lists her business (sub-account) and `get-account` lists its social accounts | Guia C: she adds GoHighLevel as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
 | 14 | GHL | GoHighLevel details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on sim |
 | 15 | GHL | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: conteudo-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
@@ -133,6 +133,7 @@ Não é segredo. A chave fica no .env, nunca aqui.
 |---|---|---|---|
 | Instagram | | | YYYY-MM-DD |
 | Facebook | | | YYYY-MM-DD |
+| LinkedIn (só quando ligado) | | | YYYY-MM-DD |
 ```
 
 ### Step 3 — Close the run

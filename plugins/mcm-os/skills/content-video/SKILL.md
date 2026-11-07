@@ -19,7 +19,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot content-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format.
 2. `departments/content/brief.md` — its Next step and Current state.
-3. `departments/content/strategy.md` — which reel formats are on, platforms, CTA for the layer that's on.
+3. `departments/content/strategy.md` — which reel formats are on, platforms, CTA for the layer that's on. Then `../content-strategy/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/brand-style.md` — color and font roles, logo files; `about-me/brand.md` when it exists, for the logo files.
@@ -151,7 +151,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 
 ### Step 7 — Schedule (gate 4)
 - The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `about-me/about-me.md`, else ask once). If the time has slipped to under 1 hour away, recompute with content-post's missed-slot rule (`../content-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
-- Platforms from `strategy.md` (Instagram reel; Facebook reel when Facebook is on). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
+- Platforms from `strategy.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
 - If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in GoHighLevel's Social Planner and tell me when it's done."
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
 - On yes:

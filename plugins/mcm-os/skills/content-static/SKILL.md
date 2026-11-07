@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot content-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format, template, idea.
 2. `departments/content/brief.md` — its Next step and Current state.
-3. `departments/content/strategy.md` — who we post for, which layers are on, topics, post types, idea rules, cadence, CTA, wedge.
+3. `departments/content/strategy.md` — who we post for, which layers are on, topics, post types, idea rules, cadence and platforms, CTA, wedge.
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/ideas.md` — the idea backlog.
@@ -29,6 +29,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
     - the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
     - `../content-strategy/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 4-point check.
     - `departments/content/swipe.md` — lines that worked for her, if it exists.
+    - `../content-strategy/platforms/<platform>.md` for each platform on in `strategy.md` — its formats and caption rules. Only those.
     - `about-me/writing.md` — her voice.
 
 Never read or print `departments/content/.env`. The script reads it; this skill never does.
@@ -92,11 +93,11 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
-- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the CTA for the layer that's on.
+- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the CTA for the layer that's on. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
 - For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Swipe through →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the CTA.
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
-- Show slides and caption, accent words in [brackets], and one line naming the hook pattern used.
-- **Gate:** "Does the copy work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait for yes. Record the approved copy, caption and hook pattern in `post.md`.
+- Show slides and every caption (labeled by platform), accent words in [brackets], and one line naming the hook pattern used.
+- **Gate:** "Does the copy work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait for yes. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 
 ### Step 4 — Design (gate 2)
 - Use the slot's template from `templates.md`. Where a post type has a dark and a light version, alternate against the last published post.
@@ -108,18 +109,18 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 - If she then edits by hand in Canva, that is fine: Step 5 re-reads the design before export.
 
 ### Step 5 — Schedule (gate 3)
-- The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out. Platforms and accounts from `strategy.md` + `ghl.md`. Times are in her time zone (from `about-me/about-me.md`, else ask once).
+- The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out. Platforms and accounts from `strategy.md` + `ghl.md`, and each platform's Scheduling section from its file. Times are in her time zone (from `about-me/about-me.md`, else ask once).
 - If the time has slipped to under 1 hour away while we worked, it's now a missed slot: recompute with content-post's missed-slot rule (`../content-post/SKILL.md`, Step 2) and say the new time in one line. Never schedule two posts on the same day.
 - If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in GoHighLevel's Social Planner and tell me when it's done."
-- **Gate:** show date and time (her time zone), platforms, caption, slide count. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
+- **Gate:** show date and time (her time zone), platforms, captions, slide count. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
 - On yes:
   1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages.
   2. Run on her computer, from `departments/content/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent GoHighLevel URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../content-install/scripts/` first.
-  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png`, in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`.
+  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png`, in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
   4. Verify with `get-posts` (body: `type: all` or `scheduled`, `accounts` as a comma-separated string, `skip`/`limit` as strings, dates bracketing the slot). The parent record may show `platform: google` until publish, and the list may show only the first image — ignore both; per-platform child posts are created at publish time.
 
 ### Step 6 — Close
-- `post.md`: Design and Schedule rows, design ID, permanent URLs, GoHighLevel post ID, slot.
+- `post.md`: Design and Schedule rows, design ID, permanent URLs, GoHighLevel post IDs (one per `create-post`), slot.
 - `calendar.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Scheduled <time>`); add the row if missing (create the file with `# Content calendar` and the columns `# · date · post · format · idea · status` if needed). For a missed slot, the actual date and time, plus "(moved from <slot>, missed)".
 - `plan.md`: set this slot's Status to `scheduled` — the Status cell only; the plan's other cells belong to content-plan. For a missed slot: `scheduled (moved to <day time>)`.
 - `ideas.md`: mark the idea `used: post N` if it came from there; add any new ideas she mentioned during the run as `unused`.

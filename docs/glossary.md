@@ -73,6 +73,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `index.md` | `index.md` |
 | `brief.md` | `brief.md` |
 | skill folder `modelos/` | skill folder `templates/` |
+| `conteudo-estrategia/platforms/<platform>.md` (shipped, one per platform; names stay English) | `content-strategy/platforms/<platform>.md` |
 
 ## State fields (`estado.md` → `state.md`)
 | PT | EN |

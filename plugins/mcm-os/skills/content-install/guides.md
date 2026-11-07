@@ -6,7 +6,7 @@ Six short guides, handed to her at the content setup steps listed below. Written
 - **Guide A** — Brand Kit colors (setup step 7)
 - **Guide B** — logo, fonts and hand fixes on a template (setup step 8, and any hand fix after a template or post design)
 - **Guide C** — connect GoHighLevel to Claude (setup step 13)
-- **Guide D** — connect Instagram and Facebook in GoHighLevel's Social Planner (setup step 12)
+- **Guide D** — connect your social accounts (Instagram, Facebook, LinkedIn when on) in GoHighLevel's Social Planner (setup step 12)
 - **Guide E** — make your GoHighLevel key and put it in the settings file (setup step 19)
 
 ---
@@ -54,13 +54,13 @@ This lets Claude schedule your posts in GoHighLevel's Social Planner and read ho
 
 If something looks different on your screen, tell Claude what you see; the button names can change.
 
-## Guide D: Connect Instagram and Facebook in GoHighLevel (about 5 minutes)
+## Guide D: Connect your social accounts in GoHighLevel (about 5 minutes)
 
-This lets GoHighLevel's Social Planner put your posts on Instagram and Facebook once you've approved them.
+This lets GoHighLevel's Social Planner put your posts on Instagram, Facebook and, if we turned it on, LinkedIn, once you've approved them.
 
 1. Log in to GoHighLevel and open your business.
 2. In the menu on the left, click **Marketing**, then **Social Planner**.
-3. Click to connect your accounts. Choose **Instagram**, and **Facebook** too if you post there, and sign in with the account that runs your business page. Approve what it asks for.
+3. Click to connect your accounts. Choose **Instagram**, and **Facebook** too if you post there, and sign in with the account that runs your business page. If we turned LinkedIn on, connect **LinkedIn** too, with your own personal profile (not a company page). Approve what it asks for.
 4. When your accounts show as connected, tell Claude.
 
 If your screen looks different, describe what you see and Claude finds it with you.

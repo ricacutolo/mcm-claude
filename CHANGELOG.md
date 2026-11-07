@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.6.0 — 2026-11-07 [both]
+- **LinkedIn, and platforms as switches.** New shipped folder `content-strategy/platforms/` (`conteudo-estrategia/platforms/`): one read-only file per platform (Instagram, Facebook, LinkedIn), each with the same sections: when to recommend it, account, formats, caption, scheduling, results. The platforms line in her strategy is the switch: every content skill reads only the files for the platforms on it, so a platform she doesn't use never runs. Adding a platform later is a new file.
+- **LinkedIn:** her personal profile; carousels go as a document post (PDF) when GoHighLevel's `create-post` offers it, else as images; its own caption (hook in the first two lines, the lesson for people at work, 120-250 words, a real question, a message CTA, no outside links, 1-3 hashtags), approved at the same copy gate; scheduled as its own GoHighLevel post in the same slot. No reels on LinkedIn for now. **Untested:** no LinkedIn account connected yet; the document option through the connection is unverified.
+- content-strategy recommends platforms (LinkedIn when she sells to professionals); content-install step 12 recommends and notes her platforms before she connects them (Guide D covers LinkedIn); content-static writes one caption per platform that has its own and one `create-post` per caption; content-video sends reels only where the platform file takes them; content-review weighs results per platform; the playbook's caption formula is the main caption.
+
 ## 0.5.1 — 2026-11-06 [both]
 - **Content setup, step 6 (Canva):** if the Canva check fails right after she connects, she starts a new conversation so the connection loads, then picks the setup back up. Same as the GoHighLevel step already said.
 

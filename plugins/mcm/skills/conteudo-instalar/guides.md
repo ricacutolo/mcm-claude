@@ -8,7 +8,7 @@ Os nomes dos botões aparecem primeiro em português e, entre parênteses, em in
 - **Guia A** — cores no Kit de Marca (etapa 7)
 - **Guia B** — logo, fontes e ajustes à mão num modelo (etapa 8, e qualquer ajuste à mão depois de um modelo ou do design de um post)
 - **Guia C** — conectar o GoHighLevel ao Claude (etapa 13)
-- **Guia D** — conectar Instagram e Facebook no Social Planner do GoHighLevel (etapa 12)
+- **Guia D** — conectar as suas redes (Instagram, Facebook, LinkedIn quando ligado) no Social Planner do GoHighLevel (etapa 12)
 - **Guia E** — criar a sua chave do GoHighLevel e colocar no arquivo de configurações (etapa 19)
 
 ---
@@ -56,13 +56,13 @@ Isso deixa o Claude agendar os seus posts no Social Planner do GoHighLevel e ler
 
 Se alguma coisa estiver diferente na sua tela, conta para o Claude o que você está vendo; os nomes dos botões podem mudar.
 
-## Guia D: Conecte Instagram e Facebook no GoHighLevel (uns 5 minutos)
+## Guia D: Conecte as suas redes no GoHighLevel (uns 5 minutos)
 
-Isso deixa o Social Planner do GoHighLevel publicar os seus posts no Instagram e no Facebook depois que você aprovar.
+Isso deixa o Social Planner do GoHighLevel publicar os seus posts no Instagram, no Facebook e, se a gente ligou, no LinkedIn, depois que você aprovar.
 
 1. Entra no GoHighLevel e abre o seu negócio.
 2. No menu da esquerda, clica em **Marketing**, depois em **Social Planner**.
-3. Clica para conectar as suas contas. Escolhe **Instagram**, e **Facebook** também se você posta lá, e entra com a conta que administra a página do seu negócio. Aprova o que ele pedir.
+3. Clica para conectar as suas contas. Escolhe **Instagram**, e **Facebook** também se você posta lá, e entra com a conta que administra a página do seu negócio. Se a gente ligou o LinkedIn, conecta o **LinkedIn** também, com o seu perfil pessoal (não uma página de empresa). Aprova o que ele pedir.
 4. Quando as contas aparecerem como conectadas, avisa o Claude.
 
 Se a sua tela estiver diferente, descreve o que você está vendo e o Claude acha com você.

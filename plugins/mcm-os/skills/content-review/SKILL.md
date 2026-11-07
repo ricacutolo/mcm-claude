@@ -19,7 +19,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 2. `_system/log.md` — the last `content-review` line (where the window starts).
 3. `departments/content/calendar.md` — what was published and when.
 4. `departments/content/posts/*/post.md` — per post: topic, post type, format, template, hook pattern, GoHighLevel post ID.
-5. `departments/content/strategy.md` — layers on, topics, post types, formats, cadence.
+5. `departments/content/strategy.md` — layers on, topics, post types, formats, cadence, platforms. Then `../content-strategy/platforms/<platform>.md` for each platform on: its Results section says what counts most there.
 6. `departments/content/plan.md` — what's coming, so recommendations can say which slots they'd change.
 7. `departments/content/ghl.md` — location, account and profile IDs.
 8. `../content-strategy/library.md` — entries and statuses (unproven, working, dropped); then `departments/content/library-notes.md` and `departments/content/swipe.md`, if they exist.
@@ -52,7 +52,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - In `performance-log.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `early`), with the day's reach as the post's reach, and note the pull date. Add one line under "Account totals" for the window. If the file is missing, create it in content-post's format (Posts · Account totals · What we learned).
 
 ### Step 3 — Read
-- Group by topic, post type, format, hook pattern and dark/light; and the account trend (reach, followers) across the window.
+- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); and the account trend (reach, followers) across the window.
 - Apply the small-numbers rule to every group. Say plainly where the numbers are too small to mean anything.
 - Note anything unusual worth a look (a post that got comments, a day reach jumped).
 
