@@ -38,7 +38,7 @@ claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · negocio.md (main business) · negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
-  conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · scripts/ · .env · rodadas-anteriores/
+  conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
 entregas/                     deliverables that belong to no department or project

@@ -1,6 +1,6 @@
 ---
 name: conteudo-plano
-description: "Planeja as próximas 4 semanas de posts dela — um tema, um tipo de post e um formato por horário — e avisa qual modelo de design precisa ser criado antes. Quando ela diz \"/conteudo-plano\", \"planeja o conteúdo\", \"planeja as próximas 4 semanas\", \"o que a gente vai postar esse mês\", \"atualiza o plano\", \"coloca formatos no plano\", \"empurra o plano\", ou quando o próximo passo do departamento Conteúdo diz que o plano está acabando."
+description: "Planeja as próximas 4 semanas de posts dela — um tema, um tipo de post e um formato por horário — e avisa qual modelo de design precisa ser criado antes. Quando ela diz \"/conteudo-plano\", \"planeja o conteúdo\", \"planeja as próximas 4 semanas\", \"o que a gente vai postar esse mês\", \"atualiza o plano\", \"coloca formatos no plano\", \"empurra o plano\", \"que fotos eu tiro\", ou quando o próximo passo do departamento Conteúdo diz que o plano está acabando."
 ---
 
 # conteudo-plano — the next 4 weeks
@@ -63,9 +63,10 @@ When conteudo-post moved a missed post onto the next slot (or she asks to shift 
 
 ### Step 3 — Modelos a criar
 - List every format × post type in the plan whose template is "to build", with a build-by date 3 days before its first slot.
+- **Fotos para tirar:** for each photo slot with no fitting unused photo in `departamentos/conteudo/fotos.md`, one line: what to photograph, where or how (phone, light, angle, in plain words), and for which post. 5-10 lines at most; real things she can shoot this week. When she only asks "que fotos eu tiro", run just this from the current plan and write it.
 
 ### Step 4 — Gate
-Show the plan as a table: post # · date · topic · post type · format · template · idea (or sugestão). Then the templates to build.
+Show the plan as a table: post # · date · topic · post type · format · template · idea (or sugestão). Then the templates to build and the photos to take.
 
 > "O plano está bom? Diga **sim**, ou me diz o que mudar."
 
@@ -73,7 +74,7 @@ Apply edits exactly, re-show, wait for sim.
 
 ### Step 5 — Write
 On sim:
-1. `plano.md`: create it if missing (header: "# Plano de conteúdo: <business>" and one line on how it works). Move the previous current plan, if any, under `## Planos anteriores` with its dates. Write the approved plan under `## Plano atual (<first date> a <last date>)`, columns: # · data · horário · tema · tipo de post · formato · modelo · ideia · status (`planejado`). Keep any slot's status other than `planejado` as it is. Then `### Modelos a criar`.
+1. `plano.md`: create it if missing (header: "# Plano de conteúdo: <business>" and one line on how it works). Move the previous current plan, if any, under `## Planos anteriores` with its dates. Write the approved plan under `## Plano atual (<first date> a <last date>)`, columns: # · data · horário · tema · tipo de post · formato · modelo · ideia · status (`planejado`). Keep any slot's status other than `planejado` as it is. Then `### Modelos a criar` and `### Fotos para tirar`.
 2. Department brief: set Próximo passo to the next unscheduled slot ("Post N, <day date>, <time>: <topic> × <post type>, <format>. Diga \"próximo post\"."), or "Criar o modelo <format> × <post type> até <date>. Diga \"cria o próximo modelo\"." if one is due first. Update Estado atual with its date and one line on the plan, and `atualizado:`. Touch nothing else; mention it in one short line.
 3. Receipt and milestone (below).
 

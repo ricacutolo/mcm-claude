@@ -51,6 +51,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |
 | `…/conteudo/modelos.md` · `estilo-da-marca.md` · `ghl.md` | `…/content/templates.md` · `brand-style.md` · `ghl.md` |
 | `…/conteudo/fotos.md` (photo library index) · Drive: `Fotos de conteúdo` | `…/content/photos.md` · Drive: `Content photos` |
+| `…/conteudo/estilo-de-foto.md` (her look for generated images) · plan section `Fotos para tirar` | `…/content/photo-style.md` · plan section `Photos to take` |
+| shipped `conteudo-estrategia/image-prompts.md` | `content-strategy/image-prompts.md` |
 | `…/conteudo/desempenho.md` · `notas-da-biblioteca.md` · `swipe.md` | `…/content/performance-log.md` · `library-notes.md` · `swipe.md` |
 | `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
 | `contexto/conteudo.md` | `context/content.md` |

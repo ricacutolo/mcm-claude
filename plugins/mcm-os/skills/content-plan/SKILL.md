@@ -1,6 +1,6 @@
 ---
 name: content-plan
-description: "Plans her next 4 weeks of posts — one topic, one post type and one format per slot — and flags any design template that needs building first. When she says \"/content-plan\", \"plan content\", \"plan the next 4 weeks\", \"what are we posting this month\", \"refresh the plan\", \"add formats to the plan\", \"shift the plan\", or when the Content department's next step says the plan is running out."
+description: "Plans her next 4 weeks of posts — one topic, one post type and one format per slot — and flags any design template that needs building first. When she says \"/content-plan\", \"plan content\", \"plan the next 4 weeks\", \"what are we posting this month\", \"refresh the plan\", \"add formats to the plan\", \"shift the plan\", \"what photos should I take\", or when the Content department's next step says the plan is running out."
 ---
 
 # content-plan — the next 4 weeks
@@ -63,9 +63,10 @@ When content-post moved a missed post onto the next slot (or she asks to shift t
 
 ### Step 3 — Templates to build
 - List every format × post type in the plan whose template is "to build", with a build-by date 3 days before its first slot.
+- **Photos to take:** for each photo slot with no fitting unused photo in `departments/content/photos.md`, one line: what to photograph, where or how (phone, light, angle, in plain words), and for which post. 5-10 lines at most; real things she can shoot this week. When she only asks "what photos should I take", run just this from the current plan and write it.
 
 ### Step 4 — Gate
-Show the plan as a table: post # · date · topic · post type · format · template · idea (or suggestion). Then the templates to build.
+Show the plan as a table: post # · date · topic · post type · format · template · idea (or suggestion). Then the templates to build and the photos to take.
 
 > "Does the plan work? Say **yes**, or tell me what to change."
 
@@ -73,7 +74,7 @@ Apply edits exactly, re-show, wait for yes.
 
 ### Step 5 — Write
 On yes:
-1. `plan.md`: create it if missing (header: "# Content plan: <business>" and one line on how it works). Move the previous current plan, if any, under `## Past plans` with its dates. Write the approved plan under `## Current plan (<first date> to <last date>)`, columns: # · date · slot · topic · post type · format · template · idea · status (`planned`). Keep any slot's status other than `planned` as it is. Then `### Templates to build`.
+1. `plan.md`: create it if missing (header: "# Content plan: <business>" and one line on how it works). Move the previous current plan, if any, under `## Past plans` with its dates. Write the approved plan under `## Current plan (<first date> to <last date>)`, columns: # · date · slot · topic · post type · format · template · idea · status (`planned`). Keep any slot's status other than `planned` as it is. Then `### Templates to build` and `### Photos to take`.
 2. Department brief: set Next step to the next unscheduled slot ("Post N, <day date>, <time>: <topic> × <post type>, <format>. Say \"next post\"."), or "Build the <format> × <post type> template by <date>. Say \"build the next template\"." if one is due first. Update Current state with its date and one line on the plan, and `updated:`. Touch nothing else; mention it in one short line.
 3. Receipt and milestone (below).
 
