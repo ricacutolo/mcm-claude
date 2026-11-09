@@ -22,6 +22,7 @@ Loaded only when this skill fires:
 2. `departamentos/clientes/brief.md` — only its Padrões (what she asks every new client). Missing means there is no Clientes department yet.
 3. `sobre-mim/drive.md` — where `02. Clientes` is. Missing means her Drive is not organized yet.
 4. This conversation — when it was already about this client, it is the main source.
+5. The frontmatter of `contexto/*.md` — to find a histórico she already has about this client.
 
 ## The rules
 
@@ -45,7 +46,7 @@ No `departamentos/clientes/brief.md`:
 
 ### Step 1 — Match the name
 
-Kebab-case slug, short, no accents (`familia-almeida`, `joao-silva`). Never `pesquisa`, `entregas` or `index` (those are department folders). If `departamentos/clientes/<slug>/ficha.md` exists: "Esse cliente já tem ficha. Quer abrir?" and stop. Also check `contexto/<slug>.md` doesn't already belong to another topic; if it does, add a suffix (`familia-almeida-cliente`).
+Kebab-case slug, short, no accents (`familia-almeida`, `joao-silva`). Never `pesquisa`, `entregas` or `index` (those are department folders). If `departamentos/clientes/<slug>/ficha.md` exists: "Esse cliente já tem ficha. Quer abrir?" and stop. **A histórico already about them?** Match the name against the slug, `assunto` and `apelidos` of every `contexto/*.md`. One that is about this client → read it in full and use it as a source, like mid-conversation, and keep it as their histórico: "Você já tem um histórico sobre **<Nome>**. Vou usar, e ele vira o histórico desse cliente." Several → short numbered list; she picks one or says none. A `contexto/<slug>.md` about something else → add a suffix to the new slug (`familia-almeida-cliente`).
 
 **Already written somewhere else?** Look in `departamentos/clientes/` for any other file about this client — anything that is not a `<slug>/ficha.md`, `brief.md` or `index.md` (e.g. a subfolder like `familias/`). Found → read it in full and use it as the source, like mid-conversation: "Achei o que você já tinha guardado da **<Nome>** em <arquivo>. Vou usar como base." After Step 4, offer: "Posso mover o arquivo antigo para `_revisao/`? A ficha já tem tudo." Move on **sim** (and its folder, when nothing else is left in it); never delete.
 
@@ -103,12 +104,12 @@ Show the draft, then: "Essa é a ficha da **<Nome>**. Posso criar? Também crio 
 1. Create `departamentos/clientes/<slug>/` and write `ficha.md` exactly as approved.
 2. Re-read `departamentos/clientes/index.md` (create with `# Clientes` if missing), then add:
    `- [<Nome>](<slug>/ficha.md) · YYYY-MM-DD · ativo · <uma frase>`
-3. Invoke /contexto to create `contexto/<slug>.md` with `tier: cliente` and `brief: departamentos/clientes/<slug>/ficha.md`. **Her sim covers it.** Mid-conversation: hand /contexto the capture of this conversation as the seed (its capture mode), not a one-line summary.
+3. Invoke /contexto to create `contexto/<slug>.md` with `tier: cliente` and `brief: departamentos/clientes/<slug>/ficha.md`. **Her sim covers it.** If Step 1 found her histórico about this client, link it instead: /contexto sets its `tier` to `cliente` and its `brief` to the ficha, adds the client's name to `apelidos`, and creates nothing; the file keeps its name and the ficha's `contexto:` points to it. Mid-conversation: hand /contexto the capture of this conversation as the seed (its capture mode), not a one-line summary.
 4. Drive: with `sobre-mim/drive.md`, create `<Nome>` inside `02. Clientes` (colored like its parent, per /organizar-drive's rule) and check it exists. Without `drive.md`: say "A pasta no Drive fica para quando o seu Drive estiver organizado — quer organizar agora?" (offers /organizar-drive) and set `drive: a criar`.
 
 ### Step 5 — Receipt
 
-`YYYY-MM-DD | novo-cliente | criado / recusado / ja-existe | <slug> · drive: sim/não · da-conversa: sim/não` in `_sistema/log.md`.
+`YYYY-MM-DD | novo-cliente | criado / recusado / ja-existe | <slug> · drive: sim/não · da-conversa: sim/não · historico: novo/ligado` in `_sistema/log.md`.
 
 ### Step 6 — Report
 
