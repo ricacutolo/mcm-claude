@@ -38,7 +38,7 @@ claude.md                     backup of her Instructions for Claude
 about-me/                     about-me.md · business.md (main business) · business-<area>.md (each other business) · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
-  content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · performance-log.md · library-notes.md · swipe.md · posts/ · scripts/ · .env · past-rounds/
+  content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · scripts/ · .env · past-rounds/
 projects/                     index.md · <slug>/brief.md · research/ · deliverables/<type>/
 context/<slug>.md             every running log (topics, projects, departments, clients)
 deliverables/                 deliverables that belong to no department or project

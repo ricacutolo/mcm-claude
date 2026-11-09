@@ -69,7 +69,7 @@ Route by the slot's format (formats as named in `../content-strategy/library.md`
 | Slot format | Maker |
 |---|---|
 | Carousel, illustrated carousel, text post — and any other still-image format with a template (screenshot post) | content-static |
-| Photo post, photo carousel | none: not available yet — say so in one line and offer to swap this slot's format to a carousel or text post (content-plan's refresh, on her yes). Never send it to content-static |
+| Photo post, photo carousel | content-static (her own photos, no template) |
 | Talking-head reel, or any other reel or video format | content-video (beta; it says which video formats it can make) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with content-plan's refresh |
 

@@ -9,6 +9,7 @@ Her **personal profile**, not a company page: profiles get far more reach on Lin
 ## Formats
 - **Carousel, illustrated carousel:** the same slides, sent as one **document** (PDF) post, the swipeable kind LinkedIn shows in the feed. The document gets a short title: the hook in plain words.
 - **Text post:** works well on LinkedIn as plain text, without the image, when the caption carries the whole idea. Default: send the image like the other platforms; offer the text-only version when the post is mostly words.
+- **Photo post, photo carousel:** the same JPEGs as images (not a document), in order. A real photo of her or her work does well here.
 - **Reel:** off on LinkedIn for now. Vertical video looks wrong on a desktop feed and video reach there is low. Reels go only to the other platforms.
 
 ## Caption
@@ -21,7 +22,7 @@ LinkedIn gets **its own caption**, written from the same idea and approved at th
 6. 1-3 hashtags at the end, specific to the topic, in Portuguese. Never more.
 
 ## Scheduling
-Its **own `create-post`** (its caption differs): the LinkedIn account ID from `ghl.md` alone in `accountIds`, the LinkedIn caption as `summary`, the same permanent image URLs as `media`. If `create-post` offers a LinkedIn document/PDF option, use it with the slides in order and the document title; if it doesn't, send the slides as images and note it in the post's run notes. Idempotency key: `<location ID>-post-NN-<slug>-linkedin`. Same slot as the other platforms unless the strategy sets a LinkedIn time.
+Its **own `create-post`** (its caption differs): the LinkedIn account ID from `ghl.md` alone in `accountIds`, the LinkedIn caption as `summary`, the same permanent image URLs as `media`. Photo formats go as images, never as a document. For carousels: if `create-post` offers a LinkedIn document/PDF option, use it with the slides in order and the document title; if it doesn't, send the slides as images and note it in the post's run notes. Idempotency key: `<location ID>-post-NN-<slug>-linkedin`. Same slot as the other platforms unless the strategy sets a LinkedIn time.
 
 ## Results
 Comments count most, then reposts with a comment, then saves; reactions least. Read impressions as reach. A new profile starts slow: judge LinkedIn over a month, and say so.

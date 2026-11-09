@@ -50,6 +50,9 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `departamentos/conteudo/configuracao.md` | `departments/content/setup.md` |
 | `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |
 | `…/conteudo/modelos.md` · `estilo-da-marca.md` · `ghl.md` | `…/content/templates.md` · `brand-style.md` · `ghl.md` |
+| `…/conteudo/fotos.md` (photo library index) · Drive: `Fotos de conteúdo` | `…/content/photos.md` · Drive: `Content photos` |
+| `…/conteudo/estilo-de-foto.md` (her look for generated images) · plan section `Fotos para tirar` | `…/content/photo-style.md` · plan section `Photos to take` |
+| shipped `conteudo-estrategia/image-prompts.md` | `content-strategy/image-prompts.md` |
 | `…/conteudo/desempenho.md` · `notas-da-biblioteca.md` · `swipe.md` | `…/content/performance-log.md` · `library-notes.md` · `swipe.md` |
 | `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
 | `contexto/conteudo.md` | `context/content.md` |
@@ -106,6 +109,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | arquivado | archived |
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
+| plan Modelo cell for formats with no template: `reel` · `foto` | Template cell: `reel` · `photo` |
 | plan and calendar status: `planejado` · `agendado` · `Agendado <time>` · `Publicado <date time>` | `planned` · `scheduled` · `Scheduled <time>` · `Published <date time>` |
 | idea status: `não usada` · `usada: post N` · `descartada` | `unused` · `used: post N` · `dropped` |
 | file sections: Modelos a criar · Planos anteriores · O que aprendemos · Totais da conta · Diferenças deliberadas do arquivo do negócio · Decidido por ela | Templates to build · Past plans · What we learned · Account totals · Deliberate differences from the business file · Decided for her |

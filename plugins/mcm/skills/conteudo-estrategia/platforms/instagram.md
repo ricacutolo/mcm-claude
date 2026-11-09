@@ -8,6 +8,7 @@ Her business Instagram account (a professional account), connected in GoHighLeve
 
 ## Formats
 - **Carousel, illustrated carousel, text post:** the slides as PNG images, 1080x1440, in slide order.
+- **Photo post, photo carousel:** her photos as JPEG, 1080x1440, in order (up to 10).
 - **Reel:** one vertical MP4 (1080x1920), shown on the feed.
 
 ## Caption

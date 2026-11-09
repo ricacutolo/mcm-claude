@@ -56,7 +56,7 @@ In revise mode, start from the current strategy and change only what the trigger
 At most 6 questions, one message, each with a recommended answer:
 1. Para que o conteúdo serve agora — quais camadas estão ligadas: credibilidade (quem te pesquisa confia no que vê), audiência (mais gente te encontra), contatos (os posts trazem pedidos de orçamento)?
 2. Aparecer na câmera: sim, não ou às vezes?
-3. Quais fotos existem (o seu trabalho, a equipe, o espaço), e pode usar fotos de clientes?
+3. Quais fotos existem (o seu trabalho, a equipe, o espaço), e pode usar fotos de clientes? (As fotos vão numa pasta do Google Drive, Fotos de conteúdo, sempre que ela tiver; os posts escolhem de lá.)
 4. Quanto tempo por semana para conteúdo?
 5. Frequência, dias, horário e plataformas. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals. If the content setup already noted her platforms, start from those.
 6. Algum formato para usar mais, ou tipos de post para desligar?
