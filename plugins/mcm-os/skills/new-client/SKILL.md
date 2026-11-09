@@ -22,6 +22,7 @@ Loaded only when this skill fires:
 2. `departments/clients/brief.md` — only its Standards (what she asks every new client). Missing means there is no Clients department yet.
 3. `about-me/drive.md` — where `02. Clients` is. Missing means her Drive is not organized yet.
 4. This conversation — when it was already about this client, it is the main source.
+5. The frontmatter of `context/*.md` — to find a history she already has about this client.
 
 ## The rules
 
@@ -45,7 +46,7 @@ No `departments/clients/brief.md`:
 
 ### Step 1 — Match the name
 
-Kebab-case slug, short, no accents (`johnson-family`, `john-smith`). Never `research`, `deliverables` or `index` (those are department folders). If `departments/clients/<slug>/sheet.md` exists: "This client already has a sheet. Want to open it?" and stop. Also check `context/<slug>.md` doesn't already belong to another topic; if it does, add a suffix (`johnson-family-client`).
+Kebab-case slug, short, no accents (`johnson-family`, `john-smith`). Never `research`, `deliverables` or `index` (those are department folders). If `departments/clients/<slug>/sheet.md` exists: "This client already has a sheet. Want to open it?" and stop. **A history already about them?** Match the name against the slug, `topic` and `aliases` of every `context/*.md`. One that is about this client → read it in full and use it as a source, like mid-conversation, and keep it as their history: "You already have a history about **<Name>**. I'll use it, and it becomes their history." Several → short numbered list; she picks one or says none. A `context/<slug>.md` about something else → add a suffix to the new slug (`johnson-family-client`).
 
 **Already written somewhere else?** Look in `departments/clients/` for any other file about this client — anything that is not a `<slug>/sheet.md`, `brief.md` or `index.md` (e.g. a subfolder like `families/`). Found → read it in full and use it as the source, like mid-conversation: "I found what you'd already saved about **<Name>** in <file>. I'll use it as the starting point." After Step 4, offer: "Can I move the old file to `_review/`? The sheet has everything now." Move on **yes** (and its folder, when nothing else is left in it); never delete.
 
@@ -103,12 +104,12 @@ Show the draft, then: "Here's the sheet for **<Name>**. Can I create it? I'll al
 1. Create `departments/clients/<slug>/` and write `sheet.md` exactly as approved.
 2. Re-read `departments/clients/index.md` (create with `# Clients` if missing), then add:
    `- [<Name>](<slug>/sheet.md) · YYYY-MM-DD · active · <one sentence>`
-3. Invoke /context to create `context/<slug>.md` with `tier: client` and `brief: departments/clients/<slug>/sheet.md`. **Her yes covers it.** Mid-conversation: hand /context the capture of this conversation as the seed (its capture mode), not a one-line summary.
+3. Invoke /context to create `context/<slug>.md` with `tier: client` and `brief: departments/clients/<slug>/sheet.md`. **Her yes covers it.** If Step 1 found her history about this client, link it instead: /context sets its `tier` to `client` and its `brief` to the sheet, adds the client's name to `aliases`, and creates nothing; the file keeps its name and the sheet's `context:` points to it. Mid-conversation: hand /context the capture of this conversation as the seed (its capture mode), not a one-line summary.
 4. Drive: with `about-me/drive.md`, create `<Name>` inside `02. Clients` (colored like its parent, per /organize-drive's rule) and check it exists. Without `drive.md`: say "The Drive folder will wait until your Drive is organized — want to organize it now?" (offers /organize-drive) and set `drive: to create`.
 
 ### Step 5 — Receipt
 
-`YYYY-MM-DD | new-client | created / declined / already-exists | <slug> · drive: yes/no · from-chat: yes/no` in `_system/log.md`.
+`YYYY-MM-DD | new-client | created / declined / already-exists | <slug> · drive: yes/no · from-chat: yes/no · history: new/linked` in `_system/log.md`.
 
 ### Step 6 — Report
 
