@@ -25,7 +25,7 @@ Faces: prefer people seen from the side, from behind, at a distance, or hands on
 
 ## Tool
 
-- **Canva**, through her Canva connection: `generate-image` with `aspectRatio: PORTRAIT_3_4`, then `get-generate-image-job` until it's done. Download the result into the post's `photos/` folder. Her Canva plan's monthly AI allowance applies; when it runs out, say so plainly and offer a photo from her library or the shot list instead.
+- **Canva**, through her Canva connection: `generate-image` with `aspectRatio: PORTRAIT_3_4`, then `get-generate-image-job` until it's done. Canva hands back an image stored in her Canva (a media ID), not a file. To get the full-size file: copy her `TEMPLATE - Photo - full frame`, replace its one image with the generated media (`update_fill`), save, export JPG 1080x1440, and download it into the post's `photos/` folder. For text over the photo, a Photo template with a headline region does the same with the words filled in. Her Canva plan's monthly AI allowance applies; when it runs out, say so plainly and offer a photo from her library or the shot list instead.
 - Other generators only if her photo style names one and she has set it up.
 
 ## Calibration: getting her look right
