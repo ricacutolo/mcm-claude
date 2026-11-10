@@ -92,7 +92,7 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 ```
 
 ### Step 2 — Idea
-- The slot gives the topic and post type. If the slot has an idea from `ideas.md`, offer it first. If it has a suggestion, offer it plus 2 other angles on the same topic × post type, and the option to bring her own.
+- **Her material and a suggestion, in one message.** The slot gives the topic and post type. Ask what she has for it and recommend at the same time: "Got anything on <topic> for this one — a thought, a story, something a client asked? If not, here's what I'd do: <the slot's idea from `ideas.md`, or the plan's suggestion>. Or: <angle 2> · <angle 3>." Her material wins: shape it into the slot's post type. A suggestion she takes still gets one question for her own angle ("What's one time you saw this happen?").
 - Ideas follow the idea rules in `strategy.md` and the rules in the playbook: what the reader gets, never technical, real things only. Read `business.md` for the offer, the audience and the wedge.
 - Photo formats: the idea starts from a photo she has. Sync the photo library first (below), then recommend the photo (photo post) or 2-10 in order (photo carousel) that fit the slot's topic × post type, unused ones first, with one line each on why; she picks, or brings others. People in a photo: customers only if the strategy says customer photos are OK and the library says they agreed.
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.

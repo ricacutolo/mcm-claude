@@ -76,6 +76,7 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 - New reel: create `departments/content/posts/post-NN-<slug>/` with `post.md` (Step/Status table: Script, Recording, Takes, Cut, Schedule, Results; plus slot, topic, post type, format), `raw/` and `edit/`.
 
 ### Step 2 — Script (gate 1)
+- **Her material and a suggestion, in one message,** before drafting: "What do you want to say on <topic> in this one — a story, something you tell clients all the time? If you'd rather, here's what I'd do: <the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · call to action, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
 - The hook goes on screen from frame 0. The CTA is the layer's CTA from `strategy.md` ("Book a call. Link in bio." while the credibility layer is on).
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and the real-things rule; fix what fails before showing.

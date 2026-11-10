@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.8.1 — 2026-11-10 [both]
+- **Posts and reels start from her material, like the newsletter.** content-static's idea step and content-video's script step now ask what she has (a thought, a story, something a client asked) and give the recommendation in the same message; her material wins, and a suggestion she takes still gets one question for her own angle (Rica, 2026-11-10).
+
 ## 0.8.0 — 2026-11-10 [both]
 - **Newsletter.** New skill **content-newsletter** (**conteudo-newsletter**): one email issue from her own material to scheduled in MCM. Its first step asks for what she has (a few lines, a voice note, a client story, a question someone asked) and offers one suggestion in the same message; her material wins, and a taken suggestion still gets one question for her own angle. Two gates: the draft (with 2-3 subject options and preview text), then the schedule. Plain text, 200-400 words, one idea, one ask; a client story only when she confirms the client agreed. Scheduled as a plain-text MCM email campaign to her list (a tag or segment), in her time zone.
 - **A switch, like the platforms:** new `platforms/newsletter.md` (when to recommend it, sending address and list, formats, writing rules, scheduling, results). On only when her strategy names it, with how often (every two weeks for a new list, weekly once she keeps up), day and time (Tuesday morning by default) and offer issues (one in four or five).
