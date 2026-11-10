@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.13.1 — 2026-11-10 [both]
+- **System map refreshed** (docs only; no skill changed). New "The machines" table: every machine, what it does for her, its skills and the version it shipped in, plus what's planned next (the CEO layer, Marketing, the GHL machine, Community). New "How the system acts and asks" section (you make the moves, the browser fallback, a guide not a form, white label). The Conteúdo folder is spelled out; the Cursos folder shows the progress file; Áreas use the business brain names; sistema and instalar rows carry today's changes.
+
 ## 0.13.0 — 2026-11-10 [both]
 - **Course machine v1** (spec approved by Rica, 2026-11-10). Builds what she sells (a program, course, cohort), not its marketing; the offer, format, length and price come from the CEO strategy, never decided here. Pilot-cohort path from the strategy playbook: design the program, then one lesson at a time, just ahead of her students. For anyone who teaches a program. Five new skills:
   - **course-install** (curso-instalar): the Courses department and the program folder; checks the strategy has a first offer that's a program (else offers the strategy session); recommends Google Meet with transcripts for live lessons; records where the course lives in MCM.
