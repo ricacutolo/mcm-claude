@@ -71,7 +71,7 @@ Route by the slot's format (formats as named in `../content-strategy/library.md`
 
 | Slot format | Maker |
 |---|---|
-| Carousel, illustrated carousel, text post — and any other still-image format with a template (screenshot post) | content-static |
+| Carousel, illustrated carousel, text post, headline photo — and any other still-image format with a template (screenshot post) | content-static |
 | Photo post, photo carousel | content-static (her own photos, no template) |
 | Talking-head reel, or any other reel or video format | content-video (beta; it says which video formats it can make) |
 | Newsletter | content-newsletter (only when the newsletter is on in `strategy.md`) |

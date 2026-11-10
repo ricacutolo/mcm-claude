@@ -7,7 +7,7 @@ When she has a Facebook Page, or her customers are on Facebook (local services, 
 Her business Facebook Page (not her personal profile), connected in MCM's Social Planner (setup step 12, Guide D).
 
 ## Formats
-- **Carousel, illustrated carousel, text post:** the same PNG images as Instagram, in slide order.
+- **Carousel, illustrated carousel, text post, headline photo:** the same PNG images as Instagram, in slide order.
 - **Photo post, photo carousel:** the same JPEGs as Instagram, in order.
 - **Reel:** the same MP4 as Instagram.
 

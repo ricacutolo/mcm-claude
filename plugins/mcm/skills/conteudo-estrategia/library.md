@@ -40,6 +40,7 @@ What a post looks like. Each business switches on the formats that fit it (face,
 | Carousel | Text slides | no | template | Leak, 3 mistakes, Quick win, How it works, Myth vs truth, Old way vs new way, What you get |
 | Photo carousel | Slides with real photos | optional | her photos | Before and after, Behind the scenes, Who we are |
 | Photo post | One photo + caption: her own, or one that speaks to her audience | optional | a photo | Who we are, Behind the scenes, Story, Leak |
+| Headline photo | One photo with a short headline on it, in her colors | optional | a photo + the Photo - headline template | Leak, Quick win, Myth vs truth, Question you always get, Story |
 | Illustrated carousel | Simple drawings or diagrams that explain how something works | no | template + Canva elements | How it works, Old way vs new way, Before and after, Leak |
 | Animated diagram | An illustrated diagram in motion | no | phase 2 (motion graphics) | How it works, Old way vs new way |
 | Screenshot post | A real text thread, calendar or review, with permission | no | the real thing | Proof |

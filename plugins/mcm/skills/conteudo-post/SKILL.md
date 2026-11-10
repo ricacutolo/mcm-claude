@@ -71,7 +71,7 @@ Route by the slot's format (formats as named in `../conteudo-estrategia/library.
 
 | Slot format | Maker |
 |---|---|
-| Carousel, illustrated carousel, text post — and any other still-image format with a template (screenshot post) | conteudo-estatico |
+| Carousel, illustrated carousel, text post, headline photo — and any other still-image format with a template (screenshot post) | conteudo-estatico |
 | Photo post, photo carousel | conteudo-estatico (her own photos, no template) |
 | Talking-head reel, or any other reel or video format | conteudo-video (beta; it says which video formats it can make) |
 | Newsletter | conteudo-newsletter (only when the newsletter is on in `estrategia.md`) |
