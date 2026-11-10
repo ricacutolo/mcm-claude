@@ -5,9 +5,9 @@ Six short guides, handed to her at the content setup steps listed below. Written
 - **Guide 0** — first time in Canva (setup step 5)
 - **Guide A** — Brand Kit colors (setup step 7)
 - **Guide B** — logo, fonts and hand fixes on a template (setup step 8, and any hand fix after a template or post design)
-- **Guide C** — connect GoHighLevel to Claude (setup step 13)
-- **Guide D** — connect your social accounts (Instagram, Facebook, LinkedIn when on) in GoHighLevel's Social Planner (setup step 12)
-- **Guide E** — make your GoHighLevel key and put it in the settings file (setup step 19)
+- **Guide C** — connect MCM to Claude (setup step 13)
+- **Guide D** — connect your social accounts (Instagram, Facebook, LinkedIn when on) in MCM's Social Planner (setup step 12)
+- **Guide E** — make your MCM key and put it in the settings file (setup step 19)
 
 ---
 
@@ -41,35 +41,35 @@ If a color or font doesn't show up the way you expect, stop and tell Claude. Don
 
 Sources (Canva help): [Brand Kit limits on Free](https://www.canva.com/help/color-palettes/), [personal Brand Kit](https://www.canva.com/help/personal-brand-kit/), [brand fonts](https://www.canva.com/help/brand-fonts/), [brand logos are paid-only](https://www.canva.com/help/brand-logos/), [apply text styles from the Edit panel](https://www.canva.com/help/apply-brand-kit-text-styles/) (says Free, but setting the styles needs a paid plan). Canva moves buttons now and then; if a click isn't where the guide says, describe what you see and Claude finds it with you.
 
-## Guide C: Connect GoHighLevel to Claude (about 5 minutes)
+## Guide C: Connect MCM to Claude (about 5 minutes)
 
-This lets Claude schedule your posts in GoHighLevel's Social Planner and read how they did. You approve everything on GoHighLevel's own sign-in screen.
+This lets Claude schedule your posts in MCM's Social Planner and read how they did. You approve everything on the sign-in screen that opens.
 
 1. In Claude, open **Customize → Connectors** (or go to claude.ai/customize/connectors) and choose **Add custom connector**.
-2. Name it **GoHighLevel** and paste this address: `https://services.leadconnectorhq.com/mcp/anthropic/v2`. Save it.
-3. Click **Connect** next to it and sign in to GoHighLevel with your usual login.
+2. Name it **MCM** and paste this address: `https://services.leadconnectorhq.com/mcp/anthropic/v2`. Save it.
+3. Click **Connect** next to it and sign in to MCM with your usual login.
 4. When it asks which account to give access to, pick your business.
 5. Approve the permissions it asks for. Make sure **social posts** are included, both reading and writing: that's what lets Claude schedule your posts.
 6. Start a new conversation in Claude (the connection loads with a new conversation) and say **continue content setup**.
 
 If something looks different on your screen, tell Claude what you see; the button names can change.
 
-## Guide D: Connect your social accounts in GoHighLevel (about 5 minutes)
+## Guide D: Connect your social accounts in MCM (about 5 minutes)
 
-This lets GoHighLevel's Social Planner put your posts on Instagram, Facebook and, if we turned it on, LinkedIn, once you've approved them.
+This lets MCM's Social Planner put your posts on Instagram, Facebook and, if we turned it on, LinkedIn, once you've approved them.
 
-1. Log in to GoHighLevel and open your business.
+1. Log in to MCM and open your business.
 2. In the menu on the left, click **Marketing**, then **Social Planner**.
 3. Click to connect your accounts. Choose **Instagram**, and **Facebook** too if you post there, and sign in with the account that runs your business page. If we turned LinkedIn on, connect **LinkedIn** too, with your own personal profile (not a company page). Approve what it asks for.
 4. When your accounts show as connected, tell Claude.
 
 If your screen looks different, describe what you see and Claude finds it with you.
 
-## Guide E: Make your GoHighLevel key (about 5 minutes)
+## Guide E: Make your MCM key (about 5 minutes)
 
-This key lets your computer upload your finished designs to GoHighLevel. Treat it like a password: it goes only into the settings file in your content folder, never into the chat.
+This key lets your computer upload your finished designs to MCM. Treat it like a password: it goes only into the settings file in your content folder, never into the chat.
 
-1. In GoHighLevel, open your business, click **Settings**, then **Private Integrations**.
+1. In MCM, open your business, click **Settings**, then **Private Integrations**.
 2. Create a new one and name it **Claude uploads**.
 3. When it asks for permissions, turn on the media one (it may be called **medias**).
 4. Create it and copy the key it shows you.

@@ -1,6 +1,6 @@
 ---
 name: conteudo-revisao
-description: "A revisão mensal de conteúdo dela: puxa os resultados de cada post no GoHighLevel, lê por tema, tipo de post e formato, e recomenda no máximo 5 mudanças para o sim dela — o que aprendemos, frases que valem guardar, mudanças na estratégia ou no plano, sugestões pro arquivo do negócio. Quando ela diz \"/conteudo-revisao\", \"revisão mensal do conteúdo\", \"como foram os meus posts\", \"revisa o conteúdo\", \"o que está funcionando\", na rotina mensal do departamento Conteúdo, ou antes de planejar as próximas 4 semanas."
+description: "A revisão mensal de conteúdo dela: puxa os resultados de cada post no MCM, lê por tema, tipo de post e formato, e recomenda no máximo 5 mudanças para o sim dela — o que aprendemos, frases que valem guardar, mudanças na estratégia ou no plano, sugestões pro arquivo do negócio. Quando ela diz \"/conteudo-revisao\", \"revisão mensal do conteúdo\", \"como foram os meus posts\", \"revisa o conteúdo\", \"o que está funcionando\", na rotina mensal do departamento Conteúdo, ou antes de planejar as próximas 4 semanas."
 ---
 
 # conteudo-revisao — what the results say, once a month
@@ -18,7 +18,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 1. `departamentos/conteudo/desempenho.md` — results so far and what we learned.
 2. `_sistema/log.md` — the last `conteudo-revisao` line (where the window starts).
 3. `departamentos/conteudo/calendario.md` — what was published and when.
-4. `departamentos/conteudo/posts/*/post.md` — per post: topic, post type, format, template, hook pattern, GoHighLevel post ID.
+4. `departamentos/conteudo/posts/*/post.md` — per post: topic, post type, format, template, hook pattern, MCM post ID.
 5. `departamentos/conteudo/estrategia.md` — layers on, topics, post types, formats, cadence, platforms. Then `../conteudo-estrategia/platforms/<platform>.md` for each platform on: its Results section says what counts most there.
 6. `departamentos/conteudo/plano.md` — what's coming, so recommendations can say which slots they'd change.
 7. `departamentos/conteudo/ghl.md` — location, account and profile IDs.
@@ -28,7 +28,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
-> "Numbers are copied from GoHighLevel as they are. Nothing is estimated, rounded up or invented; a number GoHighLevel doesn't give is written as n/a."
+> "Numbers are copied from MCM as they are. Nothing is estimated, rounded up or invented; a number MCM doesn't give is written as n/a."
 
 > "Nothing is called working or not working until that kind has at least 3 posts and the account reaches more than about 100 people per post. Below that, say 'ainda não dá pra julgar' and what would make it judgeable."
 
@@ -47,8 +47,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - Say in one line: "Olhando de <first date> a <last date>: <N> posts publicados."
 
 ### Step 2 — Pull the numbers (no gate: facts)
-- GoHighLevel `get-posts` for the window (body: `type: all`, `accounts` as a comma-separated string, `skip`/`limit` as strings): for each published post, each platform's likes, comments and shares.
-- GoHighLevel `get-statistics` with the profile IDs (not the account IDs): impressions, reach and new followers per day for the window.
+- MCM `get-posts` for the window (body: `type: all`, `accounts` as a comma-separated string, `skip`/`limit` as strings): for each published post, each platform's likes, comments and shares.
+- MCM `get-statistics` with the profile IDs (not the account IDs): impressions, reach and new followers per day for the window.
 - In `desempenho.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `inicial`), with the day's reach as the post's reach, and note the pull date. Add one line under "Totais da conta" for the window. If the file is missing, create it in conteudo-post's format (Posts · Totais da conta · O que aprendemos).
 
 ### Step 3 — Read
@@ -105,7 +105,7 @@ Each review: hand /contexto one line for `contexto/conteudo.md`:
 
 ## What this skill never does
 
-- Invents, estimates or rounds a number; fills a gap GoHighLevel doesn't cover with a guess.
+- Invents, estimates or rounds a number; fills a gap MCM doesn't cover with a guess.
 - Calls something working or not working below the small-numbers rule.
 - Writes learnings, library notes or swipe lines without an explicit sim.
 - Edits `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (business suggestions only wait in `_sistema/pendentes.md`), the shipped library or playbook, or anything in `contexto/` (milestones go through /contexto).
@@ -119,13 +119,13 @@ Each review: hand /contexto one line for `contexto/conteudo.md`:
 
 - A request to make the numbers look better, or to call something working early — "Os números são o que são; eu te digo o que faria eles valerem a análise." (numbers as they are, small-numbers rule)
 - A request to change the strategy or plan directly from here — "Isso acontece na estratégia ou no plano. Quer que eu leve pra lá?" (one owner per concern)
-- GoHighLevel not connected — "O GoHighLevel não está conectado agora, então não consigo puxar os números." Review only what's already in the log, and say so.
+- MCM not connected — "O MCM não está conectado agora, então não consigo puxar os números." Review only what's already in the log, and say so.
 - No published posts in the window — "Nada foi publicado desde a última revisão, então ainda não tem o que ler."
 
 ## Failure modes
 
 - **`get-statistics` rejects the IDs** — use the profile IDs from `ghl.md` (not the account IDs); if it still fails, review the per-post numbers only and say the account line is missing.
-- **A post's child posts aren't found** — mark that row "não encontrado no GoHighLevel", don't guess; continue with the rest.
+- **A post's child posts aren't found** — mark that row "não encontrado no MCM", don't guess; continue with the rest.
 - **A post folder has no post type or format** (older posts) — use the calendar row; if that's missing too, group it as "unknown".
 - **Library notes missing a section for her type of business** — propose the section as an item; don't create it without a sim.
 - **Department brief missing** — skip the brief update; say so.

@@ -8,7 +8,7 @@ description: "MCM Client Book: cadastra um cliente dela — uma família, uma pe
 Part of the **MCM Client Book**. Each of her clients gets one sheet (`ficha.md`), one histórico and one folder in her Drive, so Claude can answer "o que eu sei sobre a família Almeida?" without her re-explaining.
 
 Where things live, for every client:
-- **GoHighLevel** — contact data (names, e-mails, phones, birthdays), payments, campaigns. The sheet links there; it never copies it.
+- **MCM** — contact data (names, e-mails, phones, birthdays), payments, campaigns. The sheet links there; it never copies it.
 - **Google Drive** — the files themselves, in `02. Clientes/<Nome>/`.
 - **Her Claude folder** — the knowledge: who they are, preferences, history, what's open, which files exist and what matters in them.
 
@@ -30,7 +30,7 @@ Loaded only when this skill fires:
 
 > "Never copy ID, passport, card or bank numbers into any file. The sheet says the document exists and what matters in it, never the number."
 
-> "Contact data lives in GoHighLevel. The sheet keeps a link, not a copy."
+> "Contact data lives in MCM. The sheet keeps a link, not a copy."
 
 > "Only what she said goes in the sheet. Nothing inferred, nothing invented; a blank stays a blank."
 
@@ -68,7 +68,7 @@ slug: <slug>
 status: ativo
 contexto: contexto/<slug>.md
 drive: 02. Clientes/<Nome>
-ghl: <link do contato no GHL, ou "a ligar">
+ghl: <link do contato no MCM, ou "a ligar">
 criado: YYYY-MM-DD
 atualizado: YYYY-MM-DD
 ---
@@ -80,7 +80,7 @@ atualizado: YYYY-MM-DD
 - Como chegou: <...> · Desde: <...>
 
 ## Contato
-No GoHighLevel: <link, ou "a ligar">
+No MCM: <link, ou "a ligar">
 
 ## Preferências
 - <o que ama, o que não gosta, estilo, restrições — só o que ela disse>
@@ -121,7 +121,7 @@ Ficha, histórico e pasta no Drive prontos. Pode me mandar arquivos dele aqui no
 ## What this skill never does
 
 - Writes before her **sim**.
-- Copies contact data from GHL, or any ID, passport, card or bank number.
+- Copies contact data from MCM, or any ID, passport, card or bank number.
 - Invents a fact or fills a blank with a guess.
 - Writes outside `departamentos/clientes/`, except the hand-off to /contexto, the Drive folder and the receipt.
 - Contacts the client.

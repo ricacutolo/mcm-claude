@@ -4,7 +4,7 @@
 When the people she sells to are professionals, business owners or companies (coaches, consultants, trainers, B2B services, anyone selling to people at work). Not for most local consumer services. Same days as Instagram is fine; LinkedIn is read on workdays, so recommend her slots fall Monday to Friday.
 
 ## Account
-Her **personal profile**, not a company page: profiles get far more reach on LinkedIn, and people follow people there. Connected in GoHighLevel's Social Planner (setup step 12, Guide D). It must be her real profile.
+Her **personal profile**, not a company page: profiles get far more reach on LinkedIn, and people follow people there. Connected in MCM's Social Planner (setup step 12, Guide D). It must be her real profile.
 
 ## Formats
 - **Carousel, illustrated carousel:** the same slides, sent as one **document** (PDF) post, the swipeable kind LinkedIn shows in the feed. The document gets a short title: the hook in plain words.

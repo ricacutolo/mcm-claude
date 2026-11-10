@@ -8,7 +8,7 @@ description: "MCM Client Book: adds one of her clients — a family, a person or
 Part of the **MCM Client Book**. Each of her clients gets one sheet (`sheet.md`), one history and one folder in her Drive, so Claude can answer "what do I know about the Johnson family?" without her re-explaining.
 
 Where things live, for every client:
-- **GoHighLevel** — contact data (names, emails, phones, birthdays), payments, campaigns. The sheet links there; it never copies it.
+- **MCM** — contact data (names, emails, phones, birthdays), payments, campaigns. The sheet links there; it never copies it.
 - **Google Drive** — the files themselves, in `02. Clients/<Name>/`.
 - **Her Claude folder** — the knowledge: who they are, preferences, history, what's open, which files exist and what matters in them.
 
@@ -30,7 +30,7 @@ Loaded only when this skill fires:
 
 > "Never copy ID, passport, card or bank numbers into any file. The sheet says the document exists and what matters in it, never the number."
 
-> "Contact data lives in GoHighLevel. The sheet keeps a link, not a copy."
+> "Contact data lives in MCM. The sheet keeps a link, not a copy."
 
 > "Only what she said goes in the sheet. Nothing inferred, nothing invented; a blank stays a blank."
 
@@ -68,7 +68,7 @@ slug: <slug>
 status: active
 context: context/<slug>.md
 drive: 02. Clients/<Name>
-ghl: <contact link in GHL, or "to link">
+ghl: <contact link in MCM, or "to link">
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 ---
@@ -80,7 +80,7 @@ updated: YYYY-MM-DD
 - How they found you: <...> · Since: <...>
 
 ## Contact
-In GoHighLevel: <link, or "to link">
+In MCM: <link, or "to link">
 
 ## Preferences
 - <what they love, what they don't, style, restrictions — only what she said>
@@ -121,7 +121,7 @@ Sheet, history and Drive folder are ready. You can send me their files right her
 ## What this skill never does
 
 - Writes before her **yes**.
-- Copies contact data from GHL, or any ID, passport, card or bank number.
+- Copies contact data from MCM, or any ID, passport, card or bank number.
 - Invents a fact or fills a blank with a guess.
 - Writes outside `departments/clients/`, except the hand-off to /context, the Drive folder and the receipt.
 - Contacts the client.

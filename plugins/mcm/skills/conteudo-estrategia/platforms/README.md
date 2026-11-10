@@ -11,7 +11,7 @@ Every file has the same sections, so a skill knows where to look:
 - **Account** — which kind of account posts, and how she connects it.
 - **Formats** — which formats it takes and how each is sent.
 - **Caption** — whether it shares the main caption or gets its own, and the rules.
-- **Scheduling** — the GoHighLevel details for `create-post`.
+- **Scheduling** — the MCM details for `create-post`.
 - **Results** — what counts most when the monthly review reads it.
 
 Adding a platform = a new file with these sections, plus its line in the strategy question and the setup step. The skills don't grow.

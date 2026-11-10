@@ -1,5 +1,5 @@
 ---
-plugin_version: 0.1.0
+plugin_version: ~~installed_version
 install: incomplete
 current_step: 0
 started: ~~date

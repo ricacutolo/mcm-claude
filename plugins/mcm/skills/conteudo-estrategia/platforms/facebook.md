@@ -4,7 +4,7 @@
 When she has a Facebook Page, or her customers are on Facebook (local services, older audiences). It costs nothing extra: same post, same caption.
 
 ## Account
-Her business Facebook Page (not her personal profile), connected in GoHighLevel's Social Planner (setup step 12, Guia D).
+Her business Facebook Page (not her personal profile), connected in MCM's Social Planner (setup step 12, Guia D).
 
 ## Formats
 - **Carousel, illustrated carousel, text post:** the same PNG images as Instagram, in slide order.

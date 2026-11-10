@@ -51,7 +51,7 @@ Rica delivers the seed through her Drive, in a folder named `Semente` inside the
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
-1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. From Step 0: none found → go on, say nothing. When resuming: none, or no Drive connection → the "esperando os arquivos" message above, and stop. If the Drive is connected but `MCM - Deliverables` is not there at all, ask once whether she connected the Drive with the account Rica shares with (her work email).
+1. With the Google Drive connection, find a folder named `Semente` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. From Step 0: none found → go on, say nothing. When resuming: none, or no Drive connection → the "esperando os arquivos" message above, and stop. If the Drive is connected but `MCM - Deliverables` is not there at all, ask once whether she connected the Drive with the account Rica shares her folders with.
 2. List its files and say: "O Rica mandou seus arquivos pelo Drive (N arquivos). Posso trazer para a sua pasta? (**sim**)"
 3. On **sim**: read each file and write it into `_semente/` in her folder, same name, except `departamento-<slug>.md`, which goes to `_semente/departamentos/<slug>/brief.md`. The Drive reader escapes the text: it puts a backslash before punctuation (`\---`, `\#`, `1\.`, `\[PERGUNTAR\]`) and adds two spaces at the end of every line. Write the file clean: remove every backslash that sits right before a punctuation character, and strip the trailing spaces, so it matches what Rica wrote (`---`, `#`, `1.`, `[PERGUNTAR]`). Check each file landed and starts with `---` when the original had frontmatter.
 4. Say "Pronto, seus arquivos chegaram. Agora eu só vou te mostrar e você confirma." and resume as above.
@@ -62,14 +62,14 @@ A local `_semente/` (from a zip) still works exactly as before and wins over the
 
 1. **Google Drive first.** It is how Rica sends her files, so it comes before anything else. Check the Google Drive connection by listing a few of her Drive files (titles only).
    - Connected → "Seu Google Drive está conectado." Go on.
-   - Not connected → "Primeiro vamos conectar o seu Google Drive: é por ele que o Rica te manda seus arquivos. Fica em **Personalizar → Conectores → Google Drive**; entre com a conta do seu trabalho. Quer que eu te guie passo a passo? (**sim** / **já conectei**)"
-   - **sim** → guide one action at a time, waiting after each: abrir **Personalizar**, abrir **Conectores**, achar **Google Drive**, clicar em **Conectar**, escolher a conta do trabalho, permitir. If her screen shows something different, ask what she sees and guide from that. Then check again.
+   - Not connected → "Primeiro vamos conectar o seu Google Drive: é por ele que o Rica te manda seus arquivos. Fica em **Personalizar → Conectores → Google Drive**; entre com a conta com que o Rica compartilha as suas pastas. Quer que eu te guie passo a passo? (**sim** / **já conectei**)"
+   - **sim** → guide one action at a time, waiting after each: abrir **Personalizar**, abrir **Conectores**, achar **Google Drive**, clicar em **Conectar**, escolher a conta com que o Rica compartilha as pastas dela, permitir. If her screen shows something different, ask what she sees and guide from that. Then check again.
    - **já conectei** → check again.
    - Still not connected after two checks → "Tudo bem, seguimos sem o Drive por enquanto. Avise o Rica que o Drive não conectou." Write `drive: pendente` in `estado.md` once it exists, and go on. The rest of the install works without it.
 2. Confirm a folder is connected. If not: "Para começar, adicione uma pasta a esta conversa: no app do Claude no Mac, em uma conversa nova, clique em adicionar pasta e escolha a pasta que você criou para o sistema. Depois diga **começar a instalação** de novo." Stop.
 3. Show the folder path and ask if it is the right one. If the path is inside `Documents`/`Documentos` or `Desktop`/`Mesa`, say once: "Essa pasta pode estar no iCloud, e o iCloud às vezes tira arquivos do computador ou cria cópias duplicadas. O mais seguro é criar a pasta na sua pasta pessoal (no Finder: Shift + Command + H). Quer mudar antes de seguir?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
 4. Say what will be created, in one short list: `sobre-mim/`, `departamentos/`, `projetos/`, `contexto/`, `entregas/`, `referencia/`, `_sistema/`, `_revisao/`. One line each, plain words.
-5. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
+5. On **sim**: create them. Write `_sistema/estado.md` from `modelos/estado.md` (dates today, `ultima_manutencao` today, `versao_plugin` the installed plugin version, so the system doesn't take the install for an update), an empty `_sistema/pendentes.md` (`# Pendências`), `_sistema/log.md` (`# Registro`), `departamentos/index.md` (`# Departamentos`), `projetos/index.md` (`# Projetos`).
 6. **The seed, before Step 1.** If the Drive is connected and there is no `_semente/` in her folder, look for it now (**Bringing the seed from the Drive**, below). Found → bring it in, so every step from Step 1 on uses it. Not found → go on without a word; the install asks about it after Step 1.
 7. If `_semente/` exists: "O Rica já preparou boa parte para você. Nas próximas etapas eu só vou te mostrar e você confirma." 
 
@@ -142,7 +142,7 @@ Then list the rest in one short block, as things she can say: "o que eu posto ag
 ## Step 8 — Primeiro teste de verdade (10 min)
 
 1. Ask her about the minha-voz sample from the tour: "Isso soa como você? De 0 a 10?" If under 7, ask what is off and offer to adjust `sobre-mim/escrita.md` (hard item: show the change, write on **sim**).
-2. Offer the content setup: "Quer configurar o seu conteúdo agora? Ele conecta o Canva e o GoHighLevel e leva mais ou menos uma hora; você também pode fazer depois, é só dizer **configura o meu conteúdo**." Run /conteudo-instalar only on **sim**.
+2. Offer the content setup: "Quer configurar o seu conteúdo agora? Ele conecta o Canva e o MCM e leva mais ou menos uma hora; você também pode fazer depois, é só dizer **configura o meu conteúdo**." Run /conteudo-instalar only on **sim**.
 3. Set `instalacao: completa` in `estado.md`.
 4. Write the first `_sistema/saude.md` in the format the sistema skill defines (numbers only), and the Drive copy if approved. Set `ultima_manutencao` to today.
 5. Only if she declined the content setup in 8.2, update the Conteúdo brief (soft sections): Estado atual gets today's date and "Configurado na instalação"; Próximo passo becomes the next real move she names, or "Definir a frequência de posts" if she has none. If she ran the content setup, leave the brief as the content setup left it.

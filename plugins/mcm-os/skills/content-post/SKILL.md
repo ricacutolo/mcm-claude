@@ -10,7 +10,7 @@ The front door of the content machine. It finds the next post in the plan (or th
 Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "save this as a post idea": one row in her ideas list, then back to whatever was happening (Step C).
-- **Publish check** — "did the post go live?": confirm in GoHighLevel and record the links (Step P). It also runs at the start of every next-post run.
+- **Publish check** — "did the post go live?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm US English. Say "the plan", "the calendar", "your ideas list", "the department brief"; never file names, "skill", "MCP", "API" or a command name.
 
@@ -38,7 +38,7 @@ Never read or print `departments/content/.env`. The scripts read it; this skill 
 
 > "One post per run. The next post starts as its own run, on her yes."
 
-> "Nothing is scheduled or published from here. The publish check only reads GoHighLevel and records what went live."
+> "Nothing is scheduled or published from here. The publish check only reads MCM and records what went live."
 
 > "The department's Next step and Current state are kept current without asking. Nothing else in the brief is touched; anything else goes to `_system/pending.md`."
 
@@ -53,7 +53,7 @@ If `calendar.md` has a row marked `Scheduled` whose time has passed, run Step P 
 - Take the first `planned` slot in `plan.md`. If she names a post ("post 5"), use that one.
 - No `plan.md`, or no planned slot: fall back to the department's Next step, then the calendar, and say so in one line. Offer to plan the next 4 weeks (content-plan); run it only on yes.
 - If `posts/<folder>/post.md` exists, read its Step/Status table. Say in one line: "Post N, <topic> × <post type>, picking up at <step>." The maker resumes there.
-- Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "Your <platform> connection expires <date>. Reconnect it in GoHighLevel's Social Planner before then." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
+- Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "Your <platform> connection expires <date>. Reconnect it in MCM's Social Planner before then." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
 
 ### Step 2 — Missed slot
 Her time zone comes from `about-me/about-me.md`. If it isn't there, ask once ("Which time zone do you post in?"), use the answer, and add it to `_system/pending.md` as an item for `about-me/about-me.md`.
@@ -79,7 +79,7 @@ On **yes**, run the maker and pass it the slot: post number, date and time (the 
 
 ### Step 4 — After the maker finishes
 The maker hands back here when the post is scheduled (even when she started the maker directly by name).
-- **Stay one post ahead:** if the next `planned` slot isn't scheduled yet: "Want to make post N+1 now, so there's always one in the queue?" Start it only on yes, as its own run (back to Step 1). One approved post waiting in GoHighLevel means a busy week doesn't leave a slot empty.
+- **Stay one post ahead:** if the next `planned` slot isn't scheduled yet: "Want to make post N+1 now, so there's always one in the queue?" Start it only on yes, as its own run (back to Step 1). One approved post waiting in MCM means a busy week doesn't leave a slot empty.
 - **The publish check:** there are no reminders on a timer. Tell her once: "Once it's out, ask me \"did it go live?\" and I'll send you the links. I'll also check the next time we make a post."
 - If the maker stopped at a gate instead, add nothing; it already said where it stopped.
 - Receipt (below).
@@ -87,8 +87,8 @@ The maker hands back here when the post is scheduled (even when she started the 
 ## Step P — Publish check
 
 For each calendar row marked `Scheduled` whose time has passed, or the post she names:
-1. GoHighLevel `get-posts` (body: `type: all`, `accounts` as a comma-separated string from `ghl.md`, `skip`/`limit` as strings, dates bracketing the slot). Find each platform's child post and its `previewLink`. The parent record may show `platform: google` until publish; ignore it.
-2. **Found:** set the calendar row to `Published <date time>` with the links; record the links and the publish time in the post's `post.md` Results row; add the post's row to `performance-log.md` with the first numbers GoHighLevel has (likes, comments, shares), marked `early`. Create `performance-log.md` if missing:
+1. MCM `get-posts` (body: `type: all`, `accounts` as a comma-separated string from `ghl.md`, `skip`/`limit` as strings, dates bracketing the slot). Find each platform's child post and its `previewLink`. The parent record may show `platform: google` until publish; ignore it.
+2. **Found:** set the calendar row to `Published <date time>` with the links; record the links and the publish time in the post's `post.md` Results row; add the post's row to `performance-log.md` with the first numbers MCM has (likes, comments, shares), marked `early`. Create `performance-log.md` if missing:
    ```
    # Performance log: <business>
 
@@ -100,7 +100,7 @@ For each calendar row marked `Scheduled` whose time has passed, or the post she 
 
    ## What we learned
    ```
-3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "Post N hasn't shown up as published in GoHighLevel yet. It's worth a look in the Social Planner." Never mark it Published on a guess.
+3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "Post N hasn't shown up as published in MCM yet. It's worth a look in the Social Planner." Never mark it Published on a guess.
 4. Tell her in one line per post: "Post N is live: <links>."
 5. Department brief: Current state with today's date and one line. Hand /context a one-line milestone for `context/content.md`: `Post N published <date> (<topic> × <post type>)`.
 
@@ -122,8 +122,8 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 - Drafts copy, designs, makes video, uploads or schedules. Those belong to the makers.
 - Hands a post to a maker without her yes.
-- Sets a post to published in GoHighLevel, or marks it Published in the calendar without finding it live.
-- Reads, prints, copies or asks for `.env` or the GoHighLevel key.
+- Sets a post to published in MCM, or marks it Published in the calendar without finding it live.
+- Reads, prints, copies or asks for `.env` or the MCM key.
 - Edits `strategy.md`, `plan.md`, `templates.md`, `brand-style.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her yes.
@@ -136,13 +136,13 @@ One line per run in `_system/log.md` (re-read the file before writing):
 - No `strategy.md` — "There's no content strategy yet, so there's nothing to post from. Want to set it up now?" (offers content-strategy on yes)
 - A request to post right now and skip the steps — "Every post goes through copy, design and schedule approval. Want to start it now?"
 - A request to put two posts on one day — "One post a day keeps the account steady. I'd put it on <next free date>."
-- A request to schedule into a slot that's passed or under an hour away — "That slot has passed; I'd post it <new time> instead." (GoHighLevel needs lead time)
+- A request to schedule into a slot that's passed or under an hour away — "That slot has passed; I'd post it <new time> instead." (MCM needs lead time)
 
 ## Failure modes
 
 - **No plan or no planned slot** — fall back to the department's Next step, then the calendar; say so; offer to plan the next 4 weeks.
 - **Department brief missing** — skip the brief update; say so.
-- **GoHighLevel not connected** — the publish check can't run: "GoHighLevel isn't connected right now, so I can't check what went live." The routing still works.
+- **MCM not connected** — the publish check can't run: "MCM isn't connected right now, so I can't check what went live." The routing still works.
 - **Calendar and plan disagree** (a planned slot already holds a scheduled post) — the calendar wins; say so and take the next free slot.
 - **Time zone unknown and she doesn't answer** — stop before the missed-slot step; nothing is moved on a guess.
 - Prefer doing less: when unsure, stop and say what's unclear.
