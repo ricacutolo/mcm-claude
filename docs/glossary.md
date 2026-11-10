@@ -120,6 +120,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | plan idea cell in a newsletter-led cycle: `da newsletter N` · idea tag `para o post N` · post note `ciclo sem newsletter` | `from newsletter N` · `for post N` · `cycle fell back` |
 | Substack Note: format `nota` · calendar `Nota do Substack N` · plan idea cell `do post M` · status `pulada` | `note` · `Substack note N` · `from post M` · `skipped` |
 | plan Modelo cell for formats with no template: `reel` · `foto` | Template cell: `reel` · `photo` |
+| format Headline photo, said to her as `foto com título` (template `TEMPLATE - Photo - headline`, token `[HEADLINE]`, names kept) | format `Headline photo` |
 | plan and calendar status: `planejado` · `agendado` · `Agendado <time>` · `Publicado <date time>` | `planned` · `scheduled` · `Scheduled <time>` · `Published <date time>` |
 | idea status: `não usada` · `usada: post N` · `descartada` | `unused` · `used: post N` · `dropped` |
 | file sections: Modelos a criar · Planos anteriores · O que aprendemos · Totais da conta · Diferenças deliberadas do arquivo do negócio · Decidido por ela | Templates to build · Past plans · What we learned · Account totals · Deliberate differences from the business file · Decided for her |

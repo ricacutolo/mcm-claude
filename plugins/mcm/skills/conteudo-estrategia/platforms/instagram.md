@@ -7,7 +7,7 @@ Always: it's the default platform and where people check a business out. On unle
 Her business Instagram account (a professional account), connected in MCM's Social Planner (setup step 12, Guia D).
 
 ## Formats
-- **Carousel, illustrated carousel, text post:** the slides as PNG images, 1080x1440, in slide order.
+- **Carousel, illustrated carousel, text post, headline photo:** the slides as PNG images, 1080x1440, in slide order.
 - **Photo post, photo carousel:** her photos as JPEG, 1080x1440, in order (up to 10).
 - **Reel:** one vertical MP4 (1080x1920), shown on the feed.
 

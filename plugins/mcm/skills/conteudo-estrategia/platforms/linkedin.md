@@ -9,7 +9,7 @@ Her **personal profile**, not a company page: profiles get far more reach on Lin
 ## Formats
 - **Carousel, illustrated carousel:** the same slides, sent as one **document** (PDF) post, the swipeable kind LinkedIn shows in the feed. The document gets a short title: the hook in plain words.
 - **Text post:** works well on LinkedIn as plain text, without the image, when the caption carries the whole idea. Default: send the image like the other platforms; offer the text-only version when the post is mostly words.
-- **Photo post, photo carousel:** the same JPEGs as images (not a document), in order. A real photo of her or her work does well here.
+- **Photo post, photo carousel:** the same JPEGs as images (not a document), in order. **Headline photo:** the same PNG as one image. A real photo of her or her work does well here.
 - **Reel:** off on LinkedIn for now. Vertical video looks wrong on a desktop feed and video reach there is low. Reels go only to the other platforms.
 
 ## Caption
