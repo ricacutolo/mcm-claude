@@ -53,7 +53,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - In `performance-log.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `early`), with the day's reach as the post's reach, and note the pull date. Add one line under "Account totals" for the window. If the file is missing, create it in content-post's format (Posts · Account totals · What we learned).
 
 ### Step 3 — Read
-- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); and the account trend (reach, followers) across the window.
+- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); when the newsletter leads the theme, also by cycle: which formats did best from the same idea, and led cycles against the ones that fell back; and the account trend (reach, followers) across the window.
 - Apply the small-numbers rule to every group. Say plainly where the numbers are too small to mean anything.
 - Note anything unusual worth a look (a post that got comments, a day reach jumped).
 

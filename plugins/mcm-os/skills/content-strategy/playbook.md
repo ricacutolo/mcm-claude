@@ -124,3 +124,11 @@ For an email to her list (`platforms/newsletter.md` has the format and schedulin
 - **The ask by layer:** credibility → reply with your question / book a call; audience → forward this to someone who needs it; leads → the lead magnet or "reply with <word>". On an offer issue the ask is the offer, said plainly, once.
 - **Subject last:** 2-3 options, short and specific, no emoji, nothing the email doesn't deliver.
 
+## 12. From newsletter to posts
+
+When the newsletter leads the theme, the cycle's posts are cut from the approved email:
+- **One angle per post.** Never the whole email shrunk down. Someone who never reads the newsletter gets the full point of the post.
+- **Which part fits which post type:** its points or steps → a carousel; its story → a reel or a story post; the question it answers → a text post or a client-question post; its moment or scene → a photo post; its before and after → an illustrated carousel.
+- **Say it fresh.** New hook, the post type's own structure (section 5), the platform's caption rules. Reuse her phrases where they're strong; don't paste paragraphs.
+- **The newsletter mention is rare.** "The full story's in my newsletter" only on the leads layer, when she has a signup link, and not on every post in the cycle.
+
