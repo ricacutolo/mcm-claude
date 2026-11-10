@@ -12,7 +12,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a aula", "a apostila", "o
 ## Read these first
 
 1. `departamentos/cursos/<programa>/programa.md` — the module map, how a session runs, who it's for.
-2. `departamentos/cursos/<programa>/index.md` — the lessons done so far, the MCM course, `aulas em:`.
+2. `departamentos/cursos/<programa>/index.md` — the program's progress: where it stands, the lessons done so far, the MCM course, `aulas em:`.
 3. The previous lesson's file — its **O que aconteceu** section, when closed.
 4. `departamentos/cursos/<programa>/perguntas.md` and `retorno.md` — questions and sticking points to answer in this lesson.
 5. `sobre-mim/escrita.md` — her voice, for anything students read.
@@ -51,7 +51,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a aula", "a apostila", "o
 - Course not created in MCM yet → offer to create the course shell with her on screen first (name, modules), as drafts. Browser not reachable → "Eu deixo pronta aqui; a gente coloca no MCM na próxima vez." Slide design in Canva isn't part of this yet: the outline is what she uses.
 
 ### Step 5 — Close
-- Cursos brief: Próximo passo → "Dar a aula <NN> em <data>, depois fechar" (live) or the next lesson to build. Estado atual, one line.
+- the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Próximo passo → "Dar a aula <NN> em <data>, depois fechar" (live) or the next lesson to build; Onde está, one line; the lesson's line under Arquivos with its status. Then the Cursos brief.
 - Receipt.
 
 ## Receipt

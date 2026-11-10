@@ -33,17 +33,39 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 ### Step 2 — The department and the program
 - No Courses department yet: on yes, create `departments/courses/brief.md` in /new-department's brief format: name **Courses**, area = the strategy's area, Purpose "Build and improve the programs she sells, one module at a time, from what her students actually need.", Routines "Close each live lesson the same day; review after each module and after each round.", What I use here: "design my program", "next lesson", "close the lesson", "review the module". Index line under its area header; hand /context the creation of `context/courses.md` ("Courses department created.").
-- The program: a slug from its name, `departments/courses/<program>/` with `index.md` (`# <Program name>`), and a line in `departments/courses/index.md`.
+- The program: a slug from its name, `departments/courses/<program>/` with its `index.md`, and a line in `departments/courses/index.md`.
+- **The program's `index.md` is its progress file**, kept current by every course skill without asking (soft), the way content skills keep the Content brief current:
+
+```markdown
+# <Program name>
+lessons on: <meet | zoom (paste) | other (paste)> · MCM course: <name | not created yet>
+
+## Where it stands
+_As of YYYY-MM-DD._
+<round N: lesson X of Y done, next live date, what's open>
+
+## Next step
+<one concrete move for this program>
+
+## Rounds
+- Round 1 — <planned | started YYYY-MM-DD | finished YYYY-MM-DD> · <n> students
+
+## Files
+- [Program](program.md) · YYYY-MM-DD · <one line>
+- [Lesson 01: <title>](lessons/lesson-01-<slug>.md) · <status>
+```
+
+- **The Courses brief** keeps one Current state and Next step for the whole department: the program that's most urgent (the nearest live date, else the most recent work), pointing to its progress file. With one program, it mirrors that program.
 
 ### Step 3 — Recording live lessons
 - `meetings: meet` → "Your live lessons will run on Google Meet. Turn on **Transcribe the meeting** when you create each session in Google Calendar; that's what lets me close each lesson for you."
-- Zoom or other → "For live lessons I'd recommend Google Meet with transcripts on: I can read those on my own. With Zoom, you'd paste the transcript after each lesson. Want to switch for lessons?" Record her answer in the program's `index.md` as `lessons on: meet | zoom (paste) | other (paste)`.
+- Zoom or other → "For live lessons I'd recommend Google Meet with transcripts on: I can read those on my own. With Zoom, you'd paste the transcript after each lesson. Want to switch for lessons?" Record her answer on the program's `lessons on:` line.
 
 ### Step 4 — Where it lives in MCM
-- "Your course will live in MCM, where your students log in. Is it created there yet?" Record `MCM course: <name> | not created yet` in the program's `index.md`. Not created → "No problem; once the first lessons are ready, I can set it up there with you."
+- "Your course will live in MCM, where your students log in. Is it created there yet?" Record it on the program's `MCM course:` line. Not created → "No problem; once the first lessons are ready, I can set it up there with you."
 
 ### Step 5 — Close
-- Courses brief: Current state ("<Program> set up: <format>, <length>.") and Next step ("Design the program").
+- the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Where it stands ("Set up: <format>, <length>.") and Next step ("Design the program"); Rounds "Round 1 — planned". Then the Courses brief, as above.
 - Offer the design: "Want to design the program now? We go from your offer to the full module map." Run /course-design on yes.
 - Receipt.
 

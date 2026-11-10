@@ -33,17 +33,39 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 ### Step 2 — The department and the program
 - No Cursos department yet: on sim, create `departamentos/cursos/brief.md` in /novo-departamento's brief format: name **Cursos**, área = the strategy's área, Propósito "Montar e melhorar os programas que ela vende, um módulo por vez, a partir do que os alunos realmente precisam.", Rotinas "Fechar cada aula ao vivo no mesmo dia; revisar depois de cada módulo e de cada turma.", O que eu uso aqui: "desenha o meu programa", "próxima aula", "fecha a aula", "revisa o módulo". Index line under its area header; hand /contexto the creation of `contexto/cursos.md` ("Departamento Cursos criado.").
-- The program: a slug from its name, `departamentos/cursos/<programa>/` with `index.md` (`# <Program name>`), and a line in `departamentos/cursos/index.md`.
+- The program: a slug from its name, `departamentos/cursos/<programa>/` with its `index.md`, and a line in `departamentos/cursos/index.md`.
+- **The program's `index.md` is its progress file**, kept current by every course skill without asking (soft), the way content skills keep the Conteúdo brief current:
+
+```markdown
+# <Nome do programa>
+aulas em: <meet | zoom (colar) | outro (colar)> · curso no MCM: <nome | ainda não criado>
+
+## Onde está
+_Em YYYY-MM-DD._
+<turma N: aula X de Y feita, próxima data ao vivo, o que está em aberto>
+
+## Próximo passo
+<um movimento concreto para este programa>
+
+## Turmas
+- Turma 1 — <planejada | começou YYYY-MM-DD | terminou YYYY-MM-DD> · <n> alunos
+
+## Arquivos
+- [Programa](programa.md) · YYYY-MM-DD · <uma linha>
+- [Aula 01: <título>](aulas/aula-01-<slug>.md) · <status>
+```
+
+- **The Cursos brief** keeps one Estado atual and Próximo passo for the whole department: the program that's most urgent (the nearest live date, else the most recent work), pointing to its progress file. With one program, it mirrors that program.
 
 ### Step 3 — Recording live lessons
 - `reunioes: meet` → "As suas aulas ao vivo vão ser no Google Meet. Ligue **Transcrever a reunião** ao criar cada aula no Google Agenda; é isso que me deixa fechar cada aula pra você."
-- Zoom or outro → "Para aulas ao vivo eu recomendo o Google Meet com transcrição ligada: essas eu leio sozinho. Com o Zoom, você teria que colar a transcrição depois de cada aula. Quer mudar para as aulas?" Record her answer in the program's `index.md` as `aulas em: meet | zoom (colar) | outro (colar)`.
+- Zoom or outro → "Para aulas ao vivo eu recomendo o Google Meet com transcrição ligada: essas eu leio sozinho. Com o Zoom, você teria que colar a transcrição depois de cada aula. Quer mudar para as aulas?" Record her answer on the program's `aulas em:` line.
 
 ### Step 4 — Where it lives in MCM
-- "O seu curso vai ficar no MCM, onde os seus alunos entram. Ele já está criado lá?" Record `curso no MCM: <nome> | ainda não criado` in the program's `index.md`. Not created → "Sem problema; quando as primeiras aulas estiverem prontas, eu monto lá com você."
+- "O seu curso vai ficar no MCM, onde os seus alunos entram. Ele já está criado lá?" Record it on the program's `curso no MCM:` line. Not created → "Sem problema; quando as primeiras aulas estiverem prontas, eu monto lá com você."
 
 ### Step 5 — Close
-- Cursos brief: Estado atual ("<Programa> configurado: <formato>, <duração>.") and Próximo passo ("Desenhar o programa").
+- the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está ("Configurado: <formato>, <duração>.") and Próximo passo ("Desenhar o programa"); Turmas "Turma 1 — planejada". Then the Cursos brief, as above.
 - Offer the design: "Quer desenhar o programa agora? A gente vai da sua oferta até o mapa completo dos módulos." Run /curso-desenho on sim.
 - Receipt.
 

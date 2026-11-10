@@ -50,7 +50,7 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 - Quotes still `precisa de permissão` that would help sell the next round: remind her once which students to ask.
 
 ### Step 5 — Close
-- Cursos brief: Estado atual (review done, one line), Próximo passo.
+- the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está (review done, one line), Próximo passo. A round review sets that round to "terminou YYYY-MM-DD" under Turmas. Then the Cursos brief.
 - Hand /contexto one line for `contexto/cursos.md`: `<Programa> módulo <n> revisado: <mudanças aprovadas, curto>.`
 - Receipt.
 

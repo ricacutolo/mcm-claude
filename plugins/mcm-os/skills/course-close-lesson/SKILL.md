@@ -66,7 +66,7 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 ### Step 5 — Recap and next step
 - "Want a short recap for your students? A draft for you to send." On yes, hand /my-voice only what was taught, the homework and the next date; never anything about a single student.
 - Her promises from the lesson → one line each, nearest first.
-- Courses brief: Current state (lesson NN closed, one line) and Next step (the next lesson, or the module review after the module's last lesson: "Module <n> is done; want to review it?" → /course-review).
+- the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Where it stands (lesson NN closed, X of Y done, next live date) and Next step (the next lesson, or the module review after the module's last lesson: "Module <n> is done; want to review it?" → /course-review). The first lesson closed in a round sets that round to "started YYYY-MM-DD · <n> students" under Rounds. Then the Courses brief.
 - Receipt.
 
 ## Receipt

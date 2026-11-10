@@ -12,7 +12,7 @@ Speak to her in plain, warm US English. Say "the lesson", "the handout", "your s
 ## Read these first
 
 1. `departments/courses/<program>/program.md` — the module map, how a session runs, who it's for.
-2. `departments/courses/<program>/index.md` — the lessons done so far, the MCM course, `lessons on:`.
+2. `departments/courses/<program>/index.md` — the program's progress: where it stands, the lessons done so far, the MCM course, `lessons on:`.
 3. The previous lesson's file — its **What happened** section, when closed.
 4. `departments/courses/<program>/faq.md` and `feedback.md` — questions and sticking points to answer in this lesson.
 5. `about-me/writing.md` — her voice, for anything students read.
@@ -51,7 +51,7 @@ Speak to her in plain, warm US English. Say "the lesson", "the handout", "your s
 - Course not created in MCM yet → offer to create the course shell with her on screen first (name, modules), as drafts. Browser not reachable → "I'll keep it ready here; we can put it in MCM next time." Slide design in Canva isn't part of this yet: the outline is what she uses.
 
 ### Step 5 — Close
-- Courses brief: Next step → "Teach lesson <NN> on <date>, then close it" (live) or the next lesson to build. Current state, one line.
+- the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Next step → "Teach lesson <NN> on <date>, then close it" (live) or the next lesson to build; Where it stands, one line; the lesson's line under Files with its status. Then the Courses brief.
 - Receipt.
 
 ## Receipt

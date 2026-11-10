@@ -50,7 +50,7 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 - Quotes still `needs permission` that would help sell the next round: remind her once which students to ask.
 
 ### Step 5 — Close
-- Courses brief: Current state (review done, one line), Next step.
+- the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Where it stands (review done, one line), Next step. A round review sets that round to "finished YYYY-MM-DD" under Rounds. Then the Courses brief.
 - Hand /context one line for `context/courses.md`: `<Program> module <n> reviewed: <changes approved, short>.`
 - Receipt.
 

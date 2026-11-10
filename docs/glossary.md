@@ -58,6 +58,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | shipped `estrategia-do-negocio/playbook.md` · `modelos/estrategia.md` | `business-strategy/playbook.md` · `templates/strategy.md` |
 | `departamentos/cursos/` · `<programa>/programa.md` · `aulas/aula-NN-<slug>.md` · `perguntas.md` · `retorno.md` · `depoimentos.md` | `departments/courses/` · `<program>/program.md` · `lessons/lesson-NN-<slug>.md` · `faq.md` · `feedback.md` · `quotes.md` |
 | program `index.md` fields `aulas em:` · `curso no MCM:` | `lessons on:` · `MCM course:` |
+| program `index.md` (its progress file) sections `Onde está` · `Próximo passo` · `Turmas` (`Turma N — planejada / começou / terminou`) · `Arquivos` | `Where it stands` · `Next step` · `Rounds` (`Round N — planned / started / finished`) · `Files` |
 | lesson status `planejada · materiais prontos · no MCM · dada · fechada` · quotes `precisa de permissão` / `pode usar` | `planned · materials ready · in MCM · taught · closed` · `needs permission` / `ok to use` |
 | shipped `modelos/programa.md` · `modelos/aula.md` | `templates/program.md` · `templates/lesson.md` |
 | `departamentos/conteudo/` | `departments/content/` |

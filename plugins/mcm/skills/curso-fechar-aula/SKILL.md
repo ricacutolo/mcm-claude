@@ -66,7 +66,7 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 ### Step 5 — Recap and next step
 - "Quer um resumo curto pros seus alunos? Um rascunho pra você enviar." On sim, hand /minha-voz only what was taught, the homework and the next date; never anything about a single student.
 - Her promises from the lesson → one line each, nearest first.
-- Cursos brief: Estado atual (lesson NN closed, one line) and Próximo passo (the next lesson, or the module review after the module's last lesson: "O módulo <n> terminou; quer revisar?" → /curso-revisao).
+- the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está (lesson NN closed, X of Y done, next live date) and Próximo passo (the next lesson, or the module review after the module's last lesson: "O módulo <n> terminou; quer revisar?" → /curso-revisao). The first lesson closed in a round sets that round to "começou YYYY-MM-DD · <n> alunos" under Turmas. Then the Cursos brief.
 - Receipt.
 
 ## Receipt
