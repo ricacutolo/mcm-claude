@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departments/index.md` — to catch a duplicate. Missing means there are none yet.
 2. The frontmatter of `context/*.md` — to find an existing log for the same topic.
-3. The business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Personal.
+3. The business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Personal.
 4. `about-me/writing.md` — the brief is written in her voice.
 
 ## The rules
@@ -53,11 +53,11 @@ Always ask, even for her first department: everything gets an area from day one.
 
 - Her areas so far (the `## ` headers in `departments/index.md`), plus Personal: "Which area is this department part of? **Personal** · **<Area>** · … or a new business?" No areas yet: "Is this **Personal**, or for one of your businesses? If it's a business, what's it called?"
 - Suggest the likely one first, from what she said; her answer wins.
-- A new business area → she names it ("Community"). If it isn't the business in `about-me/business.md`, tell /system it needs its own business file (its **Areas** rule).
+- A new business area → she names it ("Community"). If it isn't the business in `about-me/business-brain.md`, tell /system it needs its own business file (its **Areas** rule).
 
 ### Step 3 — The conversation
 
-One question at a time. Skip anything the conversation or `business.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
+One question at a time. Skip anything the conversation or `business-brain.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
 
 1. **"What is this department for?"** The standard it keeps up, in one or two sentences.
 2. **"What does it look like when it's going well?"** What must always be true — frequency, quality bar, limits. Becomes Standards.

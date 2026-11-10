@@ -35,7 +35,7 @@ Rica adds one dated section per update and never edits old ones:
 ## YYYY-MM-DD
 ### My writing (about-me/writing.md)
 1. <line>
-### My business (about-me/business.md)
+### My business (about-me/business-brain.md)
 1. <line>
 ### Department <Name> (brief or history)
 1. <line>
@@ -63,8 +63,8 @@ Where they go:
 | Section in the doc | Destination |
 |---|---|
 | My writing | `about-me/writing.md`, under the heading that fits |
-| My business | `about-me/business.md`, under the heading that fits |
-| My business <Area> | `about-me/business-<area>.md`, under the heading that fits |
+| My business | `about-me/business-brain.md`, under the heading that fits |
+| My business <Area> | `about-me/business-brain-<area>.md`, under the heading that fits |
 | About me | `about-me/about-me.md` |
 | Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context |
 | Project X | same, for the project's brief |

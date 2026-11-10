@@ -24,7 +24,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 7. The issue's own `departments/content/newsletters/issue-NN-<slug>.md`, if it exists — to resume.
 8. `about-me/about-me.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
-   - the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**). It evolves; always read the current one.
+   - the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**). It evolves; always read the current one.
    - `../content-strategy/playbook.md` — rules, awareness levels, hooks, CTA by layer, the newsletter section, the 4-point check.
    - `../content-strategy/library.md` — the newsletter formats catalog.
    - `departments/content/swipe.md` — lines that worked for her, if it exists.

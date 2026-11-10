@@ -25,6 +25,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief
         ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup) · conteudo-newsletter · conteudo-substack
+        ├── CEO: estrategia-do-negocio (research → conversation → estrategia.md, settled facts to the business brain)
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
         ├── organizar-drive ── numbered folders in her Google Drive, then sorts loose files; her sim per plan
@@ -42,8 +43,8 @@ All names are Portuguese; skills refer to them exactly as written here.
   claude.md                     backup of the text pasted into Instructions for Claude
   sobre-mim/
     sobre-mim.md                who she is            (Nuno: about-me.md)
-    negocio.md                  the business          (Nuno: business-brain.md)
-    negocio-<area>.md           each other business, one per área (v0.3.1)
+    cerebro-do-negocio.md       the business brain    (Nuno: business-brain.md; was negocio.md before 0.11.0)
+    cerebro-do-negocio-<area>.md  each other business, one per área (v0.3.1)
     escrita.md                  voice and writing     (Nuno: writing-rules.md)
     drive.md                    her Drive structure and sorting rules (written by organizar-drive)
     marca.md                    her brand: logo files, colors, fonts (written by brand-kit-designer)
@@ -53,6 +54,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     <slug>/pesquisa/            created on first use, with index.md
     <slug>/entregas/<tipo>/     created on first use, one folder per type, each with index.md
     <slug>/entregas/planos/     plan files (3+ steps), kept current in place — rule in sistema
+    ceo/                        the CEO department (v0.11.0): brief.md · estrategia.md (+ estrategia-<area>.md) · pesquisa/ — the business strategy; departments carry it out
     clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
       index.md                  one line per client
       <slug>/ficha.md           one sheet per client: who, preferences, what's open, files (knowledge only)
@@ -131,6 +133,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | conteudo-estrategia | Rica's /content-strategy | `estrategia.md`, `rodadas-anteriores/`, business-file suggestions to `pendentes.md`, brief; ships `library.md`, `playbook.md` and `platforms/` (one file per platform; the strategy's platforms line is the switch every content skill reads; English rules, Portuguese output; read-only) | `_sistema/log.md` |
 | conteudo-newsletter | new (content machine, newsletter) | `newsletters/edicao-NN-<slug>.md`, a plain-text MCM email campaign scheduled to her list, `calendario.md`, `plano.md` Status cell, `ideias.md`, brief; starts from her material with a suggestion in the same message; two gates (rascunho, agendamento); reads `platforms/newsletter.md` | `_sistema/log.md` |
 | conteudo-substack | new (content machine, Substack) | through the browser: each newsletter issue as a Substack article (on the newsletter's schedule sim), and 2-3 Notes a week cut from the newsletter and posts (own gate); `notas/nota-NN.md`, `calendario.md`, `plano.md` Status cell, `ghl.md` § Substack tags; schedules, never posts on the spot; reads `platforms/substack.md` | `_sistema/log.md` |
+| estrategia-do-negocio | new (CEO department, business strategy) | `departamentos/ceo/brief.md` (first run), `ceo/pesquisa/` research file with its index, `ceo/estrategia.md`, settled lines in `sobre-mim/cerebro-do-negocio.md` (copy to `_revisao/` first), CEO brief Estado atual/Próximo passo; research first, then the conversation in the sistema's guide-not-form shape; offers adjustments to other departments, never makes them; reads `playbook.md` | `_sistema/log.md` |
 | conteudo-modelo | Rica's /content-template | a Canva TEMPLATE, `modelos.md` (fill guide), `plano.md` Modelo cells, brief | `_sistema/log.md` |
 | conteudo-revisao | Rica's /content-review | `desempenho.md`, `notas-da-biblioteca.md`, `swipe.md`, `pendentes.md` items, brief; recommends, never edits strategy or plan | `_sistema/log.md` |
 | conteudo-instalar | Rica's content-machine-onboarding | `configuracao.md`, `estilo-da-marca.md`, `modelos.md` (base templates), `ghl.md`, `.env` (empty key line only), `scripts/`, brief; rebrands her copies of MCM's base templates on her sim; ships `guides.md` (PT) and `scripts/` | `_sistema/log.md` |

@@ -12,6 +12,7 @@ You are walking her through installing her system, in short steps she can stop a
 - Plain words. Never "MCP", "OAuth", "frontmatter", "YAML", "plugin manifest", "skill file". Say "connection", "sign in with your account", "the system", "the folder".
 - Default everything. Ask only when a default won't work.
 - Approval gates, not menus: "Type **yes** to keep going."
+- A guide, not a form: every question follows the system's **Asking her things** shape (what we need and why, what I'd recommend, "do you already know it, or want to work it out together?"). "I don't know yet" is a fine answer.
 
 **Seed mode.** Rica may have prepared her files in advance in `_seed/`. When a seed file exists, the step becomes **confirm, not interview**: show it in short pieces, ask "Does this look right? Anything you want to change?", apply changes, write. Only ask what the seed marks as missing (`[ASK]`).
 
@@ -47,7 +48,7 @@ After each step: set that row to `complete` in `state.md`, set `current_step`, a
 
 ## Bringing the seed from the Drive
 
-Rica delivers the seed through her Drive, in a folder named `Seed` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `about-me.md`, `business.md`, `writing.md`, `drive.md`, one `business-<area>.md` per other business, and one `department-<slug>.md` per department (with `area:` in its frontmatter).
+Rica delivers the seed through her Drive, in a folder named `Seed` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `about-me.md`, `business-brain.md` (older seeds: `business.md`), `writing.md`, `drive.md`, one `business-brain-<area>.md` per other business, and one `department-<slug>.md` per department (with `area:` in its frontmatter).
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
@@ -100,9 +101,9 @@ If `_seed/` does not exist when Step 1 ends, ask once:
 
 ## Step 3 — Your business (5-15 min)
 
-- Seed `_seed/business.md`: show it section by section, confirm. Ask only the `[ASK]` items, then remove the markers. Write `about-me/business.md`.
-- No seed: fill `templates/business.md`, one question at a time. Ten questions at most; "I don't know" is a fine answer — write "to be decided".
-- **Areas.** Then ask once: "Do you use Claude just for this business, or also for your personal life, or for another business?" Name the main business area after the business. Each other business: its own `about-me/business-<area>.md` (seed file `business-<area>.md` when present, same flow; otherwise a few questions, "to be decided" is fine). Personal needs no file. One line to her: "An area is how you separate your life: personal on one side, each business on the other."
+- Seed `_seed/business-brain.md` (older seeds: `_seed/business.md`): show it section by section, confirm. Ask only the `[ASK]` items, then remove the markers. Write `about-me/business-brain.md`.
+- No seed: fill `templates/business-brain.md`, one question at a time. Ten questions at most; "I don't know" is a fine answer — write "to be decided". Sections marked "filled in the strategy session" aren't asked here: write "to be decided" (the strategy session fills them).
+- **Areas.** Then ask once: "Do you use Claude just for this business, or also for your personal life, or for another business?" Name the main business area after the business. Each other business: its own `about-me/business-brain-<area>.md` (seed file `business-brain-<area>.md` when present, same flow; otherwise a few questions, "to be decided" is fine). Personal needs no file. One line to her: "An area is how you separate your life: personal on one side, each business on the other."
 
 ## Step 4 — Your writing (5-15 min)
 
@@ -142,12 +143,13 @@ Then list the rest in one short block, as things she can say: "what should I pos
 ## Step 8 — First real test (10 min)
 
 1. Ask her about the my-voice sample from the tour: "Does this sound like you? From 0 to 10?" If under 7, ask what is off and offer to adjust `about-me/writing.md` (hard item: show the change, write on **yes**).
-2. Offer the content setup: "Want to set up your content now? It connects Canva and MCM and takes about an hour; you can also do it later by saying **set up my content**." Run /content-install only on **yes**.
-3. Set `install: complete` in `state.md`.
-4. Write the first `_system/health.md` in the format the system skill defines (numbers only), and the Drive copy if approved. Set `last_upkeep` to today.
-5. Only if she declined the content setup in 8.2, update the Content brief (soft sections): Current state gets today's date and "Set up during the install"; Next step becomes the next real move she names, or "Decide how often to post" if she has none. If she ran the content setup, leave the brief as the content setup left it.
-6. If `_seed/` exists: "Can I move the `_seed/` folder to `_review/`? It's not needed anymore." Move on **yes**; never delete.
-7. Close: "All done. Your system is up and running. From here on, just talk to me with the folder connected — I know where everything goes and I'll keep saving what matters."
+2. Offer the strategy session: "Want to think through your business strategy next? What to sell first, at what price, and how to launch it. It's a conversation, about an hour, and I do some research for you first. You can also do it later by saying **let's work on my strategy**." Run /business-strategy only on **yes**; when it ends, come back here.
+3. Offer the content setup: "Want to set up your content now? It connects Canva and MCM and takes about an hour; you can also do it later by saying **set up my content**." Run /content-install only on **yes**.
+4. Set `install: complete` in `state.md`.
+5. Write the first `_system/health.md` in the format the system skill defines (numbers only), and the Drive copy if approved. Set `last_upkeep` to today.
+6. Only if she declined the content setup in 8.3, update the Content brief (soft sections): Current state gets today's date and "Set up during the install"; Next step becomes the next real move she names, or "Decide how often to post" if she has none. If she ran the content setup, leave the brief as the content setup left it.
+7. If `_seed/` exists: "Can I move the `_seed/` folder to `_review/`? It's not needed anymore." Move on **yes**; never delete.
+8. Close: "All done. Your system is up and running. From here on, just talk to me with the folder connected — I know where everything goes and I'll keep saving what matters."
 
 ## Receipt
 

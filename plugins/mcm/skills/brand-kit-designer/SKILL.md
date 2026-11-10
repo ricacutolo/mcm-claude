@@ -13,7 +13,7 @@ Speak Brazilian Portuguese, warm and plain. Never say "skill", "SVG", "hex", "re
 
 Loaded when this skill fires, nothing more:
 
-1. the business file of the área in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — what she sells and to whom.
+1. the business file of the área in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Áreas**) — what she sells and to whom.
 2. `sobre-mim/escrita.md` — only its voice summary, for the brand's tone.
 3. `sobre-mim/marca.md` — if it exists, she already has a kit: offer to adjust it instead of starting over.
 4. `sobre-mim/drive.md` — where `04. Brand` is in her Drive. Missing means her Drive is not organized yet; files then go to her folder only.
@@ -135,7 +135,7 @@ Shared memory: `sobre-mim/marca.md` is this skill's durable memory. No históric
 - Uploads anywhere but her own Drive, or shares a file.
 - Says the logo is registrable or free to use as a trademark.
 - Uses a paid or unlicensed font.
-- Edits `negocio.md`, `escrita.md` or `drive.md`.
+- Edits `cerebro-do-negocio.md`, `escrita.md` or `drive.md`.
 
 ## When to refuse
 
@@ -145,7 +145,7 @@ Shared memory: `sobre-mim/marca.md` is this skill's durable memory. No históric
 
 ## Failure modes
 
-- **No `negocio.md`:** ask the three brief questions plus "O que você vende e para quem?", then continue.
+- **No `cerebro-do-negocio.md`:** ask the three brief questions plus "O que você vende e para quem?", then continue.
 - **Drive not connected or `04. Brand` not found:** save to her folder only, say the Drive part is waiting, and offer /organizar-drive.
 - **PNG rendering unavailable:** Step 5's manual-step message and the note to Rica; the rest of the kit is delivered.
 - **A preview page won't display:** show the logos inline in the chat instead and keep going.

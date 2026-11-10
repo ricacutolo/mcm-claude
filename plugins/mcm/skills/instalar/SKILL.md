@@ -12,6 +12,7 @@ You are walking her through installing her system, in short steps she can stop a
 - Plain words. Never "MCP", "OAuth", "frontmatter", "YAML", "plugin manifest", "skill file". Say "conexão", "entrar com sua conta", "o sistema", "a pasta".
 - Default everything. Ask only when a default won't work.
 - Approval gates, not menus: "Digite **sim** para seguir."
+- A guide, not a form: every question follows the sistema's **Asking her things** shape (what we need and why, what I'd recommend, "você já sabe isso, ou quer pensar junto comigo?"). "Ainda não sei" is a fine answer.
 
 **Seed mode.** Rica may have prepared her files in advance in `_semente/`. When a seed file exists, the step becomes **confirm, not interview**: show it in short pieces, ask "Está certo? Quer mudar algo?", apply changes, write. Only ask what the seed marks as missing (`[PERGUNTAR]`).
 
@@ -47,7 +48,7 @@ After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, a
 
 ## Bringing the seed from the Drive
 
-Rica delivers the seed through her Drive, in a folder named `Semente` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `sobre-mim.md`, `negocio.md`, `escrita.md`, `drive.md`, one `negocio-<area>.md` per other business, and one `departamento-<slug>.md` per department (with `area:` in its frontmatter).
+Rica delivers the seed through her Drive, in a folder named `Semente` inside the folder he shares with her for deliveries: `MCM - Deliverables` (older installs: `Deliverables`). Files are plain text: `claude.md`, `sobre-mim.md`, `cerebro-do-negocio.md` (older seeds: `negocio.md`), `escrita.md`, `drive.md`, one `cerebro-do-negocio-<area>.md` per other business, and one `departamento-<slug>.md` per department (with `area:` in its frontmatter).
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
@@ -100,9 +101,9 @@ If `_semente/` does not exist when Step 1 ends, ask once:
 
 ## Step 3 — Seu negócio (5-15 min)
 
-- Seed `_semente/negocio.md`: show it section by section, confirm. Ask only the `[PERGUNTAR]` items, then remove the markers. Write `sobre-mim/negocio.md`.
-- No seed: fill `modelos/negocio.md`, one question at a time. Ten questions at most; "não sei" is a fine answer — write "a definir".
-- **Áreas.** Then ask once: "Você usa o Claude só para esse negócio, ou também para a vida pessoal, ou para outro negócio?" Name the main business área after the business. Each other business: its own `sobre-mim/negocio-<area>.md` (seed file `negocio-<area>.md` when present, same flow; otherwise a few questions, "a definir" is fine). Pessoal needs no file. One line to her: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
+- Seed `_semente/cerebro-do-negocio.md` (older seeds: `_semente/negocio.md`): show it section by section, confirm. Ask only the `[PERGUNTAR]` items, then remove the markers. Write `sobre-mim/cerebro-do-negocio.md`.
+- No seed: fill `modelos/cerebro-do-negocio.md`, one question at a time. Ten questions at most; "não sei" is a fine answer — write "a definir". Sections marked "preenchido na sessão de estratégia" aren't asked here: write "a definir" (the strategy session fills them).
+- **Áreas.** Then ask once: "Você usa o Claude só para esse negócio, ou também para a vida pessoal, ou para outro negócio?" Name the main business área after the business. Each other business: its own `sobre-mim/cerebro-do-negocio-<area>.md` (seed file `cerebro-do-negocio-<area>.md` when present, same flow; otherwise a few questions, "a definir" is fine). Pessoal needs no file. One line to her: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
 
 ## Step 4 — Sua escrita (5-15 min)
 
@@ -142,12 +143,13 @@ Then list the rest in one short block, as things she can say: "o que eu posto ag
 ## Step 8 — Primeiro teste de verdade (10 min)
 
 1. Ask her about the minha-voz sample from the tour: "Isso soa como você? De 0 a 10?" If under 7, ask what is off and offer to adjust `sobre-mim/escrita.md` (hard item: show the change, write on **sim**).
-2. Offer the content setup: "Quer configurar o seu conteúdo agora? Ele conecta o Canva e o MCM e leva mais ou menos uma hora; você também pode fazer depois, é só dizer **configura o meu conteúdo**." Run /conteudo-instalar only on **sim**.
-3. Set `instalacao: completa` in `estado.md`.
-4. Write the first `_sistema/saude.md` in the format the sistema skill defines (numbers only), and the Drive copy if approved. Set `ultima_manutencao` to today.
-5. Only if she declined the content setup in 8.2, update the Conteúdo brief (soft sections): Estado atual gets today's date and "Configurado na instalação"; Próximo passo becomes the next real move she names, or "Definir a frequência de posts" if she has none. If she ran the content setup, leave the brief as the content setup left it.
-6. If `_semente/` exists: "Posso mover a pasta `_semente/` para `_revisao/`? Ela não é mais necessária." Move on **sim**; never delete.
-7. Close: "Pronto. Seu sistema está funcionando. Daqui pra frente é só conversar com a pasta conectada — eu sei onde cada coisa fica e vou guardando o que importa."
+2. Offer the strategy session: "Quer pensar na estratégia do seu negócio agora? O que vender primeiro, por quanto e como lançar. É uma conversa, mais ou menos uma hora, e eu faço uma pesquisa pra você antes. Você também pode fazer depois, é só dizer **vamos trabalhar na minha estratégia**." Run /estrategia-do-negocio only on **sim**; when it ends, come back here.
+3. Offer the content setup: "Quer configurar o seu conteúdo agora? Ele conecta o Canva e o MCM e leva mais ou menos uma hora; você também pode fazer depois, é só dizer **configura o meu conteúdo**." Run /conteudo-instalar only on **sim**.
+4. Set `instalacao: completa` in `estado.md`.
+5. Write the first `_sistema/saude.md` in the format the sistema skill defines (numbers only), and the Drive copy if approved. Set `ultima_manutencao` to today.
+6. Only if she declined the content setup in 8.3, update the Conteúdo brief (soft sections): Estado atual gets today's date and "Configurado na instalação"; Próximo passo becomes the next real move she names, or "Definir a frequência de posts" if she has none. If she ran the content setup, leave the brief as the content setup left it.
+7. If `_semente/` exists: "Posso mover a pasta `_semente/` para `_revisao/`? Ela não é mais necessária." Move on **sim**; never delete.
+8. Close: "Pronto. Seu sistema está funcionando. Daqui pra frente é só conversar com a pasta conectada — eu sei onde cada coisa fica e vou guardando o que importa."
 
 ## Receipt
 

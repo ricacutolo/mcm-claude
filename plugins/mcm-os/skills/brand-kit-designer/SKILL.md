@@ -13,7 +13,7 @@ Speak to her in plain, warm US English. Never say "skill", "SVG", "hex", "render
 
 Loaded when this skill fires, nothing more:
 
-1. the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — what she sells and to whom.
+1. the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — what she sells and to whom.
 2. `about-me/writing.md` — only its voice summary, for the brand's tone.
 3. `about-me/brand.md` — if it exists, she already has a kit: offer to adjust it instead of starting over.
 4. `about-me/drive.md` — where `04. Brand` is in her Drive. Missing means her Drive is not organized yet; files then go to her folder only.
@@ -135,7 +135,7 @@ Shared memory: `about-me/brand.md` is this skill's durable memory. No history en
 - Uploads anywhere but her own Drive, or shares a file.
 - Says the logo is registrable or free to use as a trademark.
 - Uses a paid or unlicensed font.
-- Edits `business.md`, `writing.md` or `drive.md`.
+- Edits `business-brain.md`, `writing.md` or `drive.md`.
 
 ## When to refuse
 
@@ -145,7 +145,7 @@ Shared memory: `about-me/brand.md` is this skill's durable memory. No history en
 
 ## Failure modes
 
-- **No `business.md`:** ask the three brief questions plus "What do you sell, and to whom?", then continue.
+- **No `business-brain.md`:** ask the three brief questions plus "What do you sell, and to whom?", then continue.
 - **Drive not connected or `04. Brand` not found:** save to her folder only, say the Drive part is waiting, and offer /organize-drive.
 - **PNG rendering unavailable:** Step 5's manual-step message and the note to Rica; the rest of the kit is delivered.
 - **A preview page won't display:** show the logos inline in the chat instead and keep going.

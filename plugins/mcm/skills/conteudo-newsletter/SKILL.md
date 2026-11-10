@@ -24,7 +24,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 7. The issue's own `departamentos/conteudo/newsletters/edicao-NN-<slug>.md`, if it exists — to resume.
 8. `sobre-mim/sobre-mim.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
-   - the business file of the area in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Areas**). It evolves; always read the current one.
+   - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**). It evolves; always read the current one.
    - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, CTA by layer, the newsletter section, the 4-point check.
    - `../conteudo-estrategia/library.md` — the newsletter formats catalog.
    - `departamentos/conteudo/swipe.md` — lines that worked for her, if it exists.

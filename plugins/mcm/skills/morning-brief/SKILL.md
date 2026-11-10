@@ -13,7 +13,7 @@ in the chat, in Brazilian Portuguese. Read-only on Gmail and Calendar.
 Loaded only when this skill fires:
 
 1. `sobre-mim/sobre-mim.md` — timezone (default `America/Sao_Paulo`) and anything she said about her schedule.
-2. `sobre-mim/negocio.md` (and any `negocio-<area>.md`) — only the current priority / main offer of each, to rank what matters.
+2. `sobre-mim/cerebro-do-negocio.md` (and any `cerebro-do-negocio-<area>.md`) — only the current priority / main offer of each, to rank what matters.
 3. `departamentos/index.md` and `projetos/index.md` — if they exist, to link an email or event to a department or project by name. When she has more than one área, say the área with the link ("Comunidade · reunião dos sócios").
 4. `${CLAUDE_PLUGIN_ROOT}/skills/minha-voz/kill-list.md` — the brief must pass it.
 
