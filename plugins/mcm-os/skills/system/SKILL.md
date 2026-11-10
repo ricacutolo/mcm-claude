@@ -39,6 +39,7 @@ about-me/                     about-me.md · business-brain.md (main business) �
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
   ceo/                        the CEO department: brief.md · strategy.md (main business) · strategy-<area>.md (each other business) · research/
+  courses/                    the Courses department: brief.md · index.md · <program>/ (index.md · program.md · lessons/lesson-NN-<slug>.md · faq.md · feedback.md · quotes.md)
   content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · newsletters/ · notes/ · scripts/ · .env · past-rounds/
 projects/                     index.md · <slug>/brief.md · research/ · deliverables/<type>/
 context/<slug>.md             every running log (topics, projects, departments, clients)
@@ -61,6 +62,8 @@ _review/                      anything that would otherwise be deleted
 | `about-me/drive.md` | /organize-drive only, on her yes |
 | `about-me/brand.md` | /brand-kit-designer only, on her yes |
 | `departments/ceo/strategy.md` (and `strategy-<area>.md`) | /business-strategy only, on her yes |
+| `departments/courses/<program>/program.md` | /course-design only, on her yes |
+| a lesson file, `faq.md`, `feedback.md`, `quotes.md` | /course-lesson (lesson files), /course-close-lesson (What happened, faq, feedback, quotes), /course-review (feedback review lines), on her yes |
 | `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_read`) |
 | `_system/pending.md`, `health.md` | this skill |
 | `_system/log.md` | shared, append-only — every skill adds its own receipt line |
@@ -76,6 +79,7 @@ She talks to one Claude. That Claude routes:
 - Something new and ongoing → offer **/new-department**. Something new with a finish line → offer **/new-project**. The test, said once: "Does this have an end? If it does, it's a project. If it doesn't, it's a department."
 - A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the newsletter, "write the newsletter" → **/content-newsletter**; a Substack note or article, "post on Substack" → **/content-substack**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
 - Her business strategy: what to sell first, pricing, a launch, "where is my business going", "let's think about my strategy" → **/business-strategy**.
+- Her program or course: set it up → **/course-install**; design it, the modules → **/course-design**; "next lesson", prepare a class → **/course-lesson**; "close the lesson", "I just finished teaching" → **/course-close-lesson**; review a module or a round → **/course-review**.
 - "How's my day looking" → **/morning-brief**.
 - "Update", "any news from Rica" → **/update**.
 - "Organize my Drive", "where do I save this in Drive" → **/organize-drive**.
