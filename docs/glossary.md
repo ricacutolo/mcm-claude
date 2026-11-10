@@ -30,6 +30,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-revisao | content-review |
 | conteudo-instalar | content-install |
 | conteudo-newsletter | content-newsletter |
+| conteudo-substack | content-substack |
 | ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
@@ -55,6 +56,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `…/conteudo/estilo-de-foto.md` (her look for generated images) · plan section `Fotos para tirar` | `…/content/photo-style.md` · plan section `Photos to take` |
 | shipped `conteudo-estrategia/image-prompts.md` | `content-strategy/image-prompts.md` |
 | `…/conteudo/newsletters/edicao-NN-<slug>.md` · `ghl.md` § Newsletter | `…/content/newsletters/issue-NN-<slug>.md` · `ghl.md` § Newsletter |
+| `…/conteudo/notas/nota-NN.md` · `ghl.md` § Substack (Endereço da publicação, Tags em uso) | `…/content/notes/note-NN.md` · `ghl.md` § Substack (Publication address, Tags in use) |
 | `…/conteudo/desempenho.md` · `notas-da-biblioteca.md` · `swipe.md` | `…/content/performance-log.md` · `library-notes.md` · `swipe.md` |
 | `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
 | `contexto/conteudo.md` | `context/content.md` |
@@ -112,6 +114,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
 | plan idea cell in a newsletter-led cycle: `da newsletter N` · idea tag `para o post N` · post note `ciclo sem newsletter` | `from newsletter N` · `for post N` · `cycle fell back` |
+| Substack Note: format `nota` · calendar `Nota do Substack N` · plan idea cell `do post M` · status `pulada` | `note` · `Substack note N` · `from post M` · `skipped` |
 | plan Modelo cell for formats with no template: `reel` · `foto` | Template cell: `reel` · `photo` |
 | plan and calendar status: `planejado` · `agendado` · `Agendado <time>` · `Publicado <date time>` | `planned` · `scheduled` · `Scheduled <time>` · `Published <date time>` |
 | idea status: `não usada` · `usada: post N` · `descartada` | `unused` · `used: post N` · `dropped` |

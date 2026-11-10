@@ -9,13 +9,13 @@
       "name": "mcm",
       "source": "./plugins/mcm",
       "description": "Sistema de trabalho da MyClientMachine para o Claude: instalação guiada, departamentos, projetos, contexto por assunto, sua voz e a máquina de conteúdo.",
-      "version": "0.9.0"
+      "version": "0.10.0"
     },
     {
       "name": "mcm-os",
       "source": "./plugins/mcm-os",
       "description": "MyClientMachine's operating system for Claude: guided install, departments, projects, clients, context by topic, your voice and the content machine.",
-      "version": "0.9.0"
+      "version": "0.10.0"
     }
   ],
   "metadata": {

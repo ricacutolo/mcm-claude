@@ -18,7 +18,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 1. The slot content-post passed: issue number, date and time (and the original slot if it was missed), topic, newsletter format, idea.
 2. `departments/content/brief.md` — its Next step and Current state.
 3. `departments/content/strategy.md` — who we write for, which layers are on, topics, the newsletter line in Cadence (on, how often, day and time, which list), the CTA, the wedge, which issues are offer issues.
-4. `../content-strategy/platforms/newsletter.md` — the newsletter's formats, writing rules, scheduling and results. Only if the newsletter is on in `strategy.md`.
+4. `../content-strategy/platforms/newsletter.md` — the newsletter's formats, writing rules, scheduling and results. Only if the newsletter is on in `strategy.md`. Substack on too: `../content-strategy/platforms/substack.md` (the issue also goes out there as an article).
 5. `departments/content/plan.md`, `calendar.md` and `ideas.md` — the slot, what's scheduled, the idea backlog.
 6. `departments/content/ghl.md` — location and user IDs, and its Newsletter section: from name, from email, reply-to, the list (tag or segment).
 7. The issue's own `departments/content/newsletters/issue-NN-<slug>.md`, if it exists — to resume.
@@ -102,11 +102,12 @@ Preview text:
 ### Step 4 — Schedule (gate 2)
 - Date and time from the slot, in her time zone; the list, from name, from email and reply-to from `ghl.md`.
 - If the slot has passed or is under 1 hour away: content-post's missed-slot rule decides the new time.
-- **Gate:** "Ready to schedule? <day date time> to <list>, from <name>. Say **yes** and I'll schedule it."
+- **Gate:** "Ready to schedule? <day date time> to <list>, from <name>. Say **yes** and I'll schedule it." Substack on: "…to <list>, from <name>, and on your Substack at the same time." Her yes covers both.
 - On yes:
   1. MCM `create-email-campaign`: `name` "Newsletter <N>: <short title>", `editorType: text`, `editorContent` = the approved email, `timeZone` = hers, `userId` from `ghl.md`. Idempotency key: `<location ID>-newsletter-NN-<slug>-create`.
   2. MCM `schedule-campaign`: `scheduleType: scheduled`, `scheduleConfig.sendAt` in her time zone, `emailMeta` = subject, from name, from email, reply-to, preview text; `recipients` = the list from `ghl.md` (tag or segment). Idempotency key: `<location ID>-newsletter-NN-<slug>-schedule`.
   3. Verify it shows as scheduled; report the campaign status.
+  4. Substack on: hand the approved email, the chosen subject, the preview text and the send time to content-substack (article). If it can't schedule it, the email still goes; say so in one line.
 
 ### Step 5 — Close
 - Issue file: Draft and Schedule rows, campaign ID, send time.
