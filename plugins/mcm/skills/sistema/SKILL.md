@@ -39,6 +39,7 @@ sobre-mim/                    sobre-mim.md · cerebro-do-negocio.md (main busine
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
   ceo/                        the CEO department: brief.md · estrategia.md (main business) · estrategia-<area>.md (each other business) · pesquisa/
+  cursos/                     the Cursos department: brief.md · index.md · <programa>/ (index.md · programa.md · aulas/aula-NN-<slug>.md · perguntas.md · retorno.md · depoimentos.md)
   conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · notas/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
@@ -61,6 +62,8 @@ _revisao/                     anything that would otherwise be deleted
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
 | `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `departamentos/ceo/estrategia.md` (and `estrategia-<area>.md`) | /estrategia-do-negocio only, on her sim |
+| `departamentos/cursos/<programa>/programa.md` | /curso-desenho only, on her sim |
+| a lesson file, `perguntas.md`, `retorno.md`, `depoimentos.md` | /curso-aula (lesson files), /curso-fechar-aula (O que aconteceu, perguntas, retorno, depoimentos), /curso-revisao (retorno review lines), on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
@@ -76,6 +79,7 @@ She talks to one Claude. That Claude routes:
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the newsletter, "escreve a newsletter" → **/conteudo-newsletter**; a Substack note or article, "posta no Substack" → **/conteudo-substack**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
 - Her business strategy: what to sell first, pricing, a launch, "pra onde o meu negócio está indo", "vamos pensar na minha estratégia" → **/estrategia-do-negocio**.
+- Her program or course: set it up → **/curso-instalar**; design it, the modules → **/curso-desenho**; "próxima aula", prepare a class → **/curso-aula**; "fecha a aula", "acabei de dar aula" → **/curso-fechar-aula**; review a module or a round → **/curso-revisao**.
 - "Como está meu dia" → **/morning-brief**.
 - "Atualizar", "tem novidade do Rica" → **/atualizar**.
 - "Organiza meu Drive", "onde guardo isso no Drive" → **/organizar-drive**.

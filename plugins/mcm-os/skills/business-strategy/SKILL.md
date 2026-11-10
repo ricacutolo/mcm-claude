@@ -73,6 +73,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Open 
 ### Step 5 — Close
 - CEO brief: Current state (today's date, one line: the first offer and the 90-day goal), Next step (the first launch step), `updated:`.
 - Departments that should follow it, one line each, as offers, never done here: "Your content strategy still talks about <old offer>; want to refresh it?" (content → /content-strategy). Nothing else changes.
+- The first offer is a program (a course, cohort, group, workshop): "Want to start building it? The course machine designs the program and builds it one lesson at a time." Run /course-install on yes.
 - Hand /context one line for `context/ceo.md`: `Strategy <set / revised>: <first offer, price, format>; 90 days: <goal>. Open: <the main open question, or nothing>.`
 - Receipt (below).
 

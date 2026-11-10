@@ -73,6 +73,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Pergu
 ### Step 5 — Close
 - CEO brief: Estado atual (today's date, one line: the first offer and the 90-day goal), Próximo passo (the first launch step), `updated:`.
 - Departments that should follow it, one line each, as offers, never done here: "A sua estratégia de conteúdo ainda fala de <oferta antiga>; quer atualizar?" (conteúdo → /conteudo-estrategia). Nothing else changes.
+- The first offer is a program (a course, cohort, group, workshop): "Quer começar a montar? A máquina de cursos desenha o programa e monta uma aula por vez." Run /curso-instalar on sim.
 - Hand /contexto one line for `contexto/ceo.md`: `Estratégia <definida / revisada>: <primeira oferta, preço, formato>; 90 dias: <meta>. Em aberto: <a principal pergunta em aberto, ou nada>.`
 - Receipt (below).
 

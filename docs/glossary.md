@@ -32,6 +32,11 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-newsletter | content-newsletter |
 | conteudo-substack | content-substack |
 | estrategia-do-negocio | business-strategy |
+| curso-instalar | course-install |
+| curso-desenho | course-design |
+| curso-aula | course-lesson |
+| curso-fechar-aula | course-close-lesson |
+| curso-revisao | course-review |
 | ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
@@ -51,6 +56,10 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `departamentos/clientes/reacoes.md` | `departments/clients/reactions.md` |
 | `departamentos/ceo/` · `estrategia.md` · `estrategia-<area>.md` · `pesquisa/` | `departments/ceo/` · `strategy.md` · `strategy-<area>.md` · `research/` |
 | shipped `estrategia-do-negocio/playbook.md` · `modelos/estrategia.md` | `business-strategy/playbook.md` · `templates/strategy.md` |
+| `departamentos/cursos/` · `<programa>/programa.md` · `aulas/aula-NN-<slug>.md` · `perguntas.md` · `retorno.md` · `depoimentos.md` | `departments/courses/` · `<program>/program.md` · `lessons/lesson-NN-<slug>.md` · `faq.md` · `feedback.md` · `quotes.md` |
+| program `index.md` fields `aulas em:` · `curso no MCM:` | `lessons on:` · `MCM course:` |
+| lesson status `planejada · materiais prontos · no MCM · dada · fechada` · quotes `precisa de permissão` / `pode usar` | `planned · materials ready · in MCM · taught · closed` · `needs permission` / `ok to use` |
+| shipped `modelos/programa.md` · `modelos/aula.md` | `templates/program.md` · `templates/lesson.md` |
 | `departamentos/conteudo/` | `departments/content/` |
 | `departamentos/conteudo/configuracao.md` | `departments/content/setup.md` |
 | `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |
