@@ -76,6 +76,7 @@ Skip this step when `_sistema/log.md` already has a `conteudo-video | video-chec
 - New reel: create `departamentos/conteudo/posts/post-NN-<slug>/` with `post.md` (Etapa/Status table: Roteiro, Gravação, Takes, Corte, Agendamento, Resultados; plus slot, topic, post type, format), `raw/` and `edit/`.
 
 ### Step 2 — Script (gate 1)
+- **Her material and a suggestion, in one message,** before drafting: "O que você quer falar sobre <topic> nesse reel — uma história, algo que você sempre diz pros clientes? Se preferir, eu faria assim: <the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · call to action, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
 - The hook goes on screen from frame 0. The CTA is the layer's CTA from `estrategia.md` ("Agende uma conversa. Link na bio." while the credibility layer is on).
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and the real-things rule; fix what fails before showing.
