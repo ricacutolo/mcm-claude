@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-06
-version: 0.7.2
+version: 0.8.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -24,7 +24,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief
-        ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup)
+        ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup) · conteudo-newsletter
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
         ├── organizar-drive ── numbered folders in her Google Drive, then sorts loose files; her sim per plan
@@ -129,6 +129,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | conteudo-video (beta) | Rica's /content-video | `posts/post-NN-<slug>/` (script.md, raw/, edit/, reel versions), the scheduled GoHighLevel reel, `calendario.md`, `plano.md` Status cell, brief; four gates; ElevenLabs set up on the first reel; ships the reel kit in `kit/` | `_sistema/log.md` |
 | conteudo-plano | Rica's /content-plan | `departamentos/conteudo/plano.md` (4 weeks, Modelos a criar), brief | `_sistema/log.md` |
 | conteudo-estrategia | Rica's /content-strategy | `estrategia.md`, `rodadas-anteriores/`, business-file suggestions to `pendentes.md`, brief; ships `library.md`, `playbook.md` and `platforms/` (one file per platform; the strategy's platforms line is the switch every content skill reads; English rules, Portuguese output; read-only) | `_sistema/log.md` |
+| conteudo-newsletter | new (content machine, newsletter) | `newsletters/edicao-NN-<slug>.md`, a plain-text MCM email campaign scheduled to her list, `calendario.md`, `plano.md` Status cell, `ideias.md`, brief; starts from her material with a suggestion in the same message; two gates (rascunho, agendamento); reads `platforms/newsletter.md` | `_sistema/log.md` |
 | conteudo-modelo | Rica's /content-template | a Canva TEMPLATE, `modelos.md` (fill guide), `plano.md` Modelo cells, brief | `_sistema/log.md` |
 | conteudo-revisao | Rica's /content-review | `desempenho.md`, `notas-da-biblioteca.md`, `swipe.md`, `pendentes.md` items, brief; recommends, never edits strategy or plan | `_sistema/log.md` |
 | conteudo-instalar | Rica's content-machine-onboarding | `configuracao.md`, `estilo-da-marca.md`, `modelos.md` (base templates), `ghl.md`, `.env` (empty key line only), `scripts/`, brief; rebrands her copies of MCM's base templates on her sim; ships `guides.md` (PT) and `scripts/` | `_sistema/log.md` |

@@ -61,6 +61,7 @@ Her time zone comes from `about-me/about-me.md`. If it isn't there, ask once ("W
 - A slot is **missed** when its time has passed or is less than 1 hour away.
 - **The new time:** the same day if it can go out at least 1 hour from now and by 6 PM in her time zone, and nothing else is posted that day; otherwise the next cadence date with no post on it (check the calendar and the plan's scheduled slots).
 - Say it in one line: "Post N's slot was <day time>; I'd post it <new time>." The maker confirms the new time at its schedule gate.
+- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date.
 - If that date already holds the next planned post, the later posts shift one slot: "That moves the rest of the plan back one slot. Want me to shift it?" On yes, run content-plan's "Refresh: shift after a missed slot". Never put two posts on the same day.
 
 ### Step 3 — Hand it to the maker
@@ -71,6 +72,7 @@ Route by the slot's format (formats as named in `../content-strategy/library.md`
 | Carousel, illustrated carousel, text post — and any other still-image format with a template (screenshot post) | content-static |
 | Photo post, photo carousel | content-static (her own photos, no template) |
 | Talking-head reel, or any other reel or video format | content-video (beta; it says which video formats it can make) |
+| Newsletter | content-newsletter (only when the newsletter is on in `strategy.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with content-plan's refresh |
 
 Ask: "Post N is a <format>: <topic> × <post type>, <day time>. Want to start it now?" For a reel add one line: "Video is new in the system, so I'll first check I can make it on your setup."

@@ -48,6 +48,17 @@ What a post looks like. Each business switches on the formats that fit it (face,
 | Text-on-video reel | Captions over footage | no | phase 2 | Quick win, Myth vs truth, Leak |
 | Stories | Casual, 24 hours | optional | later | any |
 
+## Newsletter formats (catalog)
+What one email looks like, when the newsletter is on (`platforms/newsletter.md`). Each starts from her own material. About one issue in four or five is an **offer issue**: same format, the one ask is the sale.
+
+| Format | What it is | Her material | Fits post types |
+|---|---|---|---|
+| One-idea letter | A moment, the lesson, one ask (the default) | a thought, a few lines, a voice note | any |
+| Story and lesson | Something that happened to her or a client, and what it teaches | a story | Story, Behind the scenes, Leak |
+| Client question | A real question she got, answered in full | the question, her answer | Question you always get, Myth vs truth |
+| Case study | A client's before and after, only with the client's permission | the client's story and their OK | Proof, Before and after |
+| Her week | One main idea plus 2-3 things she made or saw (her posts, a link) | what she posted or read | any; good after a strong week of posts |
+
 ## Entries
 
 ### All small service businesses

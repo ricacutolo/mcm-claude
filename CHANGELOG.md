@@ -2,6 +2,13 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.8.0 — 2026-11-10 [both]
+- **Newsletter.** New skill **content-newsletter** (**conteudo-newsletter**): one email issue from her own material to scheduled in MCM. Its first step asks for what she has (a few lines, a voice note, a client story, a question someone asked) and offers one suggestion in the same message; her material wins, and a taken suggestion still gets one question for her own angle. Two gates: the draft (with 2-3 subject options and preview text), then the schedule. Plain text, 200-400 words, one idea, one ask; a client story only when she confirms the client agreed. Scheduled as a plain-text MCM email campaign to her list (a tag or segment), in her time zone.
+- **A switch, like the platforms:** new `platforms/newsletter.md` (when to recommend it, sending address and list, formats, writing rules, scheduling, results). On only when her strategy names it, with how often (every two weeks for a new list, weekly once she keeps up), day and time (Tuesday morning by default) and offer issues (one in four or five).
+- **Formats:** the strategy library gains a newsletter catalog (one-idea letter, story and lesson, client question, case study, her week); the playbook gains a newsletter section.
+- content-plan adds newsletter slots on their own cadence (they never count toward one post a day); content-post routes them; content-strategy recommends it; content-install records the sending address and list in `ghl.md` (deliverability stays part of her MCM build); content-review reads clicks, replies and unsubscribes per issue (opens not trusted).
+- **Untested:** no issue has been sent yet; the campaign actions were checked on MCM's own connection, not a client's.
+
 ## 0.7.2 — 2026-11-09 [both]
 Fixes from the desk run of the English install with the first English client's seed.
 - **White label:** everything the system says to her calls the platform **MCM**, never GoHighLevel: all skills, the content setup guides (the connector she adds is named "MCM"), the stage labels, the descriptions. The system skill gains the rule: never say "GoHighLevel", "HighLevel" or "GHL" to her, even if a screen or a connection shows that name. Technical names stay (`ghl.md`, `GHL_PIT`, the upload scripts, the connector address).

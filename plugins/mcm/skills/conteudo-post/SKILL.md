@@ -61,6 +61,7 @@ Her time zone comes from `sobre-mim/sobre-mim.md`. If it isn't there, ask once (
 - A slot is **missed** when its time has passed or is less than 1 hour away.
 - **The new time:** the same day if it can go out at least 1 hour from now and by 6 PM in her time zone, and nothing else is posted that day; otherwise the next cadence date with no post on it (check the calendar and the plan's scheduled slots).
 - Say it in one line: "O horário do post N era <day time>; eu postaria <new time>." The maker confirms the new time at its schedule gate.
+- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date.
 - If that date already holds the next planned post, the later posts shift one slot: "Isso empurra o resto do plano um horário pra frente. Quer que eu ajuste?" On sim, run conteudo-plano's "Refresh: shift after a missed slot". Never put two posts on the same day.
 
 ### Step 3 — Hand it to the maker
@@ -71,6 +72,7 @@ Route by the slot's format (formats as named in `../conteudo-estrategia/library.
 | Carousel, illustrated carousel, text post — and any other still-image format with a template (screenshot post) | conteudo-estatico |
 | Photo post, photo carousel | conteudo-estatico (her own photos, no template) |
 | Talking-head reel, or any other reel or video format | conteudo-video (beta; it says which video formats it can make) |
+| Newsletter | conteudo-newsletter (only when the newsletter is on in `estrategia.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with conteudo-plano's refresh |
 
 Ask: "O post N é um <format>: <topic> × <post type>, <day time>. Quer começar agora?" For a reel add one line: "Vídeo é novo no sistema, então primeiro eu confiro se consigo fazer na sua configuração."
