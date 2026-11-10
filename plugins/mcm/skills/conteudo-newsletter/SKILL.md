@@ -102,6 +102,7 @@ Pré-visualização:
 ### Step 4 — Schedule (gate 2)
 - Date and time from the slot, in her time zone; the list, from name, from email and reply-to from `ghl.md`.
 - If the slot has passed or is under 1 hour away: conteudo-post's missed-slot rule decides the new time.
+- First issue (no issue has a campaign ID yet): run conteudo-instalar step 14's newsletter check again before the gate. A failed check stops here: say what's missing, keep the approved draft.
 - **Gate:** "Pronto pra agendar? <day date time> para <list>, de <name>. Diga **sim** que eu agendo." Substack on: "…para <list>, de <name>, e no seu Substack no mesmo horário." Her sim covers both.
 - On sim:
   1. MCM `create-email-campaign`: `name` "Newsletter <N>: <short title>", `editorType: text`, `editorContent` = the approved email, `timeZone` = hers, `userId` from `ghl.md`. Idempotency key: `<location ID>-newsletter-NN-<slug>-create`.

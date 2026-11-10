@@ -102,6 +102,7 @@ Preview text:
 ### Step 4 — Schedule (gate 2)
 - Date and time from the slot, in her time zone; the list, from name, from email and reply-to from `ghl.md`.
 - If the slot has passed or is under 1 hour away: content-post's missed-slot rule decides the new time.
+- First issue (no issue has a campaign ID yet): run content-install step 14's newsletter check again before the gate. A failed check stops here: say what's missing, keep the approved draft.
 - **Gate:** "Ready to schedule? <day date time> to <list>, from <name>. Say **yes** and I'll schedule it." Substack on: "…to <list>, from <name>, and on your Substack at the same time." Her yes covers both.
 - On yes:
   1. MCM `create-email-campaign`: `name` "Newsletter <N>: <short title>", `editorType: text`, `editorContent` = the approved email, `timeZone` = hers, `userId` from `ghl.md`. Idempotency key: `<location ID>-newsletter-NN-<slug>-create`.
