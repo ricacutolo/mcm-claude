@@ -23,7 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `departments/content/plan.md` — what's coming, so recommendations can say which slots they'd change.
 7. `departments/content/ghl.md` — location, account and profile IDs.
 8. `../content-strategy/library.md` — entries and statuses (unproven, working, dropped); then `departments/content/library-notes.md` and `departments/content/swipe.md`, if they exist.
-9. `about-me/business.md` — for business file suggestions only. Never edited here.
+9. `about-me/business-brain.md` — for business file suggestions only. Never edited here.
 10. `departments/content/brief.md` — its Next step and Current state.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
@@ -65,7 +65,7 @@ At most 5 items, ranked. Each: what · why (the numbers) · where it goes · our
 - **Strategy change** — hand-off to content-strategy (revise).
 - **Plan change** — hand-off to content-plan (refresh), naming the slots it would change.
 - **Layer** — switch audience or leads on when the numbers support it (a strategy change).
-- **Business file** — a suggested update to `about-me/business.md`, which waits in `_system/pending.md` for her yes.
+- **Business file** — a suggested update to `about-me/business-brain.md`, which waits in `_system/pending.md` for her yes.
 
 > "Which of these do you want? Say **yes** to the ones you want (or **yes to all**), or tell me what to change."
 
@@ -89,7 +89,7 @@ On yes, for the approved items only:
    |---|---|---|---|---|
    ```
 3. `swipe.md`: approved swipe lines. Create the file if missing with `# Swipe file: <business>` and the columns `Date · Line or post · Why it worked · Evidence`.
-4. Business file items: one line each in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business.md § <section> · <the exact proposed line> · (from: content review <first date> to <last date>)`.
+4. Business file items: one line each in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business-brain.md § <section> · <the exact proposed line> · (from: content review <first date> to <last date>)`.
 5. Offer each approved hand-off ("Want me to update your content strategy now?" / "Want me to update the plan now?"); run it only on yes.
 6. Department brief: Current state with today's date and one line on the review, and `updated:`. If a strategy or plan hand-off was approved and not run, set Next step to it ("Update the content strategy: <change>. Say \"revise the strategy\"."). Mention it in one short line.
 7. Receipt and milestone (below).

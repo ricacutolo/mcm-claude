@@ -27,7 +27,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 10. `sobre-mim/sobre-mim.md` — only her time zone.
     Photo formats also: `departamentos/conteudo/fotos.md` (her photo library index, below) and her Google Drive folder **Fotos de conteúdo**; for a generated image, `../conteudo-estrategia/image-prompts.md` and `departamentos/conteudo/estilo-de-foto.md` (below).
 11. Only when recommending ideas or drafting copy (Steps 2-3):
-    - the business file of the area in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
+    - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
     - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 4-point check.
     - `departamentos/conteudo/swipe.md` — lines that worked for her, if it exists.
     - `../conteudo-estrategia/platforms/<platform>.md` for each platform on in `estrategia.md` — its formats and caption rules. Only those.
@@ -93,7 +93,7 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 
 ### Step 2 — Idea
 - **Her material and a suggestion, in one message.** The slot gives the topic and post type. Ask what she has for it and recommend at the same time: "Tem alguma coisa sobre <topic> pra esse post — uma ideia, uma história, algo que um cliente perguntou? Se não, eu faria assim: <the angle tagged `para o post N` in `ideias.md` when the newsletter leads this cycle, else the slot's idea from `ideias.md`, or the plan's suggestion>. Ou: <angle 2> · <angle 3>." Her material wins: shape it into the slot's post type. A suggestion she takes still gets one question for her own angle ("Me conta uma vez em que você viu isso acontecer?").
-- Ideas follow the idea rules in `estrategia.md` and the rules in the playbook: what the reader gets, never technical, real things only. Read `negocio.md` for the offer, the audience and the wedge.
+- Ideas follow the idea rules in `estrategia.md` and the rules in the playbook: what the reader gets, never technical, real things only. Read `cerebro-do-negocio.md` for the offer, the audience and the wedge.
 - Photo formats: the idea starts from a photo she has. Sync the photo library first (below), then recommend the photo (photo post) or 2-10 in order (photo carousel) that fit the slot's topic × post type, unused ones first, with one line each on why; she picks, or brings others. A `gerada` one only for a post about the reader's world, an object or an idea, never one about her work, her clients, her results or her. People in a photo: customers only if the strategy says customer photos are OK and the library says they agreed.
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 

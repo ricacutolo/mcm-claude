@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departamentos/index.md` — to catch a duplicate. Missing means there are none yet.
 2. The frontmatter of `contexto/*.md` — to find an existing log for the same topic.
-3. The business file of its área (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Áreas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Pessoal.
+3. The business file of its área (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Áreas**) — only the sections the conversation needs (offers, audience), to propose standards that fit. Not for Pessoal.
 4. `sobre-mim/escrita.md` — the brief is written in her voice.
 
 ## The rules
@@ -53,11 +53,11 @@ Always ask, even for her first department: everything gets an área from day one
 
 - Her áreas so far (the `## ` headers in `departamentos/index.md`), plus Pessoal: "Esse departamento é de qual área? **Pessoal** · **<Área>** · … ou de um negócio novo?" No áreas yet: "Isso é **Pessoal** ou de um negócio seu? Se for de um negócio, qual o nome dele?"
 - Suggest the likely one first, from what she said; her answer wins.
-- A business área that is new → she names it ("Comunidade"). If it isn't the business in `sobre-mim/negocio.md`, tell /sistema it needs its own business file (its **Áreas** rule).
+- A business área that is new → she names it ("Comunidade"). If it isn't the business in `sobre-mim/cerebro-do-negocio.md`, tell /sistema it needs its own business file (its **Áreas** rule).
 
 ### Step 3 — The conversation
 
-One question at a time. Skip anything the conversation or `negocio.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
+One question at a time. Skip anything the conversation or `cerebro-do-negocio.md` already answers — open with what you know instead of asking. **Five is a ceiling, not a target.** Three good answers are enough. Under ten minutes; if it feels like paperwork, it has failed.
 
 1. **"Pra que existe esse departamento?"** The standard it keeps up, in one or two sentences.
 2. **"Como é quando ele está indo bem?"** What must always be true — frequency, quality bar, limits. Becomes Padrões.

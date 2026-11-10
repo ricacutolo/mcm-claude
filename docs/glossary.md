@@ -31,6 +31,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-instalar | content-install |
 | conteudo-newsletter | content-newsletter |
 | conteudo-substack | content-substack |
+| estrategia-do-negocio | business-strategy |
 | ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
@@ -39,8 +40,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `claude.md` | `claude.md` |
 | `sobre-mim/` | `about-me/` |
 | `sobre-mim/sobre-mim.md` | `about-me/about-me.md` |
-| `sobre-mim/negocio.md` | `about-me/business.md` |
-| `sobre-mim/negocio-<area>.md` | `about-me/business-<area>.md` |
+| `sobre-mim/cerebro-do-negocio.md` (before 0.11.0: `negocio.md`) | `about-me/business-brain.md` (before 0.11.0: `business.md`) |
+| `sobre-mim/cerebro-do-negocio-<area>.md` | `about-me/business-brain-<area>.md` |
 | `sobre-mim/escrita.md` | `about-me/writing.md` |
 | `sobre-mim/drive.md` | `about-me/drive.md` |
 | `sobre-mim/marca.md` | `about-me/brand.md` |
@@ -48,6 +49,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `departamentos/clientes/` | `departments/clients/` |
 | `<client>/ficha.md` | `<client>/sheet.md` |
 | `departamentos/clientes/reacoes.md` | `departments/clients/reactions.md` |
+| `departamentos/ceo/` · `estrategia.md` · `estrategia-<area>.md` · `pesquisa/` | `departments/ceo/` · `strategy.md` · `strategy-<area>.md` · `research/` |
+| shipped `estrategia-do-negocio/playbook.md` · `modelos/estrategia.md` | `business-strategy/playbook.md` · `templates/strategy.md` |
 | `departamentos/conteudo/` | `departments/content/` |
 | `departamentos/conteudo/configuracao.md` | `departments/content/setup.md` |
 | `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |

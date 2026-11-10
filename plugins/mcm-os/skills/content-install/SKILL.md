@@ -19,7 +19,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 2. `departments/content/brief.md` — whether the department exists; its Next step and Current state.
 3. `departments/content/brand-style.md`, `templates.md`, `ghl.md` — if they exist, to know what's already filled.
 4. `about-me/brand.md` — her colors, fonts and logo files, if her brand kit exists.
-5. `about-me/business.md` and `about-me/writing.md` — only to check they exist and are filled in. Never edited here.
+5. `about-me/business-brain.md` and `about-me/writing.md` — only to check they exist and are filled in. Never edited here.
 6. `guides.md` — when a step points to one of its guides.
 
 Never read or print `departments/content/.env`. Step 19 checks only whether a key is set.
@@ -48,11 +48,11 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 |---|---|---|---|---|
 | 1 | Home | Content department exists | `departments/content/brief.md` exists | If missing → offer /new-department (content) |
 | 2 | Home | Setup tracker | `setup.md` exists | Create it (format below) |
-| 3 | Business | Business file filled in | `about-me/business.md` exists with offer, audience and pains | Missing → offer to redo the install's business step (step 3; a completed install still runs "redo step 3"), and run it on her yes. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business.md`; done when they're written |
+| 3 | Business | Business file filled in | `about-me/business-brain.md` exists with offer, audience and pains | Missing → offer to redo the install's business step (step 3; a completed install still runs "redo step 3"), and run it on her yes. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business-brain.md`; done when they're written |
 | 4 | Business | Voice captured | `about-me/writing.md` exists with real samples | Missing → offer to redo the install's writing step (step 4; a completed install still runs "redo step 4"), and run it on her yes. No samples → ask her for 2-3 things she wrote and add them to `_system/pending.md` as an item for `about-me/writing.md` |
 | 5 | Canva | Canva account | she confirms | Guide 0. Recommend Free to start; skip Pro trials |
 | 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Customize → Connectors**; then check. If the check fails right after she connects, she starts a new conversation so the connection loads, and says "continue content setup" |
-| 7 | Canva | Brand Kit colors | she confirms 3 colors added | No `about-me/brand.md` → offer /brand-kit-designer first (her logo and colors), run on yes. Then Guide A, with dark, light and accent from `about-me/brand.md` (else from `business.md` or her website) |
+| 7 | Canva | Brand Kit colors | she confirms 3 colors added | No `about-me/brand.md` → offer /brand-kit-designer first (her logo and colors), run on yes. Then Guide A, with dark, light and accent from `about-me/brand.md` (else from `business-brain.md` or her website) |
 | 8 | Canva | Logo in Uploads | she confirms light and dark versions uploaded | No `about-me/brand.md` and she declined the brand kit in step 7 → offer it once more, or use the logo files she has. Guide B step 3, with the files named in `about-me/brand.md` |
 | 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's four base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak" and "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file). Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Shared with you" in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Shared with you" and uses File > Make a copy. Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
 | 10 | Canva | Brand style | `brand-style.md` approved and written | Draft color and font roles and logo files, seeded from `about-me/brand.md` when it exists; show; write on yes |

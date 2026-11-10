@@ -15,7 +15,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a sua estratégia de cont
 
 Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. Two reference files ship with the plugin in this skill's own folder, and other skills read them from here: `library.md` (the strategy library: post types, formats, entries by type of business) and `playbook.md` (the copy playbook). Both are read-only. A third set ships in `platforms/`: one read-only file per platform (`platforms/README.md` explains them). The platforms line in her strategy is the switch: every content skill reads only the files for the platforms on it. Both are written in English, with English examples; her posts are written in Brazilian Portuguese, so carry the move, never the English words.
 
-1. the business file of the area in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
+1. the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departamentos/conteudo/notas-da-biblioteca.md`, if it exists — her own entries and catalog additions; they win for her business.
 3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
 4. `departamentos/conteudo/estrategia.md` — if it exists (revise mode), including its "Diferenças deliberadas do arquivo do negócio".
@@ -76,7 +76,7 @@ Apply edits exactly, re-show, wait for sim. Differences she keeps go under "Dife
 On sim:
 1. Revise mode: copy the current `estrategia.md` to `departamentos/conteudo/rodadas-anteriores/estrategia-rodada-<N>.md` (create the folder if missing) before writing.
 2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)", with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: sim/não; the Substack line when it's on: Notes a week, 2 or 3) · Modelos · Voz.
-3. Each business file update she picked: one line in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/negocio.md § <section> · <the exact proposed line> · (de: estratégia de conteúdo rodada <N>)`. The time zone, if she gave one and it isn't in `sobre-mim/sobre-mim.md`: the same, for that file.
+3. Each business file update she picked: one line in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: estratégia de conteúdo rodada <N>)`. The time zone, if she gave one and it isn't in `sobre-mim/sobre-mim.md`: the same, for that file.
 4. Department brief: update Estado atual (date, one line on the round) and `atualizado:`. If there's no current plan, or the change affects planned slots, set Próximo passo to "Planejar as próximas 4 semanas. Diga \"planeja o conteúdo\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).
 
@@ -99,7 +99,7 @@ Each approved run: hand /contexto one line for `contexto/conteudo.md`:
 ## What this skill never does
 
 - Writes `estrategia.md` without an explicit sim.
-- Edits `sobre-mim/negocio.md` or any `sobre-mim/` file. Changes there only wait in `_sistema/pendentes.md`.
+- Edits `sobre-mim/cerebro-do-negocio.md` or any `sobre-mim/` file. Changes there only wait in `_sistema/pendentes.md`.
 - Re-flags a difference marked as deliberate.
 - Edits `library.md`, `playbook.md`, `notas-da-biblioteca.md`, `swipe.md`, `plano.md`, `calendario.md`, `ideias.md` or anything in `contexto/` (milestones go through /contexto).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.

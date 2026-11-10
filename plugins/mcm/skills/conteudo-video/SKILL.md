@@ -28,7 +28,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 9. `kit/README.md` — where each step runs, the cloud setup, the rules learned so far. The kit's other files (`template.html`, `build.py`, `pack.py`, `plan_segments.py`, `encode.sh`, `diagrams/`) are run, not read.
 10. `sobre-mim/sobre-mim.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
-    - the business file of the area in play (`sobre-mim/negocio.md`, or `negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge.
+    - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge.
     - `../conteudo-estrategia/playbook.md` — rules, hooks, the 4-point check, CTA by layer.
     - `../conteudo-estrategia/library.md` — the reel format definitions.
     - `sobre-mim/escrita.md` — her voice.

@@ -23,7 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `departamentos/conteudo/plano.md` — what's coming, so recommendations can say which slots they'd change.
 7. `departamentos/conteudo/ghl.md` — location, account and profile IDs.
 8. `../conteudo-estrategia/library.md` — entries and statuses (unproven, working, dropped); then `departamentos/conteudo/notas-da-biblioteca.md` and `departamentos/conteudo/swipe.md`, if they exist.
-9. `sobre-mim/negocio.md` — for business file suggestions only. Never edited here.
+9. `sobre-mim/cerebro-do-negocio.md` — for business file suggestions only. Never edited here.
 10. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
@@ -65,7 +65,7 @@ At most 5 items, ranked. Each: what · why (the numbers) · where it goes · our
 - **Strategy change** — hand-off to conteudo-estrategia (revise).
 - **Plan change** — hand-off to conteudo-plano (refresh), naming the slots it would change.
 - **Layer** — switch audience or leads on when the numbers support it (a strategy change).
-- **Business file** — a suggested update to `sobre-mim/negocio.md`, which waits in `_sistema/pendentes.md` for her sim.
+- **Business file** — a suggested update to `sobre-mim/cerebro-do-negocio.md`, which waits in `_sistema/pendentes.md` for her sim.
 
 > "Quais desses você quer? Diga **sim** pros que você quer (ou **sim pra todos**), ou me diz o que mudar."
 
@@ -89,7 +89,7 @@ On sim, for the approved items only:
    |---|---|---|---|---|
    ```
 3. `swipe.md`: approved swipe lines. Create the file if missing with `# Swipe file: <business>` and the columns `Data · Frase ou post · Por que funcionou · Evidência`.
-4. Business file items: one line each in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/negocio.md § <section> · <the exact proposed line> · (de: revisão de conteúdo de <first date> a <last date>)`.
+4. Business file items: one line each in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: revisão de conteúdo de <first date> a <last date>)`.
 5. Offer each approved hand-off ("Quer que eu atualize a sua estratégia de conteúdo agora?" / "Quer que eu atualize o plano agora?"); run it only on sim.
 6. Department brief: Estado atual with today's date and one line on the review, and `atualizado:`. If a strategy or plan hand-off was approved and not run, set Próximo passo to it ("Atualizar a estratégia de conteúdo: <change>. Diga \"revisa a estratégia\"."). Mention it in one short line.
 7. Receipt and milestone (below).

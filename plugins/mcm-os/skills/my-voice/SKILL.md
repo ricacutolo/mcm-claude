@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start:
 
 1. `about-me/writing.md` — her voice: tone, register, words she uses and never uses, samples.
 2. `${CLAUDE_SKILL_DIR}/kill-list.md` — the anti-AI floor, applied even if `writing.md` is thin.
-3. the business file of the area in play (`about-me/business.md`, or `business-<area>.md` per /system's **Areas**) — only when the text touches her offers, clients or prices.
+3. the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — only when the text touches her offers, clients or prices.
 4. `about-me/about-me.md` — only when the text needs personal context.
 
 If `about-me/writing.md` does not exist, say once: "I don't have your voice file yet. I can write this now in a neutral tone, or we can run the install first." and continue if she wants.
