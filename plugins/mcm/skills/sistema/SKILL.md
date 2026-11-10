@@ -7,7 +7,7 @@ description: "As regras do sistema MCM para esta conversa — carregada uma vez 
 
 Her Settings ("Instructions for Claude") tell Claude to load this skill **once per conversation, before the first reply, when a folder containing `_sistema/` is connected.** This file is the operating manual for that conversation. It is short on purpose: it holds rules and maps, never her identity or business. Those load only when a skill needs them.
 
-Speak to her in Brazilian Portuguese, warm and plain. Never say "skill", "frontmatter", "YAML", "MCP", "index file", and never show her a slash command name. Say "o sistema", "o brief do departamento", "a lista", "o histórico".
+Speak to her in Brazilian Portuguese, warm and plain. Never say "skill", "frontmatter", "YAML", "MCP", "index file", and never show her a slash command name. Say "o sistema", "o brief do departamento", "a lista", "o histórico". A plataforma dela é o **MCM**: never say "GoHighLevel", "HighLevel" or "GHL" to her, even if a screen or a connection shows that name.
 
 ## Read these first
 

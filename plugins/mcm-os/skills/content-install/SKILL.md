@@ -1,19 +1,19 @@
 ---
 name: content-install
-description: "Walks her through setting up the content machine in 20 steps — her Content department, Canva, her brand on the design templates, GoHighLevel, the upload path and the strategy — with a recommendation at each step, picking up where she left off. When she says \"/content-install\", \"set up the content machine\", \"set up my content\", \"continue content setup\", \"where are we in the content setup\", or when the Content department's next step says the setup is open."
+description: "Walks her through setting up the content machine in 20 steps — her Content department, Canva, her brand on the design templates, MCM, the upload path and the strategy — with a recommendation at each step, picking up where she left off. When she says \"/content-install\", \"set up the content machine\", \"set up my content\", \"continue content setup\", \"where are we in the content setup\", or when the Content department's next step says the setup is open."
 ---
 
 # content-install — ready for the first post
 
-Gets her content machine ready: the Content department, Canva, her brand on the design templates, GoHighLevel, the upload path and the strategy. It walks the steps in order, opens every step with the answer we'd pick and why, decides small details for her and notes them, and picks up where it left off.
+Gets her content machine ready: the Content department, Canva, her brand on the design templates, MCM, the upload path and the strategy. It walks the steps in order, opens every step with the answer we'd pick and why, decides small details for her and notes them, and picks up where it left off.
 
 It does one thing: **get her content machine ready for its first post.** It never writes the strategy, plans posts or makes posts — it hands off to the skills that do.
 
-Speak to her in plain, warm US English, in her voice rules from `about-me/writing.md`: plain words, nothing technical. Say "Canva connected to Claude", "your GoHighLevel connected to Claude", "the settings file in your content folder"; never "connector", "MCP", "API", "token", file names, "skill" or a command name.
+Speak to her in plain, warm US English, in her voice rules from `about-me/writing.md`: plain words, nothing technical. Say "Canva connected to Claude", "your MCM connected to Claude", "the settings file in your content folder"; never "connector", "MCP", "API", "token", file names, "skill" or a command name.
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guides C, D and E for GoHighLevel) and `scripts/` (the upload and transcription scripts copied into her content folder).
+Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guides C, D and E for MCM) and `scripts/` (the upload and transcription scripts copied into her content folder).
 
 1. `departments/content/setup.md` — progress and the resume point. If missing, this is a new setup.
 2. `departments/content/brief.md` — whether the department exists; its Next step and Current state.
@@ -34,7 +34,7 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 > "Template rebrands are saved only after an explicit yes to the previews. Only her own fresh copies are edited, never a shared original."
 
-> "The GoHighLevel key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
+> "The MCM key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
 
 > "Hand-offs (new-department, install, brand-kit-designer, content-strategy) run only on a yes."
 
@@ -57,14 +57,14 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 | 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's four base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak" and "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file). Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Shared with you" in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Shared with you" and uses File > Make a copy. Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
 | 10 | Canva | Brand style | `brand-style.md` approved and written | Draft color and font roles and logo files, seeded from `about-me/brand.md` when it exists; show; write on yes |
 | 11 | Canva | Template index | `templates.md` has the base templates | Draft the rows and fill guides in content-template's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on yes |
-| 12 | GHL | Social accounts | she confirms each platform she'll post on is connected in GoHighLevel's Social Planner | Recommend her platforms first, from each `../content-strategy/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals), and note them in `setup.md` (the strategy step starts from them). Then she connects them in GoHighLevel (Guide D) |
-| 13 | GHL | Her GoHighLevel connected to Claude | the GoHighLevel connection lists her business (sub-account) and `get-account` lists its social accounts | Guide C: she adds GoHighLevel as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
-| 14 | GHL | GoHighLevel details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on yes |
-| 15 | GHL | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: content-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
+| 12 | MCM | Social accounts | she confirms each platform she'll post on is connected in MCM's Social Planner | Recommend her platforms first, from each `../content-strategy/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals), and note them in `setup.md` (the strategy step starts from them). Then she connects them in MCM (Guide D) |
+| 13 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) and `get-account` lists its social accounts | Guide C: she adds MCM as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
+| 14 | MCM | MCM details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on yes |
+| 15 | MCM | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: content-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |
 | 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's **Settings → Capabilities** (where the allowed sites live) |
 | 18 | Upload | Upload script | `departments/content/scripts/canva-to-ghl.sh` exists | Copy `scripts/canva-to-ghl.sh` from this skill's folder, unchanged |
-| 19 | Upload | GoHighLevel key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in GoHighLevel and pastes it into the file (Guide E); Macs hide files whose names start with a dot, so offer to open the file for her, or she presses Shift+Cmd+. in Finder; the check prints only "set" or "not set" |
+| 19 | Upload | MCM key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in MCM and pastes it into the file (Guide E); Macs hide files whose names start with a dot, so offer to open the file for her, or she presses Shift+Cmd+. in Finder; the check prints only "set" or "not set" |
 | 20 | Strategy | Strategy | `departments/content/strategy.md` exists | Offer /content-strategy (it then offers to plan the first 4 weeks) |
 
 Order: stages in order. Within a stage, a step that waits on her doesn't block the next step that doesn't need it — say which one is waiting.
@@ -122,7 +122,7 @@ Seeded from about-me/brand.md on YYYY-MM-DD. The content machine's own roles; br
 **`ghl.md` (step 14):**
 
 ```markdown
-# GoHighLevel: <business>
+# MCM: <business>
 
 Not secret. The key lives in .env, never here.
 
@@ -175,8 +175,8 @@ Runs that changed something: hand /context one line for `context/content.md`:
 ## What this skill never does
 
 - Writes `brand-style.md`, `templates.md` or `ghl.md` without an explicit yes.
-- Reads, prints, copies or asks for the GoHighLevel key, or reads `.env`.
-- Connects, disconnects or changes anything in Canva, GoHighLevel or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her yes.
+- Reads, prints, copies or asks for the MCM key, or reads `.env`.
+- Connects, disconnects or changes anything in Canva, MCM or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her yes.
 - Writes `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (changes there only wait in `_system/pending.md`), the shipped library, playbook or guides, or anything in `context/` (milestones go through /context).
 - Adds template rows to `templates.md` beyond the base templates set up here.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
@@ -187,16 +187,16 @@ Runs that changed something: hand /context one line for `context/content.md`:
 
 ## When to refuse
 
-- A request to paste the GoHighLevel key into chat — "Paste it straight into the settings file in your content folder instead; I never see the key." (the key never enters chat)
+- A request to paste the MCM key into chat — "Paste it straight into the settings file in your content folder instead; I never see the key." (the key never enters chat)
 - A request to skip the yes on a file — "I'll show it first; one yes and it's saved."
 - A request to post before setup is done — "Setup comes first; we're at step N." (posts need the strategy and the templates)
 - A request to set up content for a second business in this folder — "This folder holds one business's content. A second business gets its own Claude folder."
 
 ## Failure modes
 
-- **A check can't run** (Canva or GoHighLevel not connected, computer offline) — mark the step "waiting", say what she needs to do, move to the next step that doesn't depend on it.
+- **A check can't run** (Canva or MCM not connected, computer offline) — mark the step "waiting", say what she needs to do, move to the next step that doesn't depend on it.
 - **A check disagrees with setup.md** (a step marked done now fails, e.g. a connection expired) — reopen the step, say why.
-- **Business file or voice missing** — offer to redo the install's business step (step 3) or writing step (step 4), and run it on her yes; the Canva and GoHighLevel steps can still run meanwhile.
+- **Business file or voice missing** — offer to redo the install's business step (step 3) or writing step (step 4), and run it on her yes; the Canva and MCM steps can still run meanwhile.
 - **She declines the brand kit** — use the colors and logo files she already has; note it under "Decided for her".
 - **Shared template doesn't show up for her** — check that MCM shared it to the email on her Canva account; ask MCM to share it again. Never rebuild the template from scratch.
 - **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.

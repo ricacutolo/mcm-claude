@@ -18,7 +18,7 @@ A instalação vai em etapas curtas. Dá para parar a qualquer momento e voltar 
 Converse com a pasta conectada. Alguns jeitos de começar:
 
 - **abre o Conteúdo** — entra no departamento e diz onde parou e o próximo passo
-- **o que eu posto agora** · **configura o meu conteúdo** — a máquina de conteúdo: estratégia, plano de 4 semanas, carrosséis no Canva e reels (beta), agendados no GoHighLevel com o seu sim
+- **o que eu posto agora** · **configura o meu conteúdo** — a máquina de conteúdo: estratégia, plano de 4 semanas, carrosséis no Canva e reels (beta), agendados no MCM com o seu sim
 - **escreve na minha voz…** — e-mails, mensagens, textos
 - **como está meu dia** — agenda e e-mails importantes
 - **novo projeto** · **novo departamento**

@@ -1,6 +1,6 @@
 ---
 name: content-static
-description: "Makes one image post — a carousel, illustrated carousel, text post, photo post or photo carousel — from idea to scheduled: the idea, the copy, the design in Canva (or her own photos, prepared), and the schedule in GoHighLevel, with her yes at each step. Usually started from the next post in the plan; also when she says \"/content-static\", \"make this carousel\", \"make the carousel for post 5\", \"design the next carousel\", \"let's make a text post\", \"post this photo\", \"make a post with these photos\"."
+description: "Makes one image post — a carousel, illustrated carousel, text post, photo post or photo carousel — from idea to scheduled: the idea, the copy, the design in Canva (or her own photos, prepared), and the schedule in MCM, with her yes at each step. Usually started from the next post in the plan; also when she says \"/content-static\", \"make this carousel\", \"make the carousel for post 5\", \"design the next carousel\", \"let's make a text post\", \"post this photo\", \"make a post with these photos\"."
 ---
 
 # content-static — one image post, idea to scheduled
@@ -118,16 +118,16 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 ### Step 5 — Schedule (gate 3)
 - The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out. Platforms and accounts from `strategy.md` + `ghl.md`, and each platform's Scheduling section from its file. Times are in her time zone (from `about-me/about-me.md`, else ask once).
 - If the time has slipped to under 1 hour away while we worked, it's now a missed slot: recompute with content-post's missed-slot rule (`../content-post/SKILL.md`, Step 2) and say the new time in one line. Never schedule two posts on the same day.
-- If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in GoHighLevel's Social Planner and tell me when it's done."
+- If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in MCM's Social Planner and tell me when it's done."
 - **Gate:** show date and time (her time zone), platforms, captions, slide or photo count. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
 - On yes:
-  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages. Photo formats: skip this and step 2; instead, from `departments/content/`, run `bash scripts/media-to-ghl.sh posts/<folder>/photos/<NN>.jpg post-NN-<slug>-<NN>` for each photo in order (copy `scripts/media-to-ghl.sh` from `../content-install/scripts/` first if missing); it prints one permanent GoHighLevel URL per photo.
-  2. Run on her computer, from `departments/content/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent GoHighLevel URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../content-install/scripts/` first.
-  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png` (photos: `image/jpeg`), in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
+  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages. Photo formats: skip this and step 2; instead, from `departments/content/`, run `bash scripts/media-to-ghl.sh posts/<folder>/photos/<NN>.jpg post-NN-<slug>-<NN>` for each photo in order (copy `scripts/media-to-ghl.sh` from `../content-install/scripts/` first if missing); it prints one permanent MCM URL per photo.
+  2. Run on her computer, from `departments/content/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent MCM URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../content-install/scripts/` first.
+  3. MCM `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png` (photos: `image/jpeg`), in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
   4. Verify with `get-posts` (body: `type: all` or `scheduled`, `accounts` as a comma-separated string, `skip`/`limit` as strings, dates bracketing the slot). The parent record may show `platform: google` until publish, and the list may show only the first image — ignore both; per-platform child posts are created at publish time.
 
 ### Step 6 — Close
-- `post.md`: Design and Schedule rows, design ID, permanent URLs, GoHighLevel post IDs (one per `create-post`), slot.
+- `post.md`: Design and Schedule rows, design ID, permanent URLs, MCM post IDs (one per `create-post`), slot.
 - Photo formats: `photos.md`, the photos' `used in`. Generated images: none in the library; `photo-style.md` only if she approved a style change.
 - `calendar.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Scheduled <time>`); add the row if missing (create the file with `# Content calendar` and the columns `# · date · post · format · idea · status` if needed). For a missed slot, the actual date and time, plus "(moved from <slot>, missed)".
 - `plan.md`: set this slot's Status to `scheduled` — the Status cell only; the plan's other cells belong to content-plan. For a missed slot: `scheduled (moved to <day time>)`.
@@ -196,7 +196,7 @@ Every change to this file is shown to her and written on her yes: it's her look.
 ## What this skill never does
 
 - Schedules or publishes without an explicit yes at the schedule gate. Never sets `status: published` directly.
-- Reads, prints, copies or asks for `.env` or the GoHighLevel key.
+- Reads, prints, copies or asks for `.env` or the MCM key.
 - Edits a TEMPLATE design, `strategy.md`, `brand-style.md`, `templates.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context).
 - Changes `plan.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
@@ -212,9 +212,9 @@ Every change to this file is shown to her and written on her yes: it's her look.
 
 - No `strategy.md` — "There's no content strategy yet. Want to set it up first?" (the post comes from a strategy; it doesn't make one)
 - The slot's template is "to build" or missing — "Post N needs the <post type> template. Want to build it first, or swap the post type?" (never edit or improvise a template)
-- Canva or GoHighLevel not connected — "Canva isn't connected right now, so I can't make the design." / "GoHighLevel isn't connected right now, so I can't schedule it." Stop at the last step that can run.
+- Canva or MCM not connected — "Canva isn't connected right now, so I can't make the design." / "MCM isn't connected right now, so I can't schedule it." Stop at the last step that can run.
 - A request to post right now, skipping the gates — "Every post goes through copy, design and schedule approval."
-- A request to schedule into a slot that's passed or under 1 hour away — "That slot has passed; I'd post it <new time> instead." (GoHighLevel needs lead time to stage the post)
+- A request to schedule into a slot that's passed or under 1 hour away — "That slot has passed; I'd post it <new time> instead." (MCM needs lead time to stage the post)
 
 ## Failure modes
 
@@ -223,16 +223,16 @@ Every change to this file is shown to her and written on her yes: it's her look.
 - **Canva transaction expired before commit** — open a new transaction, re-apply only the approved edits, re-show the previews, commit on yes. Never claim it saved.
 - **Canva 409 / `polled_too_early`** — wait and retry once; then report and stop.
 - **Export download blocked (403)** — stop. "Your computer can't reach export-download.canva.com yet. It needs to be added to the allowed sites in Claude's settings." Nothing is scheduled.
-- **Upload to GoHighLevel fails (401/403)** — stop. "The GoHighLevel key in your content folder's settings file is missing or doesn't allow uploads." Never ask for the key in chat.
+- **Upload to MCM fails (401/403)** — stop. "The MCM key in your content folder's settings file is missing or doesn't allow uploads." Never ask for the key in chat.
 - **`create-post` 4xx** — report the message once; fix the one named field if it is clear (e.g. empty `userId` → `ghl.md`); otherwise stop. Never retry blindly — a duplicate post is worse than a late one.
 - **Text overflow that can't be fixed from here** — leave it, list it as a hand fix at the design gate.
-- **Connection token expired** (`ghl.md` expiry date passed, or GoHighLevel says so) — stop at schedule: "Reconnect <platform> in GoHighLevel's Social Planner."
+- **Connection token expired** (`ghl.md` expiry date passed, or MCM says so) — stop at schedule: "Reconnect <platform> in MCM's Social Planner."
 - **Department brief missing** — skip the brief update; say so.
 - Prefer doing less: when unsure, stop at the current gate and say what's left.
 
 ## STOP handling
 
-On `STOP`: halt immediately, make no further writes, commit no open Canva transaction, schedule nothing. Report what was already done (post folder, design ID, uploads, GoHighLevel post ID if any) and wait. Never assume undo, retry or continue.
+On `STOP`: halt immediately, make no further writes, commit no open Canva transaction, schedule nothing. Report what was already done (post folder, design ID, uploads, MCM post ID if any) and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 

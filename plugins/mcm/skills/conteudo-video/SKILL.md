@@ -1,6 +1,6 @@
 ---
 name: conteudo-video
-description: "Beta: faz um reel falando para a câmera, do horário no plano ao agendamento — o roteiro com ela, os vídeos dela do Google Drive, os melhores takes escolhidos, o corte com legendas e diagramas da marca, rodadas de revisão, e o agendamento no GoHighLevel — com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano quando é um reel; também quando ela diz \"/conteudo-video\", \"próximo reel\", \"faz o reel\", \"gravei os vídeos\", \"corta os meus vídeos\", \"edita o reel\", \"os vídeos estão no Drive\"."
+description: "Beta: faz um reel falando para a câmera, do horário no plano ao agendamento — o roteiro com ela, os vídeos dela do Google Drive, os melhores takes escolhidos, o corte com legendas e diagramas da marca, rodadas de revisão, e o agendamento no MCM — com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano quando é um reel; também quando ela diz \"/conteudo-video\", \"próximo reel\", \"faz o reel\", \"gravei os vídeos\", \"corta os meus vídeos\", \"edita o reel\", \"os vídeos estão no Drive\"."
 ---
 
 # conteudo-video — one reel, plan slot to scheduled (beta)
@@ -41,7 +41,7 @@ Never read or print `departamentos/conteudo/.env`. The scripts load `ELEVENLABS_
 
 > "Four gates, in order: script, take plan, cut, schedule. Each waits for an explicit sim (yes, approve, go, approved). Silence, 'looks good so far', or an edit request is not a sim. A yes to the cut is not a sim to schedule."
 
-> "Nothing is uploaded to GoHighLevel, scheduled or published without an explicit sim at the schedule gate."
+> "Nothing is uploaded to MCM, scheduled or published without an explicit sim at the schedule gate."
 
 > "Her words are never changed. Takes are cut between phrases, never stitched mid-sentence, and captions say exactly what was said."
 
@@ -49,7 +49,7 @@ Never read or print `departamentos/conteudo/.env`. The scripts load `ELEVENLABS_
 
 > "Every edit round is a new version (v2, v3). A rendered file is never overwritten."
 
-> "The ElevenLabs and GoHighLevel keys stay on her computer. Transcription and uploads run there; the keys are never read, printed or asked for in chat."
+> "The ElevenLabs and MCM keys stay on her computer. Transcription and uploads run there; the keys are never read, printed or asked for in chat."
 
 > "Edits are applied exactly as given. Change nothing she did not ask to change; if something else looks wrong, ask first."
 
@@ -152,15 +152,15 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 ### Step 7 — Schedule (gate 4)
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `sobre-mim/sobre-mim.md`, else ask once). If the time has slipped to under 1 hour away, recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
 - Platforms from `estrategia.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
-- If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do GoHighLevel e me avisa quando terminar."
+- If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do MCM e me avisa quando terminar."
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:
-  1. On her computer, from `departamentos/conteudo/`: `bash scripts/media-to-ghl.sh posts/<folder>/edit/reel-vN.mp4 post-NN-<slug>.mp4` (copy it from `../conteudo-instalar/scripts/` first if missing). Use the full-quality file; if GoHighLevel rejects the size, use the review copy and say so. It prints the permanent URL.
-  2. GoHighLevel `create-post`: `accountIds` and `userId` from `ghl.md`, `type: reel`, `status: scheduled`, `scheduleDate` in UTC (at least 10 minutes from now), `instagramPostDetails: {type: reel, showOnFeed: true}`, `facebookPostDetails: {type: reel}` when Facebook is in, `summary` = approved caption, `media` = one `video/mp4` with the URL. Idempotency key: `<location ID>-post-NN-<slug>-reel`.
+  1. On her computer, from `departamentos/conteudo/`: `bash scripts/media-to-ghl.sh posts/<folder>/edit/reel-vN.mp4 post-NN-<slug>.mp4` (copy it from `../conteudo-instalar/scripts/` first if missing). Use the full-quality file; if MCM rejects the size, use the review copy and say so. It prints the permanent URL.
+  2. MCM `create-post`: `accountIds` and `userId` from `ghl.md`, `type: reel`, `status: scheduled`, `scheduleDate` in UTC (at least 10 minutes from now), `instagramPostDetails: {type: reel, showOnFeed: true}`, `facebookPostDetails: {type: reel}` when Facebook is in, `summary` = approved caption, `media` = one `video/mp4` with the URL. Idempotency key: `<location ID>-post-NN-<slug>-reel`.
   3. Verify with `get-posts` that the post is scheduled.
 
 ### Step 8 — Close
-- `post.md`: Roteiro, Gravação, Takes, Corte and Agendamento rows; takes used; versions; GoHighLevel media URL and post ID; slot.
+- `post.md`: Roteiro, Gravação, Takes, Corte and Agendamento rows; takes used; versions; MCM media URL and post ID; slot.
 - `calendario.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Agendado <time>`); add it if missing (create the file with `# Calendário de conteúdo` and the columns `# · data · post · formato · ideia · status` if needed, as conteudo-estatico does). For a missed slot, the actual date and time, plus "(movido de <slot>, perdido)".
 - `plano.md`: this slot's Status cell to `agendado` (or `agendado (movido para <day time>)`). That cell only.
 - Department brief: Próximo passo to the next `planejado` slot ("Post N+1, <day date>, <time>: <topic> × <post type>. Diga \"próximo post\"."), or "Planejar as próximas 4 semanas. Diga \"planeja o conteúdo\"." when fewer than 2 weeks of planned slots remain. Estado atual with today's date and one line, and `atualizado:`. No approval needed; mention it in one short line.
@@ -183,7 +183,7 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - Uploads, schedules or publishes without an explicit sim at the schedule gate. Never sets `status: published` directly.
 - Changes, reorders or stitches her words inside a sentence, or captions anything she didn't say.
 - Overwrites a rendered version or deletes raw clips, transcripts, versions or Drive files.
-- Reads, prints, copies or asks for `.env`, the ElevenLabs key or the GoHighLevel key.
+- Reads, prints, copies or asks for `.env`, the ElevenLabs key or the MCM key.
 - Edits `estrategia.md`, `estilo-da-marca.md`, `modelos.md`, `ghl.md`, `sobre-mim/`, the shipped library, playbook, reel kit or scripts, or anything in `contexto/` (milestones go through /contexto).
 - Changes `plano.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
@@ -210,14 +210,14 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - **Her computer offline** (encode, transcribe and upload run there) — stop at the last step that can run in the cloud workspace; say what's waiting.
 - **HyperFrames check errors, or a render fails** — fix the composition once; if it still fails, stop and report. Never ship an unchecked render.
 - **Logo file missing** — end card without the logo; say so at the cut gate.
-- **GoHighLevel upload rejects the file** (size or type) — use the review copy and say so; on 401/403: "A chave do GoHighLevel no arquivo de configurações da sua pasta de conteúdo está faltando ou não permite uploads."
+- **MCM upload rejects the file** (size or type) — use the review copy and say so; on 401/403: "A chave do MCM no arquivo de configurações da sua pasta de conteúdo está faltando ou não permite uploads."
 - **`create-post` 4xx** — report the message once. If the schedule date expired while waiting for approval, pick a new time 10+ minutes out (still never two posts on one day) and confirm it in one line before retrying. Otherwise stop; never retry blindly, since a duplicate post is worse than a late one.
 - **Department brief missing** — skip the brief update; say so.
 - Prefer doing less: when unsure, stop at the current gate and say what's left.
 
 ## STOP handling
 
-On `STOP`: halt immediately, make no further writes, upload nothing, schedule nothing. Report what was already done (post folder, clips copied, transcripts, versions rendered, GoHighLevel media URL or post ID if any) and wait. Never assume undo, retry or continue.
+On `STOP`: halt immediately, make no further writes, upload nothing, schedule nothing. Report what was already done (post folder, clips copied, transcripts, versions rendered, MCM media URL or post ID if any) and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 

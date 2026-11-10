@@ -10,7 +10,7 @@ The front door of the content machine. It finds the next post in the plan (or th
 Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "guarda isso como ideia de post": one row in her ideas list, then back to whatever was happening (Step C).
-- **Publish check** — "o post foi ao ar?": confirm in GoHighLevel and record the links (Step P). It also runs at the start of every next-post run.
+- **Publish check** — "o post foi ao ar?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "o plano", "o calendário", "a sua lista de ideias", "o brief do departamento"; never file names, "skill", "MCP", "API" or a command name.
 
@@ -38,7 +38,7 @@ Never read or print `departamentos/conteudo/.env`. The scripts read it; this ski
 
 > "One post per run. The next post starts as its own run, on her sim."
 
-> "Nothing is scheduled or published from here. The publish check only reads GoHighLevel and records what went live."
+> "Nothing is scheduled or published from here. The publish check only reads MCM and records what went live."
 
 > "The department's Próximo passo and Estado atual are kept current without asking. Nothing else in the brief is touched; anything else goes to `_sistema/pendentes.md`."
 
@@ -53,7 +53,7 @@ If `calendario.md` has a row marked `Agendado` whose time has passed, run Step P
 - Take the first `planejado` slot in `plano.md`. If she names a post ("post 5"), use that one.
 - No `plano.md`, or no planned slot: fall back to the department's Próximo passo, then the calendar, and say so in one line. Offer to plan the next 4 weeks (conteudo-plano); run it only on sim.
 - If `posts/<folder>/post.md` exists, read its Etapa/Status table. Say in one line: "Post N, <topic> × <post type>, retomando em <step>." The maker resumes there.
-- Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "A conexão do <platform> vence em <date>. Reconecte no Social Planner do GoHighLevel antes disso." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
+- Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "A conexão do <platform> vence em <date>. Reconecte no Social Planner do MCM antes disso." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
 
 ### Step 2 — Missed slot
 Her time zone comes from `sobre-mim/sobre-mim.md`. If it isn't there, ask once ("Em qual fuso horário você posta?"), use the answer, and add it to `_sistema/pendentes.md` as an item for `sobre-mim/sobre-mim.md`.
@@ -79,7 +79,7 @@ On **sim**, run the maker and pass it the slot: post number, date and time (the 
 
 ### Step 4 — After the maker finishes
 The maker hands back here when the post is scheduled (even when she started the maker directly by name).
-- **Stay one post ahead:** if the next `planejado` slot isn't scheduled yet: "Quer fazer o post N+1 agora, pra ter sempre um na fila?" Start it only on sim, as its own run (back to Step 1). One approved post waiting in GoHighLevel means a busy week doesn't leave a slot empty.
+- **Stay one post ahead:** if the next `planejado` slot isn't scheduled yet: "Quer fazer o post N+1 agora, pra ter sempre um na fila?" Start it only on sim, as its own run (back to Step 1). One approved post waiting in MCM means a busy week doesn't leave a slot empty.
 - **The publish check:** there are no reminders on a timer. Tell her once: "Quando sair, me pergunta \"o post foi ao ar?\" que eu te mando os links. Eu também confiro da próxima vez que a gente fizer um post."
 - If the maker stopped at a gate instead, add nothing; it already said where it stopped.
 - Receipt (below).
@@ -87,8 +87,8 @@ The maker hands back here when the post is scheduled (even when she started the 
 ## Step P — Publish check
 
 For each calendar row marked `Agendado` whose time has passed, or the post she names:
-1. GoHighLevel `get-posts` (body: `type: all`, `accounts` as a comma-separated string from `ghl.md`, `skip`/`limit` as strings, dates bracketing the slot). Find each platform's child post and its `previewLink`. The parent record may show `platform: google` until publish; ignore it.
-2. **Found:** set the calendar row to `Publicado <date time>` with the links; record the links and the publish time in the post's `post.md` Resultados row; add the post's row to `desempenho.md` with the first numbers GoHighLevel has (likes, comments, shares), marked `inicial`. Create `desempenho.md` if missing:
+1. MCM `get-posts` (body: `type: all`, `accounts` as a comma-separated string from `ghl.md`, `skip`/`limit` as strings, dates bracketing the slot). Find each platform's child post and its `previewLink`. The parent record may show `platform: google` until publish; ignore it.
+2. **Found:** set the calendar row to `Publicado <date time>` with the links; record the links and the publish time in the post's `post.md` Resultados row; add the post's row to `desempenho.md` with the first numbers MCM has (likes, comments, shares), marked `inicial`. Create `desempenho.md` if missing:
    ```
    # Desempenho: <business>
 
@@ -100,7 +100,7 @@ For each calendar row marked `Agendado` whose time has passed, or the post she n
 
    ## O que aprendemos
    ```
-3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "O post N ainda não aparece como publicado no GoHighLevel. Vale dar uma olhada no Social Planner." Never mark it Publicado on a guess.
+3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "O post N ainda não aparece como publicado no MCM. Vale dar uma olhada no Social Planner." Never mark it Publicado on a guess.
 4. Tell her in one line per post: "O post N está no ar: <links>."
 5. Department brief: Estado atual with today's date and one line. Hand /contexto a one-line milestone for `contexto/conteudo.md`: `Post N publicado em <date> (<topic> × <post type>)`.
 
@@ -122,8 +122,8 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 - Drafts copy, designs, makes video, uploads or schedules. Those belong to the makers.
 - Hands a post to a maker without her sim.
-- Sets a post to published in GoHighLevel, or marks it Publicado in the calendar without finding it live.
-- Reads, prints, copies or asks for `.env` or the GoHighLevel key.
+- Sets a post to published in MCM, or marks it Publicado in the calendar without finding it live.
+- Reads, prints, copies or asks for `.env` or the MCM key.
 - Edits `estrategia.md`, `plano.md`, `modelos.md`, `estilo-da-marca.md`, `ghl.md`, the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her sim.
@@ -136,13 +136,13 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 - No `estrategia.md` — "Ainda não tem estratégia de conteúdo, então não tem de onde tirar o post. Quer montar agora?" (offers conteudo-estrategia on sim)
 - A request to post right now and skip the steps — "Todo post passa pela aprovação do texto, do design e do agendamento. Quer começar agora?"
 - A request to put two posts on one day — "Um post por dia mantém a conta constante. Eu colocaria em <next free date>."
-- A request to schedule into a slot that's passed or under an hour away — "Esse horário já passou; eu postaria <new time>." (GoHighLevel needs lead time)
+- A request to schedule into a slot that's passed or under an hour away — "Esse horário já passou; eu postaria <new time>." (MCM needs lead time)
 
 ## Failure modes
 
 - **No plan or no planned slot** — fall back to the department's Próximo passo, then the calendar; say so; offer to plan the next 4 weeks.
 - **Department brief missing** — skip the brief update; say so.
-- **GoHighLevel not connected** — the publish check can't run: "O GoHighLevel não está conectado agora, então não consigo conferir o que foi ao ar." The routing still works.
+- **MCM not connected** — the publish check can't run: "O MCM não está conectado agora, então não consigo conferir o que foi ao ar." The routing still works.
 - **Calendar and plan disagree** (a planned slot already holds a scheduled post) — the calendar wins; say so and take the next free slot.
 - **Time zone unknown and she doesn't answer** — stop before the missed-slot step; nothing is moved on a guess.
 - Prefer doing less: when unsure, stop and say what's unclear.

@@ -1,6 +1,6 @@
 ---
 name: conteudo-estatico
-description: "Faz um post de imagem — carrossel, carrossel ilustrado, post de texto, post de foto ou carrossel de fotos — da ideia ao agendamento: a ideia, o texto, o design no Canva (ou as fotos dela, preparadas) e o agendamento no GoHighLevel, com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano; também quando ela diz \"/conteudo-estatico\", \"faz esse carrossel\", \"faz o carrossel do post 5\", \"cria o próximo carrossel\", \"vamos fazer um post de texto\", \"posta essa foto\", \"faz um post com essas fotos\"."
+description: "Faz um post de imagem — carrossel, carrossel ilustrado, post de texto, post de foto ou carrossel de fotos — da ideia ao agendamento: a ideia, o texto, o design no Canva (ou as fotos dela, preparadas) e o agendamento no MCM, com o sim dela em cada etapa. Normalmente começa pelo próximo post do plano; também quando ela diz \"/conteudo-estatico\", \"faz esse carrossel\", \"faz o carrossel do post 5\", \"cria o próximo carrossel\", \"vamos fazer um post de texto\", \"posta essa foto\", \"faz um post com essas fotos\"."
 ---
 
 # conteudo-estatico — one image post, idea to scheduled
@@ -118,16 +118,16 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 ### Step 5 — Schedule (gate 3)
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out. Platforms and accounts from `estrategia.md` + `ghl.md`, and each platform's Scheduling section from its file. Times are in her time zone (from `sobre-mim/sobre-mim.md`, else ask once).
 - If the time has slipped to under 1 hour away while we worked, it's now a missed slot: recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never schedule two posts on the same day.
-- If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do GoHighLevel e me avisa quando terminar."
+- If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do MCM e me avisa quando terminar."
 - **Gate:** show date and time (her time zone), platforms, captions, slide or photo count. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:
-  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages. Photo formats: skip this and step 2; instead, from `departamentos/conteudo/`, run `bash scripts/media-to-ghl.sh posts/<folder>/photos/<NN>.jpg post-NN-<slug>-<NN>` for each photo in order (copy `scripts/media-to-ghl.sh` from `../conteudo-instalar/scripts/` first if missing); it prints one permanent GoHighLevel URL per photo.
-  2. Run on her computer, from `departamentos/conteudo/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent GoHighLevel URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../conteudo-instalar/scripts/` first.
-  3. GoHighLevel `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png` (photos: `image/jpeg`), in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
+  1. Re-read the design so hand edits are in; export PNG 1080x1440, all pages. Photo formats: skip this and step 2; instead, from `departamentos/conteudo/`, run `bash scripts/media-to-ghl.sh posts/<folder>/photos/<NN>.jpg post-NN-<slug>-<NN>` for each photo in order (copy `scripts/media-to-ghl.sh` from `../conteudo-instalar/scripts/` first if missing); it prints one permanent MCM URL per photo.
+  2. Run on her computer, from `departamentos/conteudo/`: `bash scripts/canva-to-ghl.sh posts/<folder> <export url 1> ... <export url N>`. It saves local copies to `posts/<folder>/slides/` and prints one permanent MCM URL per slide. Canva export links expire within hours — never schedule with them. If `scripts/canva-to-ghl.sh` is missing, copy it from `../conteudo-instalar/scripts/` first.
+  3. MCM `create-post`: `accountIds` from `ghl.md`, `userId` from `ghl.md`, `type: post`, `status: scheduled`, `scheduleDate` in UTC, `instagramPostDetails: {type: post}`, `facebookPostDetails: {type: post}` when Facebook is in, `summary` = approved caption, `media` = the permanent URLs as `image/png` (photos: `image/jpeg`), in slide order. Idempotency key: `<location ID>-post-NN-<slug>-schedule`. This post carries the platforms that share the main caption. Each platform with its own caption gets its own `create-post`, as its file's Scheduling section says (same media, its caption, its own idempotency key).
   4. Verify with `get-posts` (body: `type: all` or `type: scheduled`, `accounts` as a comma-separated string, `skip`/`limit` as strings, dates bracketing the slot). The parent record may show `platform: google` until publish, and the list may show only the first image — ignore both; per-platform child posts are created at publish time.
 
 ### Step 6 — Close
-- `post.md`: Design and Agendamento rows, design ID, permanent URLs, GoHighLevel post IDs (one per `create-post`), slot.
+- `post.md`: Design and Agendamento rows, design ID, permanent URLs, MCM post IDs (one per `create-post`), slot.
 - Photo formats: `fotos.md`, the photos' `usada em`. Generated images: none in the library; `estilo-de-foto.md` only if she approved a style change.
 - `calendario.md`: the post's row (date, `<topic> × <post type>`, format, idea, `Agendado <time>`); add the row if missing (create the file with `# Calendário de conteúdo` and the columns `# · data · post · formato · ideia · status` if needed). For a missed slot, the actual date and time, plus "(movido de <slot>, perdido)".
 - `plano.md`: set this slot's Status to `agendado` — the Status cell only; the plan's other cells belong to conteudo-plano. For a missed slot: `agendado (movido para <day time>)`.
@@ -196,7 +196,7 @@ Every change to this file is shown to her and written on her sim: it's her look.
 ## What this skill never does
 
 - Schedules or publishes without an explicit sim at the schedule gate. Never sets `status: published` directly.
-- Reads, prints, copies or asks for `.env` or the GoHighLevel key.
+- Reads, prints, copies or asks for `.env` or the MCM key.
 - Edits a TEMPLATE design, `estrategia.md`, `estilo-da-marca.md`, `modelos.md`, `ghl.md`, the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
 - Changes `plano.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
@@ -212,9 +212,9 @@ Every change to this file is shown to her and written on her sim: it's her look.
 
 - No `estrategia.md` — "Ainda não tem estratégia de conteúdo. Quer montar primeiro?" (the post comes from a strategy; it doesn't make one)
 - The slot's template is "to build" or missing — "O post N precisa do modelo de <post type>. Quer criar primeiro, ou trocar o tipo de post?" (never edit or improvise a template)
-- Canva or GoHighLevel not connected — "O Canva não está conectado agora, então não consigo fazer o design." / "O GoHighLevel não está conectado agora, então não consigo agendar." Stop at the last step that can run.
+- Canva or MCM not connected — "O Canva não está conectado agora, então não consigo fazer o design." / "O MCM não está conectado agora, então não consigo agendar." Stop at the last step that can run.
 - A request to post right now, skipping the gates — "Todo post passa pela aprovação do texto, do design e do agendamento."
-- A request to schedule into a slot that's passed or under 1 hour away — "Esse horário já passou; eu postaria <new time>." (GoHighLevel needs lead time to stage the post)
+- A request to schedule into a slot that's passed or under 1 hour away — "Esse horário já passou; eu postaria <new time>." (MCM needs lead time to stage the post)
 
 ## Failure modes
 
@@ -223,16 +223,16 @@ Every change to this file is shown to her and written on her sim: it's her look.
 - **Canva transaction expired before commit** — open a new transaction, re-apply only the approved edits, re-show the previews, commit on sim. Never claim it saved.
 - **Canva 409 / `polled_too_early`** — wait and retry once; then report and stop.
 - **Export download blocked (403)** — stop. "O seu computador ainda não acessa export-download.canva.com. Ele precisa entrar nos sites permitidos nas configurações do Claude." Nothing is scheduled.
-- **Upload to GoHighLevel fails (401/403)** — stop. "A chave do GoHighLevel no arquivo de configurações da sua pasta de conteúdo está faltando ou não permite uploads." Never ask for the key in chat.
+- **Upload to MCM fails (401/403)** — stop. "A chave do MCM no arquivo de configurações da sua pasta de conteúdo está faltando ou não permite uploads." Never ask for the key in chat.
 - **`create-post` 4xx** — report the message once; fix the one named field if it is clear (e.g. empty `userId` → `ghl.md`); otherwise stop. Never retry blindly — a duplicate post is worse than a late one.
 - **Text overflow that can't be fixed from here** — leave it, list it as a hand fix at the design gate.
-- **Connection token expired** (`ghl.md` expiry date passed, or GoHighLevel says so) — stop at schedule: "Reconecte o <platform> no Social Planner do GoHighLevel."
+- **Connection token expired** (`ghl.md` expiry date passed, or MCM says so) — stop at schedule: "Reconecte o <platform> no Social Planner do MCM."
 - **Department brief missing** — skip the brief update; say so.
 - Prefer doing less: when unsure, stop at the current gate and say what's left.
 
 ## STOP handling
 
-On `STOP`: halt immediately, make no further writes, commit no open Canva transaction, schedule nothing. Report what was already done (post folder, design ID, uploads, GoHighLevel post ID if any) and wait. Never assume undo, retry or continue.
+On `STOP`: halt immediately, make no further writes, commit no open Canva transaction, schedule nothing. Report what was already done (post folder, design ID, uploads, MCM post ID if any) and wait. Never assume undo, retry or continue.
 
 ## Headless behavior
 

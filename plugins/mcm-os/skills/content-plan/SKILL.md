@@ -92,7 +92,7 @@ Each approved run: hand /context one line for `context/content.md`:
 ## What this skill never does
 
 - Writes `plan.md` without an explicit yes.
-- Re-plans or moves a slot that's already scheduled in GoHighLevel or the calendar. A shift after a missed slot moves only `planned` slots.
+- Re-plans or moves a slot that's already scheduled in MCM or the calendar. A shift after a missed slot moves only `planned` slots.
 - Edits `strategy.md`, `calendar.md`, `ideas.md`, `templates.md`, `library-notes.md`, the shipped library, or anything in `context/`. It only reads them.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Invents topics, switches post types or formats on, or presents a suggested angle as decided.

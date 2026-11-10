@@ -4,7 +4,7 @@
 Always: it's the default platform and where people check a business out. On unless she says no.
 
 ## Account
-Her business Instagram account (a professional account), connected in GoHighLevel's Social Planner (setup step 12, Guia D).
+Her business Instagram account (a professional account), connected in MCM's Social Planner (setup step 12, Guia D).
 
 ## Formats
 - **Carousel, illustrated carousel, text post:** the slides as PNG images, 1080x1440, in slide order.

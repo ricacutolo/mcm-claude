@@ -51,7 +51,7 @@ Rica delivers the seed through her Drive, in a folder named `Seed` inside the fo
 
 > "Read-only on the Drive. Never edit, move, share or delete anything there."
 
-1. With the Google Drive connection, find a folder named `Seed` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. From Step 0: none found → go on, say nothing. When resuming: none, or no Drive connection → the "waiting on the files" message above, and stop. If the Drive is connected but `MCM - Deliverables` is not there at all, ask once whether she connected the Drive with the account Rica shares with (her work email).
+1. With the Google Drive connection, find a folder named `Seed` whose parent is `MCM - Deliverables` or `Deliverables` and that she can see. From Step 0: none found → go on, say nothing. When resuming: none, or no Drive connection → the "waiting on the files" message above, and stop. If the Drive is connected but `MCM - Deliverables` is not there at all, ask once whether she connected the Drive with the account Rica shares her folders with.
 2. List its files and say: "Rica sent your files through the Drive (N files). Can I bring them into your folder? (**yes**)"
 3. On **yes**: read each file and write it into `_seed/` in her folder, same name, except `department-<slug>.md`, which goes to `_seed/departments/<slug>/brief.md`. The Drive reader escapes the text: it puts a backslash before punctuation (`\---`, `\#`, `1\.`, `\[ASK\]`) and adds two spaces at the end of every line. Write the file clean: remove every backslash that sits right before a punctuation character, and strip the trailing spaces, so it matches what Rica wrote (`---`, `#`, `1.`, `[ASK]`). Check each file landed and starts with `---` when the original had frontmatter.
 4. Say "All set, your files are here. Now I'll just show them to you and you confirm." and resume as above.
@@ -62,14 +62,14 @@ A local `_seed/` (from a zip) still works exactly as before and wins over the Dr
 
 1. **Google Drive first.** It is how Rica sends her files, so it comes before anything else. Check the Google Drive connection by listing a few of her Drive files (titles only).
    - Connected → "Your Google Drive is connected." Go on.
-   - Not connected → "First let's connect your Google Drive: that's how Rica sends you your files. It's under **Customize → Connectors → Google Drive**; sign in with your work account. Want me to walk you through it step by step? (**yes** / **already connected**)"
-   - **yes** → guide one action at a time, waiting after each: open **Customize**, open **Connectors**, find **Google Drive**, click **Connect**, choose the work account, allow. If her screen shows something different, ask what she sees and guide from that. Then check again.
+   - Not connected → "First let's connect your Google Drive: that's how Rica sends you your files. It's under **Customize → Connectors → Google Drive**; sign in with the account Rica shares your folders with. Want me to walk you through it step by step? (**yes** / **already connected**)"
+   - **yes** → guide one action at a time, waiting after each: open **Customize**, open **Connectors**, find **Google Drive**, click **Connect**, choose the account Rica shares her folders with, allow. If her screen shows something different, ask what she sees and guide from that. Then check again.
    - **already connected** → check again.
    - Still not connected after two checks → "That's okay, we'll keep going without the Drive for now. Let Rica know the Drive didn't connect." Go on. The rest of the install works without it.
 2. Confirm a folder is connected. If not: "To get started, add a folder to this conversation: in the Claude app on your Mac, in a new conversation, click add folder and choose the folder you created for the system. Then say **start the install** again." Stop.
 3. Show the folder path and ask if it is the right one. If the path is inside `Documents` or `Desktop`, say once: "This folder may be in iCloud, and iCloud sometimes removes files from your computer or makes duplicate copies. The safest place is your home folder (in Finder: Shift + Command + H). Want to move it before we go on?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
 4. Say what will be created, in one short list: `about-me/`, `departments/`, `projects/`, `context/`, `deliverables/`, `reference/`, `_system/`, `_review/`. One line each, plain words.
-5. On **yes**: create them. Write `_system/state.md` from `templates/state.md` (dates today, `last_upkeep` today), an empty `_system/pending.md` (`# Pending`), `_system/log.md` (`# Log`), `departments/index.md` (`# Departments`), `projects/index.md` (`# Projects`).
+5. On **yes**: create them. Write `_system/state.md` from `templates/state.md` (dates today, `last_upkeep` today, `plugin_version` the installed plugin version, so the system doesn't take the install for an update), an empty `_system/pending.md` (`# Pending`), `_system/log.md` (`# Log`), `departments/index.md` (`# Departments`), `projects/index.md` (`# Projects`).
 6. **The seed, before Step 1.** If the Drive is connected and there is no `_seed/` in her folder, look for it now (**Bringing the seed from the Drive**, below). Found → bring it in, so every step from Step 1 on uses it. Not found → go on without a word; the install asks about it after Step 1.
 7. If `_seed/` exists: "Rica already prepared a good part of this for you. In the next steps I'll just show it to you and you confirm."
 
@@ -142,7 +142,7 @@ Then list the rest in one short block, as things she can say: "what should I pos
 ## Step 8 — First real test (10 min)
 
 1. Ask her about the my-voice sample from the tour: "Does this sound like you? From 0 to 10?" If under 7, ask what is off and offer to adjust `about-me/writing.md` (hard item: show the change, write on **yes**).
-2. Offer the content setup: "Want to set up your content now? It connects Canva and GoHighLevel and takes about an hour; you can also do it later by saying **set up my content**." Run /content-install only on **yes**.
+2. Offer the content setup: "Want to set up your content now? It connects Canva and MCM and takes about an hour; you can also do it later by saying **set up my content**." Run /content-install only on **yes**.
 3. Set `install: complete` in `state.md`.
 4. Write the first `_system/health.md` in the format the system skill defines (numbers only), and the Drive copy if approved. Set `last_upkeep` to today.
 5. Only if she declined the content setup in 8.2, update the Content brief (soft sections): Current state gets today's date and "Set up during the install"; Next step becomes the next real move she names, or "Decide how often to post" if she has none. If she ran the content setup, leave the brief as the content setup left it.

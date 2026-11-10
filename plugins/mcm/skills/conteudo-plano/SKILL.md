@@ -92,7 +92,7 @@ Each approved run: hand /contexto one line for `contexto/conteudo.md`:
 ## What this skill never does
 
 - Writes `plano.md` without an explicit sim.
-- Re-plans or moves a slot that's already scheduled in GoHighLevel or the calendar. A shift after a missed slot moves only `planejado` slots.
+- Re-plans or moves a slot that's already scheduled in MCM or the calendar. A shift after a missed slot moves only `planejado` slots.
 - Edits `estrategia.md`, `calendario.md`, `ideias.md`, `modelos.md`, `notas-da-biblioteca.md`, the shipped library, or anything in `contexto/`. It only reads them.
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Invents topics, switches post types or formats on, or presents a suggested angle as decided.

@@ -2,14 +2,14 @@
 
 Seis guias curtos, entregues a ela nas etapas da configuração do conteúdo listadas abaixo. Escritos para quem nunca usou o Canva. Claude passa em palavras simples, um passo de cada vez, com as cores, fontes e arquivos de logo dela, tirados de `sobre-mim/marca.md` ou `departamentos/conteudo/estilo-da-marca.md`.
 
-Os nomes dos botões aparecem primeiro em português e, entre parênteses, em inglês, porque o Canva, o Claude e o GoHighLevel podem estar em qualquer um dos dois idiomas na tela dela.
+Os nomes dos botões aparecem primeiro em português e, entre parênteses, em inglês, porque o Canva, o Claude e o MCM podem estar em qualquer um dos dois idiomas na tela dela.
 
 - **Guia 0** — primeira vez no Canva (etapa 5)
 - **Guia A** — cores no Kit de Marca (etapa 7)
 - **Guia B** — logo, fontes e ajustes à mão num modelo (etapa 8, e qualquer ajuste à mão depois de um modelo ou do design de um post)
-- **Guia C** — conectar o GoHighLevel ao Claude (etapa 13)
-- **Guia D** — conectar as suas redes (Instagram, Facebook, LinkedIn quando ligado) no Social Planner do GoHighLevel (etapa 12)
-- **Guia E** — criar a sua chave do GoHighLevel e colocar no arquivo de configurações (etapa 19)
+- **Guia C** — conectar o MCM ao Claude (etapa 13)
+- **Guia D** — conectar as suas redes (Instagram, Facebook, LinkedIn quando ligado) no Social Planner do MCM (etapa 12)
+- **Guia E** — criar a sua chave do MCM e colocar no arquivo de configurações (etapa 19)
 
 ---
 
@@ -43,35 +43,35 @@ Se uma cor ou fonte não aparecer do jeito que você espera, para e avisa o Clau
 
 Fontes (ajuda do Canva, em inglês): [limites do Kit de Marca no plano grátis](https://www.canva.com/help/color-palettes/), [Kit de Marca pessoal](https://www.canva.com/help/personal-brand-kit/), [fontes da marca](https://www.canva.com/help/brand-fonts/), [logos da marca só no plano pago](https://www.canva.com/help/brand-logos/), [aplicar estilos de texto pelo painel Editar](https://www.canva.com/help/apply-brand-kit-text-styles/) (diz grátis, mas definir os estilos precisa de plano pago). O Canva muda os botões de lugar de vez em quando; se um clique não estiver onde o guia diz, descreve o que você está vendo e o Claude acha com você.
 
-## Guia C: Conecte o GoHighLevel ao Claude (uns 5 minutos)
+## Guia C: Conecte o MCM ao Claude (uns 5 minutos)
 
-Isso deixa o Claude agendar os seus posts no Social Planner do GoHighLevel e ler como eles foram. Você aprova tudo na própria tela de login do GoHighLevel.
+Isso deixa o Claude agendar os seus posts no Social Planner do MCM e ler como eles foram. Você aprova tudo na tela de login que abrir.
 
 1. No Claude, abre **Personalizar → Conectores** (Customize → Connectors), ou vai em claude.ai/customize/connectors, e escolhe **Adicionar conector personalizado** (Add custom connector).
-2. Dá o nome **GoHighLevel** e cola este endereço: `https://services.leadconnectorhq.com/mcp/anthropic/v2`. Salva.
-3. Clica em **Conectar** (Connect) ao lado dele e entra no GoHighLevel com o seu login de sempre.
+2. Dá o nome **MCM** e cola este endereço: `https://services.leadconnectorhq.com/mcp/anthropic/v2`. Salva.
+3. Clica em **Conectar** (Connect) ao lado dele e entra no MCM com o seu login de sempre.
 4. Quando ele perguntar a qual conta dar acesso, escolhe o seu negócio.
 5. Aprova as permissões que ele pedir. Confere que **social posts** estão incluídos, para ler e para escrever: é isso que deixa o Claude agendar os seus posts.
 6. Começa uma conversa nova no Claude (a conexão carrega numa conversa nova) e diz **continua a configuração do conteúdo**.
 
 Se alguma coisa estiver diferente na sua tela, conta para o Claude o que você está vendo; os nomes dos botões podem mudar.
 
-## Guia D: Conecte as suas redes no GoHighLevel (uns 5 minutos)
+## Guia D: Conecte as suas redes no MCM (uns 5 minutos)
 
-Isso deixa o Social Planner do GoHighLevel publicar os seus posts no Instagram, no Facebook e, se a gente ligou, no LinkedIn, depois que você aprovar.
+Isso deixa o Social Planner do MCM publicar os seus posts no Instagram, no Facebook e, se a gente ligou, no LinkedIn, depois que você aprovar.
 
-1. Entra no GoHighLevel e abre o seu negócio.
+1. Entra no MCM e abre o seu negócio.
 2. No menu da esquerda, clica em **Marketing**, depois em **Social Planner**.
 3. Clica para conectar as suas contas. Escolhe **Instagram**, e **Facebook** também se você posta lá, e entra com a conta que administra a página do seu negócio. Se a gente ligou o LinkedIn, conecta o **LinkedIn** também, com o seu perfil pessoal (não uma página de empresa). Aprova o que ele pedir.
 4. Quando as contas aparecerem como conectadas, avisa o Claude.
 
 Se a sua tela estiver diferente, descreve o que você está vendo e o Claude acha com você.
 
-## Guia E: Crie a sua chave do GoHighLevel (uns 5 minutos)
+## Guia E: Crie a sua chave do MCM (uns 5 minutos)
 
-Essa chave deixa o seu computador subir os designs prontos para o GoHighLevel. Trata ela como uma senha: ela vai só no arquivo de configurações da sua pasta de conteúdo, nunca no chat.
+Essa chave deixa o seu computador subir os designs prontos para o MCM. Trata ela como uma senha: ela vai só no arquivo de configurações da sua pasta de conteúdo, nunca no chat.
 
-1. No GoHighLevel, abre o seu negócio, clica em **Configurações** (Settings), depois em **Integrações privadas** (Private Integrations).
+1. No MCM, abre o seu negócio, clica em **Configurações** (Settings), depois em **Integrações privadas** (Private Integrations).
 2. Cria uma nova e dá o nome **Claude uploads**.
 3. Quando ele pedir permissões, liga a de mídia (pode aparecer como **medias**).
 4. Cria e copia a chave que ele mostrar.

@@ -2,6 +2,12 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.7.2 — 2026-11-09 [both]
+Fixes from the desk run of the English install with the first English client's seed.
+- **White label:** everything the system says to her calls the platform **MCM**, never GoHighLevel: all skills, the content setup guides (the connector she adds is named "MCM"), the stage labels, the descriptions. The system skill gains the rule: never say "GoHighLevel", "HighLevel" or "GHL" to her, even if a screen or a connection shows that name. Technical names stay (`ghl.md`, `GHL_PIT`, the upload scripts, the connector address).
+- **Install no longer looks like an update:** the state template carried version 0.1.0, so the first conversation after the install's Step 1 (her "how do I like to work?" test) saw a different installed version and announced an update tidy-up in the middle of the install. The install now writes the installed plugin version.
+- **Drive account wording:** Step 0 asked her to connect the Drive "with your work account"; it now says "the account Rica shares your folders with" (some clients have only a personal Gmail).
+
 ## 0.7.1 — 2026-11-09 [both]
 - **New client, existing history:** /new-client (/novo-cliente) now looks through her histories (`context/*.md`: slug, topic, aliases) for one already about this client. Found → it reads it as a source, like mid-conversation, and keeps it as the client's history: sets `tier: client` and `brief:` to the sheet, adds the client's name to the aliases, creates nothing new; the file keeps its name and the sheet points to it. Before, a loose history about the client was never found, and one with the same slug got a second, suffixed history beside it. /new-department and /new-project already linked an existing history this way. The receipt line gains `history: new/linked`.
 
