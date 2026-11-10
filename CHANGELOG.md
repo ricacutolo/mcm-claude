@@ -2,6 +2,15 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.9.0 — 2026-11-10 [both]
+- **Newsletter-led cycles** (spec approved by Rica, 2026-11-10). When the newsletter is on, the strategy can say it **leads the theme** (recommended yes): a cycle is one newsletter plus the posts until the next issue, and the newsletter sets the cycle's topic.
+- content-plan builds cycles: the posts in a cycle share the newsletter's topic, with post types and formats still rotating; their idea cell says "from newsletter N"; topic rotation moves to between cycles; the newsletter row gets a write-by date 2 days before it's sent, and the brief's Next step points to the newsletter first.
+- content-newsletter proposes the cycle's post angles at the draft gate, one per post slot, matched to each post type; on her yes they go into the ideas list tagged to their posts.
+- content-static and content-video suggest the tagged angle in their ask-and-suggest message; her material still wins.
+- content-post offers the newsletter first when a cycle's post comes up before its issue; past the write-by date, or on her no, the post goes ahead on its planned topic ("cycle fell back"). A post never waits for the newsletter.
+- content-review reads cycles: which formats did best from the same idea, led cycles against fallen-back ones.
+- The playbook gains "From newsletter to posts": one angle per post, which part of an email fits which post type, each post stands alone, the newsletter mention is rare.
+
 ## 0.8.1 — 2026-11-10 [both]
 - **Posts and reels start from her material, like the newsletter.** content-static's idea step and content-video's script step now ask what she has (a thought, a story, something a client asked) and give the recommendation in the same message; her material wins, and a suggestion she takes still gets one question for her own angle (Rica, 2026-11-10).
 

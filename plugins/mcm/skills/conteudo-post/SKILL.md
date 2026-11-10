@@ -51,6 +51,7 @@ If `calendario.md` has a row marked `Agendado` whose time has passed, run Step P
 
 ### Step 1 — Find the post and where it stands
 - Take the first `planejado` slot in `plano.md`. If she names a post ("post 5"), use that one.
+- Newsletter leads the theme: a post slot marked `da newsletter N` whose issue isn't approved yet → offer the newsletter first if its write-by date hasn't passed ("A newsletter N define o ângulo desse post. Quer escrever ela primeiro?"). If it has passed, or she says no, the post goes ahead with its normal idea step on the planned topic, and `post.md` notes "ciclo sem newsletter". A post never waits for the newsletter.
 - No `plano.md`, or no planned slot: fall back to the department's Próximo passo, then the calendar, and say so in one line. Offer to plan the next 4 weeks (conteudo-plano); run it only on sim.
 - If `posts/<folder>/post.md` exists, read its Etapa/Status table. Say in one line: "Post N, <topic> × <post type>, retomando em <step>." The maker resumes there.
 - Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "A conexão do <platform> vence em <date>. Reconecte no Social Planner do MCM antes disso." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.

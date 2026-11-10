@@ -54,6 +54,7 @@ Never read or print `departamentos/conteudo/.env`.
 ### Step 1 — The issue and where it stands
 - Use the slot conteudo-post passed. If `newsletters/edicao-NN-<slug>.md` exists, read its Etapa/Status table and resume at the first step not done.
 - New issue: create `departamentos/conteudo/newsletters/edicao-NN-<slug>.md` in the shape below (the slug once the idea is set).
+- Newsletter leads the theme (`estrategia.md`): this issue sets the topic for the cycle's posts and is due by its write-by date in `plano.md` (2 days before it's sent). Say so in one line when it's close.
 - The newsletter is off in `estrategia.md`: "A newsletter ainda não está ligada na sua estratégia de conteúdo. Quer ligar primeiro?" Stop.
 - `ghl.md` has no Newsletter section, or no list: "A sua newsletter ainda não está configurada no MCM: <what's missing>. Quer terminar isso primeiro?" Hand to conteudo-instalar on sim. Stop.
 
@@ -92,9 +93,10 @@ Pré-visualização:
 ### Step 3 — Draft (gate 1)
 - Write it in the slot's format (the library's newsletter formats), from her material, in her voice: the newsletter section of the playbook and `platforms/newsletter.md`. Plain text, 200-400 words, short paragraphs, one CTA for the layer that's on (or the offer, on an offer issue).
 - Then the subject: 2-3 options, short and specific, written last, no emoji, plus one preview text line that adds to the subject.
+- **Newsletter leads the theme:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plano.md`), each matched to its slot's post type and format, by the playbook's "From newsletter to posts" section: its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
 - Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
 - Show the subject options, the preview text and the email as it will read.
-- **Gate:** "A newsletter está boa? Escolhe um assunto e diz **sim**, ou me diz o que mudar."
+- **Gate:** "A newsletter está boa? Escolhe um assunto e diz **sim** (os ângulos dos posts vêm junto), ou me diz o que mudar."
 - Record the approved email, subject and preview text in the issue file.
 
 ### Step 4 — Schedule (gate 2)
@@ -111,6 +113,7 @@ Pré-visualização:
 - `calendario.md`: the issue's row (date, `Newsletter <N>: <topic>`, format `newsletter`, idea, `Agendado <time>`).
 - `plano.md`: set this slot's Status to `agendado` — the Status cell only.
 - `ideias.md`: mark the idea `usada: newsletter N` if it came from there; add new ideas she mentioned as `não usada`.
+- Led cycle: each approved angle goes into `ideias.md` as `não usada`, source `newsletter N`, tagged `para o post M`.
 - Department brief: set Próximo passo to the next `planejado` slot of any kind, as conteudo-estatico does; update Estado atual with its date and one line, and `atualizado:`. Mention it in one short line.
 - Receipt and milestone (below). Hand back to conteudo-post's Step 4.
 

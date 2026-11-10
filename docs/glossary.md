@@ -111,6 +111,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | arquivado | archived |
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
+| plan idea cell in a newsletter-led cycle: `da newsletter N` · idea tag `para o post N` · post note `ciclo sem newsletter` | `from newsletter N` · `for post N` · `cycle fell back` |
 | plan Modelo cell for formats with no template: `reel` · `foto` | Template cell: `reel` · `photo` |
 | plan and calendar status: `planejado` · `agendado` · `Agendado <time>` · `Publicado <date time>` | `planned` · `scheduled` · `Scheduled <time>` · `Published <date time>` |
 | idea status: `não usada` · `usada: post N` · `descartada` | `unused` · `used: post N` · `dropped` |
