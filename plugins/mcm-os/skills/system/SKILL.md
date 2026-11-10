@@ -38,7 +38,7 @@ claude.md                     backup of her Instructions for Claude
 about-me/                     about-me.md · business.md (main business) · business-<area>.md (each other business) · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
-  content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · scripts/ · .env · past-rounds/
+  content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · newsletters/ · scripts/ · .env · past-rounds/
 projects/                     index.md · <slug>/brief.md · research/ · deliverables/<type>/
 context/<slug>.md             every running log (topics, projects, departments, clients)
 deliverables/                 deliverables that belong to no department or project
@@ -72,7 +72,7 @@ She talks to one Claude. That Claude routes:
 - She names one of her clients ("the Miller family", "what do I know about John") → **/open-client**. A new client → **/new-client**. A file or a fact for a client → **/save-to-client**. A meeting that happened ("save the meeting with…", "what did we talk about in the meeting") → **/save-meeting**. "This conversation is about…" → **/context** (capture).
 - She names something ongoing that is neither ("that coaching school thing") → **/context**.
 - Something new and ongoing → offer **/new-department**. Something new with a finish line → offer **/new-project**. The test, said once: "Does this have an end? If it does, it's a project. If it doesn't, it's a department."
-- A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
+- A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the newsletter, "write the newsletter" → **/content-newsletter**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
 - "How's my day looking" → **/morning-brief**.
 - "Update", "any news from Rica" → **/update**.
 - "Organize my Drive", "where do I save this in Drive" → **/organize-drive**.

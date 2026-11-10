@@ -38,7 +38,7 @@ claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · negocio.md (main business) · negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
-  conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · scripts/ · .env · rodadas-anteriores/
+  conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
 contexto/<slug>.md            every running log (topics, projects, departments, clients)
 entregas/                     deliverables that belong to no department or project
@@ -72,7 +72,7 @@ She talks to one Claude. That Claude routes:
 - She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/contexto** (capture).
 - She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
-- A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
+- A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the newsletter, "escreve a newsletter" → **/conteudo-newsletter**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
 - "Como está meu dia" → **/morning-brief**.
 - "Atualizar", "tem novidade do Rica" → **/atualizar**.
 - "Organiza meu Drive", "onde guardo isso no Drive" → **/organizar-drive**.

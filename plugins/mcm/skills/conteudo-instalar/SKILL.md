@@ -57,9 +57,9 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 | 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's four base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak" and "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file). Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Compartilhados com você" (Shared with you) in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Compartilhados com você" and uses Arquivo > Fazer uma cópia (File > Make a copy). Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
 | 10 | Canva | Brand style | `estilo-da-marca.md` approved and written | Draft color and font roles and logo files, seeded from `sobre-mim/marca.md` when it exists; show; write on sim |
 | 11 | Canva | Template index | `modelos.md` has the base templates | Draft the rows and fill guides in conteudo-modelo's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on sim |
-| 12 | MCM | Social accounts | she confirms each platform she'll post on is connected in MCM's Social Planner | Recommend her platforms first, from each `../conteudo-estrategia/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals), and note them in `configuracao.md` (the strategy step starts from them). Then she connects them in MCM (Guia D) |
+| 12 | MCM | Social accounts | she confirms each platform she'll post on is connected in MCM's Social Planner | Recommend her platforms first, from each `../conteudo-estrategia/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals; the newsletter when she sells something people decide on over time and has a list), and note them in `configuracao.md` (the strategy step starts from them). Then she connects them in MCM (Guia D) |
 | 13 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) and `get-account` lists its social accounts | Guia C: she adds MCM as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
-| 14 | MCM | MCM details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; show; write on sim |
+| 14 | MCM | MCM details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; newsletter on: her from name, a verified sending address and her list (a tag or segment) in MCM, checked there, with reply-to. A missing verified address or list: say what's missing (it's part of her MCM build, not this setup) and mark the newsletter waiting; the rest of the step goes on. Show; write on sim |
 | 15 | MCM | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: conteudo-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |
 | 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's **Configurações → Capacidades** (Settings → Capabilities, where the allowed sites live) |
@@ -134,6 +134,12 @@ Não é segredo. A chave fica no .env, nunca aqui.
 | Instagram | | | YYYY-MM-DD |
 | Facebook | | | YYYY-MM-DD |
 | LinkedIn (só quando ligado) | | | YYYY-MM-DD |
+
+## Newsletter (só quando ligada)
+- Nome do remetente:
+- E-mail do remetente (verificado no MCM):
+- Responder para:
+- Lista (tag ou segmento):
 ```
 
 ### Step 3 — Close the run

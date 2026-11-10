@@ -29,6 +29,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-modelo | content-template |
 | conteudo-revisao | content-review |
 | conteudo-instalar | content-install |
+| conteudo-newsletter | content-newsletter |
 | ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
@@ -53,6 +54,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `…/conteudo/fotos.md` (photo library index) · Drive: `Fotos de conteúdo` | `…/content/photos.md` · Drive: `Content photos` |
 | `…/conteudo/estilo-de-foto.md` (her look for generated images) · plan section `Fotos para tirar` | `…/content/photo-style.md` · plan section `Photos to take` |
 | shipped `conteudo-estrategia/image-prompts.md` | `content-strategy/image-prompts.md` |
+| `…/conteudo/newsletters/edicao-NN-<slug>.md` · `ghl.md` § Newsletter | `…/content/newsletters/issue-NN-<slug>.md` · `ghl.md` § Newsletter |
 | `…/conteudo/desempenho.md` · `notas-da-biblioteca.md` · `swipe.md` | `…/content/performance-log.md` · `library-notes.md` · `swipe.md` |
 | `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
 | `contexto/conteudo.md` | `context/content.md` |

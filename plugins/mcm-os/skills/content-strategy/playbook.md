@@ -113,3 +113,14 @@ The people we learn from. Each one gets a line on what we take from them.
 ## 10. Swipe file
 
 Each business's swipe file (lines and posts that worked, with why) lives in its own `departments/content/swipe.md`, so one business's results never mix with another's.
+
+## 11. Newsletter
+
+For an email to her list (`platforms/newsletter.md` has the format and scheduling rules). The rules in section 1 and the 4-point check apply; what changes:
+- **Her material first.** The email is built from what she gave: a few lines, a story, a question someone asked. Claude shapes it; it doesn't replace it.
+- **One idea, one ask.** If two ideas fight for the email, the second one is next issue.
+- **Open in the moment.** First line is a scene, a question or a sentence she said, not "I hope this finds you well" or "This week I want to talk about".
+- **Write like a letter to one person.** "You", short paragraphs, her voice; no headers, no bullet lists unless the format needs one.
+- **The ask by layer:** credibility → reply with your question / book a call; audience → forward this to someone who needs it; leads → the lead magnet or "reply with <word>". On an offer issue the ask is the offer, said plainly, once.
+- **Subject last:** 2-3 options, short and specific, no emoji, nothing the email doesn't deliver.
+
