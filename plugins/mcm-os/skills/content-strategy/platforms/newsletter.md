@@ -6,7 +6,7 @@ An email to her list, sent through MCM. Not a social platform, but it follows th
 When she sells something people decide on over time (coaching, a program, a course, consulting, a service with a long consideration), or when she already has a list of past clients and leads. Not as a first step for someone with no contacts at all: say the list grows from her forms and bookings in MCM, and start when it has people on it.
 
 ## Account
-Her sending address in MCM (a verified domain, so emails don't land in spam) and her list: a tag or a segment in MCM. Both live in `ghl.md` under **Newsletter**: from name, from email, reply-to, list. Deliverability (the domain, its records) is part of her MCM build; the content setup only checks it's there.
+Her sending address in MCM (a verified domain, so emails don't land in spam) and her list: a tag or a segment in MCM. Both live in `ghl.md` under **Newsletter**: from name, from email, reply-to, list. Deliverability (the domain, its records) and the list are part of her MCM build; the content setup records the details as she gives them and doesn't check them.
 
 ## Formats
 From the strategy library's newsletter catalog: one-idea letter (default), story and lesson, client question, case study, her week. About one issue in four or five is an **offer issue**: same format, but the one ask is the sale.
