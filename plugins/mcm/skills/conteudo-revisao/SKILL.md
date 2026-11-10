@@ -50,6 +50,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - MCM `get-posts` for the window (body: `type: all`, `accounts` as a comma-separated string, `skip`/`limit` as strings): for each published post, each platform's likes, comments and shares.
 - MCM `get-statistics` with the profile IDs (not the account IDs): impressions, reach and new followers per day for the window.
 - Newsletter on: MCM `get-campaign-stats` for each issue sent in the window: clicks, replies, unsubscribes (opens recorded, not trusted). Weigh them by `../conteudo-estrategia/platforms/newsletter.md`'s Results section.
+- Substack on: open her Substack dashboard in the browser and read new subscribers for the window, and each Note's replies, restacks and likes (`../conteudo-estrategia/platforms/substack.md`'s Results section). Browser not reachable: say so and leave Substack out of this review.
 - In `desempenho.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `inicial`), with the day's reach as the post's reach, and note the pull date. Add one line under "Totais da conta" for the window. If the file is missing, create it in conteudo-post's format (Posts · Totais da conta · O que aprendemos).
 
 ### Step 3 — Read
