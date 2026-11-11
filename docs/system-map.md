@@ -1,6 +1,6 @@
 ---
-last-verified: 2026-11-06
-version: 0.12.0
+last-verified: 2026-11-10
+version: 0.13.1
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -10,6 +10,21 @@ For the maintainer, not the user. This is convention #8's replacement in the cli
 every skill in the plugin has a row here. If this file and a SKILL.md disagree, the SKILL.md
 is what runs, and this file is stale. Each skill row names both editions (PT · EN, as in `docs/glossary.md`); paths are the PT edition's.
 
+## The machines (as of 0.13.0)
+
+| Machine | What it does for her | Skills (PT · EN) | Since |
+|---|---|---|---|
+| The system | Rules for every conversation, routing, write-back, upkeep; does the work itself, uses the browser when a connection can't, asks like a guide, not a form | sistema · system, instalar · install, contexto · context, atualizar · update | 0.1.0; browser fallback 0.10.0; guide-not-form 0.11.0 |
+| Departments and projects | Ongoing areas and finite work, each with a brief and a log, grouped by área | novo-/abrir-departamento, novo-/abrir-projeto | 0.1.0; áreas 0.3.1 |
+| CEO | The business strategy at the top: research, then a conversation; departments carry it out | estrategia-do-negocio · business-strategy | 0.11.0 (playbook researched 0.11.1) |
+| Course machine | Builds what she sells: program design, one lesson at a time, closes each live lesson from its transcript, reviews per module and round; a progress file per program | curso-instalar, curso-desenho, curso-aula, curso-fechar-aula, curso-revisao | 0.13.0 |
+| Content machine | Strategy, 4-week plan, Canva templates, static posts (incl. photo and headline photo), reels (beta), newsletter, Substack, monthly review | conteudo-* | 0.4.0 (PT) · MCM OS 0.1.0 (EN); newsletter 0.8.0; Substack 0.10.0; headline photo 0.12.0 |
+| Client Book | One sheet, history and Drive folder per client of hers; meetings filed into them | novo-cliente, abrir-cliente, guardar-no-cliente, resumo-da-reuniao | 0.2.0; meetings 0.3.0; existing history linked 0.7.1 |
+| Voice and day | Writing in her voice; the morning brief | minha-voz · my-voice, morning-brief | 0.1.0 |
+| Drive and brand | Numbered Drive folders and sorting; logo and brand kit | organizar-drive · organize-drive, brand-kit-designer | 0.1.7; brand kit 0.1.9 |
+
+Planned, in order (see the office vision in Rica's workspace): the CEO layer grows (strategy cascade, reporting up, state of the business, cross-department plan, handoffs, scoreboard, decision log, quarterly review); Marketing (launch, sell before you build); the GHL machine (puts everything into MCM); Community.
+
 ## The shape
 
 ```
@@ -17,7 +32,8 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         │  "folder connected + _sistema/ exists → load /mcm:sistema once"
         ▼
    sistema  ── always-on rules for the conversation: folder map, routing map,
-        │      write-back, index rule, 7-day upkeep, health file
+        │      write-back, index rule, 7-day upkeep, health file,
+        │      the browser as fallback (never "I can't"), questions as a guide, not a form
         │
         ├── abrir-departamento / abrir-projeto ── load a brief + its log (via contexto)
         ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente · resumo-da-reuniao ── one sheet, histórico and Drive folder per client of hers; meetings filed into them
@@ -25,7 +41,7 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief
         ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup) · conteudo-newsletter · conteudo-substack
-        ├── CEO: estrategia-do-negocio (research → conversation → estrategia.md, settled facts to the business brain)
+        ├── CEO (above the departments): estrategia-do-negocio (research → conversation → estrategia.md, settled facts to the business brain)
         ├── course machine: curso-instalar → curso-desenho → curso-aula → curso-fechar-aula → curso-revisao
         ├── atualizar ── reads Rica's shared Google Doc, her sim per item
         ├── brand-kit-designer ── MCM Brand Kit: original logos, feedback rounds, final kit + files; her sim to save
@@ -56,7 +72,8 @@ All names are Portuguese; skills refer to them exactly as written here.
     <slug>/entregas/<tipo>/     created on first use, one folder per type, each with index.md
     <slug>/entregas/planos/     plan files (3+ steps), kept current in place — rule in sistema
     ceo/                        the CEO department (v0.11.0): brief.md · estrategia.md (+ estrategia-<area>.md) · pesquisa/ — the business strategy; departments carry it out
-    cursos/                     the Cursos department (v0.12.0): brief.md · index.md · <programa>/ (programa.md · aulas/ · perguntas.md · retorno.md · depoimentos.md) — builds what she sells, one lesson at a time
+    cursos/                     the Cursos department (v0.13.0): brief.md · index.md · <programa>/ (index.md = its progress file · programa.md · aulas/ · perguntas.md · retorno.md · depoimentos.md) — builds what she sells, one lesson at a time
+    conteudo/                   the Conteúdo department (content machine): brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md (incl. § Newsletter, § Substack) · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · notas/ (Substack) · scripts/ · .env · rodadas-anteriores/
     clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
       index.md                  one line per client
       <slug>/ficha.md           one sheet per client: who, preferences, what's open, files (knowledge only)
@@ -94,7 +111,7 @@ tier changes that one word; nothing moves. A closed project's log gets `status: 
 
 ## Áreas (v0.3.1)
 
-An área groups departments and projects by the part of her life they belong to: Pessoal, and one per business. A label (`area:` in the brief frontmatter), never a folder, so paths, histories and the Client Book are untouched. Indexes group under `## <Área>` headers, Pessoal last. Each extra business has `sobre-mim/negocio-<area>.md`; readers of "the business file" use the área in play (rule in sistema's **Áreas**). The system (sistema) sits above every área: it is the chief of staff.
+An área groups departments and projects by the part of her life they belong to: Pessoal, and one per business. A label (`area:` in the brief frontmatter), never a folder, so paths, histories and the Client Book are untouched. Indexes group under `## <Área>` headers, Pessoal last. Each extra business has `sobre-mim/cerebro-do-negocio-<area>.md` (and its own `ceo/estrategia-<area>.md`); readers of "the business file" use the área in play (rule in sistema's **Áreas**). The system (sistema) sits above every área and routes; the CEO department holds the strategy every department follows.
 
 ## Write-back — how the system keeps its files current
 
@@ -106,6 +123,13 @@ Owned by **sistema**. Two tiers. The user-facing word for a brief is **brief** (
 | Hard — asks first | `sobre-mim/*` · a brief's **Propósito**, **Padrões**, **Rotinas**, **Decisões** · prices, offers · closing a project (brief, index line and log status, confirmed together) | Append to `_sistema/pendentes.md` silently; show the batch when she changes topic or wraps up; write approved items, drop declined ones, keep unanswered ones |
 
 Routing map (what goes where) lives in the sistema skill, so it updates with the plugin.
+
+## How the system acts and asks
+
+- **You make the moves** (sistema): the system does the work itself; a step is "manual" only when it truly can't be done from here, named with one action.
+- **The browser is the fallback, not "I can't"** (0.10.0): connections first; when one can't do a step, the browser in the Claude app (or Claude in Chrome). She signs in, never Claude; it stops before publish, send, delete, pay; scheduling something she approved is fine. "Can't" only when the browser is unreachable.
+- **A guide, not a form** (0.11.0): every question is what we need and why · what I'd recommend · "do you already know it, or want to work it out together?" Not knowing is the point.
+- **White label** (0.7.2): she hears "MCM", never GoHighLevel, HighLevel or GHL.
 
 ## Upkeep and health
 
@@ -119,8 +143,8 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 
 | Skill (PT · EN) | Source | Writes | Receipt |
 |---|---|---|---|
-| sistema · system | new (includes "You make the moves": do it yourself, diagnose before asking, manual steps named as manual with one action) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep | `_sistema/log.md` (upkeep runs only) |
-| instalar · install | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool) | `_sistema/log.md` per phase |
+| sistema · system | new (includes "You make the moves", the browser fallback, "Asking her things", the white-label rule) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep; the update tidy-up proposes renames (`negocio.md` → `cerebro-do-negocio.md`, 0.11.0) | `_sistema/log.md` (upkeep runs only) |
+| instalar · install | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool). Writes the installed version (0.7.2); takes old seed names (`negocio.md`); Step 8 offers the strategy session, then the content setup (0.11.0) | `_sistema/log.md` per phase |
 | contexto · context | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
 | novo-departamento · new-department | Rica's new-department; always asks the área | `departamentos/<slug>/brief.md` (with `area:`), `departamentos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-departamento · open-department | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
@@ -168,7 +192,7 @@ everything said to the user are Brazilian Portuguese.
 Skills never carry a client's themes, names, stories or examples. They read them from the client's own
 files (`sobre-mim/`), so the same plugin serves every client.
 
-## Not in v0.1.0
+## Not in v0.1.0 (historic; see The machines for what has shipped since)
 
 Schedules · audit/level-up/tune-up/optimize · add-skill · Blotato · GHL connector · podcast
 repurposer · mentoring recap · Google Docs for drafts (parked: drafts she edits by hand should
