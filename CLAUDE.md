@@ -23,3 +23,4 @@ Rica works on this repo from more than one chat.
 - Before every push: `git pull --rebase` again.
 - Before every merge: check main again. Your merge must not undo or rewrite anything another chat landed.
 - Work on a branch and open a pull request. Rica merges.
+- The one exception (Rica, 2026-11-12): a pull request that changes only the manual (`manual/source.html`), with its CHANGELOG line and version bump, Claude merges once check-sync passes. Keep the claude.ai artifact copy of the manual in step with it.
