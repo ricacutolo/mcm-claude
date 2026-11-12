@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.14.5 — 2026-11-12 [both]
+- **Manual:** a first visit opens in Portuguese when the browser's language is Portuguese, else English; the reader's own EN/PT pick is still remembered and wins (Rica, 2026-11-12). Manual only.
+
 ## 0.14.4 — 2026-11-12 [both]
 - **Manual:** tab order is now The system, CEO, Client Book, Content machine, Course machine (Rica, 2026-11-12). Manual only.
 
