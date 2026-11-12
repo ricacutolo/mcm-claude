@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.14.2 — 2026-11-12 [both]
+- **The MCM OS manual on its own site** (docs only; no skill changed). Rica, 2026-11-12: `manual.myclientmachine.com`. `manual/source.html` is the manual page (the same file published as the claude.ai artifact); `scripts/build-manual.py` wraps it into a standalone page, and the "Manual site" workflow deploys it to GitHub Pages on every push to main that touches it. `noindex` until Rica starts sharing it. Pages: The system, Content machine, Client Book, CEO, Course machine.
+
 ## 0.14.1 — 2026-11-12 [both]
 - **No client names in the repo** (Rica, 2026-11-12: the repo is public). A client's business in sistema's Áreas examples becomes a made-up one ("Viagens Silva", matching the English "Miller Travel"); two CHANGELOG lines no longer name a client. New rule in CLAUDE.md: no client names, emails, links, IDs or personal data in any file, commit or pull request. Docs and examples only; no behavior changed.
 

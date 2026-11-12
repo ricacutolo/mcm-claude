@@ -1,0 +1,921 @@
+<title>MCM OS Manual</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Lato:wght@400;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: a manual — machine nav on the left (each machine is an <article>, shown by the URL hash) (top chips on phones), one machine per page; each page reads top to bottom in the order she uses it: run once → day to day → things to say → every month. Diagrams are built from command nodes joined by arrows. */
+:root{
+  --bg:#FAF8F4; --paper:#FFFFFF; --ink:#0E2D36; --ink2:#4E6268; --line:#D9DEDB;
+  --accent:#E7963D; --accent-soft:#E6EDF6; --cmd:#0E5E66; --cmd-bg:#E3EFEF; --say-bg:#0E2D36; --say-fg:#FAF8F4;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif; --body:"Lato","Helvetica Neue",Arial,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1E24; --paper:#11292F; --ink:#E8EEEC; --ink2:#A3B5B6; --line:#24414A;
+  --accent:#F0A552; --accent-soft:#1B3447; --cmd:#9FD6D6; --cmd-bg:#173A41; --say-bg:#E8EEEC; --say-fg:#0B1E24; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1E24; --paper:#11292F; --ink:#E8EEEC; --ink2:#A3B5B6; --line:#24414A;
+  --accent:#F0A552; --accent-soft:#1B3447; --cmd:#9FD6D6; --cmd-bg:#173A41; --say-bg:#E8EEEC; --say-fg:#0B1E24; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+html[lang="pt-BR"] .en, html:not([lang="pt-BR"]) .pt{display:none!important}
+.shell{max-width:1180px;margin:0 auto;padding-block:28px 64px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;grid-template-columns:220px minmax(0,1fr);gap:40px}
+@media (max-width:860px){.shell{grid-template-columns:minmax(0,1fr);gap:20px}}
+
+/* nav */
+nav{display:flex;flex-direction:column;gap:18px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start}
+.brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.brand small{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--ink2);letter-spacing:0}
+.machines{display:flex;flex-direction:column;gap:4px;list-style:none;margin:0;padding:0}
+.machines > li > a,.machines > li > .soon{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--ink2);font-size:14.5px}
+.machines a[aria-current="page"]{background:var(--ink);color:var(--bg);font-weight:700}
+.machines .soon{opacity:.6}
+.machines .soon em{font-style:normal;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;background:var(--paper);padding:3px;gap:2px;align-self:flex-start}
+.switch button{font:600 12px var(--mono);border:0;background:transparent;color:var(--ink2);padding:6px 11px;border-radius:999px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.switch button:focus-visible,.machines a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr) auto;gap:14px 12px}
+  nav{display:contents}
+  .switch{grid-column:2;align-self:center}
+  .machines{grid-column:1/-1;position:sticky;top:0;z-index:20;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+  main{grid-column:1/-1;margin-top:10px}
+  .machines{flex-direction:row;flex-wrap:wrap;width:100%}
+  .machines .soon{display:none}
+}
+
+/* page */
+main{display:flex;flex-direction:column;gap:44px;min-width:0}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,52px);line-height:1.02;letter-spacing:-.02em;margin:6px 0 12px;text-wrap:balance}
+.intro{font-size:18px;max-width:62ch;margin:0;color:var(--ink)}
+.intro + .intro{margin-top:10px;color:var(--ink2);font-size:16px}
+h2{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.sec{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.when{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:var(--accent-soft);color:var(--ink);padding:4px 9px;border-radius:6px}
+.lede{color:var(--ink2);margin:0;max-width:62ch}
+
+/* prerequisite strip */
+.pre{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-size:14.5px;color:var(--ink2)}
+
+/* command node */
+.cmd{font-family:var(--mono);font-weight:600;font-size:14px;color:var(--cmd);background:var(--cmd-bg);border-radius:7px;padding:4px 9px;white-space:nowrap;display:inline-block}
+.node{background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.node > .cmd{align-self:flex-start}
+.node .what{font-family:var(--display);font-weight:700;font-size:17px;line-height:1.25}
+.node .why{color:var(--ink2);font-size:14.5px;line-height:1.45}
+.node ul{margin:2px 0 0;padding-left:18px;color:var(--ink2);font-size:14px;line-height:1.5}
+.node.key{border-color:var(--ink)}
+.down{display:flex;justify-content:center;color:var(--ink2);font-family:var(--mono);font-size:18px;line-height:1;padding:2px 0}
+
+/* run once: horizontal on wide, stacked on narrow */
+.chain{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) 28px minmax(0,1fr);align-items:stretch}
+.chain .arr{display:flex;align-items:center;justify-content:center;color:var(--ink2);font-family:var(--mono);font-size:18px}
+@media (max-width:720px){.chain{grid-template-columns:minmax(0,1fr)}.chain .arr{transform:rotate(90deg);padding:4px 0}}
+
+/* say bubble */
+.say{align-self:center;background:var(--say-bg);color:var(--say-fg);font-family:var(--display);font-weight:700;font-size:19px;padding:10px 18px;border-radius:18px 18px 18px 4px}
+
+/* day-to-day diagram */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0}
+.flow .center{align-self:center;max-width:420px;width:100%}
+.creation{position:relative;border:1.5px solid var(--accent);border-radius:14px;padding:26px 14px 14px;margin-top:6px}
+.creation > .tag{position:absolute;top:-11px;left:16px;background:var(--bg);padding:0 8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.makers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:720px){.makers{grid-template-columns:minmax(0,1fr)}}
+.side{font-size:13px;color:var(--ink2);border-top:1px dashed var(--line);padding-top:6px;margin-top:4px}
+.gate{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.gate span{font-size:13px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:4px 10px;color:var(--ink2)}
+
+/* things to say */
+.says{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.says.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.says.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.says.four{grid-template-columns:minmax(0,1fr)}}
+.s{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.s q{font-family:var(--display);font-weight:700;font-size:17px;quotes:"“" "”";line-height:1.3}
+.s p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.45}
+.s .cmd{align-self:flex-start;margin-top:auto}
+
+/* other things to say: balloon, then what happens, then the command */
+h3{font-family:var(--display);font-weight:800;font-size:19px;margin:22px 0 0;text-wrap:balance}
+.talk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px}
+@media (max-width:900px){.talk{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.talk{grid-template-columns:minmax(0,1fr)}}
+.talk .t{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+.talk .say{align-self:flex-start;font-size:17px;padding:9px 16px}
+.talk p{margin:0;color:var(--ink2);font-size:14.5px;line-height:1.45}
+/* callout */
+.callout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;background:var(--accent-soft);border-radius:14px;padding:18px 20px}
+.callout svg{flex:none}
+.callout p{margin:0;font-size:16.5px;max-width:62ch}
+.callout b{font-family:var(--display)}
+
+/* strategy panel: what /content-strategy decides */
+.strat{position:relative;border:1.5px solid var(--accent);border-radius:14px;padding:26px 18px 18px;margin-top:6px;display:flex;flex-direction:column;gap:18px}
+.strat > .tag{position:absolute;top:-11px;left:16px;background:var(--bg);padding:0 8px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.strat .how{margin:0;font-size:16.5px;max-width:70ch}
+.strat h4{font-family:var(--display);font-weight:700;font-size:15px;margin:0 0 8px;color:var(--ink)}
+.toggles{display:flex;flex-wrap:wrap;gap:8px}
+.tg{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 12px 5px 6px;font-size:14px}
+.tg i{width:28px;height:16px;border-radius:999px;background:var(--line);position:relative;flex:none}
+.tg i::after{content:"";position:absolute;top:2px;left:2px;width:12px;height:12px;border-radius:50%;background:var(--paper)}
+.tg.on i{background:var(--cmd)}
+.tg.on i::after{left:14px}
+.tg:not(.on){color:var(--ink2)}
+.note{font-size:13.5px;color:var(--ink2);margin:8px 0 0}
+.decides{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.decides{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.decides{grid-template-columns:minmax(0,1fr)}}
+.d{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.d b{display:block;font-family:var(--display);font-size:15.5px;margin-bottom:3px}
+.d span{color:var(--ink2);font-size:14px;line-height:1.45}
+
+.peek{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font:700 14.5px var(--display);color:#0E2D36;background:var(--accent);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.peek:hover{filter:brightness(1.06)}
+.peek:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.peek .chev{font-family:var(--mono)}
+.peek[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.node .peek{margin-top:6px}
+.strat[hidden]{display:none}
+.chain > .strat{grid-column:1/-1;grid-row:2;margin-top:22px}
+.strat::before{content:"";position:absolute;top:-9px;left:50%;width:16px;height:16px;background:var(--bg);border-left:1.5px solid var(--accent);border-top:1.5px solid var(--accent);transform:translateX(-50%) rotate(45deg)}
+.chain > .strat > .tag{display:none}
+.node.opened{border-color:var(--accent)}
+@media (max-width:720px){.chain > .strat{grid-row:auto;margin:22px 0 6px}}
+.machine{display:flex;flex-direction:column;gap:44px;scroll-margin-top:100vh}
+.machine[hidden]{display:none}
+.says.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.says.three{grid-template-columns:minmax(0,1fr)}}
+.chain > .strat.at-first::before{left:calc((100% - 56px)/6)}
+@media (max-width:720px){.chain > .strat.at-first::before{left:50%}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;counter-reset:st -1}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:minmax(0,1fr)}}
+.steps li{counter-increment:st;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 50px;position:relative;min-width:0}
+.steps li::before{content:counter(st);position:absolute;left:14px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bg);font:700 13px var(--display);display:grid;place-items:center}
+.steps b{display:block;font-family:var(--display);font-size:15.5px;margin-bottom:3px}
+.steps b small{font:500 12px var(--mono);color:var(--ink2);margin-left:6px}
+.steps span{color:var(--ink2);font-size:14px;line-height:1.45}
+.where{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:720px){.where{grid-template-columns:minmax(0,1fr)}}
+.solo{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr)}
+.solo > .strat{grid-column:1/-1;grid-row:2;margin-top:22px}
+.solo > .strat::before{left:220px}
+@media (max-width:720px){.solo{grid-template-columns:minmax(0,1fr)}.solo > .strat::before{left:50%}}
+.free{background:var(--accent-soft);border-radius:14px;padding:22px 22px 20px;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.free h2{grid-column:1/-1}
+.ways{display:grid;grid-template-columns:auto 36px minmax(0,320px);justify-content:start;align-items:center;gap:0 6px}
+.ways .many{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.ways .say{align-self:flex-start;font-size:16px;padding:8px 14px}
+.ways .arr{color:var(--ink2);font-family:var(--mono);text-align:center}
+@media (max-width:560px){.ways{grid-template-columns:minmax(0,1fr)}.ways .arr{transform:rotate(90deg);padding:6px 0}}
+.free ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+@media (max-width:720px){.free ul{grid-template-columns:minmax(0,1fr)}}
+.free li{padding-left:18px;position:relative;font-size:15.5px;line-height:1.45}
+.free li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.free li b{font-family:var(--display)}
+.mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:820px){.mini{grid-template-columns:minmax(0,1fr)}}
+.mini > div{display:flex;flex-direction:column;align-items:flex-start;gap:5px;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:10px 12px;min-width:0}
+.mini p{margin:0;color:var(--ink2);font-size:14px;line-height:1.4}
+.q{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.3}
+.node > .q + .cmd,.mini .q + .cmd{margin-top:-1px}
+.node.tool .q{margin-top:auto;padding-top:4px}
+/* section titles pin while you're in that section; the tag under them scrolls on */
+.sec > .sec-head{display:contents}
+.sec > .sec-head > h2{position:sticky;top:var(--tabs-h,0px);z-index:15;background:var(--bg);padding:8px 0;margin:-8px 0;border-bottom:1px solid transparent}
+.sec > .sec-head > .when{align-self:flex-start;margin-top:-10px}
+.mini.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.mini.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.mini.four{grid-template-columns:minmax(0,1fr)}}
+.mini p.to{color:var(--ink);font-weight:500}
+.loop .node .cmd{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+/* monthly loop */
+.loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:stretch}
+.loop .step{display:flex;align-items:stretch}
+.loop .step .node{flex:1}
+.loop .step + .step::before{content:"→";display:flex;align-items:center;padding:0 8px;color:var(--ink2);font-family:var(--mono)}
+.back{display:flex;justify-content:flex-end;gap:8px;align-items:center;color:var(--ink2);font-size:13.5px;margin-top:8px}
+@media (max-width:820px){.loop{grid-template-columns:minmax(0,1fr)}.loop .step{flex-direction:column}.loop .step + .step::before{content:"↓";justify-content:center;padding:4px 0}.back{justify-content:center}}
+
+footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--ink2);font-size:13px}
+@media (prefers-reduced-motion:no-preference){.machines a{transition:background .15s}}
+</style>
+
+<div class="shell">
+  <nav aria-label="Machines">
+    <div class="brand">MCM OS<small><span class="en">The manual</span><span class="pt">O manual</span></small></div>
+    <div class="switch" role="group" aria-label="Language">
+      <button id="btn-en" type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button id="btn-pt" type="button" data-lang="pt" aria-pressed="false">PT</button>
+    </div>
+    <ul class="machines">
+      <li><a href="#system"><span class="en">The system</span><span class="pt">O sistema</span></a></li>
+      <li><a href="#content"><span class="en">Content machine</span><span class="pt">Máquina de conteúdo</span></a></li>
+      <li><a href="#clients">Client Book</a></li>
+      <li><a href="#ceo">CEO</a></li>
+      <li><a href="#courses"><span class="en">Course machine</span><span class="pt">Máquina de cursos</span></a></li>
+    </ul>
+  </nav>
+
+  <main id="manual">
+  <article class="machine" id="content">
+    <header>
+      <p class="eyebrow"><span class="en">Machine</span><span class="pt">Máquina</span></p>
+      <h1><span class="en">Content machine</span><span class="pt">Máquina de conteúdo</span></h1>
+      <p class="intro"><span class="en">It turns what you know into posts, reels and newsletters, on a plan, in your voice and your brand, and schedules them in MCM. You approve every step; nothing goes live without your yes.</span><span class="pt">Ela transforma o que você sabe em posts, reels e newsletters, com um plano, na sua voz e com a sua marca, e agenda tudo no MCM. Você aprova cada etapa; nada vai ao ar sem o seu sim.</span></p>
+      <p class="intro"><span class="en">Why: posting regularly is what builds trust before anyone books with you, and it's the part that falls off first when you're busy. The machine keeps it going, and learns from your results every month.</span><span class="pt">Por quê: postar com constância é o que gera confiança antes de alguém fechar com você, e é a primeira coisa que fica pra trás quando a agenda aperta. A máquina mantém o ritmo, e aprende com os seus resultados todo mês.</span></p>
+    </header>
+
+    <div class="pre">
+      <span class="en">Before anything, once: MCM OS installed</span><span class="pt">Antes de tudo, uma vez: o MCM instalado</span>
+      <span class="cmd en">/install</span><span class="cmd pt">/instalar</span>
+    </div>
+
+    <!-- RUN ONCE -->
+    <section class="sec" aria-labelledby="h-once">
+      <div class="sec-head"><h2 id="h-once"><span class="en">Set it up</span><span class="pt">Configure</span></h2><span class="when"><span class="en">Run once</span><span class="pt">Uma vez</span></span></div>
+      <p class="lede"><span class="en">In this order. Each one ends by offering the next.</span><span class="pt">Nessa ordem. Cada uma termina oferecendo a próxima.</span></p>
+      <div class="chain">
+        <div class="node">
+          <span class="cmd en">/content-install</span><span class="cmd pt">/conteudo-instalar</span>
+          <div class="what"><span class="en">Connect everything</span><span class="pt">Conecta tudo</span></div>
+          <div class="why"><span class="en">Your Content department, Canva, your brand on the templates, MCM and its social accounts. About an hour, one step at a time, and you can stop and pick up later.</span><span class="pt">O seu departamento de Conteúdo, o Canva, a sua marca nos modelos, o MCM e as redes. Mais ou menos uma hora, um passo de cada vez, e dá pra parar e continuar depois.</span></div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+        <div class="node">
+          <span class="cmd en">/content-strategy</span><span class="cmd pt">/conteudo-estrategia</span>
+          <div class="what"><span class="en">Decide what to post</span><span class="pt">Decide o que postar</span></div>
+          <div class="why"><span class="en">Who you post for, what your content is for right now, your topics, post types and formats, when you post, and the one thing you ask people to do.</span><span class="pt">Para quem você posta, para que serve o conteúdo agora, os seus temas, tipos de post e formatos, quando você posta, e a única coisa que você pede pras pessoas fazerem.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="strat"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="strat" hidden>
+          <span class="tag"><span class="en">Inside /content-strategy</span><span class="pt">Dentro de /conteudo-estrategia</span></span>
+          <p class="how"><span class="en">You don't figure this out alone. Claude drafts your strategy from what it already knows about your business, asks you at most 6 questions, each with a suggested answer, and saves nothing until you say yes. It's built around the hours you actually have each week.</span><span class="pt">Você não precisa descobrir isso sozinha. O Claude rascunha a sua estratégia a partir do que já sabe do seu negócio, faz no máximo 6 perguntas, cada uma com uma resposta sugerida, e não salva nada até você dizer sim. Tudo cabe nas horas que você realmente tem por semana.</span></p>
+          <div>
+            <h4><span class="en">Where you post: each one is a switch</span><span class="pt">Onde você posta: cada um é um interruptor</span></h4>
+            <div class="toggles"><span class="tg on"><i aria-hidden="true"></i>Instagram</span><span class="tg on"><i aria-hidden="true"></i>Facebook</span><span class="tg"><i aria-hidden="true"></i>LinkedIn</span><span class="tg on"><i aria-hidden="true"></i>Newsletter</span><span class="tg"><i aria-hidden="true"></i>Substack</span></div>
+            <p class="note"><span class="en">An example. Turn one on or off anytime by saying so; the plan follows.</span><span class="pt">Um exemplo. Liga ou desliga qualquer um a qualquer hora, é só dizer; o plano acompanha.</span></p>
+          </div>
+          <div>
+            <h4><span class="en">What it decides with you</span><span class="pt">O que ela decide com você</span></h4>
+            <div class="decides">
+            <div class="d"><b><span class="en">What content is for right now</span><span class="pt">Para que serve o conteúdo agora</span></b><span class="en">Trust (people checking you out like what they see), reach (more people find you), or leads (posts bring in inquiries).</span><span class="pt">Confiança (quem te pesquisa gosta do que vê), alcance (mais gente te encontra) ou contatos (os posts trazem pedidos).</span></div>
+            <div class="d"><b><span class="en">Who you post for</span><span class="pt">Para quem você posta</span></b><span class="en">Your customers, and the topics they care about, in their own words: their pains, doubts and objections.</span><span class="pt">Os seus clientes, e os temas que importam pra eles, nas palavras deles: as dores, as dúvidas e as objeções.</span></div>
+            <div class="d"><b><span class="en">On camera or not</span><span class="pt">Aparecer ou não</span></b><span class="en">Yes, no or sometimes. Reels come in only if you want to be on camera.</span><span class="pt">Sim, não ou às vezes. Reels só entram se você quiser aparecer.</span></div>
+            <div class="d"><b><span class="en">Post types and formats</span><span class="pt">Tipos de post e formatos</span></b><span class="en">Which are on: tips, myth vs truth, before and after, carousels, photo posts, reels, and more.</span><span class="pt">Quais ficam ligados: dicas, mito vs verdade, antes e depois, carrosséis, posts com foto, reels e outros.</span></div>
+            <div class="d"><b><span class="en">When you post</span><span class="pt">Quando você posta</span></b><span class="en">Days, time and how often. With the newsletter on, how often it goes out and whether it sets each week's theme.</span><span class="pt">Dias, horário e frequência. Com a newsletter ligada, a frequência dela e se ela define o tema da semana.</span></div>
+            <div class="d"><b><span class="en">The one ask</span><span class="pt">O único pedido</span></b><span class="en">The one thing every post asks people to do, matched to how you take bookings.</span><span class="pt">A única coisa que todo post pede pras pessoas fazerem, de acordo com o jeito que você agenda.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+        <div class="node">
+          <span class="cmd en">/content-plan</span><span class="cmd pt">/conteudo-plano</span>
+          <div class="what"><span class="en">Plan 4 weeks</span><span class="pt">Planeja 4 semanas</span></div>
+          <div class="why"><span class="en">One topic, post type and format for each posting day, using your saved ideas first. It flags any Canva template to build before its day.</span><span class="pt">Um tema, um tipo de post e um formato para cada dia de postar, usando primeiro as suas ideias salvas. Avisa se algum modelo do Canva precisa ser criado antes do dia.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY TO DAY -->
+    <section class="sec" aria-labelledby="h-day">
+      <div class="sec-head"><h2 id="h-day"><span class="en">Day to day</span><span class="pt">No dia a dia</span></h2><span class="when"><span class="en">Every posting day</span><span class="pt">Todo dia de postar</span></span></div>
+      <p class="lede"><span class="en">One phrase starts it. The plan already knows what's next.</span><span class="pt">Uma frase começa tudo. O plano já sabe o que vem a seguir.</span></p>
+      <div class="flow">
+        <div class="say"><span class="en">“What's next?”</span><span class="pt">“Qual o próximo?”</span></div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node key center">
+          <span class="cmd en">/content-post</span><span class="cmd pt">/conteudo-post</span>
+          <div class="what"><span class="en">Finds your next post in the plan</span><span class="pt">Acha o seu próximo post no plano</span></div>
+          <div class="why"><span class="en">Picks it up where it stopped, moves it if its day passed (never two posts on one day), and hands it to the right maker.</span><span class="pt">Retoma de onde parou, muda o dia se ele passou (nunca dois posts no mesmo dia) e passa pro criador certo.</span></div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="creation">
+          <span class="tag"><span class="en">Creation</span><span class="pt">Criação</span></span>
+          <div class="makers">
+            <div class="node">
+              <span class="cmd en">/content-static</span><span class="cmd pt">/conteudo-estatico</span>
+              <div class="what"><span class="en">Image posts</span><span class="pt">Posts de imagem</span></div>
+              <ul class="en"><li>Carousel</li><li>Illustrated carousel</li><li>Text post</li><li>Photo and photo carousel</li><li>Headline photo</li></ul>
+              <ul class="pt"><li>Carrossel</li><li>Carrossel ilustrado</li><li>Post de texto</li><li>Foto e carrossel de fotos</li><li>Foto com título</li></ul>
+              <div class="side"><span class="en">Needs a new design? </span><span class="pt">Precisa de um design novo? </span><span class="cmd en">/content-template</span><span class="cmd pt">/conteudo-modelo</span><span class="en"> builds it in Canva first.</span><span class="pt"> cria no Canva antes.</span></div>
+            </div>
+            <div class="node">
+              <span class="cmd en">/content-video</span><span class="cmd pt">/conteudo-video</span>
+              <div class="what"><span class="en">Reels <small>(beta)</small></span><span class="pt">Reels <small>(beta)</small></span></div>
+              <ul class="en"><li>Talking-head reels, script written with you</li><li>Your best takes picked and cut from your Drive clips</li><li>Branded captions, word for word</li><li>Animated diagrams that pop in on the key lines</li><li>Your logo on the end card</li></ul>
+              <ul class="pt"><li>Reels falando pra câmera, roteiro feito com você</li><li>Os melhores takes escolhidos e cortados dos seus vídeos no Drive</li><li>Legendas com a sua marca, palavra por palavra</li><li>Diagramas animados que entram nas frases-chave</li><li>A sua logo no final</li></ul>
+              <div class="side"><span class="en">Longer videos aren't made yet.</span><span class="pt">Vídeos longos ainda não.</span></div>
+            </div>
+            <div class="node">
+              <span class="cmd en">/content-newsletter</span><span class="cmd pt">/conteudo-newsletter</span>
+              <div class="what"><span class="en">Newsletter <small>(if on)</small></span><span class="pt">Newsletter <small>(se ligada)</small></span></div>
+              <ul class="en"><li>One issue to your email list</li><li>Sets the theme for the posts around it</li></ul>
+              <ul class="pt"><li>Uma edição para a sua lista</li><li>Dá o tema dos posts ao redor</li></ul>
+              <div class="side"><span class="en">Substack on? </span><span class="pt">Substack ligado? </span><span class="cmd">/content-substack</span><span class="en"> puts it there too.</span><span class="pt"> coloca lá também.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node key center">
+          <div class="what"><span class="en">Your approval, at every step</span><span class="pt">A sua aprovação, em cada etapa</span></div>
+          <div class="gate en"><span>the idea</span><span>the words</span><span>the design</span><span>the day and time</span></div>
+          <div class="gate pt"><span>a ideia</span><span>o texto</span><span>o design</span><span>o dia e a hora</span></div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="say" style="border-radius:18px"><span class="en">Scheduled in MCM</span><span class="pt">Agendado no MCM</span></div>
+      </div>
+
+      <h3><span class="en">Other things you can say</span><span class="pt">Outras coisas que você pode dizer</span></h3>
+      <div class="talk">
+        <div class="t">
+          <div class="say"><span class="en">“Save this idea”</span><span class="pt">“Guarda essa ideia”</span></div>
+          <p><span class="en">Type it, paste a note, or attach a voice memo or a photo. It goes to your ideas list, and the next plan uses it first.</span><span class="pt">Escreva, cole uma nota, ou mande um áudio ou uma foto. Vai pra sua lista de ideias, e o próximo plano usa ela primeiro.</span></p>
+          <span class="cmd en">/content-post</span><span class="cmd pt">/conteudo-post</span>
+        </div>
+        <div class="t">
+          <div class="say"><span class="en">“Make this the next post”</span><span class="pt">“Faz disso o próximo post”</span></div>
+          <p><span class="en">The plan puts it in the next slot, then you make it like any other post.</span><span class="pt">O plano coloca no próximo horário, e você faz como qualquer outro post.</span></p>
+          <span class="cmd en">/content-plan</span><span class="cmd pt">/conteudo-plano</span>
+        </div>
+        <div class="t">
+          <div class="say"><span class="en">“Write the newsletter”</span><span class="pt">“Escreve a newsletter”</span></div>
+          <p><span class="en">From your idea to scheduled for your list.</span><span class="pt">Da sua ideia até agendada para a sua lista.</span></p>
+          <span class="cmd en">/content-newsletter</span><span class="cmd pt">/conteudo-newsletter</span>
+        </div>
+        <div class="t">
+          <div class="say"><span class="en">“I recorded the clips”</span><span class="pt">“Gravei os vídeos”</span></div>
+          <p><span class="en">Your clips from Drive become the reel: best takes, branded captions, animated diagrams, your end card.</span><span class="pt">Os seus vídeos do Drive viram o reel: melhores takes, legendas com a sua marca, diagramas animados e o seu final.</span></p>
+          <span class="cmd en">/content-video</span><span class="cmd pt">/conteudo-video</span>
+        </div>
+        <div class="t">
+          <div class="say"><span class="en">“How did my posts do?”</span><span class="pt">“Como foram os meus posts?”</span></div>
+          <p><span class="en">The monthly review: what worked, and what to change next.</span><span class="pt">A revisão do mês: o que funcionou, e o que mudar a seguir.</span></p>
+          <span class="cmd en">/content-review</span><span class="cmd pt">/conteudo-revisao</span>
+        </div>
+      </div>
+      <div class="callout">
+        <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="4" y="9" width="36" height="28" rx="6" fill="var(--ink)"/><path d="M14 23h16M22 15v16" stroke="var(--accent-soft)" stroke-width="3.5" stroke-linecap="round"/></svg>
+        <p class="en"><b>Bring anything.</b> A note, a voice memo, a photo, a link, an old post: any raw material can go into the content machine at any point. Just say what you want to do with it.</p>
+        <p class="pt"><b>Traga qualquer coisa.</b> Uma nota, um áudio, uma foto, um link, um post antigo: qualquer material pode entrar na máquina de conteúdo a qualquer hora. É só dizer o que você quer fazer com ele.</p>
+      </div>
+    </section>
+
+    <!-- RUN ANYTIME -->
+    <section class="sec" aria-labelledby="h-any">
+      <div class="sec-head"><h2 id="h-any"><span class="en">Change things</span><span class="pt">Ajuste quando quiser</span></h2><span class="when"><span class="en">Run anytime</span><span class="pt">A qualquer hora</span></span></div>
+      <p class="lede"><span class="en">Outside the daily flow, whenever you need them.</span><span class="pt">Fora do fluxo do dia a dia, sempre que precisar.</span></p>
+      <div class="says four">
+        <div class="node">
+          <span class="cmd en">/content-template</span><span class="cmd pt">/conteudo-modelo</span>
+          <div class="what"><span class="en">Build a new design</span><span class="pt">Cria um design novo</span></div>
+          <div class="why"><span class="en">A Canva template in your brand for a new format: layout first, then the design, with your yes at each step.</span><span class="pt">Um modelo no Canva com a sua marca para um formato novo: primeiro o layout, depois o design, com o seu sim em cada etapa.</span></div>
+        </div>
+        <div class="node">
+          <span class="cmd en">/content-plan</span><span class="cmd pt">/conteudo-plano</span>
+          <div class="what"><span class="en">Plan or change the plan</span><span class="pt">Planeja ou muda o plano</span></div>
+          <div class="why"><span class="en">The next 4 weeks when the plan runs low, or one change: a new format, an idea moved up, the plan shifted after a missed day.</span><span class="pt">As próximas 4 semanas quando o plano estiver acabando, ou uma mudança: um formato novo, uma ideia adiantada, o plano empurrado depois de um dia perdido.</span></div>
+        </div>
+        <div class="node">
+          <span class="cmd en">/content-strategy</span><span class="cmd pt">/conteudo-estrategia</span>
+          <div class="what"><span class="en">Revise the strategy</span><span class="pt">Revisa a estratégia</span></div>
+          <div class="why"><span class="en">A new offer, a new audience, a platform on or off (newsletter, Substack, LinkedIn): the strategy changes first, the plan follows.</span><span class="pt">Uma oferta nova, um público novo, uma rede ligada ou desligada (newsletter, Substack, LinkedIn): a estratégia muda primeiro, o plano segue.</span></div>
+        </div>
+        <div class="node">
+          <span class="cmd en">/content-install</span><span class="cmd pt">/conteudo-instalar</span>
+          <div class="what"><span class="en">Pick up the setup</span><span class="pt">Retoma a configuração</span></div>
+          <div class="why"><span class="en">Stopped halfway, or a new connection to make? It continues from the step where you left off.</span><span class="pt">Parou no meio, ou tem uma conexão nova pra fazer? Continua do passo onde você parou.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MONTHLY -->
+    <section class="sec" aria-labelledby="h-month">
+      <div class="sec-head"><h2 id="h-month"><span class="en">Learn from your results</span><span class="pt">Aprenda com os resultados</span></h2><span class="when"><span class="en">Every month</span><span class="pt">Todo mês</span></span></div>
+      <p class="lede"><span class="en">Say “how did my posts do?”. The strategy gets better each month, with your yes.</span><span class="pt">Diga “como foram os meus posts?”. A estratégia melhora todo mês, com o seu sim.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><span class="cmd en">/content-review</span><span class="cmd pt">/conteudo-revisao</span><div class="what"><span class="en">Pull the results</span><span class="pt">Puxa os resultados</span></div><div class="why"><span class="en">Each post's numbers from MCM.</span><span class="pt">Os números de cada post, do MCM.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Read them</span><span class="pt">Lê os números</span></div><div class="why"><span class="en">By topic, post type and format: what works, what doesn't.</span><span class="pt">Por tema, tipo de post e formato: o que funciona e o que não.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Decide together</span><span class="pt">Decidem juntos</span></div><div class="why"><span class="en">At most 5 changes. You pick which.</span><span class="pt">No máximo 5 mudanças. Você escolhe quais.</span></div></div></div>
+        <div class="step"><div class="node"><span class="cmd en">/content-strategy</span><span class="cmd pt">/conteudo-estrategia</span><div class="what"><span class="en">Update the strategy</span><span class="pt">Atualiza a estratégia</span></div><div class="why"><span class="en">And the next plan follows it.</span><span class="pt">E o próximo plano segue ela.</span></div></div></div>
+      </div>
+      <div class="back"><span aria-hidden="true">↺</span><span class="en">back to day to day, with a sharper plan</span><span class="pt">de volta ao dia a dia, com um plano melhor</span></div>
+    </section>
+
+  </article>
+  <article class="machine" id="system" hidden>
+    <header>
+      <p class="eyebrow"><span class="en">The base</span><span class="pt">A base</span></p>
+      <h1><span class="en">The system</span><span class="pt">O sistema</span></h1>
+      <p class="intro"><span class="en">One Claude that knows you and your business. You talk normally; it sends each thing to the right place, saves what matters and does the work itself. Nothing is sent, posted or deleted without your yes.</span><span class="pt">Um Claude que conhece você e o seu negócio. Você fala normal; ele manda cada coisa pro lugar certo, guarda o que importa e faz o trabalho sozinho. Nada é enviado, postado ou apagado sem o seu sim.</span></p>
+      <p class="intro"><span class="en">Why: you never explain everything again. Every chat starts from what's already known and picks up where the last one stopped.</span><span class="pt">Por quê: você nunca mais explica tudo de novo. Todo chat começa do que já se sabe e continua de onde o último parou.</span></p>
+    </header>
+
+    <div class="pre"><span class="en">Every new chat: connect your Claude folder. Without it, it's a plain Claude.</span><span class="pt">Em todo chat novo: conecte a sua pasta do Claude. Sem ela, é um Claude comum.</span></div>
+
+    <section class="free" aria-labelledby="hs-free">
+      <h2 id="hs-free"><span class="en">Talk to it. You can't break it.</span><span class="pt">Converse com ele. Não tem como quebrar.</span></h2>
+      <div class="ways">
+        <div class="many">
+          <div class="say"><span class="en">“Let's work on content”</span><span class="pt">“Vamos trabalhar no conteúdo”</span></div>
+          <div class="say"><span class="en">“Open Content”</span><span class="pt">“Abre o Conteúdo”</span></div>
+          <div class="say"><span class="en">“Where were we with the posts?”</span><span class="pt">“Onde a gente parou com os posts?”</span></div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+        <div class="node key"><div class="what"><span class="en">Same place</span><span class="pt">O mesmo lugar</span></div><div class="why"><span class="en">Your Content department, right where you left it.</span><span class="pt">O seu departamento de Conteúdo, do jeito que você deixou.</span></div></div>
+      </div>
+      <ul>
+        <li><span class="en"><b>No exact words.</b> Old software made you find the right button. Here you say it your way, even half a sentence.</span><span class="pt"><b>Sem palavras exatas.</b> Software antigo fazia você achar o botão certo. Aqui você fala do seu jeito, até meia frase.</span></li>
+        <li><span class="en"><b>Ask anything, anytime.</b> How something works, what you decided last week, what it can do for you.</span><span class="pt"><b>Pergunte qualquer coisa, a qualquer hora.</b> Como algo funciona, o que você decidiu semana passada, o que ele pode fazer por você.</span></li>
+        <li><span class="en"><b>Nothing gets lost.</b> It never deletes, and anything important waits for your yes.</span><span class="pt"><b>Nada se perde.</b> Ele nunca apaga, e tudo que é importante espera o seu sim.</span></li>
+        <li><span class="en"><b>The commands on this page are shortcuts</b>, not rules.</span><span class="pt"><b>Os comandos dessa página são atalhos</b>, não regras.</span></li>
+      </ul>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-once">
+      <div class="sec-head"><h2 id="hs-once"><span class="en">Set it up</span><span class="pt">Configure</span></h2><span class="when"><span class="en">Run once</span><span class="pt">Uma vez</span></span></div>
+      <div class="solo">
+        <div class="node">
+          <span class="cmd en">/install</span><span class="cmd pt">/instalar</span>
+          <div class="what"><span class="en">Set up your system</span><span class="pt">Instale o seu sistema</span></div>
+          <div class="why"><span class="en">Who you are, your business, how you write, your connections and your first departments. Short steps: stop anytime and pick up where you left off. When it's done, it also suggests organizing your Drive and making your brand, if you need one.</span><span class="pt">Quem você é, o seu negócio, como você escreve, as suas conexões e os seus primeiros departamentos. Etapas curtas: pare quando quiser e continue de onde parou. No final, sugere também organizar o seu Drive e criar a sua marca, se você precisar.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="install-steps"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="install-steps" hidden>
+          <p class="how"><span class="en">One question at a time, each with a suggested answer, and “I don't know yet” is a fine answer. If Rica prepared your answers in advance, each step is just checking them.</span><span class="pt">Uma pergunta de cada vez, cada uma com uma resposta sugerida, e “ainda não sei” é uma ótima resposta. Se o Rica já preparou as suas respostas, cada etapa é só conferir.</span></p>
+          <ol class="steps">
+            <li><b><span class="en">Getting started</span><span class="pt">Começo</span><small>2 min</small></b><span class="en">Google Drive first, then your folders.</span><span class="pt">O Google Drive primeiro, depois as suas pastas.</span></li>
+            <li><b><span class="en">Instructions for Claude</span><span class="pt">Instruções para o Claude</span><small>10 min</small></b><span class="en">Pasted once in Claude's settings. It's what makes every chat use your system.</span><span class="pt">Coladas uma vez nas configurações do Claude. É o que faz todo chat usar o seu sistema.</span></li>
+            <li><b><span class="en">Who you are</span><span class="pt">Quem você é</span><small>5-10 min</small></b><span class="en">Your life, your schedule, how you like to work.</span><span class="pt">A sua vida, a sua rotina, como você gosta de trabalhar.</span></li>
+            <li><b><span class="en">Your business</span><span class="pt">Seu negócio</span><small>5-15 min</small></b><span class="en">What you sell, to whom, your prices and your goals.</span><span class="pt">O que você vende, pra quem, os seus preços e as suas metas.</span></li>
+            <li><b><span class="en">Your writing</span><span class="pt">Sua escrita</span><small>5-15 min</small></b><span class="en">Your voice, the words you use and the ones you never use.</span><span class="pt">A sua voz, as palavras que você usa e as que você nunca usa.</span></li>
+            <li><b><span class="en">Connections</span><span class="pt">Conexões</span><small>10-15 min</small></b><span class="en">Gmail, Calendar, Drive, the folder you share with Rica, your meetings. Sending email stays blocked.</span><span class="pt">Gmail, Agenda, Drive, a pasta que você divide com o Rica, as suas reuniões. Enviar e-mail fica bloqueado.</span></li>
+            <li><b><span class="en">Departments</span><span class="pt">Departamentos</span><small>10-15 min</small></b><span class="en">Your ongoing areas, starting with Content.</span><span class="pt">As suas áreas contínuas, começando por Conteúdo.</span></li>
+            <li><b><span class="en">Quick tour</span><span class="pt">Tour rápido</span><small>10 min</small></b><span class="en">Three live demos: a department, your voice, your day.</span><span class="pt">Três demonstrações ao vivo: um departamento, a sua voz, o seu dia.</span></li>
+            <li><b><span class="en">First real test</span><span class="pt">Primeiro teste de verdade</span><small>10 min</small></b><span class="en">Checks that the writing sounds like you, then offers the strategy session and the content setup.</span><span class="pt">Confere se a escrita parece você, depois oferece a sessão de estratégia e a configuração do conteúdo.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-new">
+      <div class="sec-head"><h2 id="hs-new"><span class="en">Start something new</span><span class="pt">Comece algo novo</span></h2><span class="when"><span class="en">When it comes up</span><span class="pt">Quando aparecer</span></span></div>
+      <p class="lede"><span class="en">Does it have an end? It's a project. If it doesn't, it's a department.</span><span class="pt">Tem fim? É um projeto. Se não tem, é um departamento.</span></p>
+      <div class="mini">
+        <div><div class="q"><span class="en">“I want a department for mentoring”</span><span class="pt">“Quero um departamento pra mentoria”</span></div><span class="cmd en">/new-department</span><span class="cmd pt">/novo-departamento</span><p><span class="en">Something ongoing, with no end: mentoring, a podcast.</span><span class="pt">Algo contínuo, sem fim: mentoria, um podcast.</span></p></div>
+        <div><div class="q"><span class="en">“This should be a project”</span><span class="pt">“Isso devia ser um projeto”</span></div><span class="cmd en">/new-project</span><span class="cmd pt">/novo-projeto</span><p><span class="en">Something with an end: a launch, a pilot class.</span><span class="pt">Algo com fim: um lançamento, uma turma piloto.</span></p></div>
+        <div><div class="q"><span class="en">“This conversation is about the new studio”</span><span class="pt">“Essa conversa é sobre o estúdio novo”</span></div><span class="cmd en">/context</span><span class="cmd pt">/contexto</span><p><span class="en">Any other topic: a person, an idea. Its history starts the first time.</span><span class="pt">Qualquer outro assunto: uma pessoa, uma ideia. O histórico começa na primeira vez.</span></p></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-day">
+      <div class="sec-head"><h2 id="hs-day"><span class="en">Day to day</span><span class="pt">No dia a dia</span></h2><span class="when"><span class="en">Every conversation</span><span class="pt">Toda conversa</span></span></div>
+      <p class="lede"><span class="en">Connect the folder and talk normally. You never need to know a command.</span><span class="pt">Conecte a pasta e fale normal. Você nunca precisa saber um comando.</span></p>
+      <div class="flow">
+        <div class="say"><span class="en">“Let's work on content”</span><span class="pt">“Vamos trabalhar no conteúdo”</span></div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node key center">
+          <div class="what"><span class="en">One Claude sends it to the right place</span><span class="pt">Um Claude manda pro lugar certo</span></div>
+          <div class="why"><span class="en">It knows where each thing belongs: a department, a project, a client, your writing, your day.</span><span class="pt">Ele sabe onde cada coisa fica: um departamento, um projeto, um cliente, a sua escrita, o seu dia.</span></div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="creation">
+          <span class="tag"><span class="en">Where it goes</span><span class="pt">Pra onde vai</span></span>
+          <div class="where">
+            <div class="node">
+              <div class="q"><span class="en">“Open Content”</span><span class="pt">“Abre o Conteúdo”</span></div>
+              <span class="cmd en">/open-department</span><span class="cmd pt">/abrir-departamento</span>
+              <div class="what"><span class="en">A department</span><span class="pt">Um departamento</span></div>
+              <ul class="en"><li>Its brief and its history, loaded</li><li>Where it stands and the next step</li></ul>
+              <ul class="pt"><li>O resumo e o histórico, carregados</li><li>Onde está e o próximo passo</li></ul>
+            </div>
+            <div class="node">
+              <div class="q"><span class="en">“Where are we on the launch?”</span><span class="pt">“Onde estamos no lançamento?”</span></div>
+              <span class="cmd en">/open-project</span><span class="cmd pt">/abrir-projeto</span>
+              <div class="what"><span class="en">A project</span><span class="pt">Um projeto</span></div>
+              <ul class="en"><li>Its brief and its history, loaded</li><li>Where it stands and the next step</li><li>Closed when you say it's done</li></ul>
+              <ul class="pt"><li>O resumo e o histórico, carregados</li><li>Onde está e o próximo passo</li><li>Fechado quando você diz que acabou</li></ul>
+            </div>
+            <div class="node">
+              <div class="q"><span class="en">“Where did we leave off on the podcast idea?”</span><span class="pt">“Onde a gente parou na ideia do podcast?”</span></div>
+              <span class="cmd en">/context</span><span class="cmd pt">/contexto</span>
+              <div class="what"><span class="en">Any other topic</span><span class="pt">Qualquer outro assunto</span></div>
+              <ul class="en"><li>Its history, loaded</li><li>You pick up where you left off</li></ul>
+              <ul class="pt"><li>O histórico, carregado</li><li>Você continua de onde parou</li></ul>
+            </div>
+          </div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node key center">
+          <div class="what"><span class="en">It saves what matters</span><span class="pt">Ele guarda o que importa</span></div>
+          <div class="gate en"><span>small things: saved, told in one line</span><span>important things: wait for your yes</span><span>never sends, posts or deletes</span></div>
+          <div class="gate pt"><span>coisas pequenas: salvas, avisadas numa linha</span><span>coisas importantes: esperam o seu sim</span><span>nunca envia, posta ou apaga</span></div>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="say" style="border-radius:18px"><span class="en">The next chat picks up from here</span><span class="pt">O próximo chat continua daqui</span></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-any">
+      <div class="sec-head"><h2 id="hs-any"><span class="en">Save from anywhere</span><span class="pt">Guarde de qualquer lugar</span></h2><span class="when"><span class="en">Any chat, anytime</span><span class="pt">Qualquer chat, a qualquer hora</span></span></div>
+      <p class="lede"><span class="en">Whatever chat you're in, say “remember this” or “save this to…”, about any department, project, client or your business. It goes to the right place. And when something worth keeping comes up on its own, it notices: small things are saved and mentioned in one line; important things, like your prices or your strategy, wait and come together at the next pause for your yes.</span><span class="pt">Em qualquer chat, diga “lembra disso” ou “guarda isso em…”, sobre qualquer departamento, projeto, cliente ou o seu negócio. Vai pro lugar certo. E quando aparece sozinho algo que vale guardar, ele percebe: coisas pequenas são salvas e avisadas numa linha; coisas importantes, como os seus preços ou a sua estratégia, esperam e aparecem juntas na próxima pausa, pro seu sim.</span></p>
+      <div class="mini four">
+        <div><div class="q"><span class="en">“Remember: my price is now $400”</span><span class="pt">“Lembra: o meu preço agora é R$ 400”</span></div><p class="to">→ <span class="en">Your business brain, on your yes</span><span class="pt">O cérebro do negócio, com o seu sim</span></p></div>
+        <div><div class="q"><span class="en">“Save this decision to the launch project”</span><span class="pt">“Guarda essa decisão no projeto do lançamento”</span></div><p class="to">→ <span class="en">The project's decisions</span><span class="pt">As decisões do projeto</span></p></div>
+        <div><div class="q"><span class="en">“Maria prefers morning sessions”</span><span class="pt">“A Maria prefere sessões de manhã”</span></div><p class="to">→ <span class="en">Maria's sheet</span><span class="pt">A ficha da Maria</span></p></div>
+        <div><div class="q"><span class="en">“Let's do a workshop before the course”</span><span class="pt">“Vamos fazer um workshop antes do curso”</span></div><p class="to">→ <span class="en">Suggested as a strategy update</span><span class="pt">Sugerido como atualização da estratégia</span></p></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-tools">
+      <div class="sec-head"><h2 id="hs-tools"><span class="en">Tools in your system</span><span class="pt">Ferramentas do seu sistema</span></h2><span class="when"><span class="en">Anytime</span><span class="pt">A qualquer hora</span></span></div>
+      <p class="lede"><span class="en">Small helpers for the work, whenever you need them.</span><span class="pt">Ajudantes pro trabalho, sempre que você precisar.</span></p>
+      <div class="says four">
+        <div class="node tool">
+          <div class="what"><span class="en">Voice writer</span><span class="pt">Escrita na sua voz</span></div>
+          <div class="why"><span class="en">Emails, texts, replies and invitations that sound like you, not like AI. You send them.</span><span class="pt">E-mails, mensagens, respostas e convites que parecem você, não uma IA. Quem envia é você.</span></div>
+          <div class="q"><span class="en">“Write this in my voice”</span><span class="pt">“Escreve isso na minha voz”</span></div>
+          <span class="cmd en">/my-voice</span><span class="cmd pt">/minha-voz</span>
+        </div>
+        <div class="node tool">
+          <div class="what"><span class="en">Drive organization</span><span class="pt">Organização do Drive</span></div>
+          <div class="why"><span class="en">Numbered folders for each part of the business, and loose files put where they belong. The plan first; it never deletes.</span><span class="pt">Pastas numeradas pra cada parte do negócio, e arquivos soltos no lugar certo. O plano antes; nunca apaga nada.</span></div>
+          <div class="q"><span class="en">“Organize my Drive”</span><span class="pt">“Organiza o meu Drive”</span></div>
+          <span class="cmd en">/organize-drive</span><span class="cmd pt">/organizar-drive</span>
+        </div>
+        <div class="node tool">
+          <div class="what"><span class="en">Brand kit designer</span><span class="pt">Kit de marca</span></div>
+          <div class="why"><span class="en">Original logos to choose from, changes by just talking, then the full kit: logo, colors, fonts and files.</span><span class="pt">Logos originais pra escolher, ajustes só conversando, e depois o kit completo: logo, cores, fontes e arquivos.</span></div>
+          <div class="q"><span class="en">“Make my brand”</span><span class="pt">“Cria a minha marca”</span></div>
+          <span class="cmd">/brand-kit-designer</span>
+        </div>
+        <div class="node tool">
+          <div class="what"><span class="en">Updates from Rica</span><span class="pt">Novidades do Rica</span></div>
+          <div class="why"><span class="en">Rica's latest notes, each change shown for your yes before it's saved.</span><span class="pt">As últimas notas do Rica, cada mudança mostrada pro seu sim antes de salvar.</span></div>
+          <div class="q"><span class="en">“Any news from Rica?”</span><span class="pt">“Tem novidade do Rica?”</span></div>
+          <span class="cmd en">/update</span><span class="cmd pt">/atualizar</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hs-week">
+      <div class="sec-head"><h2 id="hs-week"><span class="en">A weekly check-up</span><span class="pt">Uma revisão semanal</span></h2><span class="when"><span class="en">Every week</span><span class="pt">Toda semana</span></span></div>
+      <p class="lede"><span class="en">Like clearing your desk once a week, so your files stay right and nothing important sits forgotten. It asks first, takes about 2 minutes, and every change waits for your yes.</span><span class="pt">Como arrumar a mesa uma vez por semana, pra os seus arquivos ficarem certos e nada importante ficar esquecido. Ele pergunta antes, leva uns 2 minutos, e toda mudança espera o seu sim.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><div class="q"><span class="en">“Do the upkeep”</span><span class="pt">“Faz a manutenção”</span></div><span class="cmd en">/system</span><span class="cmd pt">/sistema</span><div class="what"><span class="en">It asks first</span><span class="pt">Ele pergunta antes</span></div><div class="why"><span class="en">“Want me to do the weekly tidy-up?” Yes, or later.</span><span class="pt">“Quer que eu faça a arrumação da semana?” Sim, ou depois.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">What you meant to save</span><span class="pt">O que você queria guardar</span></div><div class="why"><span class="en">Important things it noticed in your chats, like a new price, shown together for your yes.</span><span class="pt">Coisas importantes que ele notou nos chats, como um preço novo, mostradas juntas pro seu sim.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">What went quiet</span><span class="pt">O que ficou parado</span></div><div class="why"><span class="en">Lists fixed so every file can be found, and any department or project that hasn't moved in 3 weeks named.</span><span class="pt">Listas corrigidas pra todo arquivo ser achado, e qualquer departamento ou projeto parado há 3 semanas apontado.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">A check for Rica</span><span class="pt">Um sinal pro Rica</span></div><div class="why"><span class="en">Numbers only, none of your content, so he knows your system is healthy.</span><span class="pt">Só números, nada do seu conteúdo, pra ele saber que o seu sistema está saudável.</span></div></div></div>
+      </div>
+      <div class="back"><span aria-hidden="true">↺</span><span class="en">back to day to day, with everything in place</span><span class="pt">de volta ao dia a dia, com tudo no lugar</span></div>
+    </section>
+  </article>
+  <article class="machine" id="clients" hidden>
+    <header>
+      <p class="eyebrow"><span class="en">Machine</span><span class="pt">Máquina</span></p>
+      <h1>Client Book</h1>
+      <p class="intro"><span class="en">A home for each of your clients: a sheet with who they are and what's open, their history, and a folder in your Drive. Files, facts and meetings go straight to the right client.</span><span class="pt">Uma casa pra cada cliente: uma ficha com quem é e o que está aberto, o histórico dele, e uma pasta no seu Drive. Arquivos, informações e reuniões vão direto pro cliente certo.</span></p>
+      <p class="intro"><span class="en">Knowing your clients closely is what makes a service feel personal: you remember what they told you, what matters to them and what you promised. They feel it, they stay longer and they send people your way.</span><span class="pt">Conhecer bem cada cliente é o que torna um serviço pessoal: você lembra o que ele te contou, o que importa pra ele e o que você prometeu. Ele sente isso, fica mais tempo e indica você.</span></p>
+      <p class="intro"><span class="en">Why: ask about any client and get everything at once, with the next step. You never dig through emails again.</span><span class="pt">Por quê: pergunte sobre qualquer cliente e veja tudo na hora, com o próximo passo. Você nunca mais garimpa e-mails.</span></p>
+    </header>
+
+    <div class="pre">
+      <span class="en">Before anything, once: MCM OS installed</span><span class="pt">Antes de tudo, uma vez: o MCM instalado</span>
+      <span class="cmd en">/install</span><span class="cmd pt">/instalar</span>
+    </div>
+
+    <section class="sec" aria-labelledby="hc-add">
+      <div class="sec-head"><h2 id="hc-add"><span class="en">Add a client</span><span class="pt">Cadastre um cliente</span></h2><span class="when"><span class="en">Every new client</span><span class="pt">Todo cliente novo</span></span></div>
+      <div class="solo">
+        <div class="node">
+          <div class="q"><span class="en">“Add Maria Silva as a client”</span><span class="pt">“Cadastra a Maria Silva como cliente”</span></div>
+          <span class="cmd en">/new-client</span><span class="cmd pt">/novo-cliente</span>
+          <div class="what"><span class="en">A sheet, a history and a Drive folder</span><span class="pt">Uma ficha, um histórico e uma pasta no Drive</span></div>
+          <div class="why"><span class="en">If you were already talking about them in this chat, it uses all of it. Otherwise it asks three questions at most. Nothing is written before your yes.</span><span class="pt">Se você já estava falando deles nesse chat, usa tudo. Se não, faz no máximo três perguntas. Nada é escrito antes do seu sim.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="sheet-inside"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="sheet-inside" hidden>
+          <p class="how"><span class="en">Every client's sheet has the same sections. Only what you said goes in; a blank stays a blank. Your very first client also sets up your Clients department: your way of serving any client, like what you always ask.</span><span class="pt">Toda ficha tem as mesmas seções. Só entra o que você disse; o que está em branco fica em branco. O seu primeiro cliente também cria o departamento de Clientes: o seu jeito de atender qualquer cliente, como o que você sempre pergunta.</span></p>
+          <div class="decides">
+            <div class="d"><b><span class="en">Who they are</span><span class="pt">Quem é</span></b><span class="en">The people, who's who, how they found you.</span><span class="pt">As pessoas, quem é quem, como te encontraram.</span></div>
+            <div class="d"><b><span class="en">Contact</span><span class="pt">Contato</span></b><span class="en">A link to them in MCM, never a copy.</span><span class="pt">Um link pra eles no MCM, nunca uma cópia.</span></div>
+            <div class="d"><b><span class="en">Preferences</span><span class="pt">Preferências</span></b><span class="en">What they love, avoid and need.</span><span class="pt">O que amam, evitam e precisam.</span></div>
+            <div class="d"><b><span class="en">History</span><span class="pt">Histórico</span></b><span class="en">What was done: sessions, payments, meetings.</span><span class="pt">O que já foi feito: sessões, pagamentos, reuniões.</span></div>
+            <div class="d"><b><span class="en">What's open</span><span class="pt">O que está aberto</span></b><span class="en">Who owes what, and by when.</span><span class="pt">Quem deve o quê, e até quando.</span></div>
+            <div class="d"><b><span class="en">Files</span><span class="pt">Arquivos</span></b><span class="en">Where each file is in Drive, and what matters in it.</span><span class="pt">Onde está cada arquivo no Drive, e o que importa nele.</span></div>
+            <div class="d"><b><span class="en">Notes</span><span class="pt">Notas</span></b><span class="en">Anything else you want to keep.</span><span class="pt">Qualquer outra coisa que você queira guardar.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hc-day">
+      <div class="sec-head"><h2 id="hc-day"><span class="en">Day to day</span><span class="pt">No dia a dia</span></h2><span class="when"><span class="en">Every time you work with a client</span><span class="pt">Toda vez que você atende um cliente</span></span></div>
+      <p class="lede"><span class="en">Talk about a client by name. It finds the right one, even with just a first name.</span><span class="pt">Fale do cliente pelo nome. Ele acha o certo, mesmo só com o primeiro nome.</span></p>
+      <div class="where">
+            <div class="node">
+              <div class="q"><span class="en">“Let's open Maria's file”</span><span class="pt">“Vamos abrir a ficha da Maria”</span></div>
+              <span class="cmd en">/open-client</span><span class="cmd pt">/abrir-cliente</span>
+              <div class="what"><span class="en">Open a client</span><span class="pt">Abra um cliente</span></div>
+              <ul class="en"><li>Where things stand</li><li>What's open, and the next step</li><li>Any question about them, answered</li></ul>
+              <ul class="pt"><li>Onde as coisas estão</li><li>O que está aberto, e o próximo passo</li><li>Qualquer pergunta sobre eles, respondida</li></ul>
+            </div>
+            <div class="node">
+              <div class="q"><span class="en">“Save this to Maria”</span><span class="pt">“Guarda isso na Maria”</span></div>
+              <span class="cmd en">/save-to-client</span><span class="cmd pt">/guardar-no-cliente</span>
+              <div class="what"><span class="en">Save a file or a fact</span><span class="pt">Guarde um arquivo ou uma informação</span></div>
+              <ul class="en"><li>The file goes to their Drive folder</li><li>What matters in it goes on the sheet</li><li>The plan first, then your yes</li></ul>
+              <ul class="pt"><li>O arquivo vai pra pasta deles no Drive</li><li>O que importa nele vai pra ficha</li><li>O plano antes, depois o seu sim</li></ul>
+            </div>
+            <div class="node">
+              <div class="q"><span class="en">“I just finished my session with Maria”</span><span class="pt">“Acabei a sessão com a Maria”</span></div>
+              <span class="cmd en">/save-meeting</span><span class="cmd pt">/resumo-da-reuniao</span>
+              <div class="what"><span class="en">Save a meeting</span><span class="pt">Guarde uma reunião</span></div>
+              <ul class="en"><li>From the transcript, never a summary</li><li>Filed on the sheet and the history</li><li>More below</li></ul>
+              <ul class="pt"><li>Da transcrição, nunca de um resumo</li><li>Guardada na ficha e no histórico</li><li>Mais abaixo</li></ul>
+            </div>
+      </div>
+      <h3><span class="en">Where each thing lives</span><span class="pt">Onde fica cada coisa</span></h3>
+      <div class="decides">
+            <div class="d"><b><span class="en">MCM</span><span class="pt">MCM</span></b><span class="en">The relationship: contacts, payments and campaigns.</span><span class="pt">O relacionamento: contatos, pagamentos e campanhas.</span></div>
+            <div class="d"><b><span class="en">Google Drive</span><span class="pt">Google Drive</span></b><span class="en">The files: contracts, forms, session notes.</span><span class="pt">Os arquivos: contratos, formulários, anotações das sessões.</span></div>
+            <div class="d"><b><span class="en">Claude</span><span class="pt">Claude</span></b><span class="en">The knowledge: what you know about each client, and where each file is.</span><span class="pt">O conhecimento: o que você sabe de cada cliente, e onde está cada arquivo.</span></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hc-meet">
+      <div class="sec-head"><h2 id="hc-meet"><span class="en">After a meeting</span><span class="pt">Depois de uma reunião</span></h2><span class="when"><span class="en">Every meeting</span><span class="pt">Toda reunião</span></span></div>
+      <p class="lede"><span class="en">Works with Google Meet and Zoom, or any transcript you paste in. Also for a first conversation with someone who isn't a client yet: closed, thinking or no is your word, not its guess.</span><span class="pt">Funciona com o Google Meet e o Zoom, ou qualquer transcrição que você colar. Também pra uma primeira conversa com quem ainda não é cliente: fechou, está pensando ou não é você quem diz, não ele que adivinha.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><span class="cmd en">/save-meeting</span><span class="cmd pt">/resumo-da-reuniao</span><div class="what"><span class="en">Reads the transcript</span><span class="pt">Lê a transcrição</span></div><div class="why"><span class="en">The whole meeting, word for word.</span><span class="pt">A reunião inteira, palavra por palavra.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Pulls out what matters</span><span class="pt">Tira o que importa</span></div><div class="why"><span class="en">Decisions, who agreed to do what by when, preferences, open questions. Each with the minute it was said.</span><span class="pt">Decisões, quem ficou de fazer o quê e até quando, preferências, perguntas em aberto. Cada uma com o minuto em que foi dita.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">One batch for your yes</span><span class="pt">Tudo de uma vez pro seu sim</span></div><div class="why"><span class="en">Yes to all, or just the numbers you want.</span><span class="pt">Sim pra tudo, ou só os números que você quiser.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Next step and a follow-up</span><span class="pt">Próximo passo e um retorno</span></div><div class="why"><span class="en">If you promised something, a follow-up message for you to send.</span><span class="pt">Se você prometeu algo, uma mensagem de retorno pra você enviar.</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hc-learn">
+      <div class="sec-head"><h2 id="hc-learn"><span class="en">Learn from your clients</span><span class="pt">Aprenda com os seus clientes</span></h2><span class="when"><span class="en">Builds with every meeting</span><span class="pt">Cresce a cada reunião</span></span></div>
+      <p class="lede"><span class="en">When your service, prices or results come up in a meeting, their words go to one page: what clients think of your service. When another client says the same thing, the line grows. That's how a pattern shows.</span><span class="pt">Quando o seu serviço, os preços ou os resultados aparecem numa reunião, as palavras deles vão pra uma página: o que os clientes acham do seu serviço. Quando outro cliente diz o mesmo, a linha cresce. É assim que um padrão aparece.</span></p>
+      <div class="says four">
+        <div class="node"><div class="what"><span class="en">What they loved</span><span class="pt">O que encantou</span></div><div class="why"><span class="en">What to keep doing, and to say more often.</span><span class="pt">O que continuar fazendo, e falar mais.</span></div></div>
+        <div class="node"><div class="what"><span class="en">Questions and worries</span><span class="pt">Dúvidas e receios</span></div><div class="why"><span class="en">What to answer before they ask.</span><span class="pt">O que responder antes de perguntarem.</span></div></div>
+        <div class="node"><div class="what"><span class="en">What they already do on their own</span><span class="pt">O que já fazem sozinhos</span></div><div class="why"><span class="en">Where your help isn't needed, or should change.</span><span class="pt">Onde a sua ajuda não é necessária, ou precisa mudar.</span></div></div>
+        <div class="node"><div class="what"><span class="en">What they asked for</span><span class="pt">Pediram</span></div><div class="why"><span class="en">Ideas for what to offer next.</span><span class="pt">Ideias do que oferecer depois.</span></div></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hc-safe">
+      <div class="sec-head"><h2 id="hc-safe"><span class="en">Always</span><span class="pt">Sempre</span></h2><span class="when"><span class="en">Every client</span><span class="pt">Todo cliente</span></span></div>
+      <div class="decides">
+            <div class="d"><b><span class="en">Documents</span><span class="pt">Documentos</span></b><span class="en">Notes what matters in a document, like an expiry date. Never copies an ID number.</span><span class="pt">Anota o que importa num documento, como a validade. Nunca copia o número.</span></div>
+            <div class="d"><b><span class="en">Nothing disappears</span><span class="pt">Nada some</span></b><span class="en">Never deletes or replaces a file. Same name, the new one gets the date.</span><span class="pt">Nunca apaga nem substitui um arquivo. Mesmo nome, o novo ganha a data.</span></div>
+            <div class="d"><b><span class="en">Never sends</span><span class="pt">Nunca envia</span></b><span class="en">A message to a client is always a draft that you send.</span><span class="pt">Uma mensagem pro cliente é sempre um rascunho que você envia.</span></div>
+      </div>
+    </section>
+  </article>
+  <article class="machine" id="ceo" hidden>
+    <header>
+      <p class="eyebrow"><span class="en">Above the departments</span><span class="pt">Acima dos departamentos</span></p>
+      <h1>CEO</h1>
+      <p class="intro"><span class="en">Where your business strategy lives: what you sell first, how it sells, and what comes next. Your other departments follow it.</span><span class="pt">Onde mora a estratégia do seu negócio: o que você vende primeiro, como vende, e o que vem depois. Os seus outros departamentos seguem ela.</span></p>
+      <p class="intro"><span class="en">You stay the creative; the CEO desk keeps the business on track. Content, courses and everything else work toward the same next step, so nothing pulls in a different direction.</span><span class="pt">Você fica com a parte criativa; o CEO mantém o negócio no rumo. Conteúdo, cursos e todo o resto trabalham pro mesmo próximo passo, e nada puxa pra outro lado.</span></p>
+    </header>
+
+    <div class="pre">
+      <span class="en">Before anything, once: MCM OS installed</span><span class="pt">Antes de tudo, uma vez: o MCM instalado</span>
+      <span class="cmd en">/install</span><span class="cmd pt">/instalar</span>
+    </div>
+
+    <section class="sec" aria-labelledby="hceo-set">
+      <div class="sec-head"><h2 id="hceo-set"><span class="en">Your strategy session</span><span class="pt">A sua sessão de estratégia</span></h2><span class="when"><span class="en">Once, at the end of the install</span><span class="pt">Uma vez, no fim da instalação</span></span></div>
+      <div class="solo">
+        <div class="node">
+          <div class="q"><span class="en">“Let's work on my strategy”</span><span class="pt">“Vamos trabalhar na minha estratégia”</span></div>
+          <span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span>
+          <div class="what"><span class="en">A conversation that sets your strategy</span><span class="pt">Uma conversa que define a sua estratégia</span></div>
+          <div class="why"><span class="en">About an hour. It looks at your market first, then decides with you, one topic at a time. Stop anytime; it keeps where you were.</span><span class="pt">Mais ou menos uma hora. Primeiro olha o seu mercado, depois decide com você, um tema de cada vez. Pare quando quiser; ele guarda onde vocês pararam.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="ceo-inside"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="ceo-inside" hidden>
+          <p class="how"><span class="en"><b>Research first, while you watch:</b> 4 to 6 real offers close to yours with their prices and promises, where your buyers gather and what they struggle with in their own words, and the low, middle and premium prices. Every fact links to its source.</span><span class="pt"><b>Primeiro a pesquisa, com você olhando:</b> 4 a 6 ofertas reais parecidas com a sua, com os preços e as promessas, onde os seus compradores se encontram e com o que eles sofrem, nas palavras deles, e os preços baixo, médio e premium. Cada informação tem o link da fonte.</span></p>
+          <h4><span class="en">Then it decides with you</span><span class="pt">Depois decide com você</span></h4>
+          <div class="decides">
+            <div class="d"><b><span class="en">Where you are now</span><span class="pt">Onde você está agora</span></b><span class="en">Time you can give it, money and runway, the audience you already have, what you've tried.</span><span class="pt">O tempo que você pode dar, dinheiro e fôlego, o público que você já tem, o que já tentou.</span></div>
+            <div class="d"><b><span class="en">Your first offer</span><span class="pt">A sua primeira oferta</span></b><span class="en">What it is, the format, the length and the price, and why this one first.</span><span class="pt">O que é, o formato, a duração e o preço, e por que essa primeiro.</span></div>
+            <div class="d"><b><span class="en">The promise in one line</span><span class="pt">A promessa em uma frase</span></b><span class="en">What your buyer gets, said so they recognize themselves.</span><span class="pt">O que o seu comprador ganha, dito de um jeito que ele se reconheça.</span></div>
+            <div class="d"><b><span class="en">How it sells</span><span class="pt">Como vende</span></b><span class="en">The path from finding you to paying, the money model and a guarantee.</span><span class="pt">O caminho de te encontrar até pagar, o modelo de receita e uma garantia.</span></div>
+            <div class="d"><b><span class="en">Launch order</span><span class="pt">Ordem do lançamento</span></b><span class="en">Sell before you build, step by step, with dates.</span><span class="pt">Vender antes de construir, passo a passo, com datas.</span></div>
+            <div class="d"><b><span class="en">Your next 90 days</span><span class="pt">Os seus próximos 90 dias</span></b><span class="en">One number to hit, your number one priority, and what stays out.</span><span class="pt">Um número pra bater, a sua prioridade número um, e o que fica de fora.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="free" role="group" aria-labelledby="hceo-free">
+        <h2 id="hceo-free"><span class="en">You don't need the answers going in.</span><span class="pt">Você não precisa chegar com as respostas.</span></h2>
+        <ul>
+          <li><span class="en"><b>A guide, not a form.</b> Each topic comes with what's needed, why, and what it would recommend.</span><span class="pt"><b>Um guia, não um formulário.</b> Cada tema vem com o que precisa, por quê, e o que ele recomendaria.</span></li>
+          <li><span class="en"><b>You decide.</b> It recommends clearly, with the reason. The choice is yours, and it's written as yours.</span><span class="pt"><b>Quem decide é você.</b> Ele recomenda com clareza, com o motivo. A escolha é sua, e fica escrita como sua.</span></li>
+          <li><span class="en"><b>“I don't know yet” is an answer.</b> It goes to your open questions, to decide later.</span><span class="pt"><b>“Ainda não sei” é uma resposta.</b> Vai pras suas perguntas em aberto, pra decidir depois.</span></li>
+          <li><span class="en"><b>Facts, not guesses.</b> No price or competitor claim without research behind it, and it never invents your numbers.</span><span class="pt"><b>Fatos, não chutes.</b> Nenhum preço ou concorrente sem pesquisa por trás, e ele nunca inventa os seus números.</span></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="sec" aria-labelledby="hceo-flow">
+      <div class="sec-head"><h2 id="hceo-flow"><span class="en">How a session goes</span><span class="pt">Como é uma sessão</span></h2><span class="when"><span class="en">Every session</span><span class="pt">Toda sessão</span></span></div>
+      <div class="loop">
+        <div class="step"><div class="node key"><span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span><div class="what"><span class="en">Looks at your market</span><span class="pt">Olha o seu mercado</span></div><div class="why"><span class="en">A few minutes of research, saved with its sources.</span><span class="pt">Alguns minutos de pesquisa, guardada com as fontes.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Talks it through</span><span class="pt">Conversa com você</span></div><div class="why"><span class="en">One topic at a time, skipping what's already decided.</span><span class="pt">Um tema de cada vez, pulando o que já está decidido.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">One yes saves it</span><span class="pt">Um sim guarda tudo</span></div><div class="why"><span class="en">Your strategy, plus what's now settled in your business brain.</span><span class="pt">A sua estratégia, e o que ficou decidido no cérebro do negócio.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Your departments follow</span><span class="pt">Os departamentos seguem</span></div><div class="why"><span class="en">It offers to refresh your content strategy, or to start your course. It never changes them on its own.</span><span class="pt">Oferece atualizar a estratégia de conteúdo, ou começar o seu curso. Nunca muda nada sozinho.</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hceo-where">
+      <div class="sec-head"><h2 id="hceo-where"><span class="en">Where it's kept</span><span class="pt">Onde fica guardado</span></h2><span class="when"><span class="en">After every session</span><span class="pt">Depois de toda sessão</span></span></div>
+      <div class="decides">
+            <div class="d"><b><span class="en">Your strategy</span><span class="pt">A sua estratégia</span></b><span class="en">What's decided and what's still open, the research behind it, and every change with its date.</span><span class="pt">O que está decidido e o que ainda está aberto, a pesquisa por trás, e cada mudança com a data.</span></div>
+            <div class="d"><b><span class="en">Your business brain</span><span class="pt">O cérebro do seu negócio</span></b><span class="en">Only what's settled: your offer, price, promise and goal. Every department reads it.</span><span class="pt">Só o que está decidido: a sua oferta, preço, promessa e meta. Todo departamento lê.</span></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hceo-fluid">
+      <div class="sec-head"><h2 id="hceo-fluid"><span class="en">It moves with you</span><span class="pt">Ele acompanha você</span></h2><span class="when"><span class="en">Any chat, any department</span><span class="pt">Qualquer chat, qualquer departamento</span></span></div>
+      <p class="lede"><span class="en">You don't wait 90 days. When something you decide in any chat touches your strategy, like a new price, a different first offer or a new goal, it's noted without interrupting you, and suggested at the next pause.</span><span class="pt">Você não espera 90 dias. Quando algo que você decide em qualquer chat mexe na sua estratégia, como um preço novo, outra primeira oferta ou uma meta nova, ele anota sem te interromper, e sugere na próxima pausa.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><div class="what"><span class="en">In a content chat</span><span class="pt">Num chat de conteúdo</span></div><div class="why"><span class="en">“Let's do a workshop before the course.”</span><span class="pt">“Vamos fazer um workshop antes do curso.”</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Noted, not interrupted</span><span class="pt">Anotado, sem interromper</span></div><div class="why"><span class="en">You keep working on what you were doing.</span><span class="pt">Você continua no que estava fazendo.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">At the next pause</span><span class="pt">Na próxima pausa</span></div><div class="why"><span class="en">“This changes your strategy. Want to update it?”</span><span class="pt">“Isso muda a sua estratégia. Quer atualizar?”</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">On your yes</span><span class="pt">Com o seu sim</span></div><div class="why"><span class="en">Your strategy and business brain are updated, and your departments are offered to follow.</span><span class="pt">A sua estratégia e o cérebro do negócio são atualizados, e os departamentos recebem a oferta de acompanhar.</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hceo-again">
+      <div class="sec-head"><h2 id="hceo-again"><span class="en">Revisit it</span><span class="pt">Revise</span></h2><span class="when"><span class="en">Every 90 days, and when your plan changes</span><span class="pt">A cada 90 dias, e quando o seu plano muda</span></span></div>
+      <p class="lede"><span class="en">Also after the first round of each offer. It starts from what you left open and asks what changed; only that gets worked on.</span><span class="pt">Também depois da primeira turma de cada oferta. Começa pelo que ficou aberto e pergunta o que mudou; só isso é trabalhado.</span></p>
+      <div class="mini">
+        <div><div class="q"><span class="en">“My plan changed”</span><span class="pt">“O meu plano mudou”</span></div><span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span><p><span class="en">Picks up from last time, works only on what changed.</span><span class="pt">Continua da última vez, trabalha só no que mudou.</span></p></div>
+        <div><div class="q"><span class="en">“How should I price this?”</span><span class="pt">“Quanto eu cobro por isso?”</span></div><span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span><p><span class="en">Works on the price, with research behind it.</span><span class="pt">Trabalha o preço, com pesquisa por trás.</span></p></div>
+        <div><div class="q"><span class="en">“Plan my launch”</span><span class="pt">“Planeja o meu lançamento”</span></div><span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span><p><span class="en">The launch order, selling before you build, with dates.</span><span class="pt">A ordem do lançamento, vendendo antes de construir, com datas.</span></p></div>
+      </div>
+    </section>
+  </article>
+  <article class="machine" id="courses" hidden>
+    <header>
+      <p class="eyebrow"><span class="en">Machine</span><span class="pt">Máquina</span></p>
+      <h1><span class="en">Course machine</span><span class="pt">Máquina de cursos</span></h1>
+      <p class="intro"><span class="en">Builds what you sell: your program, course or cohort. One lesson at a time, just ahead of your students, from what they actually need.</span><span class="pt">Constrói o que você vende: o seu programa, curso ou turma. Uma aula de cada vez, um passo à frente dos seus alunos, a partir do que eles realmente precisam.</span></p>
+      <p class="intro"><span class="en">Why: you teach; it does the prep. Every live lesson shapes the next one, so the program gets better with each round. The offer, format and price come from your CEO strategy; the marketing is another department's job.</span><span class="pt">Por quê: você ensina; ele faz a preparação. Cada aula ao vivo molda a próxima, e o programa melhora a cada turma. A oferta, o formato e o preço vêm da sua estratégia no CEO; o marketing é trabalho de outro departamento.</span></p>
+    </header>
+
+    <div class="pre">
+      <span class="en">Before anything, once: your strategy session chose a program as your first offer</span><span class="pt">Antes de tudo, uma vez: a sua sessão de estratégia escolheu um programa como primeira oferta</span>
+      <span class="cmd en">/business-strategy</span><span class="cmd pt">/estrategia-do-negocio</span>
+    </div>
+
+    <section class="sec" aria-labelledby="hco-set">
+      <div class="sec-head"><h2 id="hco-set"><span class="en">Set it up</span><span class="pt">Configure</span></h2><span class="when"><span class="en">Once per program</span><span class="pt">Uma vez por programa</span></span></div>
+      <p class="lede"><span class="en">In this order. Each step offers the next when it ends.</span><span class="pt">Nessa ordem. Cada etapa oferece a próxima quando termina.</span></p>
+      <div class="chain">
+        <div class="node">
+          <div class="q"><span class="en">“Set up my course”</span><span class="pt">“Configura o meu curso”</span></div>
+          <span class="cmd en">/course-install</span><span class="cmd pt">/curso-instalar</span>
+          <div class="what"><span class="en">Set up the course</span><span class="pt">Configure o curso</span></div>
+          <div class="why"><span class="en">Checks your strategy already chose the offer, sets up your Courses department, gets your live lessons recorded with transcripts, and notes where the course lives in MCM.</span><span class="pt">Confere se a estratégia já escolheu a oferta, cria o departamento de Cursos, deixa as aulas ao vivo gravadas com transcrição, e anota onde o curso fica no MCM.</span></div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+        <div class="node">
+          <div class="q"><span class="en">“Design my program”</span><span class="pt">“Desenha o meu programa”</span></div>
+          <span class="cmd en">/course-design</span><span class="cmd pt">/curso-desenho</span>
+          <div class="what"><span class="en">Design the program</span><span class="pt">Desenhe o programa</span></div>
+          <div class="why"><span class="en">From your offer to the full module map, with your yes.</span><span class="pt">Da sua oferta ao mapa completo dos módulos, com o seu sim.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="program-inside"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="program-inside" hidden>
+          <p class="how"><span class="en">Drafted from your strategy and what you already teach (“What do you always start with?”). You look at the whole map once and change only what you want. Nothing is saved before your yes.</span><span class="pt">Rascunhado a partir da sua estratégia e do que você já ensina (“Por onde você sempre começa?”). Você olha o mapa inteiro uma vez e muda só o que quiser. Nada é salvo antes do seu sim.</span></p>
+          <div class="decides">
+            <div class="d"><b><span class="en">Who it's for</span><span class="pt">Pra quem é</span></b><span class="en">The student in their own words: where they are now, what they've tried.</span><span class="pt">O aluno nas palavras dele: onde está agora, o que já tentou.</span></div>
+            <div class="d"><b><span class="en">Before → after</span><span class="pt">Antes → depois</span></b><span class="en">What they struggle with now, and what they can do at the end, concrete enough to check.</span><span class="pt">Com o que sofrem agora, e o que conseguem fazer no fim, concreto o bastante pra conferir.</span></div>
+            <div class="d"><b><span class="en">How it runs</span><span class="pt">Como funciona</span></b><span class="en">Format, length and size, each week's rhythm, and the shape of a live session.</span><span class="pt">Formato, duração e tamanho, o ritmo da semana, e o formato de um encontro ao vivo.</span></div>
+            <div class="d"><b><span class="en">The module map</span><span class="pt">O mapa dos módulos</span></b><span class="en">Each module's outcome, lessons, practice and what students deliver. The quickest win first, a final project at the end.</span><span class="pt">O resultado, as aulas, a prática e a entrega de cada módulo. A vitória mais rápida primeiro, um projeto final no fim.</span></div>
+            <div class="d"><b><span class="en">How you'll know it works</span><span class="pt">Como saber que funciona</span></b><span class="en">What to watch in each module: work delivered, a check, students' own words.</span><span class="pt">O que observar em cada módulo: entregas feitas, uma checagem, as palavras dos alunos.</span></div>
+            <div class="d"><b><span class="en">Open questions</span><span class="pt">Perguntas em aberto</span></b><span class="en">What the first round will teach you.</span><span class="pt">O que a primeira turma vai te ensinar.</span></div>
+          </div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+        <div class="node">
+          <div class="q"><span class="en">“Next lesson”</span><span class="pt">“Próxima aula”</span></div>
+          <span class="cmd en">/course-lesson</span><span class="cmd pt">/curso-aula</span>
+          <div class="what"><span class="en">Build lesson 1</span><span class="pt">Monte a aula 1</span></div>
+          <div class="why"><span class="en">If your strategy says to presell, the outline and lesson 1 are all you need to start selling.</span><span class="pt">Se a sua estratégia diz pra pré-vender, o roteiro e a aula 1 são tudo que você precisa pra começar a vender.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hco-week">
+      <div class="sec-head"><h2 id="hco-week"><span class="en">Every lesson</span><span class="pt">Toda aula</span></h2><span class="when"><span class="en">Every week</span><span class="pt">Toda semana</span></span></div>
+      <p class="lede"><span class="en">One lesson at a time: built, taught, closed. Then the next one answers what came up.</span><span class="pt">Uma aula de cada vez: montada, dada, fechada. Aí a próxima responde o que apareceu.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><div class="q"><span class="en">“Next lesson”</span><span class="pt">“Próxima aula”</span></div><span class="cmd en">/course-lesson</span><span class="cmd pt">/curso-aula</span><div class="what"><span class="en">Build the lesson</span><span class="pt">Monte a aula</span></div><div class="why"><span class="en">The plan first, for your yes. Then the materials, for your yes.</span><span class="pt">Primeiro o plano, pro seu sim. Depois os materiais, pro seu sim.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Into MCM as a draft</span><span class="pt">No MCM como rascunho</span></div><div class="why"><span class="en">Added to your course in MCM, unpublished. You decide when students see it.</span><span class="pt">Colocada no seu curso no MCM, sem publicar. Você decide quando os alunos veem.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Teach it live</span><span class="pt">Dê a aula ao vivo</span></div><div class="why"><span class="en">Recorded with a transcript, on Google Meet or Zoom.</span><span class="pt">Gravada com transcrição, no Google Meet ou no Zoom.</span></div></div></div>
+        <div class="step"><div class="node key"><div class="q"><span class="en">“I just finished teaching”</span><span class="pt">“Acabei de dar aula”</span></div><span class="cmd en">/course-close-lesson</span><span class="cmd pt">/curso-fechar-aula</span><div class="what"><span class="en">Close it</span><span class="pt">Feche a aula</span></div><div class="why"><span class="en">The transcript against the plan, the same day.</span><span class="pt">A transcrição contra o plano, no mesmo dia.</span></div></div></div>
+      </div>
+      <div class="back"><span aria-hidden="true">↺</span><span class="en">the next lesson picks up what your students asked</span><span class="pt">a próxima aula pega o que os alunos perguntaram</span></div>
+
+      <h3><span class="en">What every lesson comes with</span><span class="pt">O que toda aula traz</span></h3>
+      <div class="decides">
+            <div class="d"><b><span class="en">The plan</span><span class="pt">O plano</span></b><span class="en">The outcome, why it matters to them, the agenda, and the key points with one example each.</span><span class="pt">O resultado, por que importa pra eles, a agenda, e os pontos principais com um exemplo cada.</span></div>
+            <div class="d"><b><span class="en">Practice and homework</span><span class="pt">Prática e lição de casa</span></b><span class="en">Instructions as the student reads them, the time, and what a good answer looks like.</span><span class="pt">As instruções como o aluno lê, o tempo, e como é uma boa resposta.</span></div>
+            <div class="d"><b><span class="en">Handout and worksheet</span><span class="pt">Apostila e exercício</span></b><span class="en">One page with the key points, and the exercise ready to fill in.</span><span class="pt">Uma página com os pontos principais, e o exercício pronto pra preencher.</span></div>
+            <div class="d"><b><span class="en">Slide outline</span><span class="pt">Roteiro dos slides</span></b><span class="en">Each slide's title, with what you say on it.</span><span class="pt">O título de cada slide, com o que você fala nele.</span></div>
+            <div class="d"><b><span class="en">Live run-sheet</span><span class="pt">Roteiro da aula ao vivo</span></b><span class="en">Minute by minute, with the questions to ask the room. A video script instead, for a recorded lesson.</span><span class="pt">Minuto a minuto, com as perguntas pra fazer à turma. Um roteiro de vídeo, se a aula for gravada.</span></div>
+            <div class="d"><b><span class="en">What happened</span><span class="pt">O que aconteceu</span></b><span class="en">Filled in when you close the lesson.</span><span class="pt">Preenchido quando você fecha a aula.</span></div>
+      </div>
+
+      <h3><span class="en">What closing a lesson gives you</span><span class="pt">O que fechar a aula te dá</span></h3>
+      <div class="decides">
+            <div class="d"><b><span class="en">Covered vs planned</span><span class="pt">Dado vs planejado</span></b><span class="en">What you taught, cut short or skipped, and anything you added.</span><span class="pt">O que você ensinou, encurtou ou pulou, e o que acrescentou.</span></div>
+            <div class="d"><b><span class="en">A running FAQ</span><span class="pt">Perguntas frequentes</span></b><span class="en">Every question students ask. When it comes up again, the line grows.</span><span class="pt">Toda pergunta dos alunos. Quando volta a aparecer, a linha cresce.</span></div>
+            <div class="d"><b><span class="en">Where they got stuck, what landed</span><span class="pt">Onde travaram, o que funcionou</span></b><span class="en">For the review, each with the minute it happened.</span><span class="pt">Pra revisão, cada um com o minuto em que aconteceu.</span></div>
+            <div class="d"><b><span class="en">Their words</span><span class="pt">As palavras deles</span></b><span class="en">Up to three lines, first names only. Never used in marketing without the student's OK.</span><span class="pt">Até três frases, só o primeiro nome. Nunca usadas no marketing sem o OK do aluno.</span></div>
+            <div class="d"><b><span class="en">A recap for students</span><span class="pt">Um resumo pros alunos</span></b><span class="en">What was taught, the homework and the next date. A draft you send.</span><span class="pt">O que foi ensinado, a lição de casa e a próxima data. Um rascunho que você envia.</span></div>
+            <div class="d"><b><span class="en">Post ideas</span><span class="pt">Ideias de post</span></b><span class="en">Students' questions become ideas for your content.</span><span class="pt">As perguntas dos alunos viram ideias pro seu conteúdo.</span></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hco-review">
+      <div class="sec-head"><h2 id="hco-review"><span class="en">Improve the program</span><span class="pt">Melhore o programa</span></h2><span class="when"><span class="en">After each module and each round</span><span class="pt">Depois de cada módulo e de cada turma</span></span></div>
+      <p class="lede"><span class="en">It reads what the closed lessons showed and recommends at most 5 changes, each with its evidence. You pick which ones.</span><span class="pt">Ele lê o que as aulas fechadas mostraram e recomenda no máximo 5 mudanças, cada uma com a evidência. Você escolhe quais.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><div class="q"><span class="en">“Review the module”</span><span class="pt">“Revisa o módulo”</span></div><span class="cmd en">/course-review</span><span class="cmd pt">/curso-revisao</span><div class="what"><span class="en">A module is done</span><span class="pt">Um módulo termina</span></div><div class="why"><span class="en">“Module 2 is done; want to review it?”</span><span class="pt">“O módulo 2 terminou; quer revisar?”</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Reads the patterns</span><span class="pt">Lê os padrões</span></div><div class="why"><span class="en">The same question in several lessons, sticking points that repeat, practice that worked.</span><span class="pt">A mesma pergunta em várias aulas, travas que se repetem, prática que funcionou.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Up to 5 changes</span><span class="pt">Até 5 mudanças</span></div><div class="why"><span class="en">Each with the lessons and minutes behind it.</span><span class="pt">Cada uma com as aulas e os minutos por trás.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Each goes where it belongs</span><span class="pt">Cada uma vai pro lugar certo</span></div><div class="why"><span class="en">The next lesson, the program, or your strategy's open questions, like “students need more weeks than you sell”.</span><span class="pt">A próxima aula, o programa, ou as perguntas em aberto da estratégia, como “os alunos precisam de mais semanas do que você vende”.</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="hco-where">
+      <div class="sec-head"><h2 id="hco-where"><span class="en">Always know where it stands</span><span class="pt">Sempre saiba onde está</span></h2><span class="when"><span class="en">Every program</span><span class="pt">Todo programa</span></span></div>
+      <p class="lede"><span class="en">Each program keeps its own progress: where it stands, the next step, and every round with its students. Kept current by every step, without asking.</span><span class="pt">Cada programa guarda o seu andamento: onde está, o próximo passo, e cada turma com os alunos. Atualizado a cada etapa, sem perguntar.</span></p>
+      <div class="mini">
+        <div><div class="q"><span class="en">“How is the program going?”</span><span class="pt">“Como está indo o programa?”</span></div><span class="cmd en">/course-review</span><span class="cmd pt">/curso-revisao</span><p><span class="en">What the lessons are showing, and what to change.</span><span class="pt">O que as aulas estão mostrando, e o que mudar.</span></p></div>
+        <div><div class="q"><span class="en">“Open Courses”</span><span class="pt">“Abre Cursos”</span></div><span class="cmd en">/open-department</span><span class="cmd pt">/abrir-departamento</span><p><span class="en">Where your programs stand, and the next step.</span><span class="pt">Onde estão os seus programas, e o próximo passo.</span></p></div>
+        <div><div class="q"><span class="en">“What should I change for next round?”</span><span class="pt">“O que eu mudo pra próxima turma?”</span></div><span class="cmd en">/course-review</span><span class="cmd pt">/curso-revisao</span><p><span class="en">A round review, then the redesign for the next one.</span><span class="pt">Uma revisão da turma, e o redesenho pra próxima.</span></p></div>
+      </div>
+    </section>
+  </article>
+    <footer>
+      <span><span class="en">MCM OS 0.14.2 · updated 2026-11-12</span><span class="pt">MCM 0.14.2 · atualizado em 2026-11-12</span></span>
+      <span>MyClientMachine</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var ids=["system","content","clients","ceo","courses"];
+  function show(){
+    var id=(location.hash||"#system").slice(1); if(ids.indexOf(id)<0) id="system";
+    ids.forEach(function(x){ document.getElementById(x).hidden = x!==id; });
+    document.querySelectorAll(".machines a").forEach(function(a){ if(a.getAttribute("href")==="#"+id){ a.setAttribute("aria-current","page"); } else a.removeAttribute("aria-current"); });
+  }
+  window.addEventListener("hashchange",function(){ show(); window.scrollTo(0,0); });
+  show();
+})();
+</script>
+<script>
+(function(){
+  var tabs=document.querySelector(".machines");
+  function measure(){ var pinned=getComputedStyle(tabs).position==="sticky"; document.documentElement.style.setProperty("--tabs-h", pinned ? tabs.offsetHeight+"px" : "0px"); }
+  window.addEventListener("resize",measure); measure();
+})();
+</script>
+<script>
+document.querySelectorAll('.peek').forEach(function(b){b.addEventListener('click',function(){
+  var open=b.getAttribute('aria-expanded')!=='true',panel=document.getElementById(b.getAttribute('aria-controls'));
+  b.setAttribute('aria-expanded',String(open));panel.hidden=!open;b.closest('.node').classList.toggle('opened',open);
+  b.querySelector('.en').textContent=open?"Hide what's inside":"See what's inside";
+  b.querySelector('.pt').textContent=open?"Esconder":"Veja o que tem dentro";
+  if(open)panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+});});
+</script>
+<script>
+(function(){
+  var KEY="mcm-manual-lang";
+  function apply(lang){
+    document.documentElement.lang = lang==="pt" ? "pt-BR" : "en";
+    document.querySelectorAll(".switch button").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang===lang)); });
+    try{ localStorage.setItem(KEY, lang); }catch(e){}
+  }
+  document.querySelectorAll(".switch button").forEach(function(b){ b.addEventListener("click", function(){ apply(b.dataset.lang); }); });
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
+  apply(saved==="pt" ? "pt" : "en");
+})();
+</script>
