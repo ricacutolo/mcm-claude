@@ -872,7 +872,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
     </section>
   </article>
     <footer>
-      <span><span class="en">MCM OS 0.14.4 · updated 2026-11-12</span><span class="pt">MCM 0.14.4 · atualizado em 2026-11-12</span></span>
+      <span><span class="en">MCM OS 0.14.5 · updated 2026-11-12</span><span class="pt">MCM 0.14.5 · atualizado em 2026-11-12</span></span>
       <span>MyClientMachine</span>
     </footer>
   </main>
@@ -916,6 +916,10 @@ document.querySelectorAll('.peek').forEach(function(b){b.addEventListener('click
   }
   document.querySelectorAll(".switch button").forEach(function(b){ b.addEventListener("click", function(){ apply(b.dataset.lang); }); });
   var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
-  apply(saved==="pt" ? "pt" : "en");
+  if(saved!=="pt" && saved!=="en"){
+    var langs=(navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language||""]);
+    saved = /^pt\b/i.test(langs[0]||"") ? "pt" : "en";
+  }
+  apply(saved);
 })();
 </script>
