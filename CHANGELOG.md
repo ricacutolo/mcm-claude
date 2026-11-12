@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.14.3 — 2026-11-12 [both]
+- **Manual changes merge without waiting** (Rica, 2026-11-12). CLAUDE.md: a pull request that changes only the manual, with its CHANGELOG line and version bump, Claude merges once check-sync passes; the claude.ai artifact copy stays in step. Docs only.
+
 ## 0.14.2 — 2026-11-12 [both]
 - **The MCM OS manual on its own site** (docs only; no skill changed). Rica, 2026-11-12: `manual.myclientmachine.com`. `manual/source.html` is the manual page (the same file published as the claude.ai artifact); `scripts/build-manual.py` wraps it into a standalone page, and the "Manual site" workflow deploys it to GitHub Pages on every push to main that touches it. `noindex` until Rica starts sharing it. Pages: The system, Content machine, Client Book, CEO, Course machine.
 
