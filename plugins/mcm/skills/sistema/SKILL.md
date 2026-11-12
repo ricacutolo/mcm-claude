@@ -158,7 +158,7 @@ A plan file is not the brief: the brief keeps only the next step; the plan holds
 
 ## Áreas
 
-An **área** groups departments (and projects) by the part of her life they belong to: **Pessoal**, and one área per business, named after the business ("Comunidade", "Kume Travel"). It is a label, never a folder: departments stay flat in `departamentos/<slug>/`. In her words: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
+An **área** groups departments (and projects) by the part of her life they belong to: **Pessoal**, and one área per business, named after the business ("Comunidade", "Viagens Silva"). It is a label, never a folder: departments stay flat in `departamentos/<slug>/`. In her words: "Área é como você separa a sua vida: o pessoal de um lado, cada negócio do outro."
 
 - **Where it lives:** `area: <Nome>` in each department's and project's brief frontmatter.
 - **Her áreas:** the `area:` values in the briefs, plus Pessoal. Read them from the `## <Área>` headers of `departamentos/index.md`.
@@ -179,7 +179,7 @@ On **sim**:
 1. **Pending items** — show any left in `pendentes.md` as a batch.
 2. **Old file names** — after an update that renamed files: `sobre-mim/negocio.md` (and any `negocio-<area>.md`) from before 0.11.0 → propose renaming to `cerebro-do-negocio.md` (and `cerebro-do-negocio-<area>.md`) in one line, and rename on her sim. Nothing else in them changes.
 3. **Indexes** — for each `index.md` under `departamentos/`, `projetos/` and `entregas/`: list files present but missing from the index, and index lines whose file is gone. Fix missing lines (soft). Report dead lines and remove them only on her yes.
-4. **Áreas** — briefs with no `area:`, or an index not grouped by área: propose the áreas in one batch ("Acervo → Pessoal · Clientes → Kume Travel"), then write the `area:` lines and regroup the indexes on her yes.
+4. **Áreas** — briefs with no `area:`, or an index not grouped by área: propose the áreas in one batch ("Acervo → Pessoal · Clientes → Viagens Silva"), then write the `area:` lines and regroup the indexes on her yes.
 5. **Long logs** — any `contexto/*.md` past ~150 lines: propose condensing (handled by /contexto, on APPROVE).
 6. **Stale briefs** — any brief whose Estado atual is older than 21 days: name it, one line each. Don't fix.
 7. **Health file** — write `_sistema/saude.md` (below).
