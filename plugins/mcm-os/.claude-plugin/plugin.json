@@ -1,7 +1,7 @@
 {
   "name": "mcm-os",
   "displayName": "MCM OS",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "description": "MyClientMachine's work system for Claude: guided install, departments, projects, clients, context by topic, your voice and content for your social media.",
   "author": { "name": "Ricardo Cutolo", "email": "ricacutolo@myclientmachine.com", "url": "https://myclientmachine.com" },
   "license": "MIT",
