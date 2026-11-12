@@ -14,7 +14,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a aula", "a transcrição
 1. `departamentos/cursos/<programa>/index.md` — `aulas em:` (where the transcript is).
 2. The lesson file (`aulas/aula-NN-<slug>.md`) — the plan, the agenda, the homework.
 3. `departamentos/cursos/<programa>/perguntas.md`, `retorno.md`, `depoimentos.md` — to extend lines instead of repeating them.
-4. The transcript, through /resumo-da-reuniao's **Sources** (Google Meet transcript in her Drive; pasted text for anything else). Nothing else.
+4. The transcript, through /resumo-da-reuniao's **Sources** (Google Meet transcript in her Drive; Zoom cloud recording transcript; pasted text for anything else). Nothing else.
 
 ## The rules
 
@@ -33,7 +33,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "a aula", "a transcrição
 ## Workflow
 
 ### Step 1 — Which lesson
-- The lesson she names, or the latest one with a date and `status` before `fechada`. Find the transcript the way /resumo-da-reuniao does (the Meet transcript for that day; else ask her to paste it). Ended under ~15 minutes ago → "A transcrição leva alguns minutos pra aparecer. Me pede de novo daqui a pouco." Stop.
+- The lesson she names, or the latest one with a date and `status` before `fechada`. Find the transcript the way /resumo-da-reuniao does (the Meet or Zoom transcript for that day; else ask her to paste it). Ended under ~15 minutes ago → "A transcrição leva alguns minutos pra aparecer. Me pede de novo daqui a pouco." Stop.
 
 ### Step 2 — Read against the plan
 Read the whole transcript with the lesson's plan beside it. Pull out:
@@ -71,7 +71,7 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 
 ## Receipt
 
-`YYYY-MM-DD | curso-fechar-aula | <program> · lesson NN · <source: meet / pasted / no transcript> · <n> saved, <n> declined` in `_sistema/log.md`.
+`YYYY-MM-DD | curso-fechar-aula | <program> · lesson NN · <source: meet / zoom / pasted / no transcript> · <n> saved, <n> declined` in `_sistema/log.md`.
 
 ## What this skill never does
 

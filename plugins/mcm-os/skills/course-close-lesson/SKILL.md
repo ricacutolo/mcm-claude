@@ -14,7 +14,7 @@ Speak to her in plain, warm US English. Say "the lesson", "the transcript", "you
 1. `departments/courses/<program>/index.md` — `lessons on:` (where the transcript is).
 2. The lesson file (`lessons/lesson-NN-<slug>.md`) — the plan, the agenda, the homework.
 3. `departments/courses/<program>/faq.md`, `feedback.md`, `quotes.md` — to extend lines instead of repeating them.
-4. The transcript, through /save-meeting's **Sources** (Google Meet transcript in her Drive; pasted text for anything else). Nothing else.
+4. The transcript, through /save-meeting's **Sources** (Google Meet transcript in her Drive; Zoom cloud recording transcript; pasted text for anything else). Nothing else.
 
 ## The rules
 
@@ -33,7 +33,7 @@ Speak to her in plain, warm US English. Say "the lesson", "the transcript", "you
 ## Workflow
 
 ### Step 1 — Which lesson
-- The lesson she names, or the latest one with a date and `status` before `closed`. Find the transcript the way /save-meeting does (the Meet transcript for that day; else ask her to paste it). Ended under ~15 minutes ago → "The transcript takes a few minutes to show up. Ask me again in a little bit." Stop.
+- The lesson she names, or the latest one with a date and `status` before `closed`. Find the transcript the way /save-meeting does (the Meet or Zoom transcript for that day; else ask her to paste it). Ended under ~15 minutes ago → "The transcript takes a few minutes to show up. Ask me again in a little bit." Stop.
 
 ### Step 2 — Read against the plan
 Read the whole transcript with the lesson's plan beside it. Pull out:
@@ -71,7 +71,7 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 
 ## Receipt
 
-`YYYY-MM-DD | course-close-lesson | <program> · lesson NN · <source: meet / pasted / no transcript> · <n> saved, <n> declined` in `_system/log.md`.
+`YYYY-MM-DD | course-close-lesson | <program> · lesson NN · <source: meet / zoom / pasted / no transcript> · <n> saved, <n> declined` in `_system/log.md`.
 
 ## What this skill never does
 

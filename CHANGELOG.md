@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.14.0 — 2026-11-12 [both]
+- **Zoom transcripts** (Rica, 2026-11-12). save-meeting / resumo-da-reuniao reads her Zoom cloud recordings through the Zoom connection in Claude, the same way Rica's /meeting-recap does (tested on his account 2026-07-30): find the meeting with `search_meetings`, fall back to `recordings_list` when search hasn't caught up, double-encode the UUID, pull `types: transcript` only, take the date from the recording (a personal meeting room reports the wrong one), stop while it's still processing. Zoom's AI Companion summary and next steps are never a source. A Zoom transcript is saved word for word in the client's Drive folder, like a pasted one (Zoom can delete cloud recordings). New Step 1b messages for a recording without a transcript and for no recording; a failure mode for Zoom not connected and for a meeting someone else hosted.
+- install Step 6 (Meetings): Zoom checks the connection and says what to turn on (cloud recording with Audio transcript), instead of "Zoom is coming later". course-install: Zoom is now read on its own for live lessons (`lessons on: zoom`, no paste); only other tools paste. course-close-lesson reads the Zoom transcript through save-meeting's sources. System map.
+- **Untested:** a client's Zoom account (needs a paid plan with cloud recording and Audio transcript on).
+
 ## 0.13.1 — 2026-11-10 [both]
 - **System map refreshed** (docs only; no skill changed). New "The machines" table: every machine, what it does for her, its skills and the version it shipped in, plus what's planned next (the CEO layer, Marketing, the GHL machine, Community). New "How the system acts and asks" section (you make the moves, the browser fallback, a guide not a form, white label). The Conteúdo folder is spelled out; the Cursos folder shows the progress file; Áreas use the business brain names; sistema and instalar rows carry today's changes.
 

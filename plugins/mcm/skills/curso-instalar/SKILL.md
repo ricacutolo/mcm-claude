@@ -38,7 +38,7 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 ```markdown
 # <Nome do programa>
-aulas em: <meet | zoom (colar) | outro (colar)> · curso no MCM: <nome | ainda não criado>
+aulas em: <meet | zoom | outro (colar)> · curso no MCM: <nome | ainda não criado>
 
 ## Onde está
 _Em YYYY-MM-DD._
@@ -59,7 +59,8 @@ _Em YYYY-MM-DD._
 
 ### Step 3 — Recording live lessons
 - `reunioes: meet` → "As suas aulas ao vivo vão ser no Google Meet. Ligue **Transcrever a reunião** ao criar cada aula no Google Agenda; é isso que me deixa fechar cada aula pra você."
-- Zoom or outro → "Para aulas ao vivo eu recomendo o Google Meet com transcrição ligada: essas eu leio sozinho. Com o Zoom, você teria que colar a transcrição depois de cada aula. Quer mudar para as aulas?" Record her answer on the program's `aulas em:` line.
+- `reunioes: zoom` → "As suas aulas ao vivo vão ser no Zoom. Grave cada uma na nuvem com a **Transcrição de áudio** ligada (configurações do Zoom, em **Gravação**); é isso que me deixa fechar cada aula pra você."
+- Outro → "Para aulas ao vivo eu recomendo o Google Meet ou o Zoom com transcrição ligada: essas eu leio sozinho. Com outra ferramenta, você teria que colar a transcrição depois de cada aula. Quer mudar para as aulas?" Record her answer on the program's `aulas em:` line.
 
 ### Step 4 — Where it lives in MCM
 - "O seu curso vai ficar no MCM, onde os seus alunos entram. Ele já está criado lá?" Record it on the program's `curso no MCM:` line. Not created → "Sem problema; quando as primeiras aulas estiverem prontas, eu monto lá com você."

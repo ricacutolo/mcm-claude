@@ -38,7 +38,7 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 ```markdown
 # <Program name>
-lessons on: <meet | zoom (paste) | other (paste)> · MCM course: <name | not created yet>
+lessons on: <meet | zoom | other (paste)> · MCM course: <name | not created yet>
 
 ## Where it stands
 _As of YYYY-MM-DD._
@@ -59,7 +59,8 @@ _As of YYYY-MM-DD._
 
 ### Step 3 — Recording live lessons
 - `meetings: meet` → "Your live lessons will run on Google Meet. Turn on **Transcribe the meeting** when you create each session in Google Calendar; that's what lets me close each lesson for you."
-- Zoom or other → "For live lessons I'd recommend Google Meet with transcripts on: I can read those on my own. With Zoom, you'd paste the transcript after each lesson. Want to switch for lessons?" Record her answer on the program's `lessons on:` line.
+- `meetings: zoom` → "Your live lessons will run on Zoom. Record each one to the cloud with **Audio transcript** on (Zoom settings, under **Recording**); that's what lets me close each lesson for you."
+- Other → "For live lessons I'd recommend Google Meet or Zoom with transcripts on: I can read those on my own. With another tool, you'd paste the transcript after each lesson. Want to switch for lessons?" Record her answer on the program's `lessons on:` line.
 
 ### Step 4 — Where it lives in MCM
 - "Your course will live in MCM, where your students log in. Is it created there yet?" Record it on the program's `MCM course:` line. Not created → "No problem; once the first lessons are ready, I can set it up there with you."

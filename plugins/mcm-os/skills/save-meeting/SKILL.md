@@ -1,6 +1,6 @@
 ---
 name: save-meeting
-description: "Takes a meeting transcript (Google Meet, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
+description: "Takes a meeting transcript (Google Meet, Zoom, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
 ---
 
 # save-meeting — the meeting, filed where it belongs
@@ -29,7 +29,7 @@ Loaded only when this skill fires:
 
 > "Never copy an ID, passport, card or bank number from the transcript into any file or the chat."
 
-> "A Meet transcript stays where Meet put it; the sheet links to it. A pasted transcript is saved word for word in the client's Drive folder, never shortened or tidied."
+> "A Meet transcript stays where Meet put it; the sheet links to it. A Zoom or pasted transcript is saved word for word in the client's Drive folder, never shortened or tidied (Zoom can delete cloud recordings after a while)."
 
 > "Never send anything to the client. A follow-up is a draft she sends herself, and it carries only what was said to the client — never what she keeps in the sheet for herself."
 
@@ -40,24 +40,36 @@ Loaded only when this skill fires:
 | `meetings:` | Where the transcript is |
 |---|---|
 | `meet` | Google Drive of the account that hosted the meeting, folder **Google Meet** (older accounts: **Meet Recordings**), one Google Doc per transcript. With Google Calendar connected, the transcript is also attached to the event. Gemini notes are an AI summary: never a source. |
-| `zoom` | Not built yet: "I can't read Zoom yet. Paste the transcript here in the chat and I'll take it from there." |
+| `zoom` | Her Zoom cloud recordings, through the **Zoom** connection in Claude. Needs **Cloud recording** with **Audio transcript** turned on in her Zoom settings (paid Zoom plans). Zoom's AI Companion summary and next steps are an AI summary: never a source. Steps below. |
 
 Pasted or attached transcript text always works, for any tool.
+
+**Reading Zoom** (tested on Rica's account, 2026-07-30):
+- Find the meeting with `search_meetings` (a keyword from the client's name or the meeting title, and a from/to window for the day). Prefer the returned `meeting_uuid` over the meeting number: the UUID is this one meeting, which matters for a recurring link.
+- **Nothing found → `recordings_list` for the same window before saying it isn't there.** Zoom adds a finished meeting to search with a delay; the recordings list has it sooner. Match on topic and start time; take its `uuid`.
+- **Double-encode the UUID** when passing it as `meetingId`: `063RmbVgR9KTlPO0qUDK5A==` → `063RmbVgR9KTlPO0qUDK5A%253D%253D`. Raw or single-encoded fails.
+- `get_recording_resource` with `types: transcript` only: the timestamped lines (`text`, `ts`, `display_name`). Never request the summary or next steps.
+- `get_meeting_assets` for the participant list, to match guests to a client. **Take the date from the recording** (`recording_start`, or `start_time` in the recordings list), never from `get_meeting_assets`: a personal meeting room reports the date the room was made.
+- The recording shows `processing: true` → Step 1b, still processing.
+- Drop the milliseconds from the times (`00:27:45.350` → `00:27:45`).
 
 ## Workflow
 
 ### Step 1 — Which meeting
 
 - From her words: who (client, department, project, or someone new) and when ("today", "yesterday", a date). No date → the most recent.
-- Search the Google Meet folder (then Meet Recordings) for transcripts from that day, newest first. With the Calendar connected, look up the event at that time and match its guests to a client in `index.md`.
+- `meet`: search the Google Meet folder (then Meet Recordings) for transcripts from that day, newest first. With the Calendar connected, look up the event at that time and match its guests to a client in `index.md`.
+- `zoom`: find it as in **Reading Zoom** and match its participants to a client in `index.md`.
 - One clear match → say its title and time in one line and go on. Several → a short numbered list. None → Step 1b.
 - Who it is about: from her words or the event's guests. Unclear → one question: "Which client was this meeting with?"
 - **Someone not yet a client** (a first conversation, a sales call) → go on; Step 3 offers the sheet.
 
 ### Step 1b — No transcript
 
-- **The meeting ended less than ~15 minutes ago:** "The Meet transcript takes a few minutes to show up. Ask me again in a little bit." Receipt, stop.
-- **Otherwise:** "I couldn't find the transcript for this meeting. For next time: when you create the meeting in Google Calendar, open the video call options and, under meeting records, check **Transcribe the meeting** (the names may be a little different on your screen) — it starts when you join. If you have the transcript somewhere else, paste it here and I'll take it from there."
+- **The meeting ended less than ~15 minutes ago, or Zoom is still processing it:** "The transcript takes a few minutes to show up. Ask me again in a little bit." Receipt, stop.
+- **Zoom, the recording has no transcript:** "This Zoom meeting was recorded without a transcript. For next time: in Zoom's settings, under **Recording**, turn on **Cloud recording** and **Audio transcript**, and record each meeting to the cloud. If you have the transcript somewhere else, paste it here and I'll take it from there." Receipt, stop.
+- **Zoom, no recording at all:** "I couldn't find a Zoom recording of this meeting. For me to read it, record it to the cloud with **Audio transcript** on. If you have the transcript, paste it here." Receipt, stop.
+- **Meet, otherwise:** "I couldn't find the transcript for this meeting. For next time: when you create the meeting in Google Calendar, open the video call options and, under meeting records, check **Transcribe the meeting** (the names may be a little different on your screen) — it starts when you join. If you have the transcript somewhere else, paste it here and I'll take it from there."
 - No Google Meet folder at all and no transcript ever found → add once: "Your Google Workspace plan may not include transcripts (Business Starter doesn't). Rica can confirm."
 - Write the receipt (`no transcript`) and stop. Never build from memory or notes.
 
@@ -93,7 +105,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 >
 > OK to save? (**yes to all** / the numbers you want / **adjust**)"
 
-- **Pasted transcript:** add a line "8. The full transcript in <Name>'s folder in Drive".
+- **Zoom or pasted transcript:** add a line "8. The full transcript in <Name>'s folder in Drive".
 - **Someone not yet a client:** ask first, one question: "How did it go — **closed**, **thinking** or **no**?" Record her word. Closed or thinking → offer /new-client with this meeting as its source, then show the batch for the new sheet. No → only the reactions line and a dated note in `departments/clients/index.md` under `## Conversations that didn't become clients` (name, date, why, in their words when given).
 - **A department or project meeting:** the summary for its history and the next step for its brief's Next step; no sheet, no reactions unless clients' views on her service came up.
 
@@ -101,7 +113,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 
 - Sheet lines → their sections, under the right heading; update `updated:`.
 - The summary → hand it to /context for the client's history (dated, with the transcript link). Her yes covers it.
-- Pasted transcript → saved word for word as `Transcript - <Name> - YYYY-MM-DD.md` in the client's Drive folder, the same way /save-to-client saves a file; the Files line points to it.
+- Zoom or pasted transcript → saved word for word as `Transcript - <Name> - YYYY-MM-DD.md` (Zoom: `[HH:MM:SS] <Speaker>: <text>` per line) in the client's Drive folder, the same way /save-to-client saves a file; the Files line points to it.
 - Reactions → `departments/clients/reactions.md` (create it with the header below if missing), under the section that fits: **What they loved · Questions and worries · What they already do on their own · What they asked for**. Line: `- **<short label>.** "<quote>" <context in a few words>. — <client>, <date>`. The same reaction from another client extends the existing line with `· <client>, <date>` — that is how a pattern shows. Never rewrite or remove a line.
 - A department or project: summary to its history via /context; Next step through /system's write-back.
 - What she said **no** to is dropped.
@@ -129,7 +141,7 @@ Then, only if she promised something: "Want me to write the follow-up message fo
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / pasted / no transcript> · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
+`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / zoom / pasted / no transcript> · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
 
 Reply in one line: "Meeting saved to **<Name>**'s sheet and history." plus the next step.
 
@@ -146,17 +158,19 @@ Reply in one line: "Meeting saved to **<Name>**'s sheet and history." plus the n
 ## When to refuse
 
 - Asked to send the summary or the follow-up to the client — "Sending is up to you. I'll have the draft ready."
-- Asked to make the recap from the Gemini notes or from memory — "Without the transcript I might get what was said wrong. Paste the transcript here and I'll do it."
+- Asked to make the recap from the Gemini or Zoom AI notes, or from memory — "Without the transcript I might get what was said wrong. Paste the transcript here and I'll do it."
 - Asked to save a document number heard in the meeting — "I don't keep the number. I note that the document exists and what matters in it."
 
 ## Failure modes
 
 - **Drive not connected:** "I can't open your Drive. Is the Google Drive connection turned on?" She can paste the transcript instead.
+- **Zoom not connected** (`meetings: zoom`, no Zoom tools): "I can't open your Zoom. Connect it in Claude's settings, under **Connectors**, then ask me again. Or paste the transcript here." Use the browser only if she asks.
+- **Someone else hosted the Zoom meeting:** the recording is in their account; she can paste the transcript, or ask the host for it.
 - **Transcript in another account's Drive** (someone else hosted): she can paste it, or ask the host to share it.
 - **Very long transcript:** read it in parts; pull out per part, then merge before Step 3.
 - **Two languages or bad recognition:** keep only what is clear; mark the rest "unclear passage in the transcript".
 - **Client with `status: archived`:** say so and ask before writing.
-- **No Drive folder for the client** (`drive: to create`) and a pasted transcript: keep it in `departments/clients/<slug>/` locally and say it moves to the Drive once the folder exists.
+- **No Drive folder for the client** (`drive: to create`) and a Zoom or pasted transcript: keep it in `departments/clients/<slug>/` locally and say it moves to the Drive once the folder exists.
 
 ## STOP handling
 
