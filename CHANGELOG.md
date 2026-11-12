@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.14.4 — 2026-11-12 [both]
+- **Manual:** tab order is now The system, CEO, Client Book, Content machine, Course machine (Rica, 2026-11-12). Manual only.
+
 ## 0.14.3 — 2026-11-12 [both]
 - **Manual changes merge without waiting** (Rica, 2026-11-12). CLAUDE.md: a pull request that changes only the manual, with its CHANGELOG line and version bump, Claude merges once check-sync passes; the claude.ai artifact copy stays in step. Docs only.
 
