@@ -127,7 +127,7 @@ If a connector's permission screen looks different from what you describe, ask h
 ## Step 6 — Departamentos (10-15 min)
 
 - Seed: for each `_semente/departamentos/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[PERGUNTAR]` items, confirm, fix, replace every `~~data` with today's date, check its `area:` (ask if missing), then write it to `departamentos/<slug>/brief.md`, add its index line under its área header, and hand /contexto the creation of `contexto/<slug>.md` (`tier: departamento`) with the first line "Departamento criado na instalação." Her **sim** covers both.
-- No seed: run /novo-departamento for **Conteúdo** only. Say more can be created any time by saying "novo departamento".
+- No seed: create the **Conteúdo** department only, the way conteudo-instalar's step 1 does (`../conteudo-instalar/SKILL.md`, **The Conteúdo department**: its area, the brief from the content machine, her sim; no interview), with "criado durante a instalação" in its Decisões and log lines. Say more can be created any time by saying "novo departamento".
 - End with one line on the difference: "Departamento é o que você mantém sempre. Projeto é o que tem fim — para isso é só dizer **novo projeto**."
 
 ## Step 7 — Tour rápido (10 min)

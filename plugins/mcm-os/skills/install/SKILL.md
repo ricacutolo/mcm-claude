@@ -127,7 +127,7 @@ If a connector's permission screen looks different from what you describe, ask h
 ## Step 6 — Departments (10-15 min)
 
 - Seed: for each `_seed/departments/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[ASK]` items, confirm, fix, replace every `~~date` with today's date, check its `area:` (ask if missing), then write it to `departments/<slug>/brief.md`, add its index line under its area header, and hand /context the creation of `context/<slug>.md` (`tier: department`) with the first line "Department created during the install." Her **yes** covers both.
-- No seed: run /new-department for **Content** only. Say more can be created any time by saying "new department".
+- No seed: create the **Content** department only, the way content-install's step 1 does (`../content-install/SKILL.md`, **The Content department**: its area, the brief from the content machine, her yes; no interview), with "created during the install" in its Decisions and log lines. Say more can be created any time by saying "new department".
 - End with one line on the difference: "A department is something you keep up all the time. A project is something that has an end — for that, just say **new project**."
 
 ## Step 7 — Quick tour (10 min)

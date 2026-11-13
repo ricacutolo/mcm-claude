@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.15.1 — 2026-11-13 [both]
+- **The Content department is created without an interview** (Rica, 2026-11-13, from a walkthrough of the content setup: the generic department questions asked things the content machine already knows, or that the strategy decides later). content-install step 1 now writes the brief itself, in /new-department's format, from a fixed Content brief (purpose, standards, routines, what she uses, where things live), asking only its area, then shows it for one yes, like course-install and business-strategy already do for their departments. The install's "no seed" path creates Content the same way. /new-department's interview is unchanged for every other department.
+
 ## 0.15.0 — 2026-11-13 [both]
 - **How every reply looks** (Rica, 2026-11-13, after watching a client's system answer simple yeses with long paragraphs). New section at the top of system / sistema, winning over longer wording in any skill and over the format line in older Instructions for Claude: short (a simple thing gets one line); points in order, never paragraphs; one bold next step at the end; no homework; the why only when it matters. Example of an approval batch in each edition.
 - The Instructions for Claude template's Format line now says the same, for new installs. Existing clients keep their text; the system rule covers them.

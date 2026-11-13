@@ -36,7 +36,7 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 > "The MCM key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
 
-> "Hand-offs (new-department, install, brand-kit-designer, content-strategy) run only on a yes."
+> "The Content department brief is written only after her yes to it. Hand-offs (install, brand-kit-designer, content-strategy) run only on a yes."
 
 > "setup.md, the receipt and the department's Next step and Current state are kept current without asking. Nothing else in the brief is touched; anything else goes to `_system/pending.md`."
 
@@ -46,7 +46,7 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 | # | Stage | Step | Done when | How |
 |---|---|---|---|---|
-| 1 | Home | Content department exists | `departments/content/brief.md` exists | If missing → offer /new-department (content) |
+| 1 | Home | Content department exists | `departments/content/brief.md` exists | If missing → create it from **The Content department** below: one question (its area), the brief shown, written on yes. No interview: the content machine already knows what this department is |
 | 2 | Home | Setup tracker | `setup.md` exists | Create it (format below) |
 | 3 | Business | Business file filled in | `about-me/business-brain.md` exists with offer, audience and pains | Missing → offer to redo the install's business step (step 3; a completed install still runs "redo step 3"), and run it on her yes. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business-brain.md`; done when they're written |
 | 4 | Business | Voice captured | `about-me/writing.md` exists with real samples | Missing → offer to redo the install's writing step (step 4; a completed install still runs "redo step 4"), and run it on her yes. No samples → ask her for 2-3 things she wrote and add them to `_system/pending.md` as an item for `about-me/writing.md` |
@@ -79,7 +79,7 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 ### Step 2 — Work the next step
 - Open with the recommendation: "We'd do <X>, because <why>. OK, or would you change it?"
 - Her steps (5, 7, 8, 9 copy, 12, 13 connect, 19 paste): give the guide's steps in plain words, one at a time (`guides.md`), then wait for "done" and run the check where there is one.
-- Hand-off steps (1, 3, 4, 7 brand kit, 20): offer the skill; run it only on yes. When it finishes, re-check and continue.
+- Hand-off steps (3, 4, 7 brand kit, 20): offer the skill; run it only on yes. When it finishes, re-check and continue.
 - **Her brand roles** (steps 7-10), from `about-me/brand.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `deliverables/brand/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which.
 - **Step 9 rebrand**, on each of her copies (through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; swap the base logo for hers from step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those to fit her business, in her voice, and show them in the previews. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules; fonts if the copy lost them), with Guide B's clicks.
 
@@ -93,6 +93,19 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 
   Apply edits exactly, re-show, write on yes.
 - After each step, update `setup.md` (status, date, how we know, decisions noted). No approval needed.
+
+**The Content department (step 1):** the brief in /new-department's brief format, filled from the content machine, never from an interview. Ask only its area: "Is this content for **<her main business>**, or something else?" (her main business first; her answer wins). Fill the dates, show the full brief, and on yes write it, add its index line under its area header in `departments/index.md`, and hand /context the creation of `context/content.md` (`tier: department`) with "Content department created during the content setup." Her yes covers all three.
+
+- Name **Content**; slug `content`; `area:` her answer.
+- Intro: "Her posts, from idea to scheduled, and what they teach her about her audience."
+- Purpose: "Show up consistently, in her own voice, with content that brings the right people closer to buying."
+- Standards: "Nothing is posted without her yes." · "Where and how often she posts: her content strategy (`strategy.md`)."
+- Routines: "The next post, when the plan says · as planned" · "A review of what worked, before each new 4-week plan · monthly".
+- Current state: "Content setup started; nothing posted yet."
+- Next step: "Continue the content setup: step 2. Say \"continue content setup\"."
+- What I use here: "next post" (makes the next post from the plan · `posts/`), "plan content" (the next 4 weeks · `plan.md`), "set up my content strategy" (what to post and why · `strategy.md`), "review the content" (what worked · `performance-log.md`), "set up my content" (this setup · `setup.md`).
+- Material that already exists: none yet (her photos folder joins when she starts one).
+- Decisions: "Department created during the content setup."
 
 **`brand-style.md` (step 10):**
 
@@ -190,9 +203,9 @@ Runs that changed something: hand /context one line for `context/content.md`:
 - Connects, disconnects or changes anything in Canva, MCM or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her yes.
 - Writes `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (changes there only wait in `_system/pending.md`), the shipped library, playbook or guides, or anything in `context/` (milestones go through /context).
 - Adds template rows to `templates.md` beyond the base templates set up here.
-- Touches anything in the department brief beyond Next step, Current state and `updated:`.
+- Touches anything in the department brief beyond Next step, Current state and `updated:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.
-- Runs a hand-off without a yes.
+- Runs a hand-off without a yes, or interviews her for the Content department brief.
 - Creates reminders or tasks on a timer. Dates live in files the skills already read (e.g. token expiry in `ghl.md`, which content-post checks every run).
 - Deletes files. Anything replaced goes to `_review/`.
 
@@ -213,7 +226,7 @@ Runs that changed something: hand /context one line for `context/content.md`:
 - **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.
 - **An element can't be recolored from here** — leave it, list it as a hand fix at the gate.
 - **The script source is missing** — stop step 18 and say so; never rewrite the script.
-- **Department brief missing after she declined new-department** — keep `setup.md` in `departments/content/` anyway and say the department still needs a brief.
+- **Department brief missing after she declined it** — keep `setup.md` in `departments/content/` anyway and say the department still needs a brief.
 - Prefer doing less: when unsure, stop at the current step and say what's unclear.
 
 ## STOP handling

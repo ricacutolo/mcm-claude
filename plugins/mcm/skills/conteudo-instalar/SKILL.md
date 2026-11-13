@@ -36,7 +36,7 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 
 > "The MCM key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
 
-> "Hand-offs (novo-departamento, instalar, brand-kit-designer, conteudo-estrategia) run only on a sim."
+> "The Conteúdo department brief is written only after her sim to it. Hand-offs (instalar, brand-kit-designer, conteudo-estrategia) run only on a sim."
 
 > "configuracao.md, the receipt and the department's Próximo passo and Estado atual are kept current without asking. Nothing else in the brief is touched; anything else goes to `_sistema/pendentes.md`."
 
@@ -46,7 +46,7 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 
 | # | Stage | Step | Done when | How |
 |---|---|---|---|---|
-| 1 | Home | Conteúdo department exists | `departamentos/conteudo/brief.md` exists | If missing → offer /novo-departamento (content) |
+| 1 | Home | Conteúdo department exists | `departamentos/conteudo/brief.md` exists | If missing → create it from **The Conteúdo department** below: one question (its area), the brief shown, written on sim. No interview: the content machine already knows what this department is |
 | 2 | Home | Setup tracker | `configuracao.md` exists | Create it (format below) |
 | 3 | Business | Business file filled in | `sobre-mim/cerebro-do-negocio.md` exists with offer, audience and pains | Missing → offer to redo instalar's business step (step 3; a completed install still runs "refazer etapa 3"), and run it on her sim. Thin → ask what's missing (at most 3 questions) and add the lines to `_sistema/pendentes.md` as items for `sobre-mim/cerebro-do-negocio.md`; done when they're written |
 | 4 | Business | Voice captured | `sobre-mim/escrita.md` exists with real samples | Missing → offer to redo instalar's writing step (step 4; a completed install still runs "refazer etapa 4"), and run it on her sim. No samples → ask her for 2-3 things she wrote and add them to `_sistema/pendentes.md` as an item for `sobre-mim/escrita.md` |
@@ -79,7 +79,7 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 ### Step 2 — Work the next step
 - Open with the recommendation: "A gente faria <X>, porque <why>. Pode ser, ou você mudaria?"
 - Her steps (5, 7, 8, 9 copy, 12, 13 connect, 19 paste): give the guide's steps in plain words, one at a time (`guides.md`), then wait for "done" and run the check where there is one.
-- Hand-off steps (1, 3, 4, 7 brand kit, 20): offer the skill; run it only on sim. When it finishes, re-check and continue.
+- Hand-off steps (3, 4, 7 brand kit, 20): offer the skill; run it only on sim. When it finishes, re-check and continue.
 - **Her brand roles** (steps 7-10), from `sobre-mim/marca.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `entregas/marca/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which.
 - **Step 9 rebrand**, on each of her copies (through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; swap the base logo for hers from step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those in Brazilian Portuguese to fit her business, in her voice, and show them in the previews. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules; fonts if the copy lost them), with Guia B's clicks.
 
@@ -93,6 +93,19 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 
   Apply edits exactly, re-show, write on sim.
 - After each step, update `configuracao.md` (status, date, how we know, decisions noted). No approval needed.
+
+**The Conteúdo department (step 1):** the brief in /novo-departamento's brief format, filled from the content machine, never from an interview. Ask only its area: "Esse conteúdo é para **<her main business>**, ou para outra coisa?" (her main business first; her answer wins). Fill the dates, show the full brief, and on sim write it, add its index line under its area header in `departamentos/index.md`, and hand /contexto the creation of `contexto/conteudo.md` (`tier: department`) with "Departamento Conteúdo criado durante a configuração do conteúdo." Her sim covers all three.
+
+- Name **Conteúdo**; slug `conteudo`; `area:` her answer.
+- Intro: "Os posts dela, da ideia ao agendamento, e o que eles ensinam sobre o público dela."
+- Propósito: "Aparecer com constância, na voz dela, com conteúdo que aproxima as pessoas certas da compra."
+- Padrões: "Nada é postado sem o sim dela." · "Onde e com que frequência ela posta: a estratégia de conteúdo dela (`estrategia.md`)."
+- Rotinas: "O próximo post, quando o plano diz · conforme o plano" · "Uma revisão do que funcionou, antes de cada novo plano de 4 semanas · mensal".
+- Estado atual: "Configuração do conteúdo começou; nada postado ainda."
+- Próximo passo: "Continuar a configuração do conteúdo: etapa 2. Diga \"continua a configuração do conteúdo\"."
+- O que eu uso aqui: "próximo post" (faz o próximo post do plano · `posts/`), "planeja o conteúdo" (as próximas 4 semanas · `plano.md`), "monta a minha estratégia de conteúdo" (o que postar e por quê · `estrategia.md`), "revisa o conteúdo" (o que funcionou · `desempenho.md`), "configura o meu conteúdo" (esta configuração · `configuracao.md`).
+- Material que já existe: nada ainda (a pasta de fotos dela entra quando ela começar uma).
+- Decisões: "Departamento criado durante a configuração do conteúdo."
 
 **`estilo-da-marca.md` (step 10):**
 
@@ -190,9 +203,9 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - Connects, disconnects or changes anything in Canva, MCM or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her sim.
 - Writes `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (changes there only wait in `_sistema/pendentes.md`), the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /contexto).
 - Adds template rows to `modelos.md` beyond the base templates set up here.
-- Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
+- Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.
-- Runs a hand-off without a sim.
+- Runs a hand-off without a sim, or interviews her for the Conteúdo department brief.
 - Creates reminders or tasks on a timer. Dates live in files the skills already read (e.g. token expiry in `ghl.md`, which conteudo-post checks every run).
 - Deletes files. Anything replaced goes to `_review/`.
 
@@ -213,7 +226,7 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.
 - **An element can't be recolored from here** — leave it, list it as a hand fix at the gate.
 - **The script source is missing** — stop step 18 and say so; never rewrite the script.
-- **Department brief missing after she declined novo-departamento** — keep `configuracao.md` in `departamentos/conteudo/` anyway and say the department still needs a brief.
+- **Department brief missing after she declined it** — keep `configuracao.md` in `departamentos/conteudo/` anyway and say the department still needs a brief.
 - Prefer doing less: when unsure, stop at the current step and say what's unclear.
 
 ## STOP handling
