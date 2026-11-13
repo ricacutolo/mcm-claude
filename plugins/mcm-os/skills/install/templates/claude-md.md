@@ -8,7 +8,7 @@ I'm **~~name**, ~~role_in_one_sentence. My business: ~~one_sentence_about_the_bu
 
 - **Tone:** ~~tone (e.g. direct, warm, practical).
 - **Length:** short answers by default. If I want more, I'll ask.
-- **Format:** plain paragraphs to explain; lists only when it really is a list.
+- **Format:** short points in order, one line each, and one clear next step at the end. No long paragraphs.
 - **Questions:** if something is unclear, ask just one question.
 - **Language:** US English.
 - ~~extra_preferences
