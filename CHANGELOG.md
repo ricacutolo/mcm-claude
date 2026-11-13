@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.15.0 — 2026-11-13 [both]
+- **How every reply looks** (Rica, 2026-11-13, after watching a client's system answer simple yeses with long paragraphs). New section at the top of system / sistema, winning over longer wording in any skill and over the format line in older Instructions for Claude: short (a simple thing gets one line); points in order, never paragraphs; one bold next step at the end; no homework; the why only when it matters. Example of an approval batch in each edition.
+- The Instructions for Claude template's Format line now says the same, for new installs. Existing clients keep their text; the system rule covers them.
+- System map; manual footer.
+
 ## 0.14.5 — 2026-11-12 [both]
 - **Manual:** a first visit opens in Portuguese when the browser's language is Portuguese, else English; the reader's own EN/PT pick is still remembered and wins (Rica, 2026-11-12). Manual only.
 

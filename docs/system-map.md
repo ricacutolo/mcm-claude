@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.14.5
+version: 0.15.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -129,6 +129,7 @@ Routing map (what goes where) lives in the sistema skill, so it updates with the
 - **You make the moves** (sistema): the system does the work itself; a step is "manual" only when it truly can't be done from here, named with one action.
 - **The browser is the fallback, not "I can't"** (0.10.0): connections first; when one can't do a step, the browser in the Claude app (or Claude in Chrome). She signs in, never Claude; it stops before publish, send, delete, pay; scheduling something she approved is fine. "Can't" only when the browser is unreachable.
 - **A guide, not a form** (0.11.0): every question is what we need and why · what I'd recommend · "do you already know it, or want to work it out together?" Not knowing is the point.
+- **How every reply looks** (0.15.0): short; points in order, never paragraphs; one bold next step at the end; no homework; the why only when it matters. Wins over longer wording in any skill.
 - **White label** (0.7.2): she hears "MCM", never GoHighLevel, HighLevel or GHL.
 
 ## Upkeep and health
