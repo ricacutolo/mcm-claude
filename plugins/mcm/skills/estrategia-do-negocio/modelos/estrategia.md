@@ -37,6 +37,15 @@ _O que estou decidindo e o que vem a seguir. O que já está decidido também fi
 - **A meta (um número):** <ex.: 10 pré-vendas pagas até 2027-02-01>
 - **A prioridade nº 1:** <uma linha>
 
+## Direções
+_Para cada departamento: o que ele executa desta estratégia. Só a direção; o como fica com o departamento._
+
+### Conteúdo
+- **Para que serve o conteúdo agora:** <ex.: vender a primeira oferta: leads ligado, credibilidade ligada>
+- **Aponta para:** <a oferta, ou a conversa gratuita>
+- **Público a crescer:** <quem, ou nenhum: a lista que eu tenho basta>
+- **Fica de fora:** <ex.: sem descontos, sem posts sobre o programa antigo>
+
 ## O que fica de fora
 - <antimeta>
 

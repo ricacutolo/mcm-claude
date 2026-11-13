@@ -148,6 +148,7 @@ Never make her name a skill. Plain words are enough.
 > 2. ..."
 
 - **sim** → `acrescentar`: append the line under the right heading (dated lines for Decisões). `mudar campo`: change that one field. Items whose destination is in `contexto/` are handed to /contexto to write. Then delete the item from `pendentes.md`.
+- Items marked `para a sessão de estratégia` stay out of the batch: they're already approved notes for /estrategia-do-negocio, which opens her next session with them and deletes each once she's settled it.
 - **não** → delete the item.
 - No answer → leave it. It comes back next batch or at upkeep.
 - **ajustar** → take her wording, then write.

@@ -148,6 +148,7 @@ Never make her name a skill. Plain words are enough.
 > 2. ..."
 
 - **yes** → `add`: append the line under the right heading (dated lines for Decisions). `change field`: change that one field. Items whose destination is in `context/` are handed to /context to write. Then delete the item from `pending.md`.
+- Items marked `for the strategy session` stay out of the batch: they're already approved notes for /business-strategy, which opens her next session with them and deletes each once she's settled it.
 - **no** → delete the item.
 - No answer → leave it. It comes back next batch or at upkeep.
 - **adjust** → take her wording, then write.

@@ -23,6 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `departments/content/templates.md` — which templates exist (a template is format × post type).
 7. `departments/content/brief.md` — its Next step and Current state.
 8. `about-me/about-me.md` — only her time zone.
+9. the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md`), if it exists — its `updated:` date, and its Directions → Content only when it's newer than the content strategy's `Follows:` date.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -39,6 +40,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Find the slots
+- **The CEO's direction changed?** Compare the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md` for the area in play): its `updated:` date against the `Follows:` date in `departments/content/strategy.md` (no `Follows:` line counts as older). Newer → before anything else, one line: "Your strategy changed on <date>: <the new direction for content, in one line>. Update the content strategy first? **Yes / later**". Yes → content-strategy (revise), then continue here. Later → continue as is. No CEO strategy, or not newer: say nothing.
 - Cadence and slot time from `strategy.md` (e.g. Tue and Thu, 12:30 PM), in her time zone (from `about-me/about-me.md`, else ask once).
 - Start after the last post that is scheduled in `calendar.md` or planned in `plan.md`, whichever is later. Never re-plan a slot that's already scheduled.
 - Fill 4 weeks of slots from there. Number them as post numbers, continuing from the calendar.

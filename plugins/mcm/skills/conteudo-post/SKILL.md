@@ -27,6 +27,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 7. `sobre-mim/sobre-mim.md` — only her time zone.
 8. Idea capture only: `departamentos/conteudo/ideias.md`.
 9. Publish check only: `departamentos/conteudo/desempenho.md`.
+10. At the end of the run (Step 4): the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md`), if it exists — its `atualizado:` date, and its Direções → Conteúdo only when it's newer than the content strategy's `Segue:` date.
 
 Never read or print `departamentos/conteudo/.env`. The scripts read it; this skill never does.
 
@@ -87,6 +88,7 @@ The maker hands back here when the post is scheduled (even when she started the 
 - **Stay one post ahead:** if the next `planejado` slot isn't scheduled yet: "Quer fazer o post N+1 agora, pra ter sempre um na fila?" Start it only on sim, as its own run (back to Step 1). One approved post waiting in MCM means a busy week doesn't leave a slot empty.
 - **The publish check:** there are no reminders on a timer. Tell her once: "Quando sair, me pergunta \"o post foi ao ar?\" que eu te mando os links. Eu também confiro da próxima vez que a gente fizer um post."
 - If the maker stopped at a gate instead, add nothing; it already said where it stopped.
+- **The CEO's direction changed?** Compare the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md` for the area in play): its `atualizado:` date against the `Segue:` date in `departamentos/conteudo/estrategia.md` (no `Segue:` line counts as older). Newer → one line, never blocking: "A sua estratégia mudou em <date>; a sua estratégia de conteúdo ainda não acompanhou. Diga \"revisa a estratégia\" quando quiser." Once per CEO change: skip it when an earlier conteudo-post receipt line already has `ceo: avisada <that date>`, and add that tag to this run's receipt when you say it.
 - Receipt (below).
 
 ## Step P — Publish check
@@ -121,7 +123,7 @@ Triggered by "guarda isso como ideia de post", "ideia de post: …", "coloca iss
 
 One line per run in `_sistema/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | conteudo-post | routed / declined / captured / publish-check / no-slot | post N · <format> → conteudo-estatico or conteudo-video · missed: yes/no · <published links or idea #N>`
+`YYYY-MM-DD | conteudo-post | routed / declined / captured / publish-check / no-slot | post N · <format> → conteudo-estatico or conteudo-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
 
 ## What this skill never does
 

@@ -2,6 +2,13 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.16.0 — 2026-11-13 [both]
+- **The CEO directs the content machine** (Rica, 2026-11-13; spec approved the same day). The first link between two departments, one way: the CEO decides what content is for, content decides how.
+- business-strategy: the strategy template gets a **Directions** section, one entry per department (Content first: what content is for now, the offer it points to, the audience to grow, what stays out). A new topic in the session fills it, directions only, never topics, post types, formats or posting days. When the Content direction changes, the close offers to update the content strategy. The session opens with notes the content review left for it.
+- content-strategy: reads the CEO strategy; with a direction, the layers and the CTA come from it and the "what is content for" question is skipped. Records `Follows: CEO strategy of <date>` (or "no CEO strategy yet"). Going against the direction is kept, with her reason, under "Deliberate differences from the CEO's direction", never silently. With no CEO strategy it runs as before and offers the strategy session once.
+- content-plan and content-review: when the CEO strategy is newer than `Follows:`, say so first and offer to update the content strategy (yes / later). content-post: one line at the end, once per change. content-review: a finding about the business becomes a `for the strategy session` note in `_system/pending.md`; /system keeps those out of its batch and /business-strategy opens with them. Content never edits the CEO strategy.
+- **Untested:** the CEO path (no client has a CEO strategy yet). The no-CEO path is unchanged apart from the one-time offer.
+
 ## 0.15.1 — 2026-11-13 [both]
 - **The Content department is created without an interview** (Rica, 2026-11-13, from a walkthrough of the content setup: the generic department questions asked things the content machine already knows, or that the strategy decides later). content-install step 1 now writes the brief itself, in /new-department's format, from a fixed Content brief (purpose, standards, routines, what she uses, where things live), asking only its area, then shows it for one yes, like course-install and business-strategy already do for their departments. The install's "no seed" path creates Content the same way. /new-department's interview is unchanged for every other department.
 

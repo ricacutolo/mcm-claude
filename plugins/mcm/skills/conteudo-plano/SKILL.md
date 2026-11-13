@@ -23,6 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `departamentos/conteudo/modelos.md` — which templates exist (a template is format × post type).
 7. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
 8. `sobre-mim/sobre-mim.md` — only her time zone.
+9. the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md`), if it exists — its `atualizado:` date, and its Direções → Conteúdo only when it's newer than the content strategy's `Segue:` date.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -39,6 +40,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Find the slots
+- **The CEO's direction changed?** Compare the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md` for the area in play): its `atualizado:` date against the `Segue:` date in `departamentos/conteudo/estrategia.md` (no `Segue:` line counts as older). Newer → before anything else, one line: "A sua estratégia mudou em <date>: <a nova direção para o conteúdo, em uma linha>. Atualizo a estratégia de conteúdo primeiro? **Sim / depois**". Sim → conteudo-estrategia (revise), then continue here. Depois → continue as is. No CEO strategy, or not newer: say nothing.
 - Cadence and slot time from `estrategia.md` (e.g. Tue and Thu, 12h30), in her time zone (from `sobre-mim/sobre-mim.md`, else ask once).
 - Start after the last post that is scheduled in `calendario.md` or planned in `plano.md`, whichever is later. Never re-plan a slot that's already scheduled.
 - Fill 4 weeks of slots from there. Number them as post numbers, continuing from the calendar.

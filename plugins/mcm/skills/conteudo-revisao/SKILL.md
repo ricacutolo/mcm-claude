@@ -25,6 +25,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 8. `../conteudo-estrategia/library.md` — entries and statuses (unproven, working, dropped); then `departamentos/conteudo/notas-da-biblioteca.md` and `departamentos/conteudo/swipe.md`, if they exist.
 9. `sobre-mim/cerebro-do-negocio.md` — for business file suggestions only. Never edited here.
 10. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
+11. the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md`), if it exists — its `atualizado:` date, and its Direções → Conteúdo only when it's newer than the content strategy's `Segue:` date.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -43,6 +44,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Window
+- **The CEO's direction changed?** Compare the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md` for the area in play): its `atualizado:` date against the `Segue:` date in `departamentos/conteudo/estrategia.md` (no `Segue:` line counts as older). Newer → before anything else, one line: "A sua estratégia mudou em <date>: <a nova direção para o conteúdo, em uma linha>. Atualizo a estratégia de conteúdo primeiro? **Sim / depois**". Sim → conteudo-estrategia (revise), then continue here. Depois → continue, and the review reads the posts against the new direction. No CEO strategy, or not newer: say nothing.
 - From the date of the last `conteudo-revisao` line in `_sistema/log.md` to today. First run: everything published.
 - Say in one line: "Olhando de <first date> a <last date>: <N> posts publicados."
 
@@ -66,6 +68,7 @@ At most 5 items, ranked. Each: what · why (the numbers) · where it goes · our
 - **Plan change** — hand-off to conteudo-plano (refresh), naming the slots it would change.
 - **Layer** — switch audience or leads on when the numbers support it (a strategy change).
 - **Business file** — a suggested update to `sobre-mim/cerebro-do-negocio.md`, which waits in `_sistema/pendentes.md` for her sim.
+- **For your strategy** — something about the business, not the content (e.g. "os posts sobre X trazem as ligações; X não é a sua primeira oferta") → a note for her next strategy session. Content never edits the CEO strategy.
 
 > "Quais desses você quer? Diga **sim** pros que você quer (ou **sim pra todos**), ou me diz o que mudar."
 
@@ -90,6 +93,7 @@ On sim, for the approved items only:
    ```
 3. `swipe.md`: approved swipe lines. Create the file if missing with `# Swipe file: <business>` and the columns `Data · Frase ou post · Por que funcionou · Evidência`.
 4. Business file items: one line each in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: revisão de conteúdo de <first date> a <last date>)`.
+4b. "For your strategy" items: one line each in `_sistema/pendentes.md` (re-read it first): `- [ ] YYYY-MM-DD · para a sessão de estratégia · departamentos/ceo/estrategia.md § Perguntas em aberto · <the line> · (de: revisão de conteúdo de <first date> a <last date>)`. The strategy session opens with them.
 5. Offer each approved hand-off ("Quer que eu atualize a sua estratégia de conteúdo agora?" / "Quer que eu atualize o plano agora?"); run it only on sim.
 6. Department brief: Estado atual with today's date and one line on the review, and `atualizado:`. If a strategy or plan hand-off was approved and not run, set Próximo passo to it ("Atualizar a estratégia de conteúdo: <change>. Diga \"revisa a estratégia\"."). Mention it in one short line.
 7. Receipt and milestone (below).
