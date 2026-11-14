@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.18.0 — 2026-11-14 [both]
+- **Every setup reports its progress back to Rica** (spec 2026-11-14). The health file (`_system/health.md`) gets a **Setup** block, one line per setup that exists: the install (step X of 9), the content setup (N of 20 and what it's waiting on), each course program (numbered, never named, stage words only) and the CEO strategy (set, with its date, or not yet). Step names and counts only, so it stays numbers-only and needs no new permission.
+- Written at the weekly checkup and whenever a setup step finishes: install, content-install, course-install and business-strategy hand /system "refresh the Setup block"; /system stays the only writer of the health file. With `drive_mirror: yes`, the Drive copy Rica sees updates at the same moments.
+- Later, not in this release: one place that reads every client's report.
+
 ## 0.17.0 — 2026-11-14 [both]
 From a full walkthrough of the content setup with Rica (spec approved 2026-11-14). The setup does the busywork; she only does what needs her hands.
 - **Choices, every skill** (system's reply rules): numbered options, one per line, answerable with the number; tappable in-chat choices when the app has them; never the pop-up card. Every choice ends with "Or tell me what you're thinking." Anything she does by hand: numbered steps, one action each, with a direct link that reads as one ("**Click here to open … →**"); if Claude can check it, Claude checks.

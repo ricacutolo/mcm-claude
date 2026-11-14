@@ -44,7 +44,7 @@ Every time this skill fires:
 - Otherwise: "Da última vez paramos na etapa **X — <nome>**. Seguimos na etapa **Y**? (**sim** / **mostrar progresso**)"
 - "refazer etapa X" → confirm it overwrites that step's files, copy each of them to `_revisao/YYYY-MM-DD-<arquivo>` first, then run it.
 
-After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, append the receipt line, and ask "Etapa X pronta. Seguimos para a próxima ou paramos aqui? (**continuar** / **pausar**)".
+After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, append the receipt line, hand /sistema "atualizar o bloco Configuração" (once `_sistema/` exists), and ask "Etapa X pronta. Seguimos para a próxima ou paramos aqui? (**continuar** / **pausar**)".
 
 ## Bringing the seed from the Drive
 

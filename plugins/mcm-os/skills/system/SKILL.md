@@ -229,11 +229,20 @@ plugin_version: <from state.md>
 - Long logs: <n>
 - Stale briefs: <n>
 - Errors seen: <short list, or "none">
+
+## Setup
+setup_updated: YYYY-MM-DD
+- Install: done | step <X> of 9 · waiting: <step names>
+- Content setup: done | <done> of 20 · waiting: <step names>
+- Courses: program 1: <stage words> · program 2: …
+- CEO strategy: set (<its updated date>) | not yet
 ```
 
-Never put her content, names of clients, or text from her files in it.
+Never put her content, names of clients, or text from her files in it. The **Setup** block holds step names and counts only: from `_system/state.md` (the install's steps), `departments/content/setup.md` (its table and Waiting on), each `departments/courses/<program>/index.md` (its stage, in step words: set up, designing, recording, live; programs are numbered, never named, and no module or lesson titles) and `departments/ceo/strategy.md` (its `updated:` date, or missing). A setup never started gets no line.
 
-**Mirror to Drive.** The first time, ask: "Can I save a copy of this system health report (just numbers, nothing of your content) in the Drive folder you share with Rica, so he can check everything is working?" Record the answer in `state.md` as `drive_mirror: yes | no`. If **yes** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `state.md` → `drive_folder` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Errors seen".
+**Setup refresh.** A setup skill (install, content-install, course-install, business-strategy) hands this skill "refresh the Setup block" when one of its steps finishes. Rewrite only the Setup block and its `setup_updated:` line in `health.md` (create the file with the rest blank if it doesn't exist yet), and with `drive_mirror: yes`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
+
+**Mirror to Drive.** At each upkeep and each Setup refresh. The first time, ask: "Can I save a copy of this system health report (just numbers, nothing of your content) in the Drive folder you share with Rica, so he can check everything is working?" Record the answer in `state.md` as `drive_mirror: yes | no`. If **yes** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `state.md` → `drive_folder` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Errors seen".
 
 ## You make the moves
 

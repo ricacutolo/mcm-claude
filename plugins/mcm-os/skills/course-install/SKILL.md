@@ -67,6 +67,7 @@ _As of YYYY-MM-DD._
 
 ### Step 5 — Close
 - the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Where it stands ("Set up: <format>, <length>.") and Next step ("Design the program"); Rounds "Round 1 — planned". Then the Courses brief, as above.
+- Hand /system "refresh the Setup block" (this program's line).
 - Offer the design: "Want to design the program now? We go from your offer to the full module map." Run /course-design on yes.
 - Receipt.
 

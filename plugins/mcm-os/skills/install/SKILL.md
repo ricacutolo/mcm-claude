@@ -44,7 +44,7 @@ Every time this skill fires:
 - Otherwise: "Last time we stopped at step **X — <name>**. Shall we go on with step **Y**? (**yes** / **show progress**)"
 - "redo step X" → confirm it overwrites that step's files, copy each of them to `_review/YYYY-MM-DD-<file>` first, then run it.
 
-After each step: set that row to `complete` in `state.md`, set `current_step`, append the receipt line, and ask "Step X is done. Shall we go to the next one or stop here? (**continue** / **pause**)".
+After each step: set that row to `complete` in `state.md`, set `current_step`, append the receipt line, hand /system "refresh the Setup block" (once `_system/` exists), and ask "Step X is done. Shall we go to the next one or stop here? (**continue** / **pause**)".
 
 ## Bringing the seed from the Drive
 

@@ -67,6 +67,7 @@ _Em YYYY-MM-DD._
 
 ### Step 5 — Close
 - the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está ("Configurado: <formato>, <duração>.") and Próximo passo ("Desenhar o programa"); Turmas "Turma 1 — planejada". Then the Cursos brief, as above.
+- Hand /sistema "atualizar o bloco Configuração" (this program's line).
 - Offer the design: "Quer desenhar o programa agora? A gente vai da sua oferta até o mapa completo dos módulos." Run /curso-desenho on sim.
 - Receipt.
 
