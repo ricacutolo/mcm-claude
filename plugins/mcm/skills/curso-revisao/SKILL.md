@@ -46,7 +46,7 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 
 ### Step 4 — Write, on her sim
 - `retorno.md`: a dated **Review** line with what she approved.
-- Program-level changes she approved: hand to /curso-desenho as a revision (it shows and writes). Lesson-level: noted in `retorno.md` for /curso-aula to pick up. Strategy questions: one line in `_sistema/pendentes.md` for `departamentos/ceo/estrategia.md § Open questions`.
+- Program-level changes she approved: hand to /curso-desenho as a revision (it shows and writes). Lesson-level: noted in `retorno.md` for /curso-aula to pick up. Strategy questions: one line under **Abertos** in `departamentos/ceo/relatorios.md` (re-read it first; create it from `../estrategia-do-negocio/modelos/relatorios.md` if it's missing): `- AAAA-MM-DD · cursos · <the question> · (de: revisão do curso, <program>)`. Add lines only.
 - Quotes still `precisa de permissão` that would help sell the next round: remind her once which students to ask.
 
 ### Step 5 — Close

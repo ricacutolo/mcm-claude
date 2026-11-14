@@ -19,7 +19,7 @@ Loaded only when this skill fires.
 4. `about-me/about-me.md` — her time, her situation, what she wants her role to be.
 5. `${CLAUDE_SKILL_DIR}/playbook.md` — the frameworks. Read the section in play, not all of it.
 6. Only when proposing what the departments should adjust: the briefs in `departments/index.md`.
-7. `_system/pending.md` — items marked `for the strategy session` (from the content review): the session opens with them.
+7. `departments/ceo/reports.md` — its Open section: what the departments reported up (format: `templates/reports.md`). The session opens with them.
 
 ## The rules (not negotiable, not relaxed for trusted runs)
 
@@ -38,9 +38,9 @@ Loaded only when this skill fires.
 ## Workflow
 
 ### Step 1 — Where we start
-- **First run, no CEO department yet:** say what it is in two lines ("Your CEO desk is where your business strategy lives: what you sell first, how, and what's next. Your other departments follow it.") and, on yes, create `departments/ceo/brief.md` in /new-department's brief format: name **CEO**, area = her main business, Purpose "Keep the business strategy clear and current, so every department works toward the same next step.", Routines "Revisit the strategy after each first round of an offer, and every 90 days.", What I use here: "let's work on my strategy". Add its index line under its area header, and hand /context the creation of `context/ceo.md` with "CEO department created." Her yes covers all three.
+- **First run, no CEO department yet:** say what it is in two lines ("Your CEO desk is where your business strategy lives: what you sell first, how, and what's next. Your other departments follow it.") and, on yes, create `departments/ceo/brief.md` in /new-department's brief format: name **CEO**, area = her main business, Purpose "Keep the business strategy clear and current, so every department works toward the same next step.", Routines "Revisit the strategy after each first round of an offer, and every 90 days.", What I use here: "let's work on my strategy" (`strategy.md`; the departments' reports in `reports.md`). Add its index line under its area header, and hand /context the creation of `context/ceo.md` with "CEO department created." Her yes covers all three.
 - **Revision:** "Last time we decided <first offer, price>, and the open question was <…>. What changed?" Work only on what changed.
-- Items `for the strategy session` in `_system/pending.md`: show them first, one line each ("Your content review noticed: <line>"). Each one she settles goes into the strategy (or its Open questions); then delete it from `pending.md`.
+- Open reports in `departments/ceo/reports.md`: show them first, one line each ("Your <department> department reported: <line>"). Each one she settles goes into the strategy (or its Open questions), or she says it changes nothing; at Step 4 its line moves to Settled with where it went and the date.
 - Another business area in play: its own `strategy-<area>.md`, same shape.
 - Set expectations once: "This is a conversation. About an hour, and you can stop anytime; I'll keep where we were."
 
@@ -75,6 +75,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Open 
 
 ### Step 5 — Close
 - CEO brief: Current state (today's date, one line: the first offer and the 90-day goal), Next step (the first launch step), `updated:`.
+- `departments/ceo/reports.md`: each report settled in this session moves from Open to Settled (where it went, today's date). Nothing else in it changes.
 - Departments that should follow it, one line each, as offers, never done here: when the Content direction is new or changed, "Your content strategy follows the old direction. Update it?" (content → /content-strategy). Nothing else changes.
 - The first offer is a program (a course, cohort, group, workshop): "Want to start building it? The course machine designs the program and builds it one lesson at a time." Run /course-install on yes.
 - Hand /context one line for `context/ceo.md`: `Strategy <set / revised>: <first offer, price, format>; 90 days: <goal>. Open: <the main open question, or nothing>.`

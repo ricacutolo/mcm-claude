@@ -46,7 +46,7 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 
 ### Step 4 — Write, on her yes
 - `feedback.md`: a dated **Review** line with what she approved.
-- Program-level changes she approved: hand to /course-design as a revision (it shows and writes). Lesson-level: noted in `feedback.md` for /course-lesson to pick up. Strategy questions: one line in `_system/pending.md` for `departments/ceo/strategy.md § Open questions`.
+- Program-level changes she approved: hand to /course-design as a revision (it shows and writes). Lesson-level: noted in `feedback.md` for /course-lesson to pick up. Strategy questions: one line under **Open** in `departments/ceo/reports.md` (re-read it first; create it from `../business-strategy/templates/reports.md` if it's missing): `- YYYY-MM-DD · courses · <the question> · (from: course review, <program>)`. Add lines only.
 - Quotes still `needs permission` that would help sell the next round: remind her once which students to ask.
 
 ### Step 5 — Close

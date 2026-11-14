@@ -68,7 +68,7 @@ At most 5 items, ranked. Each: what · why (the numbers) · where it goes · our
 - **Plan change** — hand-off to content-plan (refresh), naming the slots it would change.
 - **Layer** — switch audience or leads on when the numbers support it (a strategy change).
 - **Business file** — a suggested update to `about-me/business-brain.md`, which waits in `_system/pending.md` for her yes.
-- **For your strategy** — something about the business, not the content (e.g. "the posts about X bring the calls; X isn't your first offer") → a note for her next strategy session. Content never edits the CEO strategy.
+- **For your strategy** — something about the business, not the content (e.g. "the posts about X bring the calls; X isn't your first offer") → a report to the CEO, read at her next strategy session. Content never edits the CEO strategy. No CEO department yet (no `departments/ceo/brief.md`): make it a Business file suggestion instead.
 
 > "Which of these do you want? Say **yes** to the ones you want (or **yes to all**), or tell me what to change."
 
@@ -93,7 +93,7 @@ On yes, for the approved items only:
    ```
 3. `swipe.md`: approved swipe lines. Create the file if missing with `# Swipe file: <business>` and the columns `Date · Line or post · Why it worked · Evidence`.
 4. Business file items: one line each in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business-brain.md § <section> · <the exact proposed line> · (from: content review <first date> to <last date>)`.
-4b. "For your strategy" items: one line each in `_system/pending.md` (re-read it first): `- [ ] YYYY-MM-DD · for the strategy session · departments/ceo/strategy.md § Open questions · <the line> · (from: content review <first date> to <last date>)`. The strategy session opens with them.
+4b. "For your strategy" items: one line each under **Open** in `departments/ceo/reports.md` (re-read it first; create it from `../business-strategy/templates/reports.md` if it's missing): `- YYYY-MM-DD · content · <the line> · (from: content review <first date> to <last date>)`. Add lines only; never touch Settled or anything else there.
 5. Offer each approved hand-off ("Want me to update your content strategy now?" / "Want me to update the plan now?"); run it only on yes.
 6. Department brief: Current state with today's date and one line on the review, and `updated:`. If a strategy or plan hand-off was approved and not run, set Next step to it ("Update the content strategy: <change>. Say \"revise the strategy\"."). Mention it in one short line.
 7. Receipt and milestone (below).

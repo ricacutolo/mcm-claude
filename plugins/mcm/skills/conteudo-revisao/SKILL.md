@@ -68,7 +68,7 @@ At most 5 items, ranked. Each: what · why (the numbers) · where it goes · our
 - **Plan change** — hand-off to conteudo-plano (refresh), naming the slots it would change.
 - **Layer** — switch audience or leads on when the numbers support it (a strategy change).
 - **Business file** — a suggested update to `sobre-mim/cerebro-do-negocio.md`, which waits in `_sistema/pendentes.md` for her sim.
-- **For your strategy** — something about the business, not the content (e.g. "os posts sobre X trazem as ligações; X não é a sua primeira oferta") → a note for her next strategy session. Content never edits the CEO strategy.
+- **For your strategy** — something about the business, not the content (e.g. "os posts sobre X trazem as ligações; X não é a sua primeira oferta") → a report to the CEO, read at her next strategy session. Content never edits the CEO strategy. No CEO department yet (no `departamentos/ceo/brief.md`): make it a Business file suggestion instead.
 
 > "Quais desses você quer? Diga **sim** pros que você quer (ou **sim pra todos**), ou me diz o que mudar."
 
@@ -93,7 +93,7 @@ On sim, for the approved items only:
    ```
 3. `swipe.md`: approved swipe lines. Create the file if missing with `# Swipe file: <business>` and the columns `Data · Frase ou post · Por que funcionou · Evidência`.
 4. Business file items: one line each in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: revisão de conteúdo de <first date> a <last date>)`.
-4b. "For your strategy" items: one line each in `_sistema/pendentes.md` (re-read it first): `- [ ] YYYY-MM-DD · para a sessão de estratégia · departamentos/ceo/estrategia.md § Perguntas em aberto · <the line> · (de: revisão de conteúdo de <first date> a <last date>)`. The strategy session opens with them.
+4b. "For your strategy" items: one line each under **Abertos** in `departamentos/ceo/relatorios.md` (re-read it first; create it from `../estrategia-do-negocio/modelos/relatorios.md` if it's missing): `- AAAA-MM-DD · conteúdo · <the line> · (de: revisão de conteúdo de <first date> a <last date>)`. Add lines only; never touch Resolvidos or anything else there.
 5. Offer each approved hand-off ("Quer que eu atualize a sua estratégia de conteúdo agora?" / "Quer que eu atualize o plano agora?"); run it only on sim.
 6. Department brief: Estado atual with today's date and one line on the review, and `atualizado:`. If a strategy or plan hand-off was approved and not run, set Próximo passo to it ("Atualizar a estratégia de conteúdo: <change>. Diga \"revisa a estratégia\"."). Mention it in one short line.
 7. Receipt and milestone (below).

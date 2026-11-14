@@ -136,7 +136,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | file sections: Modelos a criar · Planos anteriores · O que aprendemos · Totais da conta · Diferenças deliberadas do arquivo do negócio · Decidido por ela | Templates to build · Past plans · What we learned · Account totals · Deliberate differences from the business file · Decided for her |
 | CEO strategy section Direções → Conteúdo: Para que serve o conteúdo agora · Aponta para · Público a crescer · Fica de fora | Directions → Content: What content is for now · Points to · Audience to grow · Stays out |
 | content strategy lines `Segue: estratégia do CEO de <date>` · `Segue: sem estratégia do CEO ainda (arquivo do negócio)` · `Sessão do CEO oferecida:` · section Diferenças deliberadas da direção do CEO | `Follows: CEO strategy of <date>` · `Follows: no CEO strategy yet (business file)` · `CEO session offered:` · Deliberate differences from the CEO's direction |
-| pending item kind `para a sessão de estratégia` · receipt tag `ceo: avisada <date>` | `for the strategy session` · `ceo: told <date>` |
+| `departamentos/ceo/relatorios.md` (sections Abertos · Resolvidos; shipped `estrategia-do-negocio/modelos/relatorios.md`) | `departments/ceo/reports.md` (Open · Settled; `business-strategy/templates/reports.md`) |
+| receipt tag `ceo: avisada <date>` | `ceo: told <date>` |
 | post.md steps: Ideia · Texto · Design · Agendamento · Resultados (reel: Roteiro · Gravação · Takes · Corte) | Idea · Copy · Design · Schedule · Results (reel: Script · Recording · Takes · Cut) |
 | area: (frontmatter) | area: |
 | Áreas (sistema section) | Areas (system section) |
