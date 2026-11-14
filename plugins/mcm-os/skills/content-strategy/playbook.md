@@ -66,7 +66,7 @@ The first line or slide does most of the work. Pick the pattern that fits the to
 ### Tips list carousel (5 slides) — Leak, 3 mistakes, Quick win, How it works
 1. Hook: the words that sting in the accent color. "Swipe through →".
 2-4. One point each: number, short title, 2-4 lines; the turn (what it costs or what changes) in the accent color.
-5. Reframe line, the promise in the accent color, the CTA.
+5. Reframe line, the promise in the accent color, the slot's ending (§ 7).
 
 Other post types get their structure when their template is built.
 
@@ -75,18 +75,26 @@ Other post types get their structure when their template is built.
 1. Hook line (a different angle from slide 1, not a repeat).
 2. The plain explanation, 2-3 short paragraphs, what they get.
 3. The wedge: why customers pick her, in one line (from `strategy.md`).
-4. The CTA for the layer that's on.
+4. The slot's ending (§ 7): the ask, a light invitation, or nothing.
 5. 3-5 hashtags.
 
 This is the main caption, used by the platforms that share it (Instagram, Facebook). A platform whose file in `platforms/` gives it its own caption (LinkedIn) follows that file instead.
 
-## 7. CTA by layer
+## 7. How posts end
 
-| Layer | CTA |
+Not every post asks for something. Her strategy sets the rhythm (How posts end) and the plan marks each slot `ask`, `light` or `none`. Asking on every post reads as selling all the time; most posts earn trust by just being useful.
+
+**The ask**, by layer, on the slots marked `ask` (about 1 in 3 by default):
+
+| Layer | The ask |
 |---|---|
-| Credibility | Book a call. Link in bio. |
-| Audience | Save this, share it with someone who needs it, follow for more. |
+| Credibility | Book a call, or message me (in her words). Link in bio. |
+| Audience | Follow for more. |
 | Leads | Comment a word to get X; DM me; the lead magnet. |
+
+**Light endings**, on the slots marked `light: <which>`: save it for later · a question to answer in the comments (a real one, from their own experience) · share it with someone who needs it.
+
+**None**, on the slots marked `none`: the last line is the point itself. No invitation, no sign-off ask.
 
 ## 8. The check before the copy gate
 
@@ -94,7 +102,7 @@ Every draft passes these 4 before it's shown:
 1. **Hook:** specific, about them, makes the next line necessary.
 2. **What they get:** the reader's outcome is clear by slide 2.
 3. **Plain:** no technical word, no tool name, no claim we can't back.
-4. **CTA:** one, clear, matches the layer.
+4. **Ending:** matches the slot: the ask (one, clear, for the layer), the light ending named, or none.
 
 ## 9. References and sources
 

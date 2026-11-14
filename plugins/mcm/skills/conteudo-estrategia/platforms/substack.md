@@ -6,7 +6,7 @@ Her Substack publication: **articles** (the newsletter, also on Substack) and **
 When the newsletter is on and she writes ideas people want to read more of (teachers, coaches, consultants, anyone whose expertise is the product), or when she already has a Substack. Not as a first platform, and not instead of her list in MCM: MCM stays her main list, because her leads and clients live there.
 
 ## Account
-Her own Substack publication. There's no connection for it in Claude: the system works it through the browser inside the Claude app, where she signs in to Substack once (setup step 12). Her publication address lives in `ghl.md` under **Substack**.
+Her own Substack publication. There's no connection for it in Claude: the system works it through the browser inside the Claude app, where she signs in to Substack once (setup step 13). Her publication address lives in `ghl.md` under **Substack**.
 
 ## Formats
 - **Article:** every newsletter issue, published on Substack too, on the same day and time as the email. Substack emails it to her Substack subscribers. Someone on both lists gets it twice; that's accepted.

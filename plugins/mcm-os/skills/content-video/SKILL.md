@@ -7,7 +7,7 @@ description: "Beta: makes one talking-head reel from plan slot to scheduled — 
 
 She speaks to camera in her own words; this skill writes the script with her, picks her best takes, and turns them into a branded reel. She never opens an editor. It never posts on its own.
 
-It does one thing: **take one talking-head reel from plan slot to scheduled.** It is the reel counterpart of content-static: same post folders, same calendar, same receipt. It is usually started by content-post with a slot from the plan. Started directly by name, it first runs content-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and then continues here.
+It does one thing: **take one talking-head reel from plan slot to scheduled.** It is the reel counterpart of content-static: same post folders, same calendar, same receipt. It is usually started by content-post with a slot from the plan. Started directly by name, it first runs content-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and shows its "This post" table (Step 3), then continues here.
 
 **Beta.** Rendering in her Claude workspace is untested outside MCM. On the first run this skill checks that it can install HyperFrames and a browser there (Step 0), and says plainly if it can't, before she records anything.
 
@@ -17,9 +17,9 @@ Speak to her in plain, warm US English. Say "the script", "your clips", "the cut
 
 Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. The shared files ship with the plugin: the reel kit in `kit/` inside this skill's folder; next to this skill's folder, `../content-strategy/playbook.md` (the copy playbook), `../content-strategy/library.md` (the strategy library) and `../content-install/scripts/` (the scripts that run on her computer).
 
-1. The slot content-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format.
+1. The slot content-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format, ends.
 2. `departments/content/brief.md` — its Next step and Current state.
-3. `departments/content/strategy.md` — which reel formats are on, platforms, CTA for the layer that's on. Then `../content-strategy/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
+3. `departments/content/strategy.md` — which reel formats are on, platforms, how posts end (the ask, the light endings). Then `../content-strategy/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/brand-style.md` — color and font roles, logo files; `about-me/brand.md` when it exists, for the logo files.
@@ -29,7 +29,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 10. `about-me/about-me.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
     - the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge.
-    - `../content-strategy/playbook.md` — rules, hooks, the 4-point check, CTA by layer.
+    - `../content-strategy/playbook.md` — rules, hooks, the 4-point check, how posts end (§ 7).
     - `../content-strategy/library.md` — the reel format definitions.
     - `about-me/writing.md` — her voice.
 12. Her Google Drive — the reel's clip folder (Step 3).
@@ -77,9 +77,9 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 
 ### Step 2 — Script (gate 1)
 - **Her material and a suggestion, in one message,** before drafting: "What do you want to say on <topic> in this one — a story, something you tell clients all the time? If you'd rather, here's what I'd do: <the angle tagged `for post N` in `ideas.md` when the newsletter leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
-- Shape: hook · the turn (path, leak, or problem) · the fix · call to action, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
-- The hook goes on screen from frame 0. The CTA is the layer's CTA from `strategy.md` ("Book a call. Link in bio." while the credibility layer is on).
-- Run the playbook's 4-point check (hook, what they get, plain, CTA) and the real-things rule; fix what fails before showing.
+- Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
+- The hook goes on screen from frame 0. The ending is the slot's `ends` (playbook § 7): the ask for the layer ("Book a call. Link in bio." while credibility is on), the named light ending, or none, when the fix is the last line.
+- Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "Does the script work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
 - Then tell her where to put the clips: "Record when you're ready, then upload the clips from your phone to Google Drive, in the folder **Content videos/post-NN-<slug>**." Ask once: "Want me to make the folder in your Drive?" Make it only on her yes, if Claude can reach her Drive; otherwise the name above is enough.
@@ -106,8 +106,8 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 <lines>
 
 **3. The fix (…)**
-**4. Call to action (…)**
-[On screen: "<CTA>"]
+**4. The ending (…, or none)**
+[On screen: "<the ending>", or no end card when the slot says none]
 
 ## Recording notes
 - Phone vertical, at eye level, light in front of you, quiet room.
@@ -118,7 +118,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 - Upload the clips to Google Drive, folder Content videos/post-NN-<slug>.
 
 ## Copy checks
-- Hook · What they get · Plain · CTA · Real things only — pass, or what was fixed.
+- Hook · What they get · Plain · Ending · Real things only — pass, or what was fixed.
 ```
 
 ### Step 3 — Intake (no gate: files)
@@ -139,7 +139,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 ### Step 5 — Cut and compose
 - On her computer, from `departments/content/`: `bash scripts/encode.sh posts/<folder>` (copy `kit/encode.sh` into `departments/content/scripts/` first if it's missing). It writes `edit/aroll.mp4` and `edit/durations.json` (HDR footage is tone-mapped).
 - In the cloud workspace, set up HyperFrames as `kit/README.md` says. Make a comp folder with `kit/gsap.min.js`, `kit/hyperframes.json`, `assets/aroll.mp4` and the light logo (from `brand-style.md`, or `about-me/brand.md`) as `assets/logo.png`.
-- Write `posts/<folder>/reel.json`: brand roles (dark, light, accent, fonts from `brand-style.md`), hook, hook segment, diagram, labels, windows, events, emphasis words (the words that sting, in the accent color), CTA. Run `kit/build.py`.
+- Write `posts/<folder>/reel.json`: brand roles (dark, light, accent, fonts from `brand-style.md`), hook, hook segment, diagram, labels, windows, events, emphasis words (the words that sting, in the accent color), the ending (empty when the slot says none). Run `kit/build.py`.
 - `hyperframes check --json`: fix errors. Ignore caption read-speed warnings, which come from speech pace. Then `snapshot` at every cut, every diagram event and the end card. Look at each frame: captions off the mouth, nothing clipped, diagram readable, every window held at least 1.5 s after its last box lands.
 - Render `edit/reel-v1.mp4`.
 
@@ -152,7 +152,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 
 ### Step 7 — Schedule (gate 4)
 - The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `about-me/about-me.md`, else ask once). If the time has slipped to under 1 hour away, recompute with content-post's missed-slot rule (`../content-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
-- Platforms from `strategy.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
+- Platforms from `strategy.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the slot's ending.
 - If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in MCM's Social Planner and tell me when it's done."
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
 - On yes:

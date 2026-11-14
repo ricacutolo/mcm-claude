@@ -95,6 +95,11 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `brief.md` | `brief.md` |
 | skill folder `modelos/` | skill folder `templates/` |
 | `conteudo-estrategia/platforms/<platform>.md` (shipped, one per platform; names stay English) | `content-strategy/platforms/<platform>.md` |
+| plan column `final`: `pedido` · `leve: <qual>` (salvar, pergunta, compartilhar, seguir) · `nenhum` | `ends`: `ask` · `light: <which>` (save, question, share, follow) · `none` |
+| strategy section Como os posts terminam | How posts end |
+| `estilo-da-marca.md` § Visuais que ela gosta · Drive `04. Brand/Referências` · `departamentos/conteudo/referencias/` | `brand-style.md` § Looks she likes · Drive `04. Brand/References` · `departments/content/references/` |
+| `sobre-mim/marca.md` line `Origem: criada aqui \| o logo dela (<file>)` | `about-me/brand.md` line `Source: designed here \| her own logo (<file>)` |
+| `ghl.md` line `Endereço do app MCM (para os links diretos):` | `MCM app address (for direct links):` |
 
 ## State fields (`estado.md` → `state.md`)
 | PT | EN |
@@ -171,5 +176,12 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | abre o Conteúdo | open Content |
 | Configurações → Plugins → Adicionar marketplace | Settings → Plugins → Add marketplace |
 | Instruções para o Claude | Instructions for Claude |
+| Responde com **1** ou **2**: · Ou me conta o que você está pensando. | Reply with **1** or **2**: · Or tell me what you're thinking. |
+| **Clique aqui para abrir <a página> →** | **Click here to open <the page> →** |
+| vamos fazer o próximo post · transforma isso em post | let's make the next post · make this a post |
+| eu já tenho um logo · usa o meu logo · coloca a minha marca | I have a logo · use my logo · add my brand |
+| quero fazer reels | I want to make reels |
+| [Ligado] · [Desligado] (strategy draft marks) | [On] · [Off] |
+| post table: Este post · Quando · Tema · Tipo de post · Formato · Vai para · Termina com | This post · When · Topic · Kind of post · Format · Goes to · Ends with |
 
 Tone in English: warm, plain, US English, no jargon. The English edition speaks to US small-business owners; the Portuguese one to Brazilian ones. Never translate word for word when a phrase reads stiff; keep the meaning and the rule.

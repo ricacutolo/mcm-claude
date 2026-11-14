@@ -48,7 +48,7 @@ From the CEO's direction for content (when there is one), her business file and 
 - **Who we post for** — from who she sells to.
 - **Topics** — 4-8, from her customers' pains, objections and what they believe about the problem, in her customers' words.
 - **Wedge** — from why customers pick her.
-- **CTA** — from her booking flow, matched to the layer that's on (playbook).
+- **Como os posts terminam** — the business ask, from her booking flow and matched to the layer that's on (playbook § 7), plus the ask rhythm: about 1 post in 3 carries the ask; the rest end lightly (save it, a question to answer in the comments) or with nothing at all. The plan marks which slots carry the ask.
 - **Idea rules** — from how she sells and what's off-limits, plus the playbook's rules.
 - **Library entries for her type of business** — anything marked working; unproven ones only as options.
 In revise mode, start from the current strategy and change only what the trigger calls for.
@@ -56,7 +56,7 @@ In revise mode, start from the current strategy and change only what the trigger
 ### Step 3 — Ask only what the business file doesn't answer
 At most 6 questions, one message, each with a recommended answer:
 1. (Skipped when the CEO's direction says it.) Para que o conteúdo serve agora — quais camadas estão ligadas: credibilidade (quem te pesquisa confia no que vê), audiência (mais gente te encontra), contatos (os posts trazem pedidos de orçamento)?
-2. Aparecer na câmera: sim, não ou às vezes?
+2. Aparecer na câmera: sim, não ou às vezes? (Skipped when the content setup already asked about reels: its answer in `configuracao.md` decides whether reels are on.)
 3. Quais fotos existem (o seu trabalho, a equipe, o espaço), e pode usar fotos de clientes? (As fotos vão numa pasta do Google Drive, Fotos de conteúdo, sempre que ela tiver; os posts escolhem de lá.)
 4. Quanto tempo por semana para conteúdo?
 5. Frequência, dias, horário e plataformas. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals, the newsletter (`platforms/newsletter.md`) when she sells something people decide on over time and has a list, Substack (`platforms/substack.md`) only with the newsletter on, when her expertise is what she sells or she already has a Substack (light: each issue goes there too, plus 2-3 Notes a week from what she's already making). If the content setup already noted her platforms, start from those. Newsletter on: how often (every two weeks for a new list, weekly once she's keeping up), day and time (Tuesday morning by default), and how often an issue is an offer (one in four or five), and whether the newsletter leads the theme (recommend yes: each issue sets the topic for the posts until the next one).
@@ -68,16 +68,27 @@ List where the draft differs from her business file (audience, offer, CTA, tone)
 Then, with a CEO direction: where the draft goes against it (she wants it so), one line each with her reason, kept under "Diferenças deliberadas da direção do CEO". Never silently; never an edit to the CEO strategy.
 
 ### Step 5 — Gate
-Show the full strategy draft, the business file check, and in revise mode what changed from the last round.
+Show the draft so she sees the thinking behind it, not a preset. In this order:
 
-> "A estratégia está boa? Diga **sim**, ou me diz o que mudar."
+1. **Para que serve o seu conteúdo:** the three options (confiança, audiência, contatos) and the pick, in a short paragraph with the reason tied to her business (or the CEO's direction).
+2. **Tipos de post:** a short paragraph first ("Minha escolha: liguei estes porque …"), then every post type in the library catalog (and her library notes), each with a few-word gloss and its mark: **[Ligado]** or **[Desligado]**.
+3. **Formatos:** the same: the paragraph, then every format in the catalog, **[Ligado]** or **[Desligado]**. The reason names what drives it (face, photos, time).
+4. **Onde:** the same, every platform file: **[Ligado]** or **[Desligado]**.
+5. **Como os seus posts terminam:** the paragraph, then the list, each line with its rhythm: **[Ligado]** O pedido ("<her ask, in her words>") · mais ou menos 1 post em 3 / **[Ligado]** Salvar para depois · mais ou menos 1 em 3 / **[Ligado]** Uma pergunta para responder nos comentários · mais ou menos 1 em 4 / **[Ligado]** Sem pedido, só valor · o resto / **[Desligado]** Compartilhar com quem precisa / **[Desligado]** Seguir para ver mais / **[Desligado]** Comentar uma palavra para receber algo (vem com contatos). The rhythm is her strategy's own; these are the defaults for credibility.
+6. **Quando:** a short paragraph with the pick and why.
+7. "Quer ligar ou desligar alguma coisa? É só me dizer."
+8. **Mudando depois:** "muda o plano", "revisa a minha estratégia", and "transforma isso em post" for an idea in the middle of the plan.
+
+Then the business file check, and in revise mode what changed from the last round.
+
+> "Responde com **1** ou **2**: 1. Está boa 2. Quero mudar algo. Ou me conta o que você está pensando." (one option per line, as in /sistema's reply rules)
 
 Apply edits exactly, re-show, wait for sim. Differences she keeps go under "Diferenças deliberadas do arquivo do negócio" (or "Diferenças deliberadas da direção do CEO"). Business file updates she picks go to `_sistema/pendentes.md` (below).
 
 ### Step 6 — Write
 On sim:
 1. Revise mode: copy the current `estrategia.md` to `departamentos/conteudo/rodadas-anteriores/estrategia-rodada-<N>.md` (create the folder if missing) before writing.
-2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)" and "Segue: estratégia do CEO de <its `atualizado:` date>" (or "Segue: sem estratégia do CEO ainda (arquivo do negócio)"), with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Diferenças deliberadas da direção do CEO (only when there is one) · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: sim/não; the Substack line when it's on: Notes a week, 2 or 3) · Modelos · Voz.
+2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)" and "Segue: estratégia do CEO de <its `atualizado:` date>" (or "Segue: sem estratégia do CEO ainda (arquivo do negócio)"), with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Diferenças deliberadas da direção do CEO (only when there is one) · Para que serve o conteúdo agora (camadas) · Como os posts terminam (the ask, in her words, and the rhythm: each ending, on or off, and how often) · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; reels on or off; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: sim/não; the Substack line when it's on: Notes a week, 2 or 3) · Modelos · Voz.
 3. Each business file update she picked: one line in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: estratégia de conteúdo rodada <N>)`. The time zone, if she gave one and it isn't in `sobre-mim/sobre-mim.md`: the same, for that file.
 4. Department brief: update Estado atual (date, one line on the round) and `atualizado:`. If there's no current plan, or the change affects planned slots, set Próximo passo to "Planejar as próximas 4 semanas. Diga \"planeja o conteúdo\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).

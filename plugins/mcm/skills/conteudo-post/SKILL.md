@@ -1,6 +1,6 @@
 ---
 name: conteudo-post
-description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, com o sim dela. Também guarda ideias de post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", ou quando o próximo passo do departamento Conteúdo é um post."
+description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, com o sim dela. Também guarda ideias de post, transforma uma ideia em post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"vamos fazer o próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"transforma isso em post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", ou quando o próximo passo do departamento Conteúdo é um post."
 ---
 
 # conteudo-post — what's next, and who makes it
@@ -10,6 +10,7 @@ The front door of the content machine. It finds the next post in the plan (or th
 Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "guarda isso como ideia de post": one row in her ideas list, then back to whatever was happening (Step C).
+- **Make this a post** — "transforma isso em post", about something she just said, pasted or attached: saved as an idea, then made now in the next slot, or kept (Step M).
 - **Publish check** — "o post foi ao ar?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "o plano", "o calendário", "a sua lista de ideias", "o brief do departamento"; never file names, "skill", "MCP", "API" or a command name.
@@ -79,9 +80,20 @@ Route by the slot's format (formats as named in `../conteudo-estrategia/library.
 | Nota (Substack) | conteudo-substack (only when Substack is on in `estrategia.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with conteudo-plano's refresh |
 
-Ask: "O post N é um <format>: <topic> × <post type>, <day time>. Quer começar agora?" For a reel add one line: "Vídeo é novo no sistema, então primeiro eu confiro se consigo fazer na sua configuração."
+Show where the post comes from, the same small table every time, so she sees the plan working behind it:
 
-On **sim**, run the maker and pass it the slot: post number, date and time (the new time if the slot was missed, with the original slot), topic, post type, format, template, idea, and the post folder if one exists. Anything other than a clear sim: stop here and keep the slot as it is.
+| Este post | |
+|---|---|
+| Quando | <day date, time> |
+| Tema | <topic> |
+| Tipo de post | <post type> |
+| Formato | <format> |
+| Vai para | <platforms on in `estrategia.md` that take this format> |
+| Termina com | <o pedido / um final leve, nomeado / só valor>, from the slot's `final` |
+
+Then: "Responde com **1** ou **2**: 1. Começar agora 2. Agora não. Ou me conta o que você está pensando." (one option per line). For a reel add one line: "Vídeo é novo no sistema, então primeiro eu confiro se consigo fazer na sua configuração."
+
+On **sim**, run the maker and pass it the slot: post number, date and time (the new time if the slot was missed, with the original slot), topic, post type, format, final, template, idea, and the post folder if one exists. The maker doesn't show the table again. Anything other than a clear sim: stop here and keep the slot as it is.
 
 ### Step 4 — After the maker finishes
 The maker hands back here when the post is scheduled (even when she started the maker directly by name).
@@ -119,11 +131,20 @@ Triggered by "guarda isso como ideia de post", "ideia de post: …", "coloca iss
 - Confirm in one line: "Guardei como ideia de post #N (<topic>)." If the topic was a guess, say so. Then return to whatever was happening — no other step runs.
 - Receipt line. No milestone for a capture.
 
+## Step M — Make this a post
+
+Triggered by "transforma isso em post", "faz um post disso", about something she just said, pasted or attached.
+- Save it first, as Step C does: one row in `ideias.md`, her material in her words, `não usada`. Her request is the approval.
+- Then: "Quer fazer agora, para <the next planned post slot: day date, format>, ou guardar para depois?" Responde com **1** ou **2**: 1. Fazer agora 2. Guardar. Ou me conta o que você está pensando.
+- **Fazer agora:** the next `planejado` slot takes this idea (its idea cell only, `ideia #N`; the slot's topic, post type and format stay unless she asks to change them, then conteudo-plano's refresh). The idea is marked `usada: post N` when the post is scheduled. Then Steps 1-4 for that slot as usual, table first.
+- **Guardar:** confirm in one line ("Guardei como ideia de post #N; o plano vai usar.") and go back to what she was doing.
+- No plan yet: save it, and offer to set up the plan first.
+
 ## Receipt
 
 One line per run in `_sistema/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | conteudo-post | routed / declined / captured / publish-check / no-slot | post N · <format> → conteudo-estatico or conteudo-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
+`YYYY-MM-DD | conteudo-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → conteudo-estatico or conteudo-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
 
 ## What this skill never does
 

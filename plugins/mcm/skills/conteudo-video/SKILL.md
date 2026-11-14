@@ -7,7 +7,7 @@ description: "Beta: faz um reel falando para a câmera, do horário no plano ao 
 
 She speaks to camera in her own words; this skill writes the script with her, picks her best takes, and turns them into a branded reel. She never opens an editor. It never posts on its own.
 
-It does one thing: **take one talking-head reel from plan slot to scheduled.** It is the reel counterpart of conteudo-estatico: same post folders, same calendar, same receipt. It is usually started by conteudo-post with a slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and then continues here.
+It does one thing: **take one talking-head reel from plan slot to scheduled.** It is the reel counterpart of conteudo-estatico: same post folders, same calendar, same receipt. It is usually started by conteudo-post with a slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and shows its "This post" table (Step 3), then continues here.
 
 **Beta.** Rendering in her Claude workspace is untested outside MCM. On the first run this skill checks that it can install HyperFrames and a browser there (Step 0), and says plainly if it can't, before she records anything.
 
@@ -17,9 +17,9 @@ Speak to her in plain, warm Brazilian Portuguese. Say "o roteiro", "os seus víd
 
 Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. The shared files ship with the plugin: the reel kit in `kit/` inside this skill's folder; next to this skill's folder, `../conteudo-estrategia/playbook.md` (the copy playbook), `../conteudo-estrategia/library.md` (the strategy library) and `../conteudo-instalar/scripts/` (the scripts that run on her computer).
 
-1. The slot conteudo-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format.
+1. The slot conteudo-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format, final.
 2. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
-3. `departamentos/conteudo/estrategia.md` — which reel formats are on, platforms, CTA for the layer that's on. Then `../conteudo-estrategia/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
+3. `departamentos/conteudo/estrategia.md` — which reel formats are on, platforms, how posts end (the ask, the light endings). Then `../conteudo-estrategia/platforms/<platform>.md` for each platform on: a reel goes only to platforms whose file takes reels.
 4. `departamentos/conteudo/plano.md` — the slot's row and the next `planejado` slot.
 5. `departamentos/conteudo/calendario.md` — what's scheduled and published.
 6. `departamentos/conteudo/estilo-da-marca.md` — color and font roles, logo files; `sobre-mim/marca.md` when it exists, for the logo files.
@@ -29,7 +29,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 10. `sobre-mim/sobre-mim.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
     - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge.
-    - `../conteudo-estrategia/playbook.md` — rules, hooks, the 4-point check, CTA by layer.
+    - `../conteudo-estrategia/playbook.md` — rules, hooks, the 4-point check, how posts end (§ 7).
     - `../conteudo-estrategia/library.md` — the reel format definitions.
     - `sobre-mim/escrita.md` — her voice.
 12. Her Google Drive — the reel's clip folder (Step 3).
@@ -77,9 +77,9 @@ Skip this step when `_sistema/log.md` already has a `conteudo-video | video-chec
 
 ### Step 2 — Script (gate 1)
 - **Her material and a suggestion, in one message,** before drafting: "O que você quer falar sobre <topic> nesse reel — uma história, algo que você sempre diz pros clientes? Se preferir, eu faria assim: <the angle tagged `para o post N` in `ideias.md` when the newsletter leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
-- Shape: hook · the turn (path, leak, or problem) · the fix · call to action, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
-- The hook goes on screen from frame 0. The CTA is the layer's CTA from `estrategia.md` ("Agende uma conversa. Link na bio." while the credibility layer is on).
-- Run the playbook's 4-point check (hook, what they get, plain, CTA) and the real-things rule; fix what fails before showing.
+- Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
+- The hook goes on screen from frame 0. The ending is the slot's `final` (playbook § 7): the ask for the layer ("Agende uma conversa. Link na bio." while credibility is on), the named light ending, or none, when the fix is the last line.
+- Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "O roteiro está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
 - Then tell her where to put the clips: "Grava quando estiver pronta, depois sobe os vídeos do celular pro Google Drive, na pasta **Vídeos de conteúdo/post-NN-<slug>**." Ask once: "Quer que eu crie a pasta no seu Drive?" Make it only on her sim, if Claude can reach her Drive; otherwise the name above is enough.
@@ -106,8 +106,8 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 <lines>
 
 **3. A solução (…)**
-**4. Chamada para ação (…)**
-[Na tela: "<CTA>"]
+**4. O final (…, ou nenhum)**
+[Na tela: "<o final>", ou sem cartão final quando o horário diz nenhum]
 
 ## Dicas para gravar
 - Celular na vertical, na altura dos olhos, luz na sua frente, lugar silencioso.
@@ -118,7 +118,7 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 - Sobe os vídeos pro Google Drive, na pasta Vídeos de conteúdo/post-NN-<slug>.
 
 ## Checagem do texto
-- Gancho · O que a pessoa ganha · Simples · CTA · Só coisas reais — ok, ou o que foi corrigido.
+- Gancho · O que a pessoa ganha · Simples · Final · Só coisas reais — ok, ou o que foi corrigido.
 ```
 
 ### Step 3 — Intake (no gate: files)
@@ -139,7 +139,7 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 ### Step 5 — Cut and compose
 - On her computer, from `departamentos/conteudo/`: `bash scripts/encode.sh posts/<folder>` (copy `kit/encode.sh` into `departamentos/conteudo/scripts/` first if it's missing). It writes `edit/aroll.mp4` and `edit/durations.json` (HDR footage is tone-mapped).
 - In the cloud workspace, set up HyperFrames as `kit/README.md` says. Make a comp folder with `kit/gsap.min.js`, `kit/hyperframes.json`, `assets/aroll.mp4` and the light logo (from `estilo-da-marca.md`, or `sobre-mim/marca.md`) as `assets/logo.png`.
-- Write `posts/<folder>/reel.json`: brand roles (dark, light, accent, fonts from `estilo-da-marca.md`), hook, hook segment, diagram, labels, windows, events, emphasis words (the words that sting, in the accent color), CTA. Run `kit/build.py`.
+- Write `posts/<folder>/reel.json`: brand roles (dark, light, accent, fonts from `estilo-da-marca.md`), hook, hook segment, diagram, labels, windows, events, emphasis words (the words that sting, in the accent color), the ending (empty when the slot says none). Run `kit/build.py`.
 - `hyperframes check --json`: fix errors. Ignore caption read-speed warnings, which come from speech pace. Then `snapshot` at every cut, every diagram event and the end card. Look at each frame: captions off the mouth, nothing clipped, diagram readable, every window held at least 1.5 s after its last box lands.
 - Render `edit/reel-v1.mp4`.
 
@@ -152,7 +152,7 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 
 ### Step 7 — Schedule (gate 4)
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `sobre-mim/sobre-mim.md`, else ask once). If the time has slipped to under 1 hour away, recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
-- Platforms from `estrategia.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the CTA.
+- Platforms from `estrategia.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the slot's ending.
 - If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do MCM e me avisa quando terminar."
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:

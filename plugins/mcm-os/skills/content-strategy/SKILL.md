@@ -48,7 +48,7 @@ From the CEO's direction for content (when there is one), her business file and 
 - **Who we post for** — from who she sells to.
 - **Topics** — 4-8, from her customers' pains, objections and what they believe about the problem, in her customers' words.
 - **Wedge** — from why customers pick her.
-- **CTA** — from her booking flow, matched to the layer that's on (playbook).
+- **How posts end** — the business ask, from her booking flow and matched to the layer that's on (playbook § 7), plus the ask rhythm: about 1 post in 3 carries the ask; the rest end lightly (save it, a question to answer in the comments) or with nothing at all. The plan marks which slots carry the ask.
 - **Idea rules** — from how she sells and what's off-limits, plus the playbook's rules.
 - **Library entries for her type of business** — anything marked working; unproven ones only as options.
 In revise mode, start from the current strategy and change only what the trigger calls for.
@@ -56,7 +56,7 @@ In revise mode, start from the current strategy and change only what the trigger
 ### Step 3 — Ask only what the business file doesn't answer
 At most 6 questions, one message, each with a recommended answer:
 1. (Skipped when the CEO's direction says it.) What is content for right now — which layers are on: credibility (people checking you out trust what they see), audience (more people find you), leads (posts bring in inquiries)?
-2. Face on camera: yes, no or sometimes?
+2. Face on camera: yes, no or sometimes? (Skipped when the content setup already asked about reels: its answer in `setup.md` decides whether reels are on.)
 3. Which photos exist (her own work, team, place), and are customer photos OK? (Photos go in a Google Drive folder, Content photos, whenever she has them; posts pick from there.)
 4. How much time per week for content?
 5. Cadence, days, time and platforms. Recommend platforms from each platform file's "When to recommend it": Instagram always, Facebook when she has a Page, LinkedIn when she sells to professionals, the newsletter (`platforms/newsletter.md`) when she sells something people decide on over time and has a list, Substack (`platforms/substack.md`) only with the newsletter on, when her expertise is what she sells or she already has a Substack (light: each issue goes there too, plus 2-3 Notes a week from what she's already making). If the content setup already noted her platforms, start from those. Newsletter on: how often (every two weeks for a new list, weekly once she's keeping up), day and time (Tuesday morning by default), and how often an issue is an offer (one in four or five), and whether the newsletter leads the theme (recommend yes: each issue sets the topic for the posts until the next one).
@@ -68,16 +68,27 @@ List where the draft differs from her business file (audience, offer, CTA, tone)
 Then, with a CEO direction: where the draft goes against it (she wants it so), one line each with her reason, kept under "Deliberate differences from the CEO's direction". Never silently; never an edit to the CEO strategy.
 
 ### Step 5 — Gate
-Show the full strategy draft, the business file check, and in revise mode what changed from the last round.
+Show the draft so she sees the thinking behind it, not a preset. In this order:
 
-> "Does the strategy work? Say **yes**, or tell me what to change."
+1. **What your content is for:** the three options (trust, audience, leads) and the pick, in a short paragraph with the reason tied to her business (or the CEO's direction).
+2. **Kinds of posts:** a short paragraph first ("Here's my pick: I turned these on because …"), then every post type in the library catalog (and her library notes), each with a few-word gloss and its mark: **[On]** or **[Off]**.
+3. **Formats:** the same: the paragraph, then every format in the catalog, **[On]** or **[Off]**. The reason names what drives it (face, photos, time).
+4. **Where:** the same, every platform file: **[On]** or **[Off]**.
+5. **How your posts end:** the paragraph, then the list, each line with its rhythm: **[On]** The ask ("<her ask, in her words>") · about 1 post in 3 / **[On]** Save it for later · about 1 in 3 / **[On]** A question to answer in the comments · about 1 in 4 / **[On]** No ask, just value · the rest / **[Off]** Share it with someone who needs it / **[Off]** Follow for more / **[Off]** Comment a word to get something (comes with leads). The rhythm is her strategy's own; these are the defaults for credibility.
+6. **When:** a short paragraph with the pick and why.
+7. "Want something on or off? Just tell me."
+8. **Changing things later:** "change the plan", "review my strategy", and "make this a post" for an idea in the middle of the plan.
+
+Then the business file check, and in revise mode what changed from the last round.
+
+> "Reply with **1** or **2**: 1. This works 2. Change something. Or tell me what you're thinking." (one option per line, as in /system's reply rules)
 
 Apply edits exactly, re-show, wait for yes. Differences she keeps go under "Deliberate differences from the business file" (or "from the CEO's direction"). Business file updates she picks go to `_system/pending.md` (below).
 
 ### Step 6 — Write
 On yes:
 1. Revise mode: copy the current `strategy.md` to `departments/content/past-rounds/strategy-round-<N>.md` (create the folder if missing) before writing.
-2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>", "Status: CONFIRMED round <N> (<her name>, <date>)" and "Follows: CEO strategy of <its `updated:` date>" (or "Follows: no CEO strategy yet (business file)"), with sections: Who we post for · Deliberate differences from the business file · Deliberate differences from the CEO's direction (only when there is one) · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: yes/no; the Substack line when it's on: Notes a week, 2 or 3) · Templates · Voice.
+2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>", "Status: CONFIRMED round <N> (<her name>, <date>)" and "Follows: CEO strategy of <its `updated:` date>" (or "Follows: no CEO strategy yet (business file)"), with sections: Who we post for · Deliberate differences from the business file · Deliberate differences from the CEO's direction (only when there is one) · What content is for right now (layers) · How posts end (the ask, in her words, and the rhythm: each ending, on or off, and how often) · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms: the switch the other content skills read; reels on or off; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: yes/no; the Substack line when it's on: Notes a week, 2 or 3) · Templates · Voice.
 3. Each business file update she picked: one line in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business-brain.md § <section> · <the exact proposed line> · (from: content strategy round <N>)`. The time zone, if she gave one and it isn't in `about-me/about-me.md`: the same, for that file.
 4. Department brief: update Current state (date, one line on the round) and `updated:`. If there's no current plan, or the change affects planned slots, set Next step to "Plan the next 4 weeks. Say \"plan content\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).

@@ -1,6 +1,6 @@
 ---
 name: content-install
-description: "Walks her through setting up the content machine in 20 steps — her Content department, Canva, her brand on the design templates, MCM, the upload path and the strategy — with a recommendation at each step, picking up where she left off. When she says \"/content-install\", \"set up the content machine\", \"set up my content\", \"continue content setup\", \"where are we in the content setup\", or when the Content department's next step says the setup is open."
+description: "Walks her through setting up the content machine in 20 steps — her Content department, Canva, her brand and templates, MCM, the upload path and the strategy — with a recommendation at each step, doing the busywork itself, picking up where she left off. When she says \"/content-install\", \"set up the content machine\", \"set up my content\", \"continue content setup\", \"where are we in the content setup\", or when the Content department's next step says the setup is open."
 ---
 
 # content-install — ready for the first post
@@ -13,7 +13,7 @@ Speak to her in plain, warm US English, in her voice rules from `about-me/writin
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Canva Guides 0, A and B, handed to her at the Canva steps, and Guides C, D and E for MCM) and `scripts/` (the upload and transcription scripts copied into her content folder).
+Loaded only when this skill fires, never at session start. Her content lives in the Content department, `departments/content/`. This skill ships two things in its own folder: `guides.md` (Guide 0 and B for Canva, C, D and E for MCM) and `scripts/` (the upload and transcription scripts copied into her content folder).
 
 1. `departments/content/setup.md` — progress and the resume point. If missing, this is a new setup.
 2. `departments/content/brief.md` — whether the department exists; its Next step and Current state.
@@ -28,11 +28,13 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 > "Every step opens with a recommendation: the answer we'd pick and why. She confirms or changes it. Small details get decided and noted, not asked."
 
-> "brand-style.md, templates.md and ghl.md are written only after an explicit yes to the content shown. Silence or an edit request is not a yes."
+> "Claude does the busywork. She only does what needs her hands (signing in, approving, pasting a key), and every one of those comes as numbered steps, one action each, with a direct link wherever one exists (**Click here to open <the page> →**). If Claude can check something, it checks instead of asking her to report."
+
+> "brand-style.md, templates.md and ghl.md are Claude's reference notes: written without asking and mentioned in one line. What she decides in them (which templates, her newsletter details) is confirmed with her first."
 
 > "Checks are read-only. A check never creates, edits, sends or connects anything."
 
-> "Template rebrands are saved only after an explicit yes to the previews. Only her own fresh copies are edited, never a shared original."
+> "Template rebrands are saved only after an explicit yes to the previews. Only her own fresh copies are edited, never a shared original, and never a template of her own beyond the placeholders she approved."
 
 > "The MCM key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
 
@@ -50,21 +52,21 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 | 2 | Home | Setup tracker | `setup.md` exists | Create it (format below) |
 | 3 | Business | Business file filled in | `about-me/business-brain.md` exists with offer, audience and pains | Missing → offer to redo the install's business step (step 3; a completed install still runs "redo step 3"), and run it on her yes. Thin → ask what's missing (at most 3 questions) and add the lines to `_system/pending.md` as items for `about-me/business-brain.md`; done when they're written |
 | 4 | Business | Voice captured | `about-me/writing.md` exists with real samples | Missing → offer to redo the install's writing step (step 4; a completed install still runs "redo step 4"), and run it on her yes. No samples → ask her for 2-3 things she wrote and add them to `_system/pending.md` as an item for `about-me/writing.md` |
-| 5 | Canva | Canva account | she confirms | Guide 0. Recommend Free to start; skip Pro trials |
-| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Customize → Connectors**; then check. If the check fails right after she connects, she starts a new conversation so the connection loads, and says "continue content setup" |
-| 7 | Canva | Brand Kit colors | she confirms 3 colors added | No `about-me/brand.md` → offer /brand-kit-designer first (her logo and colors), run on yes. Then Guide A, with dark, light and accent from `about-me/brand.md` (else from `business-brain.md` or her website) |
-| 8 | Canva | Logo in Uploads | she confirms light and dark versions uploaded | No `about-me/brand.md` and she declined the brand kit in step 7 → offer it once more, or use the logo files she has. Guide B step 3, with the files named in `about-me/brand.md` |
-| 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's five base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak", "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file) and "Photo - headline" (one page: a full-bleed photo, a soft dark fade at the bottom and a headline on it). Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Shared with you" in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Shared with you" and uses File > Make a copy. Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
-| 10 | Canva | Brand style | `brand-style.md` approved and written | Draft color and font roles and logo files, seeded from `about-me/brand.md` when it exists; show; write on yes |
-| 11 | Canva | Template index | `templates.md` has the base templates | Draft the rows and fill guides in content-template's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on yes |
-| 12 | MCM | Social accounts | she confirms each platform she'll post on is connected in MCM's Social Planner | Recommend her platforms first, from each `../content-strategy/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals; the newsletter when she sells something people decide on over time and has a list; Substack only with the newsletter, when her expertise is what she sells or she already has one), and note them in `setup.md` (the strategy step starts from them). Then she connects them in MCM (Guide D). Substack on: no connection; she signs in to Substack once in the browser inside the Claude app, and Claude opens her dashboard to check |
-| 13 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) and `get-account` lists its social accounts | Guide C: she adds MCM as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
-| 14 | MCM | MCM details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; newsletter on: her from name, from email, reply-to and list (a tag or segment), then checked, read-only: the list through MCM (`get-location-tags` finds the tag, `search-contacts-advanced` filtered by it counts its contacts; a segment, in the browser) and the sending domain in the browser (MCM's email settings show it verified). Setting up the domain, its records or the list is part of her MCM build, never this step. Not known yet, or a check fails: say what's missing and mark the newsletter waiting; the rest of the step goes on. Substack on: her publication address. Show; write on yes |
+| 5 | Canva | Canva account | she confirms | Guide 0. Recommend Free to start; skip Pro trials. Her plan never matters to the setup |
+| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Customize → Connectors** (**Click here to open Connectors →** `https://claude.ai/customize/connectors`); then check. If the check fails right after she connects, she starts a new conversation so the connection loads, and says "continue content setup" |
+| 7 | Brand | Her logo and colors | `about-me/brand.md` exists, or she chose "later" | Ask first: "**Do you already have a logo and brand colors?**" **Yes** → "Put your logo files, and anything that shows your colors (a style guide, a past design), in **04. Brand** in your Drive, or attach them here. Your website works too: just send the link." Then /brand-kit-designer in its **from her own brand** mode, run on her yes. **No** → offer to make them now (/brand-kit-designer, about 15 minutes) or later. Later → the templates keep MCM's colors until she has hers; note it under "Decided for her". No Canva Brand Kit step: her colors go into the templates themselves (step 9) |
+| 8 | Brand | Logo on her templates | her logo is placed on every template that has a logo spot | Claude places it, after steps 9, 17-19 are done: her light and color logo files (from `about-me/brand.md`) go into her Canva (from her computer with `create-upload-url` once `www.canva.com` is an allowed site, or `media-to-ghl.sh` for a permanent link and `upload-asset-from-url`), then `update_fill` on each template's logo spot. Neither works → fallback: she drags her logo into one design Claude links her to (**Click here to open it →**), from her Canva Uploads; Claude reads its media ID from that design and places it everywhere. No logo yet (brand later) → step waits, nothing to do now |
+| 9 | Templates | Her templates | every template she'll use is in her Canva, titled TEMPLATE, design ID known | Ask first: "**Do you already have post templates in Canva?** Bought ones, ones you made, or ones made for you." **Yes** → she sends the links (or the names, and Claude finds them): see "Her own templates" below. Then: "Want MCM's five templates too? **Yes, in my colors** / **Yes, as they are** / **No, mine are enough**". **No** → MCM's five, in her colors. MCM's five: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak", "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file) and "Photo - headline" (one page: a full-bleed photo, a soft dark fade at the bottom and a headline on it). Rica shares them to her Canva email as "Can edit" (by hand: Canva can't share from here). Claude copies each one into her Canva itself (`copy-design`) and rebrands the copy (below); she does nothing but say yes. A shared design that doesn't show for her: ask Rica to share it to the email her Canva uses, and mark the step waiting. Then, optional: "**Any posts or accounts whose look you love?** Attach screenshots or send the links." (see "Design references" below). Last, once all her templates are in: "Want your brand fonts on your templates? About 2 minutes per template." Optional; Guide B with a link to each template |
+| 10 | Templates | Brand style | `brand-style.md` written | Claude writes it from `about-me/brand.md` (or MCM's colors when her brand is "later"), the templates and her references, without asking; one line: "I wrote down how your colors and templates are used." |
+| 11 | Templates | Template index | `templates.md` has every template set up here | Claude writes the rows and fill guides in content-template's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it, hers and MCM's side by side; no approval, one line as in step 10 |
+| 12 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) | Guide C: she connects MCM from the plugin's **Connectors** tab, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. The plugin's connector doesn't show or fails → Guide C's fallback (custom connector). Record her location ID and her MCM app address (the `uiUrl` from `fetch-media-content`, its domain) in `ghl.md`: the links in steps 13 and 19 are built from them |
+| 13 | MCM | Platforms and social accounts | `get-account` lists every platform she'll post on | Recommend her platforms first, from each `../content-strategy/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals; the newsletter when she sells something people decide on over time and has a list; Substack only with the newsletter, when her expertise is what she sells or she already has one), and note them in `setup.md` (the strategy step starts from them). Then: "**Do you want to make videos of yourself talking?** Yes / Not for now". Yes → reels on, noted in `setup.md`, her Drive folder `Content videos` created; then "The video tools (an ElevenLabs account) can be set up now or at your first reel. **Set it up now** / **At my first reel**" (now → content-video's ElevenLabs setup runs here). Not for now → reels off; she turns them on any time ("I want to make reels"), which asks the same. Then she connects her accounts in MCM (Guide D, with the direct link to her Social Planner), and Claude checks them itself with `get-account`; she never has to report. If an account doesn't list, say which and send her back to the link. Substack on: no connection; she signs in to Substack once in the browser inside the Claude app, and Claude opens her dashboard to check |
+| 14 | MCM | MCM details | `ghl.md` written | Claude writes location, user, social account and profile IDs and token expiry dates from the checks, without asking. Newsletter on: Claude fills her details from MCM and shows them for one confirmation: from name (her name on her MCM user), from email (her business email in MCM), reply-to (the same address), and the list (her tags with contact counts: `get-location-tags`, then `search-contacts-advanced` filtered by the likeliest tag, e.g. "newsletter, 214 contacts"). "**These are right** / **Change something**", then "Not sure about any of these? We can talk it through." Then the sending domain, read-only, in the browser (MCM's email settings show it verified). Setting up the domain, its records or the list is part of her MCM build, never this step. Not known yet, or a check fails: say what's missing and mark the newsletter waiting; the rest of the step goes on. Substack on: her publication address |
 | 15 | MCM | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: content-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |
-| 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's **Settings → Capabilities** (where the allowed sites live) |
-| 18 | Upload | Upload script | `departments/content/scripts/canva-to-ghl.sh` exists | Copy `scripts/canva-to-ghl.sh` from this skill's folder, unchanged |
-| 19 | Upload | MCM key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in MCM and pastes it into the file (Guide E); Macs hide files whose names start with a dot, so offer to open the file for her, or she presses Shift+Cmd+. in Finder; the check prints only "set" or "not set" |
+| 17 | Upload | Allowed sites | the three sites reachable from her computer | Test `export-download.canva.com`, `www.canva.com` (her logo goes straight into Canva, step 8) and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds the blocked ones in Claude's **Settings → Capabilities** (**Click here to open Capabilities →** `https://claude.ai/settings/capabilities`), one at a time, each written out for her to copy |
+| 18 | Upload | Upload scripts | `departments/content/scripts/canva-to-ghl.sh` and `media-to-ghl.sh` exist | Copy both from this skill's `scripts/`, unchanged |
+| 19 | Upload | MCM key | `.env` has `GHL_PIT` set | Create `departments/content/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (View Medias and Edit Medias) in MCM and pastes it into the file (Guide E, with the direct link to her Private Integrations page and a clickable link to the file, its full path on her computer, which opens it; no hidden-file tricks, and Claude never says it will open the file itself); the check prints only "set" or "not set" |
 | 20 | Strategy | Strategy | `departments/content/strategy.md` exists | Offer /content-strategy (it then offers to plan the first 4 weeks) |
 
 Order: stages in order. Within a stage, a step that waits on her doesn't block the next step that doesn't need it — say which one is waiting.
@@ -77,33 +79,31 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 - Show the status in one table (step, status, what's waiting) and name the next step with its recommendation. For "where are we", stop here.
 
 ### Step 2 — Work the next step
-- Open with the recommendation: "We'd do <X>, because <why>. OK, or would you change it?"
-- Her steps (5, 7, 8, 9 copy, 12, 13 connect, 19 paste): give the guide's steps in plain words, one at a time (`guides.md`), then wait for "done" and run the check where there is one.
+- Open with the recommendation: "We'd do <X>, because <why>." A choice comes as numbered options under a short lead-in, and always ends with "Or tell me what you're thinking." (/system's reply rules).
+- Her steps (5, 6, 12, 13 connect, 17, 19 paste, 9 fonts): give the guide's steps as numbered steps, one action each, every link as **Click here to open <the page> →** (`guides.md`), then wait for "done" and run the check where there is one.
 - Hand-off steps (3, 4, 7 brand kit, 20): offer the skill; run it only on yes. When it finishes, re-check and continue.
-- **Her brand roles** (steps 7-10), from `about-me/brand.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `deliverables/brand/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which.
-- **Step 9 rebrand**, on each of her copies (through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; swap the base logo for hers from step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those to fit her business, in her voice, and show them in the previews. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules; fonts if the copy lost them), with Guide B's clicks.
+- A `setup.md` from an older version, with steps in another order: re-check every step against today's "Done when" by name, not by number, and rewrite the table in today's order.
+- **Her brand roles** (steps 8-10), from `about-me/brand.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `deliverables/brand/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which. Brand "later": MCM's colors stay, and the templates are rebranded once her brand exists.
+- **Step 9 rebrand**, on each of her copies of MCM's five (skipped for "Yes, as they are"; through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; the logo spots wait for step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those to fit her business, in her voice, and show them in the previews. Her design references (below), if she gave any, guide the small choices (spacing, which accent goes where), never the layout. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules), with Guide B's clicks and a link to each design.
 
 > "Do these look right? Say **yes** and I'll save them, or tell me what to change."
 
   On yes, commit and retitle each "TEMPLATE - <format> - <post type>"; their design IDs go to step 11.
-- **Step 9 with her own templates:** read each one; if its text sits in editable text boxes, it can serve. Say which ones need placeholders added and add them only on yes. If a design is a flat image, it can't serve; recommend MCM's base instead.
-- File steps (10, 11, 14): draft from what's known, show the full content.
-
-> "Does this look right? Say **yes** and I'll save it, or tell me what to change."
-
-  Apply edits exactly, re-show, write on yes.
+- **Her own templates (step 9):** read each one she sends; if its text sits in editable text boxes, it can serve as a template. Say which ones need placeholders added and add them only on her yes. A flat image can't serve: offer to build one like it (/content-template). Each one that serves gets its row and fill guide in `templates.md`, next to MCM's, and the plan picks from both. Her own designs are never recolored or restyled.
+- **Design references (step 9):** screenshots or links she shares go to `04. Brand/References` in her Drive (her folder's `departments/content/references/` when her Drive isn't organized), and a few lines in `brand-style.md` § Looks she likes (e.g. "lots of white space, one big word per slide, hand-drawn arrows"). Read for feel only (layout, density, tone), never copied. Used now in the rebrand, later by content-template and for her photo style.
+- File steps (10, 11, 14): written from what's known, without asking; one line saying what was written. The newsletter details in step 14 are the exception: shown for her confirmation first.
 - After each step, update `setup.md` (status, date, how we know, decisions noted). No approval needed.
 
 **The Content department (step 1):** the brief in /new-department's brief format, filled from the content machine, never from an interview. Ask only its area: "Is this content for **<her main business>**, or something else?" (her main business first; her answer wins). Fill the dates, show the full brief, and on yes write it, add its index line under its area header in `departments/index.md`, and hand /context the creation of `context/content.md` (`tier: department`) with "Content department created during the content setup." Her yes covers all three.
 
 - Name **Content**; slug `content`; `area:` her answer.
 - Intro: "Her posts, from idea to scheduled, and what they teach her about her audience."
-- Purpose: "Show up consistently, in her own voice, with content that brings the right people closer to buying."
+- Purpose: "Show up consistently, in her own voice, so the right people get to know and trust her."
 - Standards: "Nothing is posted without her yes." · "Where and how often she posts: her content strategy (`strategy.md`)."
 - Routines: "The next post, when the plan says · as planned" · "A review of what worked, before each new 4-week plan · monthly".
 - Current state: "Content setup started; nothing posted yet."
 - Next step: "Continue the content setup: step 2. Say \"continue content setup\"."
-- What I use here: "next post" (makes the next post from the plan · `posts/`), "plan content" (the next 4 weeks · `plan.md`), "set up my content strategy" (what to post and why · `strategy.md`), "review the content" (what worked · `performance-log.md`), "set up my content" (this setup · `setup.md`).
+- What I use here: "next post" or "let's make the next post" (makes the next post from the plan · `posts/`), "make this a post" (turns an idea into a post, in the plan or outside it), "plan content" (the next 4 weeks · `plan.md`), "set up my content strategy" (what to post and why · `strategy.md`), "review the content" (what worked · `performance-log.md`), "set up my content" (this setup · `setup.md`).
 - Material that already exists: none yet (her photos folder joins when she starts one).
 - Decisions: "Department created during the content setup."
 
@@ -124,12 +124,15 @@ Seeded from about-me/brand.md on YYYY-MM-DD. The content machine's own roles; br
 ## Fonts
 | Role | Font | Notes |
 |---|---|---|
-| Heading | | set on the templates (not in the Brand Kit on Free) |
+| Heading | | set on the templates by her, optional (step 9's fonts offer) |
 | Body | | |
 
 ## Logo
-- Light version (for dark slides): <file> · in Canva Uploads: yes/no
-- Color version (for light slides): <file> · in Canva Uploads: yes/no
+- Light version (for dark slides): <file> · Canva media ID: <id, once placed>
+- Color version (for light slides): <file> · Canva media ID: <id, once placed>
+
+## Looks she likes
+- <a few lines from her design references, or "none given">
 ```
 
 **`ghl.md` (step 14):**
@@ -140,6 +143,7 @@ Seeded from about-me/brand.md on YYYY-MM-DD. The content machine's own roles; br
 Not secret. The key lives in .env, never here.
 
 - Location ID:
+- MCM app address (for direct links): https://<domain>
 - User ID (posts are scheduled as):
 
 | Platform | Account ID | Profile ID | Token expires |
@@ -198,11 +202,11 @@ Runs that changed something: hand /context one line for `context/content.md`:
 
 ## What this skill never does
 
-- Writes `brand-style.md`, `templates.md` or `ghl.md` without an explicit yes.
+- Saves her newsletter details without her confirmation.
 - Reads, prints, copies or asks for the MCM key, or reads `.env`.
-- Connects, disconnects or changes anything in Canva, MCM or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her yes.
+- Connects, disconnects or changes anything in MCM or Claude's settings — she does those; this skill only checks. The only Canva changes it makes: copying the shared templates into her Canva and rebranding the copies (step 9, on her yes), placeholders on her own templates (on her yes), and placing her logo (step 8).
 - Writes `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (changes there only wait in `_system/pending.md`), the shipped library, playbook or guides, or anything in `context/` (milestones go through /context).
-- Adds template rows to `templates.md` beyond the base templates set up here.
+- Adds template rows to `templates.md` beyond the templates set up here (MCM's and her own).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.
 - Runs a hand-off without a yes, or interviews her for the Content department brief.
@@ -221,9 +225,12 @@ Runs that changed something: hand /context one line for `context/content.md`:
 - **A check can't run** (Canva or MCM not connected, computer offline) — mark the step "waiting", say what she needs to do, move to the next step that doesn't depend on it.
 - **A check disagrees with setup.md** (a step marked done now fails, e.g. a connection expired) — reopen the step, say why.
 - **Business file or voice missing** — offer to redo the install's business step (step 3) or writing step (step 4), and run it on her yes; the Canva and MCM steps can still run meanwhile.
-- **She declines the brand kit** — use the colors and logo files she already has; note it under "Decided for her".
-- **Shared template doesn't show up for her** — check that MCM shared it to the email on her Canva account; ask MCM to share it again. Never rebuild the template from scratch.
-- **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.
+- **She chooses "later" for her brand** — MCM's colors stay on the templates and step 8 waits; note it under "Decided for her". When her brand exists, the rebrand and the logo run then.
+- **Shared template doesn't show up for her, or `copy-design` refuses it** — check that MCM shared it to the email on her Canva account; ask Rica to share it again. Never rebuild the template from scratch.
+- **The plugin's MCM connector is missing or broken** — Guide C's fallback: she adds the custom connector by hand.
+- **Her logo can't reach Canva** (both routes blocked) — step 8's fallback: one design link, she drags the logo in.
+- **A direct link doesn't land on the right page** (MCM moved it) — give the click path instead, and note it under "Decided for her".
+- **The copy lost the accent color** — list it as a hand fix. Fonts: the base templates use Archivo Black and Lato, free in every Canva; her own fonts are step 9's optional offer.
 - **An element can't be recolored from here** — leave it, list it as a hand fix at the gate.
 - **The script source is missing** — stop step 18 and say so; never rewrite the script.
 - **Department brief missing after she declined it** — keep `setup.md` in `departments/content/` anyway and say the department still needs a brief.

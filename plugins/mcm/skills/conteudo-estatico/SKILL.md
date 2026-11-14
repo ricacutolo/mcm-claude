@@ -7,7 +7,7 @@ description: "Faz um post de imagem — carrossel, carrossel ilustrado, post de 
 
 She leads with her voice and her ideas; this skill drafts, designs and schedules around them. It never posts on its own.
 
-It does one thing: **take one image post from idea to scheduled.** It is usually started by conteudo-post with a slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and then continues here. Reels belong to conteudo-video.
+It does one thing: **take one image post from idea to scheduled.** It is usually started by conteudo-post with a slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and shows its "This post" table (Step 3), then continues here. Reels belong to conteudo-video.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "o texto", "o design", "o calendário", "o brief do departamento"; never file names, "skill", "API" or a command name.
 
@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot conteudo-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format, template, idea.
 2. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
-3. `departamentos/conteudo/estrategia.md` — who we post for, which layers are on, topics, post types, idea rules, cadence and platforms, CTA, wedge.
+3. `departamentos/conteudo/estrategia.md` — who we post for, which layers are on, topics, post types, idea rules, cadence and platforms, how posts end (the ask, the light endings), wedge.
 4. `departamentos/conteudo/plano.md` — the slot's row and the next `planejado` slot.
 5. `departamentos/conteudo/calendario.md` — what's scheduled and published.
 6. `departamentos/conteudo/ideias.md` — the idea backlog.
@@ -98,11 +98,11 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
-- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the CTA for the layer that's on. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
+- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the slot's ending (`final` from the plan: the ask for the layer, the named light ending, or none; playbook § 7). That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
 - Photo formats: no slide text. The copy is the caption(s), the hook in the first line, and for a photo carousel the order of the photos.
 - Headline photo: the headline on the photo, 3-8 words, the hook said plainly in one color (no accent words), plus the caption(s), whose first line takes the hook further instead of repeating the headline.
-- For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Arrasta pro lado →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the CTA.
-- Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
+- For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Arrasta pro lado →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the slot's ending (with `nenhum`, the promise closes the slide).
+- Run the playbook's 4-point check (hook, what they get, plain, ending) and fix what fails before showing.
 - Show slides and every caption (labeled by platform), accent words in [brackets], and one line naming the hook pattern used.
 - **Gate:** "O texto está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait for sim. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 
