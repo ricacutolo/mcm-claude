@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.18.1 — 2026-11-14 [both]
+- **Every easy-way step keeps a fallback, used only when the easy way fails** (Rica, 2026-11-14). The settings-file link had none: Guide E step 6 now adds the Finder way (show hidden files with Shift + Cmd + ., open `.env` with TextEdit) for when the link doesn't open, and content-install step 19 says so. content-video's ElevenLabs key step now gives the same clickable link first, instead of saying Claude will open the file, with the Finder way as its fallback.
+
 ## 0.18.0 — 2026-11-14 [both]
 - **Every setup reports its progress back to Rica** (spec 2026-11-14). The health file (`_system/health.md`) gets a **Setup** block, one line per setup that exists: the install (step X of 9), the content setup (N of 20 and what it's waiting on), each course program (numbered, never named, stage words only) and the CEO strategy (set, with its date, or not yet). Step names and counts only, so it stays numbers-only and needs no new permission.
 - Written at the weekly checkup and whenever a setup step finishes: install, content-install, course-install and business-strategy hand /system "refresh the Setup block"; /system stays the only writer of the health file. With `drive_mirror: yes`, the Drive copy Rica sees updates at the same moments.

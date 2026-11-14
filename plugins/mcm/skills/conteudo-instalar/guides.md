@@ -76,6 +76,7 @@ Essa chave deixa o seu computador mandar os seus designs prontos para o MCM. Tra
 4. Clica em **Criar** (Create).
 5. A sua chave aparece **uma vez só**: clica em **Copiar** (Copy) na hora. Se perder, é só criar outra.
 6. **Clique aqui para abrir o seu arquivo de configurações →** (o link do Claude para o arquivo na sua pasta de conteúdo). Cola a chave logo depois de `GHL_PIT=`, sem espaços, e salva.
+   Se o link não abrir o arquivo: no Finder, abre a sua pasta de conteúdo (`departamentos/conteudo`), aperta **Shift + Cmd + .** para mostrar os arquivos ocultos, e clica com o botão direito em `.env` → **Abrir com** (Open With) → **TextEdit**.
 7. Diz **salvei**. O Claude só confere que tem uma chave lá, nunca o que ela diz.
 
 Se a sua tela estiver diferente, descreve o que você vê e o Claude acha com você.
