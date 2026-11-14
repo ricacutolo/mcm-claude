@@ -31,6 +31,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | conteudo-instalar | content-install |
 | conteudo-newsletter | content-newsletter |
 | conteudo-substack | content-substack |
+| conteudo-podcast | content-podcast |
 | estrategia-do-negocio | business-strategy |
 | curso-instalar | course-install |
 | curso-desenho | course-design |
@@ -75,6 +76,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `…/conteudo/posts/` · `scripts/` · `.env` · `rodadas-anteriores/estrategia-rodada-<N>.md` | `…/content/posts/` · `scripts/` · `.env` · `past-rounds/strategy-round-<N>.md` |
 | `contexto/conteudo.md` | `context/content.md` |
 | Drive: `Vídeos de conteúdo/post-NN-<slug>` | Drive: `Content videos/post-NN-<slug>` |
+| `…/conteudo/podcast.md` (her show) · `…/conteudo/podcast/episodio-NN-<slug>/episodio.md` · `edit/episodio-NN.mp3` · `edit/episodio-NN.srt` · Drive: `Áudios de conteúdo/episodio-NN-<slug>` | `…/content/podcast.md` · `…/content/podcast/episode-NN-<slug>/episode.md` · `edit/episode-NN.mp3` · `edit/episode-NN.srt` · Drive: `Content audio/episode-NN-<slug>` |
+| strategy line `Âncora: nenhuma \| newsletter \| podcast` · `a newsletter é o podcast` · `o podcast é a newsletter` · `independentes` · section Podcast | `Anchor: none \| newsletter \| podcast` · `the newsletter is the podcast` · `the podcast is the newsletter` · `independent` · section Podcast |
 | `projetos/` | `projects/` |
 | `contexto/` | `context/` |
 | `pesquisa/` | `research/` |
@@ -134,7 +137,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | arquivado | archived |
 | Ficha sections: Preferências, O que está aberto, Histórico, Arquivos | Preferences, What's open, History, Files |
 | fechou / vai pensar / não | closed / thinking / no |
-| plan idea cell in a newsletter-led cycle: `da newsletter N` · idea tag `para o post N` · post note `ciclo sem newsletter` | `from newsletter N` · `for post N` · `cycle fell back` |
+| plan idea cell in an anchor-led cycle: `da newsletter N` · `do episódio N` · idea tag `para o post N` · post note `ciclo sem âncora` | `from newsletter N` · `from episode N` · `for post N` · `cycle fell back` |
+| podcast episode slot: format `episódio de podcast` · Modelo cell `episódio` · `Temporada T, Episódio N` · `gravar até` · calendar `Episódio N: <tema>` · "Este episódio" table · `episodio.md` steps Ideia · Pauta · Gravação · Palavras e áudio · Kit · Publicado · "Vem de" row | `podcast episode` · Template cell `episode` · `Season S, Episode N` · record-by date · `Episode N: <topic>` · "This episode" · Idea · Outline · Recording · Words and audio · Kit · Published · "From" row |
 | Substack Note: format `nota` · calendar `Nota do Substack N` · plan idea cell `do post M` · status `pulada` | `note` · `Substack note N` · `from post M` · `skipped` |
 | plan Modelo cell for formats with no template: `reel` · `foto` | Template cell: `reel` · `photo` |
 | format Headline photo, said to her as `foto com título` (template `TEMPLATE - Photo - headline`, token `[HEADLINE]`, names kept) | format `Headline photo` |
@@ -183,6 +187,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | vamos fazer o próximo post · transforma isso em post | let's make the next post · make this a post |
 | eu já tenho um logo · usa o meu logo · coloca a minha marca | I have a logo · use my logo · add my brand |
 | quero fazer reels | I want to make reels |
+| próximo episódio · gravei o episódio | next episode · I recorded the episode |
 | [Ligado] · [Desligado] (strategy draft marks) | [On] · [Off] |
 | post table: Este post · Quando · Tema · Tipo de post · Formato · Vai para · Termina com | This post · When · Topic · Kind of post · Format · Goes to · Ends with |
 

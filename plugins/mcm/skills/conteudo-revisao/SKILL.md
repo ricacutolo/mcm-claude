@@ -52,11 +52,12 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - MCM `get-posts` for the window (body: `type: all`, `accounts` as a comma-separated string, `skip`/`limit` as strings): for each published post, each platform's likes, comments and shares.
 - MCM `get-statistics` with the profile IDs (not the account IDs): impressions, reach and new followers per day for the window.
 - Newsletter on: MCM `get-campaign-stats` for each issue sent in the window: clicks, replies, unsubscribes (opens recorded, not trusted). Weigh them by `../conteudo-estrategia/platforms/newsletter.md`'s Results section.
+- Podcast on: no numbers from her host in v1. Episodes are read through the posts cut from them (by cycle) and the replies or calls she mentions; ask her once, in one line, if there's anything she noticed (a message, a call that mentioned an episode).
 - Substack on: open her Substack dashboard in the browser and read new subscribers for the window, and each Note's replies, restacks and likes (`../conteudo-estrategia/platforms/substack.md`'s Results section). Browser not reachable: say so and leave Substack out of this review.
 - In `desempenho.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `inicial`), with the day's reach as the post's reach, and note the pull date. Add one line under "Totais da conta" for the window. If the file is missing, create it in conteudo-post's format (Posts · Totais da conta · O que aprendemos).
 
 ### Step 3 — Read
-- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); when the newsletter leads the theme, also by cycle: which formats did best from the same idea, and led cycles against the ones that fell back; and the account trend (reach, followers) across the window.
+- Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); when an anchor leads (the newsletter or the podcast), also by cycle: which formats did best from the same idea, and led cycles against the ones that fell back; and the account trend (reach, followers) across the window.
 - Apply the small-numbers rule to every group. Say plainly where the numbers are too small to mean anything.
 - Note anything unusual worth a look (a post that got comments, a day reach jumped).
 

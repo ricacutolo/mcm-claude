@@ -21,7 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `../content-strategy/platforms/newsletter.md` — the newsletter's formats, writing rules, scheduling and results. Only if the newsletter is on in `strategy.md`. Substack on too: `../content-strategy/platforms/substack.md` (the issue also goes out there as an article).
 5. `departments/content/plan.md`, `calendar.md` and `ideas.md` — the slot, what's scheduled, the idea backlog.
 6. `departments/content/ghl.md` — location and user IDs, and its Newsletter section: from name, from email, reply-to, the list (tag or segment).
-7. The issue's own `departments/content/newsletters/issue-NN-<slug>.md`, if it exists — to resume.
+7. The issue's own `departments/content/newsletters/issue-NN-<slug>.md`, if it exists — to resume. When the newsletter is the podcast: the episode's `departments/content/podcast/episode-NN-<slug>/episode.md` (its approved kit and transcript are her material).
 8. `about-me/about-me.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
    - the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**). It evolves; always read the current one.
@@ -54,7 +54,8 @@ Never read or print `departments/content/.env`.
 ### Step 1 — The issue and where it stands
 - Use the slot content-post passed. If `newsletters/issue-NN-<slug>.md` exists, read its Step/Status table and resume at the first step not done.
 - New issue: create `departments/content/newsletters/issue-NN-<slug>.md` in the shape below (the slug once the idea is set).
-- Newsletter leads the theme (`strategy.md`): this issue sets the topic for the cycle's posts and is due by its write-by date in `plan.md` (2 days before it's sent). Say so in one line when it's close.
+- The newsletter is the anchor (`strategy.md`; an older strategy saying the newsletter leads the theme counts): this issue sets the topic for the cycle's posts and is due by its write-by date in `plan.md` (2 days before it's sent). Say so in one line when it's close.
+- The newsletter is the podcast: this issue comes from episode N (the slot's idea, `from episode N`). Its kit isn't approved yet → offer the episode first ("This issue comes from episode N. Want to do the episode first?"); she says no → the issue goes ahead as a normal one on the planned topic.
 - The newsletter is off in `strategy.md`: "The newsletter isn't switched on in your content strategy yet. Want to switch it on first?" Stop.
 - `ghl.md` has no Newsletter section, or no list: "Your newsletter isn't set up in MCM yet: <what's missing>. Want to finish that first?" Hand to content-install on yes. Stop.
 
@@ -89,11 +90,12 @@ Preview text:
 - The suggestion comes from the slot's topic and format, the posts since the last issue (their best idea, gone deeper), `ideas.md`, and real questions she's mentioned. One suggestion, not a menu.
 - Her material wins. Keep it in the issue file as she gave it. If it fits a different format than the slot's, say which and use it.
 - She takes the suggestion: ask one question that gets her own angle on it ("What's one time you saw this happen?"). A newsletter without anything of hers in it is a blog post.
+- **The newsletter is the podcast:** skip the question. Her material is the episode: its transcript and approved kit. Say in one line: "I'll write this one from episode N." The letter is the episode's idea in her words (playbook § 12), with the link to listen once, near the end.
 
 ### Step 3 — Draft (gate 1)
 - Write it in the slot's format (the library's newsletter formats), from her material, in her voice: the newsletter section of the playbook and `platforms/newsletter.md`. Plain text, 200-400 words, short paragraphs, one CTA for the layer that's on (or the offer, on an offer issue).
 - Then the subject: 2-3 options, short and specific, written last, no emoji, plus one preview text line that adds to the subject.
-- **Newsletter leads the theme:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plan.md`), each matched to its slot's post type and format, by the playbook's "From newsletter to posts" section: its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
+- **The newsletter is the anchor:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plan.md`), each matched to its slot's post type and format, by the playbook's "From the anchor to everything" section (§ 12): its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
 - Run the playbook's 4-point check (hook, what they get, plain, ending: the one ask of the email, or the offer on an offer issue) and fix what fails before showing.
 - Show the subject options, the preview text and the email as it will read.
 - **Gate:** "Does the newsletter work? Pick a subject and say **yes** (the post angles come with it), or tell me what to change."
@@ -116,6 +118,7 @@ Preview text:
 - `plan.md`: set this slot's Status to `scheduled` — the Status cell only.
 - `ideas.md`: mark the idea `used: newsletter N` if it came from there; add new ideas she mentioned as `unused`.
 - Led cycle: each approved angle goes into `ideas.md` as `unused`, source `newsletter N`, tagged `for post M`.
+- **The podcast is the newsletter:** offer the episode next, in one line: "Want to get episode N ready now? You'll talk this letter through."
 - Department brief: set Next step to the next `planned` slot of any kind, as content-static does; update Current state with its date and one line, and `updated:`. Mention it in one short line.
 - Receipt and milestone (below). Hand back to content-post's Step 4.
 

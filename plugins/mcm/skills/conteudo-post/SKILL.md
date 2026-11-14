@@ -1,6 +1,6 @@
 ---
 name: conteudo-post
-description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, com o sim dela. Também guarda ideias de post, transforma uma ideia em post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"vamos fazer o próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"transforma isso em post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", ou quando o próximo passo do departamento Conteúdo é um post."
+description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, newsletters e episódios de podcast para as deles, com o sim dela. Também guarda ideias de post, transforma uma ideia em post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"vamos fazer o próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"transforma isso em post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", ou quando o próximo passo do departamento Conteúdo é um post."
 ---
 
 # conteudo-post — what's next, and who makes it
@@ -53,7 +53,7 @@ If `calendario.md` has a row marked `Agendado` whose time has passed, run Step P
 
 ### Step 1 — Find the post and where it stands
 - Take the first `planejado` slot in `plano.md`. If she names a post ("post 5"), use that one.
-- Newsletter leads the theme: a post slot marked `da newsletter N` whose issue isn't approved yet → offer the newsletter first if its write-by date hasn't passed ("A newsletter N define o ângulo desse post. Quer escrever ela primeiro?"). If it has passed, or she says no, the post goes ahead with its normal idea step on the planned topic, and `post.md` notes "ciclo sem newsletter". A post never waits for the newsletter.
+- An anchor leads the cycle: a post slot marked `da newsletter N` or `do episódio N` whose anchor isn't approved yet → offer the anchor first if its write-by or record-by date hasn't passed ("A newsletter N define o ângulo desse post. Quer escrever ela primeiro?" / "O episódio N define o ângulo desse post. Quer fazer ele primeiro?"). If it has passed, or she says no, the post goes ahead with its normal idea step on the planned topic, and `post.md` notes "ciclo sem âncora". A post never waits for the anchor.
 - No `plano.md`, or no planned slot: fall back to the department's Próximo passo, then the calendar, and say so in one line. Offer to plan the next 4 weeks (conteudo-plano); run it only on sim.
 - If `posts/<folder>/post.md` exists, read its Etapa/Status table. Say in one line: "Post N, <topic> × <post type>, retomando em <step>." The maker resumes there.
 - Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "A conexão do <platform> vence em <date>. Reconecte no Social Planner do MCM antes disso." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
@@ -64,7 +64,7 @@ Her time zone comes from `sobre-mim/sobre-mim.md`. If it isn't there, ask once (
 - A slot is **missed** when its time has passed or is less than 1 hour away.
 - **The new time:** the same day if it can go out at least 1 hour from now and by 6 PM in her time zone, and nothing else is posted that day; otherwise the next cadence date with no post on it (check the calendar and the plan's scheduled slots).
 - Say it in one line: "O horário do post N era <day time>; eu postaria <new time>." The maker confirms the new time at its schedule gate.
-- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date.
+- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date. Episode slots too: a missed episode moves to the next free episode date, and the cycle's posts keep their dates (they fall back if the episode isn't ready).
 - Substack Note slots are their own channel too and never count toward one post a day. A missed Note is skipped, said in one line ("O horário da nota N passou; vou pular, a próxima é <day>."), and its Status set to `pulada`. Notes are light; they don't pile up.
 - If that date already holds the next planned post, the later posts shift one slot: "Isso empurra o resto do plano um horário pra frente. Quer que eu ajuste?" On sim, run conteudo-plano's "Refresh: shift after a missed slot". Never put two posts on the same day.
 
@@ -78,6 +78,7 @@ Route by the slot's format (formats as named in `../conteudo-estrategia/library.
 | Talking-head reel, or any other reel or video format | conteudo-video (beta; it says which video formats it can make) |
 | Newsletter | conteudo-newsletter (only when the newsletter is on in `estrategia.md`) |
 | Nota (Substack) | conteudo-substack (only when Substack is on in `estrategia.md`) |
+| Episódio de podcast | conteudo-podcast (only when the podcast is on in `estrategia.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with conteudo-plano's refresh |
 
 Show where the post comes from, the same small table every time, so she sees the plan working behind it:
@@ -90,6 +91,7 @@ Show where the post comes from, the same small table every time, so she sees the
 | Formato | <format> |
 | Vai para | <platforms on in `estrategia.md` that take this format> |
 | Termina com | <o pedido / um final leve, nomeado / só valor>, from the slot's `final` |
+| Vem de | <Episódio N / Newsletter N> — only when the slot is cut from an anchor; otherwise leave the row out |
 
 Then: "Responde com **1** ou **2**: 1. Começar agora 2. Agora não. Ou me conta o que você está pensando." (one option per line). For a reel add one line: "Vídeo é novo no sistema, então primeiro eu confiro se consigo fazer na sua configuração."
 
@@ -144,7 +146,7 @@ Triggered by "transforma isso em post", "faz um post disso", about something she
 
 One line per run in `_sistema/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | conteudo-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → conteudo-estatico or conteudo-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
+`YYYY-MM-DD | conteudo-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → conteudo-estatico, conteudo-video, conteudo-newsletter, conteudo-substack or conteudo-podcast · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
 
 ## What this skill never does
 
