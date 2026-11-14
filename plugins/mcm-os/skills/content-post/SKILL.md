@@ -1,6 +1,6 @@
 ---
 name: content-post
-description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, on her yes. Also saves post ideas and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"what should I post next\", \"make the next post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", or when the Content department's next step is a post."
+description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, on her yes. Also saves post ideas, turns an idea into a post, and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"let's make the next post\", \"what should I post next\", \"make the next post\", \"make this a post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", or when the Content department's next step is a post."
 ---
 
 # content-post — what's next, and who makes it
@@ -10,6 +10,7 @@ The front door of the content machine. It finds the next post in the plan (or th
 Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "save this as a post idea": one row in her ideas list, then back to whatever was happening (Step C).
+- **Make this a post** — about something she just said, pasted or attached: saved as an idea, then made now in the next slot, or kept (Step M).
 - **Publish check** — "did the post go live?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm US English. Say "the plan", "the calendar", "your ideas list", "the department brief"; never file names, "skill", "MCP", "API" or a command name.
@@ -79,9 +80,20 @@ Route by the slot's format (formats as named in `../content-strategy/library.md`
 | Note (Substack) | content-substack (only when Substack is on in `strategy.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with content-plan's refresh |
 
-Ask: "Post N is a <format>: <topic> × <post type>, <day time>. Want to start it now?" For a reel add one line: "Video is new in the system, so I'll first check I can make it on your setup."
+Show where the post comes from, the same small table every time, so she sees the plan working behind it:
 
-On **yes**, run the maker and pass it the slot: post number, date and time (the new time if the slot was missed, with the original slot), topic, post type, format, template, idea, and the post folder if one exists. Anything other than a clear yes: stop here and keep the slot as it is.
+| This post | |
+|---|---|
+| When | <day date, time> |
+| Topic | <topic> |
+| Kind of post | <post type> |
+| Format | <format> |
+| Goes to | <platforms on in `strategy.md` that take this format> |
+| Ends with | <the ask / a light ending, named / just value>, from the slot's `ends` |
+
+Then: "Reply with **1** or **2**: 1. Start it now 2. Not now. Or tell me what you're thinking." (one option per line). For a reel add one line: "Video is new in the system, so I'll first check I can make it on your setup."
+
+On **yes**, run the maker and pass it the slot: post number, date and time (the new time if the slot was missed, with the original slot), topic, post type, format, ends, template, idea, and the post folder if one exists. The maker doesn't show the table again. Anything other than a clear yes: stop here and keep the slot as it is.
 
 ### Step 4 — After the maker finishes
 The maker hands back here when the post is scheduled (even when she started the maker directly by name).
@@ -119,11 +131,20 @@ Triggered by "save this as a post idea", "post idea: …", "add this to my post 
 - Confirm in one line: "Saved as post idea #N (<topic>)." If the topic was a guess, say so. Then return to whatever was happening — no other step runs.
 - Receipt line. No milestone for a capture.
 
+## Step M — Make this a post
+
+Triggered by "make this a post", "turn this into a post", about something she just said, pasted or attached.
+- Save it first, as Step C does: one row in `ideas.md`, her material in her words, `unused`. Her request is the approval.
+- Then: "Want to make it now, for <the next planned post slot: day date, format>, or keep it for later?" Reply with **1** or **2**: 1. Make it now 2. Keep it. Or tell me what you're thinking.
+- **Make it now:** the next `planned` slot takes this idea (its idea cell only, `idea #N`; the slot's topic, post type and format stay unless she asks to change them, then content-plan's refresh). The idea is marked `used: post N` when the post is scheduled. Then Steps 1-4 for that slot as usual, table first.
+- **Keep it:** confirm in one line ("Saved as post idea #N; the plan will pick it up.") and go back to what she was doing.
+- No plan yet: save it, and offer to set up the plan first.
+
 ## Receipt
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-post | routed / declined / captured / publish-check / no-slot | post N · <format> → content-static or content-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
+`YYYY-MM-DD | content-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → content-static or content-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
 
 ## What this skill never does
 

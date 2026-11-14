@@ -1,11 +1,11 @@
 ---
 name: brand-kit-designer
-description: "MCM Brand Kit Designer: cria a marca dela do zero, junto com ela — logos originais para escolher, ajustes conversando, e no fim o kit completo (logo em todas as versões, cores, fontes e os arquivos prontos para site, e-mail e redes), salvo na pasta e no Drive com o sim dela. Quando ela diz \"/brand-kit-designer\", \"faz minha marca\", \"cria meu logo\", \"quero um logo\", \"kit de marca\", \"minha identidade visual\", \"brand kit\"."
+description: "MCM Brand Kit Designer: cria a marca dela do zero, junto com ela — logos originais para escolher, ajustes conversando — ou traz o logo e as cores que ela já tem; nos dois casos, no fim o kit completo (logo em todas as versões, cores, fontes e os arquivos prontos para site, e-mail e redes), salvo na pasta e no Drive com o sim dela. Quando ela diz \"/brand-kit-designer\", \"faz minha marca\", \"cria meu logo\", \"quero um logo\", \"kit de marca\", \"minha identidade visual\", \"brand kit\", \"eu já tenho um logo\", \"usa o meu logo\", \"coloca a minha marca\"."
 ---
 
 # brand-kit-designer — MCM Brand Kit Designer
 
-Takes her from no brand to a finished brand kit in one conversation: a short brief, original logo directions, a feedback loop in chat, then the final files. Everything is drawn as SVG by Claude itself. No Illustrator, no design canvas, no outside tool.
+Takes her from no brand to a finished brand kit in one conversation: a short brief, original logo directions, a feedback loop in chat, then the final files. Or, when she already has a logo and colors, brings them into her system as the same kit, without redesigning anything. Everything is drawn as SVG by Claude itself. No Illustrator, no design canvas, no outside tool.
 
 Speak Brazilian Portuguese, warm and plain. Never say "skill", "SVG", "hex", "render" or "viewBox" to her: say "o logo", "as cores", "os arquivos". The kit's own name stays in English: **MCM Brand Kit**.
 
@@ -17,11 +17,13 @@ Loaded when this skill fires, nothing more:
 2. `sobre-mim/escrita.md` — only its voice summary, for the brand's tone.
 3. `sobre-mim/marca.md` — if it exists, she already has a kit: offer to adjust it instead of starting over.
 4. `sobre-mim/drive.md` — where `04. Brand` is in her Drive. Missing means her Drive is not organized yet; files then go to her folder only.
-5. Her Drive's `04. Brand/Logos` — titles only, to see if a logo already exists.
+5. Her Drive's `04. Brand` and `04. Brand/Logos` — titles only, to see if a logo already exists. In the **from her own brand** mode, the files she put there (her logo, a style guide) are read in full.
 
 ## The rules
 
-> "Every logo is original. Never imitate an existing brand, logo, mascot, character or trademark, even when she asks or names one as a reference. A reference is read for its mood (sóbrio, divertido, artesanal), never copied."
+> "Her own logo is hers: never redesigned, recolored or changed without her sim. Only the versions it allows are made."
+
+> "Every logo made here is original. Never imitate an existing brand, logo, mascot, character or trademark, even when she asks or names one as a reference. A reference is read for its mood (sóbrio, divertido, artesanal), never copied."
 
 > "Show the file list before saving anything, and save only on her sim."
 
@@ -30,6 +32,22 @@ Loaded when this skill fires, nothing more:
 > "Never delete anything, in her folder or her Drive."
 
 > "Never say the logo can be registered. Once, at the end: checking the INPI (or the registry in her country) before printing is her step."
+
+## Which way
+
+- `sobre-mim/marca.md` exists: she already has a kit; offer to adjust it instead of starting over.
+- She has a logo and colors (she says so, or the content setup sent her here with "sim, eu tenho"): **From her own brand**, below. Then Steps 5 and 6.
+- Otherwise: from scratch, Steps 1 to 6.
+
+## From her own brand
+
+Nothing is redesigned; her brand goes into her system.
+
+1. **Intake:** her files from `04. Brand` in her Drive (or attached in the chat), and her website if she gave the link. Nothing there yet: "Coloca os arquivos do seu logo, e qualquer coisa que mostre as suas cores (um guia de estilo, um design antigo), na pasta **04. Brand** do seu Drive, ou anexa aqui. O seu site também serve: é só mandar o link." Wait for "pronto".
+2. **Read what's there:** her colors (from her logo, her style guide, her site), and her fonts if her style guide or site names them. No fonts known: suggest two free Google Fonts that pair with her logo, for her sim.
+3. **File quality, said once:** a vector file (SVG, AI, EPS, PDF) gives clean files at every size. A PNG or JPG can only be resized: if it's smaller than the 1200 px files need, say so and offer a faithful redraw of her own logo as a clean vector, for her sim. Never changes her design without asking.
+4. **Versions:** only the ones her logo allows. Horizontal as it is; single-color dark and light by recoloring; stacked and symbol-only only when her logo has a separate symbol. Never invents a symbol she doesn't have.
+5. **Show it:** the brand page (`entregas/marca/marca.html`): her logo versions on light and dark, her colors with their roles (primary, secondary, neutral, accent), her fonts. Adjust what she asks. Then Step 5 (the files) and Step 6 (save, on her sim), with `Origem: o logo dela (<file>)` in `sobre-mim/marca.md`. Her originals stay as they are; new files get their own names.
 
 ## Workflow
 
@@ -104,6 +122,8 @@ On **sim**:
 ```
 # Minha marca — MCM Brand Kit
 
+Origem: criada aqui | o logo dela (<file>)
+
 ## Logo
 - Versões: horizontal, empilhado, símbolo, uma cor escura, uma cor clara
 - Arquivos: entregas/marca/ · Drive: 04. Brand/Logos
@@ -130,6 +150,7 @@ Shared memory: `sobre-mim/marca.md` is this skill's durable memory. No históric
 ## What this skill never does
 
 - Imitates an existing brand, logo, mascot, character or trademark.
+- Redesigns, recolors or changes her own logo without her sim, or invents a version her logo doesn't have.
 - Saves, uploads or writes `sobre-mim/marca.md` before her sim.
 - Overwrites or deletes a logo or any other file.
 - Uploads anywhere but her own Drive, or shares a file.

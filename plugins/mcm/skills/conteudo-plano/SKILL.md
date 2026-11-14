@@ -59,6 +59,8 @@ For each slot, pick one topic, one post type and one format:
 - First 2 weeks: prefer format × post type pairs that already have a template, so new templates have lead time.
 - Match unused ideas from `ideias.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "sugestão", following the idea rules in `estrategia.md` (what the reader gets, never technical).
 - Use the last 4 posts in `calendario.md` for the "in a row" and "within 2 weeks" checks across the plan boundary.
+- **How each post ends,** from the ask rhythm in `estrategia.md` (Como os posts terminam): each post slot gets `pedido`, `leve` (one of the light endings that are on, named: salvar, pergunta, compartilhar, seguir) or `nenhum`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `pedido` on every slot, as before.
+- Reels only when reels are on in `estrategia.md`.
 
 ### Refresh (keep the slots, change one thing)
 When asked to refresh the current plan for one thing (e.g. "add formats to the plan", or conteudo-post asking to swap one slot's format), keep its slots, topics, post types and ideas exactly as approved, change only what was asked, and show the result at the gate. The approved version moves under Planos anteriores when the refresh is written.
@@ -71,15 +73,15 @@ When conteudo-post moved a missed post onto the next slot (or she asks to shift 
 - **Fotos para tirar:** for each photo slot with no fitting unused photo in `departamentos/conteudo/fotos.md`, one line: what to photograph, where or how (phone, light, angle, in plain words), and for which post. 5-10 lines at most; real things she can shoot this week. When she only asks "que fotos eu tiro", run just this from the current plan and write it.
 
 ### Step 4 — Gate
-Show the plan as a table: post # · date · topic · post type · format · template · idea (or sugestão). Then the templates to build and the photos to take.
+Show the plan as a table: post # · date · topic · post type · format · termina com · template · idea (or sugestão). Then the templates to build and the photos to take.
 
-> "O plano está bom? Diga **sim**, ou me diz o que mudar."
+> "Responde com **1** ou **2**: 1. Está bom 2. Quero mudar algo. Ou me conta o que você está pensando." (one option per line)
 
 Apply edits exactly, re-show, wait for sim.
 
 ### Step 5 — Write
 On sim:
-1. `plano.md`: create it if missing (header: "# Plano de conteúdo: <business>" and one line on how it works). Move the previous current plan, if any, under `## Planos anteriores` with its dates. Write the approved plan under `## Plano atual (<first date> a <last date>)`, columns: # · data · horário · tema · tipo de post · formato · modelo · ideia · status (`planejado`). Keep any slot's status other than `planejado` as it is. Then `### Modelos a criar` and `### Fotos para tirar`.
+1. `plano.md`: create it if missing (header: "# Plano de conteúdo: <business>" and one line on how it works). Move the previous current plan, if any, under `## Planos anteriores` with its dates. Write the approved plan under `## Plano atual (<first date> a <last date>)`, columns: # · data · horário · tema · tipo de post · formato · final · modelo · ideia · status (`planejado`). `final` is `pedido`, `leve: <qual>` or `nenhum`; newsletter and Note rows leave it empty (the newsletter keeps its offer-issue mark). A plan written before this column existed is read as `pedido` on every slot. Keep any slot's status other than `planejado` as it is. Then `### Modelos a criar` and `### Fotos para tirar`.
 2. Department brief: set Próximo passo to the next unscheduled slot ("Post N, <day date>, <time>: <topic> × <post type>, <format>. Diga \"próximo post\"."), or "Criar o modelo <format> × <post type> até <date>. Diga \"cria o próximo modelo\"." if one is due first. In a newsletter-led cycle whose issue isn't written yet, the newsletter comes first: "Escrever a newsletter N até <write-by date>. Diga \"escreve a newsletter\"." Update Estado atual with its date and one line on the plan, and `atualizado:`. Touch nothing else; mention it in one short line.
 3. Receipt and milestone (below).
 

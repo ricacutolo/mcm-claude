@@ -7,7 +7,7 @@ description: "Escreve uma edição da newsletter com ela, a partir do material d
 
 She leads with her voice and her ideas; this skill shapes them into one email and schedules it. It never sends on its own.
 
-It does one thing: **take one newsletter issue from her material (or a suggestion) to scheduled.** It is usually started by conteudo-post with a newsletter slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the missed-slot rule) and then continues here. Social posts belong to conteudo-estatico and conteudo-video.
+It does one thing: **take one newsletter issue from her material (or a suggestion) to scheduled.** It is usually started by conteudo-post with a newsletter slot from the plan. Started directly by name, it first runs conteudo-post's Steps 1-2 (find the slot, the missed-slot rule) and shows its "This post" table (Step 3; Kind of post: the newsletter format; Ends with: the offer if it's an offer issue, else her reply invitation), then continues here. Social posts belong to conteudo-estatico and conteudo-video.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "a newsletter", "o e-mail", "a sua lista", "o calendário"; never file names, "skill", "API", "campaign ID" or a command name. Her platform is **MCM**: never say "GoHighLevel", "HighLevel" or "GHL" to her.
 
@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot conteudo-post passed: issue number, date and time (and the original slot if it was missed), topic, newsletter format, idea.
 2. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
-3. `departamentos/conteudo/estrategia.md` — who we write for, which layers are on, topics, the newsletter line in Cadence (on, how often, day and time, which list), the CTA, the wedge, which issues are offer issues.
+3. `departamentos/conteudo/estrategia.md` — who we write for, which layers are on, topics, the newsletter line in Cadence (on, how often, day and time, which list), the ask, the wedge, which issues are offer issues.
 4. `../conteudo-estrategia/platforms/newsletter.md` — the newsletter's formats, writing rules, scheduling and results. Only if the newsletter is on in `estrategia.md`. Substack on too: `../conteudo-estrategia/platforms/substack.md` (the issue also goes out there as an article).
 5. `departamentos/conteudo/plano.md`, `calendario.md` and `ideias.md` — the slot, what's scheduled, the idea backlog.
 6. `departamentos/conteudo/ghl.md` — location and user IDs, and its Newsletter section: from name, from email, reply-to, the list (tag or segment).
@@ -25,7 +25,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 8. `sobre-mim/sobre-mim.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
    - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**). It evolves; always read the current one.
-   - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, CTA by layer, the newsletter section, the 4-point check.
+   - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, how posts end (§ 7), the newsletter section, the 4-point check.
    - `../conteudo-estrategia/library.md` — the newsletter formats catalog.
    - `departamentos/conteudo/swipe.md` — lines that worked for her, if it exists.
    - the posts published since the last issue (`calendario.md`, their `post.md`) — material for a suggestion.
@@ -94,7 +94,7 @@ Pré-visualização:
 - Write it in the slot's format (the library's newsletter formats), from her material, in her voice: the newsletter section of the playbook and `platforms/newsletter.md`. Plain text, 200-400 words, short paragraphs, one CTA for the layer that's on (or the offer, on an offer issue).
 - Then the subject: 2-3 options, short and specific, written last, no emoji, plus one preview text line that adds to the subject.
 - **Newsletter leads the theme:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plano.md`), each matched to its slot's post type and format, by the playbook's "From newsletter to posts" section: its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
-- Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
+- Run the playbook's 4-point check (hook, what they get, plain, ending: the one ask of the email, or the offer on an offer issue) and fix what fails before showing.
 - Show the subject options, the preview text and the email as it will read.
 - **Gate:** "A newsletter está boa? Escolhe um assunto e diz **sim** (os ângulos dos posts vêm junto), ou me diz o que mudar."
 - Record the approved email, subject and preview text in the issue file.

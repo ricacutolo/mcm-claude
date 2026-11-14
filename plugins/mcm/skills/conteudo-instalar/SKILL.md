@@ -1,6 +1,6 @@
 ---
 name: conteudo-instalar
-description: "Conduz a configuração da máquina de conteúdo em 20 etapas — o departamento Conteúdo, o Canva, a marca dela nos modelos de design, o MCM, o caminho de upload e a estratégia — com uma recomendação em cada etapa, retomando de onde ela parou. Quando ela diz \"/conteudo-instalar\", \"configura a máquina de conteúdo\", \"configura o meu conteúdo\", \"continua a configuração do conteúdo\", \"onde a gente está na configuração do conteúdo\", ou quando o próximo passo do departamento Conteúdo diz que a configuração está aberta."
+description: "Conduz a configuração da máquina de conteúdo em 20 etapas — o departamento Conteúdo, o Canva, a marca e os modelos dela, o MCM, o caminho de upload e a estratégia — com uma recomendação em cada etapa, fazendo o trabalho braçal por ela, retomando de onde ela parou. Quando ela diz \"/conteudo-instalar\", \"configura a máquina de conteúdo\", \"configura o meu conteúdo\", \"continua a configuração do conteúdo\", \"onde a gente está na configuração do conteúdo\", ou quando o próximo passo do departamento Conteúdo diz que a configuração está aberta."
 ---
 
 # conteudo-instalar — ready for the first post
@@ -13,7 +13,7 @@ Speak to her in plain, warm Brazilian Portuguese, in her voice rules from `sobre
 
 ## Read these first
 
-Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. This skill ships two things in its own folder: `guides.md` (Canva Guias 0, A and B, handed to her at the Canva steps, and Guias C, D and E for MCM) and `scripts/` (the upload and transcription scripts copied into her content folder).
+Loaded only when this skill fires, never at session start. Her content lives in the Conteúdo department, `departamentos/conteudo/`. This skill ships two things in its own folder: `guides.md` (Guias 0 and B for Canva, C, D and E for MCM) and `scripts/` (the upload and transcription scripts copied into her content folder).
 
 1. `departamentos/conteudo/configuracao.md` — progress and the resume point. If missing, this is a new setup.
 2. `departamentos/conteudo/brief.md` — whether the department exists; its Próximo passo and Estado atual.
@@ -28,11 +28,13 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 
 > "Every step opens with a recommendation: the answer we'd pick and why. She confirms or changes it. Small details get decided and noted, not asked."
 
-> "estilo-da-marca.md, modelos.md and ghl.md are written only after an explicit sim to the content shown. Silence or an edit request is not a sim."
+> "Claude does the busywork. She only does what needs her hands (signing in, approving, pasting a key), and every one of those comes as numbered steps, one action each, with a direct link wherever one exists (**Clique aqui para abrir <a página> →**). If Claude can check something, it checks instead of asking her to report."
+
+> "estilo-da-marca.md, modelos.md and ghl.md are Claude's reference notes: written without asking and mentioned in one line. What she decides in them (which templates, her newsletter details) is confirmed with her first."
 
 > "Checks are read-only. A check never creates, edits, sends or connects anything."
 
-> "Template rebrands are saved only after an explicit sim to the previews. Only her own fresh copies are edited, never a shared original."
+> "Template rebrands are saved only after an explicit sim to the previews. Only her own fresh copies are edited, never a shared original, and never a template of her own beyond the placeholders she approved."
 
 > "The MCM key goes into .env by her own hand. Never ask for it in chat, never read it, never print it."
 
@@ -50,21 +52,21 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 | 2 | Home | Setup tracker | `configuracao.md` exists | Create it (format below) |
 | 3 | Business | Business file filled in | `sobre-mim/cerebro-do-negocio.md` exists with offer, audience and pains | Missing → offer to redo instalar's business step (step 3; a completed install still runs "refazer etapa 3"), and run it on her sim. Thin → ask what's missing (at most 3 questions) and add the lines to `_sistema/pendentes.md` as items for `sobre-mim/cerebro-do-negocio.md`; done when they're written |
 | 4 | Business | Voice captured | `sobre-mim/escrita.md` exists with real samples | Missing → offer to redo instalar's writing step (step 4; a completed install still runs "refazer etapa 4"), and run it on her sim. No samples → ask her for 2-3 things she wrote and add them to `_sistema/pendentes.md` as an item for `sobre-mim/escrita.md` |
-| 5 | Canva | Canva account | she confirms | Guia 0. Recommend Free to start; skip Pro trials |
-| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Personalizar → Conectores** (Customize → Connectors); then check. If the check fails right after she connects, she starts a new conversation so the connection loads, and says "continua a configuração do conteúdo" |
-| 7 | Canva | Brand Kit colors | she confirms 3 colors added | No `sobre-mim/marca.md` → offer /brand-kit-designer first (her logo and colors), run on sim. Then Guia A, with dark, light and accent from `sobre-mim/marca.md` (else from `cerebro-do-negocio.md` or her website) |
-| 8 | Canva | Logo in Uploads | she confirms light and dark versions uploaded | No `sobre-mim/marca.md` and she declined the brand kit in step 7 → offer it once more, or use the logo files she has. Guia B step 3, with the files named in `sobre-mim/marca.md` |
-| 9 | Canva | Base templates | each base template copied into her Canva, rebranded, titled TEMPLATE, design ID known | Recommend MCM's five base templates: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak", "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file) and "Photo - headline" (one page: a full-bleed photo, a soft dark fade at the bottom and a headline on it). Rica shares them to her Canva email as "Can edit", in the session or right after she tells him the email (by hand: Canva can't share from here). Check they show under "Compartilhados com você" (Shared with you) in her Canva; if any is missing, tell her to let Rica know which email her Canva uses, and mark the step waiting. She opens each one under "Compartilhados com você" and uses Arquivo > Fazer uma cópia (File > Make a copy). Claude rebrands each copy (below). If she has her own Canva templates, those can serve instead |
-| 10 | Canva | Brand style | `estilo-da-marca.md` approved and written | Draft color and font roles and logo files, seeded from `sobre-mim/marca.md` when it exists; show; write on sim |
-| 11 | Canva | Template index | `modelos.md` has the base templates | Draft the rows and fill guides in conteudo-modelo's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it; show; write on sim |
-| 12 | MCM | Social accounts | she confirms each platform she'll post on is connected in MCM's Social Planner | Recommend her platforms first, from each `../conteudo-estrategia/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals; the newsletter when she sells something people decide on over time and has a list; Substack only with the newsletter, when her expertise is what she sells or she already has one), and note them in `configuracao.md` (the strategy step starts from them). Then she connects them in MCM (Guia D). Substack on: no connection; she signs in to Substack once in the browser inside the Claude app, and Claude opens her dashboard to check |
-| 13 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) and `get-account` lists its social accounts | Guia C: she adds MCM as a custom connector in Claude, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. If the social accounts don't list, she reconnects and makes sure social posts were approved |
-| 14 | MCM | MCM details | `ghl.md` approved and written | Location, user, social account and profile IDs, token expiry dates from the check; newsletter on: her from name, from email, reply-to and list (a tag or segment), then checked, read-only: the list through MCM (`get-location-tags` finds the tag, `search-contacts-advanced` filtered by it counts its contacts; a segment, in the browser) and the sending domain in the browser (MCM's email settings show it verified). Setting up the domain, its records or the list is part of her MCM build, never this step. Not known yet, or a check fails: say what's missing and mark the newsletter waiting; the rest of the step goes on. Substack on: her publication address. Show; write on sim |
+| 5 | Canva | Canva account | she confirms | Guia 0. Recommend Free to start; skip Pro trials. Her plan never matters to the setup |
+| 6 | Canva | Canva connected to Claude | `list-brand-kits` answers | She connects Canva in Claude's **Personalizar → Conectores** (Customize → Connectors) (**Clique aqui para abrir os Conectores →** `https://claude.ai/customize/connectors`); then check. If the check fails right after she connects, she starts a new conversation so the connection loads, and says "continua a configuração do conteúdo" |
+| 7 | Brand | Her logo and colors | `sobre-mim/marca.md` exists, or she chose "later" | Ask first: "**Você já tem um logo e as cores da sua marca?**" **Sim** → "Coloca os arquivos do seu logo, e qualquer coisa que mostre as suas cores (um guia de estilo, um design antigo), na pasta **04. Brand** do seu Drive, ou anexa aqui. O seu site também serve: é só mandar o link." Then /brand-kit-designer in its **from her own brand** mode, run on her sim. **Não** → offer to make them now (/brand-kit-designer, about 15 minutes) or later. Later → the templates keep MCM's colors until she has hers; note it under "Decidido por ela". No Canva Brand Kit step: her colors go into the templates themselves (step 9) |
+| 8 | Brand | Logo on her templates | her logo is placed on every template that has a logo spot | Claude places it, after steps 9, 17-19 are done: her light and color logo files (from `sobre-mim/marca.md`) go into her Canva (from her computer with `create-upload-url` once `www.canva.com` is an allowed site, or `media-to-ghl.sh` for a permanent link and `upload-asset-from-url`), then `update_fill` on each template's logo spot. Neither works → fallback: she drags her logo into one design Claude links her to (**Clique aqui para abrir →**), from her Canva Uploads; Claude reads its media ID from that design and places it everywhere. No logo yet (brand later) → step waits, nothing to do now |
+| 9 | Templates | Her templates | every template she'll use is in her Canva, titled TEMPLATE, design ID known | Ask first: "**Você já tem modelos de post no Canva?** Comprados, feitos por você ou feitos pra você." **Sim** → she sends the links (or the names, and Claude finds them): see "Her own templates" below. Then: "Quer os cinco modelos do MCM também? **Sim, nas minhas cores** / **Sim, do jeito que estão** / **Não, os meus bastam**". **Não** → MCM's five, in her colors. MCM's five: "Carousel - Tips list (3 points)" (dark), "Carousel - Tips list (3 points) - Light", "Illustrated carousel - Leak", "Photo - full frame" (one page, one full-bleed image: generated images go through it to come out as a full-size file) and "Photo - headline" (one page: a full-bleed photo, a soft dark fade at the bottom and a headline on it). Rica shares them to her Canva email as "Can edit" (by hand: Canva can't share from here). Claude copies each one into her Canva itself (`copy-design`) and rebrands the copy (below); she does nothing but say yes. A shared design that doesn't show for her: ask Rica to share it to the email her Canva uses, and mark the step waiting. Then, optional: "**Tem algum post ou perfil com um visual que você adora?** Anexa prints ou manda os links." (see "Design references" below). Last, once all her templates are in: "Quer as fontes da sua marca nos seus modelos? Uns 2 minutos por modelo." Optional; Guia B with a link to each template |
+| 10 | Templates | Brand style | `estilo-da-marca.md` written | Claude writes it from `sobre-mim/marca.md` (or MCM's colors when her brand is "later"), the templates and her references, without asking; one line: "Anotei como as suas cores e os seus modelos são usados." |
+| 11 | Templates | Template index | `modelos.md` has every template set up here | Claude writes the rows and fill guides in conteudo-modelo's shape: one row per template (template, Canva ID, format, post type, slides, use for) with its fill guide under it, hers and MCM's side by side; no approval, one line as in step 10 |
+| 12 | MCM | Her MCM connected to Claude | the MCM connection lists her business (sub-account) | Guia C: she connects MCM from the plugin's **Conectores** (Connectors) tab, signs in, picks her business and approves the permissions, social posts read and write included; she starts a new conversation so the connection loads; then check. The plugin's connector doesn't show or fails → Guia C's fallback (custom connector). Record her location ID and her MCM app address (the `uiUrl` from `fetch-media-content`, its domain) in `ghl.md`: the links in steps 13 and 19 are built from them |
+| 13 | MCM | Platforms and social accounts | `get-account` lists every platform she'll post on | Recommend her platforms first, from each `../conteudo-estrategia/platforms/` file's "When to recommend it" (Instagram; Facebook when she has a Page; LinkedIn, her personal profile, when she sells to professionals; the newsletter when she sells something people decide on over time and has a list; Substack only with the newsletter, when her expertise is what she sells or she already has one), and note them in `configuracao.md` (the strategy step starts from them). Then: "**Você quer fazer vídeos seus falando?** Sim / Por enquanto não". Sim → reels on, noted in `configuracao.md`, her Drive folder `Vídeos de conteúdo` created; then "As ferramentas de vídeo (uma conta no ElevenLabs) podem ser configuradas agora ou no seu primeiro reel. **Configura agora** / **No meu primeiro reel**" (now → conteudo-video's ElevenLabs setup runs here). Por enquanto não → reels off; she turns them on any time ("quero fazer reels"), which asks the same. Then she connects her accounts in MCM (Guia D, with the direct link to her Social Planner), and Claude checks them itself with `get-account`; she never has to report. If an account doesn't list, say which and send her back to the link. Substack on: no connection; she signs in to Substack once in the browser inside the Claude app, and Claude opens her dashboard to check |
+| 14 | MCM | MCM details | `ghl.md` written | Claude writes location, user, social account and profile IDs and token expiry dates from the checks, without asking. Newsletter on: Claude fills her details from MCM and shows them for one confirmation: from name (her name on her MCM user), from email (her business email in MCM), reply-to (the same address), and the list (her tags with contact counts: `get-location-tags`, then `search-contacts-advanced` filtered by the likeliest tag, e.g. "newsletter, 214 contacts"). "**Está certo** / **Quero mudar algo**", then "Não tem certeza de algum desses? A gente conversa." Then the sending domain, read-only, in the browser (MCM's email settings show it verified). Setting up the domain, its records or the list is part of her MCM build, never this step. Not known yet, or a check fails: say what's missing and mark the newsletter waiting; the rest of the step goes on. Substack on: her publication address |
 | 15 | MCM | Reconnect warning | `ghl.md` has every account's token expiry date | Nothing to schedule: conteudo-post reads `ghl.md` every run and warns 14 days before an expiry. Tell her that's how she'll hear about it |
 | 16 | Upload | Computer linked | a command on her computer answers | If not, tell her to open this chat in the Claude desktop app on the computer that holds her Claude folder |
-| 17 | Upload | Allowed sites | both sites reachable from her computer | Test `export-download.canva.com` and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds them in Claude's **Configurações → Capacidades** (Settings → Capabilities, where the allowed sites live) |
-| 18 | Upload | Upload script | `departamentos/conteudo/scripts/canva-to-ghl.sh` exists | Copy `scripts/canva-to-ghl.sh` from this skill's folder, unchanged |
-| 19 | Upload | MCM key | `.env` has `GHL_PIT` set | Create `departamentos/conteudo/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (medias scope) in MCM and pastes it into the file (Guia E); Macs hide files whose names start with a dot, so offer to open the file for her, or she presses Shift+Cmd+. in Finder; the check prints only "set" or "not set" |
+| 17 | Upload | Allowed sites | the three sites reachable from her computer | Test `export-download.canva.com`, `www.canva.com` (her logo goes straight into Canva, step 8) and `services.leadconnectorhq.com`. Any answer from the site counts as reachable, even a 403 (Canva answers 403 at its root). Blocked looks different: the computer's network filter refuses it (`X-Proxy-Error: blocked-by-allowlist`). If blocked, she adds the blocked ones in Claude's **Configurações → Capacidades** (Settings → Capabilities) (**Clique aqui para abrir as Capacidades →** `https://claude.ai/settings/capabilities`), one at a time, each written out for her to copy |
+| 18 | Upload | Upload scripts | `departamentos/conteudo/scripts/canva-to-ghl.sh` and `media-to-ghl.sh` exist | Copy both from this skill's `scripts/`, unchanged |
+| 19 | Upload | MCM key | `.env` has `GHL_PIT` set | Create `departamentos/conteudo/.env` with an empty `GHL_PIT=` line if missing; she makes a Private Integration key (View Medias and Edit Medias) in MCM and pastes it into the file (Guia E, with the direct link to her Private Integrations page and a clickable link to the file, its full path on her computer, which opens it; no hidden-file tricks, and Claude never says it will open the file itself); the check prints only "set" or "not set" |
 | 20 | Strategy | Strategy | `departamentos/conteudo/estrategia.md` exists | Offer /conteudo-estrategia (it then offers to plan the first 4 weeks) |
 
 Order: stages in order. Within a stage, a step that waits on her doesn't block the next step that doesn't need it — say which one is waiting.
@@ -77,33 +79,31 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 - Show the status in one table (step, status, what's waiting) and name the next step with its recommendation. For "onde a gente está", stop here.
 
 ### Step 2 — Work the next step
-- Open with the recommendation: "A gente faria <X>, porque <why>. Pode ser, ou você mudaria?"
-- Her steps (5, 7, 8, 9 copy, 12, 13 connect, 19 paste): give the guide's steps in plain words, one at a time (`guides.md`), then wait for "done" and run the check where there is one.
+- Open with the recommendation: "A gente faria <X>, porque <why>." A choice comes as numbered options under a short lead-in, and always ends with "Ou me conta o que você está pensando." (/sistema's reply rules).
+- Her steps (5, 6, 12, 13 connect, 17, 19 paste, 9 fonts): give the guide's steps as numbered steps, one action each, every link as **Clique aqui para abrir <a página> →** (`guides.md`), then wait for "done" and run the check where there is one.
 - Hand-off steps (3, 4, 7 brand kit, 20): offer the skill; run it only on sim. When it finishes, re-check and continue.
-- **Her brand roles** (steps 7-10), from `sobre-mim/marca.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `entregas/marca/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which.
-- **Step 9 rebrand**, on each of her copies (through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; swap the base logo for hers from step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those in Brazilian Portuguese to fit her business, in her voice, and show them in the previews. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules; fonts if the copy lost them), with Guia B's clicks.
+- A `configuracao.md` from an older version, with steps in another order: re-check every step against today's "Done when" by name, not by number, and rewrite the table in today's order.
+- **Her brand roles** (steps 8-10), from `sobre-mim/marca.md`: dark = her darkest brand color, light = her lightest (or the Neutral), accent = the Accent. Logo for dark slides = the white/light horizontal logo file in `entregas/marca/` (e.g. `horizontal-white.png`); for light slides = the color/transparent one (`horizontal-transparent.png`). If the file names differ, list the files and ask her once which is which. Brand "later": MCM's colors stay, and the templates are rebranded once her brand exists.
+- **Step 9 rebrand**, on each of her copies of MCM's five (skipped for "Sim, do jeito que estão"; through her Canva connection; "Photo - full frame" has nothing to rebrand, only its title; "Photo - headline": the fade to her dark and the headline to her light, nothing else): change the base templates' colors (#0E2D36 dark, #FAF8F4 light, #E7963D accent) to her dark, light and accent from step 7 on shapes, text and page backgrounds; the logo spots wait for step 8; keep the layout and every text region as it is, except fixed words no post fills in (the swipe cue, the end-slide call to action): rewrite those in Brazilian Portuguese to fit her business, in her voice, and show them in the previews. Her design references (below), if she gave any, guide the small choices (spacing, which accent goes where), never the layout. Show the previews and list hand fixes (elements Canva won't let me recolor from here, such as image-filled rules), with Guia B's clicks and a link to each design.
 
 > "Estão certos? Diga **sim** que eu salvo, ou me diz o que mudar."
 
   On sim, commit and retitle each "TEMPLATE - <format> - <post type>"; their design IDs go to step 11.
-- **Step 9 with her own templates:** read each one; if its text sits in editable text boxes, it can serve. Say which ones need placeholders added and add them only on sim. If a design is a flat image, it can't serve; recommend MCM's base instead.
-- File steps (10, 11, 14): draft from what's known, show the full content.
-
-> "Está certo? Diga **sim** que eu salvo, ou me diz o que mudar."
-
-  Apply edits exactly, re-show, write on sim.
+- **Her own templates (step 9):** read each one she sends; if its text sits in editable text boxes, it can serve as a template. Say which ones need placeholders added and add them only on her sim. A flat image can't serve: offer to build one like it (/conteudo-modelo). Each one that serves gets its row and fill guide in `modelos.md`, next to MCM's, and the plan picks from both. Her own designs are never recolored or restyled.
+- **Design references (step 9):** screenshots or links she shares go to `04. Brand/Referências` in her Drive (her folder's `departamentos/conteudo/referencias/` when her Drive isn't organized), and a few lines in `estilo-da-marca.md` § Visuais que ela gosta (e.g. "muito espaço em branco, uma palavra grande por slide, setas desenhadas à mão"). Read for feel only (layout, density, tone), never copied. Used now in the rebrand, later by conteudo-modelo and for her photo style.
+- File steps (10, 11, 14): written from what's known, without asking; one line saying what was written. The newsletter details in step 14 are the exception: shown for her confirmation first.
 - After each step, update `configuracao.md` (status, date, how we know, decisions noted). No approval needed.
 
 **The Conteúdo department (step 1):** the brief in /novo-departamento's brief format, filled from the content machine, never from an interview. Ask only its area: "Esse conteúdo é para **<her main business>**, ou para outra coisa?" (her main business first; her answer wins). Fill the dates, show the full brief, and on sim write it, add its index line under its area header in `departamentos/index.md`, and hand /contexto the creation of `contexto/conteudo.md` (`tier: department`) with "Departamento Conteúdo criado durante a configuração do conteúdo." Her sim covers all three.
 
 - Name **Conteúdo**; slug `conteudo`; `area:` her answer.
 - Intro: "Os posts dela, da ideia ao agendamento, e o que eles ensinam sobre o público dela."
-- Propósito: "Aparecer com constância, na voz dela, com conteúdo que aproxima as pessoas certas da compra."
+- Propósito: "Aparecer com constância, na voz dela, para que as pessoas certas a conheçam e confiem nela."
 - Padrões: "Nada é postado sem o sim dela." · "Onde e com que frequência ela posta: a estratégia de conteúdo dela (`estrategia.md`)."
 - Rotinas: "O próximo post, quando o plano diz · conforme o plano" · "Uma revisão do que funcionou, antes de cada novo plano de 4 semanas · mensal".
 - Estado atual: "Configuração do conteúdo começou; nada postado ainda."
 - Próximo passo: "Continuar a configuração do conteúdo: etapa 2. Diga \"continua a configuração do conteúdo\"."
-- O que eu uso aqui: "próximo post" (faz o próximo post do plano · `posts/`), "planeja o conteúdo" (as próximas 4 semanas · `plano.md`), "monta a minha estratégia de conteúdo" (o que postar e por quê · `estrategia.md`), "revisa o conteúdo" (o que funcionou · `desempenho.md`), "configura o meu conteúdo" (esta configuração · `configuracao.md`).
+- O que eu uso aqui: "próximo post" ou "vamos fazer o próximo post" (faz o próximo post do plano · `posts/`), "transforma isso em post" (transforma uma ideia em post, dentro do plano ou fora dele), "planeja o conteúdo" (as próximas 4 semanas · `plano.md`), "monta a minha estratégia de conteúdo" (o que postar e por quê · `estrategia.md`), "revisa o conteúdo" (o que funcionou · `desempenho.md`), "configura o meu conteúdo" (esta configuração · `configuracao.md`).
 - Material que já existe: nada ainda (a pasta de fotos dela entra quando ela começar uma).
 - Decisões: "Departamento criado durante a configuração do conteúdo."
 
@@ -124,12 +124,15 @@ Tirado de sobre-mim/marca.md em YYYY-MM-DD. Os papéis da máquina de conteúdo;
 ## Fontes
 | Papel | Fonte | Notas |
 |---|---|---|
-| Título | | definida nos modelos (não no Kit de Marca no plano grátis) |
+| Título | | definida nos modelos por ela, opcional (a oferta de fontes da etapa 9) |
 | Texto | | |
 
 ## Logo
-- Versão clara (para slides escuros): <file> · nos Uploads do Canva: sim/não
-- Versão colorida (para slides claros): <file> · nos Uploads do Canva: sim/não
+- Versão clara (para slides escuros): <file> · ID da mídia no Canva: <id, quando colocado>
+- Versão colorida (para slides claros): <file> · ID da mídia no Canva: <id, quando colocado>
+
+## Visuais que ela gosta
+- <algumas linhas das referências de design dela, ou "nenhuma">
 ```
 
 **`ghl.md` (step 14):**
@@ -140,6 +143,7 @@ Tirado de sobre-mim/marca.md em YYYY-MM-DD. Os papéis da máquina de conteúdo;
 Não é segredo. A chave fica no .env, nunca aqui.
 
 - Location ID:
+- Endereço do app MCM (para os links diretos): https://<domínio>
 - User ID (os posts são agendados como):
 
 | Plataforma | Account ID | Profile ID | Conexão vence |
@@ -198,11 +202,11 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 
 ## What this skill never does
 
-- Writes `estilo-da-marca.md`, `modelos.md` or `ghl.md` without an explicit sim.
+- Saves her newsletter details without her confirmation.
 - Reads, prints, copies or asks for the MCM key, or reads `.env`.
-- Connects, disconnects or changes anything in Canva, MCM or Claude's settings — she does those; this skill only checks. The only Canva edits it makes are the step 9 rebrands of her own template copies, after her sim.
+- Connects, disconnects or changes anything in MCM or Claude's settings — she does those; this skill only checks. The only Canva changes it makes: copying the shared templates into her Canva and rebranding the copies (step 9, on her sim), placeholders on her own templates (on her sim), and placing her logo (step 8).
 - Writes `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (changes there only wait in `_sistema/pendentes.md`), the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /contexto).
-- Adds template rows to `modelos.md` beyond the base templates set up here.
+- Adds template rows to `modelos.md` beyond the templates set up here (MCM's and her own).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.
 - Runs a hand-off without a sim, or interviews her for the Conteúdo department brief.
@@ -221,9 +225,12 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - **A check can't run** (Canva or MCM not connected, computer offline) — mark the step "waiting", say what she needs to do, move to the next step that doesn't depend on it.
 - **A check disagrees with configuracao.md** (a step marked done now fails, e.g. a connection expired) — reopen the step, say why.
 - **Business file or voice missing** — offer to redo instalar's business step (step 3) or writing step (step 4), and run it on her sim; the Canva and MCM steps can still run meanwhile.
-- **She declines the brand kit** — use the colors and logo files she already has; note it under "Decidido por ela".
-- **Shared template doesn't show up for her** — check that MCM shared it to the email on her Canva account; ask MCM to share it again. Never rebuild the template from scratch.
-- **The copy lost fonts or the accent color** — list it as a hand fix; Archivo Black and Lato (the base templates' fonts) are free in every Canva.
+- **She chooses "later" for her brand** — MCM's colors stay on the templates and step 8 waits; note it under "Decidido por ela". When her brand exists, the rebrand and the logo run then.
+- **Shared template doesn't show up for her, or `copy-design` refuses it** — check that MCM shared it to the email on her Canva account; ask Rica to share it again. Never rebuild the template from scratch.
+- **The plugin's MCM connector is missing or broken** — Guide C's fallback: she adds the custom connector by hand.
+- **Her logo can't reach Canva** (both routes blocked) — step 8's fallback: one design link, she drags the logo in.
+- **A direct link doesn't land on the right page** (MCM moved it) — give the click path instead, and note it under "Decidido por ela".
+- **The copy lost the accent color** — list it as a hand fix. Fonts: the base templates use Archivo Black and Lato, free in every Canva; her own fonts are step 9's optional offer.
 - **An element can't be recolored from here** — leave it, list it as a hand fix at the gate.
 - **The script source is missing** — stop step 18 and say so; never rewrite the script.
 - **Department brief missing after she declined it** — keep `configuracao.md` in `departamentos/conteudo/` anyway and say the department still needs a brief.

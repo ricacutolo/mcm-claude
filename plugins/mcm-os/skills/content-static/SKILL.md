@@ -7,7 +7,7 @@ description: "Makes one image post — a carousel, illustrated carousel, text po
 
 She leads with her voice and her ideas; this skill drafts, designs and schedules around them. It never posts on its own.
 
-It does one thing: **take one image post from idea to scheduled.** It is usually started by content-post with a slot from the plan. Started directly by name, it first runs content-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and then continues here. Reels belong to content-video.
+It does one thing: **take one image post from idea to scheduled.** It is usually started by content-post with a slot from the plan. Started directly by name, it first runs content-post's Steps 1-2 (find the slot, the connection warning, the missed-slot rule) and shows its "This post" table (Step 3), then continues here. Reels belong to content-video.
 
 Speak to her in plain, warm US English. Say "the copy", "the design", "the calendar", "the department brief"; never file names, "skill", "API" or a command name.
 
@@ -17,7 +17,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 1. The slot content-post passed: post number, date and time (and the original slot if it was missed), topic, post type, format, template, idea.
 2. `departments/content/brief.md` — its Next step and Current state.
-3. `departments/content/strategy.md` — who we post for, which layers are on, topics, post types, idea rules, cadence and platforms, CTA, wedge.
+3. `departments/content/strategy.md` — who we post for, which layers are on, topics, post types, idea rules, cadence and platforms, how posts end (the ask, the light endings), wedge.
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/ideas.md` — the idea backlog.
@@ -98,11 +98,11 @@ Slot: <day date time> · <topic> × <post type> · <format> · template: <name>
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
-- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the CTA for the layer that's on. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
-- For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Swipe through →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the CTA.
+- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the slot's ending (`ends` from the plan: the ask for the layer, the named light ending, or none; playbook § 7). That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
+- For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Swipe through →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the slot's ending (with `none`, the promise closes the slide).
 - Photo formats: no slide text. The copy is the caption(s), the hook in the first line, and for a photo carousel the order of the photos.
 - Headline photo: the headline on the photo, 3-8 words, the hook said plainly in one color (no accent words), plus the caption(s), whose first line takes the hook further instead of repeating the headline.
-- Run the playbook's 4-point check (hook, what they get, plain, CTA) and fix what fails before showing.
+- Run the playbook's 4-point check (hook, what they get, plain, ending) and fix what fails before showing.
 - Show slides and every caption (labeled by platform), accent words in [brackets], and one line naming the hook pattern used.
 - **Gate:** "Does the copy work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait for yes. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 

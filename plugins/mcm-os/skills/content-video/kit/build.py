@@ -119,7 +119,7 @@ for k, v in {
     "%DIAGRAM_CSS%": dcss, "%DIAGRAM_HTML%": dhtml, "%DIAGRAM_JS%": djs,
     "%CAPS%": "\n".join(cap_html), "%CAPJS%": "\n      ".join(cap_js),
     "%HOOK%": cfg["hook"], "%HOOKEND%": str(round(segs[hs]["t0"] + segs[hs]["d"], 3)),
-    "%CTA1%": html.escape(cta[0]), "%CTA2%": html.escape(cta[1]) if len(cta) > 1 else "", "%LOGO%": logo,
+    "%CTA1%": html.escape(cta[0]) if cta else "", "%CTA2%": html.escape(cta[1]) if len(cta) > 1 else "", "%LOGO%": logo,
     "%EV%": json.dumps(EVS), "%WINDOWS%": json.dumps(WIN),
     "%TOTAL%": str(TOTAL), "%AEND%": str(AEND), "%CARDIN%": str(CARDIN), "%CARDDUR%": str(round(TOTAL - CARDIN, 3)),
 }.items():
