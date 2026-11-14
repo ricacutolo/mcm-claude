@@ -21,7 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `../conteudo-estrategia/platforms/newsletter.md` — the newsletter's formats, writing rules, scheduling and results. Only if the newsletter is on in `estrategia.md`. Substack on too: `../conteudo-estrategia/platforms/substack.md` (the issue also goes out there as an article).
 5. `departamentos/conteudo/plano.md`, `calendario.md` and `ideias.md` — the slot, what's scheduled, the idea backlog.
 6. `departamentos/conteudo/ghl.md` — location and user IDs, and its Newsletter section: from name, from email, reply-to, the list (tag or segment).
-7. The issue's own `departamentos/conteudo/newsletters/edicao-NN-<slug>.md`, if it exists — to resume.
+7. The issue's own `departamentos/conteudo/newsletters/edicao-NN-<slug>.md`, if it exists — to resume. When the newsletter is the podcast: the episode's `departamentos/conteudo/podcast/episodio-NN-<slug>/episodio.md` (its approved kit and transcript are her material).
 8. `sobre-mim/sobre-mim.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
    - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**). It evolves; always read the current one.
@@ -54,7 +54,8 @@ Never read or print `departamentos/conteudo/.env`.
 ### Step 1 — The issue and where it stands
 - Use the slot conteudo-post passed. If `newsletters/edicao-NN-<slug>.md` exists, read its Etapa/Status table and resume at the first step not done.
 - New issue: create `departamentos/conteudo/newsletters/edicao-NN-<slug>.md` in the shape below (the slug once the idea is set).
-- Newsletter leads the theme (`estrategia.md`): this issue sets the topic for the cycle's posts and is due by its write-by date in `plano.md` (2 days before it's sent). Say so in one line when it's close.
+- The newsletter is the anchor (`estrategia.md`; an older strategy saying the newsletter leads the theme counts): this issue sets the topic for the cycle's posts and is due by its write-by date in `plano.md` (2 days before it's sent). Say so in one line when it's close.
+- The newsletter is the podcast: this issue comes from episode N (the slot's idea, `do episódio N`). Its kit isn't approved yet → offer the episode first ("Essa edição vem do episódio N. Quer fazer o episódio primeiro?"); she says no → the issue goes ahead as a normal one on the planned topic.
 - The newsletter is off in `estrategia.md`: "A newsletter ainda não está ligada na sua estratégia de conteúdo. Quer ligar primeiro?" Stop.
 - `ghl.md` has no Newsletter section, or no list: "A sua newsletter ainda não está configurada no MCM: <what's missing>. Quer terminar isso primeiro?" Hand to conteudo-instalar on sim. Stop.
 
@@ -89,11 +90,12 @@ Pré-visualização:
 - The suggestion comes from the slot's topic and format, the posts since the last issue (their best idea, gone deeper), `ideias.md`, and real questions she's mentioned. One suggestion, not a menu.
 - Her material wins. Keep it in the issue file as she gave it. If it fits a different format than the slot's, say which and use it.
 - She takes the suggestion: ask one question that gets her own angle on it ("Me conta uma vez em que você viu isso acontecer?"). A newsletter without anything of hers in it is a blog post.
+- **The newsletter is the podcast:** skip the question. Her material is the episode: its transcript and approved kit. Say in one line: "Vou escrever essa a partir do episódio N." The letter is the episode's idea in her words (playbook § 12), with the link to listen once, near the end.
 
 ### Step 3 — Draft (gate 1)
 - Write it in the slot's format (the library's newsletter formats), from her material, in her voice: the newsletter section of the playbook and `platforms/newsletter.md`. Plain text, 200-400 words, short paragraphs, one CTA for the layer that's on (or the offer, on an offer issue).
 - Then the subject: 2-3 options, short and specific, written last, no emoji, plus one preview text line that adds to the subject.
-- **Newsletter leads the theme:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plano.md`), each matched to its slot's post type and format, by the playbook's "From newsletter to posts" section: its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
+- **The newsletter is the anchor:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plano.md`), each matched to its slot's post type and format, by the playbook's "From the anchor to everything" section (§ 12): its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
 - Run the playbook's 4-point check (hook, what they get, plain, ending: the one ask of the email, or the offer on an offer issue) and fix what fails before showing.
 - Show the subject options, the preview text and the email as it will read.
 - **Gate:** "A newsletter está boa? Escolhe um assunto e diz **sim** (os ângulos dos posts vêm junto), ou me diz o que mudar."
@@ -116,6 +118,7 @@ Pré-visualização:
 - `plano.md`: set this slot's Status to `agendado` — the Status cell only.
 - `ideias.md`: mark the idea `usada: newsletter N` if it came from there; add new ideas she mentioned as `não usada`.
 - Led cycle: each approved angle goes into `ideias.md` as `não usada`, source `newsletter N`, tagged `para o post M`.
+- **The podcast is the newsletter:** offer the episode next, in one line: "Quer preparar o episódio N agora? Você vai falar essa carta."
 - Department brief: set Próximo passo to the next `planejado` slot of any kind, as conteudo-estatico does; update Estado atual with its date and one line, and `atualizado:`. Mention it in one short line.
 - Receipt and milestone (below). Hand back to conteudo-post's Step 4.
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Transcribe every clip in a reel's raw/ folder with ElevenLabs Scribe (word timestamps).
+# Transcribe every clip in a reel's raw/ folder, or a podcast episode's recording, with ElevenLabs Scribe (word timestamps).
 # Runs on her computer, from departamentos/conteudo/, so the key never leaves it. The key is read from
 # departamentos/conteudo/.env (ELEVENLABS_API_KEY=) and never printed.
-# Usage: scripts/transcribe-scribe.sh <post-folder>
+# Usage: scripts/transcribe-scribe.sh <post-or-episode-folder>
 # Writes <post-folder>/edit/audio/<clip>.wav and <post-folder>/edit/transcripts/<clip>.json.
 # Skips clips that already have a transcript. Prints one line per clip: name, HTTP code.
 set -euo pipefail
@@ -12,7 +12,7 @@ key="$(grep '^ELEVENLABS_API_KEY=' "$here/.env" | cut -d= -f2- | tr -d ' \r\n"')
 post="$1"
 mkdir -p "$post/edit/audio" "$post/edit/transcripts"
 shopt -s nullglob nocaseglob
-for f in "$post"/raw/*.mov "$post"/raw/*.mp4 "$post"/raw/*.m4v; do
+for f in "$post"/raw/*.mov "$post"/raw/*.mp4 "$post"/raw/*.m4v "$post"/raw/*.m4a "$post"/raw/*.mp3 "$post"/raw/*.wav "$post"/raw/*.aac; do
   name="$(basename "${f%.*}")"
   out="$post/edit/transcripts/$name.json"
   [ -s "$out" ] && { echo "$name skip"; continue; }

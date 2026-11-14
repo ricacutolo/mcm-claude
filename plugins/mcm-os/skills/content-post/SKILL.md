@@ -1,6 +1,6 @@
 ---
 name: content-post
-description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, on her yes. Also saves post ideas, turns an idea into a post, and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"let's make the next post\", \"what should I post next\", \"make the next post\", \"make this a post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", or when the Content department's next step is a post."
+description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, newsletters and podcast episodes to theirs, on her yes. Also saves post ideas, turns an idea into a post, and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"let's make the next post\", \"what should I post next\", \"make the next post\", \"make this a post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", or when the Content department's next step is a post."
 ---
 
 # content-post — what's next, and who makes it
@@ -53,7 +53,7 @@ If `calendar.md` has a row marked `Scheduled` whose time has passed, run Step P 
 
 ### Step 1 — Find the post and where it stands
 - Take the first `planned` slot in `plan.md`. If she names a post ("post 5"), use that one.
-- Newsletter leads the theme: a post slot marked `from newsletter N` whose issue isn't approved yet → offer the newsletter first if its write-by date hasn't passed ("Newsletter N sets this post's angle. Want to write it first?"). If it has passed, or she says no, the post goes ahead with its normal idea step on the planned topic, and `post.md` notes "cycle fell back". A post never waits for the newsletter.
+- An anchor leads the cycle: a post slot marked `from newsletter N` or `from episode N` whose anchor isn't approved yet → offer the anchor first if its write-by or record-by date hasn't passed ("Newsletter N sets this post's angle. Want to write it first?" / "Episode N sets this post's angle. Want to do it first?"). If it has passed, or she says no, the post goes ahead with its normal idea step on the planned topic, and `post.md` notes "cycle fell back". A post never waits for the anchor.
 - No `plan.md`, or no planned slot: fall back to the department's Next step, then the calendar, and say so in one line. Offer to plan the next 4 weeks (content-plan); run it only on yes.
 - If `posts/<folder>/post.md` exists, read its Step/Status table. Say in one line: "Post N, <topic> × <post type>, picking up at <step>." The maker resumes there.
 - Read the token expiry dates in `ghl.md`. If any is 14 days away or less, say so first, in one line: "Your <platform> connection expires <date>. Reconnect it in MCM's Social Planner before then." Then carry on. Already expired: say so; the maker will stop at the schedule step until it's reconnected.
@@ -64,7 +64,7 @@ Her time zone comes from `about-me/about-me.md`. If it isn't there, ask once ("W
 - A slot is **missed** when its time has passed or is less than 1 hour away.
 - **The new time:** the same day if it can go out at least 1 hour from now and by 6 PM in her time zone, and nothing else is posted that day; otherwise the next cadence date with no post on it (check the calendar and the plan's scheduled slots).
 - Say it in one line: "Post N's slot was <day time>; I'd post it <new time>." The maker confirms the new time at its schedule gate.
-- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date.
+- Newsletter slots are their own channel: they never count toward one post a day, and a missed newsletter moves to the next free newsletter date. Episode slots too: a missed episode moves to the next free episode date, and the cycle's posts keep their dates (they fall back if the episode isn't ready).
 - Substack Note slots are their own channel too and never count toward one post a day. A missed Note is skipped, said in one line ("Note N's slot passed; I'll skip it, the next one is <day>."), and its Status set to `skipped`. Notes are light; they don't pile up.
 - If that date already holds the next planned post, the later posts shift one slot: "That moves the rest of the plan back one slot. Want me to shift it?" On yes, run content-plan's "Refresh: shift after a missed slot". Never put two posts on the same day.
 
@@ -78,6 +78,7 @@ Route by the slot's format (formats as named in `../content-strategy/library.md`
 | Talking-head reel, or any other reel or video format | content-video (beta; it says which video formats it can make) |
 | Newsletter | content-newsletter (only when the newsletter is on in `strategy.md`) |
 | Note (Substack) | content-substack (only when Substack is on in `strategy.md`) |
+| Podcast episode | content-podcast (only when the podcast is on in `strategy.md`) |
 | Stories, or a format nothing makes yet | none — say so in one line and offer to swap the slot's format with content-plan's refresh |
 
 Show where the post comes from, the same small table every time, so she sees the plan working behind it:
@@ -90,6 +91,7 @@ Show where the post comes from, the same small table every time, so she sees the
 | Format | <format> |
 | Goes to | <platforms on in `strategy.md` that take this format> |
 | Ends with | <the ask / a light ending, named / just value>, from the slot's `ends` |
+| From | <Episode N / Newsletter N> — only when the slot is cut from an anchor; otherwise leave the row out |
 
 Then: "Reply with **1** or **2**: 1. Start it now 2. Not now. Or tell me what you're thinking." (one option per line). For a reel add one line: "Video is new in the system, so I'll first check I can make it on your setup."
 
@@ -144,7 +146,7 @@ Triggered by "make this a post", "turn this into a post", about something she ju
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → content-static or content-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
+`YYYY-MM-DD | content-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → content-static, content-video, content-newsletter, content-substack or content-podcast · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
 
 ## What this skill never does
 

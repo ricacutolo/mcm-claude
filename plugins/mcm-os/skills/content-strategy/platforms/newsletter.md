@@ -22,7 +22,7 @@ The newsletter is its own writing, from the playbook's newsletter section:
 7. Sign off as her, by first name.
 
 ## Scheduling
-MCM `create-email-campaign` with `editorType: text`, then `schedule-campaign` with `scheduleType: scheduled`, `sendAt` in her time zone, `emailMeta` (subject, from name, from email, reply-to, preview text) and `recipients` = the list from `ghl.md`. Default cadence: every two weeks for a new list, weekly once she's keeping up; default day and time: Tuesday morning in her time zone. A newsletter doesn't count toward the one-post-a-day rule: email and social are separate channels. When the newsletter leads the theme, it's written by 2 days before it's sent, and it sets the topic for the posts until the next issue.
+MCM `create-email-campaign` with `editorType: text`, then `schedule-campaign` with `scheduleType: scheduled`, `sendAt` in her time zone, `emailMeta` (subject, from name, from email, reply-to, preview text) and `recipients` = the list from `ghl.md`. Default cadence: every two weeks for a new list, weekly once she's keeping up; default day and time: Tuesday morning in her time zone. A newsletter doesn't count toward the one-post-a-day rule: email and social are separate channels. When the newsletter is the anchor, it's written by 2 days before it's sent, and it sets the topic for the posts until the next issue.
 
 ## Results
 Clicks, replies and unsubscribes per issue. Opens are recorded but not trusted (Apple Mail inflates them). A small list engages more; judge over two to three months, not one issue. Unsubscribes above about 1% of the list on an issue are worth a look at that issue's topic.

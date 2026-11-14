@@ -60,6 +60,20 @@ What one email looks like, when the newsletter is on (`platforms/newsletter.md`)
 | Case study | A client's before and after, only with the client's permission | the client's story and their OK | Proof, Before and after |
 | Her week | One main idea plus 2-3 things she made or saw (her posts, a link) | what she posted or read | any; good after a strong week of posts |
 
+## Podcast formats (catalog)
+What one episode is, when the podcast is on (`platforms/podcast.md`). Each starts from her own material and is recorded from talking points, never a script.
+
+| Format | What it is | Her material | Fits post types |
+|---|---|---|---|
+| One-idea solo | One idea, a story or example, what to do with it (the default) | a thought, something she keeps telling clients | any |
+| Her audience's question | A real question she got, answered in full; 1-3 per episode | the questions, her answers | Question you always get, Myth vs truth |
+| Story and lesson | Something that happened to her or a client, and what it teaches | a story | Story, Behind the scenes, Leak |
+| Client case | A client's before and after, only with the client's permission | the client's story and their OK | Proof, Before and after |
+| Myth or hot take | Something her field gets wrong, and what she does instead | her stance | Myth vs truth, Old way vs new way |
+| Interview | A conversation with a guest her audience trusts (later: booking takes work) | the guest, her questions | Story, Proof |
+| Trailer | 1-2 minutes: who the show is for, what they get, how often | the show's promise | — |
+| Season opener and finale | What this season covers; what it covered and what's next | the season's topics | any |
+
 ## Entries
 
 ### All small service businesses

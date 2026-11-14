@@ -117,6 +117,11 @@ The people we learn from. Each one gets a line on what we take from them.
 | David Ogilvy | Ogilvy on Advertising | Specifics sell; the headline does most of the work |
 | Gary Halbert | The Boron Letters | Write to one person; simple words |
 | Nuno Tavares | cowork-social hook patterns | The 11 hook patterns (reference) |
+| Sounds Profitable and JAR (2026) | How listeners discover podcasts | 40% found their favorite show on YouTube, 61% on YouTube or social; clips and posts grow a show |
+| Edison Research | The Infinite Dial 2026 | YouTube is the main podcast app (39% of weekly listeners), then Spotify (20%) and Apple (11%) |
+| Apple Podcasts | Audio requirements; episode fields | -16 LUFS, true peak -1 dB; titles up to 150 characters, episode number in its own field |
+| The Podcast Host | Episode length and frequency | 20-40 minutes most common; the schedule you can keep; seasons as planned breaks |
+| Descript | Every podcast needs a newsletter | The email has to be worth reading without listening, never just a link |
 
 ## 10. Swipe file
 
@@ -132,11 +137,38 @@ For an email to her list (`platforms/newsletter.md` has the format and schedulin
 - **The ask by layer:** credibility → reply with your question / book a call; audience → forward this to someone who needs it; leads → the lead magnet or "reply with <word>". On an offer issue the ask is the offer, said plainly, once.
 - **Subject last:** 2-3 options, short and specific, no emoji, nothing the email doesn't deliver.
 
-## 12. From newsletter to posts
+## 12. From the anchor to everything
 
-When the newsletter leads the theme, the cycle's posts are cut from the approved email:
-- **One angle per post.** Never the whole email shrunk down. Someone who never reads the newsletter gets the full point of the post.
+When an anchor leads the cycle (her strategy's `Anchor:` line: the newsletter or the podcast), the cycle's posts are cut from the approved anchor:
+- **One angle per post.** Never the whole piece shrunk down. Someone who never reads the newsletter or hears the episode gets the full point of the post.
 - **Which part fits which post type:** its points or steps → a carousel; its story → a reel or a story post; the question it answers → a text post or a client-question post; its moment or scene → a photo post; its before and after → an illustrated carousel.
+- **From an episode, too:** a line she said that lands → a quote card or a headline photo, in her exact words; its best 30-60 seconds → a clip pick (a reel when she also recorded video; audio-only clips wait for a later build); its idea → the newsletter, when the newsletter is the podcast.
+- **The newsletter from an episode** is the episode's idea written as a letter: worth reading for someone who never listens, never show notes or a bare link. The link to listen goes once, near the end.
 - **Say it fresh.** New hook, the post type's own structure (section 5), the platform's caption rules. Reuse her phrases where they're strong; don't paste paragraphs.
-- **The newsletter mention is rare.** "The full story's in my newsletter" only on the leads layer, when she has a signup link, and not on every post in the cycle.
+- **The anchor mention is rare.** "The full story's in my newsletter" or "it's in this week's episode" only on the leads layer (or the audience layer for the podcast), when there's a link, and not on every post in the cycle.
+- **No anchor:** posts come from the plan's topics and her ideas, as always. **Independent shows** (a newsletter and a podcast that don't feed each other): each stands alone, and only the anchor, if one is set, feeds the posts.
 
+## 13. Podcast
+
+For her show (`platforms/podcast.md` has the account, the kit and the audio spec). The rules in section 1 apply; what changes:
+- **What it does for her business.** A podcast builds trust faster than posts: people spend 20 minutes with her voice. It rarely grows on its own: most people find a show through YouTube and social, not the podcast apps (Sounds Profitable, 2026: 40% found their favorite show on YouTube, 61% on YouTube or social). So the posts cut from each episode are half the job.
+- **Talk from points, never a script.** 3-5 talking points and a hook. Read words sound read.
+- **Episode shape:** the hook in the first 30 seconds (what they'll get, a question, a moment), a short intro (who she is in one line, the show's promise), one idea, the ask once (§ 7, by the slot's ending), an outro that points to the next episode. No long music intro, no sponsor talk.
+- **One idea per episode.** If two ideas fight, the second is next episode.
+- **Length:** what the idea needs, kept about the same every episode. 20-40 minutes is the most common; for a solo teaching show, 15-30 is plenty.
+- **Cadence and seasons:** the schedule she can keep beats the ideal one. Every two weeks is the default for a new show; weekly once it's easy. **Seasons** of 6-12 episodes (8 by default), then a planned break with a date to return: easier to keep, easier to binge, natural moments to promote. Same weekday every time.
+- **Titles:** what someone would search for or want to hear, specific, no episode number (it has its own field), no clickbait. Up to 150 characters; shorter reads better.
+- **Description:** the first two lines carry it: who it's for and what they get. Plain text. Then what's inside, the one ask with its link, the chapters.
+- **Chapters:** where each talking point starts, `(00:00) Title`, at least 3, short titles.
+- **The trailer:** 1-2 minutes before episode 1: who it's for, what they'll get, how often.
+- **The ask by layer:** credibility → book a call / message me; audience → follow the show and share this episode with one person; leads → the lead magnet. Said once, near the end, in her words.
+- **Sound:** a quiet room with soft things around, the phone or mic a hand's width away, the same spot each time. A phone is fine to start. A stumble is fine: real beats polished.
+- **Guests** later: an interview show needs booking, prep and permission. Start solo; guests are a second-season idea.
+- **Judge by the season, not the episode.** Track the posts from each episode, replies and calls she mentions; plays come from her host.
+
+## 14. Newsletter and podcast together
+
+When both are on, the strategy picks how they relate, once:
+- **The newsletter is the podcast:** she records; the episode is the anchor; the issue is its idea as a letter, with the link to listen. Best for someone who talks more easily than she writes.
+- **The podcast is the newsletter:** she writes; the issue is the anchor; the episode is her talking it through, with what didn't fit in the email. Best for a writer; almost no extra work.
+- **Independent:** two shows on their own schedules, the same theme or not (an interview show beside a letter). Neither feeds the other; the anchor is one of them or none.
