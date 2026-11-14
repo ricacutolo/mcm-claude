@@ -115,6 +115,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | notas_rica_lidas | rica_notes_read |
 | aguardando semente | waiting for seed |
 | pendente / feito | pending / done |
+| `saude.md` block `## Configuração` · `configuracao_atualizada:` · lines Instalação · Configuração do conteúdo · Cursos · Estratégia do CEO · pronta · esperando · ainda não · stages configurado / desenhando / gravando / no ar | `health.md` block `## Setup` · `setup_updated:` · Install · Content setup · Courses · CEO strategy · done · waiting · not yet · set up / designing / recording / live |
+| hand-off to /sistema: "atualizar o bloco Configuração" | "refresh the Setup block" |
 
 ## Brief and log words
 | PT | EN |
