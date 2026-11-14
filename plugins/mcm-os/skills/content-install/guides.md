@@ -74,6 +74,7 @@ This key lets your computer send your finished designs to MCM. Treat it like a p
 4. Click **Create**.
 5. Your key shows **only once**: click **Copy** right away. If you lose it, just make a new one.
 6. **Click here to open your settings file →** (Claude's link to the file in your content folder). Paste the key right after `GHL_PIT=`, with no spaces, and save.
+   If the link doesn't open the file: in Finder, open your content folder (`departments/content`), press **Shift + Cmd + .** to show hidden files, then right-click `.env` → **Open With** → **TextEdit**.
 7. Say **saved**. Claude only checks that a key is there, never what it says.
 
 If your screen looks different, describe what you see and Claude finds it with you.
