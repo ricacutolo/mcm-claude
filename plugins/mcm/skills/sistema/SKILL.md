@@ -56,7 +56,7 @@ claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · cerebro-do-negocio.md (main business) · cerebro-do-negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
-  ceo/                        the CEO department: brief.md · estrategia.md (main business) · estrategia-<area>.md (each other business) · pesquisa/
+  ceo/                        the CEO department: brief.md · estrategia.md (main business) · estrategia-<area>.md (each other business) · relatorios.md (what the departments report up) · pesquisa/
   cursos/                     the Cursos department: brief.md · index.md · <programa>/ (index.md · programa.md · aulas/aula-NN-<slug>.md · perguntas.md · retorno.md · depoimentos.md)
   conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · notas/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
@@ -80,6 +80,7 @@ _revisao/                     anything that would otherwise be deleted
 | `sobre-mim/drive.md` | /organizar-drive only, on her sim |
 | `sobre-mim/marca.md` | /brand-kit-designer only, on her sim |
 | `departamentos/ceo/estrategia.md` (and `estrategia-<area>.md`) | /estrategia-do-negocio only, on her sim |
+| `departamentos/ceo/relatorios.md` | departments add lines under Abertos (today: /conteudo-revisao and /curso-revisao, on her sim); only /estrategia-do-negocio moves them to Resolvidos |
 | `departamentos/cursos/<programa>/programa.md` | /curso-desenho only, on her sim |
 | a lesson file, `perguntas.md`, `retorno.md`, `depoimentos.md` | /curso-aula (lesson files), /curso-fechar-aula (O que aconteceu, perguntas, retorno, depoimentos), /curso-revisao (retorno review lines), on her sim |
 | `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |

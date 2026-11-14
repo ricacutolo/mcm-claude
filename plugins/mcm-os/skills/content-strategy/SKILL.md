@@ -18,7 +18,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 1. the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departments/content/library-notes.md`, if it exists — her own entries and catalog additions; they win for her business.
 3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
-4. `departments/content/strategy.md` — if it exists (revise mode), including its "Deliberate differences from the business file".
+4. `departments/content/strategy.md` — if it exists (revise mode), including its "Deliberate differences" and its `Follows:` line.
+4b. the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md` for the area in play) — if it exists: its **Directions → Content**, first offer, how it sells and next 90 days. The CEO decides what content is for; this skill decides how. Never written here.
 5. Revise mode only: `departments/content/performance-log.md` ("What we learned") and the last `content-review` line in `_system/log.md`.
 6. `about-me/writing.md` — for the voice of the strategy's own wording.
 
@@ -43,7 +44,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - `strategy.md` exists → **revise** (next round). Say what triggered it: her request, or a content-review recommendation (quote it).
 
 ### Step 2 — Draft from what's known
-From her business file and the library, draft every section:
+From the CEO's direction for content (when there is one), her business file and the library, draft every section. With a direction, "What content is for right now" (the layers) and the CTA come from it; without one, from the business file as below. In revise mode, a CEO strategy newer than the `Follows:` date is a trigger on its own: say what changed in the direction, in one line.
 - **Who we post for** — from who she sells to.
 - **Topics** — 4-8, from her customers' pains, objections and what they believe about the problem, in her customers' words.
 - **Wedge** — from why customers pick her.
@@ -54,7 +55,7 @@ In revise mode, start from the current strategy and change only what the trigger
 
 ### Step 3 — Ask only what the business file doesn't answer
 At most 6 questions, one message, each with a recommended answer:
-1. What is content for right now — which layers are on: credibility (people checking you out trust what they see), audience (more people find you), leads (posts bring in inquiries)?
+1. (Skipped when the CEO's direction says it.) What is content for right now — which layers are on: credibility (people checking you out trust what they see), audience (more people find you), leads (posts bring in inquiries)?
 2. Face on camera: yes, no or sometimes?
 3. Which photos exist (her own work, team, place), and are customer photos OK? (Photos go in a Google Drive folder, Content photos, whenever she has them; posts pick from there.)
 4. How much time per week for content?
@@ -62,20 +63,21 @@ At most 6 questions, one message, each with a recommended answer:
 6. Any format to lean on, or post types to switch off?
 Skip any question the business file, the current strategy or the conversation already answers. If her time zone isn't in `about-me/about-me.md`, ask it with question 5.
 
-### Step 4 — Business file check
+### Step 4 — Business file and direction check
 List where the draft differs from her business file (audience, offer, CTA, tone). For each: one line, and a choice — "update the business file" (a suggested line) or "keep as a deliberate difference". Skip differences already listed under "Deliberate differences from the business file".
+Then, with a CEO direction: where the draft goes against it (she wants it so), one line each with her reason, kept under "Deliberate differences from the CEO's direction". Never silently; never an edit to the CEO strategy.
 
 ### Step 5 — Gate
 Show the full strategy draft, the business file check, and in revise mode what changed from the last round.
 
 > "Does the strategy work? Say **yes**, or tell me what to change."
 
-Apply edits exactly, re-show, wait for yes. Differences she keeps go under "Deliberate differences from the business file". Business file updates she picks go to `_system/pending.md` (below).
+Apply edits exactly, re-show, wait for yes. Differences she keeps go under "Deliberate differences from the business file" (or "from the CEO's direction"). Business file updates she picks go to `_system/pending.md` (below).
 
 ### Step 6 — Write
 On yes:
 1. Revise mode: copy the current `strategy.md` to `departments/content/past-rounds/strategy-round-<N>.md` (create the folder if missing) before writing.
-2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>" and "Status: CONFIRMED round <N> (<her name>, <date>)", with sections: Who we post for · Deliberate differences from the business file · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: yes/no; the Substack line when it's on: Notes a week, 2 or 3) · Templates · Voice.
+2. Write `departments/content/strategy.md`, headed "# Strategy: <business>, round <N>", "Status: CONFIRMED round <N> (<her name>, <date>)" and "Follows: CEO strategy of <its `updated:` date>" (or "Follows: no CEO strategy yet (business file)"), with sections: Who we post for · Deliberate differences from the business file · Deliberate differences from the CEO's direction (only when there is one) · What content is for right now (layers) · The one CTA · Wedge · How posts are picked: topic × post type × format (Topics, Post types on, Formats on) · Idea rules · Cadence (days, time, time zone, platforms: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: yes/no; the Substack line when it's on: Notes a week, 2 or 3) · Templates · Voice.
 3. Each business file update she picked: one line in `_system/pending.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · about-me/business-brain.md § <section> · <the exact proposed line> · (from: content strategy round <N>)`. The time zone, if she gave one and it isn't in `about-me/about-me.md`: the same, for that file.
 4. Department brief: update Current state (date, one line on the round) and `updated:`. If there's no current plan, or the change affects planned slots, set Next step to "Plan the next 4 weeks. Say \"plan content\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).
@@ -84,6 +86,8 @@ On yes:
 > "Want me to plan the next 4 weeks now?"
 
 Run content-plan only on yes.
+
+No CEO strategy, and none offered yet (no `CEO session offered` line in `strategy.md`): offer it once, after the plan question: "Your content gets sharper once your business strategy is set. Want to do that session?" Run /business-strategy only on yes. Either way, add `CEO session offered: YYYY-MM-DD` under the strategy's header so it isn't offered again.
 
 ## Receipt
 

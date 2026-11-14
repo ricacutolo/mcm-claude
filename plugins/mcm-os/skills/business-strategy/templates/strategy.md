@@ -37,6 +37,15 @@ _What I'm deciding and what comes next. What's settled also lives in my business
 - **The goal (one number):** <e.g. 10 paid presales by 2027-02-01>
 - **The #1 priority:** <one line>
 
+## Directions
+_For each department: what it carries out from this strategy. Directions only; how it does it stays with the department._
+
+### Content
+- **What content is for now:** <e.g. sell the first offer: leads on, credibility on>
+- **Points to:** <the offer, or the free call>
+- **Audience to grow:** <who, or none: the list I have is enough>
+- **Stays out:** <e.g. no discounts, no posts about the old program>
+
 ## What stays out
 - <anti-goal>
 

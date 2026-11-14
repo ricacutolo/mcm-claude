@@ -56,7 +56,7 @@ claude.md                     backup of her Instructions for Claude
 about-me/                     about-me.md · business-brain.md (main business) · business-brain-<area>.md (each other business) · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
-  ceo/                        the CEO department: brief.md · strategy.md (main business) · strategy-<area>.md (each other business) · research/
+  ceo/                        the CEO department: brief.md · strategy.md (main business) · strategy-<area>.md (each other business) · reports.md (what the departments report up) · research/
   courses/                    the Courses department: brief.md · index.md · <program>/ (index.md · program.md · lessons/lesson-NN-<slug>.md · faq.md · feedback.md · quotes.md)
   content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · newsletters/ · notes/ · scripts/ · .env · past-rounds/
 projects/                     index.md · <slug>/brief.md · research/ · deliverables/<type>/
@@ -80,6 +80,7 @@ _review/                      anything that would otherwise be deleted
 | `about-me/drive.md` | /organize-drive only, on her yes |
 | `about-me/brand.md` | /brand-kit-designer only, on her yes |
 | `departments/ceo/strategy.md` (and `strategy-<area>.md`) | /business-strategy only, on her yes |
+| `departments/ceo/reports.md` | departments add lines under Open (today: /content-review and /course-review, on her yes); only /business-strategy moves them to Settled |
 | `departments/courses/<program>/program.md` | /course-design only, on her yes |
 | a lesson file, `faq.md`, `feedback.md`, `quotes.md` | /course-lesson (lesson files), /course-close-lesson (What happened, faq, feedback, quotes), /course-review (feedback review lines), on her yes |
 | `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_read`) |

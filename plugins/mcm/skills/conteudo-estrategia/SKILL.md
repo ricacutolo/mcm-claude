@@ -18,7 +18,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 1. the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — what she sells, who she sells to, what those people believe, objections, pains, why customers pick her, how she sells, booking, goals, what's off-limits. Always the current file, never a remembered copy.
 2. `library.md` — the post types and formats catalogs, and entries for her type of business. Then `departamentos/conteudo/notas-da-biblioteca.md`, if it exists — her own entries and catalog additions; they win for her business.
 3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
-4. `departamentos/conteudo/estrategia.md` — if it exists (revise mode), including its "Diferenças deliberadas do arquivo do negócio".
+4. `departamentos/conteudo/estrategia.md` — if it exists (revise mode), including its "Diferenças deliberadas" and its `Segue:` line.
+4b. the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md` for the area in play) — if it exists: its **Direções → Conteúdo**, Minha primeira oferta, Como vende and Próximos 90 dias. The CEO decides what content is for; this skill decides how. Never written here.
 5. Revise mode only: `departamentos/conteudo/desempenho.md` ("O que aprendemos") and the last `conteudo-revisao` line in `_sistema/log.md`.
 6. `sobre-mim/escrita.md` — for the voice of the strategy's own wording.
 
@@ -43,7 +44,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - `estrategia.md` exists → **revise** (next round). Say what triggered it: her request, or a conteudo-revisao recommendation (quote it).
 
 ### Step 2 — Draft from what's known
-From her business file and the library, draft every section:
+From the CEO's direction for content (when there is one), her business file and the library, draft every section. With a direction, "What content is for right now" (the layers) and the CTA come from it; without one, from the business file as below. In revise mode, a CEO strategy newer than the `Segue:` date is a trigger on its own: say what changed in the direction, in one line.
 - **Who we post for** — from who she sells to.
 - **Topics** — 4-8, from her customers' pains, objections and what they believe about the problem, in her customers' words.
 - **Wedge** — from why customers pick her.
@@ -54,7 +55,7 @@ In revise mode, start from the current strategy and change only what the trigger
 
 ### Step 3 — Ask only what the business file doesn't answer
 At most 6 questions, one message, each with a recommended answer:
-1. Para que o conteúdo serve agora — quais camadas estão ligadas: credibilidade (quem te pesquisa confia no que vê), audiência (mais gente te encontra), contatos (os posts trazem pedidos de orçamento)?
+1. (Skipped when the CEO's direction says it.) Para que o conteúdo serve agora — quais camadas estão ligadas: credibilidade (quem te pesquisa confia no que vê), audiência (mais gente te encontra), contatos (os posts trazem pedidos de orçamento)?
 2. Aparecer na câmera: sim, não ou às vezes?
 3. Quais fotos existem (o seu trabalho, a equipe, o espaço), e pode usar fotos de clientes? (As fotos vão numa pasta do Google Drive, Fotos de conteúdo, sempre que ela tiver; os posts escolhem de lá.)
 4. Quanto tempo por semana para conteúdo?
@@ -62,20 +63,21 @@ At most 6 questions, one message, each with a recommended answer:
 6. Algum formato para usar mais, ou tipos de post para desligar?
 Skip any question the business file, the current strategy or the conversation already answers. If her time zone isn't in `sobre-mim/sobre-mim.md`, ask it with question 5.
 
-### Step 4 — Business file check
+### Step 4 — Business file and direction check
 List where the draft differs from her business file (audience, offer, CTA, tone). For each: one line, and a choice — "atualizar o arquivo do negócio" (a suggested line) or "manter como diferença deliberada". Skip differences already listed under "Diferenças deliberadas do arquivo do negócio".
+Then, with a CEO direction: where the draft goes against it (she wants it so), one line each with her reason, kept under "Diferenças deliberadas da direção do CEO". Never silently; never an edit to the CEO strategy.
 
 ### Step 5 — Gate
 Show the full strategy draft, the business file check, and in revise mode what changed from the last round.
 
 > "A estratégia está boa? Diga **sim**, ou me diz o que mudar."
 
-Apply edits exactly, re-show, wait for sim. Differences she keeps go under "Diferenças deliberadas do arquivo do negócio". Business file updates she picks go to `_sistema/pendentes.md` (below).
+Apply edits exactly, re-show, wait for sim. Differences she keeps go under "Diferenças deliberadas do arquivo do negócio" (or "Diferenças deliberadas da direção do CEO"). Business file updates she picks go to `_sistema/pendentes.md` (below).
 
 ### Step 6 — Write
 On sim:
 1. Revise mode: copy the current `estrategia.md` to `departamentos/conteudo/rodadas-anteriores/estrategia-rodada-<N>.md` (create the folder if missing) before writing.
-2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)", with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: sim/não; the Substack line when it's on: Notes a week, 2 or 3) · Modelos · Voz.
+2. Write `departamentos/conteudo/estrategia.md`, headed "# Estratégia: <business>, rodada <N>" and "Status: CONFIRMADA rodada <N> (<her name>, <date>)" and "Segue: estratégia do CEO de <its `atualizado:` date>" (or "Segue: sem estratégia do CEO ainda (arquivo do negócio)"), with sections: Para quem postamos · Diferenças deliberadas do arquivo do negócio · Diferenças deliberadas da direção do CEO (only when there is one) · Para que serve o conteúdo agora (camadas) · O CTA único · Diferencial · Como os posts são escolhidos: tema × tipo de post × formato (Temas, Tipos de post ligados, Formatos ligados) · Regras de ideia · Frequência (dias, horário, fuso, plataformas: the switch the other content skills read; a separate LinkedIn time only if it differs; the newsletter line when it's on: how often, day and time, offer issues, newsletter leads the theme: sim/não; the Substack line when it's on: Notes a week, 2 or 3) · Modelos · Voz.
 3. Each business file update she picked: one line in `_sistema/pendentes.md` (re-read it first), in the system's format: `- [ ] YYYY-MM-DD · add · sobre-mim/cerebro-do-negocio.md § <section> · <the exact proposed line> · (de: estratégia de conteúdo rodada <N>)`. The time zone, if she gave one and it isn't in `sobre-mim/sobre-mim.md`: the same, for that file.
 4. Department brief: update Estado atual (date, one line on the round) and `atualizado:`. If there's no current plan, or the change affects planned slots, set Próximo passo to "Planejar as próximas 4 semanas. Diga \"planeja o conteúdo\"." Touch nothing else; mention it in one short line.
 5. Receipt and milestone (below).
@@ -84,6 +86,8 @@ On sim:
 > "Quer que eu planeje as próximas 4 semanas agora?"
 
 Run conteudo-plano only on sim.
+
+No CEO strategy, and none offered yet (no `Sessão do CEO oferecida` line in `estrategia.md`): offer it once, after the plan question: "O seu conteúdo fica mais certeiro depois que a estratégia do seu negócio estiver definida. Quer fazer essa sessão?" Run /estrategia-do-negocio only on sim. Either way, add `Sessão do CEO oferecida: YYYY-MM-DD` under the strategy's header so it isn't offered again.
 
 ## Receipt
 

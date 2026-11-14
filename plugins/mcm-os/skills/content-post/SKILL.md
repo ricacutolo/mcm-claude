@@ -27,6 +27,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 7. `about-me/about-me.md` — only her time zone.
 8. Idea capture only: `departments/content/ideas.md`.
 9. Publish check only: `departments/content/performance-log.md`.
+10. At the end of the run (Step 4): the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md`), if it exists — its `updated:` date, and its Directions → Content only when it's newer than the content strategy's `Follows:` date.
 
 Never read or print `departments/content/.env`. The scripts read it; this skill never does.
 
@@ -87,6 +88,7 @@ The maker hands back here when the post is scheduled (even when she started the 
 - **Stay one post ahead:** if the next `planned` slot isn't scheduled yet: "Want to make post N+1 now, so there's always one in the queue?" Start it only on yes, as its own run (back to Step 1). One approved post waiting in MCM means a busy week doesn't leave a slot empty.
 - **The publish check:** there are no reminders on a timer. Tell her once: "Once it's out, ask me \"did it go live?\" and I'll send you the links. I'll also check the next time we make a post."
 - If the maker stopped at a gate instead, add nothing; it already said where it stopped.
+- **The CEO's direction changed?** Compare the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md` for the area in play): its `updated:` date against the `Follows:` date in `departments/content/strategy.md` (no `Follows:` line counts as older). Newer → one line, never blocking: "Your strategy changed on <date>; your content strategy hasn't caught up. Say \"revise the strategy\" when you want." Once per CEO change: skip it when an earlier content-post receipt line already has `ceo: told <that date>`, and add that tag to this run's receipt when you say it.
 - Receipt (below).
 
 ## Step P — Publish check
@@ -121,7 +123,7 @@ Triggered by "save this as a post idea", "post idea: …", "add this to my post 
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-post | routed / declined / captured / publish-check / no-slot | post N · <format> → content-static or content-video · missed: yes/no · <published links or idea #N>`
+`YYYY-MM-DD | content-post | routed / declined / captured / publish-check / no-slot | post N · <format> → content-static or content-video · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
 
 ## What this skill never does
 
