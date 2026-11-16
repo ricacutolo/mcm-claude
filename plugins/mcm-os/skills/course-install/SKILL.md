@@ -32,7 +32,7 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 - The first offer isn't something taught (a service, a product): "Your first offer isn't a program, so the course machine waits until one is." Stop.
 
 ### Step 2 — The department and the program
-- No Courses department yet: on yes, create `departments/courses/brief.md` in /new-department's brief format: name **Courses**, area = the strategy's area, Purpose "Build and improve the programs she sells, one module at a time, from what her students actually need.", Routines "Close each live lesson the same day; review after each module and after each round.", What I use here: "design my program", "next lesson", "close the lesson", "review the module". Index line under its area header; hand /context the creation of `context/courses.md` ("Courses department created.").
+- No Courses department yet: on yes, create `departments/courses/brief.md` in /new-department's brief format: name **Courses**, area = the strategy's area, Purpose "Build and improve the programs she sells, one module at a time, from what her students actually need.", Routines "Close each live lesson the same day; review after each module and after each round.", What I use here: "design my program", "next lesson", "close the lesson", "review the module". Index line under its area header; hand /context-hot the creation of `context/courses.md` ("Courses department created.").
 - The program: a slug from its name, `departments/courses/<program>/` with its `index.md`, and a line in `departments/courses/index.md`.
 - **The program's `index.md` is its progress file**, kept current by every course skill without asking (soft), the way content skills keep the Content brief current:
 
@@ -79,7 +79,7 @@ _As of YYYY-MM-DD._
 
 - Decides or changes the offer, format, length or price.
 - Creates anything in MCM.
-- Writes outside the Courses department, except /context's log and the receipt.
+- Writes outside the Courses department, except /context-hot's log and the receipt.
 
 ## STOP handling
 

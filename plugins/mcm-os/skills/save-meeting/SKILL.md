@@ -112,10 +112,10 @@ Read the sheet once and drop what is already there. Then show everything at once
 ### Step 4 — Write, on her yes
 
 - Sheet lines → their sections, under the right heading; update `updated:`.
-- The summary → hand it to /context for the client's history (dated, with the transcript link). Her yes covers it.
+- The summary → hand it to /context-hot for the client's history (dated, with the transcript link). Her yes covers it.
 - Zoom or pasted transcript → saved word for word as `Transcript - <Name> - YYYY-MM-DD.md` (Zoom: `[HH:MM:SS] <Speaker>: <text>` per line) in the client's Drive folder, the same way /save-to-client saves a file; the Files line points to it.
 - Reactions → `departments/clients/reactions.md` (create it with the header below if missing), under the section that fits: **What they loved · Questions and worries · What they already do on their own · What they asked for**. Line: `- **<short label>.** "<quote>" <context in a few words>. — <client>, <date>`. The same reaction from another client extends the existing line with `· <client>, <date>` — that is how a pattern shows. Never rewrite or remove a line.
-- A department or project: summary to its history via /context; Next step through /system's write-back.
+- A department or project: summary to its history via /context-hot; Next step through /system's write-back.
 - What she said **no** to is dropped.
 
 `reactions.md` header, when created:

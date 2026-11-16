@@ -78,7 +78,7 @@ _review/                      anything that would otherwise be deleted
 
 | File | Writer |
 |---|---|
-| `context/*.md` | /context only (this skill hands it approved items) |
+| `context/*.md` | /context-hot only (this skill hands it approved items) |
 | a brief | its creator (new-department / new-project); afterwards only this skill's write-back, and a department's own skills (the content skills) also write that department brief's Next step, Current state and `updated:` |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `about-me/*` | install during install; afterwards this skill's write-back, or /update on her yes |
@@ -100,8 +100,8 @@ She talks to one Claude. That Claude routes:
 
 - She names a department ("let's work on content", "open Mentoring") → **/open-department**.
 - She names a project → **/open-project**.
-- She names one of her clients ("the Miller family", "what do I know about John") → **/open-client**. A new client → **/new-client**. A file or a fact for a client → **/save-to-client**. A meeting that happened ("save the meeting with…", "what did we talk about in the meeting") → **/save-meeting**. "This conversation is about…" → **/context** (capture).
-- She names something ongoing that is neither ("that coaching school thing") → **/context**.
+- She names one of her clients ("the Miller family", "what do I know about John") → **/open-client**. A new client → **/new-client**. A file or a fact for a client → **/save-to-client**. A meeting that happened ("save the meeting with…", "what did we talk about in the meeting") → **/save-meeting**. "This conversation is about…" → **/context-hot** (capture).
+- She names something ongoing that is neither ("that coaching school thing") → **/context-hot**.
 - Something new and ongoing → offer **/new-department**. Something new with a finish line → offer **/new-project**. The test, said once: "Does this have an end? If it does, it's a project. If it doesn't, it's a department."
 - A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the newsletter, "write the newsletter" → **/content-newsletter**; a Substack note or article, "post on Substack" → **/content-substack**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
 - Her business strategy: what to sell first, pricing, a launch, "where is my business going", "let's think about my strategy" → **/business-strategy**.
@@ -128,7 +128,7 @@ Never make her name a skill. Plain words are enough.
 | A project finished | the brief's `status`, its index line, its log's `status` → `closed` — confirmed together | hard (the one exception to soft index lines) |
 | Where a department or project stands now | that brief's Current state | soft |
 | The next concrete move | that brief's Next step | soft |
-| What happened in the conversation, what is parked, who waits on whom | the topic's `context/<slug>.md` (via /context) | soft |
+| What happened in the conversation, what is parked, who waits on whom | the topic's `context/<slug>.md` (via /context-hot) | soft |
 | A file saved in a folder that has `index.md` | one line in that `index.md` | soft |
 | One-off questions, passing talk | nowhere | — |
 
@@ -155,7 +155,7 @@ Never make her name a skill. Plain words are enough.
 > 1. In your business: <line> — **yes / no / adjust**
 > 2. ..."
 
-- **yes** → `add`: append the line under the right heading (dated lines for Decisions). `change field`: change that one field. Items whose destination is in `context/` are handed to /context to write. Then delete the item from `pending.md`.
+- **yes** → `add`: append the line under the right heading (dated lines for Decisions). `change field`: change that one field. Items whose destination is in `context/` are handed to /context-hot to write. Then delete the item from `pending.md`.
 - **no** → delete the item.
 - No answer → leave it. It comes back next batch or at upkeep.
 - **adjust** → take her wording, then write.
@@ -206,7 +206,7 @@ On **yes**:
 2. **Old file names** — after an update that renamed files: `about-me/business.md` (and any `business-<area>.md`) from before 0.11.0 → propose renaming to `business-brain.md` (and `business-brain-<area>.md`) in one line, and rename on her yes. Nothing else in them changes.
 3. **Indexes** — for each `index.md` under `departments/`, `projects/` and `deliverables/`: list files present but missing from the index, and index lines whose file is gone. Fix missing lines (soft). Report dead lines and remove them only on her yes.
 4. **Areas** — briefs with no `area:`, or an index not grouped by area: propose the areas in one batch ("Journal → Personal · Clients → Miller Travel"), then write the `area:` lines and regroup the indexes on her yes.
-5. **Long logs** — any `context/*.md` past ~150 lines: propose condensing (handled by /context, on APPROVE).
+5. **Long logs** — any `context/*.md` past ~150 lines: propose condensing (handled by /context-hot, on APPROVE).
 6. **Stale briefs** — any brief whose Current state is older than 21 days: name it, one line each. Don't fix.
 7. **Health file** — write `_system/health.md` (below).
 8. Set `last_upkeep: YYYY-MM-DD` in `state.md`, add a receipt line.

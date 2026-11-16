@@ -122,7 +122,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each approved run: hand /context one line for `context/content.md`:
+Each approved run: hand /context-hot one line for `context/content.md`:
 `Content strategy round <N> approved: layers <list>, <count> topics, formats <list>. Still open: <plan the next 4 weeks / business file suggestions pending / none>.`
 
 ## What this skill never does
@@ -130,7 +130,7 @@ Each approved run: hand /context one line for `context/content.md`:
 - Writes `strategy.md` without an explicit yes.
 - Edits `about-me/business-brain.md` or any `about-me/` file. Changes there only wait in `_system/pending.md`.
 - Re-flags a difference marked as deliberate.
-- Edits `library.md`, `playbook.md`, `library-notes.md`, `swipe.md`, `plan.md`, `calendar.md`, `ideas.md` or anything in `context/` (milestones go through /context).
+- Edits `library.md`, `playbook.md`, `library-notes.md`, `swipe.md`, `plan.md`, `calendar.md`, `ideas.md` or anything in `context/` (milestones go through /context-hot).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Invents post types or formats outside the catalogs, or claims something "works" without the library or her notes marking it working.
 - Deletes an old strategy round — it goes to `past-rounds/`.

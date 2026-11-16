@@ -89,7 +89,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each template built: hand /context one line for `context/content.md`:
+Each template built: hand /context-hot one line for `context/content.md`:
 `Template built: <format> × <post type> (Canva <design ID>), serves posts <N, M>. Still open: <hand fixes, or none>.`
 
 ## What this skill never does
@@ -98,7 +98,7 @@ Each template built: hand /context one line for `context/content.md`:
 - Edits an existing TEMPLATE design.
 - Uses AI-generated images or stock illustrations for diagrams.
 - Writes copy for a real post, drafts captions, or schedules anything — that's content-static.
-- Edits `strategy.md`, `brand-style.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/`, the shipped library, playbook or guides, or anything in `context/` (milestones go through /context).
+- Edits `strategy.md`, `brand-style.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/`, the shipped library, playbook or guides, or anything in `context/` (milestones go through /context-hot).
 - Changes `plan.md` beyond the Template cells of the slots it serves and its line in "Templates to build".
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Deletes Canva designs or files. A draft without a yes stays titled DRAFT for her to keep or delete.

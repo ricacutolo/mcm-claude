@@ -94,7 +94,7 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 - File steps (10, 11, 14): written from what's known, without asking; one line saying what was written. The newsletter details in step 14 are the exception: shown for her confirmation first.
 - After each step, update `setup.md` (status, date, how we know, decisions noted) and hand /system "refresh the Setup block", so Rica sees the progress the same day. No approval needed.
 
-**The Content department (step 1):** the brief in /new-department's brief format, filled from the content machine, never from an interview. Ask only its area: "Is this content for **<her main business>**, or something else?" (her main business first; her answer wins). Fill the dates, show the full brief, and on yes write it, add its index line under its area header in `departments/index.md`, and hand /context the creation of `context/content.md` (`tier: department`) with "Content department created during the content setup." Her yes covers all three.
+**The Content department (step 1):** the brief in /new-department's brief format, filled from the content machine, never from an interview. Ask only its area: "Is this content for **<her main business>**, or something else?" (her main business first; her answer wins). Fill the dates, show the full brief, and on yes write it, add its index line under its area header in `departments/index.md`, and hand /context-hot the creation of `context/content.md` (`tier: department`) with "Content department created during the content setup." Her yes covers all three.
 
 - Name **Content**; slug `content`; `area:` her answer.
 - Intro: "Her posts, from idea to scheduled, and what they teach her about her audience."
@@ -197,7 +197,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that changed something: hand /context one line for `context/content.md`:
+Runs that changed something: hand /context-hot one line for `context/content.md`:
 `Content setup <N>/20: done this run <steps>. Waiting on <steps, and on whom>.`
 
 ## What this skill never does
@@ -205,7 +205,7 @@ Runs that changed something: hand /context one line for `context/content.md`:
 - Saves her newsletter details without her confirmation.
 - Reads, prints, copies or asks for the MCM key, or reads `.env`.
 - Connects, disconnects or changes anything in MCM or Claude's settings — she does those; this skill only checks. The only Canva changes it makes: copying the shared templates into her Canva and rebranding the copies (step 9, on her yes), placeholders on her own templates (on her yes), and placing her logo (step 8).
-- Writes `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (changes there only wait in `_system/pending.md`), the shipped library, playbook or guides, or anything in `context/` (milestones go through /context).
+- Writes `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (changes there only wait in `_system/pending.md`), the shipped library, playbook or guides, or anything in `context/` (milestones go through /context-hot).
 - Adds template rows to `templates.md` beyond the templates set up here (MCM's and her own).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.

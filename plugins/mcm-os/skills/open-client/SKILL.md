@@ -7,7 +7,7 @@ description: "MCM Client Book: opens a client to work on — loads the sheet, th
 
 Part of the **MCM Client Book**. Loads one client's sheet and history, plus the Clients department's way of serving, so she never re-explains a client.
 
-It does one thing: **open**. It never creates a client (/new-client), never edits the sheet itself (updates go through /system's write-back and /save-to-client), and never writes the history (/context).
+It does one thing: **open**. It never creates a client (/new-client), never edits the sheet itself (updates go through /system's write-back and /save-to-client), and never writes the history (/context-hot).
 
 Speak to her in plain, warm US English.
 
@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departments/clients/index.md` — to match the name.
 2. `departments/clients/<slug>/sheet.md` — in full.
-3. The history named in `context:` — **through /context** only.
+3. The history named in `context:` — **through /context-hot** only.
 4. `departments/clients/brief.md` — only Standards and Routines, and only when the task needs her way of serving.
 5. Files in the client's Drive folder — only when the task needs one, by name from the sheet's Files.
 
@@ -40,7 +40,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load
 
-Read the sheet. Invoke /context with the slug from `context:`.
+Read the sheet. Invoke /context-hot with the slug from `context:`.
 
 ### Step 3 — Reply in three lines at most
 
@@ -54,7 +54,7 @@ When she asked a question ("what do I know about..."), answer it from the sheet 
 
 ### Step 4 — Stay active
 
-For the rest of the conversation, facts about this client route to their sheet (via /system's write-back) and milestones to their history (via /context). A file she sends goes through /save-to-client. After compaction, or after another client was opened, re-read the sheet and ask /context to re-read the history.
+For the rest of the conversation, facts about this client route to their sheet (via /system's write-back) and milestones to their history (via /context-hot). A file she sends goes through /save-to-client. After compaction, or after another client was opened, re-read the sheet and ask /context-hot to re-read the history.
 
 ### Step 5 — Receipt
 
@@ -73,7 +73,7 @@ For the rest of the conversation, facts about this client route to their sheet (
 ## Failure modes
 
 - **Sheet missing but index line exists:** say so, offer /new-client.
-- **History missing:** open the sheet, offer to start the history (/context, on her yes).
+- **History missing:** open the sheet, offer to start the history (/context-hot, on her yes).
 - **Folder offline:** say so in one line.
 
 ## STOP handling

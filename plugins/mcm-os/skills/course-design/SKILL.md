@@ -50,7 +50,7 @@ Speak to her in plain, warm US English. Say "your program", "the modules", "your
 ### Step 5 — Close
 - the program's progress (its `index.md`: **Where it stands**, **Next step**; see /course-install): Where it stands ("Designed: <n> modules.") and Next step ("Build lesson 1"); a revision for a new round adds "Round <n> — planned" under Rounds. Then the Courses brief. Mention it in one line.
 - Launch order check: the strategy says sell before build → "Your strategy says to presell first; you only need the outline and lesson 1 to start selling." Offer /course-lesson for lesson 1.
-- Hand /context one line for `context/courses.md`: `<Program> designed: <n> modules, <format>. Next: lesson 1.`
+- Hand /context-hot one line for `context/courses.md`: `<Program> designed: <n> modules, <format>. Next: lesson 1.`
 - Receipt.
 
 ## Receipt

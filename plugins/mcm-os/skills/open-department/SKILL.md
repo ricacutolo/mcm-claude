@@ -17,18 +17,18 @@ Loaded only when this skill fires:
 
 1. `departments/index.md` — to match the name.
 2. `departments/<slug>/brief.md` — in full.
-3. The log named in the brief's `context:` line — **through /context**, never read or written directly here.
+3. The log named in the brief's `context:` line — **through /context-hot**, never read or written directly here.
 4. Material under "Where things live" — **only** when the task in front of her needs it, through that folder's `index.md`. Never all of it upfront.
 
 ## The rules
 
 > "This skill never edits the brief. Changes go through /system's write-back."
 
-> "The log belongs to /context. This skill calls /context and never writes to `context/`."
+> "The log belongs to /context-hot. This skill calls /context-hot and never writes to `context/`."
 
 > "Load the brief and the log once. Material is opened only when the task needs it."
 
-> "When the conversation comes back to this department after compaction, or after another department or project was opened in between, re-read the brief and ask /context to re-read the log."
+> "When the conversation comes back to this department after compaction, or after another department or project was opened in between, re-read the brief and ask /context-hot to re-read the log."
 
 ## Workflow
 
@@ -45,7 +45,7 @@ Read it in full. Note `context:`, the Current state date, Next step, and the "Wh
 
 ### Step 3 — Load the log
 
-Invoke /context with the slug derived from the `context:` path (`context/<slug>.md`). It stays active for the rest of the conversation and keeps writing milestones. If the log does not exist: "This department doesn't have a history yet. Should I start one?" — /context creates it on her **yes**.
+Invoke /context-hot with the slug derived from the `context:` path (`context/<slug>.md`). It stays active for the rest of the conversation and keeps writing milestones. If the log does not exist: "This department doesn't have a history yet. Should I start one?" — /context-hot creates it on her **yes**.
 
 ### Step 4 — Reply in two lines at most
 
@@ -63,7 +63,7 @@ Nothing else unless she asks. No recital of the standards.
 - Judge what she brings against the department's Standards and Routines, without reciting them.
 - When a task needs material, open the one file it needs (via the folder's `index.md`).
 - When a skill from the "What I use here" table runs, tell it where the table says to save.
-- After compaction, or after another department or project was opened in this conversation: re-read the brief, ask /context to re-read the log, then continue. Another conversation may have written in between.
+- After compaction, or after another department or project was opened in this conversation: re-read the brief, ask /context-hot to re-read the log, then continue. Another conversation may have written in between.
 
 ### Step 6 — Receipt
 
@@ -87,7 +87,7 @@ Nothing else unless she asks. No recital of the standards.
 
 - **Folder offline:** say so, work in chat, write no receipt.
 - **Brief missing but listed:** say so, show what the folder holds, offer /new-department. Don't rebuild it yourself.
-- **/context unavailable:** load the brief only and say the history couldn't be loaded.
+- **/context-hot unavailable:** load the brief only and say the history couldn't be loaded.
 
 ## STOP handling
 

@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.19.0
+version: 0.19.1
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -14,7 +14,7 @@ is what runs, and this file is stale. Each skill row names both editions (PT · 
 
 | Machine | What it does for her | Skills (PT · EN) | Since |
 |---|---|---|---|
-| The system | Rules for every conversation, routing, write-back, upkeep; does the work itself, uses the browser when a connection can't, asks like a guide, not a form | sistema · system, instalar · install, contexto · context, atualizar · update | 0.1.0; browser fallback 0.10.0; guide-not-form 0.11.0 |
+| The system | Rules for every conversation, routing, write-back, upkeep; does the work itself, uses the browser when a connection can't, asks like a guide, not a form | sistema · system, instalar · install, contexto · context-hot, atualizar · update | 0.1.0; browser fallback 0.10.0; guide-not-form 0.11.0 |
 | Departments and projects | Ongoing areas and finite work, each with a brief and a log, grouped by área | novo-/abrir-departamento, novo-/abrir-projeto | 0.1.0; áreas 0.3.1 |
 | CEO | The business strategy at the top: research, then a conversation; departments carry it out | estrategia-do-negocio · business-strategy | 0.11.0 (playbook researched 0.11.1) |
 | Course machine | Builds what she sells: program design, one lesson at a time, closes each live lesson from its transcript, reviews per module and round; a progress file per program | curso-instalar, curso-desenho, curso-aula, curso-fechar-aula, curso-revisao | 0.13.0 |

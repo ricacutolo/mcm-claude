@@ -40,7 +40,7 @@ Loaded only when this skill fires:
 
 No `departments/clients/brief.md`:
 
-1. **One she already made.** Read `departments/index.md`. A department whose name or purpose is about her clients (client, clients, contacts, CRM, roster) → "You already have the **<Name>** department. Can I use it as your Clients department? I'll rename the folder to `clients` so the system can always find it. (**yes** / **no, that's something else**)" On **yes**: move `departments/<slug>/` to `departments/clients/` (move, never delete), fix its line in `departments/index.md`, and ask /context to update its history's `brief:` to `departments/clients/brief.md` (the history keeps its name). Several candidates → short numbered list; she picks or says none.
+1. **One she already made.** Read `departments/index.md`. A department whose name or purpose is about her clients (client, clients, contacts, CRM, roster) → "You already have the **<Name>** department. Can I use it as your Clients department? I'll rename the folder to `clients` so the system can always find it. (**yes** / **no, that's something else**)" On **yes**: move `departments/<slug>/` to `departments/clients/` (move, never delete), fix its line in `departments/index.md`, and ask /context-hot to update its history's `brief:` to `departments/clients/brief.md` (the history keeps its name). Several candidates → short numbered list; she picks or says none.
 2. **Clients already written inside it.** If that brief, its history or another file in its folder lists clients with details (names plus who they are, trips, preferences): "I see N clients saved in the department: <names>. Want me to make a sheet for each one? One at a time, and you confirm each sheet." On **yes**, for each one run Steps 1-4 with what is written about them as the source (like mid-conversation). Never remove the original text on your own; when all are done, offer: "Can I move the old list to `_review/`? The sheets have everything now." Move on **yes**.
 3. **None.** "Before your first client, I'll set up the **Clients** department — that's where your way of serving any client lives (what you always ask, your steps). Sound good?" On **yes**, run the /new-department flow for `clients`, then come back here.
 
@@ -104,7 +104,7 @@ Show the draft, then: "Here's the sheet for **<Name>**. Can I create it? I'll al
 1. Create `departments/clients/<slug>/` and write `sheet.md` exactly as approved.
 2. Re-read `departments/clients/index.md` (create with `# Clients` if missing), then add:
    `- [<Name>](<slug>/sheet.md) · YYYY-MM-DD · active · <one sentence>`
-3. Invoke /context to create `context/<slug>.md` with `tier: client` and `brief: departments/clients/<slug>/sheet.md`. **Her yes covers it.** If Step 1 found her history about this client, link it instead: /context sets its `tier` to `client` and its `brief` to the sheet, adds the client's name to `aliases`, and creates nothing; the file keeps its name and the sheet's `context:` points to it. Mid-conversation: hand /context the capture of this conversation as the seed (its capture mode), not a one-line summary.
+3. Invoke /context-hot to create `context/<slug>.md` with `tier: client` and `brief: departments/clients/<slug>/sheet.md`. **Her yes covers it.** If Step 1 found her history about this client, link it instead: /context-hot sets its `tier` to `client` and its `brief` to the sheet, adds the client's name to `aliases`, and creates nothing; the file keeps its name and the sheet's `context:` points to it. Mid-conversation: hand /context-hot the capture of this conversation as the seed (its capture mode), not a one-line summary.
 4. Drive: with `about-me/drive.md`, create `<Name>` inside `02. Clients` (colored like its parent, per /organize-drive's rule) and check it exists. Without `drive.md`: say "The Drive folder will wait until your Drive is organized — want to organize it now?" (offers /organize-drive) and set `drive: to create`.
 
 ### Step 5 — Receipt
@@ -123,7 +123,7 @@ Sheet, history and Drive folder are ready. You can send me their files right her
 - Writes before her **yes**.
 - Copies contact data from MCM, or any ID, passport, card or bank number.
 - Invents a fact or fills a blank with a guess.
-- Writes outside `departments/clients/`, except the hand-off to /context, the Drive folder and the receipt.
+- Writes outside `departments/clients/`, except the hand-off to /context-hot, the Drive folder and the receipt.
 - Contacts the client.
 
 ## When to refuse

@@ -176,7 +176,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that changed something: hand /context one line for `context/content.md`:
+Runs that changed something: hand /context-hot one line for `context/content.md`:
 `Reel post N <script approved / waiting on clips / cut vN in review / scheduled for <slot>>: <topic> × <post type>. Still open: <next step, or none>.`
 
 ## What this skill never does
@@ -185,7 +185,7 @@ Runs that changed something: hand /context one line for `context/content.md`:
 - Changes, reorders or stitches her words inside a sentence, or captions anything she didn't say.
 - Overwrites a rendered version or deletes raw clips, transcripts, versions or Drive files.
 - Reads, prints, copies or asks for `.env`, the ElevenLabs key or the MCM key.
-- Edits `strategy.md`, `brand-style.md`, `templates.md`, `ghl.md`, `about-me/`, the shipped library, playbook, reel kit or scripts, or anything in `context/` (milestones go through /context).
+- Edits `strategy.md`, `brand-style.md`, `templates.md`, `ghl.md`, `about-me/`, the shipped library, playbook, reel kit or scripts, or anything in `context/` (milestones go through /context-hot).
 - Changes `plan.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Adds music, B-roll or AI-generated footage. Those come with their own decision.

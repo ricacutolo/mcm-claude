@@ -146,7 +146,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that reached a new stage: hand /context one line for `context/content.md`:
+Runs that reached a new stage: hand /context-hot one line for `context/content.md`:
 `Post N <copy approved / design approved / scheduled for <slot>>: <topic> × <post type>, <format>. Still open: <hand fixes, or none>.`
 
 ## Photo library
@@ -200,7 +200,7 @@ Every change to this file is shown to her and written on her yes: it's her look.
 
 - Schedules or publishes without an explicit yes at the schedule gate. Never sets `status: published` directly.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits a TEMPLATE design, `strategy.md`, `brand-style.md`, `templates.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context).
+- Edits a TEMPLATE design, `strategy.md`, `brand-style.md`, `templates.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context-hot).
 - Changes `plan.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Improvises a template for a post type that has none.

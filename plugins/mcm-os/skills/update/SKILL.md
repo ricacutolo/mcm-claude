@@ -66,7 +66,7 @@ Where they go:
 | My business | `about-me/business-brain.md`, under the heading that fits |
 | My business <Area> | `about-me/business-brain-<area>.md`, under the heading that fits |
 | About me | `about-me/about-me.md` |
-| Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context |
+| Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context-hot |
 | Project X | same, for the project's brief |
 | To do | nothing is written; it is offered in Step 4 |
 
@@ -82,7 +82,7 @@ Show everything at once, grouped by file, numbered straight through:
 
 Then wait. She can answer all at once ("yes to all", "1 to 5 yes, 6 no").
 
-- **yes** → write it. Appends go under the right heading; Decisions lines are dated. Before any rewrite of an existing line, copy the file to `_review/YYYY-MM-DD-<file>.md`. History lines are handed to /context to write.
+- **yes** → write it. Appends go under the right heading; Decisions lines are dated. Before any rewrite of an existing line, copy the file to `_review/YYYY-MM-DD-<file>.md`. History lines are handed to /context-hot to write.
 - **adjust** → take her wording, then write.
 - **no** → drop it.
 - No answer → add it to `_system/pending.md` in the system format, with `(from: Rica's notes)`, so it comes back in the next batch.
@@ -100,7 +100,7 @@ Set `rica_notes_read: <date of the newest section read>` in `_system/state.md` (
 One line in `_system/log.md`:
 `YYYY-MM-DD | update | <n> saved, <n> declined, <n> pending | notes through YYYY-MM-DD`
 
-Shared memory: changes to a department or project are logged in its history by /context, as above.
+Shared memory: changes to a department or project are logged in its history by /context-hot, as above.
 
 ## What this skill never does
 
