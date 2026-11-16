@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.19.2 — 2026-11-16 [both]
+- **Skill conventions** (Rica, 2026-11-16). New `docs/skill-conventions.md`: Rica's eight skill conventions from his own system, adapted to the repo (the receipt in `_system/log.md`, shared memory through /context-hot and the write-back, the glossary and system map instead of his memory file, audit log and flow chart). `CLAUDE.md` says to read it before writing any skill.
+- **check-sync.py checks them** in every skill of both editions: the name matches the folder, the description lists the slash command, Read these first, the five safety sections (never does, refuse, failure modes, STOP, headless), and the receipt line. A pull request that skips one fails.
+- **Brought up to it:** course-install, course-review and course-close-lesson get **When to refuse**; those three and course-design get **Failure modes**. morning-brief and my-voice list their slash command in the description. No behavior change.
+
 ## 0.19.1 — 2026-11-15 [mcm-os]
 - **context → context-hot** (Rica, 2026-11-15). `/context` is a built-in Claude command (it shows how much of the conversation's room is used), so typing it never reached the skill. The English skill is now **context-hot**, the same name as Rica's own. Every `/context` reference in mcm-os, the manual's command chip, the glossary and the system map follow. The `context/` folder and its files keep their names, so nothing changes in a client's folder. The Portuguese **contexto** is unaffected.
 

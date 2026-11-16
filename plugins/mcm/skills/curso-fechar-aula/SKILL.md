@@ -81,6 +81,19 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 - Marks a quote `pode usar` on its own.
 - Changes the lesson plan or the program (the review proposes that).
 
+## When to refuse
+
+- "Escreve pelo que você lembra" or "pelas minhas anotações" — "Eu fecho as aulas só pela transcrição, assim nada é chute. Você consegue colar ela aqui?"
+- "Manda o resumo pros alunos" — "Eu escrevo o rascunho; quem manda é você."
+
+## Failure modes
+
+- **No transcript:** ask her to paste it; without one, stop and say why (receipt: no transcript).
+- **Transcript not ready yet:** Step 1's message; stop.
+- **The lesson file is missing:** close against the program's module map and say the lesson plan wasn't there.
+- **Very long transcript:** read it in parts; never close from the first part only.
+- **No Conteúdo department:** keep the post ideas as a list in the batch; nothing is handed on.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, say what's saved, and wait.

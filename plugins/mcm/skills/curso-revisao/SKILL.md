@@ -64,6 +64,18 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 - Recommends without evidence from the lessons.
 - Uses a student's words outside her files.
 
+## When to refuse
+
+- "Refaz o programa inteiro" — "Eu mudaria no máximo cinco coisas, as que as suas aulas mostraram. O resto fica até a gente ver mais."
+- "Usa o que um aluno falou no meu marketing" (quote still `precisa de permissão`) — "Esse ainda está esperando o ok do aluno. Quer uma mensagem curta pra pedir?"
+
+## Failure modes
+
+- **No closed lessons in the window:** say which lessons need closing first and offer /curso-fechar-aula; recommend nothing.
+- **Too little evidence** (one lesson, nothing repeats): say it's early and keep to what showed clearly, or recommend nothing.
+- **`relatorios.md` missing:** create it from the template before adding a strategy question.
+- **/curso-desenho unavailable for a program change:** note the change in `retorno.md` as approved, not applied yet.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, and wait.

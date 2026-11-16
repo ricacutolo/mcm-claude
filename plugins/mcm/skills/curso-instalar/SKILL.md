@@ -81,6 +81,18 @@ _Em YYYY-MM-DD._
 - Creates anything in MCM.
 - Writes outside the Cursos department, except /contexto's log and the receipt.
 
+## When to refuse
+
+- "Monta o curso, o preço a gente vê depois" — "Sua estratégia decide o que você vende, por quanto tempo e por quanto, e o curso é montado pra caber nisso. Quer definir isso primeiro? Leva mais ou menos uma hora."
+- "Cria no MCM agora" — "Eu crio o curso no MCM com você quando as primeiras aulas estiverem prontas. Por enquanto eu anoto onde ele vai ficar."
+
+## Failure modes
+
+- **No strategy, or no first offer in it:** offer the strategy session (Step 1); write nothing.
+- **A Cursos department already exists:** reuse it and add the program; never a second department.
+- **`reunioes:` missing in `_sistema/estado.md`:** ask which tool she runs live lessons on and record it on the program's `aulas em:` line only.
+- **She stops halfway:** the program's progress file keeps what was set up; the next run starts at the first step not done.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, say what was set up, and wait.

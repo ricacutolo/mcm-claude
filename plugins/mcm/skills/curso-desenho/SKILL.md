@@ -68,6 +68,13 @@ Speak to her in plain, warm Brazilian Portuguese. Say "o seu programa", "os mód
 
 - "Faz 20 módulos pra parecer que vale mais" — "Mais módulos normalmente quer dizer menos alunos terminando. Vamos fazer cada um valer; se quiser mais, um módulo bônus funciona melhor."
 
+## Failure modes
+
+- **No first offer in the strategy:** stop and offer /estrategia-do-negocio; never design from a guess.
+- **The map doesn't fit the length she sells:** say so in one line and suggest revisiting the strategy; never change the length or price here.
+- **She has no order yet:** draft it from the business brain's problems, quickest win first, and say it's a draft in Onde está.
+- **No research file:** design without it and say competing programs weren't checked.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, say what's agreed and not saved, and offer to save it.
