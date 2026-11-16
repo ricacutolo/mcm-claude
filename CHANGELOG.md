@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.19.3 — 2026-11-16 [both]
+- **content-strategy reads the Content department brief** (Rica, 2026-11-16). Rules she sets for her content (cadence, formats, what goes into the rotation, how she records) land in the brief's Standards, Routines and Decisions, often through update/atualizar from Rica's notes, but the strategy never read them, so the plan could ignore them. Now Read these first item 4c reads those three sections, the draft follows them (they win over library defaults), and a draft that goes against one says so in one line for her to decide. PT conteudo-estrategia the same.
+
 ## 0.19.2 — 2026-11-16 [both]
 - **Skill conventions** (Rica, 2026-11-16). New `docs/skill-conventions.md`: Rica's eight skill conventions from his own system, adapted to the repo (the receipt in `_system/log.md`, shared memory through /context-hot and the write-back, the glossary and system map instead of his memory file, audit log and flow chart). `CLAUDE.md` says to read it before writing any skill.
 - **check-sync.py checks them** in every skill of both editions: the name matches the folder, the description lists the slash command, Read these first, the five safety sections (never does, refuse, failure modes, STOP, headless), and the receipt line. A pull request that skips one fails.
