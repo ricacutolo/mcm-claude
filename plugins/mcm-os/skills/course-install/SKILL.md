@@ -81,6 +81,18 @@ _As of YYYY-MM-DD._
 - Creates anything in MCM.
 - Writes outside the Courses department, except /context-hot's log and the receipt.
 
+## When to refuse
+
+- "Just build the course, we'll figure out the price later" — "Your strategy decides what you sell, for how long and at what price, and the course is built to fit it. Want to set that first? It's about an hour."
+- "Set it up in MCM now" — "I set up the course in MCM with you once the first lessons are ready. For now I'll note where it will live."
+
+## Failure modes
+
+- **No strategy, or no first offer in it:** offer the strategy session (Step 1); write nothing.
+- **A Courses department already exists:** reuse it and add the program; never a second department.
+- **`meetings:` missing in `_system/state.md`:** ask which tool she runs live lessons on and record it on the program's `lessons on:` line only.
+- **She stops halfway:** the program's progress file keeps what was set up; the next run starts at the first step not done.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, say what was set up, and wait.

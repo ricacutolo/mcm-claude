@@ -64,6 +64,18 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 - Recommends without evidence from the lessons.
 - Uses a student's words outside her files.
 
+## When to refuse
+
+- "Just redo the whole program" — "I'd change at most five things, the ones your lessons point to. The rest stays until we see more."
+- "Use what a student said in my marketing" (quote still `needs permission`) — "That one is still waiting for the student's okay. Want a short message to ask?"
+
+## Failure modes
+
+- **No closed lessons in the window:** say which lessons need closing first and offer /course-close-lesson; recommend nothing.
+- **Too little evidence** (one lesson, nothing repeats): say it's early and keep to what showed clearly, or recommend nothing.
+- **`reports.md` missing:** create it from the template before adding a strategy question.
+- **/course-design unavailable for a program change:** note the change in `feedback.md` as approved, not applied yet.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, and wait.

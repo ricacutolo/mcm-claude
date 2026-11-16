@@ -10,6 +10,11 @@ Two plugins, one marketplace: `plugins/mcm-os` (English) and `plugins/mcm` (Port
 - Every change gets a CHANGELOG entry tagged [mcm-os], [mcm] or [both], plus a version bump in `plugin.json` and `.claude-plugin/marketplace.json`.
 - One version number for both editions, always: every release bumps both plugins to the same number (from 0.5.0). `check-sync.py` fails if they differ.
 
+## Writing a skill
+
+- Read `docs/skill-conventions.md` before writing or editing any skill, in either edition.
+- `scripts/check-sync.py` checks the parts it can: name matches the folder, the slash command in the description, Read these first, the five safety sections, the receipt.
+
 ## This repo is public
 
 - No client names, emails, links, IDs or other personal data in any file, commit message or pull request. Examples use made-up names ("Miller Travel", "Maria Silva").

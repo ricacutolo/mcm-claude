@@ -1,6 +1,6 @@
 ---
 name: morning-brief
-description: O resumo do dia dela em um minuto de leitura — agenda de hoje, e-mails que importam e a prioridade número um. Use quando ela disser "como está meu dia", "resumo do dia", "o que tenho hoje", "minha agenda de hoje", "o que é urgente", "bom dia, me atualiza", "o que preciso ver hoje". Só lê Gmail e Agenda; não envia nada.
+description: O resumo do dia dela em um minuto de leitura — agenda de hoje, e-mails que importam e a prioridade número um. Use quando ela disser "/morning-brief", "como está meu dia", "resumo do dia", "o que tenho hoje", "minha agenda de hoje", "o que é urgente", "bom dia, me atualiza", "o que preciso ver hoje". Só lê Gmail e Agenda; não envia nada.
 ---
 
 # morning-brief — her day, in one read

@@ -1,6 +1,6 @@
 ---
 name: morning-brief
-description: Her day in a one-minute read — today's calendar, the emails that matter and the number one priority. Use when she says "how's my day looking", "daily brief", "what do I have today", "what's on my calendar today", "what's urgent", "good morning, catch me up", "what do I need to look at today". Only reads Gmail and Calendar; never sends anything.
+description: Her day in a one-minute read — today's calendar, the emails that matter and the number one priority. Use when she says "/morning-brief", "how's my day looking", "daily brief", "what do I have today", "what's on my calendar today", "what's urgent", "good morning, catch me up", "what do I need to look at today". Only reads Gmail and Calendar; never sends anything.
 ---
 
 # morning-brief — her day, in one read

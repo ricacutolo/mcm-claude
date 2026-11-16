@@ -10,6 +10,10 @@ What it checks, per skill pair from docs/glossary.md:
   - same number of quoted rules (lines starting with > ")
   - same number of numbered steps and table rows (a rough guard against a dropped step)
   - every supporting file in one edition has a counterpart in the other (same count per skill)
+Per skill, in both editions (docs/skill-conventions.md):
+  - frontmatter name matches the folder; the description lists "/<name>" as a trigger
+  - the sections Read these first, What this skill never does, When to refuse, Failure modes, STOP handling, Headless behavior
+  - a receipt line in _system/log.md (_sistema/log.md)
 It also checks that each plugin.json and the marketplace agree on versions, and that both editions carry the same version.
 It does not judge translation quality; a person reads the diff for that.
 """
@@ -66,6 +70,31 @@ for pt, en in skill_pairs():
     fe, fp = files_in(os.path.join(EN, en)), files_in(os.path.join(PT, pt))
     if len(fe) != len(fp):
         problems.append(f"{en}/{pt}: supporting files differ (en {sorted(fe)}, pt {sorted(fp)})")
+
+# Skill conventions (docs/skill-conventions.md): the parts a script can check, in every skill of both editions.
+REQUIRED = ["## Read these first", "## What this skill never does", "## When to refuse",
+            "## Failure modes", "## STOP handling", "## Headless behavior"]
+RECEIPT = {"mcm-os": "_system/log.md", "mcm": "_sistema/log.md"}
+for label, d in (("mcm-os", EN), ("mcm", PT)):
+    if not os.path.isdir(d):
+        continue
+    for name in sorted(os.listdir(d)):
+        f = os.path.join(d, name, "SKILL.md")
+        if not os.path.isfile(f):
+            continue
+        s = open(f, encoding="utf-8").read()
+        fm = s.split("---", 2)[1] if s.startswith("---") else ""
+        m = re.search(r"^name:\s*(\S+)", fm, re.M)
+        if not m or m.group(1) != name:
+            problems.append(f"{label}/{name}: frontmatter name must be '{name}'")
+        desc = re.search(r"^description:(.*)$", fm, re.M)
+        if not desc or not re.search(r'\\?"/' + re.escape(name) + r'\\?"', desc.group(1)):
+            problems.append(f"{label}/{name}: description must list \"/{name}\" as a trigger")
+        for h in REQUIRED:
+            if not re.search("^" + re.escape(h) + r"\b", s, re.M):
+                problems.append(f"{label}/{name}: missing section '{h}'")
+        if RECEIPT[label] not in s:
+            problems.append(f"{label}/{name}: no receipt line in {RECEIPT[label]}")
 
 known_en = {en for _, en in skill_pairs()}
 known_pt = {pt for pt, _ in skill_pairs()}

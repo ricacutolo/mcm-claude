@@ -81,6 +81,19 @@ Read the whole transcript with the lesson's plan beside it. Pull out:
 - Marks a quote `ok to use` on its own.
 - Changes the lesson plan or the program (the review proposes that).
 
+## When to refuse
+
+- "Write it from what you remember" or "from my notes" — "I close lessons from the transcript only, so nothing is guessed. Can you paste it?"
+- "Send the recap to my students" — "I'll draft it; you send it."
+
+## Failure modes
+
+- **No transcript:** ask her to paste it; without one, stop and say why (receipt: no transcript).
+- **Transcript not ready yet:** Step 1's message; stop.
+- **The lesson file is missing:** close against the program's module map and say the lesson plan wasn't there.
+- **Very long transcript:** read it in parts; never close from the first part only.
+- **No Content department:** keep the post ideas as a list in the batch; nothing is handed on.
+
 ## STOP handling
 
 On `STOP`: halt, write nothing more, say what's saved, and wait.

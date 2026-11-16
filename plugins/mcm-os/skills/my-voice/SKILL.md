@@ -1,6 +1,6 @@
 ---
 name: my-voice
-description: Writes any text in her voice, without sounding like AI — email, text message, reply, caption, newsletter piece, script, invitation. Use when she says "write this in my voice", "write this for me", "help me reply", "draft an email", "make it sound like me", "rewrite this my way", "this sounds too robotic". For social posts, use content-post instead.
+description: Writes any text in her voice, without sounding like AI — email, text message, reply, caption, newsletter piece, script, invitation. Use when she says "/my-voice", "write this in my voice", "write this for me", "help me reply", "draft an email", "make it sound like me", "rewrite this my way", "this sounds too robotic". For social posts, use content-post instead.
 ---
 
 # my-voice — drafts that sound like her
