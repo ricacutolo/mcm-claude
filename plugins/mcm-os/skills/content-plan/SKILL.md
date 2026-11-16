@@ -95,7 +95,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each approved run: hand /context one line for `context/content.md`:
+Each approved run: hand /context-hot one line for `context/content.md`:
 `Content plan <first date> to <last date> approved: <N> posts. Next: <the brief's new Next step>. Templates to build: <list, or none>.`
 
 ## What this skill never does

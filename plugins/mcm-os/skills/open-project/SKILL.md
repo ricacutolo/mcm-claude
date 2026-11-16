@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `projects/index.md` — to match the name.
 2. `projects/<slug>/brief.md` — in full.
-3. The log named in `context:` — **through /context** only.
+3. The log named in `context:` — **through /context-hot** only.
 4. The department brief named in `department:` — only its Standards section, and only when the task needs the department's standards.
 5. Material under "Where things live" — only when the task needs it, through its folder's `index.md`.
 
@@ -25,11 +25,11 @@ Loaded only when this skill fires:
 
 > "This skill never edits the brief. Changes go through /system's write-back."
 
-> "The log belongs to /context. This skill calls /context and never writes to `context/`."
+> "The log belongs to /context-hot. This skill calls /context-hot and never writes to `context/`."
 
 > "Load the brief and the log once. Material is opened only when the task needs it."
 
-> "When the conversation comes back to this project after compaction, or after another department or project was opened in between, re-read the brief and ask /context to re-read the log."
+> "When the conversation comes back to this project after compaction, or after another department or project was opened in between, re-read the brief and ask /context-hot to re-read the log."
 
 ## Workflow
 
@@ -46,7 +46,7 @@ Read it in full. Note `context:`, `department:`, the Current state date, Next st
 
 ### Step 3 — Load the log
 
-Invoke /context with the slug derived from the `context:` path (`context/<slug>.md`). If it does not exist, offer to start one; /context creates it on her **yes**.
+Invoke /context-hot with the slug derived from the `context:` path (`context/<slug>.md`). If it does not exist, offer to start one; /context-hot creates it on her **yes**.
 
 ### Step 4 — Reply in two lines at most
 
@@ -59,7 +59,7 @@ If Current state is more than 14 days old: "The state of this project is from <d
 
 ### Step 5 — Stay active
 
-- Work toward the Result. When an open question gets answered, that is a decision — /context logs it and /system queues it for the brief.
+- Work toward the Result. When an open question gets answered, that is a decision — /context-hot logs it and /system queues it for the brief.
 - Open material only when needed.
 - After compaction, or after another department or project was opened in this conversation: re-read the brief and the log first.
 
@@ -69,7 +69,7 @@ If Current state is more than 14 days old: "The state of this project is from <d
 
 1. The brief: `status: closed` (change the field), a final Decisions line `YYYY-MM-DD — Project closed. <what it delivered>`.
 2. The index line: `active` → `closed`.
-3. The log: `status: closed` (change the field; /system hands it to /context to write).
+3. The log: `status: closed` (change the field; /system hands it to /context-hot to write).
 
 Nothing is moved or deleted. Closed projects stay where they are.
 
@@ -94,7 +94,7 @@ Nothing is moved or deleted. Closed projects stay where they are.
 
 - **Folder offline:** say so, work in chat, write no receipt.
 - **Brief missing but listed:** say so, offer /new-project. Don't rebuild it yourself.
-- **/context unavailable:** load the brief only and say so.
+- **/context-hot unavailable:** load the brief only and say so.
 
 ## STOP handling
 

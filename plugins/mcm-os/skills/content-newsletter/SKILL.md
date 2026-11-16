@@ -130,7 +130,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that reached a new stage: hand /context one line for `context/content.md`:
+Runs that reached a new stage: hand /context-hot one line for `context/content.md`:
 `Newsletter N <draft approved / scheduled for <slot>>: <topic>, <format>. Still open: <next step, or none>.`
 
 ## What this skill never does
@@ -141,7 +141,7 @@ Runs that reached a new stage: hand /context one line for `context/content.md`:
 - Adds images or a designed template; it's a plain-text email.
 - Changes the list, the sending domain or anything else in MCM beyond the one campaign.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits `strategy.md`, `ghl.md`, the shipped library, playbook or platform files, `about-me/`, or anything in `context/` (milestones go through /context).
+- Edits `strategy.md`, `ghl.md`, the shipped library, playbook or platform files, `about-me/`, or anything in `context/` (milestones go through /context-hot).
 - Changes `plan.md` beyond the Status cell of the slot it scheduled; touches the brief beyond Next step, Current state and `updated:`.
 - Runs more than one issue per run.
 

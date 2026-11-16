@@ -26,7 +26,7 @@ Loaded only when this skill fires:
 
 > "Existing material is linked from the brief, never moved, renamed or copied."
 
-> "This skill writes only inside `departments/`, plus the receipt line. The log is created by /context."
+> "This skill writes only inside `departments/`, plus the receipt line. The log is created by /context-hot."
 
 > "A department carries no task list. Standards and routines are not tasks."
 
@@ -129,7 +129,7 @@ Anything other than a clear yes is a change request.
 3. Re-read `departments/index.md` (create with `# Departments` if missing), then add under its `## <Area>` header (create the header if missing; Personal stays last):
    `- [<Name>](<slug>/brief.md) · YYYY-MM-DD · <purpose in one line>`
    An older index with no area headers: add the line at the end; /system's upkeep regroups it.
-4. Invoke /context to start `context/<slug>.md` with `tier: department` and `brief: departments/<slug>/brief.md`. **Her yes to the brief covers starting its log** — /context does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /context the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
+4. Invoke /context-hot to start `context/<slug>.md` with `tier: department` and `brief: departments/<slug>/brief.md`. **Her yes to the brief covers starting its log** — /context-hot does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /context-hot the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. Do **not** create `research/` or `deliverables/` now.
 
 ### Step 6 — Receipt
@@ -149,7 +149,7 @@ One line more: "To work in it, just say **open <Name>**."
 
 - Writes before her **yes**.
 - Moves, renames, copies or deletes existing material.
-- Writes outside `departments/` (except the receipt and the hand-off to /context).
+- Writes outside `departments/` (except the receipt and the hand-off to /context-hot).
 - Creates projects, tasks or folders upfront.
 - Overwrites an existing department.
 

@@ -101,7 +101,7 @@ Render the PNG pack from the SVG masters, in Claude's own workspace:
 
 Check each one: right size, transparent where named, the symbol inside the circle on `profile-400`. A failed check is fixed before showing, not reported as done.
 
-**If rendering PNGs is not possible on her Claude:** deliver the SVGs and the brand page, and say plainly: "The PNG files are a manual step, because I can't generate images here. Rica will take care of that for you." Add one line for Rica to her history through /context.
+**If rendering PNGs is not possible on her Claude:** deliver the SVGs and the brand page, and say plainly: "The PNG files are a manual step, because I can't generate images here. Rica will take care of that for you." Add one line for Rica to her history through /context-hot.
 
 ### Step 6 — Save, on her yes
 

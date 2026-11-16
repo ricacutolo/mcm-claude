@@ -91,7 +91,7 @@ Append one line to `_system/log.md` when a file or Gmail draft was created:
 `YYYY-MM-DD | my-voice | <draft saved / Gmail draft> | <path or "Gmail">`
 
 Shared memory: this skill does not write `context/`. If a department or project log is open in this
-conversation, `context` records the milestone under its own rules.
+conversation, `context-hot` records the milestone under its own rules.
 
 ## What this skill never does
 

@@ -107,7 +107,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each review: hand /context one line for `context/content.md`:
+Each review: hand /context-hot one line for `context/content.md`:
 `Content review <first date> to <last date>: <one-line read>. Approved: <changes>. Still open: <hand-offs not run, or none>.`
 
 ## What this skill never does
@@ -115,7 +115,7 @@ Each review: hand /context one line for `context/content.md`:
 - Invents, estimates or rounds a number; fills a gap MCM doesn't cover with a guess.
 - Calls something working or not working below the small-numbers rule.
 - Writes learnings, library notes or swipe lines without an explicit yes.
-- Edits `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (business suggestions only wait in `_system/pending.md`), the shipped library or playbook, or anything in `context/` (milestones go through /context).
+- Edits `strategy.md`, `plan.md`, `calendar.md`, `ideas.md`, `posts/`, `about-me/` (business suggestions only wait in `_system/pending.md`), the shipped library or playbook, or anything in `context/` (milestones go through /context-hot).
 - Changes a library note to working without her own numbers behind it.
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Runs a hand-off without a yes.

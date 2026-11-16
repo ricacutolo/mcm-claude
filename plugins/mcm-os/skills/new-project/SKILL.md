@@ -26,7 +26,7 @@ Loaded only when this skill fires:
 
 > "No task lists, no checklists, no 'next steps' section. One next step, in one line."
 
-> "This skill writes only inside `projects/`, plus the receipt. The log is created by /context."
+> "This skill writes only inside `projects/`, plus the receipt. The log is created by /context-hot."
 
 > "Push back once if the result is vague, then take her answer."
 
@@ -108,7 +108,7 @@ Then: "This is the project brief for **<Name>**. Can I create it? (**yes** / or 
 2. Write `projects/<slug>/brief.md` exactly as approved.
 3. Re-read `projects/index.md` (create with `# Projects` if missing), then add under its `## <Area>` header (create it if missing; Personal stays last, then `## No area`):
    `- [<Name>](<slug>/brief.md) · YYYY-MM-DD · active · <result in one line>`
-4. Invoke /context to start `context/<slug>.md` with `tier: project` and `brief: projects/<slug>/brief.md`. **Her yes to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /context the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
+4. Invoke /context-hot to start `context/<slug>.md` with `tier: project` and `brief: projects/<slug>/brief.md`. **Her yes to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /context-hot the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. If it belongs to a department, hand /system a pending item for that department's Decisions: `YYYY-MM-DD — Project <Name> opened.` (hard tier — she confirms with the next batch).
 
 ### Step 6 — Receipt

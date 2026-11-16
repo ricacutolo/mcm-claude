@@ -58,7 +58,7 @@ Re-read the sheet, then:
 - a file → one line under **Files**: `- <name> · <where in Drive> · <what matters> · YYYY-MM-DD`
 - a fact she stated → one line in the right section (Who they are, Preferences, What's open, Notes). Facts she states are written and mentioned in one line; anything inferred goes to /system as a pending item instead.
 
-Update `updated:`. If something changed what's open or happened (a ticket issued, a quote sent), hand a milestone line to /context for the client's history.
+Update `updated:`. If something changed what's open or happened (a ticket issued, a quote sent), hand a milestone line to /context-hot for the client's history.
 
 ### Step 5 — Receipt and report
 

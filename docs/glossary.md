@@ -7,7 +7,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 |---|---|
 | sistema | system |
 | instalar | install |
-| contexto | context |
+| contexto | context-hot |
 | novo-departamento | new-department |
 | abrir-departamento | open-department |
 | novo-projeto | new-project |

@@ -123,7 +123,7 @@ For each calendar row marked `Scheduled` whose time has passed, or the post she 
    ```
 3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "Post N hasn't shown up as published in MCM yet. It's worth a look in the Social Planner." Never mark it Published on a guess.
 4. Tell her in one line per post: "Post N is live: <links>."
-5. Department brief: Current state with today's date and one line. Hand /context a one-line milestone for `context/content.md`: `Post N published <date> (<topic> × <post type>)`.
+5. Department brief: Current state with today's date and one line. Hand /context-hot a one-line milestone for `context/content.md`: `Post N published <date> (<topic> × <post type>)`.
 
 ## Step C — Idea capture
 
@@ -154,7 +154,7 @@ One line per run in `_system/log.md` (re-read the file before writing):
 - Hands a post to a maker without her yes.
 - Sets a post to published in MCM, or marks it Published in the calendar without finding it live.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits `strategy.md`, `plan.md`, `templates.md`, `brand-style.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context).
+- Edits `strategy.md`, `plan.md`, `templates.md`, `brand-style.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context-hot).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her yes.
 - Deletes posts, files or ideas. A dropped idea is marked `dropped`, not removed.
