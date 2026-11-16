@@ -20,6 +20,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 3. `playbook.md` — CTA by layer, awareness levels. Then `platforms/README.md` and the file for each platform she has or might use (each file's "When to recommend it").
 4. `departamentos/conteudo/estrategia.md` — if it exists (revise mode), including its "Diferenças deliberadas" and its `Segue:` line.
 4b. the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md` for the area in play) — if it exists: its **Direções → Conteúdo**, Minha primeira oferta, Como vende and Próximos 90 dias. The CEO decides what content is for; this skill decides how. Never written here.
+4c. `departamentos/conteudo/brief.md` — its **Padrões**, **Rotinas** and **Decisões**: the content rules she has already set (cadence, formats, what goes into the rotation, how she records). They are her choices: the draft follows them, and where the draft goes against one, say so in one line and let her decide.
 5. Revise mode only: `departamentos/conteudo/desempenho.md` ("O que aprendemos") and the last `conteudo-revisao` line in `_sistema/log.md`.
 6. `sobre-mim/escrita.md` — for the voice of the strategy's own wording.
 
@@ -44,7 +45,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - `estrategia.md` exists → **revise** (next round). Say what triggered it: her request, or a conteudo-revisao recommendation (quote it).
 
 ### Step 2 — Draft from what's known
-From the CEO's direction for content (when there is one), her business file and the library, draft every section. With a direction, "What content is for right now" (the layers) and the CTA come from it; without one, from the business file as below. In revise mode, a CEO strategy newer than the `Segue:` date is a trigger on its own: say what changed in the direction, in one line.
+From the CEO's direction for content (when there is one), her business file, the rules in her Conteúdo department brief and the library, draft every section. Her brief's rules win over library defaults. With a direction, "What content is for right now" (the layers) and the CTA come from it; without one, from the business file as below. In revise mode, a CEO strategy newer than the `Segue:` date is a trigger on its own: say what changed in the direction, in one line.
 - **Who we post for** — from who she sells to.
 - **Topics** — 4-8, from her customers' pains, objections and what they believe about the problem, in her customers' words.
 - **Wedge** — from why customers pick her.
