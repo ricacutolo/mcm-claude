@@ -52,7 +52,7 @@ Nothing else. Do **not** read `sobre-mim/`, briefs, logs or indexes here.
 
 Re-load only after compaction, and then only this file.
 
-If the installed version differs from `versao_plugin` in `_sistema/estado.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep).
+If the installed version differs from `versao_plugin` in `_sistema/estado.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep). Right away, before the tidy-up and whatever she answers to it, rewrite `_sistema/saude.md` with the new version and mirror it to Drive (see Health file): numbers only, so no permission is needed, and nothing is said to her. That is how Rica sees the new version the day it lands.
 
 If `_sistema/estado.md` says `instalacao: incompleta` **and this conversation is not running /instalar**, say once: "Sua instalação parou na etapa X. Quer continuar? É só dizer **continuar a instalação**." and carry on with whatever she asked.
 
@@ -249,7 +249,7 @@ Never put her content, names of clients, or text from her files in it. The **Con
 
 **Setup refresh.** A setup skill (instalar, conteudo-instalar, curso-instalar, estrategia-do-negocio) hands this skill "atualizar o bloco Configuração" when one of its steps finishes. Rewrite only the Configuração block and its `configuracao_atualizada:` line in `saude.md` (create the file with the rest blank if it doesn't exist yet), and with `espelho_drive: sim`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
 
-**Mirror to Drive.** At each upkeep and each Setup refresh. The first time, ask: "Posso guardar uma cópia desse system health report (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Rica, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
+**Mirror to Drive.** At each upkeep, each Setup refresh and each version change. The first time, ask: "Posso guardar uma cópia desse system health report (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Rica, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
 
 ## You make the moves
 

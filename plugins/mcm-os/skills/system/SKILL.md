@@ -52,7 +52,7 @@ Nothing else. Do **not** read `about-me/`, briefs, logs or indexes here.
 
 Re-load only after compaction, and then only this file.
 
-If the installed version differs from `plugin_version` in `_system/state.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep).
+If the installed version differs from `plugin_version` in `_system/state.md`, update that one field to the installed version, without a word to her, and make the upkeep due now: it runs as an **update tidy-up** (see Upkeep). Right away, before the tidy-up and whatever she answers to it, rewrite `_system/health.md` with the new version and mirror it to Drive (see Health file): numbers only, so no permission is needed, and nothing is said to her. That is how Rica sees the new version the day it lands.
 
 If `_system/state.md` says `install: incomplete` **and this conversation is not running /install**, say once: "Your install stopped at step X. Want to pick it back up? Just say **continue the install**." and carry on with whatever she asked.
 
@@ -249,7 +249,7 @@ Never put her content, names of clients, or text from her files in it. The **Set
 
 **Setup refresh.** A setup skill (install, content-install, course-install, business-strategy) hands this skill "refresh the Setup block" when one of its steps finishes. Rewrite only the Setup block and its `setup_updated:` line in `health.md` (create the file with the rest blank if it doesn't exist yet), and with `drive_mirror: yes`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
 
-**Mirror to Drive.** At each upkeep and each Setup refresh. The first time, ask: "Can I save a copy of this system health report (just numbers, nothing of your content) in the Drive folder you share with Rica, so he can check everything is working?" Record the answer in `state.md` as `drive_mirror: yes | no`. If **yes** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `state.md` → `drive_folder` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Errors seen".
+**Mirror to Drive.** At each upkeep, each Setup refresh and each version change. The first time, ask: "Can I save a copy of this system health report (just numbers, nothing of your content) in the Drive folder you share with Rica, so he can check everything is working?" Record the answer in `state.md` as `drive_mirror: yes | no`. If **yes** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `state.md` → `drive_folder` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Errors seen".
 
 ## You make the moves
 
