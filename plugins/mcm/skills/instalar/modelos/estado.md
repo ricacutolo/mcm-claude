@@ -24,3 +24,7 @@ Arquivo do sistema. Não precisa mexer aqui.
 | 6 | Departamentos | pendente |
 | 7 | Tour rápido | pendente |
 | 8 | Primeiro teste de verdade | pendente |
+
+## Para depois
+
+Perguntas que ela deixou para depois, uma por linha: `<arquivo> · <a pergunta>`. Vazio quando não houver nenhuma.

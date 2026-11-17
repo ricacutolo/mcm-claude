@@ -1,6 +1,6 @@
 ---
 name: install
-description: "The guided install of the MCM system: sets up the folders, your Instructions for Claude, who you are, your business, your writing, your connections and your first departments — in short steps you can stop and pick back up. When she says \"/install\", \"start the install\", \"start onboarding\", \"set up my system\", \"continue the install\", \"where did I leave off in the install\"."
+description: "The guided install of the MCM system: sets up the folders, your Instructions for Claude, who you are, your business, your writing, your connections and your first departments — in short steps you can stop and pick back up. When she says \"/install\", \"start the install\", \"start onboarding\", \"set up my system\", \"continue the install\", \"finish my install\", \"where did I leave off in the install\"."
 ---
 
 # install — the first-run wizard
@@ -40,11 +40,20 @@ Every time this skill fires:
 
 - `state.md` missing → first run, Step 0.
 - Steps marked `waiting for seed` and no `_seed/` in her folder → look for the seed in her Drive (**Bringing the seed from the Drive**, below). Not there yet → "Your install is waiting on the files Rica is preparing. As soon as he puts them in your Drive, just say **continue the install**." Stop. Once `_seed/` exists, resume at the first step that is not `complete`, skipping completed ones (Step 5 included).
-- `install: complete` → "Your install is already complete." Point her to "open Content" and stop — unless she (or another part of the system, with her yes) asked to **redo step X**: then go to that bullet below.
+- `install: complete` → "Your install is already complete." Point her to "open Content" and stop — unless she (or another part of the system, with her yes) asked to **redo step X** (go to that bullet below), or there are lines under **Later** in `state.md` (go to **Answers she leaves for later**).
 - Otherwise: "Last time we stopped at step **X — <name>**. Shall we go on with step **Y**? (**yes** / **show progress**)"
 - "redo step X" → confirm it overwrites that step's files, copy each of them to `_review/YYYY-MM-DD-<file>` first, then run it.
 
 After each step: set that row to `complete` in `state.md`, set `current_step`, append the receipt line, hand /system "refresh the Setup block" (once `_system/` exists), and ask "Step X is done. Shall we go to the next one or stop here? (**continue** / **pause**)".
+
+## Answers she leaves for later
+
+Any question in Steps 1 to 6 can wait. When she says "let's come back to this", "later", "skip" or "I don't know yet":
+
+- Leave the item `[ASK]` in its file, add one line under **Later** in `state.md` (`<file> · <the question>`), and go on. The step still completes.
+- She'd rather answer it in the strategy session (her offer, prices, goals) → add ` · strategy session` to the line. "finish my install" skips those lines; the strategy session fills them.
+- Before Step 8, if **Later** has lines she can answer here: "You left these for later: <the questions, one per line>. Whenever you want, say **finish my install** and I'll ask only these." Nothing more.
+- "finish my install", or "continue the install" with lines under **Later**, even after `install: complete`: ask only those, one at a time, in the order she left them. Each answer → write it into its file in place of the `[ASK]`, show her the line, remove it from **Later**. "Not yet" keeps it there. When none are left: "That's everything from the install."
 
 ## Bringing the seed from the Drive
 
@@ -66,6 +75,7 @@ A local `_seed/` (from a zip) still works exactly as before and wins over the Dr
    - Not connected → "First let's connect your Google Drive: that's how Rica sends you your files. It's under **Customize → Connectors → Google Drive**; sign in with the account Rica shares your folders with. Want me to walk you through it step by step? (**yes** / **already connected**)"
    - **yes** → guide one action at a time, waiting after each: open **Customize**, open **Connectors**, find **Google Drive**, click **Connect**, choose the account Rica shares her folders with, allow. If her screen shows something different, ask what she sees and guide from that. Then check again.
    - **already connected** → check again.
+   - She says the app shows some connectors failed (the MCM one, for example) → "That's expected: those get connected later, in the install or in your content setup." Go on.
    - Still not connected after two checks → "That's okay, we'll keep going without the Drive for now. Let Rica know the Drive didn't connect." Go on. The rest of the install works without it.
 2. Confirm a folder is connected. If not: "To get started, add a folder to this conversation: in the Claude app on your Mac, in a new conversation, click add folder and choose the folder you created for the system. Then say **start the install** again." Stop.
 3. Show the folder path and ask if it is the right one. If the path is inside `Documents` or `Desktop`, say once: "This folder may be in iCloud, and iCloud sometimes removes files from your computer or makes duplicate copies. The safest place is your home folder (in Finder: Shift + Command + H). Want to move it before we go on?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
@@ -108,6 +118,7 @@ If `_seed/` does not exist when Step 1 ends, ask once:
 ## Step 4 — Your writing (5-15 min)
 
 - Seed `_seed/writing.md`: if its examples have no real text of hers (empty, or only `[ASK]`), first ask for three to five things she wrote that sound like her (posts, a message, a piece of writing she likes), analyse them, and fill the examples and the `[ASK]` voice lines from them. Then show the voice summary and one example, confirm, write `about-me/writing.md`.
+- She'd rather bring her samples later (she wants to pick better ones, or they aren't at hand): leave the examples and every voice line that depends on them `[ASK]`, add one **Later** line (`about-me/writing.md · three to five things she wrote`), write the file and go on. Don't ask the voice lines one by one without samples.
 - No seed: ask for three to five things she wrote that sound like her (posts, a message, a piece of writing she likes), then up to five questions (tone, words you use, words you never use, emoji and hashtags, the difference between Instagram and LinkedIn). Analyse the samples, fill `templates/writing.md`, show, confirm, write.
 
 ## Step 5 — Connections (10-15 min)
@@ -132,11 +143,10 @@ If a connector's permission screen looks different from what you describe, ask h
 
 ## Step 7 — Quick tour (10 min)
 
-Three short live demos, nothing more. For each: say what she can say, what it does in one sentence, and run it. Never show her command names.
+Two short live demos, nothing more. For each: say what she can say, what it does in one sentence, and run it. Never show her command names.
 
 1. "open Content" → /open-department.
 2. "write this in my voice…" → /my-voice (a short sample).
-3. "how's my day looking" → /morning-brief.
 
 Then list the rest in one short block, as things she can say: "what should I post next", "set up my content", "new project", "save this to the history", "save the meeting with…".
 

@@ -179,6 +179,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | ajustar | adjust |
 | o sistema · o brief do departamento · a lista · o histórico | the system · the department brief · the list · the history |
 | começar a instalação / continuar a instalação | start the install / continue the install |
+| terminar minha instalação | finish my install |
+| Para depois (seção do `estado.md`) | Later (section of `state.md`) |
 | abre o Conteúdo | open Content |
 | Configurações → Plugins → Adicionar marketplace | Settings → Plugins → Add marketplace |
 | Instruções para o Claude | Instructions for Claude |
