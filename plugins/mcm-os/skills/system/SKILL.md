@@ -90,7 +90,7 @@ _review/                      anything that would otherwise be deleted
 | `departments/ceo/reports.md` | departments add lines under Open (today: /content-review and /course-review, on her yes); only /business-strategy moves them to Settled |
 | `departments/courses/<program>/program.md` | /course-design only, on her yes |
 | a lesson file, `faq.md`, `feedback.md`, `quotes.md` | /course-lesson (lesson files), /course-close-lesson (What happened, faq, feedback, quotes), /course-review (feedback review lines), on her yes |
-| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_read`) |
+| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_sections` and `rica_notes_read`) |
 | `_system/pending.md`, `health.md` | this skill |
 | `_system/log.md` | shared, append-only — every skill adds its own receipt line |
 
@@ -200,7 +200,7 @@ Otherwise, at the first natural pause in a conversation (not before answering he
 
 > "It's been a week since the system's last tidy-up. It takes about 2 minutes — want me to do it now? (**yes** / **later**)"
 
-**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `drive_folder` and `rica_notes_read` from `_system/state.md`, then only the section headers of **MCM - Rica's Notes**, read-only. If there are dated sections later than `rica_notes_read`, add one line under the offer, whatever she answers to it:
+**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `drive_folder`, `rica_notes_sections` and `rica_notes_read` from `_system/state.md`, then only the section headers of **MCM - Rica's Notes**, read-only. If there are new dated sections (counted the /morning-brief way), add one line under the offer, whatever she answers to it:
 
 > "Rica also left you notes (<N> new). Want to go through them? (**yes** / **later**)"
 
