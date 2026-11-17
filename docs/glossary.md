@@ -66,6 +66,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `departamentos/conteudo/configuracao.md` | `departments/content/setup.md` |
 | `…/conteudo/estrategia.md` · `plano.md` · `calendario.md` · `ideias.md` | `…/content/strategy.md` · `plan.md` · `calendar.md` · `ideas.md` |
 | `…/conteudo/modelos.md` · `estilo-da-marca.md` · `ghl.md` | `…/content/templates.md` · `brand-style.md` · `ghl.md` |
+| `…/conteudo/visual.md` (o visual dela: Cores · Fontes · Todo slide · Padrões: Capa, Texto, Lista, Citação, Foto, Fechamento · Nunca) · Modelo cell `visual` · step status `pulado: o Claude desenha` | `…/content/look.md` (her look: Colors · Fonts · Every slide · Patterns: Cover, Text, List, Quote, Photo, Closing · Never) · Template cell `look` · `skipped: Claude designs` |
+| "conectar o Canva" · "faz outro modelo" · "configura o meu visual" · "atualiza o meu visual" · **Personalizar este modelo** (Canva) | "connect Canva" · "build another template" · "set up my look" · "update my look" · **Customize this template** |
 | `…/conteudo/fotos.md` (photo library index) · Drive: `Fotos de conteúdo` | `…/content/photos.md` · Drive: `Content photos` |
 | photo library `tipo` column: `foto` · `gerada` | `type` column: `photo` · `generated` |
 | `…/conteudo/estilo-de-foto.md` (her look for generated images) · plan section `Fotos para tirar` | `…/content/photo-style.md` · plan section `Photos to take` |
@@ -101,6 +103,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | plan column `final`: `pedido` · `leve: <qual>` (salvar, pergunta, compartilhar, seguir) · `nenhum` | `ends`: `ask` · `light: <which>` (save, question, share, follow) · `none` |
 | strategy section Como os posts terminam | How posts end |
 | `estilo-da-marca.md` § Visuais que ela gosta · Drive `04. Brand/Referências` · `departamentos/conteudo/referencias/` | `brand-style.md` § Looks she likes · Drive `04. Brand/References` · `departments/content/references/` |
+| `…/conteudo/referencias.md` (As referências dela: # · Data · Arquivo ou link · O que ela gosta · A sensação · Para: visual, modelos, fotos, qualquer) · "salva como referência" · "guarda nas minhas referências" · "referência:" · "Salvo como referência #N" | `…/content/references.md` (Her references: # · Date · File or link · What she likes · The feel · For: look, templates, photos, any) · "save this as a reference" · "add this to my references" · "reference:" · "Saved as reference #N" |
 | `sobre-mim/marca.md` line `Origem: criada aqui \| o logo dela (<file>)` | `about-me/brand.md` line `Source: designed here \| her own logo (<file>)` |
 | `ghl.md` line `Endereço do app MCM (para os links diretos):` | `MCM app address (for direct links):` |
 
