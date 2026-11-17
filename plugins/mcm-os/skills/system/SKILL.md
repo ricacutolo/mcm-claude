@@ -200,6 +200,12 @@ Otherwise, at the first natural pause in a conversation (not before answering he
 
 > "It's been a week since the system's last tidy-up. It takes about 2 minutes — want me to do it now? (**yes** / **later**)"
 
+**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `drive_folder` and `rica_notes_read` from `_system/state.md`, then only the section headers of **MCM - Rica's Notes**, read-only. If there are dated sections later than `rica_notes_read`, add one line under the offer, whatever she answers to it:
+
+> "Rica also left you notes (<N> new). Want to go through them? (**yes** / **later**)"
+
+On **yes**, run /update (after the tidy-up, if she said yes to that too). On **later**, don't ask again in this conversation. No Drive connection, no `drive_folder` or no doc: skip it without a word.
+
 On **yes**:
 
 1. **Pending items** — show any left in `pending.md` as a batch.

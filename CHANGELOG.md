@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.21.1 — 2026-11-17 [both]
+- **Rica's notes get noticed** (Rica, 2026-11-17). Notes in the shared doc only reached her files when she remembered to say "update", so they could sit unread. Now /morning-brief checks the doc's section headers (read-only) against `rica_notes_read` (`notas_rica_lidas`) and, when there's something new, asks first: "Rica left you notes. Want to go through them now?" The 7-day upkeep does the same check at the moment it offers the tidy-up, whatever she answers to it. Her yes runs /update (/atualizar), which still shows each change for her yes. No Drive connection or no doc: nothing is said. The brief gets a **From Rica** line and its receipt counts new notes.
+
 ## 0.21.0 — 2026-11-17 [both]
 - **Comment words** (spec approved 2026-11-17). A post can end "Comment MUDAR and I'll send you the class", but only while MUDAR's workflow is live in MCM. Rica builds those workflows (GHL builds stay with MCM; the workflow API is off for client sub-accounts, so her Claude can't see or check them), so Rica is the only source of "live".
 - **`ghl.md` § Comment words** (PT § Palavras de comentário): word · what they get · page · status (asked, live, paused) · since. **update/atualizar** gets a section, "Content — comment words (ghl.md)", the only way a word goes live or paused, approved by her like any note.

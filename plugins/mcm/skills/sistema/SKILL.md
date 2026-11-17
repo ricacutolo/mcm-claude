@@ -200,6 +200,12 @@ Otherwise, at the first natural pause in a conversation (not before answering he
 
 > "Faz uma semana desde a última arrumação do sistema. Leva uns 2 minutos — posso fazer agora? (**sim** / **depois**)"
 
+**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `pasta_drive` and `notas_rica_lidas` from `_sistema/estado.md`, then only the section headers of **MCM - Notas do Rica**, read-only. If there are dated sections later than `notas_rica_lidas`, add one line under the offer, whatever she answers to it:
+
+> "O Rica também deixou notas pra você (<N> novas). Quer ver? (**sim** / **depois**)"
+
+On **sim**, run /atualizar (after the tidy-up, if she said yes to that too). On **depois**, don't ask again in this conversation. No Drive connection, no `pasta_drive` or no doc: skip it without a word.
+
 On **sim**:
 
 1. **Pending items** — show any left in `pendentes.md` as a batch.

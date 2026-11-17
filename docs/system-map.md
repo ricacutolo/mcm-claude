@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.21.0
+version: 0.21.1
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
