@@ -34,6 +34,10 @@ Approving a change looks like this:
 >
 > Or tell me what you're thinking."
 
+## What she hands to people
+
+Anything she'll give someone else — a PDF, slides, a one-pager, a report, a document — uses her brand kit from `about-me/brand.md`: her logo, her colors, her fonts. Read it only when making such a file. No kit yet: a clean, neutral design, and offer once: "Want me to make your brand kit, so your files look like you?" (/brand-kit-designer).
+
 ## Read these first
 
 Loaded when this skill fires, never anything more:

@@ -1,6 +1,6 @@
 ---
 name: abrir-cliente
-description: "MCM Client Book: abre um cliente para trabalhar nele — carrega a ficha, o histórico e o jeito dela de atender, e diz o que está aberto e o próximo passo. Também responde o que ela sabe sobre um cliente. Quando ela diz \"/abrir-cliente\", \"abre a família\", \"abre o cliente\", \"o que eu sei sobre\", \"vamos falar da família\", \"como está o cliente\"."
+description: "MCM Client Book: abre um cliente para trabalhar nele — carrega a ficha, o histórico e o jeito dela de atender, e diz o que está aberto e o próximo passo. Também responde o que ela sabe sobre um cliente. Quando ela diz \"/abrir-cliente\", \"abre a família\", \"abre o cliente\", \"o que eu sei sobre\", \"vamos falar da família\", \"como está o cliente\", \"tenho sessão com\", \"me prepara pra sessão com\"."
 ---
 
 # abrir-cliente — sit down with one client
@@ -20,6 +20,7 @@ Loaded only when this skill fires:
 3. The histórico named in `contexto:` — **through /contexto** only.
 4. `departamentos/clientes/brief.md` — only Padrões and Rotinas, and only when the task needs her way of serving.
 5. Files in the client's Drive folder — only when the task needs one, by name from the sheet's Arquivos.
+6. Her MCM connection — only before a session: her appointments with this contact (sessions done, the next one) and payment status. Read live, never copied to the sheet.
 
 ## The rules
 
@@ -51,6 +52,13 @@ Read the sheet. Invoke /contexto with the slug from `contexto:`.
 ```
 
 When she asked a question ("o que eu sei sobre..."), answer it from the sheet and the histórico instead, and say where the answer came from in a few words.
+
+**Before a session** ("tenho sessão com a X daqui a 50 minutos", "me prepara pra sessão com a X"): instead of the three lines, a rundown sized to the time she has. Skip any line with nothing to say; one screen at most.
+1. **Última vez** — the last entry in the histórico: what you worked on, what was left open.
+2. **Pendências** — from O que está aberto: what you promised them, what they committed to (the activity, a file).
+3. **Onde está** — sessions done, the next one booked and payment status, from MCM when it's connected.
+4. **Lembrar** — preferences and cautions that matter for this conversation.
+5. **Uma sugestão** — one suggestion that fits this moment, from the histórico and her way of serving (the Clientes department's Padrões and Rotinas): a tool or exercise she uses, a check-in ("já foram algumas sessões; um bom momento para perguntar como está indo"), or following up on something they mentioned. Only one, and only when the histórico supports it.
 
 ### Step 4 — Stay active
 

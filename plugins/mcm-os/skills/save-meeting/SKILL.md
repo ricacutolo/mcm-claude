@@ -1,6 +1,6 @@
 ---
 name: save-meeting
-description: "Takes a meeting transcript (Google Meet, Zoom, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\"."
+description: "Takes a meeting transcript (Google Meet, Zoom, or pasted in the chat), pulls out what matters — summary, decisions, who agreed to do what, preferences, open questions, lines worth keeping, what the client thought of your service — and saves it to the client's sheet and history, or to the right department or project, with her yes. Also for a first conversation with someone who isn't a client yet. When she says \"/save-meeting\", \"meeting recap\", \"save the meeting\", \"save the meeting with the … family\", \"what did we talk about in the meeting\", \"grab the transcript\", \"I just finished my meeting with\", \"read today's meeting\", \"I just finished my session with\", \"save the session\"."
 ---
 
 # save-meeting — the meeting, filed where it belongs
@@ -17,15 +17,15 @@ Loaded only when this skill fires:
 2. `departments/clients/index.md` — to match the client. A department or project named instead → `departments/index.md` or `projects/index.md`.
 3. The matched client's `sheet.md` — once, before proposing, to skip what is already there.
 4. `departments/clients/reactions.md` — only when the meeting has reactions to her service, to extend a line instead of repeating it.
-5. The transcript — through the source below. Nothing else.
+5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Routines of `departments/clients/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `about-me/brand.md`.
 
 ## The rules
 
 > "Nothing is written before her yes to the batch."
 
-> "Built from the transcript only. Never from an AI summary or meeting notes: no transcript, no recap."
+> "Built from the transcript and her own debrief. Never from an AI summary (Gemini notes, Zoom AI Companion) or from memory. With no transcript, her debrief is the only source, and every line from it says so."
 
-> "Every line proposed carries the time in the transcript it came from. Nothing guessed, nothing filled in; what the call didn't say stays blank or is marked no owner / no date."
+> "Every line proposed carries the time in the transcript it came from, or `(debrief)` when it came from what she told me after. Nothing guessed, nothing filled in; what the call didn't say stays blank or is marked no owner / no date."
 
 > "Never copy an ID, passport, card or bank number from the transcript into any file or the chat."
 
@@ -67,11 +67,11 @@ Pasted or attached transcript text always works, for any tool.
 ### Step 1b — No transcript
 
 - **The meeting ended less than ~15 minutes ago, or Zoom is still processing it:** "The transcript takes a few minutes to show up. Ask me again in a little bit." Receipt, stop.
-- **Zoom, the recording has no transcript:** "This Zoom meeting was recorded without a transcript. For next time: in Zoom's settings, under **Recording**, turn on **Cloud recording** and **Audio transcript**, and record each meeting to the cloud. If you have the transcript somewhere else, paste it here and I'll take it from there." Receipt, stop.
-- **Zoom, no recording at all:** "I couldn't find a Zoom recording of this meeting. For me to read it, record it to the cloud with **Audio transcript** on. If you have the transcript, paste it here." Receipt, stop.
+- **Zoom, the recording has no transcript:** "This Zoom meeting was recorded without a transcript. For next time: in Zoom's settings, under **Recording**, turn on **Cloud recording** and **Audio transcript**, and record each meeting to the cloud. If you have the transcript somewhere else, paste it here and I'll take it from there." Then the debrief offer (last bullet).
+- **Zoom, no recording at all:** "I couldn't find a Zoom recording of this meeting. For me to read it, record it to the cloud with **Audio transcript** on. If you have the transcript, paste it here." Then the debrief offer (last bullet).
 - **Meet, otherwise:** "I couldn't find the transcript for this meeting. For next time: when you create the meeting in Google Calendar, open the video call options and, under meeting records, check **Transcribe the meeting** (the names may be a little different on your screen) — it starts when you join. If you have the transcript somewhere else, paste it here and I'll take it from there."
-- No Google Meet folder at all and no transcript ever found → add once: "Your Google Workspace plan may not include transcripts (Business Starter doesn't). Rica can confirm."
-- Write the receipt (`no transcript`) and stop. Never build from memory or notes.
+- No Google Meet folder at all and no transcript ever found → add once: "Meet transcripts need a paid Google Workspace plan: Business Standard or higher, or Workspace Individual. A free Gmail account and Business Starter don't have them."
+- Then offer her debrief: "No transcript this time. Tell me how it went (type it or dictate it) and I'll save it from what you tell me." She tells → Step 2b, with her debrief as the only source (skip Step 2). She says no → write the receipt (`no transcript`) and stop. Never build from memory.
 
 ### Step 2 — Read and pull out
 
@@ -85,6 +85,12 @@ Read the whole transcript. Speaker names can be wrong; when it matters who said 
 6. **Lines worth keeping** — at most three, word for word.
 7. **Dates** — trips, deadlines, the next meeting.
 8. **What they thought of your service** — only when her offer, prices, way of working or results came up: what they asked, worried about, loved, already do on their own, or asked for. One line each, from transcript lines only. Not their trip or personal facts — those go to the sheet. None → skip.
+
+### Step 2b — Her debrief
+
+Always, before the batch: "Anything to add that wasn't said in the meeting? What you noticed, how it felt, what you want to remember next time. Type it, dictate it, or say **no**."
+
+Her answer is pulled apart the same way as Step 2 and joins the batch, each line marked `(debrief)`. It is hers: it goes to the sheet and the history, never into anything the client receives unless she says so.
 
 ### Step 3 — One batch for her
 
@@ -105,6 +111,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 >
 > OK to save? (**yes to all** / the numbers you want / **adjust**)"
 
+- **MCM connected and the client linked** (`ghl:` on the sheet): one line under the header, read live and never written to the sheet: "Session <n> · next one booked <date>" (or "no next session booked"), counted from her appointments with this contact in MCM, plus "paid" or "payment open" when MCM shows it.
 - **Zoom or pasted transcript:** add a line "8. The full transcript in <Name>'s folder in Drive".
 - **Someone not yet a client:** ask first, one question: "How did it go — **closed**, **thinking** or **no**?" Record her word. Closed or thinking → offer /new-client with this meeting as its source, then show the batch for the new sheet. No → only the reactions line and a dated note in `departments/clients/index.md` under `## Conversations that didn't become clients` (name, date, why, in their words when given).
 - **A department or project meeting:** the summary for its history and the next step for its brief's Next step; no sheet, no reactions unless clients' views on her service came up.
@@ -135,20 +142,24 @@ _Each line comes from a meeting, in the client's own words. When another client 
 
 End with one line: the single most urgent thing — her promise with the nearest date first; else what the client owes and she needs to chase; else the first step of a decision. "**Next step:** send the itinerary to the Millers by Friday — you promised at the 31-minute mark."
 
-Then, only if she promised something: "Want me to write the follow-up message for <Name>? It'll be a draft for you to send." On yes, hand /my-voice only what was said in the meeting.
+**After the meeting, her way.** Read the Routines in `departments/clients/brief.md` for her after-meeting line.
+- **No line yet (the first time):** ask once: "What do you want to happen after a meeting like this? For example: a recap email for <Name> (a draft you send), a PDF with the activity, the materials you mentioned. Or tell me your way." Do what she picks, then: "Want me to do this after every meeting? (**yes** / **not now**)". On yes, one Routines line through /system's write-back: `- After each client meeting: <her words>`.
+- **With a line:** do what it says, then one open question: "Anything else this time?"
+- "From now on, always…" or "stop doing…" → offer the changed Routines line; write it on her yes.
+- What it makes: a message or email → /my-voice, from what was said to the client only, a draft she sends herself; a PDF or slides → with her brand kit (/system, "What she hands to people"), saved to the client's Drive folder through /save-to-client on her yes. Nothing is sent.
 
 ### Step 6 — Receipt and report
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / zoom / pasted / no transcript> · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
+`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / zoom / pasted / debrief only / no transcript> · debrief yes/no · after: done / asked / none · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
 
 Reply in one line: "Meeting saved to **<Name>**'s sheet and history." plus the next step.
 
 ## What this skill never does
 
 - Writes before her **yes**.
-- Builds a recap from an AI summary, notes or memory.
+- Builds a recap from an AI summary or from memory (her own debrief is a source).
 - Copies, moves, renames, shares or deletes a Meet transcript.
 - Shortens or tidies a transcript it saves.
 - Sends anything to the client, or puts her private notes in a follow-up.

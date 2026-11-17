@@ -1,6 +1,6 @@
 ---
 name: open-client
-description: "MCM Client Book: opens a client to work on — loads the sheet, the history and her way of serving clients, and says what's open and the next step. Also answers what she knows about a client. When she says \"/open-client\", \"open the … family\", \"open the client\", \"what do I know about\", \"let's talk about the … family\", \"how's the client doing\"."
+description: "MCM Client Book: opens a client to work on — loads the sheet, the history and her way of serving clients, and says what's open and the next step. Also answers what she knows about a client. When she says \"/open-client\", \"open the … family\", \"open the client\", \"what do I know about\", \"let's talk about the … family\", \"how's the client doing\", \"I have a session with\", \"prep me for\"."
 ---
 
 # open-client — sit down with one client
@@ -20,6 +20,7 @@ Loaded only when this skill fires:
 3. The history named in `context:` — **through /context-hot** only.
 4. `departments/clients/brief.md` — only Standards and Routines, and only when the task needs her way of serving.
 5. Files in the client's Drive folder — only when the task needs one, by name from the sheet's Files.
+6. Her MCM connection — only before a session: her appointments with this contact (sessions done, the next one) and payment status. Read live, never copied to the sheet.
 
 ## The rules
 
@@ -51,6 +52,13 @@ Read the sheet. Invoke /context-hot with the slug from `context:`.
 ```
 
 When she asked a question ("what do I know about..."), answer it from the sheet and the history instead, and say where the answer came from in a few words.
+
+**Before a session** ("I have a session with X in 50 minutes", "prep me for X"): instead of the three lines, a rundown sized to the time she has. Skip any line with nothing to say; one screen at most.
+1. **Last time** — the last entry in the history: what you worked on, what was left open.
+2. **Owed** — from What's open: what you promised them, what they committed to (the activity, a file).
+3. **Where they are** — sessions done, the next one booked and payment status, from MCM when it's connected.
+4. **Keep in mind** — preferences and cautions that matter for this conversation.
+5. **One nudge** — one suggestion that fits this moment, from the history and her way of serving (the Clients department's Standards and Routines): a tool or exercise she uses, a check-in ("it's been several sessions; a good time to ask how it's going"), or following up on something they mentioned. Only one, and only when the history supports it.
 
 ### Step 4 — Stay active
 
