@@ -1,13 +1,13 @@
 ---
 name: conteudo-modelo
-description: "Cria um modelo de design no Canva para os posts dela — um formato para um tipo de post, como um carrossel ilustrado para posts de Vazamento — primeiro o layout, depois o design no Canva com diagramas nativos, depois o guia de preenchimento, com o sim dela em cada etapa. Quando ela diz \"/conteudo-modelo\", \"cria o próximo modelo\", \"cria o modelo ilustrado\", \"faz um modelo pro post 5\", quando o plano tem um modelo com prazo, ou quando um post para porque o modelo ainda não existe."
+description: "Cria o design de onde saem os posts dela: um modelo no Canva — um formato para um tipo de post, como um carrossel ilustrado para posts de Vazamento — primeiro o layout, depois o design no Canva com diagramas nativos, depois o guia de preenchimento; ou, sem o Canva, o visual dela: as cores, as fontes e os padrões de slide com que o Claude desenha os posts dela, a partir de posts que ela gosta. O sim dela em cada etapa. Quando ela diz \"/conteudo-modelo\", \"cria o próximo modelo\", \"faz outro modelo\", \"vamos criar uns modelos\", \"cria o modelo ilustrado\", \"faz um modelo pro post 5\", \"configura o meu visual\", \"atualiza o meu visual\", quando o plano tem um modelo com prazo, ou quando um post para porque o modelo ainda não existe."
 ---
 
 # conteudo-modelo — one Canva template, format × post type
 
 Builds the templates conteudo-estatico fills. A template is one format × one post type (e.g. illustrated carousel × Leak). It is built once, the first time the plan schedules that pair, and copied for every post after.
 
-It does one thing: **build one Canva template and its fill guide.** It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
+It does one thing: **build the design source her posts are filled from**: one Canva template and its fill guide, or, when she designs without Canva, her look (`visual.md`, below). It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "o modelo", "o layout", "o plano"; never file names, "skill", "API", "token" or a command name. To her, placeholders are "os espaços onde entram as palavras de cada post".
 
@@ -23,6 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `../conteudo-estrategia/playbook.md` — structure per post type (slide count, what each slide holds).
 7. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
 8. Canva: the existing TEMPLATE designs, read only, to pick the one to copy.
+9. `departamentos/conteudo/visual.md`, if it exists (her look, below).
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -36,6 +37,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 > "Only formats and post types that are on in the strategy and defined in the library or her library notes."
 
+> "Her look is hers: built from her own posts, her brand and posts she likes, read for feel. Never copied from another brand or creator."
+
 > "Edits are applied exactly as given. Change nothing she did not ask to change."
 
 > "The department's Próximo passo and Estado atual are kept current without asking. Nothing else in the brief is touched; anything else goes to `_sistema/pendentes.md`."
@@ -43,6 +46,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Pick the template
+- **Her look** ("configura o meu visual", "atualiza o meu visual", the content setup without Canva, or no Canva connected): go to **Her look** below instead of Steps 2-5.
 - The first line in the plan's "Modelos a criar" not marked built, or the template she names.
 - Say in one line: "Criando o modelo <format> para posts de <post type>, prazo <date>, para os posts <N, M>."
 - If an existing template can serve with no new layout (same format, same structure), say so and recommend reusing it instead of building.
@@ -81,11 +85,58 @@ On the design sim:
 3. Department brief: if the next post needed this template, set Próximo passo to that post ("Post N, <day date>, <time>: <topic> × <post type>. Diga \"próximo post\"."); otherwise leave Próximo passo as it is. Update Estado atual with today's date and one line, and `atualizado:`. Mention it in one short line.
 4. Receipt and milestone (below).
 
+### Her look (without Canva)
+For a client who designs without Canva: Claude makes her slides itself from `visual.md` (conteudo-estatico's Step 4), and she changes them by telling Claude in the chat. Two gates, the same as a template: the look's table first, then sample slides.
+1. **Read:** 3-5 posts or slides she likes (her own first; screenshots or links), `sobre-mim/marca.md` and `estilo-da-marca.md`, her site if she has one. Nothing to show: build from her brand alone, and say she can update it any time ("atualiza o meu visual").
+2. **Draft the look (gate 1):** one table, in `visual.md`'s shape (below): size, colors with their roles, fonts (free Google Fonts, the closest match to what she uses), what every slide carries (margins, kicker, footer, page marks, logo), and the patterns (one line each). "Esse é o seu visual? Diga **sim**, ou me diz o que mudar."
+3. **Sample slides (gate 2):** render one slide of each pattern at its size with placeholder text in her language, the same way conteudo-estatico renders posts, and send them. "Isso tem a sua cara? Diga **sim** e eu salvo o seu visual, ou me diz o que mudar."
+4. **Write, on sim:** `visual.md`; in `modelos.md`, one row per image format on, template `visual`, with each slide's pattern in its fill guide; the brief as in Step 5. Updating an existing look: show what changes, side by side, and keep the old one as `visual-<data>.md`.
+
+**`visual.md`:**
+
+```markdown
+# O visual dela
+
+Como o Claude desenha os posts dela quando desenha ele mesmo. Feito em AAAA-MM-DD a partir de: <posts dela / posts que ela gosta / a marca dela>. A marca em si continua em sobre-mim/marca.md.
+
+Tamanho: 1080×1350 (4:5) | 1080×1440 (3:4)
+
+## Cores
+| Papel | Hex | Usado em |
+|---|---|---|
+| Fundo | | a maioria dos slides |
+| Título | | títulos |
+| Destaque | | palavras-chave, números, chamada pequena, seta |
+| Texto | | texto corrido |
+| Suave | | texto secundário, rodapé |
+
+## Fontes (Google Fonts)
+- Título: <fonte, peso>
+- Texto: <fonte, peso>
+- Citação: <fonte, estilo>
+
+## Todo slide
+- <margens, chamada pequena, rodapé, marcas de página, seta, logo: onde, ou nenhum>
+
+## Padrões
+| Padrão | O que leva |
+|---|---|
+| Capa | |
+| Texto | |
+| Lista | |
+| Citação | |
+| Foto | |
+| Fechamento | |
+
+## Nunca
+- <o que não combina com o visual dela>
+```
+
 ## Receipt
 
 One line per run in `_sistema/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | conteudo-modelo | layout-approved / built / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID> · serves posts <N, M> · hand fixes: <list or none>`
+`YYYY-MM-DD | conteudo-modelo | layout-approved / built / look-saved / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID>, or look · serves posts <N, M> · hand fixes: <list or none>`
 
 ## Milestone
 
@@ -102,7 +153,8 @@ Each template built: hand /contexto one line for `contexto/conteudo.md`:
 - Changes `plano.md` beyond the Modelo cells of the slots it serves and its line in "Modelos a criar".
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Deletes Canva designs or files. A draft without a sim stays titled DRAFT for her to keep or delete.
-- Builds more than one template per run.
+- Builds more than one template per run, or a look and a template in the same run.
+- Copies another brand's or creator's design into her look.
 
 ## When to refuse
 
@@ -110,7 +162,8 @@ Each template built: hand /contexto one line for `contexto/conteudo.md`:
 - A request to edit an existing TEMPLATE in place — "Eu crio numa cópia; o original fica como está." (never edit a template)
 - A request to skip the layout step — "Uma olhada no layout primeiro; é fácil mudar antes de criar qualquer coisa."
 - A request for AI-drawn or stock illustrations — "Os diagramas são feitos com formas do Canva, pra continuarem editáveis e cada post poder preencher."
-- Canva not connected — "O Canva não está conectado agora, então não consigo criar o modelo." Stop after the layout gate.
+- Canva not connected — "O Canva não está conectado agora, então não consigo criar o modelo. Posso desenhar os seus posts eu mesmo a partir do seu visual, ou a gente conecta o Canva antes." (her look, or the content setup's Canva step)
+- A request to copy another brand's or creator's look — "Eu levo o que você gosta nele, a sensação, pro seu próprio visual; não copio." (her look is hers)
 
 ## Failure modes
 

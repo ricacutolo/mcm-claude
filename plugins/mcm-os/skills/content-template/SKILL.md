@@ -1,13 +1,13 @@
 ---
 name: content-template
-description: "Builds one Canva design template for her posts — one format for one post type, like an illustrated carousel for Leak posts — layout first, then the design in Canva with native diagrams, then the fill guide, with her yes at each step. When she says \"/content-template\", \"build the next template\", \"build the illustrated template\", \"make a template for post 5\", when the plan has a template due, or when a post stops because its template isn't built yet."
+description: "Builds the design her posts are made from: one Canva template — one format for one post type, like an illustrated carousel for Leak posts — layout first, then the design in Canva with native diagrams, then the fill guide; or, without Canva, her look: the colors, fonts and slide patterns Claude designs her posts with, from posts she likes. Her yes at each step. When she says \"/content-template\", \"build the next template\", \"build another template\", \"let's create some templates\", \"build the illustrated template\", \"make a template for post 5\", \"set up my look\", \"update my look\", \"update my visuals\", when the plan has a template due, or when a post stops because its template isn't built yet."
 ---
 
 # content-template — one Canva template, format × post type
 
 Builds the templates content-static fills. A template is one format × one post type (e.g. illustrated carousel × Leak). It is built once, the first time the plan schedules that pair, and copied for every post after.
 
-It does one thing: **build one Canva template and its fill guide.** It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
+It does one thing: **build the design source her posts are filled from**: one Canva template and its fill guide, or, when she designs without Canva, her look (`look.md`, below). It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
 
 Speak to her in plain, warm US English. Say "the template", "the layout", "the plan"; never file names, "skill", "API", "token" or a command name. To her, placeholders are "the spots where each post's words go".
 
@@ -23,6 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 6. `../content-strategy/playbook.md` — structure per post type (slide count, what each slide holds).
 7. `departments/content/brief.md` — its Next step and Current state.
 8. Canva: the existing TEMPLATE designs, read only, to pick the one to copy.
+9. `departments/content/look.md`, if it exists (her look, below).
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -36,6 +37,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 > "Only formats and post types that are on in the strategy and defined in the library or her library notes."
 
+> "Her look is hers: built from her own posts, her brand and posts she likes, read for feel. Never copied from another brand or creator."
+
 > "Edits are applied exactly as given. Change nothing she did not ask to change."
 
 > "The department's Next step and Current state are kept current without asking. Nothing else in the brief is touched; anything else goes to `_system/pending.md`."
@@ -43,6 +46,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Pick the template
+- **Her look** ("set up my look", "update my look", the content setup without Canva, or no Canva connected): go to **Her look** below instead of Steps 2-5.
 - The first line in the plan's "Templates to build" not marked built, or the template she names.
 - Say in one line: "Building the <format> template for <post type> posts, due <date>, for posts <N, M>."
 - If an existing template can serve with no new layout (same format, same structure), say so and recommend reusing it instead of building.
@@ -81,11 +85,58 @@ On the design yes:
 3. Department brief: if the next post needed this template, set Next step to that post ("Post N, <day date>, <time>: <topic> × <post type>. Say \"next post\"."); otherwise leave Next step as it is. Update Current state with today's date and one line, and `updated:`. Mention it in one short line.
 4. Receipt and milestone (below).
 
+### Her look (without Canva)
+For a client who designs without Canva: Claude makes her slides itself from `look.md` (content-static's Step 4), and she changes them by telling Claude in the chat. Two gates, the same as a template: the look's table first, then sample slides.
+1. **Read:** 3-5 posts or slides she likes (her own first; screenshots or links), `about-me/brand.md` and `brand-style.md`, her site if she has one. Nothing to show: build from her brand alone, and say she can update it any time ("update my look").
+2. **Draft the look (gate 1):** one table, in `look.md`'s shape (below): size, colors with their roles, fonts (free Google Fonts, the closest match to what she uses), what every slide carries (margins, kicker, footer, page marks, logo), and the patterns (one line each). "Does this capture your look? Say **yes**, or tell me what to change."
+3. **Sample slides (gate 2):** render one slide of each pattern at its size with placeholder text in her language, the same way content-static renders posts, and send them. "Do these look like you? Say **yes** and I'll save your look, or tell me what to change."
+4. **Write, on yes:** `look.md`; in `templates.md`, one row per image format on, template `look`, with each slide's pattern in its fill guide; the brief as in Step 5. Updating an existing look: show what changes, side by side, and keep the old one as `look-<date>.md`.
+
+**`look.md`:**
+
+```markdown
+# Her look
+
+How Claude designs her posts when it designs them itself. Built YYYY-MM-DD from: <her posts / posts she likes / her brand>. Her brand itself stays in about-me/brand.md.
+
+Size: 1080×1350 (4:5) | 1080×1440 (3:4)
+
+## Colors
+| Role | Hex | Used for |
+|---|---|---|
+| Background | | most slides |
+| Heading | | headings |
+| Accent | | key words, numbers, kicker, arrow |
+| Body | | body text |
+| Muted | | secondary text, footer |
+
+## Fonts (Google Fonts)
+- Heading: <font, weight>
+- Body: <font, weight>
+- Quote: <font, style>
+
+## Every slide
+- <margins, kicker, footer, page marks, arrow, logo: where, or none>
+
+## Patterns
+| Pattern | What it holds |
+|---|---|
+| Cover | |
+| Text | |
+| List | |
+| Quote | |
+| Photo | |
+| Closing | |
+
+## Never
+- <what doesn't fit her look>
+```
+
 ## Receipt
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-template | layout-approved / built / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID> · serves posts <N, M> · hand fixes: <list or none>`
+`YYYY-MM-DD | content-template | layout-approved / built / look-saved / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID>, or look · serves posts <N, M> · hand fixes: <list or none>`
 
 ## Milestone
 
@@ -102,7 +153,8 @@ Each template built: hand /context-hot one line for `context/content.md`:
 - Changes `plan.md` beyond the Template cells of the slots it serves and its line in "Templates to build".
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Deletes Canva designs or files. A draft without a yes stays titled DRAFT for her to keep or delete.
-- Builds more than one template per run.
+- Builds more than one template per run, or a look and a template in the same run.
+- Copies another brand's or creator's design into her look.
 
 ## When to refuse
 
@@ -110,7 +162,8 @@ Each template built: hand /context-hot one line for `context/content.md`:
 - A request to edit an existing TEMPLATE in place — "I'll build on a copy; the original stays as it is." (never edit a template)
 - A request to skip the layout step — "One look at the layout first; it's cheap to change before anything is built."
 - A request for AI-drawn or stock illustrations — "Diagrams are built from Canva shapes so they stay editable and every post can fill them in."
-- Canva not connected — "Canva isn't connected right now, so I can't build the template." Stop after the layout gate.
+- Canva not connected — "Canva isn't connected right now, so I can't build the template. I can design your posts myself from your look instead, or we connect Canva first." (her look, or the content setup's Canva step)
+- A request to copy another brand's or creator's look — "I'll take what you like about it, the feel, into your own look; I won't copy it." (her look is hers)
 
 ## Failure modes
 

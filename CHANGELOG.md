@@ -2,6 +2,14 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.20.0 — 2026-11-17 [both]
+- **Canva is optional; her look comes first** (spec approved 2026-11-17). MCM's five templates fit MCM, not every client, and some clients already have a look that works.
+- **content-install:** step 5 is one question: connect Canva (she can then fix any slide by hand) or skip it (Claude designs her posts, and she changes them by telling Claude in the chat); "connect Canva" reopens the Canva steps any time. Skipped steps count as done. Step 9 asks which templates to start with, quickest first: one she has, one from Canva's library (she clicks Customize this template and sends the link), one built together, or MCM's five; one is enough to start. Without Canva, step 9 builds her look. The first post is offered as soon as the strategy and plan are done; fonts, more templates, references and Canva come once at the end, under "polish later". The allowed-sites check asks for Canva's sites only with Canva.
+- **content-template:** a second mode, her look (`look.md`; PT `visual.md`): colors, fonts and slide patterns, built from 3-5 posts she likes, her brand and her site, with two gates (the look's table, then sample slides). New triggers: "build another template", "let's create some templates", "set up my look", "update my look".
+- **content-static:** a slot whose template is `look` is designed by Claude from her look: rendered to PNG, edits by chat, uploaded to MCM with the media script. Generated photos still need Canva.
+- **content-plan:** the Template cell is `look` for her formats without a Canva template.
+- **Untested:** where the rendering runs on a client's computer and that the PNGs reach MCM. First test: the next client who skips Canva.
+
 ## 0.19.3 — 2026-11-16 [both]
 - **content-strategy reads the Content department brief** (Rica, 2026-11-16). Rules she sets for her content (cadence, formats, what goes into the rotation, how she records) land in the brief's Standards, Routines and Decisions, often through update/atualizar from Rica's notes, but the strategy never read them, so the plan could ignore them. Now Read these first item 4c reads those three sections, the draft follows them (they win over library defaults), and a draft that goes against one says so in one line for her to decide. PT conteudo-estrategia the same.
 
