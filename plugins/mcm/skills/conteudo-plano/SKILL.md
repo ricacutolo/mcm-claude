@@ -21,6 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departamentos/conteudo/plano.md` — the current plan, if any (to roll it forward).
 5. `departamentos/conteudo/ideias.md` — unused ideas.
 6. `departamentos/conteudo/modelos.md` — which templates exist (a template is format × post type).
+6b. `departamentos/conteudo/ghl.md` § Palavras de comentário — the words that are `no ar`, when the comment ending is on.
 7. `departamentos/conteudo/brief.md` — its Próximo passo and Estado atual.
 8. `sobre-mim/sobre-mim.md` — only her time zone.
 9. the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md`), if it exists — its `atualizado:` date, and its Direções → Conteúdo only when it's newer than the content strategy's `Segue:` date.
@@ -61,7 +62,7 @@ For each slot, pick one topic, one post type and one format:
 - First 2 weeks: prefer format × post type pairs that already have a template, so new templates have lead time.
 - Match unused ideas from `ideias.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "sugestão", following the idea rules in `estrategia.md` (what the reader gets, never technical).
 - Use the last 4 posts in `calendario.md` for the "in a row" and "within 2 weeks" checks across the plan boundary.
-- **How each post ends,** from the ask rhythm in `estrategia.md` (Como os posts terminam): each post slot gets `pedido`, `leve` (one of the light endings that are on, named: salvar, pergunta, compartilhar, seguir) or `nenhum`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `pedido` on every slot, as before.
+- **How each post ends,** from the ask rhythm in `estrategia.md` (Como os posts terminam): each post slot gets `pedido`, `leve` (one of the light endings that are on, named: salvar, pergunta, compartilhar, seguir) or `nenhum`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `pedido` on every slot, as before. The comment ending on and a word `no ar`: about 1 slot in 4 gets `comentar: <PALAVRA>` (one word per post; with two live words, take turns), counted with the asks (never next to a `pedido` or another `comentar`). No word live: no `comentar` slots, whatever the strategy says.
 - Reels only when reels are on in `estrategia.md`.
 
 ### Refresh (keep the slots, change one thing)

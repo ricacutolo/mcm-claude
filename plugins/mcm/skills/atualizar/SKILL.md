@@ -39,6 +39,8 @@ Rica adds one dated section per update and never edits old ones:
 1. <linha>
 ### Departamento <Nome> (brief ou histórico)
 1. <linha>
+### Conteúdo — palavras de comentário (ghl.md)
+1. <PALAVRA> · <o que a pessoa recebe> · <link da página> · no ar | pausada
 ### Para fazer
 1. <sugestão de algo que ela faz, como criar um departamento ou projeto>
 ```
@@ -68,6 +70,7 @@ Where they go:
 | Sobre mim | `sobre-mim/sobre-mim.md` |
 | Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximo passo (the next move); facts and stories go to its histórico via /contexto |
 | Projeto X | same, for the project's brief |
+| Conteúdo — palavras de comentário | `departamentos/conteudo/ghl.md` § Palavras de comentário: the word's row, added or with its new status (`no ar` with today's date in Desde, or `pausada`), exactly as Rica wrote it. Only this section sets a word live. |
 | Para fazer | nothing is written; it is offered in Step 4 |
 
 ### Step 3 — One batch for her

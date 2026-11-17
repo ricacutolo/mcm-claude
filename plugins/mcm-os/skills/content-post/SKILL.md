@@ -1,6 +1,6 @@
 ---
 name: content-post
-description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, newsletters and podcast episodes to theirs, on her yes. Also saves post ideas, turns an idea into a post, and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"let's make the next post\", \"what should I post next\", \"make the next post\", \"make this a post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", or when the Content department's next step is a post."
+description: "Finds her next post in the content plan and gets it made: carousels and other image posts go to the design steps, reels to the video steps, newsletters and podcast episodes to theirs, on her yes. Also saves post ideas, turns an idea into a post, and checks that scheduled posts went live. When she says \"/content-post\", \"next post\", \"let's make the next post\", \"what should I post next\", \"make the next post\", \"make this a post\", \"let's do post 5\", \"continue post 5\", \"time for a post\", \"did the post go live\", \"save this as a post idea\", \"post idea:\", \"I want a comment word for\", \"comment word:\", or when the Content department's next step is a post."
 ---
 
 # content-post — what's next, and who makes it
@@ -11,6 +11,7 @@ Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "save this as a post idea": one row in her ideas list, then back to whatever was happening (Step C).
 - **Make this a post** — about something she just said, pasted or attached: saved as an idea, then made now in the next slot, or kept (Step M).
+- **A comment word** — "I want a comment word for <thing>": one row in her comment words, marked asked, for Rica to set up (Step W).
 - **Publish check** — "did the post go live?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm US English. Say "the plan", "the calendar", "your ideas list", "the department brief"; never file names, "skill", "MCP", "API" or a command name.
@@ -26,7 +27,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 5. `departments/content/ghl.md` — account IDs and each connection's token expiry date (not secret).
 6. The post's own `departments/content/posts/<folder>/post.md`, if it exists — where it stands.
 7. `about-me/about-me.md` — only her time zone.
-8. Idea capture only: `departments/content/ideas.md`.
+8. Idea capture only: `departments/content/ideas.md`. A comment word only: `ghl.md` § Comment words.
 9. Publish check only: `departments/content/performance-log.md`.
 10. At the end of the run (Step 4): the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md`), if it exists — its `updated:` date, and its Directions → Content only when it's newer than the content strategy's `Follows:` date.
 
@@ -45,6 +46,8 @@ Never read or print `departments/content/.env`. The scripts read it; this skill 
 > "The department's Next step and Current state are kept current without asking. Nothing else in the brief is touched; anything else goes to `_system/pending.md`."
 
 > "An idea capture is approved by the request itself. It appends one row and nothing else."
+
+> "A comment word she asks for is written as `asked`, never `live`. Only Rica's notes set a word live, because only he can build its workflow in MCM."
 
 ## Workflow — next post
 
@@ -133,6 +136,16 @@ Triggered by "save this as a post idea", "post idea: …", "add this to my post 
 - Confirm in one line: "Saved as post idea #N (<topic>)." If the topic was a guess, say so. Then return to whatever was happening — no other step runs.
 - Receipt line. No milestone for a capture.
 
+## Step W — A comment word
+
+Triggered by "I want a comment word for <thing>", "comment word: <WORD> for <thing>", "can people comment a word to get <thing>".
+- The explicit request is the approval for this one row.
+- Word: hers if she gave one (one word, caps); otherwise suggest one that fits the thing, in her language, and take her pick or edit.
+- Already in `ghl.md` § Comment words: say its status in one line ("MUDAR is live: posts can end with it." / "MUDAR is waiting on Rica.") and stop.
+- Append one row to `ghl.md` § Comment words (add the section in `content-install`'s shape if missing): the word, what they get in her words, the page if she has it (else blank), `asked`, today's date.
+- Confirm in one line: "Saved MUDAR. Rica sets it up in MCM, and your posts start using it as soon as he says it's live." Nothing for her to send: the count shows in her system health report. Hand /system "refresh the Setup block".
+- Receipt line. No milestone.
+
 ## Step M — Make this a post
 
 Triggered by "make this a post", "turn this into a post", about something she just said, pasted or attached.
@@ -146,7 +159,7 @@ Triggered by "make this a post", "turn this into a post", about something she ju
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → content-static, content-video, content-newsletter, content-substack or content-podcast · missed: yes/no · <published links or idea #N>` (plus ` · ceo: told <date>` when the strategy-change line was said)
+`YYYY-MM-DD | content-post | routed / declined / captured / word-asked / made-from-idea / publish-check / no-slot | post N · <format> → content-static, content-video, content-newsletter, content-substack or content-podcast · missed: yes/no · <published links, idea #N or word>` (plus ` · ceo: told <date>` when the strategy-change line was said)
 
 ## What this skill never does
 
@@ -154,12 +167,13 @@ One line per run in `_system/log.md` (re-read the file before writing):
 - Hands a post to a maker without her yes.
 - Sets a post to published in MCM, or marks it Published in the calendar without finding it live.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits `strategy.md`, `plan.md`, `templates.md`, `brand-style.md`, `ghl.md`, the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context-hot).
+- Edits `strategy.md`, `plan.md`, `templates.md`, `brand-style.md`, `ghl.md` (beyond an `asked` row in Comment words), the shipped library or playbook, `about-me/`, or anything in `context/` (milestones go through /context-hot).
 - Touches anything in the department brief beyond Next step, Current state and `updated:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her yes.
 - Deletes posts, files or ideas. A dropped idea is marked `dropped`, not removed.
 - Runs more than one post per run.
 - Creates reminders or tasks on a timer.
+- Marks a comment word live or paused.
 
 ## When to refuse
 

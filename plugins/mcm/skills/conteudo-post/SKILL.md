@@ -1,6 +1,6 @@
 ---
 name: conteudo-post
-description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, newsletters e episódios de podcast para as deles, com o sim dela. Também guarda ideias de post, transforma uma ideia em post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"vamos fazer o próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"transforma isso em post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", ou quando o próximo passo do departamento Conteúdo é um post."
+description: "Encontra o próximo post no plano de conteúdo e faz ele acontecer: carrosséis e outros posts de imagem vão para as etapas de design, reels para as etapas de vídeo, newsletters e episódios de podcast para as deles, com o sim dela. Também guarda ideias de post, transforma uma ideia em post e confere se os posts agendados foram ao ar. Quando ela diz \"/conteudo-post\", \"próximo post\", \"vamos fazer o próximo post\", \"o que eu posto agora\", \"faz o próximo post\", \"transforma isso em post\", \"vamos fazer o post 5\", \"continua o post 5\", \"hora de postar\", \"o post foi ao ar?\", \"guarda isso como ideia de post\", \"ideia de post:\", \"quero uma palavra de comentário\", \"palavra de comentário:\", ou quando o próximo passo do departamento Conteúdo é um post."
 ---
 
 # conteudo-post — what's next, and who makes it
@@ -11,6 +11,7 @@ Three entry points:
 - **Next post** — Steps 1-4: find it, move it if the slot was missed, hand it over, then keep the queue one post ahead.
 - **Idea capture** — "guarda isso como ideia de post": one row in her ideas list, then back to whatever was happening (Step C).
 - **Make this a post** — "transforma isso em post", about something she just said, pasted or attached: saved as an idea, then made now in the next slot, or kept (Step M).
+- **A comment word** — "quero uma palavra de comentário para <coisa>": one row in her comment words, marked `pedida`, for Rica to set up (Step W).
 - **Publish check** — "o post foi ao ar?": confirm in MCM and record the links (Step P). It also runs at the start of every next-post run.
 
 Speak to her in plain, warm Brazilian Portuguese. Say "o plano", "o calendário", "a sua lista de ideias", "o brief do departamento"; never file names, "skill", "MCP", "API" or a command name.
@@ -26,7 +27,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 5. `departamentos/conteudo/ghl.md` — account IDs and each connection's token expiry date (not secret).
 6. The post's own `departamentos/conteudo/posts/<folder>/post.md`, if it exists — where it stands.
 7. `sobre-mim/sobre-mim.md` — only her time zone.
-8. Idea capture only: `departamentos/conteudo/ideias.md`.
+8. Idea capture only: `departamentos/conteudo/ideias.md`. A comment word only: `ghl.md` § Palavras de comentário.
 9. Publish check only: `departamentos/conteudo/desempenho.md`.
 10. At the end of the run (Step 4): the CEO strategy (`departamentos/ceo/estrategia.md`, or `estrategia-<area>.md`), if it exists — its `atualizado:` date, and its Direções → Conteúdo only when it's newer than the content strategy's `Segue:` date.
 
@@ -45,6 +46,8 @@ Never read or print `departamentos/conteudo/.env`. The scripts read it; this ski
 > "The department's Próximo passo and Estado atual are kept current without asking. Nothing else in the brief is touched; anything else goes to `_sistema/pendentes.md`."
 
 > "An idea capture is approved by the request itself. It appends one row and nothing else."
+
+> "A comment word she asks for is written as `pedida`, never `no ar`. Only Rica's notes set a word live, because only he can build its workflow in MCM."
 
 ## Workflow — next post
 
@@ -133,6 +136,16 @@ Triggered by "guarda isso como ideia de post", "ideia de post: …", "coloca iss
 - Confirm in one line: "Guardei como ideia de post #N (<topic>)." If the topic was a guess, say so. Then return to whatever was happening — no other step runs.
 - Receipt line. No milestone for a capture.
 
+## Step W — A comment word
+
+Triggered by "quero uma palavra de comentário para <coisa>", "palavra de comentário: <PALAVRA> para <coisa>", "dá pra pessoa comentar uma palavra e receber <coisa>".
+- The explicit request is the approval for this one row.
+- Word: hers if she gave one (one word, caps); otherwise suggest one that fits the thing, in Portuguese, and take her pick or edit.
+- Already in `ghl.md` § Palavras de comentário: say its status in one line ("MUDAR está no ar: os posts já podem terminar com ela." / "MUDAR está esperando o Rica.") and stop.
+- Append one row to `ghl.md` § Palavras de comentário (add the section in `conteudo-instalar`'s shape if missing): the word, what they get in her words, the page if she has it (else blank), `pedida`, today's date.
+- Confirm in one line: "Salvei MUDAR. O Rica monta no MCM, e os seus posts começam a usar assim que ele avisar que está no ar." Nothing for her to send: the count shows in her system health report. Hand /sistema "atualizar o bloco Configuração".
+- Receipt line. No milestone.
+
 ## Step M — Make this a post
 
 Triggered by "transforma isso em post", "faz um post disso", about something she just said, pasted or attached.
@@ -146,7 +159,7 @@ Triggered by "transforma isso em post", "faz um post disso", about something she
 
 One line per run in `_sistema/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | conteudo-post | routed / declined / captured / made-from-idea / publish-check / no-slot | post N · <format> → conteudo-estatico, conteudo-video, conteudo-newsletter, conteudo-substack or conteudo-podcast · missed: yes/no · <published links or idea #N>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
+`YYYY-MM-DD | conteudo-post | routed / declined / captured / word-asked / made-from-idea / publish-check / no-slot | post N · <format> → conteudo-estatico, conteudo-video, conteudo-newsletter, conteudo-substack or conteudo-podcast · missed: yes/no · <published links, idea #N or word>` (plus ` · ceo: avisada <date>` when the strategy-change line was said)
 
 ## What this skill never does
 
@@ -154,12 +167,13 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 - Hands a post to a maker without her sim.
 - Sets a post to published in MCM, or marks it Publicado in the calendar without finding it live.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits `estrategia.md`, `plano.md`, `modelos.md`, `estilo-da-marca.md`, `ghl.md`, the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
+- Edits `estrategia.md`, `plano.md`, `modelos.md`, `estilo-da-marca.md`, `ghl.md` (beyond a `pedida` row in Palavras de comentário), the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her sim.
 - Deletes posts, files or ideas. A dropped idea is marked `descartada`, not removed.
 - Runs more than one post per run.
 - Creates reminders or tasks on a timer.
+- Marks a comment word `no ar` or `pausada`.
 
 ## When to refuse
 

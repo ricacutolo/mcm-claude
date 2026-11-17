@@ -23,7 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/brand-style.md` — color and font roles, logo files; `about-me/brand.md` when it exists, for the logo files.
-7. `departments/content/ghl.md` — location, user and account IDs, token expiry dates.
+7. `departments/content/ghl.md` — location, user and account IDs, token expiry dates; § Comment words when the slot ends with `comment: <WORD>`.
 8. The post's own `departments/content/posts/<folder>/post.md`, if it exists — to resume.
 9. `kit/README.md` — where each step runs, the cloud setup, the rules learned so far. The kit's other files (`template.html`, `build.py`, `pack.py`, `plan_segments.py`, `encode.sh`, `diagrams/`) are run, not read.
 10. `about-me/about-me.md` — only her time zone.
@@ -78,7 +78,7 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 ### Step 2 — Script (gate 1)
 - **Her material and a suggestion, in one message,** before drafting: "What do you want to say on <topic> in this one — a story, something you tell clients all the time? If you'd rather, here's what I'd do: <the angle tagged `for post N` in `ideas.md` when an anchor (the newsletter or an episode) leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
-- The hook goes on screen from frame 0. The ending is the slot's `ends` (playbook § 7): the ask for the layer ("Book a call. Link in bio." while credibility is on), the named light ending, or none, when the fix is the last line.
+- The hook goes on screen from frame 0. The ending is the slot's `ends` (playbook § 7): the ask for the layer ("Book a call. Link in bio." while credibility is on), the named light ending, `comment: <WORD>` (only while the word is `live` in `ghl.md`; said once, the word on the end card in caps, with what they get), or none, when the fix is the last line.
 - Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "Does the script work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
@@ -154,6 +154,7 @@ Plain lines are what you say. Lines in [brackets] show on screen; they're added 
 - The date and time content-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `about-me/about-me.md`, else ask once). If the time has slipped to under 1 hour away, recompute with content-post's missed-slot rule (`../content-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
 - Platforms from `strategy.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the slot's ending.
 - If a connection in `ghl.md` has expired: stop here. "Your <platform> connection has expired. Reconnect it in MCM's Social Planner and tell me when it's done."
+- A comment word: read `ghl.md` § Comment words again. No longer `live`: the reel already says it, so ask: "<WORD> isn't live right now, so nobody would get the DM. Hold this reel until it's back, or post it now with the caption ending in 'save it for later'?" **1** Hold it · **2** Post it now. Hold → leave the slot for content-post's missed-slot rule.
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Ready to schedule? Say **yes** and I'll schedule it." Wait for an explicit yes.
 - On yes:
   1. On her computer, from `departments/content/`: `bash scripts/media-to-ghl.sh posts/<folder>/edit/reel-vN.mp4 post-NN-<slug>.mp4` (copy it from `../content-install/scripts/` first if missing). Use the full-quality file; if MCM rejects the size, use the review copy and say so. It prints the permanent URL.
