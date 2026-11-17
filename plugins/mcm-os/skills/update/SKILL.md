@@ -13,7 +13,7 @@ Speak to her in plain, warm US English. Never say "skill", "frontmatter" or "YAM
 
 Loaded only when this skill fires:
 
-1. `_system/state.md` — `drive_folder` (the shared folder) and `rica_notes_read` (date of the last section already applied; missing means none).
+1. `_system/state.md` — `drive_folder` (the shared folder), `rica_notes_sections` (how many dated sections, counted from the top of the doc, are already applied) and `rica_notes_read` (date of the newest one; missing means none).
 2. The Google Doc **MCM - Rica's Notes** in that folder, through the Google Drive connector. Read-only.
 3. Each destination file named in a new section — only the section the item targets, at the moment it is checked.
 
@@ -54,7 +54,7 @@ The Drive reader may show `#` as `\#` and `1.` as `1\.`; treat them the same. Te
 - The Drive connector is not connected: "I can't open the Drive folder you share with Rica. Is the Google Drive connection turned on?" Stop.
 - No `drive_folder` in `state.md`: search her Drive for a Google Doc titled **MCM - Rica's Notes**. Exactly one → "I found Rica's notes in the **<folder>** folder. Is that the folder you two share? (**yes**)"; on **yes** record its folder as `drive_folder` and go on. None or several → "I'm not sure which Drive folder you share with Rica. Which one is it?" and record her answer.
 - Doc not found in the folder: "I couldn't find Rica's notes document in the shared folder." Stop.
-- New sections = dated sections later than `rica_notes_read` (all of them if it is missing). None: "Nothing new from Rica since <date>." Write the receipt and stop.
+- New sections = the dated sections after the first `rica_notes_sections`, counted from the top. Sections are only ever added at the end, so the count is exact even when two share a date. Without `rica_notes_sections` (older installs): the dated sections on or after `rica_notes_read`, the same date included, since a second section can share it; Step 2 skips what is already in her files. Neither field: all of them. None: "Nothing new from Rica since <date>." Write the receipt and stop.
 
 ### Step 2 — Check each item against her files
 
@@ -96,7 +96,7 @@ List the suggestions in plain words and offer to start each one now. On her yes,
 
 ### Step 5 — Close
 
-Set `rica_notes_read: <date of the newest section read>` in `_system/state.md` (add the field if missing). Reply in one line: what was saved, what was skipped, what stayed pending.
+Set `rica_notes_sections: <number of dated sections in the doc>` and `rica_notes_read: <date of the newest section read>` in `_system/state.md` (add the fields if missing). Reply in one line: what was saved, what was skipped, what stayed pending.
 
 ### Step 6 — Receipt
 
@@ -126,7 +126,7 @@ Shared memory: changes to a department or project are logged in its history by /
 
 ## STOP handling
 
-On `STOP`: halt, write nothing more, say what was already saved, leave `rica_notes_read` unchanged unless everything was answered, and wait.
+On `STOP`: halt, write nothing more, say what was already saved, leave `rica_notes_sections` and `rica_notes_read` unchanged unless everything was answered, and wait.
 
 ## Headless behavior
 

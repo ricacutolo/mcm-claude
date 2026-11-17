@@ -120,6 +120,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | pasta_drive | drive_folder |
 | reunioes: meet / zoom / outro | meetings: meet / zoom / other |
 | notas_rica_lidas | rica_notes_read |
+| notas_rica_secoes | rica_notes_sections |
 | aguardando semente | waiting for seed |
 | pendente / feito | pending / done |
 | `saude.md` block `## Configuração` · `configuracao_atualizada:` · lines Instalação · Configuração do conteúdo · Cursos · Estratégia do CEO · pronta · esperando · ainda não · stages configurado / desenhando / gravando / no ar | `health.md` block `## Setup` · `setup_updated:` · Install · Content setup · Courses · CEO strategy · done · waiting · not yet · set up / designing / recording / live |

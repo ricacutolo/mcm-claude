@@ -90,7 +90,7 @@ _revisao/                     anything that would otherwise be deleted
 | `departamentos/ceo/relatorios.md` | departments add lines under Abertos (today: /conteudo-revisao and /curso-revisao, on her sim); only /estrategia-do-negocio moves them to Resolvidos |
 | `departamentos/cursos/<programa>/programa.md` | /curso-desenho only, on her sim |
 | a lesson file, `perguntas.md`, `retorno.md`, `depoimentos.md` | /curso-aula (lesson files), /curso-fechar-aula (O que aconteceu, perguntas, retorno, depoimentos), /curso-revisao (retorno review lines), on her sim |
-| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_lidas`) |
+| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_secoes` and `notas_rica_lidas`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
 
@@ -200,7 +200,7 @@ Otherwise, at the first natural pause in a conversation (not before answering he
 
 > "Faz uma semana desde a última arrumação do sistema. Leva uns 2 minutos — posso fazer agora? (**sim** / **depois**)"
 
-**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `pasta_drive` and `notas_rica_lidas` from `_sistema/estado.md`, then only the section headers of **MCM - Notas do Rica**, read-only. If there are dated sections later than `notas_rica_lidas`, add one line under the offer, whatever she answers to it:
+**Rica's notes, at the same moment.** Before offering, check the notes doc the way /morning-brief does: `pasta_drive`, `notas_rica_secoes` and `notas_rica_lidas` from `_sistema/estado.md`, then only the section headers of **MCM - Notas do Rica**, read-only. If there are new dated sections (counted the /morning-brief way), add one line under the offer, whatever she answers to it:
 
 > "O Rica também deixou notas pra você (<N> novas). Quer ver? (**sim** / **depois**)"
 

@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.21.2 — 2026-11-17 [both]
+- **Two notes on the same day both arrive** (Rica, 2026-11-17, from Cassidy's content setup call). /update (/atualizar) took only sections dated later than `rica_notes_read` (`notas_rica_lidas`), so a second section Rica added on a date she had already applied was skipped without a word. Now it also keeps `rica_notes_sections` (`notas_rica_secoes`), how many dated sections are already applied, and reads the ones after that count; sections are only ever added at the end, so the count is exact whatever the dates. An install without the count reads sections on or after the last date, the same date included, and skips what is already in her files. /morning-brief and the 7-day upkeep count new notes the same way.
+
 ## 0.21.1 — 2026-11-17 [both]
 - **Rica's notes get noticed** (Rica, 2026-11-17). Notes in the shared doc only reached her files when she remembered to say "update", so they could sit unread. Now /morning-brief checks the doc's section headers (read-only) against `rica_notes_read` (`notas_rica_lidas`) and, when there's something new, asks first: "Rica left you notes. Want to go through them now?" The 7-day upkeep does the same check at the moment it offers the tidy-up, whatever she answers to it. Her yes runs /update (/atualizar), which still shows each change for her yes. No Drive connection or no doc: nothing is said. The brief gets a **From Rica** line and its receipt counts new notes.
 
