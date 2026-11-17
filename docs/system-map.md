@@ -87,7 +87,7 @@ All names are Portuguese; skills refer to them exactly as written here.
   entregas/                     deliverables that belong to no department or project
   referencia/                   reference material she adds; read-only for skills
   _sistema/
-    estado.md                   plugin version, install progress, last upkeep date
+    estado.md                   plugin version, install progress, last upkeep date, questions left for later
     pendentes.md                hard-tier decisions waiting for her yes
     saude.md                    health summary (numbers only, never content)
     log.md                      one line per skill run (the receipt for every skill)
@@ -145,7 +145,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | Skill (PT · EN) | Source | Writes | Receipt |
 |---|---|---|---|
 | sistema · system | new (includes "How every reply looks": numbered choices always open for discussion, steps by hand with direct links; "You make the moves", the browser fallback, "Asking her things", the white-label rule) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep; the update tidy-up proposes renames (`negocio.md` → `cerebro-do-negocio.md`, 0.11.0); `saude.md`'s Configuração block (each setup's progress, step names only), refreshed when a setup step finishes and mirrored to Drive with `espelho_drive: sim` | `_sistema/log.md` (upkeep runs only) |
-| instalar · install | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool). Writes the installed version (0.7.2); takes old seed names (`negocio.md`); Step 8 offers the strategy session, then the content setup (0.11.0); hands /sistema "atualizar o bloco Configuração" when a step finishes | `_sistema/log.md` per phase |
+| instalar · install | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool). Writes the installed version (0.7.2); takes old seed names (`negocio.md`); Step 8 offers the strategy session, then the content setup (0.11.0); hands /sistema "atualizar o bloco Configuração" when a step finishes; questions she leaves for later go under Para depois in `estado.md` and "terminar minha instalação" asks only those; the tour is two demos (0.19.4) | `_sistema/log.md` per phase |
 | contexto · context | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
 | novo-departamento · new-department | Rica's new-department; always asks the área | `departamentos/<slug>/brief.md` (with `area:`), `departamentos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-departamento · open-department | Rica's open-department | nothing but the receipt | `_sistema/log.md` |

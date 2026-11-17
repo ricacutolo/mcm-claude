@@ -2,6 +2,12 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.19.4 — 2026-11-17 [both]
+- **Install fixes from the first English install** (2026-11-16, Rica). **Answers she leaves for later:** "let's come back to this" during Steps 1-6 used to leave an `[ASK]` with no way back except "redo step X", which overwrites the step. Now the item goes under a new **Later** section of `state.md` (PT: **Para depois** in `estado.md`); before Step 8 the install lists them, and "finish my install" (PT: "terminar minha instalação") asks only those, even after the install is complete. Questions she'd rather answer in the strategy session are marked and left to it.
+- **Writing step:** when she'll bring her samples later, the step leaves the voice lines `[ASK]` and goes on, instead of asking them one by one with nothing to go on.
+- **Step 0:** "some connectors failed" before the install finishes now gets one line saying it's expected.
+- **Tour:** two demos. "How's my day looking" (morning-brief) is out until that skill is finished. Manual's install card says the same.
+
 ## 0.19.3 — 2026-11-16 [both]
 - **content-strategy reads the Content department brief** (Rica, 2026-11-16). Rules she sets for her content (cadence, formats, what goes into the rotation, how she records) land in the brief's Standards, Routines and Decisions, often through update/atualizar from Rica's notes, but the strategy never read them, so the plan could ignore them. Now Read these first item 4c reads those three sections, the draft follows them (they win over library defaults), and a draft that goes against one says so in one line for her to decide. PT conteudo-estrategia the same.
 

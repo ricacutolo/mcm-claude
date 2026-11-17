@@ -24,3 +24,7 @@ System file. No need to touch anything here.
 | 6 | Departments | pending |
 | 7 | Quick tour | pending |
 | 8 | First real test | pending |
+
+## Later
+
+Questions she left for later, one per line: `<file> · <the question>`. Empty when there are none.
