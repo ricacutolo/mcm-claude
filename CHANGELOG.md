@@ -11,6 +11,12 @@ Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[bo
 - **Her references** (Rica, 2026-11-17): one running list, `departments/content/references.md` (PT `referencias.md`), of posts and designs she likes, for her look, her templates and her photos. "save this as a reference" (PT "salva como referência") from inside any work appends one row (the file or link, what she likes in her words, the feel Claude reads in it, what it's for), the file kept in `04. Brand/References`; the request is the approval. content-template reads it for a look or a template; a client with no idea yet how her posts should look is asked for 3-5 posts she likes from anyone. The setup's design references land there too; content-static reads the photo rows. Read for feel, never copied.
 - **Untested:** where the rendering runs on a client's computer and that the PNGs reach MCM. First test: the next client who skips Canva.
 
+## 0.19.4 — 2026-11-17 [both]
+- **Install fixes from the first English install** (2026-11-16, Rica). **Answers she leaves for later:** "let's come back to this" during Steps 1-6 used to leave an `[ASK]` with no way back except "redo step X", which overwrites the step. Now the item goes under a new **Later** section of `state.md` (PT: **Para depois** in `estado.md`); before Step 8 the install lists them, and "finish my install" (PT: "terminar minha instalação") asks only those, even after the install is complete. Questions she'd rather answer in the strategy session are marked and left to it.
+- **Writing step:** when she'll bring her samples later, the step leaves the voice lines `[ASK]` and goes on, instead of asking them one by one with nothing to go on.
+- **Step 0:** "some connectors failed" before the install finishes now gets one line saying it's expected.
+- **Tour:** two demos. "How's my day looking" (morning-brief) is out until that skill is finished. Manual's install card says the same.
+
 ## 0.19.3 — 2026-11-16 [both]
 - **content-strategy reads the Content department brief** (Rica, 2026-11-16). Rules she sets for her content (cadence, formats, what goes into the rotation, how she records) land in the brief's Standards, Routines and Decisions, often through update/atualizar from Rica's notes, but the strategy never read them, so the plan could ignore them. Now Read these first item 4c reads those three sections, the draft follows them (they win over library defaults), and a draft that goes against one says so in one line for her to decide. PT conteudo-estrategia the same.
 

@@ -1,6 +1,6 @@
 ---
 name: instalar
-description: "A instalação guiada do sistema MCM: cria as pastas, as Instruções para o Claude, quem você é, seu negócio, sua escrita, as conexões e os primeiros departamentos — em etapas curtas, dá para parar e voltar. Quando ela diz \"/instalar\", \"começar a instalação\", \"começar onboarding\", \"continuar a instalação\", \"onde parei na instalação\"."
+description: "A instalação guiada do sistema MCM: cria as pastas, as Instruções para o Claude, quem você é, seu negócio, sua escrita, as conexões e os primeiros departamentos — em etapas curtas, dá para parar e voltar. Quando ela diz \"/instalar\", \"começar a instalação\", \"começar onboarding\", \"continuar a instalação\", \"terminar minha instalação\", \"onde parei na instalação\"."
 ---
 
 # instalar — the first-run wizard
@@ -40,11 +40,20 @@ Every time this skill fires:
 
 - `estado.md` missing → first run, Step 0.
 - Steps marked `aguardando semente` and no `_semente/` in her folder → look for the seed in her Drive (**Bringing the seed from the Drive**, below). Not there yet → "Sua instalação está esperando os arquivos que o Rica vai preparar. Assim que ele colocar no seu Drive, é só dizer **continuar a instalação**." Stop. Once `_semente/` exists, resume at the first step that is not `completa`, skipping completed ones (Step 5 included).
-- `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop — unless she (or another part of the system, with her sim) asked to **refazer etapa X**: then go to that bullet below.
+- `instalacao: completa` → "Sua instalação já está completa." Point her to "abre o Conteúdo" and stop — unless she (or another part of the system, with her sim) asked to **refazer etapa X** (go to that bullet below), or there are lines under **Para depois** in `estado.md` (go to **Answers she leaves for later**).
 - Otherwise: "Da última vez paramos na etapa **X — <nome>**. Seguimos na etapa **Y**? (**sim** / **mostrar progresso**)"
 - "refazer etapa X" → confirm it overwrites that step's files, copy each of them to `_revisao/YYYY-MM-DD-<arquivo>` first, then run it.
 
 After each step: set that row to `completa` in `estado.md`, set `etapa_atual`, append the receipt line, hand /sistema "atualizar o bloco Configuração" (once `_sistema/` exists), and ask "Etapa X pronta. Seguimos para a próxima ou paramos aqui? (**continuar** / **pausar**)".
+
+## Answers she leaves for later
+
+Any question in Steps 1 to 6 can wait. When she says "vamos voltar nisso depois", "depois", "pula" or "ainda não sei":
+
+- Leave the item `[PERGUNTAR]` in its file, add one line under **Para depois** in `estado.md` (`<arquivo> · <a pergunta>`), and go on. The step still completes.
+- She'd rather answer it in the strategy session (her offer, prices, goals) → add ` · sessão de estratégia` to the line. "terminar minha instalação" skips those lines; the strategy session fills them.
+- Before Step 8, if **Para depois** has lines she can answer here: "Você deixou estas para depois: <as perguntas, uma por linha>. Quando quiser, é só dizer **terminar minha instalação** que eu pergunto só essas." Nothing more.
+- "terminar minha instalação", or "continuar a instalação" with lines under **Para depois**, even after `instalacao: completa`: ask only those, one at a time, in the order she left them. Each answer → write it into its file in place of the `[PERGUNTAR]`, show her the line, remove it from **Para depois**. "Ainda não" keeps it there. When none are left: "Isso é tudo da instalação."
 
 ## Bringing the seed from the Drive
 
@@ -66,6 +75,7 @@ A local `_semente/` (from a zip) still works exactly as before and wins over the
    - Not connected → "Primeiro vamos conectar o seu Google Drive: é por ele que o Rica te manda seus arquivos. Fica em **Personalizar → Conectores → Google Drive**; entre com a conta com que o Rica compartilha as suas pastas. Quer que eu te guie passo a passo? (**sim** / **já conectei**)"
    - **sim** → guide one action at a time, waiting after each: abrir **Personalizar**, abrir **Conectores**, achar **Google Drive**, clicar em **Conectar**, escolher a conta com que o Rica compartilha as pastas dela, permitir. If her screen shows something different, ask what she sees and guide from that. Then check again.
    - **já conectei** → check again.
+   - She says the app shows some connectors failed (the MCM one, for example) → "Isso é esperado: esses se conectam depois, na instalação ou na configuração do seu conteúdo." Go on.
    - Still not connected after two checks → "Tudo bem, seguimos sem o Drive por enquanto. Avise o Rica que o Drive não conectou." Write `drive: pendente` in `estado.md` once it exists, and go on. The rest of the install works without it.
 2. Confirm a folder is connected. If not: "Para começar, adicione uma pasta a esta conversa: no app do Claude no Mac, em uma conversa nova, clique em adicionar pasta e escolha a pasta que você criou para o sistema. Depois diga **começar a instalação** de novo." Stop.
 3. Show the folder path and ask if it is the right one. If the path is inside `Documents`/`Documentos` or `Desktop`/`Mesa`, say once: "Essa pasta pode estar no iCloud, e o iCloud às vezes tira arquivos do computador ou cria cópias duplicadas. O mais seguro é criar a pasta na sua pasta pessoal (no Finder: Shift + Command + H). Quer mudar antes de seguir?" If she moves it, ask her to add the new folder to this conversation and continue from here. If she keeps it, go on.
@@ -108,6 +118,7 @@ If `_semente/` does not exist when Step 1 ends, ask once:
 ## Step 4 — Sua escrita (5-15 min)
 
 - Seed `_semente/escrita.md`: if its examples have no real text of hers (empty, or only `[PERGUNTAR]`), first ask for three to five things she wrote that sound like her (posts, a message, a text she likes), analyse them, and fill the examples and the `[PERGUNTAR]` voice lines from them. Then show the voice summary and one example, confirm, write `sobre-mim/escrita.md`.
+- She'd rather bring her samples later (she wants to pick better ones, or they aren't at hand): leave the examples and every voice line that depends on them `[PERGUNTAR]`, add one **Para depois** line (`sobre-mim/escrita.md · três a cinco textos dela`), write the file and go on. Don't ask the voice lines one by one without samples.
 - No seed: ask for three to five things she wrote that sound like her (posts, a message, a text she likes), then up to five questions (tom, palavras que usa, palavras que nunca usa, emoji e hashtags, diferença entre Instagram e LinkedIn). Analyse the samples, fill `modelos/escrita.md`, show, confirm, write.
 
 ## Step 5 — Conexões (10-15 min)
@@ -132,11 +143,10 @@ If a connector's permission screen looks different from what you describe, ask h
 
 ## Step 7 — Tour rápido (10 min)
 
-Three short live demos, nothing more. For each: say what she can say, what it does in one sentence, and run it. Never show her command names.
+Two short live demos, nothing more. For each: say what she can say, what it does in one sentence, and run it. Never show her command names.
 
 1. "abre o Conteúdo" → /abrir-departamento.
 2. "escreve isso na minha voz…" → /minha-voz (a short sample).
-3. "como está meu dia" → /morning-brief.
 
 Then list the rest in one short block, as things she can say: "o que eu posto agora", "configura o meu conteúdo", "novo projeto", "guarda no histórico", "guarda a reunião com…".
 
