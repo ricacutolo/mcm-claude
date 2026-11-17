@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.21.3 — 2026-11-17 [both]
+- **The health report shows a new version the day it lands** (Rica, 2026-11-17). The report only refreshed at the weekly tidy-up, or at the end of the after-update tidy-up if she said yes to it, so Rica could not tell which version a client was on. Now, when the system sees the installed version changed, it rewrites `health.md` (`saude.md`) with the new version and mirrors it to the Drive copy right away, before the tidy-up and whatever she answers. Numbers only, no question, nothing said to her. Still needs her to open a conversation with her folder connected.
+
 ## 0.21.2 — 2026-11-17 [both]
 - **Two notes on the same day both arrive** (Rica, 2026-11-17, from Cassidy's content setup call). /update (/atualizar) took only sections dated later than `rica_notes_read` (`notas_rica_lidas`), so a second section Rica added on a date she had already applied was skipped without a word. Now it also keeps `rica_notes_sections` (`notas_rica_secoes`), how many dated sections are already applied, and reads the ones after that count; sections are only ever added at the end, so the count is exact whatever the dates. An install without the count reads sections on or after the last date, the same date included, and skips what is already in her files. /morning-brief and the 7-day upkeep count new notes the same way.
 
