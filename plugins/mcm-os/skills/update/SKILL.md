@@ -39,6 +39,8 @@ Rica adds one dated section per update and never edits old ones:
 1. <line>
 ### Department <Name> (brief or history)
 1. <line>
+### Content — comment words (ghl.md)
+1. <WORD> · <what they get> · <page link> · live | paused
 ### To do
 1. <suggestion of something she does, like creating a department or project>
 ```
@@ -68,6 +70,7 @@ Where they go:
 | About me | `about-me/about-me.md` |
 | Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context-hot |
 | Project X | same, for the project's brief |
+| Content — comment words | `departments/content/ghl.md` § Comment words: the word's row, added or with its new status (`live` with today's date in Since, or `paused`), exactly as Rica wrote it. Only this section sets a word live. |
 | To do | nothing is written; it is offered in Step 4 |
 
 ### Step 3 — One batch for her

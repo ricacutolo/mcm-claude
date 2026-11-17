@@ -162,11 +162,17 @@ Não é segredo. A chave fica no .env, nunca aqui.
 ## Substack (só quando ligado)
 - Endereço da publicação:
 - Tags em uso:
+
+## Palavras de comentário
+O Rica monta o fluxo de cada palavra no MCM. `no ar` e `pausada` vêm só das notas dele (atualizar); uma palavra que ela pede fica `pedida`.
+
+| Palavra | O que a pessoa recebe | Página | Status | Desde |
+|---|---|---|---|---|
 ```
 
 ### Step 3 — Close the run
 - **The first post, fast.** As soon as step 20 is done (and the plan made), offer the first post right away: "Quer fazer o seu primeiro post agora? Leva uns 15 minutos." Never hold it for anything optional.
-- **Polish later**, once, at the end: one short list of what she can do any time, nothing asked one by one: more templates ("faz outro modelo"), connect Canva ("conectar o Canva", when skipped), her brand fonts on the templates (with Canva; Guia B, about 2 minutes per template), posts whose look she loves, sent any time ("salva como referência"; they refine the templates or her look: "atualiza o meu visual"). The setup is complete without any of them.
+- **Polish later**, once, at the end: one short list of what she can do any time, nothing asked one by one: more templates ("faz outro modelo"), connect Canva ("conectar o Canva", when skipped), her brand fonts on the templates (with Canva; Guia B, about 2 minutes per template), posts whose look she loves, sent any time ("salva como referência"; they refine the templates or her look: "atualiza o meu visual"), a comment word for something she gives away ("quero uma palavra de comentário para <coisa>"; Rica sets it up in MCM). The setup is complete without any of them.
 - When all 20 are done: mark `configuracao.md` complete. A step marked `pulado: o Claude desenha` counts as done. The department's Próximo passo becomes the first planned post from `plano.md` if the plan was made ("Post 1, <day date>, <time>: <topic> × <post type>. Diga \"próximo post\"."), otherwise "Montar a estratégia de conteúdo. Diga \"monta a minha estratégia de conteúdo\"."
 - When the run stops part-way: the department's Próximo passo is "Continuar a configuração do conteúdo: etapa N, <step>. Diga \"continua a configuração do conteúdo\"."
 - Update the department's Estado atual with today's date and one line, and `atualizado:`. Mention it in one short line.

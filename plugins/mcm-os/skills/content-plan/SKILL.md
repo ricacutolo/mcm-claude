@@ -21,6 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departments/content/plan.md` — the current plan, if any (to roll it forward).
 5. `departments/content/ideas.md` — unused ideas.
 6. `departments/content/templates.md` — which templates exist (a template is format × post type).
+6b. `departments/content/ghl.md` § Comment words — the words that are `live`, when the comment ending is on.
 7. `departments/content/brief.md` — its Next step and Current state.
 8. `about-me/about-me.md` — only her time zone.
 9. the CEO strategy (`departments/ceo/strategy.md`, or `strategy-<area>.md`), if it exists — its `updated:` date, and its Directions → Content only when it's newer than the content strategy's `Follows:` date.
@@ -61,7 +62,7 @@ For each slot, pick one topic, one post type and one format:
 - First 2 weeks: prefer format × post type pairs that already have a template, so new templates have lead time.
 - Match unused ideas from `ideas.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "suggestion", following the idea rules in `strategy.md` (what the reader gets, never technical).
 - Use the last 4 posts in `calendar.md` for the "in a row" and "within 2 weeks" checks across the plan boundary.
-- **How each post ends,** from the ask rhythm in `strategy.md` (How posts end): each post slot gets `ask`, `light` (one of the light endings that are on, named: save, question, share, follow) or `none`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `ask` on every slot, as before.
+- **How each post ends,** from the ask rhythm in `strategy.md` (How posts end): each post slot gets `ask`, `light` (one of the light endings that are on, named: save, question, share, follow) or `none`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `ask` on every slot, as before. The comment ending on and a word `live`: about 1 slot in 4 gets `comment: <WORD>` (one word per post; with two live words, take turns), counted with the asks (never next to an `ask` or another `comment`). No word live: no `comment` slots, whatever the strategy says.
 - Reels only when reels are on in `strategy.md`.
 
 ### Refresh (keep the slots, change one thing)

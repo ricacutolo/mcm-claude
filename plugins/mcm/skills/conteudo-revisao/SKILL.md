@@ -54,6 +54,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 - Newsletter on: MCM `get-campaign-stats` for each issue sent in the window: clicks, replies, unsubscribes (opens recorded, not trusted). Weigh them by `../conteudo-estrategia/platforms/newsletter.md`'s Results section.
 - Podcast on: no numbers from her host in v1. Episodes are read through the posts cut from them (by cycle) and the replies or calls she mentions; ask her once, in one line, if there's anything she noticed (a message, a call that mentioned an episode).
 - Substack on: open her Substack dashboard in the browser and read new subscribers for the window, and each Note's replies, restacks and likes (`../conteudo-estrategia/platforms/substack.md`'s Results section). Browser not reachable: say so and leave Substack out of this review.
+- Comment words: for each post in the window that ended with `comentar: <PALAVRA>` (from its `post.md`), MCM contacts tagged `lm-<palavra>` created in the 7 days after it went live. A rough count (a person can see the post later, or comment on an older one), and the read says so. MCM can't search by tag: n/a.
 - In `desempenho.md`: fill or refresh each post's row (numbers 7+ days after posting count as settled; mark fresher ones `inicial`), with the day's reach as the post's reach, and note the pull date. Add one line under "Totais da conta" for the window. If the file is missing, create it in conteudo-post's format (Posts · Totais da conta · O que aprendemos).
 
 ### Step 3 — Read

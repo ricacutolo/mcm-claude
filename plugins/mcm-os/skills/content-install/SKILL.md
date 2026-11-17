@@ -162,11 +162,17 @@ Not secret. The key lives in .env, never here.
 ## Substack (only when on)
 - Publication address:
 - Tags in use:
+
+## Comment words
+Rica builds each word's workflow in MCM. `live` and `paused` come only from his notes (update); a word she asks for is `asked`.
+
+| Word | What they get | Page | Status | Since |
+|---|---|---|---|---|
 ```
 
 ### Step 3 — Close the run
 - **The first post, fast.** As soon as step 20 is done (and the plan made), offer the first post right away: "Want to make your first post now? It takes about 15 minutes." Never hold it for anything optional.
-- **Polish later**, once, at the end: one short list of what she can do any time, nothing asked one by one: more templates ("build another template"), connect Canva ("connect Canva", when skipped), her brand fonts on the templates (with Canva; Guide B, about 2 minutes per template), posts whose look she loves, sent any time ("save this as a reference"; they refine the templates or her look: "update my look"). The setup is complete without any of them.
+- **Polish later**, once, at the end: one short list of what she can do any time, nothing asked one by one: more templates ("build another template"), connect Canva ("connect Canva", when skipped), her brand fonts on the templates (with Canva; Guide B, about 2 minutes per template), posts whose look she loves, sent any time ("save this as a reference"; they refine the templates or her look: "update my look"), a comment word for something she gives away ("I want a comment word for <thing>"; Rica sets it up in MCM). The setup is complete without any of them.
 - When all 20 are done: mark `setup.md` complete. A step marked `skipped: Claude designs` counts as done. The department's Next step becomes the first planned post from `plan.md` if the plan was made ("Post 1, <day date>, <time>: <topic> × <post type>. Say \"next post\"."), otherwise "Set up the content strategy. Say \"set up my content strategy\"."
 - When the run stops part-way: the department's Next step is "Continue the content setup: step N, <step>. Say \"continue content setup\"."
 - Update the department's Current state with today's date and one line, and `updated:`. Mention it in one short line.

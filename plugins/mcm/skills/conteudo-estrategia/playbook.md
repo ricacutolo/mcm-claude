@@ -96,6 +96,8 @@ Not every post asks for something. Her strategy sets the rhythm (Como os posts t
 
 **Light endings**, on the slots marked `leve: <qual>`: save it for later · a question to answer in the comments (a real one, from their own experience) · share it with someone who needs it.
 
+**A comment word**, on the slots marked `comentar: <PALAVRA>`: "Comente MUDAR e eu te mando <o que a pessoa recebe>." Once, at the end, the word in caps, what they get from its row in `ghl.md` § Palavras de comentário. Only while that word is `no ar`: a word that isn't live promises a DM nobody sends.
+
 **None**, on the slots marked `nenhum`: the last line is the point itself. No invitation, no sign-off ask.
 
 ## 8. The check before the copy gate

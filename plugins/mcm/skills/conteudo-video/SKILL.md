@@ -23,7 +23,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departamentos/conteudo/plano.md` — the slot's row and the next `planejado` slot.
 5. `departamentos/conteudo/calendario.md` — what's scheduled and published.
 6. `departamentos/conteudo/estilo-da-marca.md` — color and font roles, logo files; `sobre-mim/marca.md` when it exists, for the logo files.
-7. `departamentos/conteudo/ghl.md` — location, user and account IDs, token expiry dates.
+7. `departamentos/conteudo/ghl.md` — location, user and account IDs, token expiry dates; § Palavras de comentário when the slot ends with `comentar: <PALAVRA>`.
 8. The post's own `departamentos/conteudo/posts/<folder>/post.md`, if it exists — to resume.
 9. `kit/README.md` — where each step runs, the cloud setup, the rules learned so far. The kit's other files (`template.html`, `build.py`, `pack.py`, `plan_segments.py`, `encode.sh`, `diagrams/`) are run, not read.
 10. `sobre-mim/sobre-mim.md` — only her time zone.
@@ -78,7 +78,7 @@ Skip this step when `_sistema/log.md` already has a `conteudo-video | video-chec
 ### Step 2 — Script (gate 1)
 - **Her material and a suggestion, in one message,** before drafting: "O que você quer falar sobre <topic> nesse reel — uma história, algo que você sempre diz pros clientes? Se preferir, eu faria assim: <the angle tagged `para o post N` in `ideias.md` when an anchor (the newsletter or an episode) leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
-- The hook goes on screen from frame 0. The ending is the slot's `final` (playbook § 7): the ask for the layer ("Agende uma conversa. Link na bio." while credibility is on), the named light ending, or none, when the fix is the last line.
+- The hook goes on screen from frame 0. The ending is the slot's `final` (playbook § 7): the ask for the layer ("Agende uma conversa. Link na bio." while credibility is on), the named light ending, `comentar: <PALAVRA>` (only while the word is `no ar` in `ghl.md`; said once, the word on the end card in caps, with what they get), or none, when the fix is the last line.
 - Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "O roteiro está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
@@ -154,6 +154,7 @@ As linhas simples são o que você fala. As linhas entre [colchetes] aparecem na
 - The date and time conteudo-post passed (the slot, or the new time for a missed slot), at least 1 hour out; times in her time zone (from `sobre-mim/sobre-mim.md`, else ask once). If the time has slipped to under 1 hour away, recompute with conteudo-post's missed-slot rule (`../conteudo-post/SKILL.md`, Step 2) and say the new time in one line. Never two posts on the same day.
 - Platforms from `estrategia.md`, only those whose platform file takes reels (Instagram; Facebook when on; not LinkedIn for now). Caption drafted from the script in her voice: hook line, one line of what they get, the slot's ending.
 - If a connection in `ghl.md` has expired: stop here. "A conexão do <platform> venceu. Reconecte no Social Planner do MCM e me avisa quando terminar."
+- A comment word: read `ghl.md` § Palavras de comentário again. No longer `no ar`: the reel already says it, so ask: "A palavra <PALAVRA> não está no ar agora, então ninguém receberia a mensagem. Seguro este reel até ela voltar, ou posto agora com a legenda terminando em 'salve para depois'?" **1** Segurar · **2** Postar agora. Hold → leave the slot for conteudo-post's missed-slot rule.
 - **Gate:** show date and time (her time zone), platforms, caption, length. "Pronto pra agendar? Diga **sim** que eu agendo." Wait for an explicit sim.
 - On sim:
   1. On her computer, from `departamentos/conteudo/`: `bash scripts/media-to-ghl.sh posts/<folder>/edit/reel-vN.mp4 post-NN-<slug>.mp4` (copy it from `../conteudo-instalar/scripts/` first if missing). Use the full-quality file; if MCM rejects the size, use the review copy and say so. It prints the permanent URL.
