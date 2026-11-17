@@ -21,7 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departments/content/plan.md` — the slot's row and the next `planned` slot.
 5. `departments/content/calendar.md` — what's scheduled and published.
 6. `departments/content/ideas.md` — the idea backlog.
-7. `departments/content/templates.md` and `brand-style.md` — which template, which color and font roles. `about-me/brand.md` when it exists, for her logo files. `departments/content/look.md` when the slot's template is `look` (Claude designs it, below).
+7. `departments/content/templates.md` and `brand-style.md` — which template, which color and font roles. `about-me/brand.md` when it exists, for her logo files. `departments/content/look.md` when the slot's template is `look` (Claude designs it, below). `departments/content/references.md`, the rows for photos, when a slide needs a photo.
 8. `departments/content/ghl.md` — location, user and account IDs (not secret).
 9. The post's own `departments/content/posts/<folder>/post.md`, if it exists — to resume.
 10. `about-me/about-me.md` — only her time zone.

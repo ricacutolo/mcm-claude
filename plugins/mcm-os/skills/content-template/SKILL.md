@@ -1,13 +1,13 @@
 ---
 name: content-template
-description: "Builds the design her posts are made from: one Canva template — one format for one post type, like an illustrated carousel for Leak posts — layout first, then the design in Canva with native diagrams, then the fill guide; or, without Canva, her look: the colors, fonts and slide patterns Claude designs her posts with, from posts she likes. Her yes at each step. When she says \"/content-template\", \"build the next template\", \"build another template\", \"let's create some templates\", \"build the illustrated template\", \"make a template for post 5\", \"set up my look\", \"update my look\", \"update my visuals\", when the plan has a template due, or when a post stops because its template isn't built yet."
+description: "Builds the design her posts are made from: one Canva template — one format for one post type, like an illustrated carousel for Leak posts — layout first, then the design in Canva with native diagrams, then the fill guide; or, without Canva, her look: the colors, fonts and slide patterns Claude designs her posts with, from posts she likes. Her yes at each step. Also keeps her references, the posts and designs she likes, in one running list. When she says \"/content-template\", \"build the next template\", \"build another template\", \"let's create some templates\", \"build the illustrated template\", \"make a template for post 5\", \"set up my look\", \"update my look\", \"update my visuals\", \"save this as a reference\", \"add this to my references\", \"reference:\", when the plan has a template due, or when a post stops because its template isn't built yet."
 ---
 
 # content-template — one Canva template, format × post type
 
 Builds the templates content-static fills. A template is one format × one post type (e.g. illustrated carousel × Leak). It is built once, the first time the plan schedules that pair, and copied for every post after.
 
-It does one thing: **build the design source her posts are filled from**: one Canva template and its fill guide, or, when she designs without Canva, her look (`look.md`, below). It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
+It does one thing: **build the design source her posts are filled from**: one Canva template and its fill guide, or, when she designs without Canva, her look (`look.md`, below). It also keeps the list both are built from: her references (`references.md`, below). It never makes posts, writes copy for a real post, or changes the plan beyond its template cells.
 
 Speak to her in plain, warm US English. Say "the template", "the layout", "the plan"; never file names, "skill", "API", "token" or a command name. To her, placeholders are "the spots where each post's words go".
 
@@ -24,6 +24,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 7. `departments/content/brief.md` — its Next step and Current state.
 8. Canva: the existing TEMPLATE designs, read only, to pick the one to copy.
 9. `departments/content/look.md`, if it exists (her look, below).
+10. `departments/content/references.md`, if it exists (her references, below): the rows for a look or a template.
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
@@ -39,6 +40,8 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 > "Her look is hers: built from her own posts, her brand and posts she likes, read for feel. Never copied from another brand or creator."
 
+> "A reference capture is approved by the request itself. It appends one row to references.md and nothing else."
+
 > "Edits are applied exactly as given. Change nothing she did not ask to change."
 
 > "The department's Next step and Current state are kept current without asking. Nothing else in the brief is touched; anything else goes to `_system/pending.md`."
@@ -46,6 +49,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ## Workflow
 
 ### Step 1 — Pick the template
+- **A reference** ("save this as a reference", "reference: …", a post or screenshot she sends to keep): go to **Reference capture** below; no other step runs.
 - **Her look** ("set up my look", "update my look", the content setup without Canva, or no Canva connected): go to **Her look** below instead of Steps 2-5.
 - The first line in the plan's "Templates to build" not marked built, or the template she names.
 - Say in one line: "Building the <format> template for <post type> posts, due <date>, for posts <N, M>."
@@ -54,6 +58,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 ### Step 2 — Layout (gate 1)
 - From the playbook's structure for the post type and the library's format definition, draft the template slide by slide, as one table: slide · what it holds · tokens · which regions are in the accent color · diagram (if any) · light or dark.
 - Diagrams are a fixed skeleton per post type, built from rounded boxes, simple icons (SVG paths) and arrows, with label tokens ([STEP 1], [BREAK]). Name the skeleton in one line (e.g. Leak: lead → step → step, a break marked between two steps).
+- Her references marked for templates (or for this format), read for feel: say in one line what the layout takes from them.
 - Recommend which existing template to copy and why (fonts and logo carry over; fonts can't be set from here).
 - Note what will need a hand fix (e.g. a new text box Canva adds without the brand font).
 
@@ -87,7 +92,7 @@ On the design yes:
 
 ### Her look (without Canva)
 For a client who designs without Canva: Claude makes her slides itself from `look.md` (content-static's Step 4), and she changes them by telling Claude in the chat. Two gates, the same as a template: the look's table first, then sample slides.
-1. **Read:** 3-5 posts or slides she likes (her own first; screenshots or links), `about-me/brand.md` and `brand-style.md`, her site if she has one. Nothing to show: build from her brand alone, and say she can update it any time ("update my look").
+1. **Read:** 3-5 posts or slides she likes (her own first; screenshots or links), her references marked for her look, `about-me/brand.md` and `brand-style.md`, her site if she has one. Posts she sends now are saved as references first (Reference capture), so the next update has them. Nothing to show and no idea yet how she wants her posts to look: ask for 3-5 posts she likes from anyone, any field ("Send me a few posts you like, from anyone; I'll take the feel, not the design"). Still nothing: build from her brand alone, and say she can update it any time ("update my look").
 2. **Draft the look (gate 1):** one table, in `look.md`'s shape (below): size, colors with their roles, fonts (free Google Fonts, the closest match to what she uses), what every slide carries (margins, kicker, footer, page marks, logo), and the patterns (one line each). "Does this capture your look? Say **yes**, or tell me what to change."
 3. **Sample slides (gate 2):** render one slide of each pattern at its size with placeholder text in her language, the same way content-static renders posts, and send them. "Do these look like you? Say **yes** and I'll save your look, or tell me what to change."
 4. **Write, on yes:** `look.md`; in `templates.md`, one row per image format on, template `look`, with each slide's pattern in its fill guide; the brief as in Step 5. Updating an existing look: show what changes, side by side, and keep the old one as `look-<date>.md`.
@@ -132,11 +137,30 @@ Size: 1080×1350 (4:5) | 1080×1440 (3:4)
 - <what doesn't fit her look>
 ```
 
+### Reference capture
+Her references are one running list of posts and designs she likes, for her look, her templates and her photos. She sends them any time, from inside any work.
+- Triggered by "save this as a reference", "add this to my references", "reference: …", or a post, screenshot or link she sends to keep for later.
+- Keep the file: a screenshot or image goes to `04. Brand/References` in her Drive (`departments/content/references/` in her folder when her Drive isn't organized), named `YYYY-MM-DD-<short-name>`. A link is kept as the link.
+- Append one row to `departments/content/references.md` (create it with the shape below if missing): next #, today's date, the file or link, what she likes in her words (ask in one line if she didn't say: "What do you like about it?"), what Claude reads in it for feel (layout, density, color, type, tone; one line, never "copy this"), and what it's for (look, templates, photos, or any).
+- Confirm in one line: "Saved as reference #N (<for>)." Then return to whatever was happening. When her look exists and the reference changes something in it, add: "Say \"update my look\" when you want it in." Nothing else is changed.
+- Receipt line. No milestone for a capture.
+
+**`references.md`:**
+
+```markdown
+# Her references
+
+Posts and designs she likes, for her look, her templates and her photos. Read for feel, never copied. The files live in 04. Brand/References.
+
+| # | Date | File or link | What she likes (her words) | The feel | For |
+|---|---|---|---|---|---|
+```
+
 ## Receipt
 
 One line per run in `_system/log.md` (re-read the file before writing):
 
-`YYYY-MM-DD | content-template | layout-approved / built / look-saved / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID>, or look · serves posts <N, M> · hand fixes: <list or none>`
+`YYYY-MM-DD | content-template | layout-approved / built / look-saved / reference-saved / stopped-at-<gate> / draft-not-approved | <format> × <post type> · Canva <design ID>, or look, or reference #N · serves posts <N, M> · hand fixes: <list or none>`
 
 ## Milestone
 
@@ -155,6 +179,7 @@ Each template built: hand /context-hot one line for `context/content.md`:
 - Deletes Canva designs or files. A draft without a yes stays titled DRAFT for her to keep or delete.
 - Builds more than one template per run, or a look and a template in the same run.
 - Copies another brand's or creator's design into her look.
+- Changes her look or a template because of a reference; a capture only appends its row.
 
 ## When to refuse
 
@@ -181,4 +206,4 @@ On `STOP`: halt immediately, make no further writes, commit no open Canva transa
 
 ## Headless behavior
 
-With nobody watching (scheduled or non-interactive): pick the template and draft the layout table, then write only one receipt line marked `draft-not-approved`. Never touch Canva, `templates.md`, `plan.md` or the brief.
+With nobody watching (scheduled or non-interactive): pick the template and draft the layout table, then write only one receipt line marked `draft-not-approved`. Never touch Canva, `templates.md`, `plan.md`, `references.md` or the brief.

@@ -21,7 +21,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 4. `departamentos/conteudo/plano.md` — the slot's row and the next `planejado` slot.
 5. `departamentos/conteudo/calendario.md` — what's scheduled and published.
 6. `departamentos/conteudo/ideias.md` — the idea backlog.
-7. `departamentos/conteudo/modelos.md` and `estilo-da-marca.md` — which template, which color and font roles. `sobre-mim/marca.md` when it exists, for her logo files. `departamentos/conteudo/visual.md` when the slot's template is `visual` (Claude designs it, below).
+7. `departamentos/conteudo/modelos.md` and `estilo-da-marca.md` — which template, which color and font roles. `sobre-mim/marca.md` when it exists, for her logo files. `departamentos/conteudo/visual.md` when the slot's template is `visual` (Claude designs it, below). `departamentos/conteudo/referencias.md`, the rows for photos, when a slide needs a photo.
 8. `departamentos/conteudo/ghl.md` — location, user and account IDs (not secret).
 9. The post's own `departamentos/conteudo/posts/<folder>/post.md`, if it exists — to resume.
 10. `sobre-mim/sobre-mim.md` — only her time zone.

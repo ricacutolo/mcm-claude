@@ -103,6 +103,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | plan column `final`: `pedido` · `leve: <qual>` (salvar, pergunta, compartilhar, seguir) · `nenhum` | `ends`: `ask` · `light: <which>` (save, question, share, follow) · `none` |
 | strategy section Como os posts terminam | How posts end |
 | `estilo-da-marca.md` § Visuais que ela gosta · Drive `04. Brand/Referências` · `departamentos/conteudo/referencias/` | `brand-style.md` § Looks she likes · Drive `04. Brand/References` · `departments/content/references/` |
+| `…/conteudo/referencias.md` (As referências dela: # · Data · Arquivo ou link · O que ela gosta · A sensação · Para: visual, modelos, fotos, qualquer) · "salva como referência" · "guarda nas minhas referências" · "referência:" · "Salvo como referência #N" | `…/content/references.md` (Her references: # · Date · File or link · What she likes · The feel · For: look, templates, photos, any) · "save this as a reference" · "add this to my references" · "reference:" · "Saved as reference #N" |
 | `sobre-mim/marca.md` line `Origem: criada aqui \| o logo dela (<file>)` | `about-me/brand.md` line `Source: designed here \| her own logo (<file>)` |
 | `ghl.md` line `Endereço do app MCM (para os links diretos):` | `MCM app address (for direct links):` |
 
