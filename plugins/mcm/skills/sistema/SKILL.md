@@ -34,6 +34,10 @@ Approving a change looks like this:
 >
 > Ou me conta o que você está pensando."
 
+## O que ela entrega para as pessoas
+
+Anything she'll give someone else — a PDF, slides, a one-pager, a report, a document — uses her brand kit from `sobre-mim/marca.md`: her logo, her colors, her fonts. Read it only when making such a file. No kit yet: a clean, neutral design, and offer once: "Quer que eu monte o seu kit de marca, para os seus arquivos ficarem com a sua cara?" (/brand-kit-designer).
+
 ## Read these first
 
 Loaded when this skill fires, never anything more:

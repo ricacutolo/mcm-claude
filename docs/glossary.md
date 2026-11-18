@@ -197,5 +197,10 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | próximo episódio · gravei o episódio | next episode · I recorded the episode |
 | [Ligado] · [Desligado] (strategy draft marks) | [On] · [Off] |
 | post table: Este post · Quando · Tema · Tipo de post · Formato · Vai para · Termina com | This post · When · Topic · Kind of post · Format · Goes to · Ends with |
+| acabei a sessão com · guarda a sessão · tenho sessão com · me prepara pra sessão com | I just finished my session with · save the session · I have a session with · prep me for |
+| `(você contou)` (a line from her debrief) | `(debrief)` |
+| Rotinas line: Depois de cada reunião com cliente: | Routines line: After each client meeting: |
+| before-session rundown: Última vez · Pendências · Onde está · Lembrar · Uma sugestão | Last time · Owed · Where they are · Keep in mind · One nudge |
+| section: O que ela entrega para as pessoas | What she hands to people |
 
 Tone in English: warm, plain, US English, no jargon. The English edition speaks to US small-business owners; the Portuguese one to Brazilian ones. Never translate word for word when a phrase reads stiff; keep the meaning and the rule.

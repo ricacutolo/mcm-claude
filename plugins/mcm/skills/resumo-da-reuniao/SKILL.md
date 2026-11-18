@@ -1,6 +1,6 @@
 ---
 name: resumo-da-reuniao
-description: "Pega a transcrição de uma reunião (Google Meet, Zoom, ou colada no chat), tira o que importa — resumo, decisões, o que cada um ficou de fazer, preferências, perguntas em aberto, frases que valem guardar, o que o cliente achou do seu serviço — e guarda na ficha e no histórico do cliente, ou no departamento ou projeto certo, com o sim dela. Também para a primeira conversa com alguém que ainda não é cliente. Quando ela diz \"/resumo-da-reuniao\", \"resumo da reunião\", \"guarda a reunião\", \"guarda a reunião com a família\", \"o que a gente falou na reunião\", \"pega a transcrição\", \"acabei a reunião com\", \"lê a reunião de hoje\"."
+description: "Pega a transcrição de uma reunião (Google Meet, Zoom, ou colada no chat), tira o que importa — resumo, decisões, o que cada um ficou de fazer, preferências, perguntas em aberto, frases que valem guardar, o que o cliente achou do seu serviço — e guarda na ficha e no histórico do cliente, ou no departamento ou projeto certo, com o sim dela. Também para a primeira conversa com alguém que ainda não é cliente. Quando ela diz \"/resumo-da-reuniao\", \"resumo da reunião\", \"guarda a reunião\", \"guarda a reunião com a família\", \"o que a gente falou na reunião\", \"pega a transcrição\", \"acabei a reunião com\", \"lê a reunião de hoje\", \"acabei a sessão com\", \"guarda a sessão\"."
 ---
 
 # resumo-da-reuniao — the meeting, filed where it belongs
@@ -17,15 +17,15 @@ Loaded only when this skill fires:
 2. `departamentos/clientes/index.md` — to match the client. A department or project named instead → `departamentos/index.md` or `projetos/index.md`.
 3. The matched client's `ficha.md` — once, before proposing, to skip what is already there.
 4. `departamentos/clientes/reacoes.md` — only when the meeting has reactions to her service, to extend a line instead of repeating it.
-5. The transcript — through the source below. Nothing else.
+5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Rotinas of `departamentos/clientes/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `sobre-mim/marca.md`.
 
 ## The rules
 
 > "Nothing is written before her sim to the batch."
 
-> "Built from the transcript only. Never from an AI summary or meeting notes: no transcript, no resumo."
+> "Built from the transcript and her own debrief. Never from an AI summary (Gemini notes, Zoom AI Companion) or from memory. With no transcript, her debrief is the only source, and every line from it says so."
 
-> "Every line proposed carries the time in the transcript it came from. Nothing guessed, nothing filled in; what the call didn't say stays blank or is marked sem dono / sem data."
+> "Every line proposed carries the time in the transcript it came from, or `(você contou)` when it came from what she told me after. Nothing guessed, nothing filled in; what the call didn't say stays blank or is marked sem dono / sem data."
 
 > "Never copy an ID, passport, card or bank number from the transcript into any file or the chat."
 
@@ -67,11 +67,11 @@ Pasted or attached transcript text always works, for any tool.
 ### Step 1b — No transcript
 
 - **The meeting ended less than ~15 minutes ago, or Zoom is still processing it:** "A transcrição leva alguns minutos para aparecer. Me chama de novo daqui a pouco." Receipt, stop.
-- **Zoom, the recording has no transcript:** "Essa reunião do Zoom foi gravada sem transcrição. Para as próximas: nas configurações do Zoom, em **Gravação**, ligue **Gravação na nuvem** e **Transcrição de áudio**, e grave cada reunião na nuvem. Se você tiver a transcrição em outro lugar, cole aqui que eu sigo." Receipt, stop.
-- **Zoom, no recording at all:** "Não achei uma gravação do Zoom dessa reunião. Para eu ler, grave na nuvem com a **Transcrição de áudio** ligada. Se você tiver a transcrição, cole aqui." Receipt, stop.
+- **Zoom, the recording has no transcript:** "Essa reunião do Zoom foi gravada sem transcrição. Para as próximas: nas configurações do Zoom, em **Gravação**, ligue **Gravação na nuvem** e **Transcrição de áudio**, e grave cada reunião na nuvem. Se você tiver a transcrição em outro lugar, cole aqui que eu sigo." Then the debrief offer (last bullet).
+- **Zoom, no recording at all:** "Não achei uma gravação do Zoom dessa reunião. Para eu ler, grave na nuvem com a **Transcrição de áudio** ligada. Se você tiver a transcrição, cole aqui." Then the debrief offer (last bullet).
 - **Meet, otherwise:** "Não achei a transcrição dessa reunião. Para as próximas: ao criar a reunião no Google Agenda, abra as opções da videochamada e, em registros da reunião, marque **Transcrever a reunião** (os nomes podem variar um pouco na sua tela) — ela começa quando você entra. Se você tiver a transcrição em outro lugar, cole aqui que eu sigo."
-- No Google Meet folder at all and no transcript ever found → add once: "Talvez o seu plano do Google Workspace não tenha transcrição (o Business Starter não tem). O Rica pode confirmar."
-- Write the receipt (`sem transcrição`) and stop. Never build from memory or notes.
+- No Google Meet folder at all and no transcript ever found → add once: "A transcrição do Meet precisa de um plano pago do Google Workspace: Business Standard ou acima, ou o Workspace Individual. Uma conta Gmail gratuita e o Business Starter não têm."
+- Then offer her debrief: "Dessa vez não tem transcrição. Me conta como foi (pode escrever ou ditar) que eu guardo a partir do que você me contar." She tells → Step 2b, with her debrief as the only source (skip Step 2). She says no → write the receipt (`sem transcrição`) and stop. Never build from memory.
 
 ### Step 2 — Read and pull out
 
@@ -85,6 +85,12 @@ Read the whole transcript. Speaker names can be wrong; when it matters who said 
 6. **Frases que valem guardar** — at most three, word for word.
 7. **Datas** — trips, deadlines, the next meeting.
 8. **O que acharam do seu serviço** — only when her offer, prices, way of working or results came up: what they asked, worried about, loved, already do on their own, or asked for. One line each, from transcript lines only. Not their trip or personal facts — those go to the sheet. None → skip.
+
+### Step 2b — Her debrief
+
+Always, before the batch: "Quer acrescentar algo que não foi dito na reunião? O que você percebeu, como foi, o que quer lembrar na próxima. Pode escrever, ditar ou dizer **não**."
+
+Her answer is pulled apart the same way as Step 2 and joins the batch, each line marked `(você contou)`. It is hers: it goes to the sheet and the histórico, never into anything the client receives unless she says so.
 
 ### Step 3 — One batch for her
 
@@ -105,6 +111,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 >
 > Posso guardar? (**sim pra tudo** / os números que sim / **ajustar**)"
 
+- **MCM connected and the client linked** (`ghl:` on the sheet): one line under the header, read live and never written to the sheet: "Sessão <n> · próxima marcada <data>" (or "nenhuma sessão marcada"), counted from her appointments with this contact in MCM, plus "pago" or "pagamento em aberto" when MCM shows it.
 - **Zoom or pasted transcript:** add a line "8. A transcrição completa na pasta da <Nome> no Drive".
 - **Someone not yet a client:** ask first, one question: "Como ficou — **fechou**, **vai pensar** ou **não**?" Record her word. Fechou or vai pensar → offer /novo-cliente with this meeting as its source, then show the batch for the new sheet. Não → only the reactions line and a dated note in `departamentos/clientes/index.md` under `## Conversas que não viraram cliente` (name, date, why, in their words when given).
 - **A department or project meeting:** the resumo for its histórico and the next step for its brief's Próximo passo; no sheet, no reactions unless clients' views on her service came up.
@@ -135,20 +142,24 @@ _Cada linha vem de uma reunião, nas palavras do cliente. Quando outro cliente d
 
 End with one line: the single most urgent thing — her promise with the nearest date first; else what the client owes and she needs to chase; else the first step of a decision. "**Próximo passo:** mandar o roteiro para a Silva até sexta — você prometeu aos 31 minutos."
 
-Then, only if she promised something: "Quer que eu escreva a mensagem de follow-up para a <Nome>? Fica como rascunho para você mandar." On yes, hand /minha-voz only what was said in the meeting.
+**After the meeting, her way.** Read the Rotinas in `departamentos/clientes/brief.md` for her after-meeting line.
+- **No line yet (the first time):** ask once: "O que você quer que aconteça depois de uma reunião assim? Por exemplo: um e-mail de resumo para a <Nome> (rascunho para você mandar), um PDF com a atividade, os materiais que você citou. Ou me conta do seu jeito." Do what she picks, then: "Quer que eu faça isso depois de toda reunião? (**sim** / **agora não**)". On sim, one Rotinas line through /sistema's write-back: `- Depois de cada reunião com cliente: <nas palavras dela>`.
+- **With a line:** do what it says, then one open question: "Mais alguma coisa desta vez?"
+- "Daqui pra frente, sempre…" or "para de…" → offer the changed Rotinas line; write it on her sim.
+- What it makes: a message or email → /minha-voz, from what was said to the client only, a draft she sends herself; a PDF or slides → with her brand kit (/sistema, "O que ela entrega para as pessoas"), saved to the client's Drive folder through /guardar-no-cliente on her sim. Nothing is sent.
 
 ### Step 6 — Receipt and report
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | resumo-da-reuniao | <slug ou departamento> · <fonte: meet / zoom / colado / sem transcrição> · <n> salvos, <n> recusados · reações <n>` in `_sistema/log.md`.
+`YYYY-MM-DD | resumo-da-reuniao | <slug ou departamento> · <fonte: meet / zoom / colado / só o que ela contou / sem transcrição> · ela contou sim/não · depois: feito / perguntado / nada · <n> salvos, <n> recusados · reações <n>` in `_sistema/log.md`.
 
 Reply in one line: "Reunião guardada na ficha e no histórico da **<Nome>**." plus the próximo passo.
 
 ## What this skill never does
 
 - Writes before her **sim**.
-- Builds a resumo from an AI summary, notes or memory.
+- Builds a resumo from an AI summary or from memory (her own debrief is a source).
 - Copies, moves, renames, shares or deletes a Meet transcript.
 - Shortens or tidies a transcript it saves.
 - Sends anything to the client, or puts her private notes in a follow-up.

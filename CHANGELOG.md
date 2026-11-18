@@ -2,6 +2,14 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.22.0 — 2026-11-17 [both]
+- **Closing a coaching session** (Rica, 2026-11-17). save-meeting (PT resumo-da-reuniao) answers "I just finished my session with…" (PT "acabei a sessão com…"). **Her debrief:** every close asks for what wasn't said (what she noticed, how it went); those lines join the batch marked `(debrief)` (PT `(você contou)`) and never reach the client unless she says so. **No transcript:** instead of stopping, it offers to save from her debrief alone, labeled as hers; AI summaries and memory are still never a source. The Meet tip now says transcripts need Business Standard or higher, or Workspace Individual (free Gmail and Business Starter don't have them).
+- **After the meeting, her way.** The first time, one open question: what should happen after a meeting like this (a recap email, a PDF with the activity, the materials she mentioned, or her own way). On her yes it becomes a Routines line in the Clients department (`After each client meeting: …`); every close then does it and asks "Anything else this time?". "From now on, always…" changes the line, on her yes. The follow-up offer no longer waits for a promise. Everything stays a draft she sends herself.
+- **Sessions from MCM.** With MCM connected and the client linked, the batch shows the session count, the next booked session and payment status, read live and never written to the sheet.
+- **Before a session** (open-client, PT abrir-cliente). "I have a session with X in 50 minutes" (PT "tenho sessão com…") gets a rundown instead of three lines: last time, owed both ways, where they are (sessions and payment from MCM), keep in mind, and one nudge fitted to the moment. Read-only.
+- **What she hands to people** (system, PT sistema). Any PDF, slides, one-pager, report or document she gives someone uses her brand kit (`about-me/brand.md`); no kit, a neutral design and one offer to make it.
+- **Untested:** counting sessions from MCM appointments for a contact, and the debrief-only path. First test: the first coaching client's next session.
+
 ## 0.21.3 — 2026-11-17 [both]
 - **The health report shows a new version the day it lands** (Rica, 2026-11-17). The report only refreshed at the weekly tidy-up, or at the end of the after-update tidy-up if she said yes to it, so Rica could not tell which version a client was on. Now, when the system sees the installed version changed, it rewrites `health.md` (`saude.md`) with the new version and mirrors it to the Drive copy right away, before the tidy-up and whatever she answers. Numbers only, no question, nothing said to her. Still needs her to open a conversation with her folder connected.
 
