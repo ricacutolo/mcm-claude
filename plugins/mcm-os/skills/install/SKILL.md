@@ -38,6 +38,18 @@ Every time this skill fires:
 
 > "One step per sitting is fine. Every step ends with: continue or pause."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "This is where your office gets built: a Claude that knows your business, writes like you and keeps every conversation where you can find it again.
+> When it's ready, you'll be able to:
+> - Say "let's work on <something>" and pick up exactly where you left off, days later
+> - Get emails, posts and proposals written in your own voice
+> - Keep each area of your business in its own place, with what's next always in view
+> - Bring in the machines when you want them: content, courses, your brand
+> It connects to your Google Drive, Gmail and Calendar, and to MCM if you use it. You can stop at any step and pick up later."
+
 ## Resuming
 
 - `state.md` missing → first run, Step 0.

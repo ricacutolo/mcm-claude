@@ -26,6 +26,18 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 > "Live lessons are recorded with a transcript, or the feedback loop has nothing to learn from."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "Isso monta a sua máquina de cursos: o seu programa desenhado, cada aula preparada, e o que acontece na aula virando o próximo passo.
+> Quando estiver pronta, você vai poder:
+> - Desenhar o seu programa módulo por módulo, a partir da oferta da sua estratégia
+> - Preparar cada aula em minutos, com as suas anotações e materiais
+> - Fechar uma aula pela gravação: o resumo pros alunos, as dúvidas deles, ideias de posts
+> - Revisar cada turma e ver o que melhorar
+> Ela se conecta às gravações das suas reuniões (Zoom ou Google Meet) e ao MCM, onde o curso fica. Você pode parar em qualquer passo e continuar depois."
+
 ## Workflow
 
 ### Step 1 — The offer

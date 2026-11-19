@@ -35,6 +35,18 @@ Loaded when this skill fires, nothing more:
 
 > "Never say the logo can be registered. Once, at the end: checking the INPI (or the registry in her country) before printing is her step."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "Aqui a sua marca ganha a cara dela: logo, cores e fontes, e todos os arquivos que você vai precisar.
+> Quando terminar, você vai ter:
+> - Um logo criado com você, ou o seu próprio logo bem organizado
+> - As suas cores e fontes, com o que vai onde
+> - Arquivos prontos pra tudo: foto de perfil, site, e-mails, prévia de links
+> - Todo post, página e documento que eu fizer pra você, na sua marca daqui pra frente
+> Tudo fica salvo na sua pasta e no seu Drive. Você pode parar em qualquer rodada e continuar depois."
+
 ## Which way
 
 - Round pages in `entregas/marca/` and no `sobre-mim/marca.md` yet: she stopped mid-rounds. Pick up from the latest round ("Da última vez a gente estava na rodada 3: <as palavras dela>. Continuo de lá?"); never start over.

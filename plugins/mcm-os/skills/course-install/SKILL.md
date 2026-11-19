@@ -26,6 +26,18 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 > "Live lessons are recorded with a transcript, or the feedback loop has nothing to learn from."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "This sets up your course machine: your program designed, every lesson prepared, and what happens in class turned into what comes next.
+> When it's ready, you'll be able to:
+> - Design your program module by module, from the offer in your strategy
+> - Prepare each lesson in minutes, with your notes and materials
+> - Close a lesson from its recording: the recap for your students, their questions, ideas for posts
+> - Review each round and see what to improve
+> It connects to your meeting recordings (Zoom or Google Meet) and to MCM, where the course lives. You can stop at any step and pick up later."
+
 ## Workflow
 
 ### Step 1 — The offer

@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.23.1 — 2026-11-19 [both]
+- **Every setup opens with a pitch** (Rica, 2026-11-19). Setups started straight into step 1, underselling what she was setting up. Now install, content-install, course-install, brand-kit-designer and organize-drive each have an **Opening**, said the first time only: what it is for her, three or four things she'll be able to do with it, what it connects to, and that she can stop any time. Sold, not explained; examples adapted to her business when the system knows it. A resumed or later run skips it. The rule is in `system` § Setup wizards; `check-sync.py` fails a setup without an Opening.
+
 ## 0.23.0 — 2026-11-19 [both]
 - **One set of rules for every setup** (Rica, 2026-11-19). The content setup's way of guiding her (a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, one step at a time, picks up where she stopped) lived only in content-install, so other setups drifted: the brand kit designer asked open questions with no recommendation. Now `system` (PT `sistema`) has a **Setup wizards** section, and install, content-install, course-install, brand-kit-designer and organize-drive each open their rules by pointing to it.
 - **brand-kit-designer brought in line:** its questions open with a recommendation from her files; the ask for her logo files is one numbered step with a direct link to the folder; stopped mid-rounds, it picks up from the latest round instead of starting over.

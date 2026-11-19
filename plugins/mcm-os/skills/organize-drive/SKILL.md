@@ -35,6 +35,18 @@ Loaded when this skill fires, nothing more:
 
 > "A file I can't place stays where it is. I list it; I don't guess."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "This puts your Google Drive in order, and keeps it that way.
+> When it's done, you'll have:
+> - A simple numbered folder structure, the same for everything
+> - Your loose files sorted into it, only the ones you approve
+> - Rules I learn from you, so new files land in the right place
+> - "Where do I save this?" answered in one line, any time
+> Nothing is ever deleted, and nothing moves without your yes."
+
 ## The base structure
 
 Every client starts from the same seven folders, numbered, at the top of her Drive. Names follow her language, except **04. Brand**, which is always English.

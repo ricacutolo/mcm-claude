@@ -38,6 +38,18 @@ Every time this skill fires:
 
 > "One step per sitting is fine. Every step ends with: continuar ou pausar."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "Aqui é onde o seu escritório é montado: um Claude que conhece o seu negócio, escreve como você e guarda cada conversa onde você encontra de novo.
+> Quando estiver pronto, você vai poder:
+> - Dizer "vamos trabalhar em <algo>" e continuar exatamente de onde parou, dias depois
+> - Ter e-mails, posts e propostas escritos com a sua voz
+> - Manter cada área do seu negócio no lugar dela, com o próximo passo sempre à vista
+> - Ligar as máquinas quando quiser: conteúdo, cursos, a sua marca
+> Ele se conecta ao seu Google Drive, Gmail e Agenda, e ao MCM se você usa. Você pode parar em qualquer passo e continuar depois."
+
 ## Resuming
 
 - `estado.md` missing → first run, Step 0.

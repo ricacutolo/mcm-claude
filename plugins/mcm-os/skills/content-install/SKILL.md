@@ -46,6 +46,18 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 > "Edits are applied exactly as given. Change nothing she did not ask to change."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "This sets up your content machine: from an idea to a post scheduled on your social media, in your voice and your brand.
+> When it's ready, you'll be able to:
+> - Get a 4-week plan of what to post, built from your strategy
+> - Say "next post" and get the text and the design ready, in your brand
+> - Schedule it straight to Instagram, Facebook or LinkedIn through MCM
+> - Turn one recording into posts, a newsletter or a reel, and see every month what's working
+> It connects to MCM, and to Canva if you use it (ElevenLabs too, if you want reels). You can stop at any step and pick up later."
+
 ## The steps
 
 | # | Stage | Step | Done when | How |

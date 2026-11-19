@@ -76,6 +76,7 @@ Any skill that walks her through steps to set something up (install, content-ins
 - Claude does the busywork; what needs her hands comes as numbered steps, one action each, with direct links,
 - checks are read-only,
 - one step at a time, she knows where she is, and it picks up where she stopped.
+- it opens, the first time only, with an `## Opening`: what it will do for her and what she'll be able to do with it, said like a pitch, not a manual (checked).
 
 The rules live once, in `system`, so every setup behaves the same way. The setup's own `## The rules` opens with the line that points to them (`> "This setup follows /system § Setup wizards: …"`); its own rules add to them, never loosen them. A new setup is added to the `WIZARDS` list in `scripts/check-sync.py`, which fails a setup without the pointer.
 
