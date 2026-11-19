@@ -164,7 +164,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each template built: hand /contexto one line for `contexto/conteudo.md`:
+Each template built: hand /assunto one line for `contexto/conteudo.md`:
 `Modelo criado: <format> × <post type> (Canva <design ID>), atende os posts <N, M>. Em aberto: <ajustes à mão, ou nada>.`
 
 ## What this skill never does
@@ -173,7 +173,7 @@ Each template built: hand /contexto one line for `contexto/conteudo.md`:
 - Edits an existing TEMPLATE design.
 - Uses AI-generated images or stock illustrations for diagrams.
 - Writes copy for a real post, drafts captions, or schedules anything — that's conteudo-estatico.
-- Edits `estrategia.md`, `estilo-da-marca.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/`, the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /contexto).
+- Edits `estrategia.md`, `estilo-da-marca.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/`, the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /assunto).
 - Changes `plano.md` beyond the Modelo cells of the slots it serves and its line in "Modelos a criar".
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Deletes Canva designs or files. A draft without a sim stays titled DRAFT for her to keep or delete.

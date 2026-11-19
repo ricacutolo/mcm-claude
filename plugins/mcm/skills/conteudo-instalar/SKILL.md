@@ -94,7 +94,7 @@ Order: stages in order. Within a stage, a step that waits on her doesn't block t
 - File steps (10, 11, 14): written from what's known, without asking; one line saying what was written. The newsletter details in step 14 are the exception: shown for her confirmation first.
 - After each step, update `configuracao.md` (status, date, how we know, decisions noted) and hand /sistema "atualizar o bloco Configuração", so Rica sees the progress the same day. No approval needed.
 
-**The Conteúdo department (step 1):** the brief in /novo-departamento's brief format, filled from the content machine, never from an interview. Ask only its area: "Esse conteúdo é para **<her main business>**, ou para outra coisa?" (her main business first; her answer wins). Fill the dates, show the full brief, and on sim write it, add its index line under its area header in `departamentos/index.md`, and hand /contexto the creation of `contexto/conteudo.md` (`tier: department`) with "Departamento Conteúdo criado durante a configuração do conteúdo." Her sim covers all three.
+**The Conteúdo department (step 1):** the brief in /novo-departamento's brief format, filled from the content machine, never from an interview. Ask only its area: "Esse conteúdo é para **<her main business>**, ou para outra coisa?" (her main business first; her answer wins). Fill the dates, show the full brief, and on sim write it, add its index line under its area header in `departamentos/index.md`, and hand /assunto the creation of `contexto/conteudo.md` (`tier: department`) with "Departamento Conteúdo criado durante a configuração do conteúdo." Her sim covers all three.
 
 - Name **Conteúdo**; slug `conteudo`; `area:` her answer.
 - Intro: "Os posts dela, da ideia ao agendamento, e o que eles ensinam sobre o público dela."
@@ -205,7 +205,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
+Runs that changed something: hand /assunto one line for `contexto/conteudo.md`:
 `Configuração do conteúdo <N>/20: feito nesta rodada <steps>. Esperando <steps, and on whom>.`
 
 ## What this skill never does
@@ -213,7 +213,7 @@ Runs that changed something: hand /contexto one line for `contexto/conteudo.md`:
 - Saves her newsletter details without her confirmation.
 - Reads, prints, copies or asks for the MCM key, or reads `.env`.
 - Connects, disconnects or changes anything in MCM or Claude's settings — she does those; this skill only checks. The only Canva changes it makes: copying the shared templates into her Canva and rebranding the copies (step 9, on her sim), placeholders on her own templates (on her sim), and placing her logo (step 8).
-- Writes `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (changes there only wait in `_sistema/pendentes.md`), the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /contexto).
+- Writes `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (changes there only wait in `_sistema/pendentes.md`), the shipped library, playbook or guides, or anything in `contexto/` (milestones go through /assunto).
 - Adds template rows to `modelos.md` beyond the templates set up here (MCM's and her own).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`, once step 1 has created it.
 - Edits a TEMPLATE design in Canva, or the original MCM shared. The step 9 rebrand works on her fresh copy before it's titled TEMPLATE.

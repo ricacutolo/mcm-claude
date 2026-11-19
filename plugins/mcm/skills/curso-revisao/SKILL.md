@@ -51,7 +51,7 @@ Examples of where changes go: an extra example or practice in the next lesson; a
 
 ### Step 5 — Close
 - the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está (review done, one line), Próximo passo. A round review sets that round to "terminou YYYY-MM-DD" under Turmas. Then the Cursos brief.
-- Hand /contexto one line for `contexto/cursos.md`: `<Programa> módulo <n> revisado: <mudanças aprovadas, curto>.`
+- Hand /assunto one line for `contexto/cursos.md`: `<Programa> módulo <n> revisado: <mudanças aprovadas, curto>.`
 - Receipt.
 
 ## Receipt

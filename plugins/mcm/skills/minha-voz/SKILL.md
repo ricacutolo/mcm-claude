@@ -91,7 +91,7 @@ Append one line to `_sistema/log.md` when a file or Gmail draft was created:
 `YYYY-MM-DD | minha-voz | <rascunho salvo / rascunho no Gmail> | <path or "Gmail">`
 
 Shared memory: this skill does not write `contexto/`. If a department or project log is open in this
-conversation, `contexto` records the milestone under its own rules.
+conversation, `assunto` records the milestone under its own rules.
 
 ## What this skill never does
 

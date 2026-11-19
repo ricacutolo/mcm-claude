@@ -126,7 +126,7 @@ For each calendar row marked `Agendado` whose time has passed, or the post she n
    ```
 3. **Not found yet:** within an hour of the slot, say it may still be going out and to ask again later. More than an hour past: "O post N ainda não aparece como publicado no MCM. Vale dar uma olhada no Social Planner." Never mark it Publicado on a guess.
 4. Tell her in one line per post: "O post N está no ar: <links>."
-5. Department brief: Estado atual with today's date and one line. Hand /contexto a one-line milestone for `contexto/conteudo.md`: `Post N publicado em <date> (<topic> × <post type>)`.
+5. Department brief: Estado atual with today's date and one line. Hand /assunto a one-line milestone for `contexto/conteudo.md`: `Post N publicado em <date> (<topic> × <post type>)`.
 
 ## Step C — Idea capture
 
@@ -167,7 +167,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 - Hands a post to a maker without her sim.
 - Sets a post to published in MCM, or marks it Publicado in the calendar without finding it live.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits `estrategia.md`, `plano.md`, `modelos.md`, `estilo-da-marca.md`, `ghl.md` (beyond a `pedida` row in Palavras de comentário), the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
+- Edits `estrategia.md`, `plano.md`, `modelos.md`, `estilo-da-marca.md`, `ghl.md` (beyond a `pedida` row in Palavras de comentário), the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /assunto).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Skips a missed slot, puts two posts on the same day, or shifts the plan without her sim.
 - Deletes posts, files or ideas. A dropped idea is marked `descartada`, not removed.

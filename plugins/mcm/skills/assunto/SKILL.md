@@ -1,9 +1,9 @@
 ---
-name: contexto
-description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos, clientes e assuntos soltos. Também guarda uma conversa inteira no assunto certo. Quando ela diz \"/contexto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"guarda isso\", \"anota isso\", \"essa conversa é sobre\", \"guarda essa conversa no\", \"tudo isso aqui é do cliente\"."
+name: assunto
+description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos, clientes e assuntos soltos. Também guarda uma conversa inteira no assunto certo. Quando ela diz \"/assunto\", \"abre o assunto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"guarda isso\", \"anota isso\", \"essa conversa é sobre\", \"guarda essa conversa no\", \"tudo isso aqui é do cliente\"."
 ---
 
-# contexto — the running log of every topic
+# assunto — the running log of every topic
 
 One small file per thread of work in `contexto/`. Any conversation — new, old, compacted, or running in parallel with another — loads it and continues without losing the thread.
 
@@ -110,7 +110,7 @@ When dated entries are older than about three weeks, or the file passes about 15
 ### Step 6 — Receipt
 
 One line in `_sistema/log.md` each time the skill is invoked or creates/condenses a file:
-`YYYY-MM-DD | contexto | carregado/criado/condensado/listado | <slug> · <n> entradas`
+`YYYY-MM-DD | assunto | carregado/criado/condensado/listado | <slug> · <n> entradas`
 
 Shared memory: in this plugin the log itself is the shared memory, so there is no separate memory entry.
 

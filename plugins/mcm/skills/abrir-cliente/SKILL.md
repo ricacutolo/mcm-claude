@@ -7,7 +7,7 @@ description: "MCM Client Book: abre um cliente para trabalhar nele — carrega a
 
 Part of the **MCM Client Book**. Loads one client's sheet and histórico, plus the Clientes department's way of serving, so she never re-explains a client.
 
-It does one thing: **open**. It never creates a client (/novo-cliente), never edits the sheet itself (updates go through /sistema's write-back and /guardar-no-cliente), and never writes the histórico (/contexto).
+It does one thing: **open**. It never creates a client (/novo-cliente), never edits the sheet itself (updates go through /sistema's write-back and /guardar-no-cliente), and never writes the histórico (/assunto).
 
 Speak Brazilian Portuguese.
 
@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `departamentos/clientes/index.md` — to match the name.
 2. `departamentos/clientes/<slug>/ficha.md` — in full.
-3. The histórico named in `contexto:` — **through /contexto** only.
+3. The histórico named in `contexto:` — **through /assunto** only.
 4. `departamentos/clientes/brief.md` — only Padrões and Rotinas, and only when the task needs her way of serving.
 5. Files in the client's Drive folder — only when the task needs one, by name from the sheet's Arquivos.
 6. Her MCM connection — only before a session: her appointments with this contact (sessions done, the next one) and payment status. Read live, never copied to the sheet.
@@ -41,7 +41,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load
 
-Read the sheet. Invoke /contexto with the slug from `contexto:`.
+Read the sheet. Invoke /assunto with the slug from `contexto:`.
 
 ### Step 3 — Reply in three lines at most
 
@@ -62,7 +62,7 @@ When she asked a question ("o que eu sei sobre..."), answer it from the sheet an
 
 ### Step 4 — Stay active
 
-For the rest of the conversation, facts about this client route to their sheet (via /sistema's write-back) and milestones to their histórico (via /contexto). A file she sends goes through /guardar-no-cliente. After compaction, or after another client was opened, re-read the sheet and ask /contexto to re-read the histórico.
+For the rest of the conversation, facts about this client route to their sheet (via /sistema's write-back) and milestones to their histórico (via /assunto). A file she sends goes through /guardar-no-cliente. After compaction, or after another client was opened, re-read the sheet and ask /assunto to re-read the histórico.
 
 ### Step 5 — Receipt
 
@@ -81,7 +81,7 @@ For the rest of the conversation, facts about this client route to their sheet (
 ## Failure modes
 
 - **Sheet missing but index line exists:** say so, offer /novo-cliente.
-- **Histórico missing:** open the sheet, offer to start the histórico (/contexto, on her sim).
+- **Histórico missing:** open the sheet, offer to start the histórico (/assunto, on her sim).
 - **Folder offline:** say so in one line.
 
 ## STOP handling

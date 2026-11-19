@@ -50,7 +50,7 @@ Speak to her in plain, warm Brazilian Portuguese. Say "o seu programa", "os mód
 ### Step 5 — Close
 - the program's progress (its `index.md`: **Onde está**, **Próximo passo**; see /curso-instalar): Onde está ("Desenhado: <n> módulos.") and Próximo passo ("Montar a aula 1"); a revision for a new round adds "Turma <n> — planejada" under Turmas. Then the Cursos brief. Mention it in one line.
 - Launch order check: the strategy says sell before build → "A sua estratégia diz pra pré-vender primeiro; você só precisa do roteiro e da aula 1 pra começar a vender." Offer /curso-aula for lesson 1.
-- Hand /contexto one line for `contexto/cursos.md`: `<Programa> desenhado: <n> módulos, <formato>. Próximo: aula 1.`
+- Hand /assunto one line for `contexto/cursos.md`: `<Programa> desenhado: <n> módulos, <formato>. Próximo: aula 1.`
 - Receipt.
 
 ## Receipt

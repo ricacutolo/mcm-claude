@@ -58,7 +58,7 @@ Re-read the sheet, then:
 - a file → one line under **Arquivos**: `- <nome> · <onde no Drive> · <o que importa> · YYYY-MM-DD`
 - a fact she stated → one line in the right section (Quem é, Preferências, O que está aberto, Notas). Facts she states are written and mentioned in one line; anything inferred goes to /sistema as a pending item instead.
 
-Update `atualizado:`. If something changed what's open or happened (a ticket issued, a quote sent), hand a milestone line to /contexto for the client's histórico.
+Update `atualizado:`. If something changed what's open or happened (a ticket issued, a quote sent), hand a milestone line to /assunto for the client's histórico.
 
 ### Step 5 — Receipt and report
 

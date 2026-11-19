@@ -152,7 +152,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that reached a new stage: hand /contexto one line for `contexto/conteudo.md`:
+Runs that reached a new stage: hand /assunto one line for `contexto/conteudo.md`:
 `Episode N <outline approved / kit approved / published <date>>: <topic>, <format>. From it: <posts, newsletter, or none>. Still open: <next step, or none>.`
 
 ## What this skill never does
@@ -162,7 +162,7 @@ Runs that reached a new stage: hand /contexto one line for `contexto/conteudo.md
 - Writes an outline without asking for her material first, or writes her a script to read.
 - Invents a story, a client, a quote, numbers or results.
 - Reads, prints, copies or asks for `.env` or the ElevenLabs key.
-- Edits `estrategia.md`, the shipped library, playbook or platform files, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
+- Edits `estrategia.md`, the shipped library, playbook or platform files, `sobre-mim/`, or anything in `contexto/` (milestones go through /assunto).
 - Changes `plano.md` beyond the Status cell of its slot; touches the brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Deletes her recording, a transcript or a Drive file. A redone file gets a new name (`episodio-NN-v2.mp3`).
 - Runs more than one episode per run.

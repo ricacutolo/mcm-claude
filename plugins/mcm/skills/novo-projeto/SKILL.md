@@ -26,7 +26,7 @@ Loaded only when this skill fires:
 
 > "No task lists, no checklists, no 'próximos passos' section. One next step, in one line."
 
-> "This skill writes only inside `projetos/`, plus the receipt. The log is created by /contexto."
+> "This skill writes only inside `projetos/`, plus the receipt. The log is created by /assunto."
 
 > "Push back once if the result is vague, then take her answer."
 
@@ -108,7 +108,7 @@ Then: "Esse é o brief do projeto **<Nome>**. Posso criar? (**sim** / ou me diz 
 2. Write `projetos/<slug>/brief.md` exactly as approved.
 3. Re-read `projetos/index.md` (create with `# Projetos` if missing), then add under its `## <Área>` header (create it if missing; Pessoal stays last, then `## Sem área`):
    `- [<Nome>](<slug>/brief.md) · YYYY-MM-DD · ativo · <resultado em uma linha>`
-4. Invoke /contexto to start `contexto/<slug>.md` with `tier: projeto` and `brief: projetos/<slug>/brief.md`. **Her sim to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /contexto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
+4. Invoke /assunto to start `contexto/<slug>.md` with `tier: projeto` and `brief: projetos/<slug>/brief.md`. **Her sim to the brief covers starting its log.** If a log for the topic exists, link it and update its `tier` and `brief`. **Created mid-conversation:** hand /assunto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. If it belongs to a department, hand /sistema a pending item for that department's Decisões: `YYYY-MM-DD — Projeto <Nome> aberto.` (hard tier — she confirms with the next batch).
 
 ### Step 6 — Receipt

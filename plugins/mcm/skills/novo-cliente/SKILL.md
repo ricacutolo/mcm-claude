@@ -40,7 +40,7 @@ Loaded only when this skill fires:
 
 No `departamentos/clientes/brief.md`:
 
-1. **One she already made.** Read `departamentos/index.md`. A department whose name or purpose is about her clients (cliente, clientes, contatos, CRM, carteira) → "Você já tem o departamento **<Nome>**. Posso usar ele como o seu departamento de Clientes? Eu mudo o nome da pasta para `clientes`, para o sistema sempre achar. (**sim** / **não, é outra coisa**)" On **sim**: move `departamentos/<slug>/` to `departamentos/clientes/` (move, never delete), fix its line in `departamentos/index.md`, and ask /contexto to update its histórico's `brief:` to `departamentos/clientes/brief.md` (the histórico keeps its name). Several candidates → short numbered list; she picks or says none.
+1. **One she already made.** Read `departamentos/index.md`. A department whose name or purpose is about her clients (cliente, clientes, contatos, CRM, carteira) → "Você já tem o departamento **<Nome>**. Posso usar ele como o seu departamento de Clientes? Eu mudo o nome da pasta para `clientes`, para o sistema sempre achar. (**sim** / **não, é outra coisa**)" On **sim**: move `departamentos/<slug>/` to `departamentos/clientes/` (move, never delete), fix its line in `departamentos/index.md`, and ask /assunto to update its histórico's `brief:` to `departamentos/clientes/brief.md` (the histórico keeps its name). Several candidates → short numbered list; she picks or says none.
 2. **Clients already written inside it.** If that brief, its histórico or another file in its folder lists clients with details (names plus who they are, trips, preferences): "Vi N clientes guardados no departamento: <nomes>. Quer que eu crie uma ficha para cada um? Um de cada vez, você confirma cada ficha." On **sim**, for each one run Steps 1-4 with what is written about them as the source (like mid-conversation). Never remove the original text on your own; when all are done, offer: "Posso mover a lista antiga para `_revisao/`? As fichas já têm tudo." Move on **sim**.
 3. **None.** "Antes do primeiro cliente, vou criar o departamento **Clientes** — é onde fica o seu jeito de atender qualquer cliente (o que você pergunta sempre, seus passos). Pode ser?" On **sim**, run the /novo-departamento flow for `clientes`, then come back here.
 
@@ -104,7 +104,7 @@ Show the draft, then: "Essa é a ficha da **<Nome>**. Posso criar? Também crio 
 1. Create `departamentos/clientes/<slug>/` and write `ficha.md` exactly as approved.
 2. Re-read `departamentos/clientes/index.md` (create with `# Clientes` if missing), then add:
    `- [<Nome>](<slug>/ficha.md) · YYYY-MM-DD · ativo · <uma frase>`
-3. Invoke /contexto to create `contexto/<slug>.md` with `tier: cliente` and `brief: departamentos/clientes/<slug>/ficha.md`. **Her sim covers it.** If Step 1 found her histórico about this client, link it instead: /contexto sets its `tier` to `cliente` and its `brief` to the ficha, adds the client's name to `apelidos`, and creates nothing; the file keeps its name and the ficha's `contexto:` points to it. Mid-conversation: hand /contexto the capture of this conversation as the seed (its capture mode), not a one-line summary.
+3. Invoke /assunto to create `contexto/<slug>.md` with `tier: cliente` and `brief: departamentos/clientes/<slug>/ficha.md`. **Her sim covers it.** If Step 1 found her histórico about this client, link it instead: /assunto sets its `tier` to `cliente` and its `brief` to the ficha, adds the client's name to `apelidos`, and creates nothing; the file keeps its name and the ficha's `contexto:` points to it. Mid-conversation: hand /assunto the capture of this conversation as the seed (its capture mode), not a one-line summary.
 4. Drive: with `sobre-mim/drive.md`, create `<Nome>` inside `02. Clientes` (colored like its parent, per /organizar-drive's rule) and check it exists. Without `drive.md`: say "A pasta no Drive fica para quando o seu Drive estiver organizado — quer organizar agora?" (offers /organizar-drive) and set `drive: a criar`.
 
 ### Step 5 — Receipt
@@ -123,7 +123,7 @@ Ficha, histórico e pasta no Drive prontos. Pode me mandar arquivos dele aqui no
 - Writes before her **sim**.
 - Copies contact data from MCM, or any ID, passport, card or bank number.
 - Invents a fact or fills a blank with a guess.
-- Writes outside `departamentos/clientes/`, except the hand-off to /contexto, the Drive folder and the receipt.
+- Writes outside `departamentos/clientes/`, except the hand-off to /assunto, the Drive folder and the receipt.
 - Contacts the client.
 
 ## When to refuse

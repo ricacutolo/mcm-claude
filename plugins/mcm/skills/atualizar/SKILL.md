@@ -68,7 +68,7 @@ Where they go:
 | Meu negócio | `sobre-mim/cerebro-do-negocio.md`, under the heading that fits |
 | Meu negócio <Área> | `sobre-mim/cerebro-do-negocio-<area>.md`, under the heading that fits |
 | Sobre mim | `sobre-mim/sobre-mim.md` |
-| Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximo passo (the next move); facts and stories go to its histórico via /contexto |
+| Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximo passo (the next move); facts and stories go to its histórico via /assunto |
 | Projeto X | same, for the project's brief |
 | Conteúdo — palavras de comentário | `departamentos/conteudo/ghl.md` § Palavras de comentário: the word's row, added or with its new status (`no ar` with today's date in Desde, or `pausada`), exactly as Rica wrote it. Only this section sets a word live. |
 | Para fazer | nothing is written; it is offered in Step 4 |
@@ -85,7 +85,7 @@ Show everything at once, grouped by file, numbered straight through:
 
 Then wait. She can answer all at once ("sim pra tudo", "1 a 5 sim, 6 não").
 
-- **sim** → write it. Appends go under the right heading; Decisões lines are dated. Before any rewrite of an existing line, copy the file to `_revisao/YYYY-MM-DD-<arquivo>.md`. Histórico lines are handed to /contexto to write.
+- **sim** → write it. Appends go under the right heading; Decisões lines are dated. Before any rewrite of an existing line, copy the file to `_revisao/YYYY-MM-DD-<arquivo>.md`. Histórico lines are handed to /assunto to write.
 - **ajustar** → take her wording, then write.
 - **não** → drop it.
 - No answer → add it to `_sistema/pendentes.md` in the sistema format, with `(de: notas do Rica)`, so it comes back in the next batch.
@@ -103,7 +103,7 @@ Set `notas_rica_secoes: <number of dated sections in the doc>` and `notas_rica_l
 One line in `_sistema/log.md`:
 `YYYY-MM-DD | atualizar | <n> salvas, <n> recusadas, <n> pendentes | notas até AAAA-MM-DD`
 
-Shared memory: changes to a department or project are logged in its histórico by /contexto, as above.
+Shared memory: changes to a department or project are logged in its histórico by /assunto, as above.
 
 ## What this skill never does
 
