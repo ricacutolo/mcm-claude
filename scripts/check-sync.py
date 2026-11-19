@@ -96,6 +96,19 @@ for label, d in (("mcm-os", EN), ("mcm", PT)):
         if RECEIPT[label] not in s:
             problems.append(f"{label}/{name}: no receipt line in {RECEIPT[label]}")
 
+# Setup wizards (docs/skill-conventions.md § Setup wizards): system holds the rules, every setup points to them.
+WIZARDS = {"mcm-os": ("system", ["install", "content-install", "course-install", "brand-kit-designer", "organize-drive"]),
+           "mcm": ("sistema", ["instalar", "conteudo-instalar", "curso-instalar", "brand-kit-designer", "organizar-drive"])}
+for label, d in (("mcm-os", EN), ("mcm", PT)):
+    sysname, setups = WIZARDS[label]
+    sysf = os.path.join(d, sysname, "SKILL.md")
+    if os.path.isfile(sysf) and not re.search(r"^## Setup wizards\b", open(sysf, encoding="utf-8").read(), re.M):
+        problems.append(f"{label}/{sysname}: missing section '## Setup wizards'")
+    for name in setups:
+        f = os.path.join(d, name, "SKILL.md")
+        if os.path.isfile(f) and "§ Setup wizards" not in open(f, encoding="utf-8").read():
+            problems.append(f"{label}/{name}: a setup must point to {sysname} § Setup wizards in its rules")
+
 known_en = {en for _, en in skill_pairs()}
 known_pt = {pt for pt, _ in skill_pairs()}
 for d, known, label in ((EN, known_en, "mcm-os"), (PT, known_pt, "mcm")):

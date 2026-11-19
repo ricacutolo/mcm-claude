@@ -21,6 +21,8 @@ Loaded when this skill fires, nothing more:
 
 ## The rules
 
+> "This setup follows /system § Setup wizards: a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, and it picks up where she stopped."
+
 > "Never delete anything in her Drive. Not a file, not a folder, not a duplicate."
 
 > "Show the plan before creating or moving anything, and wait for her explicit yes. Move only the lines she approved."

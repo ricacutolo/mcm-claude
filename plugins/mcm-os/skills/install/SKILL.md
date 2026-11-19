@@ -28,6 +28,8 @@ Every time this skill fires:
 
 ## The rules
 
+> "This setup follows /system § Setup wizards: a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, and it picks up where she stopped."
+
 > "Write only inside her connected folder. Nothing outside it."
 
 > "Every file is shown to her before it is written. Write after **yes**."

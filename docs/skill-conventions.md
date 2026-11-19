@@ -1,6 +1,6 @@
 # Skill conventions — what makes a skill part of MCM OS
 
-Read this **before writing or editing any skill** in either edition. These are Rica's eight skill conventions from his own system, adapted to this repo. A skill that skips them still runs, but on its own: no trail, invisible to the system, and with no safety rail on the day it does something wrong.
+Read this **before writing or editing any skill** in either edition. These are Rica's skill conventions from his own system, adapted to this repo. A skill that skips them still runs, but on its own: no trail, invisible to the system, and with no safety rail on the day it does something wrong.
 
 `scripts/check-sync.py` enforces the parts marked **(checked)**. A pull request that breaks one fails the check.
 
@@ -68,6 +68,16 @@ Section headings stay in English in both editions, so the check reads them the s
 - Her platform is **MCM**. Never say GoHighLevel, HighLevel or GHL to her.
 - Replies follow `system` § "How every reply looks"; questions follow § "Asking her things".
 - The skill does the work itself (connections first, the browser when a connection can't) and stops before publish, send, delete or pay.
+
+## 9. Setups follow the setup-wizard rules (checked)
+
+Any skill that walks her through steps to set something up (install, content-install, course-install, brand-kit-designer, organize-drive, and every setup added later) follows `system` § Setup wizards:
+- a recommendation at every step; small details decided and noted, not asked,
+- Claude does the busywork; what needs her hands comes as numbered steps, one action each, with direct links,
+- checks are read-only,
+- one step at a time, she knows where she is, and it picks up where she stopped.
+
+The rules live once, in `system`, so every setup behaves the same way. The setup's own `## The rules` opens with the line that points to them (`> "This setup follows /system § Setup wizards: …"`); its own rules add to them, never loosen them. A new setup is added to the `WIZARDS` list in `scripts/check-sync.py`, which fails a setup without the pointer.
 
 ---
 

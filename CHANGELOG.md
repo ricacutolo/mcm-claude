@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.23.0 — 2026-11-19 [both]
+- **One set of rules for every setup** (Rica, 2026-11-19). The content setup's way of guiding her (a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, one step at a time, picks up where she stopped) lived only in content-install, so other setups drifted: the brand kit designer asked open questions with no recommendation. Now `system` (PT `sistema`) has a **Setup wizards** section, and install, content-install, course-install, brand-kit-designer and organize-drive each open their rules by pointing to it.
+- **brand-kit-designer brought in line:** its questions open with a recommendation from her files; the ask for her logo files is one numbered step with a direct link to the folder; stopped mid-rounds, it picks up from the latest round instead of starting over.
+- **For the maintainer:** convention 9 in `docs/skill-conventions.md`; `check-sync.py` fails when `system` lacks the section or a setup lacks the pointer (the `WIZARDS` list).
+
 ## 0.22.2 — 2026-11-19 [mcm]
 - **contexto → assunto** (Rica, 2026-11-19, from the Portuguese installs). Clients got departments and projects but not "contexto". The Portuguese skill is now **assunto**, the word people actually say ("muda de assunto", "onde a gente parou naquele assunto"): `/assunto`, "abre o assunto …", and "contexto de …" still works. Every `/contexto` in mcm, the manual's command chip, the glossary and the system map follow; the system map's row for it also now names the English skill `context-hot`. The folder stays `contexto/` for every client, old and new, so nothing moves and the skills look in one place. English unchanged.
 

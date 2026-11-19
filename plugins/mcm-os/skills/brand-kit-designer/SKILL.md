@@ -21,6 +21,8 @@ Loaded when this skill fires, nothing more:
 
 ## The rules
 
+> "This setup follows /system § Setup wizards: a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, and it picks up where she stopped."
+
 > "Her own logo is hers: never redesigned, recolored or changed without her yes. Only the versions it allows are made."
 
 > "Every logo made here is original. Never imitate an existing brand, logo, mascot, character or trademark, even when she asks or names one as a reference. A reference is read for its mood (understated, playful, handmade), never copied."
@@ -35,6 +37,7 @@ Loaded when this skill fires, nothing more:
 
 ## Which way
 
+- Round pages in `deliverables/brand/` and no `about-me/brand.md` yet: she stopped mid-rounds. Pick up from the latest round ("Last time we were on round 3: <her words>. Carry on from there?"); never start over.
 - `about-me/brand.md` exists: she already has a kit; offer to adjust it instead of starting over.
 - She has a logo and colors (she says so, or the content setup sent her here with "yes, I have them"): **From her own brand**, below. Then Steps 5 and 6.
 - Otherwise: from scratch, Steps 1 to 6.
@@ -43,7 +46,7 @@ Loaded when this skill fires, nothing more:
 
 Nothing is redesigned; her brand goes into her system.
 
-1. **Intake:** her files from `04. Brand` in her Drive (or attached in the chat), and her website if she gave the link. Nothing there yet: "Put your logo files, and anything that shows your colors (a style guide, a past design), in **04. Brand** in your Drive, or attach them here. Your website works too: just send the link." Wait for "done".
+1. **Intake:** her files from `04. Brand` in her Drive (or attached in the chat), and her website if she gave the link. Nothing there yet: "Put your logo files, and anything that shows your colors (a style guide, a past design), in **04. Brand** in your Drive, or attach them here. Your website works too: just send the link." That ask is one numbered step with a direct link to the folder (from `about-me/drive.md`). Wait for "done".
 2. **Read what's there:** her colors (from her logo, her style guide, her site), and her fonts if her style guide or site names them. No fonts known: suggest two free Google Fonts that pair with her logo, for her yes.
 3. **File quality, said once:** a vector file (SVG, AI, EPS, PDF) gives clean files at every size. A PNG or JPG can only be resized: if it's smaller than the 1200 px files need, say so and offer a faithful redraw of her own logo as a clean vector, for her yes. Never changes her design without asking.
 4. **Versions:** only the ones her logo allows. Horizontal as it is; single-color dark and light by recoloring; stacked and symbol-only only when her logo has a separate symbol. Never invents a symbol she doesn't have.
@@ -53,7 +56,7 @@ Nothing is redesigned; her brand goes into her system.
 
 ### Step 1 — Brief (at most 3 questions)
 
-From her files, write a four-line brief: business, audience, what she sells, tone. Then ask only what the files do not answer, one at a time:
+From her files, write a four-line brief: business, audience, what she sells, tone. Then, for what the files do not answer, one at a time, each opening with my recommendation from her files ("From your business file I'd go with elegant, warm, modern. Keep those, or change them?"):
 
 1. "How exactly should the name appear in the logo?" (with or without a tagline)
 2. "Three words for how the brand should feel?" (e.g. elegant, welcoming, modern)
