@@ -26,6 +26,8 @@ Never read or print `departments/content/.env`. Step 19 checks only whether a ke
 
 ## The rules (the spine of this skill — not negotiable, not relaxed for trusted runs, not on the hundredth run)
 
+> "This setup follows /system § Setup wizards: a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, and it picks up where she stopped."
+
 > "Every step opens with a recommendation: the answer we'd pick and why. She confirms or changes it. Small details get decided and noted, not asked."
 
 > "Claude does the busywork. She only does what needs her hands (signing in, approving, pasting a key), and every one of those comes as numbered steps, one action each, with a direct link wherever one exists (**Click here to open <the page> →**). If Claude can check something, it checks instead of asking her to report."

@@ -18,6 +18,8 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 
 ## The rules
 
+> "This setup follows /sistema § Setup wizards: a recommendation at every step, Claude does the busywork, numbered steps with direct links for what needs her hands, read-only checks, and it picks up where she stopped."
+
 > "The strategy decides the offer; this machine never does. No first offer in the strategy → offer the strategy session first."
 
 > "Nothing is written before her sim."
