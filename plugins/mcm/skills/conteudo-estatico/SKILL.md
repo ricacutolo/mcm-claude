@@ -28,7 +28,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
     Photo formats (photo post, photo carousel, headline photo) also: `departamentos/conteudo/fotos.md` (her photo library index, below) and her Google Drive folder **Fotos de conteúdo**; for a generated image, `../conteudo-estrategia/image-prompts.md` and `departamentos/conteudo/estilo-de-foto.md` (below).
 11. Only when recommending ideas or drafting copy (Steps 2-3):
     - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge, current positioning. It evolves; always read the current one, never a remembered copy.
-    - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 4-point check.
+    - `../conteudo-estrategia/playbook.md` — rules, awareness levels, hooks, frameworks, structure per post type, caption formula, CTA by layer, the 5-point check.
     - `departamentos/conteudo/swipe.md` — lines that worked for her, if it exists.
     - `../conteudo-estrategia/platforms/<platform>.md` for each platform on in `estrategia.md` — its formats and caption rules. Only those.
     - `sobre-mim/escrita.md` — her voice.
@@ -98,12 +98,12 @@ Horário: <day date time> · <topic> × <post type> · <format> · modelo: <name
 - She picks. If she changes the topic or post type, say the plan will show it changed and note it in `post.md`. Record topic, post type, idea and who chose it in `post.md`.
 
 ### Step 3 — Copy (gate 1)
-- Read the playbook and her voice. Choose the awareness level for the post type, pick a hook pattern, use the structure for the post type and the caption formula, and the slot's ending (`final` from the plan: the ask for the layer, the named light ending, `comentar: <PALAVRA>`, or none; playbook § 7). `comentar: <PALAVRA>`: the word must be `no ar` in `ghl.md` (not live → the ending becomes "salve para depois" and say so in one line); the caption and the last slide say it in her voice, the word in caps, with what they get from its row ("Comente MUDAR e eu te mando a aula."); `post.md` records the word. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
+- Read the playbook and her voice. Choose the awareness level for the post type, draft three hooks from different patterns (playbook § 3: each with its reason, one recommended), use the structure for the post type and the caption formula, and the slot's ending (`final` from the plan: the ask for the layer, the named light ending, `comentar: <PALAVRA>`, or none; playbook § 7). `comentar: <PALAVRA>`: the word must be `no ar` in `ghl.md` (not live → the ending becomes "salve para depois" and say so in one line); the caption and the last slide say it in her voice, the word in caps, with what they get from its row ("Comente MUDAR e eu te mando a aula."); `post.md` records the word. That's the main caption. For each platform on whose file gives it its own caption (LinkedIn), write that caption too, from the same idea, by its file's rules.
 - Photo formats: no slide text. The copy is the caption(s), the hook in the first line, and for a photo carousel the order of the photos.
 - Headline photo: the headline on the photo, 3-8 words, the hook said plainly in one color (no accent words), plus the caption(s), whose first line takes the hook further instead of repeating the headline.
 - For the 5-slide tips list: slide 1 hook (accent color on the words that sting) + "Arrasta pro lado →"; slides 2-4 one point each (number, short title, 2-4 lines, the turn in the accent color); slide 5 reframe line, promise in the accent color, the slot's ending (with `nenhum`, the promise closes the slide).
-- Run the playbook's 4-point check (hook, what they get, plain, ending) and fix what fails before showing.
-- Show slides and every caption (labeled by platform), accent words in [brackets], and one line naming the hook pattern used.
+- Run the playbook's 5-point check (hook, what they get, plain, ending, worth saving or sending) and fix what fails before showing.
+- Show slides and every caption (labeled by platform), accent words in [brackets], and above them the three hooks with their reasons, the recommended one marked (the draft uses it).
 - **Gate:** "O texto está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait for sim. Record the approved copy, captions (one per platform that has its own, labeled) and hook pattern in `post.md`.
 
 ### Step 4 — Design (gate 2)

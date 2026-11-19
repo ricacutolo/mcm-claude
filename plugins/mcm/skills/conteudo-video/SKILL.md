@@ -29,7 +29,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 10. `sobre-mim/sobre-mim.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
     - the business file of the area in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Areas**) — the offer, who it's for, the wedge.
-    - `../conteudo-estrategia/playbook.md` — rules, hooks, the 4-point check, how posts end (§ 7).
+    - `../conteudo-estrategia/playbook.md` — rules, hooks (three, one recommended), the 5-point check, how posts end (§ 7).
     - `../conteudo-estrategia/library.md` — the reel format definitions.
     - `sobre-mim/escrita.md` — her voice.
 12. Her Google Drive — the reel's clip folder (Step 3).
@@ -79,7 +79,8 @@ Skip this step when `_sistema/log.md` already has a `conteudo-video | video-chec
 - **Her material and a suggestion, in one message,** before drafting: "O que você quer falar sobre <topic> nesse reel — uma história, algo que você sempre diz pros clientes? Se preferir, eu faria assim: <the angle tagged `para o post N` in `ideias.md` when an anchor (the newsletter or an episode) leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
 - The hook goes on screen from frame 0. The ending is the slot's `final` (playbook § 7): the ask for the layer ("Agende uma conversa. Link na bio." while credibility is on), the named light ending, `comentar: <PALAVRA>` (only while the word is `no ar` in `ghl.md`; said once, the word on the end card in caps, with what they get), or none, when the fix is the last line.
-- Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
+- Three hooks from different patterns, each with its reason, one recommended (playbook § 3); the script uses the recommended one, and she can swap it before recording.
+- Run the playbook's 5-point check (hook, what they get, plain, ending, worth saving or sending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "O roteiro está bom? Diga **sim**, ou me diz o que mudar." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
 - Then tell her where to put the clips: "Grava quando estiver pronta, depois sobe os vídeos do celular pro Google Drive, na pasta **Vídeos de conteúdo/post-NN-<slug>**." Ask once: "Quer que eu crie a pasta no seu Drive?" Make it only on her sim, if Claude can reach her Drive; otherwise the name above is enough.

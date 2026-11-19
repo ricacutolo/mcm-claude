@@ -63,6 +63,7 @@ For each slot, pick one topic, one post type and one format:
 - Match unused ideas from `ideas.md` to slots first (by topic, then type). Where none fits, write one suggested angle, marked "suggestion", following the idea rules in `strategy.md` (what the reader gets, never technical).
 - Use the last 4 posts in `calendar.md` for the "in a row" and "within 2 weeks" checks across the plan boundary.
 - **How each post ends,** from the ask rhythm in `strategy.md` (How posts end): each post slot gets `ask`, `light` (one of the light endings that are on, named: save, question, share, follow) or `none`. Spread the asks evenly (about 1 in 3 by default), never two in a row, and not on a post type that's pure value (a myth vs truth can carry one; a quick win usually ends light). A strategy with no rhythm yet: `ask` on every slot, as before. The comment ending on and a word `live`: about 1 slot in 4 gets `comment: <WORD>` (one word per post; with two live words, take turns), counted with the asks (never next to an `ask` or another `comment`). No word live: no `comment` slots, whatever the strategy says.
+- **What each post tests,** one line per post slot: the one thing it tries on purpose, so the monthly review can learn from it: a hook pattern not yet `working`, a format, a post type, a topic angle, an ending or a time. One thing per post, the rest kept to what's known; vary it across the plan instead of repeating one idea, and give each test 2-3 posts so the review has more than one to read. Nothing worth testing in a slot: `tests: none`.
 - Reels only when reels are on in `strategy.md`.
 
 ### Refresh (keep the slots, change one thing)
@@ -76,7 +77,7 @@ When content-post moved a missed post onto the next slot (or she asks to shift t
 - **Photos to take:** for each photo slot with no fitting unused photo in `departments/content/photos.md`, one line: what to photograph, where or how (phone, light, angle, in plain words), and for which post. 5-10 lines at most; real things she can shoot this week. When she only asks "what photos should I take", run just this from the current plan and write it.
 
 ### Step 4 — Gate
-Show the plan as a table: post # · date · topic · post type · format · ends with · template · idea (or suggestion). Then the templates to build and the photos to take.
+Show the plan as a table: post # · date · topic · post type · format · ends with · tests · template · idea (or suggestion). Then the templates to build and the photos to take.
 
 > "Reply with **1** or **2**: 1. This works 2. Change something. Or tell me what you're thinking." (one option per line)
 

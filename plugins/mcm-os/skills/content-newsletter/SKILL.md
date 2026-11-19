@@ -25,7 +25,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 8. `about-me/about-me.md` — only her time zone.
 9. Only when suggesting or drafting (Steps 2-3):
    - the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**). It evolves; always read the current one.
-   - `../content-strategy/playbook.md` — rules, awareness levels, hooks, how posts end (§ 7), the newsletter section, the 4-point check.
+   - `../content-strategy/playbook.md` — rules, awareness levels, hooks, how posts end (§ 7), the newsletter section, the 5-point check.
    - `../content-strategy/library.md` — the newsletter formats catalog.
    - `departments/content/swipe.md` — lines that worked for her, if it exists.
    - the posts published since the last issue (`calendar.md`, their `post.md`) — material for a suggestion.
@@ -96,7 +96,7 @@ Preview text:
 - Write it in the slot's format (the library's newsletter formats), from her material, in her voice: the newsletter section of the playbook and `platforms/newsletter.md`. Plain text, 200-400 words, short paragraphs, one CTA for the layer that's on (or the offer, on an offer issue).
 - Then the subject: 2-3 options, short and specific, written last, no emoji, plus one preview text line that adds to the subject.
 - **The newsletter is the anchor:** under the email, propose the cycle's post angles, one per post slot in this cycle (from `plan.md`), each matched to its slot's post type and format, by the playbook's "From the anchor to everything" section (§ 12): its points → a carousel, its story → a reel, its question → a text post, its moment → a photo post. One line each: the post, the angle, why it stands alone.
-- Run the playbook's 4-point check (hook, what they get, plain, ending: the one ask of the email, or the offer on an offer issue) and fix what fails before showing.
+- Run the playbook's 5-point check (hook, what they get, plain, worth saving or sending, ending: the one ask of the email, or the offer on an offer issue) and fix what fails before showing.
 - Show the subject options, the preview text and the email as it will read.
 - **Gate:** "Does the newsletter work? Pick a subject and say **yes** (the post angles come with it), or tell me what to change."
 - Record the approved email, subject and preview text in the issue file.
