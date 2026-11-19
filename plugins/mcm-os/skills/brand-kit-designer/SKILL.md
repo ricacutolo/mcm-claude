@@ -35,6 +35,18 @@ Loaded when this skill fires, nothing more:
 
 > "Never say the logo can be registered. Once, at the end: checking the USPTO (or the registry in her country) before printing is her step."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "This is where your brand gets its look: a logo, colors and fonts, and every file you'll ever need from them.
+> When it's done, you'll have:
+> - A logo designed with you, or your own logo set up properly
+> - Your colors and fonts, with what goes where
+> - Ready-made files for everything: your profile picture, your site, your emails, link previews
+> - Every post, page and document I make for you, in your brand from then on
+> Everything is saved in your folder and your Drive. You can stop at any round and pick up later."
+
 ## Which way
 
 - Round pages in `deliverables/brand/` and no `about-me/brand.md` yet: she stopped mid-rounds. Pick up from the latest round ("Last time we were on round 3: <her words>. Carry on from there?"); never start over.

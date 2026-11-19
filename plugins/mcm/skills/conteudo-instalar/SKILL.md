@@ -46,6 +46,18 @@ Never read or print `departamentos/conteudo/.env`. Step 19 checks only whether a
 
 > "Edits are applied exactly as given. Change nothing she did not ask to change."
 
+## Opening
+
+The first time only (never on a resumed run, never on a later run), before the first step, open with this. Adapt the examples to her business when the system already knows it; keep the shape: what it is for her, what she'll be able to do, what it connects to, and that she can stop any time.
+
+> "Isso monta a sua máquina de conteúdo: da ideia ao post agendado nas suas redes, com a sua voz e a sua marca.
+> Quando estiver pronta, você vai poder:
+> - Ter um plano de 4 semanas do que postar, feito a partir da sua estratégia
+> - Dizer "próximo post" e receber o texto e o design prontos, com a sua marca
+> - Agendar direto no Instagram, Facebook ou LinkedIn pelo MCM
+> - Transformar uma gravação em posts, newsletter ou reels, e ver todo mês o que está funcionando
+> Ela se conecta ao MCM, e ao Canva se você usa (ao ElevenLabs também, se quiser reels). Você pode parar em qualquer passo e continuar depois."
+
 ## The steps
 
 | # | Stage | Step | Done when | How |

@@ -285,6 +285,8 @@ Not knowing is normal and is said so, warmly, once: "A maioria das pessoas ainda
 
 Every setup that walks her through steps follows these rules: instalar, conteudo-instalar, curso-instalar, brand-kit-designer, organizar-drive, and any setup added later. A setup's own rules add to them; they never loosen them.
 
+> "A setup opens with its Opening the first time, before any step: what it will do for her and what she'll be able to do with it, said like a pitch, not a manual. A resumed or later run skips it and says where she is."
+
 > "Every step opens with a recommendation: the answer I'd pick for her and why, from what the system already knows. She confirms or changes it. Small details get decided and noted, not asked."
 
 > "Claude does the busywork. She only does what needs her hands (signing in, approving, choosing, pasting a key), and each of those comes as numbered steps, one action each, with a direct link wherever one exists. If Claude can check something, it checks instead of asking her to report."

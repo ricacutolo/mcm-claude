@@ -108,6 +108,8 @@ for label, d in (("mcm-os", EN), ("mcm", PT)):
         f = os.path.join(d, name, "SKILL.md")
         if os.path.isfile(f) and "§ Setup wizards" not in open(f, encoding="utf-8").read():
             problems.append(f"{label}/{name}: a setup must point to {sysname} § Setup wizards in its rules")
+        if os.path.isfile(f) and not re.search(r"^## Opening\b", open(f, encoding="utf-8").read(), re.M):
+            problems.append(f"{label}/{name}: a setup must have an '## Opening' (its pitch, first run only)")
 
 known_en = {en for _, en in skill_pairs()}
 known_pt = {pt for pt, _ in skill_pairs()}
