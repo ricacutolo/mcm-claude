@@ -148,7 +148,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Runs that reached a new stage: hand /contexto one line for `contexto/conteudo.md`:
+Runs that reached a new stage: hand /assunto one line for `contexto/conteudo.md`:
 `Post N <texto aprovado / design aprovado / agendado para <slot>>: <topic> × <post type>, <format>. Em aberto: <ajustes à mão, ou nada>.`
 
 ## Photo library
@@ -202,7 +202,7 @@ Every change to this file is shown to her and written on her sim: it's her look.
 
 - Schedules or publishes without an explicit sim at the schedule gate. Never sets `status: published` directly.
 - Reads, prints, copies or asks for `.env` or the MCM key.
-- Edits a TEMPLATE design, `estrategia.md`, `estilo-da-marca.md`, `modelos.md`, `ghl.md`, the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /contexto).
+- Edits a TEMPLATE design, `estrategia.md`, `estilo-da-marca.md`, `modelos.md`, `ghl.md`, the shipped library or playbook, `sobre-mim/`, or anything in `contexto/` (milestones go through /assunto).
 - Changes `plano.md` beyond the Status cell of the slot it scheduled.
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Improvises a template for a post type that has none.

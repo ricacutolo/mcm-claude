@@ -137,7 +137,7 @@ If a connector's permission screen looks different from what you describe, ask h
 
 ## Step 6 — Departamentos (10-15 min)
 
-- Seed: for each `_semente/departamentos/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[PERGUNTAR]` items, confirm, fix, replace every `~~data` with today's date, check its `area:` (ask if missing), then write it to `departamentos/<slug>/brief.md`, add its index line under its área header, and hand /contexto the creation of `contexto/<slug>.md` (`tier: departamento`) with the first line "Departamento criado na instalação." Her **sim** covers both.
+- Seed: for each `_semente/departamentos/<slug>/brief.md`, show the title, purpose, standards and next step, ask its `[PERGUNTAR]` items, confirm, fix, replace every `~~data` with today's date, check its `area:` (ask if missing), then write it to `departamentos/<slug>/brief.md`, add its index line under its área header, and hand /assunto the creation of `contexto/<slug>.md` (`tier: departamento`) with the first line "Departamento criado na instalação." Her **sim** covers both.
 - No seed: create the **Conteúdo** department only, the way conteudo-instalar's step 1 does (`../conteudo-instalar/SKILL.md`, **The Conteúdo department**: its area, the brief from the content machine, her sim; no interview), with "criado durante a instalação" in its Decisões and log lines. Say more can be created any time by saying "novo departamento".
 - End with one line on the difference: "Departamento é o que você mantém sempre. Projeto é o que tem fim — para isso é só dizer **novo projeto**."
 
@@ -166,7 +166,7 @@ Then list the rest in one short block, as things she can say: "o que eu posto ag
 One line per completed step in `_sistema/log.md`:
 `YYYY-MM-DD | instalar | etapa <n> completa | <arquivos escritos>`
 
-Shared memory: the first line of each department log ("Departamento criado na instalação.") is written by /contexto, handed over in Step 6.
+Shared memory: the first line of each department log ("Departamento criado na instalação.") is written by /assunto, handed over in Step 6.
 
 ## What this skill never does
 

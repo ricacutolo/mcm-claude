@@ -96,7 +96,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each approved run: hand /contexto one line for `contexto/conteudo.md`:
+Each approved run: hand /assunto one line for `contexto/conteudo.md`:
 `Plano de conteúdo de <first date> a <last date> aprovado: <N> posts. Próximo: <the brief's new Próximo passo>. Modelos a criar: <list, ou nenhum>.`
 
 ## What this skill never does

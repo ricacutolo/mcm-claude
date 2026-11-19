@@ -82,7 +82,7 @@ _revisao/                     anything that would otherwise be deleted
 
 | File | Writer |
 |---|---|
-| `contexto/*.md` | /contexto only (this skill hands it approved items) |
+| `contexto/*.md` | /assunto only (this skill hands it approved items) |
 | a brief | its creator (novo-departamento / novo-projeto); afterwards only this skill's write-back, and a department's own skills (the content skills) also write that department brief's Próximo passo, Estado atual and `atualizado:` |
 | an `index.md` line | the skill that saved the file; this skill only repairs at upkeep |
 | `sobre-mim/*` | instalar during install; afterwards this skill's write-back, or /atualizar on her sim |
@@ -104,8 +104,8 @@ She talks to one Claude. That Claude routes:
 
 - She names a department ("vamos trabalhar no conteúdo", "abre mentorias") → **/abrir-departamento**.
 - She names a project → **/abrir-projeto**.
-- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/contexto** (capture).
-- She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/contexto**.
+- She names one of her clients ("a família Almeida", "o que eu sei sobre o João") → **/abrir-cliente**. A new client → **/novo-cliente**. A file or a fact for a client → **/guardar-no-cliente**. A meeting that happened ("guarda a reunião com…", "o que a gente falou na reunião") → **/resumo-da-reuniao**. "Essa conversa é sobre…" → **/assunto** (capture).
+- She names something ongoing that is neither ("aquele assunto da escola de coaches") → **/assunto**.
 - Something new and ongoing → offer **/novo-departamento**. Something new with a finish line → offer **/novo-projeto**. The test, said once: "Isso tem um fim? Se tem, é projeto. Se não tem, é departamento."
 - A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the newsletter, "escreve a newsletter" → **/conteudo-newsletter**; a Substack note or article, "posta no Substack" → **/conteudo-substack**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
 - Her business strategy: what to sell first, pricing, a launch, "pra onde o meu negócio está indo", "vamos pensar na minha estratégia" → **/estrategia-do-negocio**.
@@ -132,7 +132,7 @@ Never make her name a skill. Plain words are enough.
 | A project finished | the brief's `status`, its index line, its log's `status` → `encerrado` — confirmed together | hard (the one exception to soft index lines) |
 | Where a department or project stands now | that brief's Estado atual | soft |
 | The next concrete move | that brief's Próximo passo | soft |
-| What happened in the conversation, what is parked, who waits on whom | the topic's `contexto/<slug>.md` (via /contexto) | soft |
+| What happened in the conversation, what is parked, who waits on whom | the topic's `contexto/<slug>.md` (via /assunto) | soft |
 | A file saved in a folder that has `index.md` | one line in that `index.md` | soft |
 | One-off questions, passing talk | nowhere | — |
 
@@ -159,7 +159,7 @@ Never make her name a skill. Plain words are enough.
 > 1. No negócio: <linha> — **sim / não / ajustar**
 > 2. ..."
 
-- **sim** → `acrescentar`: append the line under the right heading (dated lines for Decisões). `mudar campo`: change that one field. Items whose destination is in `contexto/` are handed to /contexto to write. Then delete the item from `pendentes.md`.
+- **sim** → `acrescentar`: append the line under the right heading (dated lines for Decisões). `mudar campo`: change that one field. Items whose destination is in `contexto/` are handed to /assunto to write. Then delete the item from `pendentes.md`.
 - **não** → delete the item.
 - No answer → leave it. It comes back next batch or at upkeep.
 - **ajustar** → take her wording, then write.
@@ -216,7 +216,7 @@ On **sim**:
 2. **Old file names** — after an update that renamed files: `sobre-mim/negocio.md` (and any `negocio-<area>.md`) from before 0.11.0 → propose renaming to `cerebro-do-negocio.md` (and `cerebro-do-negocio-<area>.md`) in one line, and rename on her sim. Nothing else in them changes.
 3. **Indexes** — for each `index.md` under `departamentos/`, `projetos/` and `entregas/`: list files present but missing from the index, and index lines whose file is gone. Fix missing lines (soft). Report dead lines and remove them only on her yes.
 4. **Áreas** — briefs with no `area:`, or an index not grouped by área: propose the áreas in one batch ("Acervo → Pessoal · Clientes → Viagens Silva"), then write the `area:` lines and regroup the indexes on her yes.
-5. **Long logs** — any `contexto/*.md` past ~150 lines: propose condensing (handled by /contexto, on APPROVE).
+5. **Long logs** — any `contexto/*.md` past ~150 lines: propose condensing (handled by /assunto, on APPROVE).
 6. **Stale briefs** — any brief whose Estado atual is older than 21 days: name it, one line each. Don't fix.
 7. **Health file** — write `_sistema/saude.md` (below).
 8. Set `ultima_manutencao: YYYY-MM-DD` in `estado.md`, add a receipt line.

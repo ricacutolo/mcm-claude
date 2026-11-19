@@ -17,7 +17,7 @@ Loaded only when this skill fires:
 
 1. `projetos/index.md` — to match the name.
 2. `projetos/<slug>/brief.md` — in full.
-3. The log named in `contexto:` — **through /contexto** only.
+3. The log named in `contexto:` — **through /assunto** only.
 4. The department brief named in `departamento:` — only its Padrões section, and only when the task needs the department's standards.
 5. Material under "Onde as coisas ficam" — only when the task needs it, through its folder's `index.md`.
 
@@ -25,11 +25,11 @@ Loaded only when this skill fires:
 
 > "This skill never edits the brief. Changes go through /sistema's write-back."
 
-> "The log belongs to /contexto. This skill calls /contexto and never writes to `contexto/`."
+> "The log belongs to /assunto. This skill calls /assunto and never writes to `contexto/`."
 
 > "Load the brief and the log once. Material is opened only when the task needs it."
 
-> "When the conversation comes back to this project after compaction, or after another department or project was opened in between, re-read the brief and ask /contexto to re-read the log."
+> "When the conversation comes back to this project after compaction, or after another department or project was opened in between, re-read the brief and ask /assunto to re-read the log."
 
 ## Workflow
 
@@ -46,7 +46,7 @@ Read it in full. Note `contexto:`, `departamento:`, the Estado atual date, Próx
 
 ### Step 3 — Load the log
 
-Invoke /contexto with the slug derived from the `contexto:` path (`contexto/<slug>.md`). If it does not exist, offer to start one; /contexto creates it on her **sim**.
+Invoke /assunto with the slug derived from the `contexto:` path (`contexto/<slug>.md`). If it does not exist, offer to start one; /assunto creates it on her **sim**.
 
 ### Step 4 — Reply in two lines at most
 
@@ -59,7 +59,7 @@ If Estado atual is more than 14 days old: "O estado deste projeto é de <data>; 
 
 ### Step 5 — Stay active
 
-- Work toward the Resultado. When an open question gets answered, that is a decision — /contexto logs it and /sistema queues it for the brief.
+- Work toward the Resultado. When an open question gets answered, that is a decision — /assunto logs it and /sistema queues it for the brief.
 - Open material only when needed.
 - After compaction, or after another department or project was opened in this conversation: re-read the brief and the log first.
 
@@ -69,7 +69,7 @@ If Estado atual is more than 14 days old: "O estado deste projeto é de <data>; 
 
 1. The brief: `status: encerrado` (mudar campo), a final Decisões line `YYYY-MM-DD — Projeto encerrado. <o que entregou>`.
 2. The index line: `ativo` → `encerrado`.
-3. The log: `status: encerrado` (mudar campo; /sistema hands it to /contexto to write).
+3. The log: `status: encerrado` (mudar campo; /sistema hands it to /assunto to write).
 
 Nothing is moved or deleted. Closed projects stay where they are.
 
@@ -94,7 +94,7 @@ Nothing is moved or deleted. Closed projects stay where they are.
 
 - **Folder offline:** say so, work in chat, write no receipt.
 - **Brief missing but listed:** say so, offer /novo-projeto. Don't rebuild it yourself.
-- **/contexto unavailable:** load the brief only and say so.
+- **/assunto unavailable:** load the brief only and say so.
 
 ## STOP handling
 

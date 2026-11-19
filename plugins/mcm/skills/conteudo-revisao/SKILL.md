@@ -108,7 +108,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each review: hand /contexto one line for `contexto/conteudo.md`:
+Each review: hand /assunto one line for `contexto/conteudo.md`:
 `Revisão de conteúdo de <first date> a <last date>: <one-line read>. Aprovado: <changes>. Em aberto: <hand-offs not run, ou nada>.`
 
 ## What this skill never does
@@ -116,7 +116,7 @@ Each review: hand /contexto one line for `contexto/conteudo.md`:
 - Invents, estimates or rounds a number; fills a gap MCM doesn't cover with a guess.
 - Calls something working or not working below the small-numbers rule.
 - Writes learnings, library notes or swipe lines without an explicit sim.
-- Edits `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (business suggestions only wait in `_sistema/pendentes.md`), the shipped library or playbook, or anything in `contexto/` (milestones go through /contexto).
+- Edits `estrategia.md`, `plano.md`, `calendario.md`, `ideias.md`, `posts/`, `sobre-mim/` (business suggestions only wait in `_sistema/pendentes.md`), the shipped library or playbook, or anything in `contexto/` (milestones go through /assunto).
 - Changes a library note to working without her own numbers behind it.
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Runs a hand-off without a sim.

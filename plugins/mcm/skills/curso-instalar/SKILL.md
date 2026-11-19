@@ -32,7 +32,7 @@ It does one thing: **get one program ready to be designed.** About 15 minutes. S
 - The first offer isn't something taught (a service, a product): "A sua primeira oferta não é um programa, então a máquina de cursos espera até ter um." Stop.
 
 ### Step 2 — The department and the program
-- No Cursos department yet: on sim, create `departamentos/cursos/brief.md` in /novo-departamento's brief format: name **Cursos**, área = the strategy's área, Propósito "Montar e melhorar os programas que ela vende, um módulo por vez, a partir do que os alunos realmente precisam.", Rotinas "Fechar cada aula ao vivo no mesmo dia; revisar depois de cada módulo e de cada turma.", O que eu uso aqui: "desenha o meu programa", "próxima aula", "fecha a aula", "revisa o módulo". Index line under its area header; hand /contexto the creation of `contexto/cursos.md` ("Departamento Cursos criado.").
+- No Cursos department yet: on sim, create `departamentos/cursos/brief.md` in /novo-departamento's brief format: name **Cursos**, área = the strategy's área, Propósito "Montar e melhorar os programas que ela vende, um módulo por vez, a partir do que os alunos realmente precisam.", Rotinas "Fechar cada aula ao vivo no mesmo dia; revisar depois de cada módulo e de cada turma.", O que eu uso aqui: "desenha o meu programa", "próxima aula", "fecha a aula", "revisa o módulo". Index line under its area header; hand /assunto the creation of `contexto/cursos.md` ("Departamento Cursos criado.").
 - The program: a slug from its name, `departamentos/cursos/<programa>/` with its `index.md`, and a line in `departamentos/cursos/index.md`.
 - **The program's `index.md` is its progress file**, kept current by every course skill without asking (soft), the way content skills keep the Conteúdo brief current:
 
@@ -79,7 +79,7 @@ _Em YYYY-MM-DD._
 
 - Decides or changes the offer, format, length or price.
 - Creates anything in MCM.
-- Writes outside the Cursos department, except /contexto's log and the receipt.
+- Writes outside the Cursos department, except /assunto's log and the receipt.
 
 ## When to refuse
 

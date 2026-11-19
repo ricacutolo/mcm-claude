@@ -119,10 +119,10 @@ Read the sheet once and drop what is already there. Then show everything at once
 ### Step 4 — Write, on her sim
 
 - Sheet lines → their sections, under the right heading; update `atualizado:`.
-- The resumo → hand it to /contexto for the client's histórico (dated, with the transcript link). Her sim covers it.
+- The resumo → hand it to /assunto for the client's histórico (dated, with the transcript link). Her sim covers it.
 - Zoom or pasted transcript → saved word for word as `Transcrição - <Nome> - YYYY-MM-DD.md` (Zoom: `[HH:MM:SS] <Pessoa>: <texto>` per line) in the client's Drive folder, the same way /guardar-no-cliente saves a file; the Arquivos line points to it.
 - Reactions → `departamentos/clientes/reacoes.md` (create it with the header below if missing), under the section that fits: **O que encantou · Dúvidas e receios · O que já fazem sozinhos · Pediram**. Line: `- **<rótulo curto>.** "<frase>" <contexto em poucas palavras>. — <cliente>, <data>`. The same reaction from another client extends the existing line with `· <cliente>, <data>` — that is how a pattern shows. Never rewrite or remove a line.
-- A department or project: resumo to its histórico via /contexto; Próximo passo through /sistema's write-back.
+- A department or project: resumo to its histórico via /assunto; Próximo passo through /sistema's write-back.
 - What she said **não** to is dropped.
 
 `reacoes.md` header, when created:

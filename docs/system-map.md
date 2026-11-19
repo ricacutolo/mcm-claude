@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.22.1
+version: 0.22.2
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -35,10 +35,10 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         │      write-back, index rule, 7-day upkeep, health file,
         │      the browser as fallback (never "I can't"), questions as a guide, not a form
         │
-        ├── abrir-departamento / abrir-projeto ── load a brief + its log (via contexto)
+        ├── abrir-departamento / abrir-projeto ── load a brief + its log (via assunto)
         ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente · resumo-da-reuniao ── one sheet, histórico and Drive folder per client of hers; meetings filed into them
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
-        ├── contexto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
+        ├── assunto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
         ├── minha-voz · morning-brief
         ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup) · conteudo-newsletter · conteudo-substack · conteudo-podcast
         ├── CEO (above the departments): estrategia-do-negocio (research → conversation → estrategia.md, settled facts to the business brain)
@@ -101,7 +101,7 @@ All names are Portuguese; skills refer to them exactly as written here.
 
 | Tier | Where the brief lives | Where the log lives | Created by | Opened by |
 |---|---|---|---|---|
-| Loose topic | — | `contexto/<slug>.md` | contexto (APPROVE) | contexto |
+| Loose topic | — | `contexto/<slug>.md` | assunto (APPROVE) | assunto |
 | Project | `projetos/<slug>/brief.md` | `contexto/<slug>.md` | novo-projeto | abrir-projeto |
 | Department | `departamentos/<slug>/brief.md` | `contexto/<slug>.md` | novo-departamento | abrir-departamento |
 | Client (hers) | `departamentos/clientes/<slug>/ficha.md` | `contexto/<slug>.md` | novo-cliente | abrir-cliente |
@@ -119,7 +119,7 @@ Owned by **sistema**. Two tiers. The user-facing word for a brief is **brief** (
 
 | Tier | Files / sections | Rule |
 |---|---|---|
-| Soft — written without asking | `contexto/*.md` milestones (via contexto) · a brief's **Estado atual** (refreshing its date and `atualizado:`) and **Próximo passo** · `index.md` lines (written by the skill that saved the file) | Write, mention in one short line |
+| Soft — written without asking | `contexto/*.md` milestones (via assunto) · a brief's **Estado atual** (refreshing its date and `atualizado:`) and **Próximo passo** · `index.md` lines (written by the skill that saved the file) | Write, mention in one short line |
 | Hard — asks first | `sobre-mim/*` · a brief's **Propósito**, **Padrões**, **Rotinas**, **Decisões** · prices, offers · closing a project (brief, index line and log status, confirmed together) | Append to `_sistema/pendentes.md` silently; show the batch when she changes topic or wraps up; write approved items, drop declined ones, keep unanswered ones |
 
 Routing map (what goes where) lives in the sistema skill, so it updates with the plugin.
@@ -146,7 +146,7 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 |---|---|---|---|
 | sistema · system | new (includes "How every reply looks": numbered choices always open for discussion, steps by hand with direct links; "You make the moves", the browser fallback, "Asking her things", the white-label rule) | `_sistema/estado.md` (after install; `versao_plugin` kept in step with the installed plugin), `pendentes.md`, `saude.md`, soft sections of briefs, hard items on her yes, index repairs at upkeep; the update tidy-up proposes renames (`negocio.md` → `cerebro-do-negocio.md`, 0.11.0); `saude.md`'s Configuração block (each setup's progress, step names only), refreshed when a setup step finishes and mirrored to Drive with `espelho_drive: sim` | `_sistema/log.md` (upkeep runs only) |
 | instalar · install | Nuno onboard, cut down | `claude.md`, `sobre-mim/*`, scaffolding, first departments. No seed yet: after Step 1 it offers to do the connections and pause until Rica's seed arrives (Steps 2-4 `aguardando semente`). Step 5 always records `pasta_drive` (the folder she shares with Rica) and checks Rica's notes doc is there, and records `reunioes:` (her meetings tool). Writes the installed version (0.7.2); takes old seed names (`negocio.md`); Step 8 offers the strategy session, then the content setup (0.11.0); hands /sistema "atualizar o bloco Configuração" when a step finishes; questions she leaves for later go under Para depois in `estado.md` and "terminar minha instalação" asks only those; the tour is two demos (0.19.4) | `_sistema/log.md` per phase |
-| contexto · context | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
+| assunto · context-hot | Rica's context-hot | `contexto/*.md`; capture mode (Step 4b) summarizes a whole conversation into the right log on her sim, and seeds logs for /novo-* created mid-conversation | `_sistema/log.md` on load/create/condense |
 | novo-departamento · new-department | Rica's new-department; always asks the área | `departamentos/<slug>/brief.md` (with `area:`), `departamentos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-departamento · open-department | Rica's open-department | nothing but the receipt | `_sistema/log.md` |
 | novo-projeto · new-project | new (markdown, no database); always asks the área | `projetos/<slug>/brief.md` (with `area:`), `projetos/index.md` (grouped by área) | `_sistema/log.md` |

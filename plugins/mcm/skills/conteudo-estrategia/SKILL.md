@@ -125,7 +125,7 @@ One line per run in `_sistema/log.md` (re-read the file before writing):
 
 ## Milestone
 
-Each approved run: hand /contexto one line for `contexto/conteudo.md`:
+Each approved run: hand /assunto one line for `contexto/conteudo.md`:
 `Estratégia de conteúdo rodada <N> aprovada: camadas <list>, <count> temas, formatos <list>. Em aberto: <planejar as próximas 4 semanas / sugestões pro arquivo do negócio pendentes / nada>.`
 
 ## What this skill never does
@@ -133,7 +133,7 @@ Each approved run: hand /contexto one line for `contexto/conteudo.md`:
 - Writes `estrategia.md` without an explicit sim.
 - Edits `sobre-mim/cerebro-do-negocio.md` or any `sobre-mim/` file. Changes there only wait in `_sistema/pendentes.md`.
 - Re-flags a difference marked as deliberate.
-- Edits `library.md`, `playbook.md`, `notas-da-biblioteca.md`, `swipe.md`, `plano.md`, `calendario.md`, `ideias.md` or anything in `contexto/` (milestones go through /contexto).
+- Edits `library.md`, `playbook.md`, `notas-da-biblioteca.md`, `swipe.md`, `plano.md`, `calendario.md`, `ideias.md` or anything in `contexto/` (milestones go through /assunto).
 - Touches anything in the department brief beyond Próximo passo, Estado atual and `atualizado:`.
 - Invents post types or formats outside the catalogs, or claims something "works" without the library or her notes marking it working.
 - Deletes an old strategy round — it goes to `rodadas-anteriores/`.

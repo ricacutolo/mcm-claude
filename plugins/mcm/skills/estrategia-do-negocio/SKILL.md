@@ -38,7 +38,7 @@ Loaded only when this skill fires.
 ## Workflow
 
 ### Step 1 — Where we start
-- **First run, no CEO department yet:** say what it is in two lines ("O CEO é onde mora a estratégia do seu negócio: o que você vende primeiro, como, e o que vem depois. Os seus outros departamentos seguem ele.") and, on sim, create `departamentos/ceo/brief.md` in /novo-departamento's brief format: name **CEO**, área = her main business, Propósito "Manter a estratégia do negócio clara e atual, pra todo departamento trabalhar rumo ao mesmo próximo passo.", Rotinas "Revisar a estratégia depois da primeira turma de cada oferta, e a cada 90 dias.", O que eu uso aqui: "vamos trabalhar na minha estratégia" (`estrategia.md`; os relatórios dos departamentos em `relatorios.md`). Add its index line under its área header, and hand /contexto the creation of `contexto/ceo.md` with "Departamento CEO criado." Her sim covers all three.
+- **First run, no CEO department yet:** say what it is in two lines ("O CEO é onde mora a estratégia do seu negócio: o que você vende primeiro, como, e o que vem depois. Os seus outros departamentos seguem ele.") and, on sim, create `departamentos/ceo/brief.md` in /novo-departamento's brief format: name **CEO**, área = her main business, Propósito "Manter a estratégia do negócio clara e atual, pra todo departamento trabalhar rumo ao mesmo próximo passo.", Rotinas "Revisar a estratégia depois da primeira turma de cada oferta, e a cada 90 dias.", O que eu uso aqui: "vamos trabalhar na minha estratégia" (`estrategia.md`; os relatórios dos departamentos em `relatorios.md`). Add its index line under its área header, and hand /assunto the creation of `contexto/ceo.md` with "Departamento CEO criado." Her sim covers all three.
 - **Revision:** "Da última vez decidimos <primeira oferta, preço>, e a pergunta em aberto era <…>. O que mudou?" Work only on what changed.
 - Open reports in `departamentos/ceo/relatorios.md`: show them first, one line each ("O seu departamento de <departamento> relatou: <line>"). Each one she settles goes into the strategy (or its Perguntas em aberto), or she says it changes nothing; at Step 4 its line moves to Resolvidos with where it went and the date.
 - Another business area in play: its own `estrategia-<area>.md`, same shape.
@@ -79,7 +79,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Pergu
 - `departamentos/ceo/relatorios.md`: each report settled in this session moves from Abertos to Resolvidos (where it went, today's date). Nothing else in it changes.
 - Departments that should follow it, one line each, as offers, never done here: when the Conteúdo direction is new or changed, "A sua estratégia de conteúdo segue a direção antiga. Quer atualizar?" (conteúdo → /conteudo-estrategia). Nothing else changes.
 - The first offer is a program (a course, cohort, group, workshop): "Quer começar a montar? A máquina de cursos desenha o programa e monta uma aula por vez." Run /curso-instalar on sim.
-- Hand /contexto one line for `contexto/ceo.md`: `Estratégia <definida / revisada>: <primeira oferta, preço, formato>; 90 dias: <meta>. Em aberto: <a principal pergunta em aberto, ou nada>.`
+- Hand /assunto one line for `contexto/ceo.md`: `Estratégia <definida / revisada>: <primeira oferta, preço, formato>; 90 dias: <meta>. Em aberto: <a principal pergunta em aberto, ou nada>.`
 - Receipt (below).
 
 ## Receipt

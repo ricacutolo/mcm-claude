@@ -26,7 +26,7 @@ Loaded only when this skill fires:
 
 > "Existing material is linked from the brief, never moved, renamed or copied."
 
-> "This skill writes only inside `departamentos/`, plus the receipt line. The log is created by /contexto."
+> "This skill writes only inside `departamentos/`, plus the receipt line. The log is created by /assunto."
 
 > "A department carries no task list. Standards and routines are not tasks."
 
@@ -129,7 +129,7 @@ Anything other than a clear yes is a change request.
 3. Re-read `departamentos/index.md` (create with `# Departamentos` if missing), then add under its `## <Área>` header (create the header if missing; Pessoal stays last):
    `- [<Nome>](<slug>/brief.md) · YYYY-MM-DD · <propósito em uma linha>`
    An older index with no área headers: add the line at the end; /sistema's upkeep regroups it.
-4. Invoke /contexto to start `contexto/<slug>.md` with `tier: departamento` and `brief: departamentos/<slug>/brief.md`. **Her sim to the brief covers starting its log** — /contexto does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /contexto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
+4. Invoke /assunto to start `contexto/<slug>.md` with `tier: departamento` and `brief: departamentos/<slug>/brief.md`. **Her sim to the brief covers starting its log** — /assunto does not ask again. If a log for this topic already exists, link it instead and update its `tier` and `brief`. **Created mid-conversation:** hand /assunto the capture of this conversation (its Step 4b) as the seed, not a one-line summary.
 5. Do **not** create `pesquisa/` or `entregas/` now.
 
 ### Step 6 — Receipt
@@ -149,7 +149,7 @@ One line more: "Pra trabalhar nele é só dizer **abre o <Nome>**."
 
 - Writes before her **sim**.
 - Moves, renames, copies or deletes existing material.
-- Writes outside `departamentos/` (except the receipt and the hand-off to /contexto).
+- Writes outside `departamentos/` (except the receipt and the hand-off to /assunto).
 - Creates projects, tasks or folders upfront.
 - Overwrites an existing department.
 

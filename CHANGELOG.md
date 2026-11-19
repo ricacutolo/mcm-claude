@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.22.2 — 2026-11-19 [mcm]
+- **contexto → assunto** (Rica, 2026-11-19, from the Portuguese installs). Clients got departments and projects but not "contexto". The Portuguese skill is now **assunto**, the word people actually say ("muda de assunto", "onde a gente parou naquele assunto"): `/assunto`, "abre o assunto …", and "contexto de …" still works. Every `/contexto` in mcm, the manual's command chip, the glossary and the system map follow; the system map's row for it also now names the English skill `context-hot`. The folder stays `contexto/` for every client, old and new, so nothing moves and the skills look in one place. English unchanged.
+
 ## 0.22.1 — 2026-11-18 [both]
 - **The strategy offers a comment word, once** (Rica, 2026-11-17). Nothing prompted a client to think of comment-to-DM, so a client who didn't know it existed would never ask. Now content-strategy, with the leads layer on, no comment word yet and something she gives away in her business file, suggests one word in the draft ("Want people to comment a word to get <the thing>? I'd use MUDAR."). Her yes goes to content-post's Step W (an `asked` row for Rica); yes or no, `Comment word offered:` (PT `Palavra de comentário oferecida:`) goes in `strategy.md` so it's offered only once. Nothing she gives away yet: no offer.
 
