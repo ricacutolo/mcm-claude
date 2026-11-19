@@ -59,6 +59,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 
 ### Step 3 — Read
 - Group by topic, post type, format, hook pattern, dark/light and platform (weigh each platform by its file's Results section); when an anchor leads (the newsletter or the podcast), also by cycle: which formats did best from the same idea, and led cycles against the ones that fell back; and the account trend (reach, followers) across the window.
+- What the plan tested: for each test (the plan's `testa` column), what the posts that tried it did against the ones that didn't, and the answer in one line: it worked, it didn't, or too early to say. A test with an answer feeds the recommendations (a hook pattern moves to working or dropped in her library notes).
 - Apply the small-numbers rule to every group. Say plainly where the numbers are too small to mean anything.
 - Note anything unusual worth a look (a post that got comments, a day reach jumped).
 

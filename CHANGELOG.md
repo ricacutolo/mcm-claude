@@ -2,6 +2,11 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.23.2 — 2026-11-19 [both]
+- **Three hooks, one recommended** (Rica, 2026-11-19). Every post and reel shows her 3 hooks from different hook patterns, each with one line on why it could work, and the one Claude recommends and why; the draft uses the recommended one (playbook § 3, content-static, content-video).
+- **Worth saving or sending** is the 5th point of the check before the copy gate: a post should be useful enough to save or send without asking for it (playbook § 8; content-static, content-video, content-newsletter; the podcast title keeps the first 4).
+- **What each post tests:** the plan gets a `tests` column (PT `testa`), one thing each post tries on purpose (a hook pattern, a format, a post type, an angle, an ending, a time), 2-3 posts per test; content-review reads each test and says what it answered.
+
 ## 0.23.1 — 2026-11-19 [both]
 - **Every setup opens with a pitch** (Rica, 2026-11-19). Setups started straight into step 1, underselling what she was setting up. Now install, content-install, course-install, brand-kit-designer and organize-drive each have an **Opening**, said the first time only: what it is for her, three or four things she'll be able to do with it, what it connects to, and that she can stop any time. Sold, not explained; examples adapted to her business when the system knows it. A resumed or later run skips it. The rule is in `system` § Setup wizards; `check-sync.py` fails a setup without an Opening.
 

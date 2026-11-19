@@ -29,7 +29,7 @@ Loaded only when this skill fires, never at session start. Her content lives in 
 10. `about-me/about-me.md` — only her time zone.
 11. Only when drafting the script or caption (Step 2, Step 7):
     - the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — the offer, who it's for, the wedge.
-    - `../content-strategy/playbook.md` — rules, hooks, the 4-point check, how posts end (§ 7).
+    - `../content-strategy/playbook.md` — rules, hooks (three, one recommended), the 5-point check, how posts end (§ 7).
     - `../content-strategy/library.md` — the reel format definitions.
     - `about-me/writing.md` — her voice.
 12. Her Google Drive — the reel's clip folder (Step 3).
@@ -79,7 +79,8 @@ Skip this step when `_system/log.md` already has a `content-video | video-check 
 - **Her material and a suggestion, in one message,** before drafting: "What do you want to say on <topic> in this one — a story, something you tell clients all the time? If you'd rather, here's what I'd do: <the angle tagged `for post N` in `ideas.md` when an anchor (the newsletter or an episode) leads this cycle, else the slot's idea, as one line>." Her words win; the script is built from what she says, in her phrasing.
 - Shape: hook · the turn (path, leak, or problem) · the fix · the ending, 30-45 s spoken (about 80-110 words). One short line per thought, so each can be its own take. Screen text in [brackets] (hook title, diagram labels, end card).
 - The hook goes on screen from frame 0. The ending is the slot's `ends` (playbook § 7): the ask for the layer ("Book a call. Link in bio." while credibility is on), the named light ending, `comment: <WORD>` (only while the word is `live` in `ghl.md`; said once, the word on the end card in caps, with what they get), or none, when the fix is the last line.
-- Run the playbook's 4-point check (hook, what they get, plain, ending) and the real-things rule; fix what fails before showing.
+- Three hooks from different patterns, each with its reason, one recommended (playbook § 3); the script uses the recommended one, and she can swap it before recording.
+- Run the playbook's 5-point check (hook, what they get, plain, ending, worth saving or sending) and the real-things rule; fix what fails before showing.
 - Add the recording notes: phone vertical at eye level, light in front, quiet room; look at the lens; say each part 2-3 times with a breath between; stumbled, pause and say the line again; your own words are fine.
 - **Gate:** "Does the script work? Say **yes**, or tell me what to change." Apply edits exactly; re-show; wait. Save the approved script to `posts/<folder>/script.md` in the shape below.
 - Then tell her where to put the clips: "Record when you're ready, then upload the clips from your phone to Google Drive, in the folder **Content videos/post-NN-<slug>**." Ask once: "Want me to make the folder in your Drive?" Make it only on her yes, if Claude can reach her Drive; otherwise the name above is enough.

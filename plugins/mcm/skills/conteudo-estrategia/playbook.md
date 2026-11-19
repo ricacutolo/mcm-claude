@@ -53,6 +53,8 @@ The first line or slide does most of the work. Pick the pattern that fits the to
 | 10 | Reverse | "Most people think X. Here's why that's wrong." | "Most owners think happy clients leave reviews on their own." | unproven |
 | 11 | Stolen lesson | "I tried what X does. Here's what happened." (real only) | — | unproven |
 
+**Three hooks, one recommended.** Every post and reel shows her 3 hooks, each from a different pattern, each with one line on why it could work for this post and this reader (what it plays on: their number, a belief it flips, a moment they'll recognize). Then the one Claude recommends and why, in one line. She picks one, edits one, or asks for others. The draft is written around the recommended one, so a yes to the copy is a yes to it; the post records the pattern of the hook she kept.
+
 ## 4. Frameworks (reference)
 
 | Framework | Shape | Use for | Source |
@@ -102,11 +104,12 @@ Not every post asks for something. Her strategy sets the rhythm (Como os posts t
 
 ## 8. The check before the copy gate
 
-Every draft passes these 4 before it's shown:
+Every draft passes these 5 before it's shown:
 1. **Hook:** specific, about them, makes the next line necessary.
 2. **What they get:** the reader's outcome is clear by slide 2.
 3. **Plain:** no technical word, no tool name, no claim we can't back.
 4. **Ending:** matches the slot: the ask (one, clear, for the layer), the light ending named, or none.
+5. **Worth saving or sending:** someone would save it to use later or send it to a person it fits, because it's useful (a step they can take), says who they are, moves them, surprises them, or solves a problem. Not because the post asks them to. A post that only works with "save this" isn't done. (Posts, reels and emails; not a podcast title.)
 
 ## 9. References and sources
 
@@ -133,7 +136,7 @@ Each business's swipe file (lines and posts that worked, with why) lives in its 
 
 ## 11. Newsletter
 
-For an email to her list (`platforms/newsletter.md` has the format and scheduling rules). The rules in section 1 and the 4-point check apply; what changes:
+For an email to her list (`platforms/newsletter.md` has the format and scheduling rules). The rules in section 1 and the 5-point check apply; what changes:
 - **Her material first.** The email is built from what she gave: a few lines, a story, a question someone asked. Claude shapes it; it doesn't replace it.
 - **One idea, one ask.** If two ideas fight for the email, the second one is next issue.
 - **Open in the moment.** First line is a scene, a question or a sentence she said, not "I hope this finds you well" or "This week I want to talk about".
