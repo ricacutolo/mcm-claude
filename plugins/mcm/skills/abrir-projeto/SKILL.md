@@ -42,7 +42,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load the brief
 
-Read it in full. Note `contexto:`, `departamento:`, the Estado atual date, Próximo passo.
+Read it in full. Note `contexto:`, `departamento:`, the Estado atual date, Próximos passos (or an older Próximo passo).
 
 ### Step 3 — Load the log
 
@@ -52,7 +52,7 @@ Invoke /assunto with the slug derived from the `contexto:` path (`contexto/<slug
 
 ```
 **<Projeto>** — <onde está>
-**Próximo passo:** <do brief>
+**Próximo passo:** <o primeiro dos próximos passos do brief>
 ```
 
 If Estado atual is more than 14 days old: "O estado deste projeto é de <data>; pode estar desatualizado." Flag only.

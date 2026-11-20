@@ -41,7 +41,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load the brief
 
-Read it in full. Note `contexto:`, the Estado atual date, Próximo passo, and the "O que eu uso aqui" table.
+Read it in full. Note `contexto:`, the Estado atual date, Próximos passos (or an older Próximo passo), and the "O que eu uso aqui" table.
 
 ### Step 3 — Load the log
 
@@ -51,7 +51,7 @@ Invoke /assunto with the slug derived from the `contexto:` path (`contexto/<slug
 
 ```
 **<Departamento>** — <onde está, pelo Estado atual e pelas últimas entradas do histórico>
-**Próximo passo:** <do brief>
+**Próximo passo:** <o primeiro dos próximos passos do brief>
 ```
 
 If Estado atual is more than 14 days old, one more line: "O estado deste departamento é de <data>; pode estar desatualizado." Flag only.

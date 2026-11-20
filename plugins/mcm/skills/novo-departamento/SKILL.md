@@ -99,8 +99,11 @@ atualizado: YYYY-MM-DD
 _Em YYYY-MM-DD._
 <Onde está hoje, com honestidade. Se ainda não existe nada, dizer.>
 
-## Próximo passo
-<Um movimento concreto. Não uma lista.>
+## Próximos passos
+1. <O próximo movimento concreto.>
+2. <Depois, se já souber.>
+3. <Depois, se já souber.>
+<Até 3, em ordem. Não é uma lista de tarefas.>
 
 ## O que eu uso aqui
 | Ferramenta | O que faz aqui | Salva em |
@@ -140,7 +143,7 @@ Anything other than a clear yes is a change request.
 
 ```
 **Departamento criado — <Nome>**
-Próximo passo: <o próximo passo do brief>
+Próximo passo: <o primeiro dos próximos passos do brief>
 ```
 
 One line more: "Pra trabalhar nele é só dizer **abre o <Nome>**."

@@ -41,7 +41,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load the brief
 
-Read it in full. Note `context:`, the Current state date, Next step, and the "What I use here" table.
+Read it in full. Note `context:`, the Current state date, Next steps (or an older Next step), and the "What I use here" table.
 
 ### Step 3 — Load the log
 
@@ -51,7 +51,7 @@ Invoke /context-hot with the slug derived from the `context:` path (`context/<sl
 
 ```
 **<Department>** — <where it stands, from Current state and the latest history entries>
-**Next step:** <from the brief>
+**Next step:** <the first of the brief's Next steps>
 ```
 
 If Current state is more than 14 days old, one more line: "The state of this department is from <date>; it may be out of date." Flag only.

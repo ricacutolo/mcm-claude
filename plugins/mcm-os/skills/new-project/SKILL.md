@@ -24,7 +24,7 @@ Loaded only when this skill fires:
 
 > "Nothing is written before an explicit **yes** to the drafted brief."
 
-> "No task lists, no checklists, no 'next steps' section. One next step, in one line."
+> "No task lists, no checklists. Up to 3 next steps, in order, one line each; the first is what's next."
 
 > "This skill writes only inside `projects/`, plus the receipt. The log is created by /context-hot."
 
@@ -52,7 +52,7 @@ One at a time, skipping what the conversation already answers. Three is usually 
 1. **"How will you know it's done?"** The result, concrete. Becomes Result.
 2. **"Why now?"** What it unlocks or what breaks if it waits. If nothing, say so plainly and move on.
 3. **"Which department is it part of?"** Propose the obvious one from the index. "None" is fine.
-4. **"What's the first concrete step?"** One action she could start today. Becomes Next step.
+4. **"What's the first concrete step?"** One action she could start today. Becomes the first of the Next steps; if she already knows the one or two after it, they follow.
 
 If the result is vague ("make the podcast better"), say so once: "That makes it hard to know when it's done. What needs to be ready?"
 
@@ -87,8 +87,10 @@ _As of YYYY-MM-DD._
 ## Open questions
 - <What isn't known yet. Can stay empty.>
 
-## Next step
-<One concrete move.>
+## Next steps
+1. <The next concrete move.>
+2. <Then, if known.>
+3. <Then, if known.>
 
 ## Where things live
 - History: `context/<slug>.md`
@@ -119,7 +121,7 @@ Then: "This is the project brief for **<Name>**. Can I create it? (**yes** / or 
 
 ```
 **Project created — <Name>**
-Next step: <from the brief>
+Next step: <the first of the brief's next steps>
 ```
 
 ## What this skill never does
@@ -133,7 +135,7 @@ Next step: <from the brief>
 ## When to refuse
 
 - Already exists — "That project already exists. Want me to open it?"
-- Asked for a task list in the brief — "The brief holds the next step, not a list. We'll take it one step at a time."
+- Asked for a task list in the brief — "The brief holds the next few steps, not a list. We'll take it one step at a time."
 - Asked to store a password or card number — "That's something I don't keep."
 
 ## Failure modes

@@ -131,7 +131,7 @@ Never make her name a skill. Plain words are enough.
 | A client is no longer active | the sheet's `status` → `archived`, its index line; the Drive folder to `02. Clients/z - archive` via /organize-drive | hard |
 | A project finished | the brief's `status`, its index line, its log's `status` → `closed` — confirmed together | hard (the one exception to soft index lines) |
 | Where a department or project stands now | that brief's Current state | soft |
-| The next concrete move | that brief's Next step | soft |
+| The next concrete moves (up to 3) | that brief's Next steps | soft |
 | What happened in the conversation, what is parked, who waits on whom | the topic's `context/<slug>.md` (via /context-hot) | soft |
 | A file saved in a folder that has `index.md` | one line in that `index.md` | soft |
 | One-off questions, passing talk | nowhere | — |
@@ -182,7 +182,9 @@ When a skill creates `research/` or `deliverables/<type>/` for the first time, i
 - **Keep it current:** tick items and update status as work finishes, in the same file. Never a new file per update.
 - **In the chat:** when the file is created or changes meaningfully, say in one line where it is ("The plan is in Content → deliverables → plans"). Don't re-paste the list.
 
-A plan file is not the brief: the brief keeps only the next step; the plan holds the steps.
+A plan file is not the brief: the brief keeps only the next steps (up to 3); the plan holds the steps.
+
+**Next steps.** A department or project brief's `## Next steps` holds up to 3 lines, in order: the first is what's next, the other two are lined up behind it. It is not a to-do list. A skill that sets a brief's Next step sets that first line and keeps the others, unless they're done or the new step replaces them; never more than 3. An older brief with `## Next step` (one line) is read the same way and becomes `## Next steps` the next time it's written.
 
 `departments/content/plan.md` is not a plan file: it is the content plan, owned by /content-plan, and this rule doesn't apply to it.
 

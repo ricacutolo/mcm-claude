@@ -99,8 +99,11 @@ updated: YYYY-MM-DD
 _As of YYYY-MM-DD._
 <Where it stands today, honestly. If nothing exists yet, say so.>
 
-## Next step
-<One concrete move. Not a list.>
+## Next steps
+1. <The next concrete move.>
+2. <Then, if known.>
+3. <Then, if known.>
+<Up to 3, in order. Not a to-do list.>
 
 ## What I use here
 | Tool | What it does here | Saves to |
@@ -140,7 +143,7 @@ Anything other than a clear yes is a change request.
 
 ```
 **Department created — <Name>**
-Next step: <the brief's next step>
+Next step: <the first of the brief's next steps>
 ```
 
 One line more: "To work in it, just say **open <Name>**."

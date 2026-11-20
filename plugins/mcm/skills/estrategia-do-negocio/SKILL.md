@@ -74,7 +74,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Pergu
 - On sim: copy the business brain to `_revisao/YYYY-MM-DD-cerebro-do-negocio.md` first, then write both. Strategy `updated:` set to today.
 
 ### Step 5 — Close
-- CEO brief: Estado atual (today's date, one line: the first offer and the 90-day goal), Próximo passo (the first launch step), `updated:`.
+- CEO brief: Estado atual (today's date, one line: the first offer and the 90-day goal), Próximos passos (the first launch steps, up to 3), `updated:`.
 - Hand /sistema "atualizar o bloco Configuração" (the Estratégia do CEO line).
 - `departamentos/ceo/relatorios.md`: each report settled in this session moves from Abertos to Resolvidos (where it went, today's date). Nothing else in it changes.
 - Departments that should follow it, one line each, as offers, never done here: when the Conteúdo direction is new or changed, "A sua estratégia de conteúdo segue a direção antiga. Quer atualizar?" (conteúdo → /conteudo-estrategia). Nothing else changes.

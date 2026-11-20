@@ -42,7 +42,7 @@ Loaded only when this skill fires:
 
 ### Step 2 — Load the brief
 
-Read it in full. Note `context:`, `department:`, the Current state date, Next step.
+Read it in full. Note `context:`, `department:`, the Current state date, Next steps (or an older Next step).
 
 ### Step 3 — Load the log
 
@@ -52,7 +52,7 @@ Invoke /context-hot with the slug derived from the `context:` path (`context/<sl
 
 ```
 **<Project>** — <where it stands>
-**Next step:** <from the brief>
+**Next step:** <the first of the brief's Next steps>
 ```
 
 If Current state is more than 14 days old: "The state of this project is from <date>; it may be out of date." Flag only.

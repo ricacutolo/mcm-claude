@@ -136,6 +136,7 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | Decisões | Decisions |
 | Estado atual | Current state |
 | Próximo passo | Next step |
+| Próximos passos (department and project briefs, up to 3) | Next steps |
 | atualizado: | updated: |
 | histórico (the user's word for a log) | history |
 | tier: tema / projeto / departamento / cliente | tier: topic / project / department / client |
