@@ -2,6 +2,13 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.26.0 — 2026-11-20 [both]
+- **What feeds her to-do list** (Rica, 2026-11-19; the last step of the assistant build). With the assistant set up, three skills offer lines for `todo.md`, each only on her yes and each in one place, never two:
+  - **save-meeting** (PT resumo-da-reuniao): her own promises that belong neither to the client's sheet nor to a brief's Next steps (personal, loose, or for someone who isn't the client) show in the batch under **On your to-do list**. A promise to or about the client stays in What's open; a department's or project's next move stays in its brief.
+  - **my-voice** (PT minha-voz): an approved text that asks someone for something is offered for **Waiting on** (`<who> · <what> · since <date>`). When it's one of her clients, it goes to that client's sheet (What's open) through save-to-client instead.
+  - **update** (PT atualizar): each "To do" item from Rica's notes is offered to start now or to add to her list (`· from Rica`). Without the assistant, it's offered to start now, as before.
+  - The assistant's to-do list section names these sources. Receipts count the lines added.
+
 ## 0.25.0 — 2026-11-20 [both]
 - **The assistant** (Rica, 2026-11-19; spec in Rica's workspace). Inside the CEO department, she now has an assistant: the one she talks to every day. It keeps her day, her to-dos and what she drops in, and hands everything else to the machine that owns it. It never sends, accepts, books, pays or deletes, and never poses as a person on her staff.
 - **assistant-install** (PT assistente-instalar): a 6-step setup that follows `system` § Setup wizards, with an Opening: the desk in `departments/ceo/assistant/`, read-only connection checks (Calendar, Gmail, MCM if she has it), her work start and review day (Friday by default), an optional name (only on the brief and when she calls it), an optional morning run (a scheduled task when it can be created, else steps by hand), then her first brief.

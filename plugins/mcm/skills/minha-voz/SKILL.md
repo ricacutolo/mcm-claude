@@ -19,6 +19,7 @@ Loaded only when this skill fires, never at session start:
 2. `${CLAUDE_SKILL_DIR}/kill-list.md` — the anti-AI floor, applied even if `escrita.md` is thin.
 3. the business file of the área in play (`sobre-mim/cerebro-do-negocio.md`, or `cerebro-do-negocio-<area>.md` per /sistema's **Áreas**) — only when the text touches her offers, clients or prices.
 4. `sobre-mim/sobre-mim.md` — only when the text needs personal context.
+5. `_sistema/estado.md` — only `assistente:`, and only after she approves a text that asks someone for something (Step 5).
 
 If `sobre-mim/escrita.md` does not exist, say once: "Ainda não tenho o arquivo da sua voz. Posso escrever agora com um tom neutro, ou a gente roda a instalação primeiro." and continue if she wants.
 
@@ -84,6 +85,7 @@ fix the 1-3 sentences that are not landing, not a full rewrite.
   per saved file: `- [<título>](YYYY-MM-DD-<slug>.md) · YYYY-MM-DD · <uma frase> (rascunho)`.
 - Gmail: only if she says "salva no Gmail" / "deixa como rascunho no e-mail" — create the draft, tell
   her it is in Rascunhos, never send.
+- **Waiting on:** when the approved text asks someone for something (a file, an answer, a date) and her assistente is set up (`assistente: pronta`), offer once, in one line: "Coloco no seu Esperando, pra eu ficar de olho na resposta da <quem>? (**sim**)". Sim → /assistente adds `<quem> · <o quê> · desde <hoje>` to Esperando. <quem> is one of her clients → it goes to that client's sheet, in O que está aberto (`<cliente> · <o quê> · sem data`), through /guardar-no-cliente instead. A text that asks nothing, or no assistente: no offer.
 
 ### Step 6 — Receipt
 
@@ -99,6 +101,7 @@ conversation, `assunto` records the milestone under its own rules.
 - Create a Gmail draft she did not ask for.
 - Invent proof, stories, quotes, numbers or names.
 - Save before she approves, or save outside her folder.
+- Add anything to her to-do list or a client's sheet without her sim.
 - Load `sobre-mim/` before it fires.
 
 ## When to refuse

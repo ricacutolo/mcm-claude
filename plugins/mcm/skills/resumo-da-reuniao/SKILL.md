@@ -13,11 +13,11 @@ Speak Brazilian Portuguese, warm and plain. Say "a transcrição", "a ficha", "o
 
 Loaded only when this skill fires:
 
-1. `_sistema/estado.md` — `reunioes:` (the meetings tool; missing means `meet`).
+1. `_sistema/estado.md` — `reunioes:` (the meetings tool; missing means `meet`) and `assistente:` (whether she has a to-do list).
 2. `departamentos/clientes/index.md` — to match the client. A department or project named instead → `departamentos/index.md` or `projetos/index.md`.
 3. The matched client's `ficha.md` — once, before proposing, to skip what is already there.
 4. `departamentos/clientes/reacoes.md` — only when the meeting has reactions to her service, to extend a line instead of repeating it.
-5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Rotinas of `departamentos/clientes/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `sobre-mim/marca.md`.
+5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Rotinas of `departamentos/clientes/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `sobre-mim/marca.md`; with the assistente set up, `departamentos/ceo/assistente/afazeres.md` in Step 3 (to skip what's already on her list).
 
 ## The rules
 
@@ -109,12 +109,15 @@ Read the sheet once and drop what is already there. Then show everything at once
 >
 > **O que os clientes acham do seu serviço**: 7. <linha> (~00:52)
 >
+> **Na sua lista de afazeres**: <n>. <o quê> · até <data> (~00:45)
+>
 > Posso guardar? (**sim pra tudo** / os números que sim / **ajustar**)"
 
 - **MCM connected and the client linked** (`ghl:` on the sheet): one line under the header, read live and never written to the sheet: "Sessão <n> · próxima marcada <data>" (or "nenhuma sessão marcada"), counted from her appointments with this contact in MCM, plus "pago" or "pagamento em aberto" when MCM shows it.
 - **Zoom or pasted transcript:** add a line "8. A transcrição completa na pasta da <Nome> no Drive".
 - **Someone not yet a client:** ask first, one question: "Como ficou — **fechou**, **vai pensar** ou **não**?" Record her word. Fechou or vai pensar → offer /novo-cliente with this meeting as its source, then show the batch for the new sheet. Não → only the reactions line and a dated note in `departamentos/clientes/index.md` under `## Conversas que não viraram cliente` (name, date, why, in their words when given).
 - **A department or project meeting:** the resumo for its histórico and the next step for its brief's Próximo passo; no sheet, no reactions unless clients' views on her service came up.
+- **Her to-do list** (only with `assistente: pronta`): her own promises that belong neither to the client's sheet nor to a brief's Próximos passos, something personal or loose, or for someone who isn't the client ("vou perguntar pro meu contador", "vou reservar o espaço"), go under **Na sua lista de afazeres**. A promise to or about the client stays in O que está aberto; a department's or project's next move stays in its brief. One place each, never both. Nothing of the kind, or no assistente: no section.
 
 ### Step 4 — Write, on her sim
 
@@ -123,6 +126,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 - Zoom or pasted transcript → saved word for word as `Transcrição - <Nome> - YYYY-MM-DD.md` (Zoom: `[HH:MM:SS] <Pessoa>: <texto>` per line) in the client's Drive folder, the same way /guardar-no-cliente saves a file; the Arquivos line points to it.
 - Reactions → `departamentos/clientes/reacoes.md` (create it with the header below if missing), under the section that fits: **O que encantou · Dúvidas e receios · O que já fazem sozinhos · Pediram**. Line: `- **<rótulo curto>.** "<frase>" <contexto em poucas palavras>. — <cliente>, <data>`. The same reaction from another client extends the existing line with `· <cliente>, <data>` — that is how a pattern shows. Never rewrite or remove a line.
 - A department or project: resumo to its histórico via /assunto; Próximo passo through /sistema's write-back.
+- To-do lines → handed to /assistente, which adds them to Próximos: `<o quê> · adicionado <data> · da reunião com <Nome>` (a date said in the meeting stays in the line).
 - What she said **não** to is dropped.
 
 `reacoes.md` header, when created:
@@ -152,7 +156,7 @@ End with one line: the single most urgent thing — her promise with the nearest
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | resumo-da-reuniao | <slug ou departamento> · <fonte: meet / zoom / colado / só o que ela contou / sem transcrição> · ela contou sim/não · depois: feito / perguntado / nada · <n> salvos, <n> recusados · reações <n>` in `_sistema/log.md`.
+`YYYY-MM-DD | resumo-da-reuniao | <slug ou departamento> · <fonte: meet / zoom / colado / só o que ela contou / sem transcrição> · ela contou sim/não · depois: feito / perguntado / nada · <n> salvos, <n> recusados · reações <n> · afazeres <n>` in `_sistema/log.md`.
 
 Reply in one line: "Reunião guardada na ficha e no histórico da **<Nome>**." plus the próximo passo.
 
