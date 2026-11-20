@@ -86,12 +86,12 @@ Then, her assistant's address:
 
 > "And I get my own email address: <address>. Anything you send there, from your phone, a forward, a note to yourself, lands on my desk and gets sorted the next morning. Want it?"
 
-The address is her Gmail address with `+<name>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistant`.
+The address is her Gmail address with `+<name>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistant`. With a name, `+assistant` works too, in case she mixes them up: both go on the `assistant_address` line, and she's told both.
 
 - **yes:** record `assistant_address: <address>` and `assistant_senders: <her email>` in `state.md` (she can add other addresses she owns: "also from my work email"). Then offer the filter: "Want those emails to skip your inbox? One Gmail filter, about 2 minutes." On yes, numbered steps, one action each:
   1. **Click here to open your Gmail filters →** `https://mail.google.com/mail/u/0/#settings/filters`
   2. Click **Create a new filter**.
-  3. In **To**, paste `<address>`.
+  3. In **To**, paste `<address> OR <her email with +assistant>` (both addresses; just the one when there's no name).
   4. Click **Create filter**.
   5. Tick **Skip the Inbox (Archive it)**, then **Apply the label** → **New label** → `<the name, or Assistant>`.
   6. Click **Create filter**.

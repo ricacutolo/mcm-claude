@@ -86,12 +86,12 @@ Then, her assistente's address:
 
 > "E eu ganho o meu próprio e-mail: <endereço>. Tudo que você mandar pra lá, do celular, um encaminhamento, um lembrete pra você mesma, cai na minha mesa e é organizado na manhã seguinte. Quer?"
 
-The address is her Gmail address with `+<nome>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistente`.
+The address is her Gmail address with `+<nome>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistente`. With a name, `+assistente` works too, in case she mixes them up: both go on the `endereco_assistente` line, and she's told both.
 
 - **sim:** record `endereco_assistente: <endereço>` and `remetentes_assistente: <o e-mail dela>` in `estado.md` (she can add other addresses she owns: "também do meu e-mail do trabalho"). Then offer the filter: "Quer que esses e-mails pulem a sua caixa de entrada? Um filtro no Gmail, uns 2 minutos." On sim, numbered steps, one action each:
   1. **Clique aqui pra abrir os filtros do Gmail →** `https://mail.google.com/mail/u/0/#settings/filters`
   2. Clique em **Criar um novo filtro**.
-  3. Em **Para**, cole `<endereço>`.
+  3. Em **Para**, cole `<endereço> OR <o e-mail dela com +assistente>` (both addresses; just the one when there's no name).
   4. Clique em **Criar filtro**.
   5. Marque **Pular a Caixa de entrada (Arquivar)**, depois **Aplicar o marcador** → **Novo marcador** → `<o nome, ou Assistente>`.
   6. Clique em **Criar filtro**.
