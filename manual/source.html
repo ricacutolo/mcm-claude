@@ -215,6 +215,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
     </div>
     <ul class="machines">
       <li><a href="#system"><span class="en">The system</span><span class="pt">O sistema</span></a></li>
+      <li><a href="#assistant"><span class="en">Assistant</span><span class="pt">Assistente</span></a></li>
       <li><a href="#ceo">CEO</a></li>
       <li><a href="#clients">Client Book</a></li>
       <li><a href="#content"><span class="en">Content machine</span><span class="pt">Máquina de conteúdo</span></a></li>
@@ -287,7 +288,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
       <div class="sec-head"><h2 id="h-day"><span class="en">Day to day</span><span class="pt">No dia a dia</span></h2><span class="when"><span class="en">Every posting day</span><span class="pt">Todo dia de postar</span></span></div>
       <p class="lede"><span class="en">One phrase starts it. The plan already knows what's next.</span><span class="pt">Uma frase começa tudo. O plano já sabe o que vem a seguir.</span></p>
       <div class="flow">
-        <div class="say"><span class="en">“What's next?”</span><span class="pt">“Qual o próximo?”</span></div>
+        <div class="say"><span class="en">“Next post?”</span><span class="pt">“Próximo post?”</span></div>
         <div class="down" aria-hidden="true">↓</div>
         <div class="node key center">
           <span class="cmd en">/content-post</span><span class="cmd pt">/conteudo-post</span>
@@ -575,6 +576,122 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
       <div class="back"><span aria-hidden="true">↺</span><span class="en">back to day to day, with everything in place</span><span class="pt">de volta ao dia a dia, com tudo no lugar</span></div>
     </section>
   </article>
+  <article class="machine" id="assistant" hidden>
+    <header>
+      <p class="eyebrow"><span class="en">In your CEO department</span><span class="pt">No seu departamento CEO</span></p>
+      <h1><span class="en">Your assistant</span><span class="pt">A sua assistente</span></h1>
+      <p class="intro"><span class="en">The one you talk to every day. It keeps your day in order: your morning brief, your to-do list, who's waiting on you and what's next. Everything else goes to the department that owns it.</span><span class="pt">Quem você chama todo dia. Ela mantém o seu dia em ordem: o resumo da manhã, a sua lista de afazeres, quem está esperando por você e o que vem agora. Todo o resto vai pro departamento que cuida disso.</span></p>
+      <p class="intro"><span class="en">Why: nothing slips. You sit down, read your day in a minute, and from then on you just say what comes up. It drafts and suggests; you decide and you send.</span><span class="pt">Por quê: nada escapa. Você senta, lê o seu dia em um minuto, e dali pra frente é só falar o que aparece. Ela rascunha e sugere; quem decide e envia é você.</span></p>
+    </header>
+
+    <div class="pre">
+      <span class="en">Before anything, once: MCM OS installed</span><span class="pt">Antes de tudo, uma vez: o MCM instalado</span>
+      <span class="cmd en">/install</span><span class="cmd pt">/instalar</span>
+    </div>
+
+    <section class="sec" aria-labelledby="ha-set">
+      <div class="sec-head"><h2 id="ha-set"><span class="en">Set it up</span><span class="pt">Configure</span></h2><span class="when"><span class="en">Run once</span><span class="pt">Uma vez</span></span></div>
+      <div class="solo">
+        <div class="node">
+          <div class="q"><span class="en">“Set up my assistant”</span><span class="pt">“Configura minha assistente”</span></div>
+          <span class="cmd en">/assistant-install</span><span class="cmd pt">/assistente-instalar</span>
+          <div class="what"><span class="en">Your assistant, ready in about 10 minutes</span><span class="pt">A sua assistente, pronta em uns 10 minutos</span></div>
+          <div class="why"><span class="en">Six short steps, each with a suggestion. Stop anytime and pick up where you left off. It ends with your first morning brief.</span><span class="pt">Seis passos curtos, cada um com uma sugestão. Pare quando quiser e continue de onde parou. Termina com o seu primeiro resumo da manhã.</span></div>
+          <button class="peek" type="button" aria-expanded="false" aria-controls="assistant-steps"><span class="en">See what's inside</span><span class="pt">Veja o que tem dentro</span><span class="chev" aria-hidden="true">↓</span></button>
+        </div>
+        <div class="strat" id="assistant-steps" hidden>
+          <ol class="steps" style="counter-reset:st">
+            <li><b><span class="en">The desk</span><span class="pt">A mesa</span></b><span class="en">Your to-do list, a page for what's on your mind, and a place for anything you drop in.</span><span class="pt">A sua lista de afazeres, uma página pro que está na sua cabeça e um lugar pra tudo que você jogar lá.</span></li>
+            <li><b><span class="en">Connections</span><span class="pt">Conexões</span></b><span class="en">Your Calendar and Gmail, and MCM if you use it. It only reads.</span><span class="pt">A sua Agenda e o Gmail, e o MCM se você usa. Ela só lê.</span></li>
+            <li><b><span class="en">Your day</span><span class="pt">O seu dia</span></b><span class="en">When you start work, and one day a week to tidy your list (Friday, unless you pick another).</span><span class="pt">Quando você começa a trabalhar, e um dia da semana pra arrumar a lista (sexta, se você não escolher outro).</span></li>
+            <li><b><span class="en">A name</span><span class="pt">Um nome</span><small><span class="en">optional</span><span class="pt">opcional</span></small></b><span class="en">Just for fun. You'll see it on your morning brief.</span><span class="pt">Só por diversão. Você vê ele no seu resumo da manhã.</span></li>
+            <li><b><span class="en">Ready before you sit down</span><span class="pt">Pronto antes de você sentar</span><small><span class="en">optional</span><span class="pt">opcional</span></small></b><span class="en">Your brief gathered just before you start, so it's waiting when you open Claude.</span><span class="pt">O seu resumo montado um pouco antes de você começar, esperando quando você abrir o Claude.</span></li>
+            <li><b><span class="en">Your first brief</span><span class="pt">O seu primeiro resumo</span></b><span class="en">Your day, right there.</span><span class="pt">O seu dia, ali mesmo.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="ha-morning">
+      <div class="sec-head"><h2 id="ha-morning"><span class="en">Every morning</span><span class="pt">Toda manhã</span></h2><span class="when"><span class="en">When you sit down</span><span class="pt">Quando você senta</span></span></div>
+      <p class="lede"><span class="en">One phrase. Your whole day in a one-minute read.</span><span class="pt">Uma frase. O seu dia inteiro em um minuto de leitura.</span></p>
+      <div class="flow">
+        <div class="say"><span class="en">“Good morning”</span><span class="pt">“Bom dia”</span></div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node key center">
+          <span class="cmd">/morning-brief</span>
+          <div class="what"><span class="en">Your day in one read</span><span class="pt">O seu dia em uma leitura</span></div>
+          <ul class="en"><li>Today's calendar, with a suggested time for your priority</li><li>Who's waiting on you, most important first</li><li>What's next in each part of your business</li><li>What's new in MCM, if you use it</li><li>New notes from Rica</li><li>What got done since yesterday</li></ul>
+          <ul class="pt"><li>A agenda de hoje, com um horário sugerido pra sua prioridade</li><li>Quem está esperando por você, o mais importante primeiro</li><li>O próximo passo de cada parte do seu negócio</li><li>O que há de novo no MCM, se você usa</li><li>Notas novas do Rica</li><li>O que ficou pronto desde ontem</li></ul>
+        </div>
+        <div class="down" aria-hidden="true">↓</div>
+        <div class="node center">
+          <div class="what"><span class="en">“What first?”</span><span class="pt">“Por onde começamos?”</span></div>
+          <div class="why"><span class="en">Three suggestions, or tell it what you're thinking. Then a quick sort of anything new you dropped in, one line each, for your yes.</span><span class="pt">Três sugestões, ou diga o que você está pensando. Depois uma organização rápida do que você jogou na mesa, uma linha cada, pro seu sim.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="ha-day">
+      <div class="sec-head"><h2 id="ha-day"><span class="en">During the day</span><span class="pt">Durante o dia</span></h2><span class="when"><span class="en">Any chat, anytime</span><span class="pt">Qualquer chat, a qualquer hora</span></span></div>
+      <p class="lede"><span class="en">Say it the way it comes. Everything is saved the moment you say it.</span><span class="pt">Fale do jeito que vier. Tudo é guardado na hora em que você fala.</span></p>
+      <div class="mini four">
+        <div><div class="q"><span class="en">“Add this to my list: renew the car insurance”</span><span class="pt">“Coloca na minha lista: renovar o seguro do carro”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">Straight onto your list. “Added.”</span><span class="pt">Direto pra sua lista. “Anotado.”</span></p></div>
+        <div><div class="q"><span class="en">“What's next?”</span><span class="pt">“E agora?”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">The one next thing, and why, in two or three lines.</span><span class="pt">A próxima coisa, e por quê, em duas ou três linhas.</span></p></div>
+        <div><div class="q"><span class="en">“Done, I sent it”</span><span class="pt">“Feito, mandei”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">Moves to Done, with the date. Never marked done on a guess.</span><span class="pt">Vai pra Feito, com a data. Nunca marcado como feito no chute.</span></p></div>
+        <div><div class="q"><span class="en">“I'm stopping here”</span><span class="pt">“Vou parar aqui”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">It writes down where to pick up, so tomorrow you start without thinking.</span><span class="pt">Ela anota de onde continuar, pra amanhã você começar sem pensar.</span></p></div>
+      </div>
+      <h3><span class="en">“Save this”, without saying where</span><span class="pt">“Guarda isso”, sem dizer onde</span></h3>
+      <div class="decides">
+        <div class="d"><b><span class="en">You're already on a topic</span><span class="pt">Vocês já estão num assunto</span></b><span class="en">It goes to that department, project, client or topic.</span><span class="pt">Vai pra esse departamento, projeto, cliente ou assunto.</span></div>
+        <div class="d"><b><span class="en">Something to do</span><span class="pt">Algo pra fazer</span></b><span class="en">Your to-do list. Something someone owes you: Waiting on.</span><span class="pt">A sua lista de afazeres. Algo que alguém te deve: Esperando.</span></div>
+        <div class="d"><b><span class="en">Something personal</span><span class="pt">Algo pessoal</span></b><span class="en">An idea, a link, the school calendar: your desk, sorted the next morning.</span><span class="pt">Uma ideia, um link, o calendário da escola: a sua mesa, organizada na manhã seguinte.</span></div>
+      </div>
+      <p class="lede"><span class="en">Not sure? It asks in one line, with a suggestion.</span><span class="pt">Na dúvida, ela pergunta numa linha, com uma sugestão.</span></p>
+    </section>
+
+    <section class="sec" aria-labelledby="ha-list">
+      <div class="sec-head"><h2 id="ha-list"><span class="en">Your to-do list</span><span class="pt">A sua lista de afazeres</span></h2><span class="when"><span class="en">Always current</span><span class="pt">Sempre em dia</span></span></div>
+      <p class="lede"><span class="en">Your personal and loose to-dos. Your business's next steps stay in each department and project (up to 3 each); the assistant reads both, and nothing is copied between them.</span><span class="pt">Os seus afazeres pessoais e soltos. Os próximos passos do negócio ficam em cada departamento e projeto (até 3 em cada); a assistente lê os dois, e nada é copiado de um pro outro.</span></p>
+      <div class="decides">
+        <div class="d"><b><span class="en">Next</span><span class="pt">Próximos</span></b><span class="en">What you're doing.</span><span class="pt">O que você está fazendo.</span></div>
+        <div class="d"><b><span class="en">Waiting on</span><span class="pt">Esperando</span></b><span class="en">What someone owes you, and since when.</span><span class="pt">O que alguém te deve, e desde quando.</span></div>
+        <div class="d"><b><span class="en">Someday</span><span class="pt">Algum dia</span></b><span class="en">Ideas for later. Nothing is ever deleted.</span><span class="pt">Ideias pra depois. Nada é apagado.</span></div>
+      </div>
+      <h3><span class="en">What adds to it, always on your yes</span><span class="pt">O que entra nela, sempre com o seu sim</span></h3>
+      <div class="mini four">
+        <div><div class="q"><span class="en">What you say</span><span class="pt">O que você fala</span></div><p><span class="en">Goes straight in.</span><span class="pt">Entra direto.</span></p></div>
+        <div><div class="q"><span class="en">A meeting</span><span class="pt">Uma reunião</span></div><span class="cmd en">/save-meeting</span><span class="cmd pt">/resumo-da-reuniao</span><p><span class="en">Your promises that aren't the client's. Those stay on the client's sheet.</span><span class="pt">As suas promessas que não são do cliente. Essas ficam na ficha dele.</span></p></div>
+        <div><div class="q"><span class="en">A message you send</span><span class="pt">Uma mensagem que você envia</span></div><span class="cmd en">/my-voice</span><span class="cmd pt">/minha-voz</span><p><span class="en">When it asks someone for something: Waiting on.</span><span class="pt">Quando pede algo pra alguém: Esperando.</span></p></div>
+        <div><div class="q"><span class="en">Rica's notes</span><span class="pt">As notas do Rica</span></div><span class="cmd en">/update</span><span class="cmd pt">/atualizar</span><p><span class="en">His suggestions: start now, or put on your list.</span><span class="pt">As sugestões dele: começar agora, ou pôr na lista.</span></p></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="ha-week">
+      <div class="sec-head"><h2 id="ha-week"><span class="en">Tidy the week</span><span class="pt">Arrume a semana</span></h2><span class="when"><span class="en">Your review day</span><span class="pt">O seu dia de revisão</span></span></div>
+      <p class="lede"><span class="en">About 5 minutes. It offers at the end of that day's brief; one plan, and nothing moves before your yes.</span><span class="pt">Uns 5 minutos. Ela oferece no fim do resumo desse dia; um plano só, e nada muda antes do seu sim.</span></p>
+      <div class="loop">
+        <div class="step"><div class="node key"><div class="q"><span class="en">“It's Friday: tidy the week?”</span><span class="pt">“Hoje é sexta: arrumamos a semana?”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><div class="what"><span class="en">It asks first</span><span class="pt">Ela pergunta antes</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Your notes, put away</span><span class="pt">As suas notas, guardadas</span></div><div class="why"><span class="en">What you kept becomes short pages by part of your life: family, home, travel.</span><span class="pt">O que você guardou vira páginas curtas por parte da vida: família, casa, viagem.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">What's stuck</span><span class="pt">O que travou</span></div><div class="why"><span class="en">Anything sitting for 3 weeks: still on? Anyone quiet for a week: a follow-up drafted for you to send.</span><span class="pt">O que está parado há 3 semanas: ainda está de pé? Quem sumiu há uma semana: uma cobrança rascunhada pra você enviar.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Done, filed</span><span class="pt">Feitos, arquivados</span></div><div class="why"><span class="en">Your list starts the week clean, and what's on your mind is refreshed.</span><span class="pt">A sua lista começa a semana limpa, e o que está na sua cabeça é atualizado.</span></div></div></div>
+      </div>
+      <div class="mini">
+        <div><div class="q"><span class="en">“Plan my week”</span><span class="pt">“Planeja minha semana”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">Time suggested on your free slots for the two or three things that matter most. You put them on your calendar.</span><span class="pt">Horários sugeridos nos seus espaços livres pras duas ou três coisas que mais importam. Quem coloca na agenda é você.</span></p></div>
+        <div><div class="q"><span class="en">“I'm done for the day”</span><span class="pt">“Encerrei por hoje”</span></div><span class="cmd en">/assistant</span><span class="cmd pt">/assistente</span><p><span class="en">An optional two-minute wrap: what got done, what moves to tomorrow.</span><span class="pt">Um fechamento opcional de dois minutos: o que foi feito, o que passa pra amanhã.</span></p></div>
+        <div><div class="q"><span class="en">Its name</span><span class="pt">O nome dela</span></div><p><span class="en">Call it by the name you gave it, anytime. You'll only see the name on your brief.</span><span class="pt">Chame pelo nome que você deu, a qualquer hora. O nome só aparece no seu resumo.</span></p></div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="ha-safe">
+      <div class="sec-head"><h2 id="ha-safe"><span class="en">Always</span><span class="pt">Sempre</span></h2><span class="when"><span class="en">Every day</span><span class="pt">Todo dia</span></span></div>
+      <div class="decides">
+        <div class="d"><b><span class="en">Never sends</span><span class="pt">Nunca envia</span></b><span class="en">Never sends, accepts, books or pays. Replies and invites are drafts you send.</span><span class="pt">Nunca envia, aceita, agenda ou paga. Respostas e convites são rascunhos que você envia.</span></div>
+        <div class="d"><b><span class="en">Nothing disappears</span><span class="pt">Nada some</span></b><span class="en">Never deletes. Done moves to Done; dropped moves to Someday.</span><span class="pt">Nunca apaga. Feito vai pra Feito; o que saiu vai pra Algum dia.</span></div>
+        <div class="d"><b><span class="en">Always you</span><span class="pt">Sempre você</span></b><span class="en">It never writes to anyone as if it were a person on your staff.</span><span class="pt">Ela nunca escreve pra ninguém como se fosse uma pessoa da sua equipe.</span></div>
+      </div>
+    </section>
+  </article>
   <article class="machine" id="clients" hidden>
     <header>
       <p class="eyebrow"><span class="en">Machine</span><span class="pt">Máquina</span></p>
@@ -655,7 +772,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
         <div class="step"><div class="node key"><span class="cmd en">/save-meeting</span><span class="cmd pt">/resumo-da-reuniao</span><div class="what"><span class="en">Reads the transcript</span><span class="pt">Lê a transcrição</span></div><div class="why"><span class="en">The whole meeting, word for word.</span><span class="pt">A reunião inteira, palavra por palavra.</span></div></div></div>
         <div class="step"><div class="node"><div class="what"><span class="en">Pulls out what matters</span><span class="pt">Tira o que importa</span></div><div class="why"><span class="en">Decisions, who agreed to do what by when, preferences, open questions. Each with the minute it was said.</span><span class="pt">Decisões, quem ficou de fazer o quê e até quando, preferências, perguntas em aberto. Cada uma com o minuto em que foi dita.</span></div></div></div>
         <div class="step"><div class="node"><div class="what"><span class="en">One batch for your yes</span><span class="pt">Tudo de uma vez pro seu sim</span></div><div class="why"><span class="en">Yes to all, or just the numbers you want.</span><span class="pt">Sim pra tudo, ou só os números que você quiser.</span></div></div></div>
-        <div class="step"><div class="node"><div class="what"><span class="en">Next step and a follow-up</span><span class="pt">Próximo passo e um retorno</span></div><div class="why"><span class="en">If you promised something, a follow-up message for you to send.</span><span class="pt">Se você prometeu algo, uma mensagem de retorno pra você enviar.</span></div></div></div>
+        <div class="step"><div class="node"><div class="what"><span class="en">Next step and a follow-up</span><span class="pt">Próximo passo e um retorno</span></div><div class="why"><span class="en">If you promised something, a follow-up message for you to send. Your own promises that aren't the client's go to your to-do list, on your yes.</span><span class="pt">Se você prometeu algo, uma mensagem de retorno pra você enviar. As suas promessas que não são do cliente vão pra sua lista de afazeres, com o seu sim.</span></div></div></div>
       </div>
     </section>
 
@@ -872,7 +989,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
     </section>
   </article>
     <footer>
-      <span><span class="en">MCM OS 0.22.2 · updated 2026-11-19</span><span class="pt">MCM 0.22.2 · atualizado em 2026-11-19</span></span>
+      <span><span class="en">MCM OS 0.26.1 · updated 2026-11-20</span><span class="pt">MCM 0.26.1 · atualizado em 2026-11-20</span></span>
       <span>MyClientMachine</span>
     </footer>
   </main>
@@ -880,7 +997,7 @@ footer{border-top:1px solid var(--line);padding-top:14px;display:flex;justify-co
 
 <script>
 (function(){
-  var ids=["system","content","clients","ceo","courses"];
+  var ids=["system","assistant","content","clients","ceo","courses"];
   function show(){
     var id=(location.hash||"#system").slice(1); if(ids.indexOf(id)<0) id="system";
     ids.forEach(function(x){ document.getElementById(x).hidden = x!==id; });
