@@ -134,6 +134,9 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | ultimo_resumo | last_brief |
 | ultima_triagem | last_triage |
 | ultima_revisao | last_review |
+| endereco_assistente: <e-mail> / não | assistant_address: <email> / no |
+| remetentes_assistente | assistant_senders |
+| ultima_coleta | last_pickup |
 | aguardando semente | waiting for seed |
 | pendente / feito | pending / done |
 | `saude.md` block `## Configuração` · `configuracao_atualizada:` · lines Instalação · Configuração do conteúdo · Cursos · Estratégia do CEO · Assistente · pronta · esperando · ainda não · stages configurado / desenhando / gravando / no ar | `health.md` block `## Setup` · `setup_updated:` · Install · Content setup · Courses · CEO strategy · Assistant · done · waiting · not yet · set up / designing / recording / live |

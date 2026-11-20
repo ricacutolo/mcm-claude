@@ -2,6 +2,14 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.27.0 — 2026-11-20 [both]
+- **Her assistant's email address** (Rica, 2026-11-20). She can email things to her assistant from anywhere without opening Claude: her own Gmail address with `+<the assistant's name>` (no name: `+assistant`, PT `+assistente`); with a name, `+assistant` / `+assistente` works too, in case she mixes them up. Gmail delivers it to her own inbox; nothing new to sign up for.
+  - **assistant-install** (PT assistente-instalar), Step 4 becomes "A name and an address": offers the address (optional), records it and her sending addresses, then offers a Gmail filter she makes herself in about 2 minutes, with numbered steps and a direct link, so those emails skip her inbox under a label. No filter: nothing breaks, the emails just stay in her inbox too. Not Gmail: the part is skipped. The Opening gains one line.
+  - **assistant** (PT assistente), new § Email to the assistant: the daily triage (in the brief and on "what's next") starts by picking up email sent to that address since `last_pickup`, read-only. Only from her own addresses: each becomes a `raw/` item (subject, her text, a link to the email, attachments named) and is triaged like anything else; picked up once, by the email's id. From anyone else: listed as waiting on her, never acted on. Nothing is labeled, archived or marked read. A renamed assistant keeps its old address too. The first pickup takes everything ever sent there, so emails sent before the address was set up aren't lost; "set up my assistant's email" (PT "configura o e-mail da assistente") runs just the address part.
+  - **morning-brief:** those emails aren't listed as waiting on her; anyone already set up is offered the address once.
+  - State keys `assistant_address`, `assistant_senders`, `last_pickup` (PT `endereco_assistente`, `remetentes_assistente`, `ultima_coleta`); system who-writes row and glossary.
+  - Manual: the Assistant page's setup step 4 and a "From anywhere" card. Footer 0.27.0.
+
 ## 0.26.1 — 2026-11-20 [both]
 - **The manual catches up** (Rica, 2026-11-19). It stood at 0.22.2. New **Assistant** page (EN/PT): the setup and its six steps, the morning brief, what to say during the day, where "save this" goes, the to-do list and what adds to it, the weekly tidy-up, planning the week, and what it never does. The content page's day-to-day phrase is now "Next post?" (PT "Próximo post?"): "What's next?" belongs to the assistant. The Client Book's after-a-meeting step says her own promises go to her to-do list. Footer 0.26.1.
 

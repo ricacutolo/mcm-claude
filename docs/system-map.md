@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.26.1
+version: 0.27.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -21,7 +21,7 @@ is what runs, and this file is stale. Each skill row names both editions (PT · 
 | Content machine | Strategy, 4-week plan, Canva templates, static posts (incl. photo and headline photo), reels (beta), newsletter, Substack, podcast, the anchor that leads each cycle, monthly review | conteudo-* | 0.4.0 (PT) · MCM OS 0.1.0 (EN); newsletter 0.8.0; Substack 0.10.0; headline photo 0.12.0; podcast and the anchor 0.19.0 |
 | Client Book | One sheet, history and Drive folder per client of hers; meetings filed into them | novo-cliente, abrir-cliente, guardar-no-cliente, resumo-da-reuniao | 0.2.0; meetings 0.3.0; existing history linked 0.7.1; Zoom 0.14.0 |
 | Voice | Writing in her voice | minha-voz · my-voice | 0.1.0 |
-| The assistant (inside CEO) | Her day: the morning brief (needs the assistant), her to-dos (Próximos · Esperando · Algum dia · Feito), capture routing, "e agora?", the daily triage, the weekly review, planning the week, an optional name and morning run; read-only on Calendar, Gmail and MCM; never sends, accepts, books, pays or deletes | assistente-instalar · assistant-install, assistente · assistant, morning-brief | brief 0.1.0; the assistant 0.25.0 |
+| The assistant (inside CEO) | Her day: the morning brief (needs the assistant), her to-dos (Próximos · Esperando · Algum dia · Feito), capture routing, "e agora?", the daily triage, the weekly review, planning the week, an optional name, its own email address (her Gmail `+<name>`, picked up in the daily triage, from 0.27.0) and morning run; read-only on Calendar, Gmail and MCM; never sends, accepts, books, pays or deletes | assistente-instalar · assistant-install, assistente · assistant, morning-brief | brief 0.1.0; the assistant 0.25.0 |
 | Drive and brand | Numbered Drive folders and sorting; logo and brand kit | organizar-drive · organize-drive, brand-kit-designer | 0.1.7; brand kit 0.1.9 |
 
 Planned, in order (see the office vision in Rica's workspace): the CEO layer grows (strategy cascade, reporting up, state of the business, cross-department plan, handoffs, scoreboard, decision log, quarterly review); Marketing (launch, sell before you build); the GHL machine (puts everything into MCM); Community.

@@ -95,7 +95,7 @@ _revisao/                     anything that would otherwise be deleted
 | `departamentos/cursos/<programa>/programa.md` | /curso-desenho only, on her sim |
 | a lesson file, `perguntas.md`, `retorno.md`, `depoimentos.md` | /curso-aula (lesson files), /curso-fechar-aula (O que aconteceu, perguntas, retorno, depoimentos), /curso-revisao (retorno review lines), on her sim |
 | `departamentos/ceo/assistente/*` | /assistente-instalar creates it; afterwards /assistente (the desk), and /morning-brief writes only `hoje.md` |
-| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_secoes` and `notas_rica_lidas`; /assistente-instalar, /assistente and /morning-brief set only the assistente keys: `assistente`, `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `resumo_cedo`, `ultimo_resumo`, `ultima_triagem`, `ultima_revisao`) |
+| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_secoes` and `notas_rica_lidas`; /assistente-instalar, /assistente and /morning-brief set only the assistente keys: `assistente`, `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `resumo_cedo`, `ultimo_resumo`, `ultima_triagem`, `ultima_revisao`, `endereco_assistente`, `remetentes_assistente`, `ultima_coleta`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
 

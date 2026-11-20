@@ -1,6 +1,6 @@
 ---
 name: assistente-instalar
-description: "Configura a assistente dela, dentro do departamento CEO: a mesa (afazeres, o que está na cabeça dela, o que ela joga lá), as conexões que ela lê, o dia de trabalho, um nome opcional e uma rodada da manhã opcional, e depois o primeiro resumo do dia. Use quando ela disser \"/assistente-instalar\", \"configura minha assistente\", \"configurar a assistente\", \"continua a configuração da assistente\", \"quero uma assistente\", ou quando o resumo do dia ou a assistente forem pedidos antes de estarem configurados."
+description: "Configura a assistente dela, dentro do departamento CEO: a mesa (afazeres, o que está na cabeça dela, o que ela joga lá), as conexões que ela lê, o dia de trabalho, um nome opcional e uma rodada da manhã opcional, e depois o primeiro resumo do dia. Use quando ela disser \"/assistente-instalar\", \"configura minha assistente\", \"configurar a assistente\", \"continua a configuração da assistente\", \"quero uma assistente\", \"configura o e-mail da assistente\", \"o endereço da minha assistente\", ou quando o resumo do dia ou a assistente forem pedidos antes de estarem configurados."
 ---
 
 # assistente-instalar — her assistente, set up
@@ -11,7 +11,7 @@ Sets up the assistente: the one she talks to most. It answers whenever she talks
 
 Loaded only when this skill fires:
 
-1. `_sistema/estado.md` — `assistente:` (setup progress), `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `reunioes`, `pasta_drive`.
+1. `_sistema/estado.md` — `assistente:` (setup progress), `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `reunioes`, `pasta_drive`, `endereco_assistente`, `remetentes_assistente`.
 2. `departamentos/ceo/assistente/configuracao.md` — if it exists, where the setup stopped.
 3. `sobre-mim/sobre-mim.md` — her timezone and anything she said about her schedule.
 4. `sobre-mim/cerebro-do-negocio.md` — her business, for the Opening's examples and the recommendations.
@@ -37,11 +37,12 @@ The first time only (never on a resumed run, never on a later run), before the f
 > - Dizer "coloca na minha lista" ou "e agora?" a qualquer hora, e nunca perder nada de vista
 > - Ter respostas rascunhadas e a semana planejada, sempre pro seu sim
 > - Dar um nome a ela, se quiser, e ter tudo pronto antes de você sentar de manhã
+> - Mandar coisas pra ela por e-mail de qualquer lugar, sem abrir o Claude
 > Ela se conecta à sua Agenda e ao Gmail, e ao MCM se você usa. Você pode parar em qualquer passo e continuar depois."
 
 ## Workflow
 
-Six steps. Say where she is at each one ("Passo 2 de 6: suas conexões"). On a resumed run, read `configuracao.md`, say where she stopped in one line, and start at the first step not done.
+Six steps. Say where she is at each one ("Passo 2 de 6: suas conexões"). Asked only for the address (her assistant is already set up): run Step 4's address part, nothing else. On a resumed run, read `configuracao.md`, say where she stopped in one line, and start at the first step not done.
 
 ### Step 1 — The desk
 
@@ -75,11 +76,28 @@ Two questions, one at a time, each opening with a recommendation from what the s
 
 Anything she adds about her routine ("segunda é dia de burocracia") goes into the brief's **Rotinas dela**, on her sim.
 
-### Step 4 — A name (optional)
+### Step 4 — A name and an address (optional)
 
 > "Última coisa sobre mim: quer me dar um nome? É só por diversão, e você vai ver ele no seu resumo da manhã. Algumas ideias: Clara, Nina, Theo, ou o que você quiser. Ou sem nome: eu sou simplesmente a sua assistente."
 
 Her name → `nome_assistente:` in `estado.md` and the brief's first line. No name → leave it empty; nothing else asks again. He, she or neutral follows the name she picks, or how she refers to it.
+
+Then, her assistente's address:
+
+> "E eu ganho o meu próprio e-mail: <endereço>. Tudo que você mandar pra lá, do celular, um encaminhamento, um lembrete pra você mesma, cai na minha mesa e é organizado na manhã seguinte. Quer?"
+
+The address is her Gmail address with `+<nome>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistente`. With a name, `+assistente` works too, in case she mixes them up: both go on the `endereco_assistente` line, and she's told both.
+
+- **sim:** record `endereco_assistente: <endereço>` and `remetentes_assistente: <o e-mail dela>` in `estado.md` (she can add other addresses she owns: "também do meu e-mail do trabalho"). Then offer the filter: "Quer que esses e-mails pulem a sua caixa de entrada? Um filtro no Gmail, uns 2 minutos." On sim, numbered steps, one action each:
+  1. **Clique aqui pra abrir os filtros do Gmail →** `https://mail.google.com/mail/u/0/#settings/filters`
+  2. Clique em **Criar um novo filtro**.
+  3. Em **Para**, cole `<endereço> OR <o e-mail dela com +assistente>` (both addresses; just the one when there's no name).
+  4. Clique em **Criar filtro**.
+  5. Marque **Pular a Caixa de entrada (Arquivar)**, depois **Aplicar o marcador** → **Novo marcador** → `<o nome, ou Assistente>`.
+  6. Clique em **Criar filtro**.
+  No filter: nothing breaks; those emails also stay in her inbox.
+- **não:** record `endereco_assistente: não`; nothing asks again.
+- Her email isn't Gmail or Google Workspace: skip this part without a word.
 
 ### Step 5 — The morning run (optional, sold)
 
@@ -149,7 +167,7 @@ Seu dia: o resumo da manhã, o planejamento, sua agenda, quem está esperando vo
 | 1 | A mesa | feito / pendente |
 | 2 | Conexões | feito / esperando / pendente |
 | 3 | O dia dela | feito / pendente |
-| 4 | Um nome | feito / pulado / pendente |
+| 4 | Um nome e um endereço | feito / pulado / pendente |
 | 5 | A rodada da manhã | feito / não / pendente |
 | 6 | O primeiro resumo | feito / pendente |
 
@@ -168,6 +186,7 @@ Shared memory: `configuracao.md` and `estado.md` are this skill's memory; when t
 
 - Writes anything before her sim, except its own progress (`configuracao.md`, `estado.md` keys, the receipt, the Configuração block).
 - Sends, accepts, books, pays or deletes anything, in any connection.
+- Creates the Gmail filter or labels her email: the filter is hers to make.
 - Writes the CEO department's brief or `departamentos/index.md`.
 - Insists on a name, a morning run or a review day.
 - Types a password or signs in for her.
