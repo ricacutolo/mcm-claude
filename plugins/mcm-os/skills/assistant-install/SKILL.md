@@ -11,7 +11,7 @@ Sets up the assistant: the one she talks to most. It answers whenever she talks 
 
 Loaded only when this skill fires:
 
-1. `_system/state.md` — `assistant:` (setup progress), `assistant_name`, `review_day`, `work_starts`, `meetings`, `drive_folder`.
+1. `_system/state.md` — `assistant:` (setup progress), `assistant_name`, `review_day`, `work_starts`, `meetings`, `drive_folder`, `assistant_address`, `assistant_senders`.
 2. `departments/ceo/assistant/setup.md` — if it exists, where the setup stopped.
 3. `about-me/about-me.md` — her timezone and anything she said about her schedule.
 4. `about-me/business-brain.md` — her business, for the Opening's examples and the recommendations.
@@ -37,6 +37,7 @@ The first time only (never on a resumed run, never on a later run), before the f
 > - Say "add this to my list" or "what's next?" at any point, and never lose track of anything
 > - Get replies drafted and your week planned, always for your yes
 > - Give it a name, if you like, and have it ready before you sit down each morning
+> - Email it things from anywhere, without opening Claude
 > It connects to your Calendar and Gmail, and to MCM if you use it. You can stop at any step and pick up later."
 
 ## Workflow
@@ -75,11 +76,28 @@ Two questions, one at a time, each opening with a recommendation from what the s
 
 Anything she adds about her routine ("Mondays are for admin") goes into the brief's **Her routines**, on her yes.
 
-### Step 4 — A name (optional)
+### Step 4 — A name and an address (optional)
 
 > "Last thing about me: want to give me a name? It's just for fun, and you'll see it on your morning brief. Some ideas: Clara, Nina, Theo, or anything you like. Or no name: I'm simply your assistant."
 
 Her name → `assistant_name:` in `state.md` and the brief's first line. No name → leave it empty; nothing else asks again. He, she or neutral follows the name she picks, or how she refers to it.
+
+Then, her assistant's address:
+
+> "And I get my own email address: <address>. Anything you send there, from your phone, a forward, a note to yourself, lands on my desk and gets sorted the next morning. Want it?"
+
+The address is her Gmail address with `+<name>` before the `@`: the name in lowercase, no accents or spaces (Nina → `+nina`); no name → `+assistant`.
+
+- **yes:** record `assistant_address: <address>` and `assistant_senders: <her email>` in `state.md` (she can add other addresses she owns: "also from my work email"). Then offer the filter: "Want those emails to skip your inbox? One Gmail filter, about 2 minutes." On yes, numbered steps, one action each:
+  1. **Click here to open your Gmail filters →** `https://mail.google.com/mail/u/0/#settings/filters`
+  2. Click **Create a new filter**.
+  3. In **To**, paste `<address>`.
+  4. Click **Create filter**.
+  5. Tick **Skip the Inbox (Archive it)**, then **Apply the label** → **New label** → `<the name, or Assistant>`.
+  6. Click **Create filter**.
+  No filter: nothing breaks; those emails also stay in her inbox.
+- **no:** record `assistant_address: no`; nothing asks again.
+- Her email isn't Gmail or Google Workspace: skip this part without a word.
 
 ### Step 5 — The morning run (optional, sold)
 
@@ -149,7 +167,7 @@ Your day: the morning brief, planning, your calendar, who's waiting on you, your
 | 1 | The desk | done / pending |
 | 2 | Connections | done / waiting / pending |
 | 3 | Her day | done / pending |
-| 4 | A name | done / skipped / pending |
+| 4 | A name and an address | done / skipped / pending |
 | 5 | The morning run | done / no / pending |
 | 6 | The first brief | done / pending |
 
@@ -168,6 +186,7 @@ Shared memory: `setup.md` and `state.md` are this skill's memory; when the setup
 
 - Writes anything before her yes, except its own progress (`setup.md`, `state.md` keys, the receipt, the Setup block).
 - Sends, accepts, books, pays or deletes anything, in any connection.
+- Creates the Gmail filter or labels her email: the filter is hers to make.
 - Writes the CEO department's brief or `departments/index.md`.
 - Insists on a name, a morning run or a review day.
 - Types a password or signs in for her.

@@ -95,7 +95,7 @@ _review/                      anything that would otherwise be deleted
 | `departments/courses/<program>/program.md` | /course-design only, on her yes |
 | a lesson file, `faq.md`, `feedback.md`, `quotes.md` | /course-lesson (lesson files), /course-close-lesson (What happened, faq, feedback, quotes), /course-review (feedback review lines), on her yes |
 | `departments/ceo/assistant/*` | /assistant-install creates it; afterwards /assistant (the desk), and /morning-brief writes only `today.md` |
-| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_sections` and `rica_notes_read`; /assistant-install, /assistant and /morning-brief set only the assistant keys: `assistant`, `assistant_name`, `review_day`, `work_starts`, `morning_run`, `last_brief`, `last_triage`, `last_review`) |
+| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_sections` and `rica_notes_read`; /assistant-install, /assistant and /morning-brief set only the assistant keys: `assistant`, `assistant_name`, `review_day`, `work_starts`, `morning_run`, `last_brief`, `last_triage`, `last_review`, `assistant_address`, `assistant_senders`, `last_pickup`) |
 | `_system/pending.md`, `health.md` | this skill |
 | `_system/log.md` | shared, append-only — every skill adds its own receipt line |
 
