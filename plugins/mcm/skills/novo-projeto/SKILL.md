@@ -24,7 +24,7 @@ Loaded only when this skill fires:
 
 > "Nothing is written before an explicit **sim** to the drafted brief."
 
-> "No task lists, no checklists, no 'próximos passos' section. One next step, in one line."
+> "No task lists, no checklists. Up to 3 próximos passos, in order, one line each; the first is what's next."
 
 > "This skill writes only inside `projetos/`, plus the receipt. The log is created by /assunto."
 
@@ -52,7 +52,7 @@ One at a time, skipping what the conversation already answers. Three is usually 
 1. **"Como você vai saber que terminou?"** The result, concrete. Becomes Resultado.
 2. **"Por que agora?"** What it unlocks or what breaks if it waits. If nothing, say so plainly and move on.
 3. **"Ele faz parte de qual departamento?"** Propose the obvious one from the index. "Nenhum" is fine.
-4. **"Qual o primeiro passo concreto?"** One action she could start today. Becomes Próximo passo.
+4. **"Qual o primeiro passo concreto?"** One action she could start today. Becomes the first of the Próximos passos; if she already knows the one or two after it, they follow.
 
 If the result is vague ("melhorar o podcast"), say so once: "Assim fica difícil saber quando acabou. O que precisa estar pronto?"
 
@@ -87,8 +87,10 @@ _Em YYYY-MM-DD._
 ## Perguntas em aberto
 - <O que ainda não se sabe. Pode ficar vazio.>
 
-## Próximo passo
-<Um movimento concreto.>
+## Próximos passos
+1. <O próximo movimento concreto.>
+2. <Depois, se já souber.>
+3. <Depois, se já souber.>
 
 ## Onde as coisas ficam
 - Histórico: `contexto/<slug>.md`
@@ -119,7 +121,7 @@ Then: "Esse é o brief do projeto **<Nome>**. Posso criar? (**sim** / ou me diz 
 
 ```
 **Projeto criado — <Nome>**
-Próximo passo: <do brief>
+Próximo passo: <o primeiro dos próximos passos do brief>
 ```
 
 ## What this skill never does
@@ -133,7 +135,7 @@ Próximo passo: <do brief>
 ## When to refuse
 
 - Already exists — "Esse projeto já existe. Quer abrir?"
-- Asked for a task list in the brief — "O brief guarda o próximo passo, não uma lista. A gente vai passo a passo."
+- Asked for a task list in the brief — "O brief guarda os próximos passos, não uma lista. A gente vai passo a passo."
 - Asked to store a password or card number — "Isso eu não guardo."
 
 ## Failure modes

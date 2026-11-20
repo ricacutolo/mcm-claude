@@ -68,7 +68,7 @@ Where they go:
 | My business | `about-me/business-brain.md`, under the heading that fits |
 | My business <Area> | `about-me/business-brain-<area>.md`, under the heading that fits |
 | About me | `about-me/about-me.md` |
-| Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next step (the next move); facts and stories go to its history via /context-hot |
+| Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next steps (the next moves, up to 3); facts and stories go to its history via /context-hot |
 | Project X | same, for the project's brief |
 | Content — comment words | `departments/content/ghl.md` § Comment words: the word's row, added or with its new status (`live` with today's date in Since, or `paused`), exactly as Rica wrote it. Only this section sets a word live. |
 | To do | nothing is written; it is offered in Step 4 |

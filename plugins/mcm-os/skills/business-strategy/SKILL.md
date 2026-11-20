@@ -74,7 +74,7 @@ She can stop at any topic: save what's agreed (Step 4) and put the rest in Open 
 - On yes: copy the business brain to `_review/YYYY-MM-DD-business-brain.md` first, then write both. Strategy `updated:` set to today.
 
 ### Step 5 — Close
-- CEO brief: Current state (today's date, one line: the first offer and the 90-day goal), Next step (the first launch step), `updated:`.
+- CEO brief: Current state (today's date, one line: the first offer and the 90-day goal), Next steps (the first launch steps, up to 3), `updated:`.
 - Hand /system "refresh the Setup block" (the CEO strategy line).
 - `departments/ceo/reports.md`: each report settled in this session moves from Open to Settled (where it went, today's date). Nothing else in it changes.
 - Departments that should follow it, one line each, as offers, never done here: when the Content direction is new or changed, "Your content strategy follows the old direction. Update it?" (content → /content-strategy). Nothing else changes.

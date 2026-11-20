@@ -68,7 +68,7 @@ Where they go:
 | Meu negócio | `sobre-mim/cerebro-do-negocio.md`, under the heading that fits |
 | Meu negócio <Área> | `sobre-mim/cerebro-do-negocio-<area>.md`, under the heading that fits |
 | Sobre mim | `sobre-mim/sobre-mim.md` |
-| Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximo passo (the next move); facts and stories go to its histórico via /assunto |
+| Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximos passos (the next moves, up to 3); facts and stories go to its histórico via /assunto |
 | Projeto X | same, for the project's brief |
 | Conteúdo — palavras de comentário | `departamentos/conteudo/ghl.md` § Palavras de comentário: the word's row, added or with its new status (`no ar` with today's date in Desde, or `pausada`), exactly as Rica wrote it. Only this section sets a word live. |
 | Para fazer | nothing is written; it is offered in Step 4 |

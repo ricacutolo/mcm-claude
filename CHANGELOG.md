@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.24.0 — 2026-11-20 [both]
+- **Up to 3 next steps per department and project** (Rica, 2026-11-19; first step of the assistant build). A brief held one Next step, which was too little to plan a day from. A department or project brief now has `## Next steps` (PT `## Próximos passos`): up to 3, in order, the first is what's next. Still not a to-do list. The rule lives once in `system` (sistema): a skill that "sets Next step" sets the first line and keeps the others; an older brief with one `Next step` reads the same and becomes `Next steps` the next time it's written, so nothing breaks in existing folders. new-department and new-project write the new section; open-department and open-project show the first; update and business-strategy name it. Content and course skills unchanged (they already set "the Next step" = the first line).
+
 ## 0.23.2 — 2026-11-19 [both]
 - **Three hooks, one recommended** (Rica, 2026-11-19). Every post and reel shows her 3 hooks from different hook patterns, each with one line on why it could work, and the one Claude recommends and why; the draft uses the recommended one (playbook § 3, content-static, content-video).
 - **Worth saving or sending** is the 5th point of the check before the copy gate: a post should be useful enough to save or send without asking for it (playbook § 8; content-static, content-video, content-newsletter; the podcast title keeps the first 4).
