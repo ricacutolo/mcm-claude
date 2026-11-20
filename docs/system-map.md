@@ -1,6 +1,6 @@
 ---
 last-verified: 2026-11-10
-version: 0.24.0
+version: 0.25.0
 owner: Rica (maintainer). Every skill change updates this file in the same commit.
 ---
 
@@ -20,7 +20,8 @@ is what runs, and this file is stale. Each skill row names both editions (PT · 
 | Course machine | Builds what she sells: program design, one lesson at a time, closes each live lesson from its transcript, reviews per module and round; a progress file per program | curso-instalar, curso-desenho, curso-aula, curso-fechar-aula, curso-revisao | 0.13.0 |
 | Content machine | Strategy, 4-week plan, Canva templates, static posts (incl. photo and headline photo), reels (beta), newsletter, Substack, podcast, the anchor that leads each cycle, monthly review | conteudo-* | 0.4.0 (PT) · MCM OS 0.1.0 (EN); newsletter 0.8.0; Substack 0.10.0; headline photo 0.12.0; podcast and the anchor 0.19.0 |
 | Client Book | One sheet, history and Drive folder per client of hers; meetings filed into them | novo-cliente, abrir-cliente, guardar-no-cliente, resumo-da-reuniao | 0.2.0; meetings 0.3.0; existing history linked 0.7.1; Zoom 0.14.0 |
-| Voice and day | Writing in her voice; the morning brief | minha-voz · my-voice, morning-brief | 0.1.0 |
+| Voice | Writing in her voice | minha-voz · my-voice | 0.1.0 |
+| The assistant (inside CEO) | Her day: the morning brief (needs the assistant), her to-dos (Próximos · Esperando · Algum dia · Feito), capture routing, "e agora?", the daily triage, the weekly review, planning the week, an optional name and morning run; read-only on Calendar, Gmail and MCM; never sends, accepts, books, pays or deletes | assistente-instalar · assistant-install, assistente · assistant, morning-brief | brief 0.1.0; the assistant 0.25.0 |
 | Drive and brand | Numbered Drive folders and sorting; logo and brand kit | organizar-drive · organize-drive, brand-kit-designer | 0.1.7; brand kit 0.1.9 |
 
 Planned, in order (see the office vision in Rica's workspace): the CEO layer grows (strategy cascade, reporting up, state of the business, cross-department plan, handoffs, scoreboard, decision log, quarterly review); Marketing (launch, sell before you build); the GHL machine (puts everything into MCM); Community.
@@ -39,7 +40,8 @@ Settings > General > Instructions for Claude   (pasted once, never changes)
         ├── MCM Client Book: novo-cliente · abrir-cliente · guardar-no-cliente · resumo-da-reuniao ── one sheet, histórico and Drive folder per client of hers; meetings filed into them
         ├── novo-departamento / novo-projeto  ── interview → brief (APPROVE)
         ├── assunto ── the only writer of contexto/*.md (logs for topics, projects, departments, clients); captures a whole conversation on her ask
-        ├── minha-voz · morning-brief
+        ├── minha-voz
+        ├── the assistente (in CEO): assistente-instalar (6-step setup) → assistente (the desk: capture, afazeres, "e agora?", triage, weekly review) · morning-brief (needs the assistente; optional morning run writes hoje.md)
         ├── content machine: conteudo-post (front door) → conteudo-estatico · conteudo-video (beta); conteudo-plano · conteudo-estrategia · conteudo-modelo · conteudo-revisao · conteudo-instalar (20-step setup) · conteudo-newsletter · conteudo-substack · conteudo-podcast
         ├── CEO (above the departments): estrategia-do-negocio (research → conversation → estrategia.md, settled facts to the business brain)
         ├── course machine: curso-instalar → curso-desenho → curso-aula → curso-fechar-aula → curso-revisao
@@ -71,7 +73,7 @@ All names are Portuguese; skills refer to them exactly as written here.
     <slug>/pesquisa/            created on first use, with index.md
     <slug>/entregas/<tipo>/     created on first use, one folder per type, each with index.md
     <slug>/entregas/planos/     plan files (3+ steps), kept current in place — rule in sistema
-    ceo/                        the CEO department (v0.11.0): brief.md · estrategia.md (+ estrategia-<area>.md) · pesquisa/ — the business strategy; departments carry it out
+    ceo/                        the CEO department (v0.11.0): brief.md · estrategia.md (+ estrategia-<area>.md) · pesquisa/ · relatorios.md · assistente/ (v0.25.0: brief.md · afazeres.md · em-mente.md · entrada/ · wiki/ · feitos/ · configuracao.md · hoje.md — the assistente's desk) — the business strategy; departments carry it out
     cursos/                     the Cursos department (v0.13.0): brief.md · index.md · <programa>/ (index.md = its progress file · programa.md · aulas/ · perguntas.md · retorno.md · depoimentos.md) — builds what she sells, one lesson at a time
     conteudo/                   the Conteúdo department (content machine): brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · visual.md (her look, without Canva) · referencias.md (her references, ongoing) · ghl.md (incl. § Newsletter, § Substack) · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · notas/ (Substack) · scripts/ · .env · rodadas-anteriores/
     clientes/                   the Clientes department (MCM Client Book): brief.md = how she serves any client
@@ -152,7 +154,9 @@ Drive folder recorded as `pasta_drive`. A stale `saude.md` (10+ days) means she 
 | novo-projeto · new-project | new (markdown, no database); always asks the área | `projetos/<slug>/brief.md` (with `area:`), `projetos/index.md` (grouped by área) | `_sistema/log.md` |
 | abrir-projeto · open-project | mirror of abrir-departamento | nothing but the receipt | `_sistema/log.md` |
 | minha-voz · my-voice | Nuno voice-writer | `entregas/` or the department's `entregas/` | `_sistema/log.md` |
-| morning-brief | Nuno morning-brief, on demand | nothing (reply only) | `_sistema/log.md` |
+| morning-brief | Nuno morning-brief; v2 belongs to the assistente (0.25.0) | the reply; `estado.md` → `ultimo_resumo` (and `ultima_triagem` / `ultima_revisao` through /assistente); the morning run writes only `departamentos/ceo/assistente/hoje.md`; without the assistente it offers /assistente-instalar | `_sistema/log.md` |
+| assistente-instalar · assistant-install | new (Setup wizard, convention 9) | `departamentos/ceo/assistente/` (brief.md, afazeres.md, em-mente.md, entrada/, wiki/, feitos/, configuracao.md), `estado.md` → `assistente`, `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `resumo_cedo`; a scheduled task for the morning run on her sim; hands /sistema "atualizar o bloco Configuração" | `_sistema/log.md` |
+| assistente · assistant | new (the desk; pieces from Rica's /day) | `afazeres.md`, `entrada/` (+ index), `wiki/`, `em-mente.md`, `feitos/YYYY-MM.md`, things not to keep to `_revisao/`; capture routed to the right history through assunto; `estado.md` → `ultima_triagem`, `ultima_revisao`; never deletes, never sends | `_sistema/log.md` |
 | conteudo-post · content-post | Rica's /content-post, router part (translated from mcm-os content-post) | `departamentos/conteudo/ideias.md` (idea capture; "transforma isso em post" saves the idea and offers the next slot), `ghl.md` § Palavras de comentário (a `pedida` row only, from 0.21.0), opens every post with the "Este post" table, `calendario.md` and `desempenho.md` (publish check), brief Próximo passo / Estado atual; hands the post to a maker on her sim; never makes or schedules | `_sistema/log.md` |
 | conteudo-estatico · content-static | Rica's /content-post, maker part | `posts/post-NN-<slug>/post.md`, a Canva copy of a TEMPLATE, or slides Claude renders from her look into `slides/` when she designs without Canva (or, for photo posts, her own photos prepared in `photos/`, or generated ones per `estilo-de-foto.md`; a headline photo: the photo in a copy of TEMPLATE - Photo - headline), permanent GoHighLevel media, the scheduled GoHighLevel post, `calendario.md`, `plano.md` Status cell, `ideias.md`, brief; three gates (texto, design, agendamento) | `_sistema/log.md` |
 | conteudo-video · content-video (beta) | Rica's /content-video | `posts/post-NN-<slug>/` (script.md, raw/, edit/, reel versions), the scheduled GoHighLevel reel, `calendario.md`, `plano.md` Status cell, brief; four gates; ElevenLabs set up on the first reel; ships the reel kit in `kit/` | `_sistema/log.md` |

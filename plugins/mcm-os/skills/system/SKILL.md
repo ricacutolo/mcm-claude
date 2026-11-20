@@ -67,7 +67,7 @@ claude.md                     backup of her Instructions for Claude
 about-me/                     about-me.md · business-brain.md (main business) · business-brain-<area>.md (each other business) · writing.md · drive.md (once her Drive is organized) · brand.md (once her brand kit exists)
 departments/                  index.md · <slug>/brief.md · research/ · deliverables/<type>/
   clients/                    the Clients department: brief.md (how she serves) · index.md · <slug>/sheet.md (one per client) · reactions.md (what clients say about her service)
-  ceo/                        the CEO department: brief.md · strategy.md (main business) · strategy-<area>.md (each other business) · reports.md (what the departments report up) · research/
+  ceo/                        the CEO department: brief.md · strategy.md (main business) · strategy-<area>.md (each other business) · reports.md (what the departments report up) · research/ · assistant/ (the assistant's desk: brief.md · todo.md · hot.md · raw/ · wiki/ · done/ · setup.md · today.md)
   courses/                    the Courses department: brief.md · index.md · <program>/ (index.md · program.md · lessons/lesson-NN-<slug>.md · faq.md · feedback.md · quotes.md)
   content/                    the Content department: brief.md · setup.md · strategy.md · plan.md · calendar.md · ideas.md · templates.md · brand-style.md · ghl.md · photos.md · photo-style.md · performance-log.md · library-notes.md · swipe.md · posts/ · newsletters/ · notes/ · scripts/ · .env · past-rounds/
 projects/                     index.md · <slug>/brief.md · research/ · deliverables/<type>/
@@ -94,13 +94,16 @@ _review/                      anything that would otherwise be deleted
 | `departments/ceo/reports.md` | departments add lines under Open (today: /content-review and /course-review, on her yes); only /business-strategy moves them to Settled |
 | `departments/courses/<program>/program.md` | /course-design only, on her yes |
 | a lesson file, `faq.md`, `feedback.md`, `quotes.md` | /course-lesson (lesson files), /course-close-lesson (What happened, faq, feedback, quotes), /course-review (feedback review lines), on her yes |
-| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_sections` and `rica_notes_read`) |
+| `departments/ceo/assistant/*` | /assistant-install creates it; afterwards /assistant (the desk), and /morning-brief writes only `today.md` |
+| `_system/state.md` | install during install; this skill afterwards (/update sets only `rica_notes_sections` and `rica_notes_read`; /assistant-install, /assistant and /morning-brief set only the assistant keys: `assistant`, `assistant_name`, `review_day`, `work_starts`, `morning_run`, `last_brief`, `last_triage`, `last_review`) |
 | `_system/pending.md`, `health.md` | this skill |
 | `_system/log.md` | shared, append-only — every skill adds its own receipt line |
 
-## The chief of staff
+## The assistant
 
-She talks to one Claude. That Claude routes:
+She talks to one Claude: her assistant. It routes her plain words to the right skill (below) for everyone, whether the assistant is set up or not. Once she sets it up (/assistant-install), it also keeps her desk, her to-dos and her day, under the name she gave it, if any. The name is used only on the morning brief and when she calls it by name, never in every reply. It never speaks for her as if it were a person on her staff, and outside her folder it only drafts and proposes.
+
+It routes:
 
 - She names a department ("let's work on content", "open Mentoring") → **/open-department**.
 - She names a project → **/open-project**.
@@ -110,7 +113,9 @@ She talks to one Claude. That Claude routes:
 - A writing task → **/my-voice**; plan or refresh the content plan → **/content-plan**; the content strategy → **/content-strategy**; the monthly review, "how did the posts do" → **/content-review**; build a template → **/content-template**; the newsletter, "write the newsletter" → **/content-newsletter**; a Substack note or article, "post on Substack" → **/content-substack**; the next post, or anything else about making a post → **/content-post**; setting up content → **/content-install**.
 - Her business strategy: what to sell first, pricing, a launch, "where is my business going", "let's think about my strategy" → **/business-strategy**.
 - Her program or course: set it up → **/course-install**; design it, the modules → **/course-design**; "next lesson", prepare a class → **/course-lesson**; "close the lesson", "I just finished teaching" → **/course-close-lesson**; review a module or a round → **/course-review**.
-- "How's my day looking" → **/morning-brief**.
+- "Good morning", "how's my day looking" → **/morning-brief** (it belongs to the assistant; without it, the brief offers the setup).
+- "Add this to my list", "remind me to", "note this" or "save this" without saying where, "what's next", "what now", "done", "not today", "plan my week", "weekly review", or her assistant's name → **/assistant**.
+- "Set up my assistant" → **/assistant-install**.
 - "Update", "any news from Rica" → **/update**.
 - "Organize my Drive", "where do I save this in Drive" → **/organize-drive**.
 - "Make my brand", "create my logo" → **/brand-kit-designer**.
@@ -130,6 +135,8 @@ Never make her name a skill. Plain words are enough.
 | A fact she states about one of her clients (people, preferences, what's open) | that client's `sheet.md`, right section | soft |
 | A client is no longer active | the sheet's `status` → `archived`, its index line; the Drive folder to `02. Clients/z - archive` via /organize-drive | hard |
 | A project finished | the brief's `status`, its index line, its log's `status` → `closed` — confirmed together | hard (the one exception to soft index lines) |
+| Something she has to do, personal or loose (not a department's or project's next step) | the assistant's `todo.md` (via /assistant) | soft |
+| Something personal to keep (an idea, a link, a note) | the assistant's `raw/` (via /assistant), sorted in the daily triage | soft |
 | Where a department or project stands now | that brief's Current state | soft |
 | The next concrete moves (up to 3) | that brief's Next steps | soft |
 | What happened in the conversation, what is parked, who waits on whom | the topic's `context/<slug>.md` (via /context-hot) | soft |
@@ -248,12 +255,13 @@ setup_updated: YYYY-MM-DD
 - Content setup: done | <done> of 20 · waiting: <step names>
 - Courses: program 1: <stage words> · program 2: …
 - CEO strategy: set (<its updated date>) | not yet
+- Assistant: set up | step <X> of 6
 - Comment words: <n> live · <n> asked
 ```
 
-Never put her content, names of clients, or text from her files in it. The **Setup** block holds step names and counts only: from `_system/state.md` (the install's steps), `departments/content/setup.md` (its table and Waiting on), each `departments/courses/<program>/index.md` (its stage, in step words: set up, designing, recording, live; programs are numbered, never named, and no module or lesson titles) and `departments/ceo/strategy.md` (its `updated:` date, or missing), and `departments/content/ghl.md` § Comment words (counts by status only, never the words). A setup never started gets no line; no comment words, no line.
+Never put her content, names of clients, or text from her files in it. The **Setup** block holds step names and counts only: from `_system/state.md` (the install's steps, and `assistant:` for the assistant setup), `departments/content/setup.md` (its table and Waiting on), each `departments/courses/<program>/index.md` (its stage, in step words: set up, designing, recording, live; programs are numbered, never named, and no module or lesson titles) and `departments/ceo/strategy.md` (its `updated:` date, or missing), and `departments/content/ghl.md` § Comment words (counts by status only, never the words). A setup never started gets no line; no comment words, no line.
 
-**Setup refresh.** A setup skill (install, content-install, course-install, business-strategy) hands this skill "refresh the Setup block" when one of its steps finishes. Rewrite only the Setup block and its `setup_updated:` line in `health.md` (create the file with the rest blank if it doesn't exist yet), and with `drive_mirror: yes`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
+**Setup refresh.** A setup skill (install, content-install, course-install, business-strategy, assistant-install) hands this skill "refresh the Setup block" when one of its steps finishes. Rewrite only the Setup block and its `setup_updated:` line in `health.md` (create the file with the rest blank if it doesn't exist yet), and with `drive_mirror: yes`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
 
 **Mirror to Drive.** At each upkeep, each Setup refresh and each version change. The first time, ask: "Can I save a copy of this system health report (just numbers, nothing of your content) in the Drive folder you share with Rica, so he can check everything is working?" Record the answer in `state.md` as `drive_mirror: yes | no`. If **yes** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `state.md` → `drive_folder` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Errors seen".
 
@@ -285,7 +293,7 @@ Not knowing is normal and is said so, warmly, once: "Most people haven't decided
 
 ## Setup wizards
 
-Every setup that walks her through steps follows these rules: install, content-install, course-install, brand-kit-designer, organize-drive, and any setup added later. A setup's own rules add to them; they never loosen them.
+Every setup that walks her through steps follows these rules: install, content-install, course-install, assistant-install, brand-kit-designer, organize-drive, and any setup added later. A setup's own rules add to them; they never loosen them.
 
 > "A setup opens with its Opening the first time, before any step: what it will do for her and what she'll be able to do with it, said like a pitch, not a manual. A resumed or later run skips it and says where she is."
 

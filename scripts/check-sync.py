@@ -97,8 +97,8 @@ for label, d in (("mcm-os", EN), ("mcm", PT)):
             problems.append(f"{label}/{name}: no receipt line in {RECEIPT[label]}")
 
 # Setup wizards (docs/skill-conventions.md § Setup wizards): system holds the rules, every setup points to them.
-WIZARDS = {"mcm-os": ("system", ["install", "content-install", "course-install", "brand-kit-designer", "organize-drive"]),
-           "mcm": ("sistema", ["instalar", "conteudo-instalar", "curso-instalar", "brand-kit-designer", "organizar-drive"])}
+WIZARDS = {"mcm-os": ("system", ["install", "content-install", "course-install", "assistant-install", "brand-kit-designer", "organize-drive"]),
+           "mcm": ("sistema", ["instalar", "conteudo-instalar", "curso-instalar", "assistente-instalar", "brand-kit-designer", "organizar-drive"])}
 for label, d in (("mcm-os", EN), ("mcm", PT)):
     sysname, setups = WIZARDS[label]
     sysf = os.path.join(d, sysname, "SKILL.md")
