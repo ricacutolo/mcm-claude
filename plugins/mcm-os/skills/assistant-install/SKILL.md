@@ -1,6 +1,6 @@
 ---
 name: assistant-install
-description: "Sets up her assistant, inside the CEO department: its desk (to-dos, what's on her mind, what she drops in), the connections it reads, her working day, an optional name and an optional morning run, then her first morning brief. When she says \"/assistant-install\", \"set up my assistant\", \"set up the assistant\", \"continue the assistant setup\", \"I want an assistant\", or when the morning brief or the assistant is asked for before it's set up."
+description: "Sets up her assistant, inside the CEO department: its desk (to-dos, what's on her mind, what she drops in), the connections it reads, her working day, an optional name and an optional morning run, then her first morning brief. When she says \"/assistant-install\", \"set up my assistant\", \"set up the assistant\", \"continue the assistant setup\", \"I want an assistant\", \"set up my assistant's email\", \"my assistant's address\", or when the morning brief or the assistant is asked for before it's set up."
 ---
 
 # assistant-install — her assistant, set up
@@ -42,7 +42,7 @@ The first time only (never on a resumed run, never on a later run), before the f
 
 ## Workflow
 
-Six steps. Say where she is at each one ("Step 2 of 6: your connections"). On a resumed run, read `setup.md`, say where she stopped in one line, and start at the first step not done.
+Six steps. Say where she is at each one ("Step 2 of 6: your connections"). Asked only for the address (her assistant is already set up): run Step 4's address part, nothing else. On a resumed run, read `setup.md`, say where she stopped in one line, and start at the first step not done.
 
 ### Step 1 — The desk
 

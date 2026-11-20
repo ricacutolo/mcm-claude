@@ -1,6 +1,6 @@
 ---
 name: assistente-instalar
-description: "Configura a assistente dela, dentro do departamento CEO: a mesa (afazeres, o que está na cabeça dela, o que ela joga lá), as conexões que ela lê, o dia de trabalho, um nome opcional e uma rodada da manhã opcional, e depois o primeiro resumo do dia. Use quando ela disser \"/assistente-instalar\", \"configura minha assistente\", \"configurar a assistente\", \"continua a configuração da assistente\", \"quero uma assistente\", ou quando o resumo do dia ou a assistente forem pedidos antes de estarem configurados."
+description: "Configura a assistente dela, dentro do departamento CEO: a mesa (afazeres, o que está na cabeça dela, o que ela joga lá), as conexões que ela lê, o dia de trabalho, um nome opcional e uma rodada da manhã opcional, e depois o primeiro resumo do dia. Use quando ela disser \"/assistente-instalar\", \"configura minha assistente\", \"configurar a assistente\", \"continua a configuração da assistente\", \"quero uma assistente\", \"configura o e-mail da assistente\", \"o endereço da minha assistente\", ou quando o resumo do dia ou a assistente forem pedidos antes de estarem configurados."
 ---
 
 # assistente-instalar — her assistente, set up
@@ -42,7 +42,7 @@ The first time only (never on a resumed run, never on a later run), before the f
 
 ## Workflow
 
-Six steps. Say where she is at each one ("Passo 2 de 6: suas conexões"). On a resumed run, read `configuracao.md`, say where she stopped in one line, and start at the first step not done.
+Six steps. Say where she is at each one ("Passo 2 de 6: suas conexões"). Asked only for the address (her assistant is already set up): run Step 4's address part, nothing else. On a resumed run, read `configuracao.md`, say where she stopped in one line, and start at the first step not done.
 
 ### Step 1 — The desk
 
