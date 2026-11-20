@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.26.1 — 2026-11-20 [both]
+- **The manual catches up** (Rica, 2026-11-19). It stood at 0.22.2. New **Assistant** page (EN/PT): the setup and its six steps, the morning brief, what to say during the day, where "save this" goes, the to-do list and what adds to it, the weekly tidy-up, planning the week, and what it never does. The content page's day-to-day phrase is now "Next post?" (PT "Próximo post?"): "What's next?" belongs to the assistant. The Client Book's after-a-meeting step says her own promises go to her to-do list. Footer 0.26.1.
+
 ## 0.26.0 — 2026-11-20 [both]
 - **What feeds her to-do list** (Rica, 2026-11-19; the last step of the assistant build). With the assistant set up, three skills offer lines for `todo.md`, each only on her yes and each in one place, never two:
   - **save-meeting** (PT resumo-da-reuniao): her own promises that belong neither to the client's sheet nor to a brief's Next steps (personal, loose, or for someone who isn't the client) show in the batch under **On your to-do list**. A promise to or about the client stays in What's open; a department's or project's next move stays in its brief.
