@@ -1,6 +1,6 @@
 ---
 name: context-hot
-description: "Loads and keeps the history of a topic, so any conversation picks up where the last one left off. It's the history for departments, projects, clients and loose topics. It can also save a whole conversation to the right topic. When she says \"/context-hot\", \"context hot\", \"context for\", \"load the topic\", \"where did we leave off on\", \"save this to the history\", \"save this\", \"make a note of this\", \"this conversation is about\", \"save this conversation to\", \"all of this is for the client\"."
+description: "Loads and keeps the history of a topic, so any conversation picks up where the last one left off. It's the history for departments, projects, clients and loose topics. It can also save a whole conversation to the right topic. When she says \"/context-hot\", \"context hot\", \"context for\", \"load the topic\", \"where did we leave off on\", \"save this to the history\", \"this conversation is about\", \"save this conversation to\", \"all of this is for the client\"."
 ---
 
 # context-hot — the running log of every topic

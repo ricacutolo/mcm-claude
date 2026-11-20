@@ -67,7 +67,7 @@ claude.md                     backup of her Instructions for Claude
 sobre-mim/                    sobre-mim.md · cerebro-do-negocio.md (main business) · cerebro-do-negocio-<area>.md (each other business) · escrita.md · drive.md (once her Drive is organized) · marca.md (once her brand kit exists)
 departamentos/                index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
   clientes/                   the Clientes department: brief.md (how she serves) · index.md · <slug>/ficha.md (one per client) · reacoes.md (what clients say about her service)
-  ceo/                        the CEO department: brief.md · estrategia.md (main business) · estrategia-<area>.md (each other business) · relatorios.md (what the departments report up) · pesquisa/
+  ceo/                        the CEO department: brief.md · estrategia.md (main business) · estrategia-<area>.md (each other business) · relatorios.md (what the departments report up) · pesquisa/ · assistente/ (the assistente's desk: brief.md · afazeres.md · em-mente.md · entrada/ · wiki/ · feitos/ · configuracao.md · hoje.md)
   cursos/                     the Cursos department: brief.md · index.md · <programa>/ (index.md · programa.md · aulas/aula-NN-<slug>.md · perguntas.md · retorno.md · depoimentos.md)
   conteudo/                   the Conteúdo department: brief.md · configuracao.md · estrategia.md · plano.md · calendario.md · ideias.md · modelos.md · estilo-da-marca.md · ghl.md · fotos.md · estilo-de-foto.md · desempenho.md · notas-da-biblioteca.md · swipe.md · posts/ · newsletters/ · notas/ · scripts/ · .env · rodadas-anteriores/
 projetos/                     index.md · <slug>/brief.md · pesquisa/ · entregas/<tipo>/
@@ -94,13 +94,16 @@ _revisao/                     anything that would otherwise be deleted
 | `departamentos/ceo/relatorios.md` | departments add lines under Abertos (today: /conteudo-revisao and /curso-revisao, on her sim); only /estrategia-do-negocio moves them to Resolvidos |
 | `departamentos/cursos/<programa>/programa.md` | /curso-desenho only, on her sim |
 | a lesson file, `perguntas.md`, `retorno.md`, `depoimentos.md` | /curso-aula (lesson files), /curso-fechar-aula (O que aconteceu, perguntas, retorno, depoimentos), /curso-revisao (retorno review lines), on her sim |
-| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_secoes` and `notas_rica_lidas`) |
+| `departamentos/ceo/assistente/*` | /assistente-instalar creates it; afterwards /assistente (the desk), and /morning-brief writes only `hoje.md` |
+| `_sistema/estado.md` | instalar during install; this skill afterwards (/atualizar sets only `notas_rica_secoes` and `notas_rica_lidas`; /assistente-instalar, /assistente and /morning-brief set only the assistente keys: `assistente`, `nome_assistente`, `dia_revisao`, `inicio_trabalho`, `resumo_cedo`, `ultimo_resumo`, `ultima_triagem`, `ultima_revisao`) |
 | `_sistema/pendentes.md`, `saude.md` | this skill |
 | `_sistema/log.md` | shared, append-only — every skill adds its own receipt line |
 
-## The chief of staff
+## The assistant
 
-She talks to one Claude. That Claude routes:
+She talks to one Claude: her assistente. It routes her plain words to the right skill (below) for everyone, whether the assistente is set up or not. Once she sets it up (/assistente-instalar), it also keeps her desk, her to-dos and her day, under the name she gave it, if any. The name is used only on the morning brief and when she calls it by name, never in every reply. It never speaks for her as if it were a person on her staff, and outside her folder it only drafts and proposes.
+
+It routes:
 
 - She names a department ("vamos trabalhar no conteúdo", "abre mentorias") → **/abrir-departamento**.
 - She names a project → **/abrir-projeto**.
@@ -110,7 +113,9 @@ She talks to one Claude. That Claude routes:
 - A writing task → **/minha-voz**; plan or refresh the content plan → **/conteudo-plano**; the content strategy → **/conteudo-estrategia**; the monthly review, "como foram os posts" → **/conteudo-revisao**; build a template → **/conteudo-modelo**; the newsletter, "escreve a newsletter" → **/conteudo-newsletter**; a Substack note or article, "posta no Substack" → **/conteudo-substack**; the next post, or anything else about making a post → **/conteudo-post**; setting up content → **/conteudo-instalar**.
 - Her business strategy: what to sell first, pricing, a launch, "pra onde o meu negócio está indo", "vamos pensar na minha estratégia" → **/estrategia-do-negocio**.
 - Her program or course: set it up → **/curso-instalar**; design it, the modules → **/curso-desenho**; "próxima aula", prepare a class → **/curso-aula**; "fecha a aula", "acabei de dar aula" → **/curso-fechar-aula**; review a module or a round → **/curso-revisao**.
-- "Como está meu dia" → **/morning-brief**.
+- "Bom dia", "como está meu dia" → **/morning-brief** (it belongs to the assistente; without it, the brief offers the setup).
+- "Coloca na minha lista", "me lembra de", "anota isso" or "guarda isso" without saying where, "e agora", "o que falta", "feito", "hoje não", "planeja minha semana", "revisão da semana", or her assistente's name → **/assistente**.
+- "Configura minha assistente" → **/assistente-instalar**.
 - "Atualizar", "tem novidade do Rica" → **/atualizar**.
 - "Organiza meu Drive", "onde guardo isso no Drive" → **/organizar-drive**.
 - "Faz minha marca", "cria meu logo" → **/brand-kit-designer**.
@@ -130,6 +135,8 @@ Never make her name a skill. Plain words are enough.
 | A fact she states about one of her clients (people, preferences, what's open) | that client's `ficha.md`, right section | soft |
 | A client is no longer active | the sheet's `status` → `arquivado`, its index line; the Drive folder to `02. Clientes/z - arquivo` via /organizar-drive | hard |
 | A project finished | the brief's `status`, its index line, its log's `status` → `encerrado` — confirmed together | hard (the one exception to soft index lines) |
+| Something she has to do, personal or loose (not a department's or project's next step) | the assistente's `afazeres.md` (via /assistente) | soft |
+| Something personal to keep (an idea, a link, a note) | the assistente's `entrada/` (via /assistente), sorted in the daily triage | soft |
 | Where a department or project stands now | that brief's Estado atual | soft |
 | The next concrete moves (up to 3) | that brief's Próximos passos | soft |
 | What happened in the conversation, what is parked, who waits on whom | the topic's `contexto/<slug>.md` (via /assunto) | soft |
@@ -248,12 +255,13 @@ configuracao_atualizada: YYYY-MM-DD
 - Configuração do conteúdo: pronta | <done> de 20 · esperando: <step names>
 - Cursos: programa 1: <stage words> · programa 2: …
 - Estratégia do CEO: definida (<its atualizado date>) | ainda não
+- Assistente: pronta | passo <X> de 6
 - Palavras de comentário: <n> no ar · <n> pedidas
 ```
 
-Never put her content, names of clients, or text from her files in it. The **Configuração** block holds step names and counts only: from `_sistema/estado.md` (the install's steps), `departamentos/conteudo/configuracao.md` (its table and Esperando), each `departamentos/cursos/<program>/index.md` (its stage, in step words: configurado, desenhando, gravando, no ar; programs are numbered, never named, and no module or lesson titles) and `departamentos/ceo/estrategia.md` (its `atualizado:` date, or missing), and `departamentos/conteudo/ghl.md` § Palavras de comentário (counts by status only, never the words). A setup never started gets no line; no comment words, no line.
+Never put her content, names of clients, or text from her files in it. The **Configuração** block holds step names and counts only: from `_sistema/estado.md` (the install's steps, and `assistente:` for the assistente setup), `departamentos/conteudo/configuracao.md` (its table and Esperando), each `departamentos/cursos/<program>/index.md` (its stage, in step words: configurado, desenhando, gravando, no ar; programs are numbered, never named, and no module or lesson titles) and `departamentos/ceo/estrategia.md` (its `atualizado:` date, or missing), and `departamentos/conteudo/ghl.md` § Palavras de comentário (counts by status only, never the words). A setup never started gets no line; no comment words, no line.
 
-**Setup refresh.** A setup skill (instalar, conteudo-instalar, curso-instalar, estrategia-do-negocio) hands this skill "atualizar o bloco Configuração" when one of its steps finishes. Rewrite only the Configuração block and its `configuracao_atualizada:` line in `saude.md` (create the file with the rest blank if it doesn't exist yet), and with `espelho_drive: sim`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
+**Setup refresh.** A setup skill (instalar, conteudo-instalar, curso-instalar, estrategia-do-negocio, assistente-instalar) hands this skill "atualizar o bloco Configuração" when one of its steps finishes. Rewrite only the Configuração block and its `configuracao_atualizada:` line in `saude.md` (create the file with the rest blank if it doesn't exist yet), and with `espelho_drive: sim`, update the Drive copy the same way. No permission needed: it's the same numbers-only file. Nothing is said to her about it.
 
 **Mirror to Drive.** At each upkeep, each Setup refresh and each version change. The first time, ask: "Posso guardar uma cópia desse system health report (só números, nada do seu conteúdo) na pasta do Drive que você divide com o Rica, pra ele ver se está tudo funcionando?" Record the answer in `estado.md` as `espelho_drive: sim | nao`. If **sim** and the Google Drive connector is connected, write or update a Google Doc named `MCM - System Health Report` in the folder recorded in `estado.md` → `pasta_drive` (a folder ID, or a name if no ID was given). If the connector or folder is missing, skip silently and note it under "Erros vistos".
 
@@ -285,7 +293,7 @@ Not knowing is normal and is said so, warmly, once: "A maioria das pessoas ainda
 
 ## Setup wizards
 
-Every setup that walks her through steps follows these rules: instalar, conteudo-instalar, curso-instalar, brand-kit-designer, organizar-drive, and any setup added later. A setup's own rules add to them; they never loosen them.
+Every setup that walks her through steps follows these rules: instalar, conteudo-instalar, curso-instalar, assistente-instalar, brand-kit-designer, organizar-drive, and any setup added later. A setup's own rules add to them; they never loosen them.
 
 > "A setup opens with its Opening the first time, before any step: what it will do for her and what she'll be able to do with it, said like a pitch, not a manual. A resumed or later run skips it and says where she is."
 

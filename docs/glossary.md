@@ -38,6 +38,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | curso-aula | course-lesson |
 | curso-fechar-aula | course-close-lesson |
 | curso-revisao | course-review |
+| assistente-instalar | assistant-install |
+| assistente | assistant |
 | ideias-de-post, post-instagram, post-linkedin | retired in content machine v1 (MCM 0.4.0), no English edition |
 
 ## Folders and files in her folder
@@ -57,6 +59,8 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | `departamentos/clientes/reacoes.md` | `departments/clients/reactions.md` |
 | `departamentos/ceo/` · `estrategia.md` · `estrategia-<area>.md` · `pesquisa/` | `departments/ceo/` · `strategy.md` · `strategy-<area>.md` · `research/` |
 | shipped `estrategia-do-negocio/playbook.md` · `modelos/estrategia.md` | `business-strategy/playbook.md` · `templates/strategy.md` |
+| `departamentos/ceo/assistente/` (a mesa da assistente) · `brief.md` · `afazeres.md` · `em-mente.md` · `entrada/` (`index.md`, marks `novo` · `guardado` · `arquivado`) · `wiki/` · `feitos/YYYY-MM.md` · `configuracao.md` · `hoje.md` | `departments/ceo/assistant/` (the assistant's desk) · `brief.md` · `todo.md` · `hot.md` · `raw/` (`index.md`, marks `new` · `kept` · `filed`) · `wiki/` · `done/YYYY-MM.md` · `setup.md` · `today.md` |
+| `afazeres.md` sections `Próximos` · `Esperando` · `Algum dia` · `Feito` · assistant brief sections `O que eu faço` · `Rotinas dela` · `O que eu posso fazer` · `O que eu nunca faço` | `todo.md` sections `Next` · `Waiting on` · `Someday` · `Done` · `What I do` · `Her routines` · `What I may do` · `What I never do` |
 | `departamentos/cursos/` · `<programa>/programa.md` · `aulas/aula-NN-<slug>.md` · `perguntas.md` · `retorno.md` · `depoimentos.md` | `departments/courses/` · `<program>/program.md` · `lessons/lesson-NN-<slug>.md` · `faq.md` · `feedback.md` · `quotes.md` |
 | program `index.md` fields `aulas em:` · `curso no MCM:` | `lessons on:` · `MCM course:` |
 | program `index.md` (its progress file) sections `Onde está` · `Próximo passo` · `Turmas` (`Turma N — planejada / começou / terminou`) · `Arquivos` | `Where it stands` · `Next step` · `Rounds` (`Round N — planned / started / finished`) · `Files` |
@@ -122,9 +126,17 @@ The two plugins are the same system in two languages. English (`mcm-os`) is the 
 | reunioes: meet / zoom / outro | meetings: meet / zoom / other |
 | notas_rica_lidas | rica_notes_read |
 | notas_rica_secoes | rica_notes_sections |
+| assistente: passo N de 6 / pronta | assistant: step N of 6 / set up |
+| nome_assistente | assistant_name |
+| dia_revisao | review_day |
+| inicio_trabalho | work_starts |
+| resumo_cedo: <hora> / não | morning_run: <time> / no |
+| ultimo_resumo | last_brief |
+| ultima_triagem | last_triage |
+| ultima_revisao | last_review |
 | aguardando semente | waiting for seed |
 | pendente / feito | pending / done |
-| `saude.md` block `## Configuração` · `configuracao_atualizada:` · lines Instalação · Configuração do conteúdo · Cursos · Estratégia do CEO · pronta · esperando · ainda não · stages configurado / desenhando / gravando / no ar | `health.md` block `## Setup` · `setup_updated:` · Install · Content setup · Courses · CEO strategy · done · waiting · not yet · set up / designing / recording / live |
+| `saude.md` block `## Configuração` · `configuracao_atualizada:` · lines Instalação · Configuração do conteúdo · Cursos · Estratégia do CEO · Assistente · pronta · esperando · ainda não · stages configurado / desenhando / gravando / no ar | `health.md` block `## Setup` · `setup_updated:` · Install · Content setup · Courses · CEO strategy · Assistant · done · waiting · not yet · set up / designing / recording / live |
 | hand-off to /sistema: "atualizar o bloco Configuração" | "refresh the Setup block" |
 
 ## Brief and log words

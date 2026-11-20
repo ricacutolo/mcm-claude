@@ -1,6 +1,6 @@
 ---
 name: assunto
-description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos, clientes e assuntos soltos. Também guarda uma conversa inteira no assunto certo. Quando ela diz \"/assunto\", \"abre o assunto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"guarda isso\", \"anota isso\", \"essa conversa é sobre\", \"guarda essa conversa no\", \"tudo isso aqui é do cliente\"."
+description: "Carrega e mantém o histórico de um assunto, para qualquer conversa continuar de onde a outra parou. É o histórico de departamentos, projetos, clientes e assuntos soltos. Também guarda uma conversa inteira no assunto certo. Quando ela diz \"/assunto\", \"abre o assunto\", \"contexto de\", \"carrega o assunto\", \"onde a gente parou em\", \"guarda no histórico\", \"essa conversa é sobre\", \"guarda essa conversa no\", \"tudo isso aqui é do cliente\"."
 ---
 
 # assunto — the running log of every topic
