@@ -19,6 +19,7 @@ Loaded only when this skill fires, never at session start:
 2. `${CLAUDE_SKILL_DIR}/kill-list.md` — the anti-AI floor, applied even if `writing.md` is thin.
 3. the business file of the area in play (`about-me/business-brain.md`, or `business-brain-<area>.md` per /system's **Areas**) — only when the text touches her offers, clients or prices.
 4. `about-me/about-me.md` — only when the text needs personal context.
+5. `_system/state.md` — only `assistant:`, and only after she approves a text that asks someone for something (Step 5).
 
 If `about-me/writing.md` does not exist, say once: "I don't have your voice file yet. I can write this now in a neutral tone, or we can run the install first." and continue if she wants.
 
@@ -84,6 +85,7 @@ fix the 1-3 sentences that are not landing, not a full rewrite.
   per saved file: `- [<title>](YYYY-MM-DD-<slug>.md) · YYYY-MM-DD · <one sentence> (draft)`.
 - Gmail: only if she says "save it in Gmail" / "leave it as an email draft" — create the draft, tell
   her it is in Drafts, never send.
+- **Waiting on:** when the approved text asks someone for something (a file, an answer, a date) and her assistant is set up (`assistant: set up`), offer once, in one line: "Want this on your Waiting on, so I keep an eye on <who>'s answer? (**yes**)". Yes → /assistant adds `<who> · <what> · since <today>` to Waiting on. <who> is one of her clients → it goes to that client's sheet, in What's open (`<client> · <what> · no date`), through /save-to-client instead. A text that asks nothing, or no assistant: no offer.
 
 ### Step 6 — Receipt
 
@@ -99,6 +101,7 @@ conversation, `context-hot` records the milestone under its own rules.
 - Create a Gmail draft she did not ask for.
 - Invent proof, stories, quotes, numbers or names.
 - Save before she approves, or save outside her folder.
+- Add anything to her to-do list or a client's sheet without her yes.
 - Load `about-me/` before it fires.
 
 ## When to refuse

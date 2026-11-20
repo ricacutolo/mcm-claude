@@ -13,7 +13,7 @@ Speak to her in plain, warm US English. Never say "skill", "frontmatter" or "YAM
 
 Loaded only when this skill fires:
 
-1. `_system/state.md` — `drive_folder` (the shared folder), `rica_notes_sections` (how many dated sections, counted from the top of the doc, are already applied) and `rica_notes_read` (date of the newest one; missing means none).
+1. `_system/state.md` — `drive_folder` (the shared folder), `rica_notes_sections` (how many dated sections, counted from the top of the doc, are already applied) and `rica_notes_read` (date of the newest one; missing means none), and `assistant:` (whether she has a to-do list).
 2. The Google Doc **MCM - Rica's Notes** in that folder, through the Google Drive connector. Read-only.
 3. Each destination file named in a new section — only the section the item targets, at the moment it is checked.
 
@@ -71,7 +71,7 @@ Where they go:
 | Department X | that brief's Standards, Routines or Decisions (rules and choices), or Next steps (the next moves, up to 3); facts and stories go to its history via /context-hot |
 | Project X | same, for the project's brief |
 | Content — comment words | `departments/content/ghl.md` § Comment words: the word's row, added or with its new status (`live` with today's date in Since, or `paused`), exactly as Rica wrote it. Only this section sets a word live. |
-| To do | nothing is written; it is offered in Step 4 |
+| To do | nothing is written in Step 3; Step 4 offers each one, to start now or, with the assistant set up, to add to her to-do list |
 
 ### Step 3 — One batch for her
 
@@ -92,7 +92,11 @@ Then wait. She can answer all at once ("yes to all", "1 to 5 yes, 6 no").
 
 ### Step 4 — To do
 
-List the suggestions in plain words and offer to start each one now. On her yes, start the matching conversation (e.g. "new department Consulting" runs /new-department). Creating it is still hers: those skills ask their own questions.
+List the suggestions in plain words, each with one choice. With her assistant set up (`assistant: set up`): "<suggestion>: start now, or add it to your list? (**now** / **list** / **no**)". Without it: "Want to start it now? (**yes** / **no**)".
+
+- **now** (or **yes**) → start the matching conversation (e.g. "new department Consulting" runs /new-department). Creating it is still hers: those skills ask their own questions.
+- **list** → /assistant adds it to Next: `<what> · added <date> · from Rica`.
+- **no** → dropped.
 
 ### Step 5 — Close
 
@@ -101,7 +105,7 @@ Set `rica_notes_sections: <number of dated sections in the doc>` and `rica_notes
 ### Step 6 — Receipt
 
 One line in `_system/log.md`:
-`YYYY-MM-DD | update | <n> saved, <n> declined, <n> pending | notes through YYYY-MM-DD`
+`YYYY-MM-DD | update | <n> saved, <n> declined, <n> pending, <n> to-dos | notes through YYYY-MM-DD`
 
 Shared memory: changes to a department or project are logged in its history by /context-hot, as above.
 

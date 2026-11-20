@@ -54,6 +54,7 @@ The format is in /assistant-install § The to-do list. Operations:
 - **Not today:** it stays in Next; nothing is deleted. Moved to Someday only if she says so.
 - **The stopping moment:** when she stops on something without finishing ("stopping here", "I'll pick this up tomorrow"), rewrite the line, or the brief's first Next step when it's a department's or project's, as the point to resume from: "if you sit down cold tomorrow, what's the first move?" Say what you wrote in one line.
 - **Promoting:** something too big for one line ("this is turning into a project") → offer /new-project.
+- **Offered by other skills:** a promise from a meeting (/save-meeting), a request she sent (/my-voice, to Waiting on), a to-do item from Rica's notes (/update). Each lands only on her yes in that skill, then here, in the same format.
 
 ## What's next ("what now?", "what's left?")
 

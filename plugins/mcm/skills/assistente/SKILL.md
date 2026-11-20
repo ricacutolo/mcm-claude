@@ -54,6 +54,7 @@ The format is in /assistente-instalar § The to-do list. Operations:
 - **Not today:** it stays in Próximos; nothing is deleted. Moved to Algum dia only if she says so.
 - **The stopping moment:** when she stops on something without finishing ("vou parar aqui", "amanhã eu continuo"), rewrite the line, or the brief's first Próximo passo when it's a department's or project's, as the point to resume from: "se você sentar amanhã sem lembrar de nada, qual é o primeiro movimento?" Say what you wrote in one line.
 - **Promoting:** something too big for one line ("isso está virando um projeto") → offer /novo-projeto.
+- **Offered by other skills:** a promise from a meeting (/resumo-da-reuniao), a request she sent (/minha-voz, to Esperando), a to-do item from Rica's notes (/atualizar). Each lands only on her sim in that skill, then here, in the same format.
 
 ## What's next ("e agora?", "o que falta?")
 

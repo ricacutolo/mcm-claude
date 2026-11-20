@@ -13,11 +13,11 @@ Speak to her in plain, warm US English. Say "the transcript", "the sheet", "the 
 
 Loaded only when this skill fires:
 
-1. `_system/state.md` — `meetings:` (the meetings tool; missing means `meet`).
+1. `_system/state.md` — `meetings:` (the meetings tool; missing means `meet`) and `assistant:` (whether she has a to-do list).
 2. `departments/clients/index.md` — to match the client. A department or project named instead → `departments/index.md` or `projects/index.md`.
 3. The matched client's `sheet.md` — once, before proposing, to skip what is already there.
 4. `departments/clients/reactions.md` — only when the meeting has reactions to her service, to extend a line instead of repeating it.
-5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Routines of `departments/clients/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `about-me/brand.md`.
+5. The transcript — through the source below — and her debrief (Step 2b). Nothing else, except in Step 5: the Routines of `departments/clients/brief.md` (her after-meeting routine) and, when a file she'll hand to someone is made, `about-me/brand.md`; with the assistant set up, `departments/ceo/assistant/todo.md` in Step 3 (to skip what's already on her list).
 
 ## The rules
 
@@ -109,12 +109,15 @@ Read the sheet once and drop what is already there. Then show everything at once
 >
 > **What clients think of your service**: 7. <line> (~00:52)
 >
+> **On your to-do list**: <n>. <what> · by <date> (~00:45)
+>
 > OK to save? (**yes to all** / the numbers you want / **adjust**)"
 
 - **MCM connected and the client linked** (`ghl:` on the sheet): one line under the header, read live and never written to the sheet: "Session <n> · next one booked <date>" (or "no next session booked"), counted from her appointments with this contact in MCM, plus "paid" or "payment open" when MCM shows it.
 - **Zoom or pasted transcript:** add a line "8. The full transcript in <Name>'s folder in Drive".
 - **Someone not yet a client:** ask first, one question: "How did it go — **closed**, **thinking** or **no**?" Record her word. Closed or thinking → offer /new-client with this meeting as its source, then show the batch for the new sheet. No → only the reactions line and a dated note in `departments/clients/index.md` under `## Conversations that didn't become clients` (name, date, why, in their words when given).
 - **A department or project meeting:** the summary for its history and the next step for its brief's Next step; no sheet, no reactions unless clients' views on her service came up.
+- **Her to-do list** (only with `assistant: set up`): her own promises that belong neither to the client's sheet nor to a brief's Next steps, something personal or loose, or for someone who isn't the client ("I'll ask my accountant", "I'll book the venue"), go under **On your to-do list**. A promise to or about the client stays in What's open; a department's or project's next move stays in its brief. One place each, never both. Nothing of the kind, or no assistant: no section.
 
 ### Step 4 — Write, on her yes
 
@@ -123,6 +126,7 @@ Read the sheet once and drop what is already there. Then show everything at once
 - Zoom or pasted transcript → saved word for word as `Transcript - <Name> - YYYY-MM-DD.md` (Zoom: `[HH:MM:SS] <Speaker>: <text>` per line) in the client's Drive folder, the same way /save-to-client saves a file; the Files line points to it.
 - Reactions → `departments/clients/reactions.md` (create it with the header below if missing), under the section that fits: **What they loved · Questions and worries · What they already do on their own · What they asked for**. Line: `- **<short label>.** "<quote>" <context in a few words>. — <client>, <date>`. The same reaction from another client extends the existing line with `· <client>, <date>` — that is how a pattern shows. Never rewrite or remove a line.
 - A department or project: summary to its history via /context-hot; Next step through /system's write-back.
+- To-do lines → handed to /assistant, which adds them to Next: `<what> · added <date> · from the <Name> meeting` (a date said in the meeting stays in the line).
 - What she said **no** to is dropped.
 
 `reactions.md` header, when created:
@@ -152,7 +156,7 @@ End with one line: the single most urgent thing — her promise with the nearest
 
 Always, even when the run stopped early:
 
-`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / zoom / pasted / debrief only / no transcript> · debrief yes/no · after: done / asked / none · <n> saved, <n> declined · reactions <n>` in `_system/log.md`.
+`YYYY-MM-DD | save-meeting | <slug or department> · <source: meet / zoom / pasted / debrief only / no transcript> · debrief yes/no · after: done / asked / none · <n> saved, <n> declined · reactions <n> · to-do <n>` in `_system/log.md`.
 
 Reply in one line: "Meeting saved to **<Name>**'s sheet and history." plus the next step.
 

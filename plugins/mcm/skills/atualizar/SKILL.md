@@ -13,7 +13,7 @@ Speak Brazilian Portuguese. Never say "skill", "frontmatter" or "YAML".
 
 Loaded only when this skill fires:
 
-1. `_sistema/estado.md` — `pasta_drive` (the shared folder), `notas_rica_secoes` (how many dated sections, counted from the top of the doc, are already applied) and `notas_rica_lidas` (date of the newest one; missing means none).
+1. `_sistema/estado.md` — `pasta_drive` (the shared folder), `notas_rica_secoes` (how many dated sections, counted from the top of the doc, are already applied) and `notas_rica_lidas` (date of the newest one; missing means none), and `assistente:` (whether she has a to-do list).
 2. The Google Doc **MCM - Notas do Rica** in that folder, through the Google Drive connector. Read-only.
 3. Each destination file named in a new section — only the section the item targets, at the moment it is checked.
 
@@ -71,7 +71,7 @@ Where they go:
 | Departamento X | that brief's Padrões, Rotinas or Decisões (rules and choices), or Próximos passos (the next moves, up to 3); facts and stories go to its histórico via /assunto |
 | Projeto X | same, for the project's brief |
 | Conteúdo — palavras de comentário | `departamentos/conteudo/ghl.md` § Palavras de comentário: the word's row, added or with its new status (`no ar` with today's date in Desde, or `pausada`), exactly as Rica wrote it. Only this section sets a word live. |
-| Para fazer | nothing is written; it is offered in Step 4 |
+| Para fazer | nothing is written in Step 3; Step 4 offers each one, to start now or, with the assistente set up, to add to her to-do list |
 
 ### Step 3 — One batch for her
 
@@ -92,7 +92,11 @@ Then wait. She can answer all at once ("sim pra tudo", "1 a 5 sim, 6 não").
 
 ### Step 4 — Para fazer
 
-List the suggestions in plain words and offer to start each one now. On her yes, start the matching conversation (e.g. "novo departamento Consultoria" runs /novo-departamento). Creating it is still hers: those skills ask their own questions.
+List the suggestions in plain words, each with one choice. With her assistente set up (`assistente: pronta`): "<sugestão>: começo agora, ou coloco na sua lista? (**agora** / **lista** / **não**)". Without it: "Quer começar agora? (**sim** / **não**)".
+
+- **agora** (or **sim**) → start the matching conversation (e.g. "novo departamento Consultoria" runs /novo-departamento). Creating it is still hers: those skills ask their own questions.
+- **lista** → /assistente adds it to Próximos: `<o quê> · adicionado <data> · do Rica`.
+- **não** → dropped.
 
 ### Step 5 — Close
 
@@ -101,7 +105,7 @@ Set `notas_rica_secoes: <number of dated sections in the doc>` and `notas_rica_l
 ### Step 6 — Receipt
 
 One line in `_sistema/log.md`:
-`YYYY-MM-DD | atualizar | <n> salvas, <n> recusadas, <n> pendentes | notas até AAAA-MM-DD`
+`YYYY-MM-DD | atualizar | <n> salvas, <n> recusadas, <n> pendentes, <n> afazeres | notas até AAAA-MM-DD`
 
 Shared memory: changes to a department or project are logged in its histórico by /assunto, as above.
 
