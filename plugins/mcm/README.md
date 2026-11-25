@@ -20,13 +20,15 @@ Converse com a pasta conectada. Alguns jeitos de começar:
 - **abre o Conteúdo** — entra no departamento e diz onde parou e o próximo passo
 - **o que eu posto agora** · **configura o meu conteúdo** — a máquina de conteúdo: estratégia, plano de 4 semanas, carrosséis no Canva e reels (beta), agendados no MCM com o seu sim
 - **escreve na minha voz…** — e-mails, mensagens, textos
-- **como está meu dia** — agenda e e-mails importantes
+- **bom dia** · **como está meu dia** — o resumo da manhã, da sua assistente: agenda, quem está esperando você, o próximo passo de cada parte do seu negócio
+- **configura minha assistente** — a sua assistente, dentro do departamento CEO: a sua lista de afazeres, o que vem agora, a arrumação da semana, e um e-mail próprio pra você mandar coisas pra ela de qualquer lugar
+- **coloca na minha lista** · **e agora?** · **feito** — a sua lista de afazeres, cuidada pela assistente
 - **novo projeto** · **novo departamento**
 - **novo cliente** · **abre a família…** · **o que eu sei sobre…** — uma ficha para cada cliente seu, com o histórico e uma pasta no Drive
 - **guarda no cliente…** — manda um arquivo no chat e ele vai para a pasta do cliente no Drive, e a ficha anota o que importa
 - **guarda a reunião com…** — lê a transcrição da reunião no Google Meet e guarda decisões, combinados e preferências na ficha do cliente, e o que os clientes acham do seu serviço numa página só, com o seu sim
 - **essa conversa é sobre…** — guarda a conversa inteira no assunto, projeto ou cliente certo
-- **guarda isso** — guarda algo no histórico do assunto
+- **guarda isso** — a assistente guarda no lugar certo: o assunto em que vocês estão, a sua lista de afazeres ou a sua mesa
 - **faz minha marca** — cria seu logo do zero com você e entrega o kit completo: versões do logo, cores, fontes e arquivos prontos
 - **organiza meu Drive** — cria as pastas do negócio no seu Google Drive e coloca os arquivos soltos no lugar, sempre com o seu sim
 - **atualizar** — busca as novidades que o Rica deixou no documento compartilhado e te mostra para aprovar
