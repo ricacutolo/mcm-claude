@@ -2,6 +2,9 @@
 
 Entries are tagged by edition: **[mcm-os]** English, **[mcm]** Portuguese, **[both]**. English is the source of truth; each change lands in mcm-os first and is translated into mcm (`docs/glossary.md`, `scripts/check-sync.py`).
 
+## 0.27.1 — 2026-11-25 [both]
+- **READMEs catch up** (Rica, 2026-11-25): the everyday list in all three READMEs (root, MCM OS, MCM) now has the assistant: "good morning" is the assistant's morning brief, "set up my assistant", the to-do list phrases, and "save this" placed by the assistant. The root README said "GoHighLevel" in the content line; it says MCM now, like the plugin's own README.
+
 ## 0.27.0 — 2026-11-20 [both]
 - **Her assistant's email address** (Rica, 2026-11-20). She can email things to her assistant from anywhere without opening Claude: her own Gmail address with `+<the assistant's name>` (no name: `+assistant`, PT `+assistente`); with a name, `+assistant` / `+assistente` works too, in case she mixes them up. Gmail delivers it to her own inbox; nothing new to sign up for.
   - **assistant-install** (PT assistente-instalar), Step 4 becomes "A name and an address": offers the address (optional), records it and her sending addresses, then offers a Gmail filter she makes herself in about 2 minutes, with numbered steps and a direct link, so those emails skip her inbox under a label. No filter: nothing breaks, the emails just stay in her inbox too. Not Gmail: the part is skipped. The Opening gains one line.

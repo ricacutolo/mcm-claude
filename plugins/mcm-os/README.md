@@ -20,13 +20,15 @@ Chat with the folder connected. A few ways to start:
 - **open Content** — goes into the department and tells you where you left off and the next step
 - **what should I post next** · **set up my content**
 - **write this in my voice…** — emails, messages, posts
-- **how's my day looking** — calendar and important emails
+- **good morning** · **how's my day looking** — your morning brief, from your assistant: calendar, who's waiting on you, what's next in each part of your business
+- **set up my assistant** — your assistant, inside the CEO department: your to-do list, what's next, the weekly tidy-up, and its own email address to send it things from anywhere
+- **add this to my list** · **what's next?** · **done** — your to-do list, kept by your assistant
 - **new project** · **new department**
 - **new client** · **open the … family** · **what do I know about…** — a sheet for each of your clients, with their history and a folder in Drive
 - **save to the client…** — send a file in the chat and it goes to the client's folder in Drive, and the sheet notes what matters
 - **save the meeting with…** — reads the meeting transcript in Google Meet and saves decisions, agreements and preferences to the client's sheet, and what clients think of your service on a single page, with your yes
 - **this conversation is about…** — saves the whole conversation to the right topic, project or client
-- **save this** — saves something to the topic's history
+- **save this** — your assistant puts it in the right place: the topic you're on, your to-do list, or your desk
 - **make my brand** — designs your logo from scratch with you and delivers the full kit: logo versions, colors, fonts and ready-to-use files
 - **organize my Drive** — creates your business folders in Google Drive and puts loose files where they belong, always with your yes
 - **update** — pulls in the latest notes Rica left in the shared document and shows them to you to approve
